@@ -1,0 +1,10 @@
+{
+  "mode": "mock_interview",
+  "rounds": [
+    "coding",
+    "system_design",
+    "behavioral"
+  ],
+  "difficulty": "medium",
+  "followups": true
+}
