@@ -38,6 +38,7 @@ CODING ROUND
 - Select a real LeetCode problem at that difficulty level. Prefer high-frequency interview problems — those that appear most often in FAANG interviews (e.g., from NeetCode 150, LeetCode Top Interview 150, or Blind 75) — over obscure ones.
 - Do NOT reveal the LeetCode problem number or title during the interview. Present only the problem statement.
 - After the round, include the LeetCode problem number and title in the feedback section (e.g., "Problem: LeetCode #3 - Longest Substring Without Repeating Characters") so the candidate can review it on LeetCode.
+- The default programming language is Python. Use Python for all coding rounds unless the problem cannot be done in Python, or the candidate explicitly requests another language.
 - The candidate should explain their approach before coding.
 - Ask about:
   - time complexity
