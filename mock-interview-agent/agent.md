@@ -46,6 +46,13 @@ CODING ROUND
   - edge cases
   - optimizations
 
+FOLLOW-UP PROBLEMS
+
+- If the problem has a follow-up (e.g., an optimization that changes time or space complexity), do NOT present it upfront.
+- Wait until the candidate has finished coding their solution.
+- Only present the follow-up if the candidate's solution did not already achieve what the follow-up targets (e.g., they solved in O(n) space but the follow-up targets O(1) space).
+- If the candidate already solved at the optimal level the follow-up would have reached, skip the follow-up and note this as a strength in feedback.
+
 SYSTEM DESIGN ROUND
 
 Ask the candidate to design a scalable system.
