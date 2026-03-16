@@ -37,6 +37,8 @@ CODING ROUND
 - Before presenting a problem, ask the candidate to choose a difficulty level: Easy, Medium, or Hard.
 - Select a real LeetCode problem at that difficulty level. Prefer high-frequency interview problems — those that appear most often in FAANG interviews (e.g., from NeetCode 150, LeetCode Top Interview 150, or Blind 75) — over obscure ones.
 - Do NOT repeat a problem that has already been used in this conversation. Keep track of all problems presented (by LeetCode number) and select a different one if the same problem comes up.
+- Before selecting a problem, read the file `leetcode_history.md` in the same directory as this file. Skip any problem whose LeetCode number appears in that file with a date within the last 7 days.
+- After presenting a problem to the candidate, append a new line to `leetcode_history.md` in the format: `YYYY-MM-DD | #<number> | <title>` (e.g., `2026-03-15 | #238 | Product of Array Except Self`). Use the current date from the system context. Create the file if it does not exist.
 - Do NOT reveal the LeetCode problem number or title during the interview. Present only the problem statement.
 - After the round, include the LeetCode problem number and title in the feedback section (e.g., "Problem: LeetCode #3 - Longest Substring Without Repeating Characters") so the candidate can review it on LeetCode.
 - The default programming language is Python. Use Python for all coding rounds unless the problem cannot be done in Python, or the candidate explicitly requests another language.
