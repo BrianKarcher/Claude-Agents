@@ -13,6 +13,52 @@
 
 ---
 
+## Onsite Loop Structure
+
+Typically 4–6 rounds (usually virtual), each 45–60 min:
+
+| Round | Description |
+|-------|-------------|
+| Coding (×2) | Algorithms & data structures |
+| Coding + D&A | Hybrid: short coding problem + system design/architecture (60 min) |
+| Behavioral / Bar Raiser | Cultural values, past project deep dive, or repeat of a weak round |
+
+---
+
+## Coding + Design & Architecture (D&A) Round — 60 min
+
+A hybrid round combining a short coding problem (~20 min) with a system design discussion (~40 min). Uber uses **Miro** as the whiteboard tool — learn it before the interview.
+
+### Coding Portion (~20 min)
+- One Medium-difficulty algorithm problem
+- Standard expectations: explain approach, code it, state complexity
+- May be cut short once competence is demonstrated to preserve design time
+
+### D&A Portion (~40 min) — Two Possible Formats
+
+**Format 1 — Forward Design**
+Design a large-scale system from scratch. Uber favors problems tied to their own domain (dispatch, geospatial, pricing, real-time tracking).
+- Start by asking clarifying questions: scale, latency targets, regions
+- Draw a clean, labeled architecture diagram — the diagram is the primary artifact the hiring panel evaluates
+- Cover: components, APIs, data model, scaling strategy, failure modes, trade-offs
+- Proactively discuss alternatives without being prompted
+
+**Format 2 — Reverse Design (Past Project Deep Dive)**
+Walk through a system you built. Diagram it in Miro, then defend it:
+- Technical decisions and why you made them
+- What you'd change at 10x scale
+- How you handled failures or edge cases
+- Your specific contribution vs. the team's
+
+### What Uber Cares About in D&A
+- **You lead** — don't wait to be guided
+- **Diagram quality** — clean, labeled; hiring panel reviews it directly
+- **Trade-off reasoning** — how you think matters more than a perfect answer
+- **Uber-relevant framing** — tie designs to marketplace mechanics where possible
+- Reading the [Uber Engineering Blog](https://www.uber.com/blog/engineering/) (H3, Ringpop, Schemaless) and referencing it is a strong positive signal
+
+---
+
 ## Difficulty Distribution
 
 | Difficulty | Share |
@@ -77,6 +123,11 @@ Uber commonly asks candidates to design:
 - **Google Maps / Navigation System** (routing, real-time updates)
 - **Design TinyURL** (URL shortener with scale)
 - Rate limiter, notification service, or real-time location tracking system
+- **Rate Limiter** (token bucket, sliding window, distributed enforcement)
+- **Task Scheduler / Job Queue** (delayed execution, retries, priority queues)
+- **Ride Matching Service** (driver-rider pairing, geospatial indexing, latency constraints)
+- **API Design for a Service** (REST vs gRPC, versioning, auth, pagination — commonly overlooked)
+- **Cache Layer** (read-through/write-through, eviction policies, cache invalidation, CDN vs in-process)
 
 ---
 
