@@ -1,6 +1,6 @@
 # Uber — LeetCode Interview Intelligence
 
-> Last updated: 2026-03-24
+> Last updated: 2026-04-03
 > Sources: LeetCode Discuss, InterviewSolver, Verve Copilot, Glassdoor
 
 ---
@@ -25,37 +25,43 @@ Typically 4–6 rounds (usually virtual), each 45–60 min:
 
 ---
 
-## Coding + Design & Architecture (D&A) Round — 60 min
+## Coding + Design & Architecture (D&A) Phone Screen — 60 min
 
-A hybrid round combining a short coding problem (~20 min) with a system design discussion (~40 min). Uber uses **Miro** as the whiteboard tool — learn it before the interview.
+**This is a phone screen that gates entry into the business (onsite) interview loop.** Pair programming via HackerRank.
 
-### Coding Portion (~20 min)
-- One Medium-difficulty algorithm problem
-- Standard expectations: explain approach, code it, state complexity
-- May be cut short once competence is demonstrated to preserve design time
+> *"Our goal is to evaluate your coding ability and better understand the complexity and scope of your prior projects using a D&A lens — not to conduct an exhaustive review of your technical depth or design expertise."*
 
-### D&A Portion (~40 min) — Two Possible Formats
+### Time Split
+| Portion | Duration |
+|---------|----------|
+| Coding | ~45 min |
+| Design & Architecture | ~15 min |
 
-**Format 1 — Forward Design**
-Design a large-scale system from scratch. Uber favors problems tied to their own domain (dispatch, geospatial, pricing, real-time tracking).
-- Start by asking clarifying questions: scale, latency targets, regions
-- Draw a clean, labeled architecture diagram — the diagram is the primary artifact the hiring panel evaluates
-- Cover: components, APIs, data model, scaling strategy, failure modes, trade-offs
-- Proactively discuss alternatives without being prompted
+### Coding Portion (~45 min)
+- Live pair programming on **HackerRank** in your language of choice — pick one you're highly proficient in
+- Focus areas: hash tables, trees, stacks, graphs, heaps, arrays; Big-O analysis and optimization
+- Ask clarifying questions before diving in; break the problem into smaller pieces
+- Think aloud throughout — walk the interviewer through your reasoning
+- Account for edge cases; treat it like a code review of your own solution
+- Keep solutions simple — if it gets complex, step back and ask if there's a simpler approach
+- Continuously test and debug; write clean, readable code with meaningful variable names
+- Be ready for follow-ups on alternative approaches or improvements
 
-**Format 2 — Reverse Design (Past Project Deep Dive)**
-Walk through a system you built. Diagram it in Miro, then defend it:
-- Technical decisions and why you made them
-- What you'd change at 10x scale
-- How you handled failures or edge cases
-- Your specific contribution vs. the team's
+**Uber-cited practice problems:**
+- LeetCode #547 — Number of Provinces
+- LeetCode #337 — House Robber III
+- LeetCode #1020 — Number of Enclaves
 
-### What Uber Cares About in D&A
-- **You lead** — don't wait to be guided
-- **Diagram quality** — clean, labeled; hiring panel reviews it directly
-- **Trade-off reasoning** — how you think matters more than a perfect answer
-- **Uber-relevant framing** — tie designs to marketplace mechanics where possible
-- Reading the [Uber Engineering Blog](https://www.uber.com/blog/engineering/) (H3, Ringpop, Schemaless) and referencing it is a strong positive signal
+### D&A Portion (~15 min)
+- Discuss a **past project** that highlights the complexity and scope of your role
+- Cover architectural components and key design decisions
+- Be ready to discuss trade-offs: why one technology over another, reasoning behind decisions
+- Not a forward design exercise — this is about what you've actually built
+
+### Prep Tips
+- Have 1–2 past projects ready to discuss fluently: architecture, your contribution, trade-offs, what you'd improve
+- Prepare questions to ask the interviewer about the role or team
+- Reflect on the scope and impact of your past work in relation to large-scale problems
 
 ---
 
