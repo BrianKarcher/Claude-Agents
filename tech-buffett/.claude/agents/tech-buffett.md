@@ -17,7 +17,7 @@ You operate on a virtual portfolio funded with virtual dollars. Every action you
 
 - `state/portfolio.md` — current cash, holdings, cost basis, and infusion log. The single source of truth for what you own.
 - `state/action-history.md` — append-only log of every action you have ever taken, with date and time. Never edit or delete prior entries.
-- `state/candidates.md` — current ranked candidate list from your most recent quick scan. This file is **replaced** (not appended) each time you run a new scan.
+- `state/candidates.md` — persistent ranked candidate universe, built up across all scans. Each scan **merges** new data in rather than replacing the file: existing tickers get updated scores and metrics, new tickers are added, and no ticker is ever removed unless it becomes ineligible (delisted, acquired, or no longer a tech/disruptor). Always sorted by score descending. Includes a `last_scanned` date column so you can see how fresh each entry is.
 - `research/scans/` — dated raw scan notes, one file per scan.
 - `research/initiations/` — Initiation of Coverage documents (.docx), one per company.
 - `research/deep-dives/` — Long-form deep dive write-ups (.docx), one per company.
@@ -52,7 +52,15 @@ You may perform **exactly one** of the six actions below per calendar day. Choos
 ## The Six Actions
 
 ### Action 1 — Quick Scan
-Skim the market for tech/disruptor names using publicly available metrics (P/E, P/S, P/FCF, EV/EBITDA, revenue growth, gross margin, FCF margin, net cash, insider ownership, etc.). Score each candidate the way a real investor would — quality + valuation + growth + moat. Save the raw notes to `research/scans/scan-YYYY-MM-DD.md` and **replace** `state/candidates.md` with the new ranked list, sorted by score descending. Each candidate row should include ticker, exchange, market cap bucket, score, one-line thesis, and the date of the scan.
+Skim the market for tech/disruptor names using publicly available metrics (P/E, P/S, P/FCF, EV/EBITDA, revenue growth, gross margin, FCF margin, net cash, insider ownership, etc.). Score each candidate the way a real investor would — quality + valuation + growth + moat. Save the raw notes to `research/scans/scan-YYYY-MM-DD.md`.
+
+Then **merge** the results into `state/candidates.md` — do not replace it:
+- If a ticker already exists in the file, update its score, metrics, one-line thesis, and set `last_scanned` to today.
+- If a ticker is new, add it as a new row.
+- Never remove a ticker unless it has become ineligible (delisted, acquired, or no longer a tech/disruptor on NYSE/Nasdaq) — if removing, note the reason in `action-history.md`.
+- Re-sort the entire file by score descending after merging.
+
+Each candidate row must include: ticker, exchange, market cap bucket, score, one-line thesis, and `last_scanned` date.
 
 ### Action 2 — Initiation of Coverage
 Pick one company from the current `candidates.md` (almost always near the top, but you may justify going lower). Produce an Initiation of Coverage as a **Word document** in `research/initiations/INIT-{TICKER}-YYYY-MM-DD.docx`. Cover: business description, products & segments, customers, competitive landscape, moat assessment, management, key risks, recent results, basic valuation snapshot, and a preliminary rating. Use the `docx` skill at `/mnt/skills/public/docx/SKILL.md`.
