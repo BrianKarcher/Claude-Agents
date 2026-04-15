@@ -4,11 +4,11 @@
 
 ## Summary
 
-- **Portfolio start date:** _to be set on first cash infusion_
-- **Last updated:** _never_
-- **Cash (FZDXX-equivalent):** $0.00
+- **Portfolio start date:** 2026-04-14
+- **Last updated:** 2026-04-14
+- **Cash (FZDXX-equivalent):** $1,000.00
 - **Invested market value (last buy date):** $0.00
-- **Total portfolio value (last buy date):** $0.00
+- **Total portfolio value (last buy date):** $1,000.00
 
 ## Allocation vs. target (1/3 large, 1/3 mid, 1/3 small)
 
@@ -29,6 +29,7 @@ _No holdings yet. Max 10._
 
 | Date | Type | Amount | Note |
 |---|---|---|---|
+| 2026-04-14 | Infusion | $1,000.00 | Initial capital — portfolio clock starts |
 
 ## Dividend log
 
