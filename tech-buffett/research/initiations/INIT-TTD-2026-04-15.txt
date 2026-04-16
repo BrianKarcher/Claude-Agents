@@ -1,0 +1,317 @@
+TECH-BUFFETT CAPITAL  |  INITIATION OF COVERAGE
+================================================================================
+
+The Trade Desk, Inc. (NASDAQ: TTD)
+Initiation of Coverage  |  April 15, 2026
+
+RATING:           WATCH / ACCUMULATE ON WEAKNESS
+PRICE (Apr 14):   ~$21.00
+12-MONTH TARGET:  Not set — monitoring phase
+
+================================================================================
+1. BUSINESS DESCRIPTION & HISTORY
+================================================================================
+
+The Trade Desk, Inc. (TTD) is the largest independent demand-side platform (DSP)
+in the world, headquartered in Ventura, California. Founded in 2009 by Jeff Green
+and Dave Pickles — both veterans of Microsoft's AdECN acquisition — the company
+enables advertisers and agencies to plan, execute, and optimize data-driven
+programmatic advertising campaigns across a unified, cloud-based platform.
+
+TTD went public on the Nasdaq in September 2016. From its IPO through FY2025,
+revenue compounded at approximately 31% annually (2020-2024 CAGR), growing from
+~$202M at IPO to $2.9B in FY2025. The company joined the Nasdaq-100 in July 2023.
+Customer retention has remained above 95% for multiple consecutive years.
+
+A defining strategic choice is TTD's strict "buy-side only" mandate: the company
+does not own or represent ad inventory, ensuring its interests are fully aligned
+with advertiser clients seeking the best return on media spend. This stands in
+contrast to Google's vertically integrated stack, which operates on both the buy
+side and sell side.
+
+================================================================================
+2. PRODUCTS & SEGMENTS
+================================================================================
+
+TTD is a single-segment business from a financial reporting standpoint. In
+December 2025, the company reorganized internally into dedicated business units
+for CTV, Retail Media, and Identity to sharpen go-to-market focus.
+
+CORE PLATFORM
+-------------
+Self-service DSP: A cloud-based interface where traders at agencies and brands
+build, target, bid on, and measure programmatic ad campaigns in real time across
+display, video, audio, native, and connected TV (CTV) inventory.
+
+Kokai: The AI-powered platform overhaul launched in late 2024 and fully rolled
+out through 2025. Kokai processes over 10 million ad requests per second using
+deep learning and includes "Koa Adaptive Trading Modes," which automate bidding
+based on real-time ROI signals. As of early 2026, over 85% of clients use Kokai;
+adopters report up to 20% improvements in cost-per-acquisition (CPA).
+
+IDENTITY INFRASTRUCTURE
+------------------------
+Unified ID 2.0 (UID2): An open-source identity solution developed by TTD to
+replace third-party cookies with encrypted, hashed email identifiers. Works
+across web, mobile, and CTV. Adopted by Roku, Dish/Sling, LG smart TVs, and
+major publishers. UID2-based display ads deliver a 2.9x higher click-through
+rate and 2.4x better CPA vs. non-UID2 ads per TTD case studies.
+
+CONNECTED TV (CTV) & VENTURA OS
+---------------------------------
+CTV accounts for approximately 50% of TTD's total revenue mix as of Q4 2025.
+TTD accesses CTV inventory across Disney+, Netflix, Warner Bros. Discovery,
+Peacock, Paramount+, Hulu, and others.
+
+Ventura OS: A proprietary CTV operating system announced in late 2024, designed
+to challenge Roku and Amazon Fire TV. In February 2026, TTD launched the "Ventura
+Ecosystem," partnering with VIDAA (on 50M+ Hisense/Toshiba devices) and Nexxen,
+pivoting toward an ecosystem collaboration rather than a standalone OS buildout.
+DirecTV announced plans to develop a custom Ventura UI.
+
+RETAIL MEDIA
+-------------
+TTD has integrated with major retailers including Walmart and Kroger, enabling
+advertisers to target shoppers via anonymized first-party purchase data and close
+the measurement loop between ad exposure and in-store or online conversion.
+
+DATA & MEASUREMENT
+-------------------
+Third-party data marketplace: Advertisers activate audience segments from
+hundreds of data providers within the platform.
+Enterprise APIs: Programmatic access for agency trading desks and large
+enterprise advertisers.
+
+================================================================================
+3. CUSTOMERS & GO-TO-MARKET
+================================================================================
+
+TTD sells primarily to advertising agencies and agency trading desks (ATDs) —
+the media buying arms of holding companies such as WPP, Omnicom, Publicis, IPG,
+and Dentsu — as well as directly to large brands. Customer retention above 95%
+reflects deep platform stickiness and high switching costs.
+
+The go-to-market motion is direct sales through a global salesforce, supplemented
+by self-service access for sophisticated agency traders. TTD charges a platform
+fee as a percentage of managed ad spend — typically 10-20% on smaller budgets,
+negotiated lower for the largest clients.
+
+Notable tension: Publicis distributed an internal memo in late 2025/early 2026
+advising select clients to reduce transactions on TTD, citing auditing firm
+FirmDecisions findings that alleged TTD improperly applied its DSP fee to certain
+other charges. TTD disputed these characterizations. The episode highlights
+structural tension between TTD and holding companies.
+
+================================================================================
+4. COMPETITIVE LANDSCAPE & MOAT ASSESSMENT
+================================================================================
+
+MARKET STRUCTURE
+-----------------
+The global DSP market is dominated by two players: Google's DV360 (~40% share)
+and The Trade Desk (~20%). Amazon DSP is a rapidly rising third force,
+particularly after securing Netflix as its primary programmatic partner in 2025.
+The remaining market fragments among Microsoft Xandr, MediaMath, Basis, and
+agency proprietary stacks.
+
+MOAT SOURCES
+-------------
+Independence / Trust: TTD's buy-side-only model creates a structural trust
+advantage over Google and Amazon. This independence is a compounding asset as
+antitrust scrutiny on Google intensifies.
+
+Data network effects: More advertisers on the platform generate more bidding
+signal data for the Koa AI engine, improving performance outcomes, which attracts
+more advertisers in a reinforcing loop. TTD processes trillions of bid-stream
+events annually.
+
+Switching costs: Advertisers invest heavily in training traders, integrating
+audience segments, and building reporting dashboards on TTD. The >95% retention
+rate confirms switching costs are substantial.
+
+UID2 as infrastructure layer: If UID2 becomes the de facto post-cookie identity
+standard, TTD sits at the center of the identity graph for much of the open
+internet.
+
+Open internet scale leadership: TTD is the largest pure-play buyer of open-
+internet inventory; premium publishers have strong incentive to prioritize TTD
+integrations.
+
+MOAT RISKS
+-----------
+- Amazon DSP's first-party data advantage (Prime purchase history from 200M+
+  members) is structurally difficult to replicate.
+- Google antitrust: If courts force a divestiture of AdX, the open internet
+  becomes more competitive — a potential TTD tailwind, though outcome uncertain.
+- Holding company tensions could accelerate proprietary in-house trading desk
+  buildouts, reducing reliance on TTD.
+
+Gartner rating: TTD 4.6 stars vs. Amazon DSP 4.4 stars.
+Frost Radar 2025 named TTD a "Growth Leader" in DSPs.
+
+================================================================================
+5. MANAGEMENT QUALITY
+================================================================================
+
+JEFF GREEN — Founder, Chairman & CEO
+--------------------------------------
+Co-founded TTD in 2009 alongside Dave Pickles after both spent two years at
+Microsoft following the 2007 acquisition of their prior company AdECN. Green
+holds Class B supervoting shares (10 votes each), giving him effective control.
+
+Green is a visionary operator who compounded TTD revenue at ~31% annually from
+2020 to 2024, built customer retention above 95%, and guided TTD into the
+Nasdaq-100. Strong equity ownership aligns him with shareholders.
+
+CFO INSTABILITY — GOVERNANCE YELLOW FLAG
+------------------------------------------
+Laura Schenkein served as CFO from June 2023 until mid-2025. She was replaced by
+Alex Kayyal (former Lightspeed Venture Partners GP), who was terminated after
+just five months on January 24, 2026. Tahnil Davis, an 11-year TTD veteran and
+Chief Accounting Officer, was named interim CFO. Two CFO transitions in
+approximately 30 months is an elevated governance concern.
+
+OVERALL ASSESSMENT
+-------------------
+Founder-led with exceptional long-term track record (POSITIVE).
+CFO stability is a current concern requiring monitoring (WATCH).
+Capital allocation has been sensible: net cash position, no aggressive dilution,
+strong FCF generation alongside R&D investment (Kokai, Ventura, UID2).
+
+================================================================================
+6. KEY RISKS
+================================================================================
+
+1. Growth Deceleration: Revenue growth slowed from ~26% in FY2024 to 18% in
+   FY2025, and Q1 2026 guidance of "at least $678M" implies only 10% YoY growth.
+   Causes include lapping strong 2024 political ad spend, CTV market maturation,
+   and macro pressure on CPG and automotive advertisers.
+
+2. Amazon DSP Competition: Amazon has become TTD's most direct and best-resourced
+   rival. Its first-party shopper data from 200M+ Prime members is a structural
+   advantage TTD cannot replicate. Amazon secured Netflix as its primary
+   programmatic partner in 2025.
+
+3. Walled Garden Re-acceleration: Meta and Google have regained advertiser
+   confidence as proven ROI engines during macroeconomic uncertainty. Budget
+   flight to walled gardens directly pressures TTD's open-internet positioning.
+
+4. CFO Instability: Two CFO changes in ~30 months raises questions about internal
+   financial leadership.
+
+5. Agency Holding Company Tensions: The Publicis situation highlights structural
+   tension. If major holding companies accelerate proprietary trading desk
+   buildouts, it could meaningfully impact revenue growth.
+
+6. Ventura OS Execution Risk: The February 2026 pivot to an "ecosystem" approach
+   suggests the standalone OS path is proving harder than initially communicated.
+
+7. Dual-Class Share Structure: Jeff Green controls voting outcomes via Class B
+   shares. Minority shareholders have limited recourse on governance decisions.
+
+8. Macroeconomic Sensitivity: Digital advertising is cyclically sensitive. A U.S.
+   recession or sustained tariff-driven inflation could deepen budget cuts in
+   cyclical verticals (auto, CPG).
+
+================================================================================
+7. RECENT FINANCIAL RESULTS
+================================================================================
+
+Source: Company filings, StockAnalysis.com, company press releases.
+All figures in USD millions unless noted.
+
+ANNUAL RESULTS (FY2022-FY2025)
+--------------------------------
+Metric                    FY2022    FY2023    FY2024    FY2025
+------------------------  --------  --------  --------  --------
+Revenue ($M)              $1,578    $1,946    $2,445    $2,896
+YoY Revenue Growth           —        23%       26%       18%
+Operating Income ($M)       $114      $200      $427      $589
+Net Income ($M)              $53      $179      $393      $443
+Adj. EBITDA ($M)            $168      $281      $515      $705
+Free Cash Flow ($M)         $465      $552      $641      $796
+Diluted EPS (GAAP)         $0.11     $0.36     $0.78     $0.90
+
+QUARTERLY RESULTS (Q1 2025-Q1 2026 GUIDANCE)
+----------------------------------------------
+Quarter    Revenue   YoY Growth  Adj. EBITDA  EBITDA Margin  Non-GAAP EPS
+---------  --------  ----------  -----------  -------------  ------------
+Q1 2025    $616M       +25%        ~$195M         ~32%          $0.33
+Q2 2025    $694M       +19%        ~$270M         ~39%          $0.41
+Q3 2025    $739M       +18%        ~$315M         ~43%          $0.45
+Q4 2025    $847M   +14% (+19% ex-pol.) ~$400M    ~47%          $0.59
+Q1 2026*   >=678M      +10%        ~$195M         ~29%           N/A
+* Guidance
+
+Key observation: Revenue growth decelerated from 25% in Q1 2025 to 14% in
+Q4 2025 and is guided to 10% in Q1 2026. FCF of $796M in FY2025 implies ~179%
+conversion of GAAP net income, reflecting significant non-cash SBC and D&A.
+
+================================================================================
+8. BASIC VALUATION SNAPSHOT
+================================================================================
+
+As of approximately April 14, 2026.
+TTD share price ~$21.00 | Market cap ~$9.9B | EV ~$9.0B (net cash ~$0.9B)
+Stock is down ~63% from its 52-week high.
+
+Metric            TTD Current  TTD Hist. Peak  MGNI    PUBM    Notes
+----------------  -----------  --------------  ------  ------  ----------------------
+Price / Sales         3.4x         ~12x          N/A    ~2.2x  TTD at multi-year low
+EV / Sales            3.1x         ~11x          N/A    ~2.0x
+P/E (Trailing)         23x         ~80x+        ~11x    ~22x
+Forward P/E           ~10x         ~50x+          N/A    N/A   Steep discount to hist.
+EV / EBITDA            13x         ~60x+        ~10x     N/A
+P / FCF              12.4x         ~40x+          N/A    N/A   Notably attractive
+PEG Ratio             0.55          >2.0x          N/A    N/A   Sub-1 unusual for TTD
+Analyst Avg. Target  $46.63          N/A           N/A    N/A   ~122% implied upside
+
+Valuation context: TTD now trades at trough multiples on nearly every metric.
+A P/FCF of ~12x and forward P/E of ~10x for a business that generated $796M of
+FCF in 2025 with a net cash balance sheet is objectively inexpensive in absolute
+terms. The key debate is whether 10% Q1 2026 growth is a trough before
+re-acceleration, or the start of a structural step-down.
+
+================================================================================
+9. PRELIMINARY RATING & INVESTMENT THESIS
+================================================================================
+
+RATING:       WATCH / ACCUMULATE ON WEAKNESS
+PRICE:        ~$21.00  |  DATE: April 15, 2026
+TRADE:        No trade initiated (portfolio cash: $1,000.00)
+
+Investment Thesis
+------------------
+The Trade Desk occupies a structurally advantaged position at the intersection of
+three durable secular growth vectors: the migration of TV ad budgets to streaming
+(CTV), the post-cookie identity revolution (UID2), and AI-driven programmatic
+buying by the world's largest advertisers. The company is the only scaled,
+independent DSP not controlled by a walled garden — a trust asset that compounds
+in value as Google faces antitrust consequences.
+
+At approximately 12x trailing free cash flow, the market is pricing in near-
+permanent growth impairment from the Q4 2025/Q1 2026 deceleration. We view this
+as an overreaction to cyclical factors (election-year lapping, macro softness in
+auto and CPG) and execution missteps (CFO instability) rather than structural
+erosion of the moat.
+
+Primary risk: Amazon's continued aggressive subsidization of its DSP and the
+possibility that holding company tensions (Publicis) spread to other agency
+groups, which would represent genuine share-of-wallet erosion.
+
+THREE CATALYSTS NEEDED BEFORE FULL BUY:
+  1. Permanent CFO hire
+  2. Evidence of re-acceleration beyond the 10% Q1 2026 guidance floor
+  3. Further Ventura Ecosystem traction
+
+================================================================================
+DISCLOSURES
+================================================================================
+
+This document is produced by Tech-Buffett Capital for internal portfolio
+management purposes only. It does not constitute investment advice or a
+recommendation to buy or sell any security. All data sourced from publicly
+available filings, StockAnalysis.com, company press releases, and third-party
+news sources as of April 14-15, 2026. No position in TTD was held at the time
+of this initiation. No trade was executed in connection with this report.
+Past performance does not guarantee future results.

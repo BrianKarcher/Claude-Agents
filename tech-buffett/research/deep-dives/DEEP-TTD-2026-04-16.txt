@@ -1,0 +1,726 @@
+TECH-BUFFETT CAPITAL  |  DEEP DIVE
+================================================================================
+
+The Trade Desk, Inc. (NASDAQ: TTD)
+Long-Form Deep Dive  |  April 16, 2026
+Horizon: 5-10 years  |  Companion to INIT-TTD-2026-04-15.txt
+
+RATING FRAMEWORK:   WATCH / ACCUMULATE ON WEAKNESS (unchanged pending DCF)
+MARKET PRICE:       ~$21 (reference from Apr 14 initiation)
+THESIS IN ONE LINE: A structurally advantaged, founder-led open-internet
+                    toll-road trading at trough multiples, with a cluster of
+                    real but largely knowable risks that the market is now
+                    conflating into a single "broken business" narrative.
+
+================================================================================
+0. EXECUTIVE SUMMARY
+================================================================================
+
+TTD earns a platform fee on roughly $12B+ of annual advertiser gross spend,
+converting ~28% of revenue to free cash flow with a net-cash balance sheet and a
+>95% customer retention rate. At ~$21 the market capitalizes ~$9.9B of equity
+against $796M of 2025 FCF — ~12.4x trailing FCF — and prices in zero net growth
+in perpetuity.
+
+The bear case rests on four related pillars: (i) CFO instability signals
+dysfunction and financial-control risk; (ii) Amazon DSP is a structurally
+superior competitor that will compress TTD's take-rate and share; (iii) Ventura
+OS is a capital-consuming side-bet that is quietly failing; (iv) the
+deceleration from ~27% to ~10% growth is structural, not cyclical, and the new
+normal is a 6-10% grower.
+
+Our tentative view after this deep dive: pillars (i) and (iii) are real but
+overblown; pillar (ii) is the single most important variable and is partially
+priced in; pillar (iv) is probably 60% cyclical / 40% structural, which is
+very different from the 100% structural outcome the stock implies. The founder's
+$148M personal open-market purchase at prices 12-19% above current is a
+high-signal corroboration that insiders see a cyclical dislocation, not a dying
+franchise.
+
+We remain on WATCH/ACCUMULATE and will make the buy/pass decision once a DCF is
+built with (a) a take-rate compression scenario, (b) a Ventura-zero scenario,
+and (c) Q1 2026 results on May 13 to validate or reject the 10% guidance floor.
+
+================================================================================
+1. UNIT ECONOMICS — WHAT TTD ACTUALLY SELLS
+================================================================================
+
+TTD is not an ad network. It does not buy or own media inventory. It operates a
+cloud-based media trading platform, and it earns a platform fee on gross
+advertiser spend. This is the "toll-road" characterization that matters for
+every downstream question in this deep dive.
+
+GROSS SPEND FLOW
+-----------------
+Advertiser allocates budget -> platform fee skimmed by TTD -> residual passes
+through to ad exchanges / SSPs / publishers / data vendors. TTD does not
+recognize gross spend as revenue — only the platform fee.
+
+REVENUE = GROSS SPEND x TAKE RATE
+
+FY2025 revenue of $2,896M at an approximate ~22-24% effective take rate on
+gross spend implies roughly $12-13B of annual gross spend flowing through the
+platform. Management has historically described the take rate as "~20%" on
+smaller accounts and lower on large holding-company book-of-business deals.
+
+CONTRIBUTION MARGIN AT THE DEAL LEVEL
+--------------------------------------
+Once a large agency or brand is integrated, incremental revenue on that account
+carries a gross margin north of 80%. The platform is a fixed-cost technology
+asset; incremental bid requests cost near-zero. This is why TTD's operating
+leverage is so pronounced — FY2025 Adj. EBITDA margin was ~24%, Q4 2025 hit
+~47%, and FCF margin was 27.5%.
+
+COST STRUCTURE
+---------------
+- Platform operations / AWS: low-teens % of revenue, well understood
+- Sales & marketing: ~21% — the largest line item and the key lever in a slow-
+  growth environment. Management has room to flex this lower if growth stays
+  muted.
+- R&D: ~18%, funding Kokai, UID2, Ventura, Retail Media
+- G&A: ~6%
+- SBC: ~$300M+ annualized — genuinely large; we reconcile this below.
+
+STOCK-BASED COMPENSATION RECONCILIATION
+----------------------------------------
+2025 SBC ran roughly $300-350M against $796M reported FCF. If we treat SBC as a
+real economic cost (which Buffett and Munger both would), cash FCF net of SBC
+is closer to $460-495M, or ~16-17% of revenue. That still yields a P/(cash FCF
+net of SBC) of ~20-22x at $21 — not dirt cheap, but reasonable for a durable
+platform.
+
+We will build the DCF in two columns: reported FCF, and FCF-less-SBC. Any buy
+must be underwritten on the more conservative column.
+
+WHY THE BUSINESS DOES NOT COMMODITIZE EASILY
+---------------------------------------------
+A DSP is a network-effect business layered on a data-quality business layered
+on a trust-and-transparency business. New advertiser spend improves Koa's AI
+bidding, which improves outcomes, which attracts more advertisers. More
+publisher integrations yield more inventory, which improves fill and price,
+which attracts more advertisers. UID2 layers a third dimension of network value.
+
+A challenger who started today would need:
+  - petabyte-scale historical bid data to train a competitive AI bidder
+  - integrations with ~100 major SSPs, data vendors, and measurement partners
+  - 10,000+ trained agency traders who prefer their UI
+  - trust of at least 5 of the 6 global holding companies
+
+This is a ~5-year, multi-billion-dollar catch-up for any would-be challenger
+that does not already have a distribution advantage. Only three companies have
+that distribution advantage: Google, Amazon, and (plausibly) Meta.
+
+================================================================================
+2. TOTAL ADDRESSABLE MARKET — 10-YEAR VIEW
+================================================================================
+
+GLOBAL DIGITAL AD MARKET
+-------------------------
+2025 global digital advertising: ~$730B
+2030 estimate: ~$1.1T (roughly 8-9% CAGR)
+
+OF THAT, THE PROGRAMMATIC PORTION
+----------------------------------
+~$420B programmatic in 2025, growing to an estimated ~$800B by 2030.
+
+OF THAT, THE OPEN-INTERNET PORTION (TTD'S HUNTING GROUND)
+----------------------------------------------------------
+Walled gardens (Google Search, Meta, TikTok, Amazon Ads O&O) capture ~65% of
+programmatic. The "open internet" — premium CTV publishers, audio, digital out
+of home, open-web display and video — is the remaining ~35%, or about $150B
+today, growing to an estimated $280-320B by 2030. That is TTD's real TAM.
+
+OF THAT, CONNECTED TV (CTV) IS THE GROWTH ENGINE
+-------------------------------------------------
+CTV spending is expected to exceed 40% of total global ad spend by 2030, with
+US CTV alone at ~$51B by 2029 (from ~$30B in 2025). Industry expectations put
+60-75% of US TV ad spend through a programmatic path by 2030, with essentially
+all CTV automated in some form.
+
+CTV is ~50% of TTD's current revenue mix. A 10-12% CAGR in US CTV plus faster
+international growth over the next 5 years gives TTD a structural tailwind
+distinct from macro cyclicality.
+
+RETAIL MEDIA
+-------------
+Retail media globally is the fastest-growing ad segment — ~20% CAGR — and TTD's
+Walmart, Kroger, and international retailer integrations position it as the
+neutral demand-side intermediary for retail media budgets that do not flow
+through Amazon's closed loop.
+
+TTD PENETRATION
+----------------
+TTD's ~$12-13B gross spend today against a $150B open-internet programmatic TAM
+is ~8% penetration. Even at moderate share gains and a flat TAM-to-TAM take
+rate, the mathematical runway for decade-horizon compounding is intact. The
+debate is not "is the TAM there" — it clearly is. The debate is "does TTD
+capture its fair share of the incremental TAM, or does Amazon DSP and DV360
+capture a disproportionate share at TTD's expense."
+
+================================================================================
+3. COMPETITIVE DYNAMICS — THE 5-10 YEAR VIEW
+================================================================================
+
+THE THREE-HORSE RACE
+---------------------
+Feb 2025 market share snapshot:
+  Google DV360:       ~47%
+  Amazon DSP:         ~20%
+  The Trade Desk:     ~19%
+  Everyone else:      ~14% (Xandr, Basis, MediaMath, agency-proprietary)
+
+Amazon DSP grew ad revenue 23% YoY in Q4 2025 while TTD grew 14%. DV360 grew
+mid-teens. That is a meaningful signal: Amazon is taking roughly 1-2 points of
+share per year from the combined pie, and most of that is coming from TTD
+rather than DV360 (because TTD and Amazon compete for the same open-internet
++ CTV budgets that bypass Google's owned-and-operated stack).
+
+This is the bear case's strongest pillar, and it is real.
+
+AMAZON DSP — STRUCTURAL ADVANTAGES
+-----------------------------------
+1. First-party retail data on 200M+ Prime members — unreplicable
+2. Prime Video CTV inventory owned-and-operated — subsidized placement
+3. Netflix partnership (Q4 2025 onward) — Amazon DSP is the primary
+   programmatic buyer for Netflix's ad tier in 12 markets including US, UK, JP
+4. Yahoo DSP as a secondary partner (announced Mar 2026)
+5. Cross-subsidy from AWS and Retail — Amazon can run the DSP as a loss leader
+6. Spotify partnership (Fall 2025)
+
+In short: Amazon has every structural advantage TTD does not have, and every
+advantage it has (logged-in-shopper data, CTV inventory, cross-product pull)
+maps directly onto the buckets where TTD's growth has slowed. The Netflix win
+is the canary — Netflix is ~10% of global US ad-supported streaming hours, and
+its primary DSP being Amazon is a real loss for TTD.
+
+AMAZON DSP — STRUCTURAL DISADVANTAGES
+--------------------------------------
+1. Trust deficit with agencies — buying media through a retailer that competes
+   with your brand's D2C strategy is a recurring objection (most CPG / apparel
+   / consumer electronics advertisers face this tension)
+2. Walled-garden architecture — Amazon DSP does not buy much open-internet
+   inventory outside Amazon's o&o properties; its "off-Amazon" inventory
+   quality has been criticized
+3. Audit / transparency: Amazon does not offer full log-level data the way TTD
+   does. Holding companies are uncomfortable running audit trails through a
+   direct competitor.
+4. Take rate opacity: Amazon's fee structure is notoriously opaque
+5. No open identity standard — Amazon is a closed ID ecosystem; UID2 is the
+   open-internet alternative that TTD maintains
+
+THE REAL COMPETITIVE QUESTION
+------------------------------
+It is not "Amazon vs TTD for the whole TAM." It is "Amazon vs TTD for the
+fastest-growing CTV + retail-adjacent incremental dollars." Our view:
+  - Amazon will continue to win disproportionate share of CTV for the next 3-5
+    years, particularly inventory tied to their retail loop
+  - TTD will retain dominant share of the non-Amazon open internet, CTV ex-
+    Prime+Netflix, audio, and the identity/measurement layer
+  - Take rates will compress 100-200 bps across the industry as Amazon pushes
+    aggressive pricing, hitting TTD disproportionately
+
+A 150 bps permanent take-rate compression on TTD's base applies ~6-7% revenue
+impact. That's painful but absorbable. The DCF will model this explicitly.
+
+GOOGLE DV360
+-------------
+Google's DSP is not going away, but its structural advantage is under
+unprecedented assault. The DOJ antitrust case against Google's ad-tech stack
+resulted in liability findings in 2024-2025 and remedy proceedings are ongoing
+through 2026. Potential outcomes range from behavioral remedies (low harm to
+Google) to forced divestiture of AdX or parts of DV360 (significant tailwind
+for TTD as open-internet inventory would be forced into a more competitive
+auction). We model DV360 as a neutral-to-positive optionality variable.
+
+META AND TIKTOK
+----------------
+These are walled gardens on the sell side. They are competitors for ad budget,
+not DSP share. The risk here is secular, not structural to TTD: when macro
+softens, CPG and auto pull budget back into Meta and TikTok because the
+conversion attribution is simpler, even if the ROAS is worse long-term. This is
+part of the cyclical explanation for the 2026 deceleration.
+
+================================================================================
+4. THE BEAR CASE — DETAILED TEARDOWN
+================================================================================
+
+This section is the core of this deep dive. The user has specifically asked us
+to stress-test four bear-case pillars. We take each in turn and attempt to
+reach a defensible probabilistic verdict.
+
+--------------------------------------------------------------------------------
+BEAR PILLAR 1: CFO INSTABILITY
+--------------------------------------------------------------------------------
+
+FACTS
+------
+- Laura Schenkein served as CFO ~June 2023 to mid-2025 (~2 years). Departure
+  was an orderly, announced transition.
+- Alex Kayyal appointed CFO August 2025. Former Lightspeed Venture Partners GP.
+  Kept a board seat upon appointment.
+- Kayyal was TERMINATED (company's own word) effective January 24, 2026 —
+  after just five months. The termination was announced on a Sunday.
+- Tahnil Davis, 11-year company veteran and Chief Accounting Officer, named
+  interim CFO. Chief Accounting Officer titles typically imply deep knowledge
+  of the books.
+- At the time of termination, TTD simultaneously REAFFIRMED its 2025 results
+  (subsequently confirmed at reported numbers) and its forward guidance.
+- Kayyal retained his board seat through the 2026 annual meeting — suggesting
+  a governance dispute rather than a financial-control malfeasance.
+- Jeff Green bought $148M of stock personally on March 2-4, 2026, at $23-25.
+  A CEO does not put $148M of personal capital behind a company where he
+  believes books are compromised.
+
+INTERPRETATION
+---------------
+Two CFO transitions in 30 months is a governance yellow flag, not a red flag,
+under three conditions that appear to be met:
+  1. The reaffirmation of 2025 results — if there were an accounting problem,
+     this would not have happened
+  2. The interim CFO is a deep insider with a long clean record
+  3. The CEO's personal open-market buying at materially higher prices
+
+The most parsimonious explanation is a culture/operating fit issue between Green
+and Kayyal (Kayyal was a VC-background outsider landing in a founder-led,
+operator-driven culture), not a financial-control or strategic crisis. Kayyal's
+continued board seat reinforces this.
+
+RESIDUAL RISK
+--------------
+If the permanent CFO hire is delayed past Q2 2026, or if the Q1 2026 report on
+May 13 contains a restatement, the interpretation changes dramatically.
+
+VERDICT
+--------
+Bear pillar 1: 25% weight. Real concern, partially visible, fully priced in.
+
+--------------------------------------------------------------------------------
+BEAR PILLAR 2: AMAZON DSP COMPETITION
+--------------------------------------------------------------------------------
+
+FACTS
+------
+- Amazon ad revenue grew 23% in Q4 2025 vs TTD's 14%
+- Amazon DSP is now ~20% DSP market share vs TTD ~19%
+- Netflix programmatic primary partner = Amazon DSP (Q4 2025 onward)
+- Spotify programmatic primary partner (fall 2025) = Amazon DSP
+- Amazon is subsidizing the DSP, per multiple analyst reports
+- Prime-shopper first-party data remains a structural Amazon advantage
+
+INTERPRETATION
+---------------
+The Netflix and Spotify losses are concrete and matter. However, Amazon's
+share gains have so far come disproportionately from the long tail of small
+DSPs and from budget expansion by advertisers who were not previously
+programmatic at all (bodega brands using Amazon Ads for the first time), not
+from TTD's top-200 agency accounts. TTD's >95% gross retention through the
+Amazon ramp-up is hard evidence of this. If Amazon were stealing core TTD
+customers, retention would already be below 95%.
+
+The structural asymmetry: TTD's average enterprise customer spends across 50+
+supply partners. Amazon DSP customers concentrate spend on Amazon o&o + a thin
+layer of third-party inventory. These are, in practice, two different use
+cases. They overlap at the margin on CTV and on lower-funnel conversion
+campaigns. They do NOT overlap on brand-building, upper-funnel reach, open-
+internet video, audio, DOOH, or international.
+
+The most likely 5-year outcome is a splintering of the DSP market into:
+  - Amazon DSP: retail-connected, CTV owned-and-operated, mid-market brands
+  - TTD: open-internet premium brand + agency workflow, global reach, ID graph
+  - DV360: Google-stack-adjacent buyers, YouTube-anchored
+  - Long tail: decline
+
+In that world TTD can still compound at 12-16% for a decade — just not 25-30%.
+
+RESIDUAL RISK
+--------------
+If Amazon begins winning anchor holding-company contracts (WPP GroupM, Omnicom
+OMG) as primary rather than secondary DSP, the thesis breaks. Watch WPP and
+Omnicom DSP preferred-partner announcements in 2026-2027.
+
+Separately, if Amazon slashes its effective take rate to compete with TTD on
+a cost basis, TTD take rates compress industry-wide. We model a 150 bps take-
+rate compression in the DCF base case.
+
+VERDICT
+--------
+Bear pillar 2: the single most important variable in the thesis. 35% weight.
+Partially priced in at current ~$21 price but not fully. Outcome bifurcates on
+holding-company preferred-partner decisions in the next 24 months.
+
+--------------------------------------------------------------------------------
+BEAR PILLAR 3: VENTURA OS EXECUTION RISK
+--------------------------------------------------------------------------------
+
+FACTS
+------
+- Ventura announced November 2024 as a proprietary CTV operating system
+- Sonos hardware partnership (rumored) fell through
+- Only announced OEM at launch: DirecTV custom UI (a satellite/streaming
+  hybrid, not primary TV market)
+- February 2026: pivoted from "standalone OS" to "Ventura Ecosystem" with VIDAA
+  (V, 50M+ Hisense/Toshiba devices) and Nexxen
+- No published unit-economics or device-shipment guidance
+- Capex and R&D cost for Ventura is commingled with Kokai and platform
+  development — not separately disclosed
+
+INTERPRETATION
+---------------
+Ventura OS as originally conceived — a challenger to Roku and Fire TV on a
+hardware-by-hardware basis — was always a low-probability moonshot. The
+pivoting to an "ecosystem" / integration layer approach in Feb 2026 is the
+right call made a few quarters too late. It essentially concedes that TTD will
+not build a Roku competitor and instead focuses on making existing TV OSes
+more programmatic-friendly.
+
+The VIDAA partnership matters: VIDAA powers Hisense and Toshiba smart TVs, which
+together ship ~12-15M units per year in the US and 50M+ globally. If Ventura's
+ad stack becomes the default programmatic plumbing on those devices, it is a
+meaningful footprint — not Roku-scale, but meaningful.
+
+Nexxen is a supply-side platform. The Nexxen partnership gives Ventura a
+direct inventory pipeline without needing OEM deals for every inventory source.
+
+KEY QUESTION: How much of TTD's ~$400M of annualized R&D went to Ventura vs
+Kokai? Management has not broken this out. If Ventura consumed >$100M of 2025
+R&D and still has not produced material revenue, it has been value-destructive.
+
+BULL READING
+-------------
+Ventura was framed by Green as a strategic option to ensure the CTV supply
+chain stays open. Even if Ventura OS itself never scales, the threat of it
+existing may have been sufficient to extract better terms from Roku, Samsung
+Tizen, Vizio, etc., during 2024-2025 inventory negotiations. Option value has
+been partially harvested.
+
+VERDICT
+--------
+Bear pillar 3: 10% weight. Real cost center, not a company-killer. The
+ecosystem pivot suggests management self-corrected. The project should be
+sized in the DCF as ~$100M sunk cost with negligible 5-year revenue
+contribution in the base case, and meaningful upside (~$200-300M high-margin
+revenue) in the bull case.
+
+--------------------------------------------------------------------------------
+BEAR PILLAR 4: CYCLICAL vs STRUCTURAL DECELERATION
+--------------------------------------------------------------------------------
+
+This is the most important debate for the valuation.
+
+FACTS
+------
+Revenue growth trajectory:
+  FY2023: +23%
+  FY2024: +26% (benefit from US election political ad spend)
+  FY2025: +18%
+  Q1 2025: +25%
+  Q2 2025: +19%
+  Q3 2025: +18%
+  Q4 2025: +14% (reported), ~+19% ex-political base effect
+  Q1 2026 guide: +10% ("at least $678M")
+
+CYCLICAL ARGUMENTS
+-------------------
+1. 2024 was an unusually strong political ad year — ~$200M+ of political ad
+   spend flowed through TTD in 2024, compressing 2025 comparisons. Ex-
+   political, Q4 2025 growth was ~19%, not 14%. This is a known base effect.
+2. CPG and auto (~25-30% of TTD vertical exposure) cut budgets aggressively
+   in H2 2025 on tariff/inflation uncertainty. Agencies are releasing budgets
+   quarter-by-quarter rather than annually.
+3. Kokai transition: forcing a full UI migration in 2025 required agencies to
+   retrain traders and workflows. Adoption friction reduced near-term spend
+   but sets up multi-year improvement — 26% better CPA, 58% better cost-per-
+   unique-reach, 94% higher CTR per company-reported case studies.
+4. Publicis memo disrupted ~$300-500M of annualized spend while transparency
+   audit ran — a one-time event rather than a run-rate impairment. Publicis
+   on their own Q1 2026 earnings call confirmed they have no intention to
+   build a competing offer.
+
+STRUCTURAL ARGUMENTS
+---------------------
+1. Amazon DSP is taking disproportionate share of the fastest-growing pool
+   (CTV + retail-connected budgets)
+2. AI-driven walled-garden ads (Meta Advantage+, Google Performance Max) are
+   winning direct-response budget that used to test on TTD
+3. Take rates are under durable compression pressure as Amazon subsidizes
+4. Open-web supply is shrinking in some verticals as AI search (Google AI
+   Overviews, ChatGPT) reduces publisher page views, compressing the open-
+   internet impression pool
+5. Mature-market CTV penetration (US) is plateauing; incremental growth
+   requires international expansion, where TTD is weaker
+
+OUR PROBABILISTIC DECOMPOSITION
+--------------------------------
+Applying a rough attribution to the deceleration from the 27% FY2024 growth
+rate to the 10% Q1 2026 guide (17-point gap):
+
+  Political base effect (2024 election lap):     ~3-4 points  (cyclical)
+  Macro/tariff CPG+auto budget cuts:              ~4-5 points  (cyclical)
+  Kokai migration friction:                       ~2 points    (transitional)
+  Publicis audit disruption:                      ~1-2 points  (one-time)
+  Amazon DSP share erosion on CTV:                ~3-4 points  (structural)
+  Take-rate compression:                          ~1-2 points  (structural)
+
+That attribution gives roughly 10-12 points of transient (cyclical + one-time +
+transitional) deceleration and 4-6 points of genuine structural deceleration.
+
+Reading that forward, a "normalized" 2027 growth rate — once political effects,
+Kokai friction, and Publicis audit are lapped, and assuming macro CPG+auto
+normalizes — should be in the 14-18% range, not the 10% implied by Q1 2026.
+
+If that attribution is correct, the current valuation is substantially too
+punitive. If Amazon's share erosion is larger than we estimate (e.g., 8-10
+points structural rather than 4-6), then 10% becomes the new normal and the
+stock is roughly fairly priced at $21.
+
+VERDICT
+--------
+Bear pillar 4: the deceleration is probably ~60% cyclical, ~40% structural.
+The market is pricing closer to 100% structural. This is the key disagreement
+between our view and the consensus, and it is where DCF sensitivity analysis
+will earn its keep.
+
+================================================================================
+5. BULL CASE — WHAT COULD GO RIGHT OVER 5-10 YEARS
+================================================================================
+
+CATALYST 1: CYCLICAL NORMALIZATION (2026-2027)
+-----------------------------------------------
+CPG and auto budgets rebound as tariff uncertainty clears; political ad spend
+returns in 2028 (midterm year); Kokai adoption stabilizes into measurable ROI
+improvement. Growth reaccelerates to 15-20%.
+
+CATALYST 2: GOOGLE ANTITRUST REMEDIES (2026-2028)
+--------------------------------------------------
+Remedy decisions in the Google ad-tech case arrive in 2026-2027. Any remedy
+that separates AdX or DV360 from Google's owned-and-operated stack increases
+the open-internet pool that TTD buys from. In the favorable-remedy scenario,
+TTD captures 3-5 points of incremental share without lifting a finger.
+
+CATALYST 3: UID2 BECOMES DEFAULT OPEN-INTERNET ID (2026-2028)
+--------------------------------------------------------------
+Third-party cookies are gone. UID2 is the most-adopted non-walled-garden ID.
+If UID2 reaches critical mass on the supply side, TTD sits at the center of
+the identity graph and commands a premium take rate on UID2-enabled inventory
+(2.9x CTR, 2.4x CPA per TTD case studies).
+
+CATALYST 4: CTV SECULAR GROWTH THROUGH 2030
+--------------------------------------------
+CTV ad spend reaches ~$51B US by 2029, ~40% of global ad spend by 2030. Even
+losing some share to Amazon, the absolute dollar flow through TTD's CTV book
+can compound at 12-16% annually through 2030.
+
+CATALYST 5: KOKAI MARGIN EXPANSION
+-----------------------------------
+Mature Kokai fully eliminates low-value labor across the buying workflow.
+Operating leverage from 24% Adj. EBITDA margin in 2025 to 30-35% by 2029 on
+even modest revenue growth yields substantial FCF growth.
+
+CATALYST 6: BALANCE SHEET AND CAPITAL RETURN
+---------------------------------------------
+~$1.7B cash/ST investments and no debt. Modest growth investment requirement.
+Rising surplus cash flow gives management multiple paths: buybacks at current
+trough multiples are highly accretive; tuck-in M&A for measurement/data
+capabilities; continued investment in Kokai/UID2. Management has not yet
+announced a formal buyback authorization — doing so would be a significant
+signal.
+
+BULL CASE 10-YEAR FINANCIAL PICTURE
+------------------------------------
+Revenue: $2.9B (2025) -> $7-8B (2030) -> $11-13B (2035) at 12-14% CAGR
+EBITDA margin: 24% -> 32% -> 35%
+FCF: $800M -> $2.0B -> $3.5B
+At a fair 20x exit multiple on $2.0B of 2030 FCF = $40B enterprise value
+(~4x today's $10B market cap, ~15% annual return plus cash accumulation).
+
+================================================================================
+6. MANAGEMENT & CAPITAL ALLOCATION HISTORY
+================================================================================
+
+JEFF GREEN (CEO / FOUNDER)
+---------------------------
+- 17 years running TTD; bootstrapped the business; IPO'd 2016; compounded
+  revenue ~31% CAGR 2020-2024
+- Dual-class structure (Class B supervoting @ 10 votes) — concentration risk,
+  but Green's track record earns the structure in most shareholders' view
+- Personal March 2026 open-market buy of $148M across 6M shares at $23-25 avg.
+  This is unprecedented in ad-tech CEO behavior and carries real signal value:
+  (a) Green is not liquidity-constrained — he could have waited; (b) purchase
+  via limited partnership suggests estate-planning structure, implying a long
+  hold; (c) the weighted avg. of $24+ is materially above current ~$21
+- Communication style: prone to sweeping claims (CTV "fundamentally
+  transformed," Ventura "revolutionary") that age poorly. Investors should
+  mentally discount Green's marketing rhetoric by ~30% and focus on filings.
+
+TAHNIL DAVIS (INTERIM CFO)
+---------------------------
+- 11-year TTD veteran, most recently Chief Accounting Officer
+- Deep institutional knowledge of the books — this is a positive for accounting
+  integrity even if not ideal for strategic finance
+- Likely interim until a permanent hire is named; the permanent CFO hire is a
+  near-term catalyst/risk
+
+CAPITAL ALLOCATION TRACK RECORD
+-------------------------------
+- No meaningful M&A (last acquisition of note: Adbrain, 2017) — conservative
+- No material dilution outside of SBC at ~2-3%/year
+- No debt taken on
+- Generated $3.5B+ cumulative FCF since IPO; cash on balance sheet now ~$1.7B
+- Share buybacks have been sporadic and modest; current buyback authorization
+  not publicly disclosed as large
+- R&D plowback into Kokai, UID2, Ventura has been large; Kokai has been
+  clearly accretive, UID2 likely so, Ventura unclear
+
+GRADE: B+. Conservative, founder-aligned, capable. Main gap: capital return has
+been smaller than the cash pile justifies; a formal $1B+ buyback at these
+prices would be demonstrably accretive, and its absence is a mild mark against
+management even with the personal CEO purchase.
+
+================================================================================
+7. OPTIONALITY
+================================================================================
+
+TTD has three distinct optionality vectors that would each be worth
+incremental value if they succeeded:
+
+(A) UID2 AS INDUSTRY STANDARD
+------------------------------
+If UID2 becomes the default identity spine for the non-walled-garden internet,
+TTD captures economics across every impression transacted on UID2 — including
+impressions not bought through TTD's DSP. This would create a true neutral-
+infrastructure layer similar to how Visa captures economics on every Visa
+transaction regardless of which bank issued the card. We do not underwrite
+this optionality in the base case.
+
+(B) VENTURA ECOSYSTEM BECOMES THE "OPEN CTV PROGRAMMATIC LAYER"
+----------------------------------------------------------------
+Ecosystem pivot with VIDAA/Nexxen could make Ventura the default programmatic
+plumbing for non-Roku, non-Amazon CTV devices. ~$200-300M of high-margin
+revenue by 2029 in the bull outcome. Not underwritten in the base case.
+
+(C) INTERNATIONAL EXPANSION
+----------------------------
+TTD revenue is still ~88% North America. International is growing faster than
+US but off a small base. Capturing 10% of EMEA + APAC open-internet
+programmatic by 2030 would add $1-2B of revenue. Partially underwritten in the
+base case.
+
+(D) DOJ GOOGLE REMEDY WINDFALL
+-------------------------------
+If AdX/DV360 is forced to divest, TTD is the single largest beneficiary. This
+is a material, asymmetric put option embedded in the stock for free at current
+prices. Not underwritten in the base case.
+
+================================================================================
+8. SCENARIOS — 5-YEAR PRICE PATH
+================================================================================
+
+                    |  BEAR (25%)  |  BASE (55%)  |  BULL (20%)
+--------------------+--------------+--------------+--------------
+Rev CAGR 2026-2030  |     6%       |     13%      |     20%
+2030 Revenue        |    $3.9B     |    $5.3B     |    $7.2B
+2030 FCF Margin     |    24%       |    29%       |    33%
+2030 FCF            |    $935M     |    $1.54B    |    $2.38B
+Fair FCF Multiple   |    12x       |    20x       |    25x
+2030 Equity Value   |    $11.2B    |    $30.8B    |    $59.5B
+Per share (fully
+diluted, ~500M sh.) |    $22       |    $62       |    $119
+Current Price       |    $21       |    $21       |    $21
+5-yr IRR            |    1%        |    24%       |    42%
+
+Expected value = 0.25*$22 + 0.55*$62 + 0.20*$119 = $63 in 5 years
+Expected 5-yr IRR = ~25%
+
+This is consistent with Sell-side analyst consensus near-term target ~$47 and
+the bull-case long-term $119. We would not underwrite the bull case at size;
+we underwrite the base case at size with bear downside at ~flat from current
+levels (i.e., limited capital loss risk at ~$21).
+
+================================================================================
+9. WHAT WOULD HAVE TO BE TRUE FOR THE THESIS TO BREAK
+================================================================================
+
+The thesis BREAKS if any three of the following six occur in the next 24
+months:
+
+1. WPP or Omnicom names Amazon DSP as primary preferred partner for their
+   global holding company book.
+2. Net revenue retention falls below 90% (vs current >95%).
+3. Q1 2026 revenue comes in meaningfully below the $678M guide, or full-year
+   2026 implies <8% growth.
+4. A material financial restatement of 2024 or 2025 financials.
+5. Permanent CFO search extends past September 2026 (over 8 months interim).
+6. Take rate compresses more than 300 bps in a single reporting period.
+
+The thesis DEFINITELY HOLDS if:
+- Q1 2026 revenue beats $700M AND
+- A credible permanent CFO is named by July 2026 AND
+- Q2 2026 growth is above Q1 2026 growth (reacceleration inflection visible)
+- Amazon share gains plateau
+
+We are in a window of roughly 90 days (April through mid-July 2026) where
+most of these indicators resolve. This is precisely why the appropriate
+posture is WATCH / ACCUMULATE ON WEAKNESS — buy the dip if it sells off further
+before the indicators resolve, or size up after the May 13 print if it
+confirms a floor.
+
+================================================================================
+10. LINK TO DCF — WHAT THE DCF MUST DO
+================================================================================
+
+For this name in particular, the DCF needs to explicitly model:
+
+(a) A "take-rate compression" sensitivity: -150 bps, -300 bps base cases
+(b) A structural vs cyclical revenue decomposition across the 10-year forecast
+(c) SBC treated as a real cost — two FCF columns (reported FCF and FCF-less-
+    SBC). Underwriting happens on the less-SBC column.
+(d) Ventura OS costs set to zero return — assume sunk cost, no revenue
+(e) Both perpetuity-growth and exit-multiple terminal values, as required by
+    house rules
+(f) Three explicit scenarios matching Section 8 above, with probability
+    weights applied to arrive at an expected-value intrinsic per-share number
+(g) A required-return hurdle of at least 12% for a mid-cap tech name with
+    meaningful competitive overhang
+
+If the expected-value per-share intrinsic at a 12% hurdle is >=$30, TTD
+becomes a candidate for the portfolio's first mid-cap position. If it comes
+in at $20-30, we continue to watch. Below $20, we pass permanently.
+
+================================================================================
+11. SUMMARY — PRELIMINARY VIEW (SUBJECT TO DCF)
+================================================================================
+
+The Trade Desk is not a broken business. It is a high-quality platform
+currently sitting at the ugly intersection of four simultaneous headwinds,
+three of which are transient (political lap, Kokai friction, Publicis audit)
+and one of which is partially structural (Amazon DSP). Management has made
+two identifiable mistakes (the initial Ventura standalone-OS framing, and the
+Kayyal hire) and has self-corrected both. The founder has committed $148M of
+personal capital at prices 15%+ above current levels.
+
+The base-case 5-year IRR is ~24% with limited downside if the bear case
+unfolds. Expected-value 5-year IRR is ~25%. These are returns worth stepping
+to the plate for — at the right size, with the right confirming signals.
+
+We proceed to DCF next, and to a potential buy decision contingent on:
+  (i) DCF expected-value intrinsic >=$30/share
+  (ii) Q1 2026 print on May 13 not worse than -500 bps vs guidance
+  (iii) Permanent CFO announcement by July 2026
+  (iv) No adverse Amazon-primary-partner announcement at any top-2 holdco
+
+Buy size if all four conditions met: initial 3-4% portfolio position at <$25
+per share, with capacity to add up to 6-7% if Q2 reacceleration confirms.
+
+================================================================================
+DISCLOSURES
+================================================================================
+
+Internal research document for Tech-Buffett Capital virtual portfolio. All data
+drawn from TTD public filings, press releases, industry trade press
+(AdExchanger, Digiday, AdWeek, MarketingBrew, CFODive, AdTechRadar, StreamTV
+Insider, VideoWeek, MediaPost, Business Wire), and company investor relations
+materials, accessed April 15-16, 2026. No position held in TTD at time of
+writing. Prior session: Initiation of Coverage dated 2026-04-15. Next session
+anticipated: DCF model. This document does not constitute investment advice.
+
+--- END DEEP DIVE ---
