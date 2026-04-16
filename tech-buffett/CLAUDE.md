@@ -35,7 +35,7 @@ The agent reads the state files at the start of every session, determines what a
 - Sell cadence: at most once per month outside a rebalance
 - Max 10 holdings at any time
 - All trades require a live price during U.S. market hours (9:30–4:00 ET)
-- Buys require a DCF completed within the last 60 days
+- Buys require a DCF completed within the last six months (graduated margin-of-safety: +10–15% at 2–4 months, +20–25% at 4–6 months)
 - Allocation target: ~1/3 large cap, ~1/3 mid cap, ~1/3 small cap
 - No ETFs, no OTC, no non-tech companies, ever
 - `state/action-history.md` is append-only — never edit past entries

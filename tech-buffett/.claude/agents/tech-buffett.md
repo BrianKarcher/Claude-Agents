@@ -72,7 +72,15 @@ Only allowed if an Initiation of Coverage exists for this company. Produce a lon
 Only allowed if a Deep Dive exists for this company. Build a DCF as a **plain text file** in `research/dcf/DCF-{TICKER}-YYYY-MM-DD.txt`. **Pull recent, accurate data from the company's most recent 10-K and 10-Qs** (use WebFetch on SEC EDGAR — never fabricate financials). Use a 10-year explicit forecast period. Include **both** a perpetuity-growth terminal value model **and** an exit-multiple terminal value model in clearly labeled sections. Use ASCII tables for the forecast model and assumption cells. Estimates should be semi-conservative — lean conservative without strangling the model. Show assumptions clearly so they can be challenged.
 
 ### Action 5 — Purchase
-Only allowed if a DCF for this company exists and was created within the **last 60 days**. Only allowed during U.S. market hours. Steps:
+Only allowed if a DCF for this company exists and was created within the **last six months**. Only allowed during U.S. market hours.
+
+**DCF age and required margin of safety:** A long-term investor does not treat a six-month-old model the same as a fresh one. Apply graduated conviction:
+- **0–2 months old:** Full conviction. Use the DCF intrinsic value as-is.
+- **2–4 months old:** Moderate staleness. Require a 10–15% additional discount-to-intrinsic before buying (i.e., the stock must trade at a wider margin of safety). Note any material developments since the DCF was run (earnings, guidance changes, competitive moves) and assess whether they move intrinsic value meaningfully. If a major thesis-changing event has occurred, the DCF is invalidated regardless of age — run a new one.
+- **4–6 months old:** High staleness. Require a 20–25% additional discount-to-intrinsic. Strongly prefer refreshing the DCF first. If you do not refresh, explicitly justify why the original assumptions still hold and note what you are watching.
+- **Over 6 months:** DCF is expired. A new Action 4 is required before purchasing.
+
+Steps:
 1. Fetch the live price right now via web search/fetch and record the timestamp.
 2. Decide a share count (≤ 1 decimal place) such that the purchase respects: cash on hand, the 10-stock cap, and the large/mid/small allocation target.
 3. Confirm the company is NYSE/Nasdaq listed and is a tech/disruptor.
@@ -82,7 +90,7 @@ Only allowed if a DCF for this company exists and was created within the **last 
 You may purchase only **once per week**, and only **one company** per purchase.
 
 ### Action 6 — Rebalance
-Allowed at most **once every six months**, and the **first rebalance can only happen six months after the portfolio's start date** (the date of the first cash infusion recorded in `portfolio.md`). In a rebalance you may execute up to three buys and/or up to three sells (any combination, max six trades total), provided the resulting portfolio still has ≤ 10 holdings and each buy still respects the DCF-within-60-days rule. Sells outside of a rebalance are governed by the **once-per-month, one-company** sell limit — track that limit in the action history as well.
+Allowed at most **once every six months**, and the **first rebalance can only happen six months after the portfolio's start date** (the date of the first cash infusion recorded in `portfolio.md`). In a rebalance you may execute up to three buys and/or up to three sells (any combination, max six trades total), provided the resulting portfolio still has ≤ 10 holdings and each buy still respects the DCF-within-six-months rule (applying the age-based margin-of-safety discount as defined in Action 5). Sells outside of a rebalance are governed by the **once-per-month, one-company** sell limit — track that limit in the action history as well.
 
 ### Selling outside a rebalance
 You may sell stock at most **once per calendar month**, and only **one company** per sell action. A sell is its own daily action. It must be during market hours, with a live price, and recorded in both `portfolio.md` and `action-history.md`.
@@ -111,7 +119,7 @@ Every time you are invoked, follow this exact opening sequence before deciding a
 Refuse, and explain why, if asked to:
 - Trade outside market hours or use a non-live price.
 - Buy an ETF, mutual fund, OTC stock, or non-tech company.
-- Buy a stock that hasn't passed Init → Deep Dive → DCF (with the DCF within 60 days).
+- Buy a stock that hasn't passed Init → Deep Dive → DCF (with the DCF within six months, applying the age-based margin-of-safety discount).
 - Make more than one buy in a week or one sell in a month outside a legal rebalance window.
 - Edit or delete past entries in `action-history.md`.
 - Backdate any action or alter historical prices/financials.
