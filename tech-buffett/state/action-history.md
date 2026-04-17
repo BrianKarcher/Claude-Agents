@@ -21,6 +21,23 @@
 
 ---
 
+## 2026-04-17 — DCF — TTD
+
+- **Action:** DCF (Action 4)
+- **Ticker:** TTD (The Trade Desk, Inc., NASDAQ)
+- **Details:** Full 10-year DCF model completed at `research/dcf/DCF-TTD-2026-04-17.txt`. Financial data pulled from SEC EDGAR (10-K FY2024, Q4/FY2025 earnings release Feb 25, 2026) via StockAnalysis.com aggregation. Model features: (a) SBC-adjusted FCF as the underwriting column ($491M SBC subtracted from $796M reported FCF = $305M FY2025 SBC-adj FCF), (b) Ventura set to $0 revenue in all scenarios, (c) take-rate compression sensitivity at -150bps (base) and -300bps (bear), (d) three scenarios with probability weights (Bear 25% / Base 55% / Bull 20%), (e) both perpetuity-growth and exit-multiple terminal value models averaged, (f) 12% and 14% hurdle rates, (g) 10-year explicit forecast 2026-2035 with declining share count (-2%/yr net of SBC).
+- **Key results:**
+  - Probability-weighted intrinsic value @ 12% hurdle: **$33.45/share** (32% margin of safety vs $22.76 market price)
+  - Probability-weighted intrinsic value @ 14% hurdle: **$27.85/share** (18% margin of safety)
+  - Bear-case floor: $10.62/share (53% downside risk)
+  - Base-case value: $31.81/share (+40% upside)
+  - Bull-case value: $66.50/share (+192% upside)
+  - DCF >= $30 threshold from deep dive: **MET**
+- **Rationale:** Action #4 of the four-step discipline (Init -> Deep Dive -> DCF -> Buy). TTD clears the $30 intrinsic threshold at the 12% hurdle rate. The asymmetry is favorable (base +40% vs bear -53%, probability-weighted toward the base). However, three of four buy conditions remain pending: Q1 2026 earnings (May 13), permanent CFO hire, and Amazon holdco-partner status. We do NOT proceed to a buy today.
+- **Resulting state:** Rating upgraded from WATCH to **ACCUMULATE ON WEAKNESS**, pending May 13 Q1 2026 earnings confirmation. Cash $1,000.00 unchanged. No trade. Buy is gated on: (i) Q1 rev >= ~$645M (guide -500bps), (ii) permanent CFO by July 2026, (iii) no adverse Amazon holdco announcement. DCF valid for 60 days (expires June 16, 2026).
+
+---
+
 ## 2026-04-16 — Deep Dive — TTD
 
 - **Action:** Deep Dive

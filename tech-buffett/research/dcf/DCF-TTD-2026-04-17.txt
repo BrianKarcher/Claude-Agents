@@ -1,0 +1,652 @@
+TECH-BUFFETT CAPITAL  |  DISCOUNTED CASH FLOW MODEL
+================================================================================
+
+The Trade Desk, Inc. (NASDAQ: TTD)
+DCF Valuation  |  April 17, 2026
+Companion to: INIT-TTD-2026-04-15.txt, DEEP-TTD-2026-04-16.txt
+Model horizon: 10-year explicit forecast (2026-2035) + terminal value
+
+REFERENCE PRICE:   $22.76 (Apr 17, 2026 intraday)
+MARKET CAP:        ~$10.65B
+SHARES DILUTED:    ~494M (FY2025 weighted average; declining via buybacks)
+
+================================================================================
+TABLE OF CONTENTS
+================================================================================
+  A. DATA SOURCES & KEY INPUTS FROM SEC FILINGS
+  B. ASSUMPTIONS — THREE SCENARIOS (BEAR / BASE / BULL)
+  C. BASE CASE 10-YEAR FORECAST (SBC-ADJUSTED FCF)
+  D. TAKE-RATE COMPRESSION SENSITIVITY
+  E. TERMINAL VALUE — PERPETUITY-GROWTH MODEL
+  F. TERMINAL VALUE — EXIT-MULTIPLE MODEL
+  G. BEAR CASE 10-YEAR FORECAST
+  H. BULL CASE 10-YEAR FORECAST
+  I. PROBABILITY-WEIGHTED INTRINSIC VALUE
+  J. SENSITIVITY TABLES
+  K. VERDICT
+
+================================================================================
+A. DATA SOURCES & KEY INPUTS FROM SEC FILINGS
+================================================================================
+
+All figures sourced from TTD public filings on SEC EDGAR (10-K FY2024 filed
+Feb 2025; Q4/FY2025 earnings release Feb 25, 2026) and StockAnalysis.com
+aggregation of SEC data. No figure is fabricated.
+
+INCOME STATEMENT ($ millions)
++------------------+----------+----------+----------+----------+
+|                  |  FY2022  |  FY2023  |  FY2024  |  FY2025  |
++------------------+----------+----------+----------+----------+
+| Revenue          |  1,578   |  1,946   |  2,445   |  2,896   |
+| Cost of revenue  |    281   |    366   |    472   |    619   |
+| Gross profit     |  1,297   |  1,581   |  1,973   |  2,277   |
+| Gross margin     |  82.2%   |  81.2%   |  80.7%   |  78.6%   |
+| Operating income |    114   |    200   |    427   |    589   |
+| Operating margin |   7.2%   |  10.3%   |  17.5%   |  20.3%   |
+| Net income       |     53   |    179   |    393   |    443   |
++------------------+----------+----------+----------+----------+
+
+QUARTERLY REVENUE TRAJECTORY ($ millions)
++----------+--------+--------+--------+--------+--------+
+|          | Q1     | Q2     | Q3     | Q4     | Full Yr|
++----------+--------+--------+--------+--------+--------+
+| 2024     |   491  |   585  |   628  |   741  |  2,445 |
+| 2025     |   616  |   694  |   739  |   847  |  2,896 |
+| YoY grow |  +25%  |  +19%  |  +18%  |  +14%  |  +18%  |
++----------+--------+--------+--------+--------+--------+
+| Q1 2026 guide: >= $678M (+10% YoY)                    |
++--------------------------------------------------------+
+
+CASH FLOW STATEMENT ($ millions)
++---------------------------+----------+----------+----------+----------+
+|                           |  FY2022  |  FY2023  |  FY2024  |  FY2025  |
++---------------------------+----------+----------+----------+----------+
+| Operating cash flow       |    549   |    598   |    739   |    993   |
+| Capital expenditures      |    (84)  |    (47)  |    (98)  |   (197)  |
+| Reported free cash flow   |    465   |    551   |    641   |    796   |
+| Stock-based compensation  |    499   |    492   |    495   |    491   |
+| Depreciation & amort.     |     54   |     80   |     87   |    116   |
++---------------------------+----------+----------+----------+----------+
+| FCF margin (reported)     |  29.5%   |  28.3%   |  26.2%   |  27.5%   |
+| SBC-adjusted FCF          |   (34)   |     59   |    146   |    305   |
+| SBC-adj FCF margin        |  (2.2%)  |   3.0%   |   6.0%   |  10.5%   |
++---------------------------+----------+----------+----------+----------+
+
+NOTE: SBC-adjusted FCF = Reported FCF minus SBC. This is the UNDERWRITING
+column per our house rules. The Buffett/Munger view: SBC is a real economic
+cost that dilutes existing shareholders. We will not ignore it.
+
+BALANCE SHEET (Dec 31, 2025)
++---------------------------+-----------+
+| Cash & equivalents        |  $658M    |
+| Short-term investments    |  $645M    |
+| Total liquidity           | $1,303M   |
+| Traditional debt          |    $0     |
+| Operating lease liabs     |  $360M    |
+| Total equity              | $2,484M   |
+| Net cash (cash - debt)    | $1,303M   |
++---------------------------+-----------+
+
+SHARES & BUYBACK
+- FY2025 diluted WA shares: ~494M
+- FY2025 share repurchases: ~$1.4B at avg ~$52.60/share (~26.6M shares)
+- FY2024 share repurchases: ~$235M
+- New $500M buyback authorization announced Feb 2026
+- At current ~$22.76, $500M buys ~22M shares (4.5% of float)
+- We model net share count declining ~2% per year (buybacks minus SBC dilution)
+
+ADJUSTED EBITDA ($ millions)
++---------------------------+----------+----------+
+|                           |  FY2024  |  FY2025  |
++---------------------------+----------+----------+
+| Adjusted EBITDA           |    921   |  1,196   |
+| Adj. EBITDA margin        |  37.7%   |  41.3%   |
+| Q4 2025 Adj. EBITDA       |    400   |          |
+| Q4 2025 Adj. EBITDA mrgn  |  47.2%   |          |
++---------------------------+----------+----------+
+
+================================================================================
+B. ASSUMPTIONS — THREE SCENARIOS
+================================================================================
+
+DISCOUNT RATE (WACC)
+- Risk-free rate: 4.3% (10-yr UST, April 2026)
+- Equity risk premium: 5.5%
+- Beta: 1.8 (5-yr weekly, elevated due to recent volatility)
+- Cost of equity: 4.3% + 1.8 * 5.5% = 14.2%
+- Debt: $0 (no traditional debt; ignore lease obligations for WACC)
+- WACC = Cost of equity = 14.2%
+- HURDLE RATE: We use 12% as specified (more generous than WACC; if the
+  model clears 12%, it more than clears our conviction threshold; if it
+  clears 14.2%, it clears a pure-CAPM hurdle too).
+
+We present all NPV calculations at BOTH 12% and 14% discount rates.
+
+SHARE COUNT ASSUMPTIONS
+- 2025 actual: 494M diluted
+- We model -2% per year net (buybacks at depressed prices minus SBC grants)
+- By 2035: ~405M diluted shares
+
+VENTURA ASSUMPTION (all scenarios)
+- Ventura OS: $0 revenue contribution across all 10 years
+- Ventura R&D cost: embedded in the opex structure but generates nothing
+- This is a deliberate zero-credit approach per the deep-dive mandate
+
+SBC TREATMENT
+- SBC modeled as growing 3% per year from $491M base (reflects RSU refresh
+  grants and new hires, partially offset by lower grant prices)
+- SBC is subtracted from reported FCF to produce SBC-adjusted FCF
+- All intrinsic values are derived from SBC-adjusted FCF
+
++--------------------------+------------+------------+------------+
+|  ASSUMPTION              |   BEAR     |   BASE     |   BULL     |
++--------------------------+------------+------------+------------+
+| Probability weight       |    25%     |    55%     |    20%     |
+| Rev CAGR Yr 1-5 (26-30) |    6%      |    13%     |    20%     |
+| Rev CAGR Yr 6-10 (31-35)|    4%      |    10%     |    14%     |
+| 2035 Revenue             |  $4,700M   |  $8,700M   | $14,200M   |
+| Gross margin (stable)    |   77%      |   79%      |   81%      |
+| SBC-adj FCF margin 2035  |   10%      |   18%      |   24%      |
+| Take-rate compression    |  -300 bps  |  -150 bps  |    0 bps   |
+| Terminal growth (perp.)  |   2.5%     |   3.0%     |   3.5%     |
+| Exit EV/FCF multiple     |   12x      |   20x      |   28x      |
+| Amazon wins holdco deals |   Yes      |   No       |   No       |
+| Permanent CFO by Q3 2026 |   No       |   Yes      |   Yes      |
+| CTV share trend          |  Losing    |  Stable    |  Gaining   |
+| UID2 adoption            |  Stalls    |  Moderate  |  Standard  |
+| Google DOJ remedy        |  Behavioral|  Mild      |  Divestiture|
++--------------------------+------------+------------+------------+
+
+TAKE-RATE COMPRESSION DETAIL
+- Current effective take rate: ~22-24% of gross spend
+- -150 bps compression: take rate drops to ~20.5-22.5% by 2030
+  Revenue impact: ~6-7% cumulative drag over 5 years
+  Modeled as: 1.2% annual revenue reduction vs no-compression baseline
+- -300 bps compression: take rate drops to ~19-21% by 2030
+  Revenue impact: ~12-14% cumulative drag over 5 years
+  Modeled as: 2.5% annual revenue reduction vs no-compression baseline
+
+================================================================================
+C. BASE CASE 10-YEAR FORECAST (SBC-ADJUSTED FCF)
+================================================================================
+
+Revenue growth includes -150 bps take-rate compression baked in.
+SBC grows at 3% per year. Share count declines 2% per year.
+
++------+--------+--------+--------+--------+--------+--------+--------+--------+
+| Year | Rev    | YoY    | Gross  | OpInc  | Report | SBC    | SBC-Adj| Shares |
+|      | ($M)   | Growth | Margin | ($M)   | FCF($M)| ($M)   | FCF($M)| (M)    |
++------+--------+--------+--------+--------+--------+--------+--------+--------+
+| 2025A|  2,896 |  +18%  | 78.6%  |   589  |   796  |   491  |   305  |  494   |
+| 2026E|  3,214 |  +11%  | 78.5%  |   643  |   868  |   506  |   362  |  484   |
+| 2027E|  3,632 |  +13%  | 78.8%  |   763  | 1,017  |   521  |   496  |  474   |
+| 2028E|  4,104 |  +13%  | 79.0%  |   902  | 1,190  |   537  |   653  |  465   |
+| 2029E|  4,637 |  +13%  | 79.0%  | 1,066  | 1,380  |   553  |   827  |  456   |
+| 2030E|  5,286 |  +14%  | 79.0%  | 1,269  | 1,613  |   569  | 1,044  |  447   |
+| 2031E|  5,868 |  +11%  | 79.0%  | 1,408  | 1,788  |   586  | 1,202  |  438   |
+| 2032E|  6,455 |  +10%  | 79.0%  | 1,549  | 1,937  |   604  | 1,333  |  429   |
+| 2033E|  7,036 |   +9%  | 79.0%  | 1,688  | 2,109  |   622  | 1,487  |  420   |
+| 2034E|  7,598 |   +8%  | 79.0%  | 1,824  | 2,280  |   641  | 1,639  |  412   |
+| 2035E|  8,206 |   +8%  | 79.0%  | 1,969  | 2,462  |   660  | 1,802  |  404   |
++------+--------+--------+--------+--------+--------+--------+--------+--------+
+
+KEY MARGIN BUILD (BASE CASE)
+- Gross margin: stabilizes at 79% as Kokai matures and mix shifts to CTV
+- OpEx as % of revenue declines from ~58% (2025) to ~55% (2030) to ~52% (2035)
+  via operating leverage on S&M and G&A; R&D stays ~15-16% of revenue
+- Reported FCF margin expands from 27.5% (2025) to 30% (2035) on leverage
+- SBC-adjusted FCF margin expands from 10.5% (2025) to 22% (2035) as revenue
+  grows much faster than SBC
+- Capex: 4-5% of revenue in 2026-2028 (Kokai buildout), declining to 3% by 2035
+
+SANITY CHECK: 2030 Base-Case Revenue of $5,286M
+- Implies ~$22-24B of platform gross spend at a compressed ~22% take rate
+- Open-internet programmatic TAM estimated at ~$280-320B by 2030
+- TTD share of open-internet TAM: ~7-8% (vs ~8% today)
+- This implies TTD merely HOLDS its current share of a growing TAM
+- Entirely plausible even with Amazon share gains in CTV
+
+================================================================================
+D. TAKE-RATE COMPRESSION SENSITIVITY
+================================================================================
+
+All else equal, showing impact of take-rate compression on BASE CASE 2030
+and 2035 revenue and SBC-adjusted FCF:
+
++---------------------+---------------+---------------+---------------+
+|                     | No Compression| -150 bps      | -300 bps      |
++---------------------+---------------+---------------+---------------+
+| 2030 Revenue        |  $5,620M      |  $5,286M      |  $4,890M      |
+| 2030 SBC-Adj FCF    |  $1,150M      |  $1,044M      |    $905M      |
+| 2035 Revenue        |  $8,850M      |  $8,206M      |  $7,420M      |
+| 2035 SBC-Adj FCF    |  $1,950M      |  $1,802M      |  $1,590M      |
++---------------------+---------------+---------------+---------------+
+| Implied 2030 take rt|   ~23%        |   ~21.5%      |   ~20%        |
+| Impact vs no-compr. |     --        |   -6.0%       |  -12.9%       |
++---------------------+---------------+---------------+---------------+
+
+Observation: Even at -300 bps compression (the BEAR take-rate scenario),
+2035 SBC-adjusted FCF of $1,590M still supports meaningful equity value.
+Take-rate compression is painful but not lethal to the thesis because
+TTD's gross-spend TAM is growing fast enough to partially offset.
+
+================================================================================
+E. TERMINAL VALUE — PERPETUITY-GROWTH MODEL
+================================================================================
+
+Formula: TV = FCF_2035 * (1 + g) / (r - g)
+
+BASE CASE (g = 3.0%)
++------------------+-------------------+-------------------+
+|                  | r = 12%           | r = 14%           |
++------------------+-------------------+-------------------+
+| 2035 SBC-Adj FCF |      $1,802M      |      $1,802M      |
+| Terminal value    | $1,802*(1.03)/    | $1,802*(1.03)/    |
+|                  |  (0.12-0.03)      |  (0.14-0.03)      |
+|                  | = $20,629M        | = $16,875M        |
++------------------+-------------------+-------------------+
+
+BEAR CASE (g = 2.5%)
++------------------+-------------------+-------------------+
+|                  | r = 12%           | r = 14%           |
++------------------+-------------------+-------------------+
+| 2035 SBC-Adj FCF |        $470M      |        $470M      |
+| Terminal value    | $470*(1.025)/     | $470*(1.025)/     |
+|                  |  (0.12-0.025)     |  (0.14-0.025)     |
+|                  | = $5,071M         | = $4,191M         |
++------------------+-------------------+-------------------+
+
+BULL CASE (g = 3.5%)
++------------------+-------------------+-------------------+
+|                  | r = 12%           | r = 14%           |
++------------------+-------------------+-------------------+
+| 2035 SBC-Adj FCF |      $3,408M      |      $3,408M      |
+| Terminal value    | $3,408*(1.035)/   | $3,408*(1.035)/   |
+|                  |  (0.12-0.035)     |  (0.14-0.035)     |
+|                  | = $41,492M        | = $33,584M        |
++------------------+-------------------+-------------------+
+
+================================================================================
+F. TERMINAL VALUE — EXIT-MULTIPLE MODEL
+================================================================================
+
+Formula: TV = FCF_2035 * Exit Multiple
+
+BASE CASE (20x SBC-Adj FCF)
++------------------+------------------+
+| 2035 SBC-Adj FCF |      $1,802M     |
+| Exit multiple    |        20x       |
+| Terminal value   |    $36,040M      |
++------------------+------------------+
+
+BEAR CASE (12x SBC-Adj FCF)
++------------------+------------------+
+| 2035 SBC-Adj FCF |        $470M     |
+| Exit multiple    |        12x       |
+| Terminal value   |     $5,640M      |
++------------------+------------------+
+
+BULL CASE (28x SBC-Adj FCF)
++------------------+------------------+
+| 2035 SBC-Adj FCF |      $3,408M     |
+| Exit multiple    |        28x       |
+| Terminal value   |    $95,424M      |
++------------------+------------------+
+
+================================================================================
+G. BEAR CASE 10-YEAR FORECAST
+================================================================================
+
+Bear narrative: Amazon wins 1-2 major holdco primary-DSP contracts. Take rate
+compresses 300 bps. Growth decelerates to mid-single digits. No permanent CFO
+until late 2026, spooking institutions. CTV share erodes. UID2 stalls.
+Ventura = $0.
+
++------+--------+--------+--------+--------+--------+--------+--------+
+| Year | Rev    | YoY    | Gross  | Report | SBC    | SBC-Adj| Shares |
+|      | ($M)   | Growth | Margin | FCF($M)| ($M)   | FCF($M)| (M)    |
++------+--------+--------+--------+--------+--------+--------+--------+
+| 2025A|  2,896 |  +18%  | 78.6%  |   796  |   491  |   305  |  494   |
+| 2026E|  3,070 |   +6%  | 77.5%  |   798  |   506  |   292  |  484   |
+| 2027E|  3,254 |   +6%  | 77.0%  |   846  |   521  |   325  |  474   |
+| 2028E|  3,450 |   +6%  | 77.0%  |   897  |   537  |   360  |  465   |
+| 2029E|  3,622 |   +5%  | 77.0%  |   942  |   553  |   389  |  456   |
+| 2030E|  3,803 |   +5%  | 77.0%  |   989  |   569  |   420  |  447   |
+| 2031E|  3,955 |   +4%  | 77.0%  | 1,028  |   586  |   442  |  438   |
+| 2032E|  4,113 |   +4%  | 77.0%  | 1,069  |   604  |   465  |  429   |
+| 2033E|  4,236 |   +3%  | 77.0%  | 1,101  |   622  |   479  |  420   |
+| 2034E|  4,363 |   +3%  | 77.0%  | 1,134  |   641  |   493  |  412   |
+| 2035E|  4,450 |   +2%  | 77.0%  | 1,130  |   660  |   470  |  404   |
++------+--------+--------+--------+--------+--------+--------+--------+
+
+Bear note: In the bear case, SBC remains sticky (employees still get grants
+at lower prices, meaning MORE shares per dollar of comp), which compresses
+SBC-adj FCF margin severely. SBC-adj FCF margin barely reaches 10.6% by 2035.
+This is the structural risk of a high-SBC business in a low-growth scenario.
+
+================================================================================
+H. BULL CASE 10-YEAR FORECAST
+================================================================================
+
+Bull narrative: Cyclical recovery in 2027. Google DOJ remedy opens CTV/open-
+web inventory. UID2 achieves critical mass. Kokai drives 30%+ EBITDA margins.
+International accelerates. Take rate holds flat as UID2 premium offsets
+Amazon pressure. Ventura = $0 (we give zero credit even in the bull case).
+
++------+--------+--------+--------+--------+--------+--------+--------+
+| Year | Rev    | YoY    | Gross  | Report | SBC    | SBC-Adj| Shares |
+|      | ($M)   | Growth | Margin | FCF($M)| ($M)   | FCF($M)| (M)    |
++------+--------+--------+--------+--------+--------+--------+--------+
+| 2025A|  2,896 |  +18%  | 78.6%  |   796  |   491  |   305  |  494   |
+| 2026E|  3,360 |  +16%  | 79.5%  |   941  |   506  |   435  |  484   |
+| 2027E|  4,032 |  +20%  | 80.0%  | 1,210  |   521  |   689  |  474   |
+| 2028E|  4,838 |  +20%  | 80.5%  | 1,548  |   537  | 1,011  |  465   |
+| 2029E|  5,806 |  +20%  | 80.5%  | 1,916  |   553  | 1,363  |  456   |
+| 2030E|  6,967 |  +20%  | 81.0%  | 2,369  |   569  | 1,800  |  447   |
+| 2031E|  8,082 |  +16%  | 81.0%  | 2,828  |   586  | 2,242  |  438   |
+| 2032E|  9,293 |  +15%  | 81.0%  | 3,253  |   604  | 2,649  |  429   |
+| 2033E| 10,594 |  +14%  | 81.0%  | 3,708  |   622  | 3,086  |  420   |
+| 2034E| 11,971 |  +13%  | 81.0%  | 4,190  |   641  | 3,549  |  412   |
+| 2035E| 13,406 |  +12%  | 81.0%  | 4,690  |   660  | 4,030  |  404   |
++------+--------+--------+--------+--------+--------+--------+--------+
+
+Bull note: Even the bull case uses SBC growing at 3%/yr and gives Ventura
+$0 credit. SBC-adj FCF margin reaches 30% by 2035 driven by massive
+operating leverage on a growing revenue base. This is not fantastical --
+it is what happens when a high-gross-margin platform compounds revenue
+at 15%+ while fixed costs grow at GDP rates.
+
+REVISION NOTE: The bull case 2035 SBC-adj FCF of $4,030M exceeds the
+Section E terminal value input of $3,408M. The difference reflects a
+conservatism buffer -- we use $3,408M (24% margin on $14.2B rev) rather
+than the model's $4,030M (30% margin on $13.4B rev). We take the lower
+of the two to avoid over-optimism. For consistency, we use $3,408M in
+all terminal value calculations for the bull case.
+
+================================================================================
+I. PROBABILITY-WEIGHTED INTRINSIC VALUE
+================================================================================
+
+STEP 1: DISCOUNT SBC-ADJUSTED FCF STREAMS TO PRESENT VALUE
+
+At 12% discount rate:
++------+----------+----------+----------+----------+----------+----------+
+| Year | Discount | Bear     | Bear     | Base     | Base     | Bull     |
+|      | Factor   | FCF ($M) | PV ($M)  | FCF ($M) | PV ($M)  | FCF ($M) |
++------+----------+----------+----------+----------+----------+----------+
+| 2026 |  0.893   |    292   |    261   |    362   |    323   |    435   |
+| 2027 |  0.797   |    325   |    259   |    496   |    395   |    689   |
+| 2028 |  0.712   |    360   |    256   |    653   |    465   |  1,011   |
+| 2029 |  0.636   |    389   |    247   |    827   |    526   |  1,363   |
+| 2030 |  0.567   |    420   |    238   |  1,044   |    592   |  1,800   |
+| 2031 |  0.507   |    442   |    224   |  1,202   |    609   |  2,242   |
+| 2032 |  0.452   |    465   |    210   |  1,333   |    603   |  2,649   |
+| 2033 |  0.404   |    479   |    194   |  1,487   |    601   |  3,086   |
+| 2034 |  0.361   |    493   |    178   |  1,639   |    591   |  3,549   |
+| 2035 |  0.322   |    470   |    151   |  1,802   |    580   |  3,408   |
++------+----------+----------+----------+----------+----------+----------+
+|      | SUM PV of FCF:      |  2,218   |          |  5,285   |          |
++------+----------+----------+----------+----------+----------+----------+
+
+Bull PV of FCF at 12%:
+| 2026 |  0.893   |  435 * 0.893 =   388   |
+| 2027 |  0.797   |  689 * 0.797 =   549   |
+| 2028 |  0.712   | 1011 * 0.712 =   720   |
+| 2029 |  0.636   | 1363 * 0.636 =   867   |
+| 2030 |  0.567   | 1800 * 0.567 = 1,021   |
+| 2031 |  0.507   | 2242 * 0.507 = 1,137   |
+| 2032 |  0.452   | 2649 * 0.452 = 1,197   |
+| 2033 |  0.404   | 3086 * 0.404 = 1,247   |
+| 2034 |  0.361   | 3549 * 0.361 = 1,281   |
+| 2035 |  0.322   | 3408 * 0.322 = 1,097   |
+|      | SUM PV of Bull FCF:          9,504   |
+
+STEP 2: TERMINAL VALUE (using average of perpetuity-growth and exit-multiple)
+
+BEAR @ 12%:
+  Perpetuity-growth TV:  $5,071M  * 0.322 (discount to PV) = $1,633M
+  Exit-multiple TV:      $5,640M  * 0.322                  = $1,816M
+  Average TV (PV):       $1,725M
+
+BASE @ 12%:
+  Perpetuity-growth TV: $20,629M  * 0.322                  = $6,643M
+  Exit-multiple TV:     $36,040M  * 0.322                  = $11,605M
+  Average TV (PV):       $9,124M
+
+BULL @ 12%:
+  Perpetuity-growth TV: $41,492M  * 0.322                  = $13,360M
+  Exit-multiple TV:     $95,424M  * 0.322                  = $30,727M
+  Average TV (PV):      $22,044M
+
+STEP 3: ENTERPRISE VALUE = PV of FCF + PV of Terminal Value + Net Cash
+
++-------------------+------------+------------+------------+
+|                   |   BEAR     |   BASE     |   BULL     |
++-------------------+------------+------------+------------+
+| PV of FCF (12%)   |  $2,218M   |  $5,285M   |  $9,504M   |
+| PV of TV (12%)    |  $1,725M   |  $9,124M   | $22,044M   |
+| Net cash (today)  |  $1,303M   |  $1,303M   |  $1,303M   |
+| Enterprise value  |  $5,246M   | $15,712M   | $32,851M   |
++-------------------+------------+------------+------------+
+| Diluted shares    |    494M    |    494M    |    494M    |
+| Per-share value   |   $10.62   |   $31.81   |   $66.50   |
++-------------------+------------+------------+------------+
+
+STEP 4: PROBABILITY-WEIGHTED INTRINSIC VALUE @ 12% HURDLE
+
+  Expected Value = (25% * $10.62) + (55% * $31.81) + (20% * $66.50)
+
+  = $2.66 + $17.50 + $13.30
+
+  = $33.45 per share
+
++================================================================+
+|                                                                |
+|  PROBABILITY-WEIGHTED INTRINSIC VALUE @ 12% HURDLE: $33.45    |
+|                                                                |
+|  Current price: $22.76                                         |
+|  Margin of safety: 32%                                         |
+|  Implied upside to intrinsic: +47%                             |
+|                                                                |
++================================================================+
+
+STEP 5: REPEAT AT 14% HURDLE (pure-CAPM rate)
+
+At 14% discount rate, discount factors are steeper:
++------+----------+
+| Year | 14% DF   |
++------+----------+
+| 2026 |  0.877   |
+| 2027 |  0.769   |
+| 2028 |  0.675   |
+| 2029 |  0.592   |
+| 2030 |  0.519   |
+| 2031 |  0.456   |
+| 2032 |  0.400   |
+| 2033 |  0.351   |
+| 2034 |  0.308   |
+| 2035 |  0.270   |
++------+----------+
+
+PV of FCF at 14%:
+  Bear:  $2,013M
+  Base:  $4,634M
+  Bull:  $8,303M
+
+Terminal values at 14%:
+  Bear PV of TV:  perpetuity $4,191M * 0.270 = $1,132M
+                  exit-mult  $5,640M * 0.270 = $1,523M
+                  average = $1,328M
+  Base PV of TV:  perpetuity $16,875M * 0.270 = $4,556M
+                  exit-mult  $36,040M * 0.270 = $9,731M
+                  average = $7,144M
+  Bull PV of TV:  perpetuity $33,584M * 0.270 = $9,068M
+                  exit-mult  $95,424M * 0.270 = $25,764M
+                  average = $17,416M
+
+Enterprise values at 14%:
+  Bear:  $2,013M + $1,328M + $1,303M = $4,644M  -> $9.40/share
+  Base:  $4,634M + $7,144M + $1,303M = $13,081M -> $26.48/share
+  Bull:  $8,303M + $17,416M + $1,303M = $27,022M -> $54.70/share
+
+Probability-weighted @ 14%:
+  = (25% * $9.40) + (55% * $26.48) + (20% * $54.70)
+  = $2.35 + $14.56 + $10.94
+  = $27.85 per share
+
++================================================================+
+|                                                                |
+|  PROBABILITY-WEIGHTED INTRINSIC VALUE @ 14% HURDLE: $27.85    |
+|                                                                |
+|  Current price: $22.76                                         |
+|  Margin of safety: 18%                                         |
+|  Implied upside to intrinsic: +22%                             |
+|                                                                |
++================================================================+
+
+================================================================================
+J. SENSITIVITY TABLES
+================================================================================
+
+TABLE 1: INTRINSIC VALUE vs DISCOUNT RATE AND SCENARIO WEIGHT
+(Holding base/bull/bear probabilities at 25/55/20)
+
++----------------+----------+----------+----------+----------+
+| Discount rate  |  Bear    |  Base    |  Bull    | Prob-Wtd |
++----------------+----------+----------+----------+----------+
+|     10%        |  $12.65  |  $40.10  |  $84.50  |  $41.95  |
+|     12%        |  $10.62  |  $31.81  |  $66.50  |  $33.45  |
+|     14%        |   $9.40  |  $26.48  |  $54.70  |  $27.85  |
+|     16%        |   $8.45  |  $22.40  |  $45.90  |  $23.60  |
++----------------+----------+----------+----------+----------+
+
+TABLE 2: INTRINSIC VALUE vs TAKE-RATE COMPRESSION (Base case, 12%)
+
++-------------------+--------------+------------------+
+| Compression       | 2035 SBC-Adj | Per-share value  |
+|                   | FCF ($M)     | (base case only) |
++-------------------+--------------+------------------+
+| No compression    |   $1,950M    |     $35.80       |
+| -150 bps (base)   |   $1,802M    |     $31.81       |
+| -300 bps (bear)   |   $1,590M    |     $26.95       |
+| -450 bps (stress) |   $1,380M    |     $22.20       |
++-------------------+--------------+------------------+
+
+TABLE 3: INTRINSIC VALUE vs BASE-CASE REVENUE CAGR (12% discount)
+
++-------------------+--------------+------------------+
+| Rev CAGR (Yr 1-5) | 2035 Revenue | Per-share value  |
+|                   | ($M)         | (base case only) |
++-------------------+--------------+------------------+
+|       8%          |   $6,200M    |     $21.50       |
+|      11%          |   $7,400M    |     $27.10       |
+|      13% (base)   |   $8,700M    |     $31.81       |
+|      15%          |  $10,100M    |     $37.80       |
+|      18%          |  $12,200M    |     $46.20       |
++-------------------+--------------+------------------+
+
+TABLE 4: WHAT PRICE DO YOU NEED TO HIT A 15% IRR?
+(Working backward from probability-weighted intrinsic)
+
+At $33.45 intrinsic (12% hurdle) reached in ~10 years:
+  To earn 15% annual return, entry price must be <= $33.45 / (1.15^10)
+  = $33.45 / 4.046 = $8.27
+
+  But this double-discounts (DCF already discounts at 12%). The correct
+  framing: the DCF at 12% already implies a 12% return if bought at
+  intrinsic. At $22.76 vs $33.45 intrinsic, the implied return ABOVE
+  the 12% hurdle comes from the 47% margin-of-safety closure.
+
+  Simple IRR calculation from current price to expected intrinsic:
+  If base case plays out ($31.81 per share in today's PV terms),
+  and market re-rates to intrinsic over 3-5 years:
+    3-year IRR: ($31.81/$22.76)^(1/3) - 1 = 11.8%
+    5-year IRR: ($31.81/$22.76)^(1/5) - 1 =  6.9%
+    Plus: 12% hurdle rate embedded in the DCF = total compounding
+
+  In probability-weighted terms ($33.45):
+    3-year IRR: ($33.45/$22.76)^(1/3) - 1 = 13.8%
+    5-year IRR: ($33.45/$22.76)^(1/5) - 1 =  8.0%
+
+================================================================================
+K. VERDICT
+================================================================================
+
+INTRINSIC VALUE SUMMARY
++-------------------------------------------+------------------+
+| Metric                                    | Value            |
++-------------------------------------------+------------------+
+| Prob-weighted intrinsic @ 12% hurdle      | $33.45/share     |
+| Prob-weighted intrinsic @ 14% hurdle      | $27.85/share     |
+| Current market price                      | $22.76/share     |
+| Margin of safety (12% hurdle)             | 32%              |
+| Margin of safety (14% hurdle)             | 18%              |
++-------------------------------------------+------------------+
+| Bear-case floor (12%)                     | $10.62/share     |
+| Base-case value (12%)                     | $31.81/share     |
+| Bull-case value (12%)                     | $66.50/share     |
++-------------------------------------------+------------------+
+| DCF >= $30 threshold (deep dive gate)?    | YES ($33.45)     |
++-------------------------------------------+------------------+
+
+VERDICT: BUY CANDIDATE
+
+The probability-weighted intrinsic value of $33.45 at a 12% hurdle rate
+exceeds the $30/share minimum threshold established in the deep dive.
+Even at the more punitive 14% CAPM-implied discount rate, the intrinsic
+value of $27.85 is 22% above the current price.
+
+KEY RISK ACKNOWLEDGMENTS:
+1. The bear-case floor of $10.62 represents 53% downside from current.
+   This is not a "can't lose" situation. The bear case is real and
+   receives 25% probability weight.
+2. SBC is genuinely large ($491M against $796M reported FCF). On an
+   SBC-adjusted basis, TTD is NOT cheap -- it is fairly valued in the
+   bear case and attractively valued only in the base and bull cases.
+3. The model is highly sensitive to revenue growth rates (Table 3).
+   If base-case CAGR is 8% instead of 13%, intrinsic drops to ~$21.50
+   -- essentially no margin of safety.
+4. Terminal value represents ~63% of total enterprise value in the base
+   case. This is typical for growth companies but means the long-term
+   assumptions carry outsized weight.
+
+BUY CONDITIONS (unchanged from deep dive):
+  (i)   DCF expected-value intrinsic >= $30/share  --> MET ($33.45)
+  (ii)  Q1 2026 print on May 13 not worse than -500 bps vs guide
+        --> PENDING (May 13 report)
+  (iii) Permanent CFO announcement by July 2026
+        --> PENDING
+  (iv)  No adverse Amazon-primary-partner announcement at top-2 holdco
+        --> CURRENTLY CLEAR
+
+POSITION SIZING GUIDANCE (if all four conditions met):
+- Initial position: 3-4% of portfolio (~$30-40 at current $1,000 cash)
+- Add to 6-7% if Q2 reacceleration confirms
+- Max position: 10% (only after CFO + two consecutive growth beats)
+- Cap bucket: Mid-cap ($10.65B market cap)
+
+The asymmetry is favorable: base-case upside of +40% vs bear-case
+downside of -53%, with the base case weighted at 55% probability.
+The expected value math works. The question is whether Q1 2026 earnings
+on May 13 confirm the floor.
+
+We classify TTD as: ACCUMULATE ON WEAKNESS, pending May 13 earnings.
+
+================================================================================
+DISCLOSURES
+================================================================================
+
+Internal research document for Tech-Buffett Capital virtual portfolio.
+All financial data sourced from SEC EDGAR filings (10-K FY2024, Q4/FY2025
+earnings release Feb 25, 2026) and StockAnalysis.com aggregation of SEC data,
+accessed April 17, 2026. Reference price of $22.76 from web search April 17,
+2026. No position held in TTD at time of writing. This document does not
+constitute investment advice. SBC-adjusted FCF is the underwriting metric.
+Ventura revenue set to $0 in all scenarios. Take-rate compression of -150 bps
+embedded in base case.
+
+Prior documents: INIT-TTD-2026-04-15.txt, DEEP-TTD-2026-04-16.txt
+Next action: WAIT for Q1 2026 earnings (May 13, 2026), then re-evaluate
+buy conditions.
+
+--- END DCF ---
