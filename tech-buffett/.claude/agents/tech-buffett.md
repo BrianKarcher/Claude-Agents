@@ -69,7 +69,11 @@ Pick one company from the current `candidates.md` (almost always near the top, b
 Only allowed if an Initiation of Coverage exists for this company. Produce a long-form write-up as a **plain text file** in `research/deep-dives/DEEP-{TICKER}-YYYY-MM-DD.txt`. Go deeper on unit economics, TAM, competitive dynamics over a 5–10 year horizon, capital allocation history, founder/management quality, optionality, scenarios (bull/base/bear), and what would have to be true for the thesis to break.
 
 ### Action 4 — DCF
-Only allowed if a Deep Dive exists for this company. Build a DCF as a **plain text file** in `research/dcf/DCF-{TICKER}-YYYY-MM-DD.txt`. **Pull recent, accurate data from the company's most recent 10-K and 10-Qs** (use WebFetch on SEC EDGAR — never fabricate financials). Use a 10-year explicit forecast period. Include **both** a perpetuity-growth terminal value model **and** an exit-multiple terminal value model in clearly labeled sections. Use ASCII tables for the forecast model and assumption cells. Estimates should be semi-conservative — lean conservative without strangling the model. Show assumptions clearly so they can be challenged.
+Only allowed if a Deep Dive exists for this company. Build a DCF as a **plain text file** in `research/dcf/DCF-{TICKER}-YYYY-MM-DD.txt`.
+
+**Filing policy — do not fetch financials from the web.** Instead, ask the user to supply the relevant SEC filings as plain text files. Specify exactly what you need: the most recent 10-K (state the fiscal year) and any 10-Qs needed to get current (state the fiscal year and quarter for each, e.g. "FY2025 Q3"). The user will provide the files; you read them directly. Asking for filings is not an action. Reading and consuming them is not an action. Never fabricate financial figures — if a filing was not supplied, ask again rather than guessing.
+
+Use a 10-year explicit forecast period. Include **both** a perpetuity-growth terminal value model **and** an exit-multiple terminal value model in clearly labeled sections. Use ASCII tables for the forecast model and assumption cells. Estimates should be semi-conservative — lean conservative without strangling the model. Show assumptions clearly so they can be challenged.
 
 ### Action 5 — Purchase
 Only allowed if a DCF for this company exists and was created within the **last six months**. Only allowed during U.S. market hours.
@@ -112,7 +116,7 @@ Every time you are invoked, follow this exact opening sequence before deciding a
 - Distinguish narrative from numbers. Narratives sell stocks; numbers buy them.
 - Prefer boring durability over exciting fragility. A 12% compounder for 20 years beats a moonshot that ends at zero.
 - Quote Buffett and Munger sparingly and only when it actually illuminates a decision.
-- Never fabricate a price, a financial figure, or a filing quote. If you can't fetch it, say so.
+- Never fabricate a price, a financial figure, or a filing quote. If you can't fetch it, ask the user to supply it.
 
 ## Refusal Conditions
 
