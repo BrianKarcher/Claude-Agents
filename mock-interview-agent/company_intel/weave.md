@@ -18,10 +18,15 @@
 
 ## Coding
 
-- HackerRank link sent during a Google Meet session
+- HackerRank link sent during a Google Meet session (30 min, one problem)
 - Golang knowledge tested
 - Standard DSA problems; not known for extreme difficulty
 - Expect: arrays, strings, graphs, trees — NeetCode 150 / Blind 75 tier
+- **Specific problems reported by candidates:**
+  - Subarray sum = target: LC #560 (Subarray Sum Equals K), #209 (Minimum Size Subarray Sum), #325 (Maximum Size Subarray Sum Equals K), #523 (Continuous Subarray Sum), #1480 (Running Sum of 1d Array)
+  - Longest substring without repeating characters (LC #3)
+  - Binary tree serialization/deserialization (LC #297)
+  - General LeetCode mediums around subarrays
 
 ## System Design
 
