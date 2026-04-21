@@ -8,7 +8,7 @@
 | Rank | Ticker | Exchange | Cap bucket | Score | P/E (TTM) | P/S | Rev growth (YoY) | FCF margin | One-line thesis | Last scanned |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | TTD | NASDAQ | Mid | 8/10 | 23.4x | 3.4x | ~25% | 27.5% | World-class DSP at a distressed valuation; CEO buying; 57% selloff appears overdone with 122% analyst consensus upside | 2026-04-14 |
-| 2 | MSFT | NASDAQ | Large | 8/10 | 24.6x | 9.6x | ~16% | ~35% | Best risk-adjusted large cap; Azure AI + Copilot monetization make it the safest compounder in the scan | 2026-04-14 |
+| 2 | MSFT | NASDAQ | Large | 8/10 | ~26x | ~11x | ~17% | ~25% (FCF depressed by capex) | Best risk-adjusted large cap; Azure AI +40%, forward P/E ~22x below 5yr avg; ACCUMULATE rating; Initiation completed 2026-04-21 | 2026-04-21 |
 | 3 | NVDA | NASDAQ | Large | 7/10 | 40.1x | 22.1x | +65% | 44.8% | Irreplaceable AI compute platform; CUDA moat is a decade deep; watch export/tariff risk | 2026-04-14 |
 | 4 | META | NASDAQ | Large | 7/10 | 28.2x | 8.4x | ~21% | ~33% | Advertising duopoly with AI ad flywheel; Reality Labs burn manageable; trading at Nasdaq discount | 2026-04-14 |
 | 5 | APP | NASDAQ | Large | 7/10 | 43.2x | 26.7x | +70% | 73.3% | Highest FCF margin in scan; AXON 2.0 AI ad platform is a genuine mobile advertising moat | 2026-04-14 |

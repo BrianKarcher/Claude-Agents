@@ -21,6 +21,26 @@
 
 ---
 
+## 2026-04-21 — Infusion (bookkeeping)
+
+- **Action:** Infusion (bookkeeping)
+- **Details:** $1,000.00 weekly Monday deposit recorded. Second infusion.
+- **Rationale:** Standing weekly deposit per portfolio rules.
+- **Resulting state:** Cash $2,000.00 | Invested $0.00 | Total $2,000.00
+
+---
+
+## 2026-04-21 — Initiation — MSFT
+
+- **Action:** Initiation of Coverage (Action 2)
+- **Ticker:** MSFT (Microsoft Corporation, NASDAQ)
+- **Details:** Full initiation of coverage report produced at `research/initiations/INIT-MSFT-2026-04-21.txt`. Covered: business description & Nadella transformation timeline, products & segments (Intelligent Cloud $100.4B / Productivity & Business Processes $77.8B / More Personal Computing $73.8B), customers & go-to-market (Fortune 500 near-100% penetration, EA/MCA contract structure), competitive landscape (Azure #2 at 23% vs AWS 32% vs GCP 11%; M365 ~85%+ enterprise share; Copilot at 11.5% AI assistant share declining from 18.8%), moat assessment (WIDE moat — switching costs, network effects, scale economics, intangible assets; vulnerability on Copilot monetization and OpenAI dependency), management (Nadella/Hood excellent; 10x market cap growth under Nadella), key risks (AI capex return uncertainty, OpenAI dependency, cloud growth deceleration, antitrust, macro, valuation compression), recent results (FY2025 rev $281.7B +15%, operating margin 45.6%, FCF $71.6B; Q1 FY2026 rev $77.7B +18%, Azure +40%; Q2 FY2026 rev $81.3B +17%), and valuation snapshot (TTM P/E ~26x, forward P/E ~22x, P/S ~11x, below 5-year avg forward P/E of 28-33x; analyst consensus target ~$580-600).
+- **Rating:** ACCUMULATE. Best risk-adjusted large-cap compounder in tech, but the massive AI capex ramp ($65-80B/yr) and low Copilot penetration (3.3%) demand DCF confirmation before buying.
+- **Rationale:** MSFT ranked #2 on the April 14 quick scan (8/10 score). It is the natural first large-cap holding for the portfolio given the allocation target of ~1/3 large cap. At ~22x forward earnings, it trades at the low end of its 5-year valuation range, offering a reasonable entry for a 10-year compounder thesis. Initiation completed to advance MSFT through the research pipeline (Init -> Deep Dive -> DCF -> Buy).
+- **Resulting state:** Cash $2,000.00 unchanged. No trade. Deep Dive is the next eligible action for MSFT.
+
+---
+
 ## 2026-04-17 — DCF — TTD
 
 - **Action:** DCF (Action 4)
