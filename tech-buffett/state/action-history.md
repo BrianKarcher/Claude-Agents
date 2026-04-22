@@ -78,6 +78,16 @@
 
 ---
 
+## 2026-04-22 — Deep Dive — MSFT
+
+- **Action:** Deep Dive (Action 3)
+- **Ticker:** MSFT (Microsoft Corporation, NASDAQ)
+- **Details:** Long-form deep dive completed at `research/deep-dives/DEEP-MSFT-2026-04-22.txt`. Three structured filing extracts created as non-action bookkeeping from user-supplied filings: `MSFT-10K-FY2025.md`, `MSFT-10Q-FY2026-Q1.md`, `MSFT-10Q-FY2026-Q2.md` saved to `research/filings/`. Deep dive covers: (0) Executive summary, (1) Unit economics and financial architecture (revenue mix shift to 77% services, segment margins, H1 FY2026 run rates, SBC analysis at 4.2% of rev, FCF bridge showing compression from 30.2% to ~20% margin due to capex supercycle), (2) The capex question ($100-120B FY2026 capex -- 70% productive / 30% over-investment risk, with demand signals from $625B RPO and Azure 39-40% growth providing evidence), (3) TAM analysis (base case: $490B revenue by FY2030, 12% CAGR; Azure to $154B+ on cloud TAM reaching $700B), (4) Competitive dynamics over 10 years (Azure vs AWS vs GCP stable oligopoly; M365 moat widening; OpenAI partnership fraying -- 20% probability of material AI advantage erosion from OpenAI defection + AWS Frontier deal), (5) Capital allocation history (A- grade M&A under Nadella; $42.5B returned in FY2025; elite management), (6) Moat assessment (WIDE with HIGH confidence -- switching costs, network effects, scale economics, intangibles), (7) Scenario analysis (Bull 25%: $644 / Base 50%: $500 / Bear 25%: $330 -> probability-weighted ~$494, ~23% upside from ~$400), (8) Thesis-break checklist (AI capex destroying value, OpenAI becoming competitor, Copilot failure, antitrust, Nadella departure), (9) Optionality (agentic AI, healthcare, sovereign cloud, OpenAI equity stake ~$80-100B+), (10) Preliminary valuation (24-25x forward P/E vs 5yr avg 28-33x), (11) DCF marching orders (10% discount rate, three scenarios, explicit capex curve, SBC-adjusted FCF).
+- **Rationale:** Action #3 of the four-step discipline (Init -> Deep Dive -> DCF -> Buy). MSFT ranked #2 on the April 14 scan (8/10) and is the natural first large-cap holding. The deep dive confirms: (a) MSFT is the highest-quality business in the candidate universe with a WIDE moat, (b) the AI capex supercycle is the key risk variable for the DCF, (c) at 24-25x forward earnings the stock is at the low end of its 5-year valuation range, (d) probability-weighted 3-year expected value of ~$494 implies ~23% upside (moderate but adequate for a quality anchor position). Copilot adoption lag (3.3% penetration, users prefer ChatGPT 76% vs Copilot 18%) and OpenAI friction (AWS Frontier deal, lawsuit threats) are the primary thesis risks. Rating remains ACCUMULATE.
+- **Resulting state:** Cash $2,000.00 unchanged. No trade. DCF is the next eligible action for MSFT.
+
+---
+
 ## 2026-04-14 — Quick Scan
 
 - **Action:** Quick Scan
