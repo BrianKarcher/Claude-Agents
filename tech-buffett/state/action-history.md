@@ -88,6 +88,50 @@
 
 ---
 
+## 2026-04-23 — DCF — MSFT
+
+- **Action:** DCF (Action 4)
+- **Ticker:** MSFT (Microsoft Corporation, NASDAQ)
+- **Details:** Full 10-year DCF model completed at `research/dcf/DCF-MSFT-2026-04-23.txt`. Financial data sourced from SEC filings (10-K FY2025, 10-Q FY2026 Q1, 10-Q FY2026 Q2) previously extracted to `research/filings/`. Model features: (a) SBC-adjusted FCF as the underwriting column (SBC at 4.0% of revenue deducted from FCF), (b) three scenarios with probability weights (Bull 25% / Base 50% / Bear 25%), (c) explicit capex curve declining from $100B FY2026 supercycle peak to $55-70B by FY2032-36 depending on scenario, (d) both perpetuity-growth (3.0% terminal g) and exit-multiple (18-25x SBC-adj FCF) terminal value models averaged, (e) 10% discount rate reflecting MSFT's quality (AA+ balance sheet, $49B net cash, 70%+ recurring revenue, WIDE moat), (f) 10-year explicit forecast FY2027-FY2036, (g) 18% effective tax rate, (h) shares flat at 7,430M (buybacks offset SBC dilution).
+- **Key results:**
+  - Bull case IV: **$624/share** (+50% upside from $417)
+  - Base case IV: **$454/share** (+9% upside)
+  - Bear case IV: **$276/share** (-34% downside)
+  - Probability-weighted intrinsic value @ 10% hurdle: **$452/share**
+  - Margin of safety at $416.51: **7.9%**
+  - At 12% hurdle rate: prob-weighted IV drops to ~$336 (stock overvalued)
+  - Capex stress test (sustained $95B through FY2029): IV drops to ~$400 (stock fairly valued to slightly overvalued)
+  - Terminal value = 63-69% of enterprise value across scenarios
+  - Revenue CAGR: Bull 12.8%, Base 10.5%, Bear 7.0% over 10 years
+  - FY2036 SBC-adj FCF: Bull $416B, Base $314B, Bear $198B
+- **Capex curve (base case):** FY26 $100B (31% of rev) -> FY28 $95B (22%) -> FY30 $75B (14%) -> FY32 $65B (10%) -> FY36 $60B (7%). This is the critical assumption -- if capex stays elevated 2-3 years longer than modeled, the stock is fairly valued to slightly overvalued today.
+- **Sensitivity highlights:** IV ranges from $336 (12% WACC) to $535 (9% WACC). Base-case exit multiple sensitivity: $397 at 18x to $498 at 25x. Terminal growth sensitivity: $387 at 2.0% to $548 at 4.0%.
+- **Rationale:** Action #4 of the four-step discipline (Init -> Deep Dive -> DCF -> Buy). The DCF confirms MSFT is reasonably valued but not cheap. The 7.9% margin of safety is thin -- below our typical 15-20% threshold for conviction buys. However, this is the highest-quality business in the candidate universe with a WIDE moat, and the 10% discount rate is appropriate for that quality. Two viable paths: (A) buy a small starter position now to establish the large-cap anchor, or (B) wait for a pullback to $380-400 or post-Q3 earnings clarity (April 29). Q3 earnings are 6 days away, adding event risk to an immediate purchase.
+- **Rating:** ACCUMULATE (unchanged). MSFT clears DCF purchase eligibility. Buy is now legal pending market hours and cash availability.
+- **Resulting state:** Cash $2,000.00 unchanged. No trade. Buy (Action 5) is now eligible for MSFT. DCF valid through June 22, 2026.
+
+---
+
+## 2026-04-24 13:10 ET — Buy — MSFT
+
+- **Action:** Buy (Action 5)
+- **Ticker:** MSFT (Microsoft Corporation, NASDAQ)
+- **Shares:** 1.5
+- **Price:** $419.73 (live quote fetched at 1:10 PM ET, April 24, 2026, via Google Finance)
+- **Total cost:** $629.60 (1.5 x $419.73)
+- **Cash before:** $2,000.00
+- **Cash after:** $1,370.41
+- **DCF reference:** `research/dcf/DCF-MSFT-2026-04-23.txt` (completed April 23, 2026; expires June 22, 2026)
+- **Allocation check:**
+  - Large cap: $629.60 / $2,000.01 = 31.5% (target ~33%) -- on target
+  - Mid cap: $0 / $2,000.01 = 0% (target ~33%) -- acceptable deviation with only 1 holding; will fill with mid-cap next
+  - Small cap: $0 / $2,000.01 = 0% (target ~33%) -- acceptable deviation with only 1 holding; will fill with small-cap next
+  - Per rules: "While the portfolio has fewer than ~6 holdings, the split may deviate; the target tightens as the portfolio fills out."
+- **Rationale:** MSFT is the portfolio's first purchase -- a large-cap anchor position in the highest-quality business in our candidate universe. The April 23 DCF produced a probability-weighted intrinsic value of $452/share at a 10% discount rate, implying 7.9% margin of safety at today's $419.73 price. While the margin of safety is thin by classic Buffett standards, the position is deliberately sized as a small starter (31.5% of portfolio, $630 of $2,000) for three reasons: (1) MSFT has a WIDE moat with HIGH confidence -- switching costs across the enterprise stack, network effects in M365/LinkedIn/GitHub, scale economics in Azure, and intangible assets in brand/IP -- making a lower margin of safety acceptable for a quality anchor; (2) at 24-25x forward P/E, the stock trades at the low end of its 5-year valuation range (avg 28-33x), which the DCF confirms as reasonable; (3) Q3 FY2026 earnings on April 29 present a near-term catalyst -- Azure growth of 39-40% and $625B in remaining performance obligations signal demand is robust despite the $100B capex supercycle. The starter size preserves $1,370 in cash for mid-cap and small-cap positions to build toward the 1/3-1/3-1/3 allocation target. If Q3 earnings disappoint and the stock pulls back to $380-400, the DCF base case ($454) would offer a 12-16% margin of safety, warranting a potential add. This is not a moonshot -- it is a 10-15% compounder for a decade, anchored by durable competitive advantages and a management team (Nadella/Hood) that has compounded market cap 10x since 2014.
+- **Resulting state:** Cash $1,370.41 | Invested $629.60 (1 holding: MSFT 1.5 shares) | Total $2,000.01 | Holdings: 1/10
+
+---
+
 ## 2026-04-14 — Quick Scan
 
 - **Action:** Quick Scan

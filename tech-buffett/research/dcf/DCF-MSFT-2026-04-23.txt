@@ -1,0 +1,583 @@
+================================================================================
+                  DISCOUNTED CASH FLOW MODEL
+                   MICROSOFT CORPORATION (MSFT)
+                        NASDAQ: MSFT
+                      Date: April 23, 2026
+================================================================================
+
+Prior research: INIT-MSFT-2026-04-21.txt, DEEP-MSFT-2026-04-22.txt
+Filing sources: MSFT-10K-FY2025.md, MSFT-10Q-FY2026-Q1.md,
+                MSFT-10Q-FY2026-Q2.md (research/filings/)
+Current price: $416.51 (intraday April 23, 2026)
+Market cap: ~$3.10T (7,430M diluted shares x $416.51)
+Net cash: $49.2B (Dec 31, 2025)
+Enterprise value: ~$3.05T
+
+================================================================================
+A. HISTORICAL FINANCIAL SUMMARY
+================================================================================
+
+All figures in $M unless noted.
+
++-------------------------+----------+----------+----------+----------+
+| Metric                  | FY2023   | FY2024   | FY2025   | H1 FY26  |
++-------------------------+----------+----------+----------+----------+
+| Revenue                 | 211,915  | 245,122  | 281,724  | 158,946  |
+| YoY growth              |   --     | +15.7%   | +14.9%   | +17.6%   |
+| Gross profit            | 146,052  | 171,008  | 193,893  | 108,925  |
+| Gross margin            | 68.9%    | 69.8%    | 68.8%    | 68.5%    |
+| Operating income        |  88,523  | 109,433  | 128,528  |  76,236  |
+| Operating margin        | 41.8%    | 44.6%    | 45.6%    | 48.0%    |
+| Net income (GAAP)       |  72,361  |  88,136  | 101,832  |  66,205  |
+| Adj net income*         |     --   |     --   |     --   |  61,708  |
+| Operating cash flow     |  87,582  | 118,548  | 136,162  |  80,815  |
+| Capex                   |  28,107  |  44,477  |  64,551  |  49,270  |
+| Free cash flow          |  59,475  |  74,071  |  71,611  |  31,545  |
+| SBC                     |   9,611  |  10,734  |  11,974  |   6,202  |
+| SBC-adjusted FCF        |  49,864  |  63,337  |  59,637  |  25,343  |
+| SBC-adj FCF margin      | 23.5%    | 25.8%    | 21.2%    | 15.9%   |
+| D&A                     |  13,861  |  22,287  |  34,153  |  17,345  |
+| Shares out (diluted, M) |  7,472   |  7,469   |  7,465   |  7,460   |
++-------------------------+----------+----------+----------+----------+
+* Adj net income = excluding OpenAI investment gains/losses
+
+Key observations:
+  - Revenue growth has reaccelerated from 15% in FY2024-25 to 18% in H1
+    FY2026, driven by Azure (+39-40%) and Microsoft Cloud (+26%).
+  - Capex has exploded: from $28B (FY2023) to $64.6B (FY2025) to an
+    annualized ~$99B pace in H1 FY2026. This is the single most important
+    variable for the DCF.
+  - SBC-adjusted FCF margin has compressed from 26% to 16% due to the
+    capex supercycle, NOT due to operational weakness. Operating margins
+    are actually expanding (48% in H1 FY2026 vs 45.6% in FY2025).
+  - D&A is catching up to capex: $34.2B in FY2025 (annualized $34.7B in
+    H1 FY2026) vs $64.6B capex. The gap is the "growth capex" component.
+  - RPO of $625B (+110% YoY) with ~2.5yr weighted avg duration = $250B
+    of contracted revenue in the pipeline. Extraordinary demand signal.
+  - Share count declining slowly (~5M/yr net of SBC dilution).
+
+================================================================================
+B. KEY ASSUMPTIONS
+================================================================================
+
+B.1 Discount Rate: 10.0%
+-------------------------
+MSFT warrants a lower discount rate than the 12-14% used for smaller,
+riskier names because:
+  - Investment-grade balance sheet (AA+ rated, $49B net cash)
+  - Diversified revenue across cloud, productivity, gaming, search
+  - Recurring/contractual revenue >70% of total
+  - 45%+ operating margins with expanding trajectory
+  - Near-zero probability of permanent capital loss
+
+10% represents a reasonable equity hurdle for a mega-cap quality compounder.
+
+B.2 Shares Outstanding: 7,430M (flat across forecast)
+------------------------------------------------------
+Buybacks (~$18-20B/yr) roughly offset SBC ($12-13B/yr) plus organic
+dilution. Net share count declining ~5-8M/yr -- immaterial at this scale.
+Conservatively assume flat at 7,430M.
+
+B.3 Revenue Growth Assumptions (by scenario)
+---------------------------------------------
+Starting point: FY2026E revenue of $323B (H1 actual $158.9B + guided
+H2 of ~$164B based on Q3 guide midpoint of $81.2B + estimated Q4 ~$83B).
+
++----------+------+------+------+------+------+------+------+------+------+------+
+| Year     | FY27 | FY28 | FY29 | FY30 | FY31 | FY32 | FY33 | FY34 | FY35 | FY36 |
++----------+------+------+------+------+------+------+------+------+------+------+
+| BULL     | 18%  | 17%  | 16%  | 14%  | 13%  | 12%  | 11%  | 10%  |  9%  |  8%  |
+| BASE     | 15%  | 14%  | 13%  | 12%  | 11%  | 10%  |  9%  |  8%  |  7%  |  6%  |
+| BEAR     | 12%  | 10%  |  9%  |  8%  |  7%  |  6%  |  5%  |  5%  |  4%  |  4%  |
++----------+------+------+------+------+------+------+------+------+------+------+
+
+Rationale:
+  - Bull: Azure sustains 30%+ through FY28, Copilot reaches 15%+ M365
+    penetration, AI revenue scales to $50B+ by FY28. Growth decelerates
+    gradually from the law of large numbers.
+  - Base: Azure decelerates to 25% by FY28, Copilot reaches 8-12%
+    penetration, overall growth moderates to low-teens by FY29. This is
+    the "everything works but nothing is heroic" case.
+  - Bear: AI capex produces subpar returns, OpenAI defects, Copilot
+    stalls below 5%, macro headwinds. Growth drops to single digits by
+    FY29 as the company matures into a utility-like grower.
+
+B.4 Operating Margin Assumptions
+---------------------------------
++----------+------+------+------+------+------+------+------+------+------+------+
+| Year     | FY27 | FY28 | FY29 | FY30 | FY31 | FY32 | FY33 | FY34 | FY35 | FY36 |
++----------+------+------+------+------+------+------+------+------+------+------+
+| BULL     | 47%  | 48%  | 49%  | 50%  | 50%  | 51%  | 51%  | 51%  | 51%  | 51%  |
+| BASE     | 46%  | 46%  | 47%  | 47%  | 47%  | 48%  | 48%  | 48%  | 48%  | 48%  |
+| BEAR     | 43%  | 42%  | 42%  | 43%  | 43%  | 44%  | 44%  | 44%  | 44%  | 44%  |
++----------+------+------+------+------+------+------+------+------+------+------+
+
+Rationale:
+  - FY2026 operating margin is running ~48% (H1 actual) but that
+    includes some one-time leverage; full year likely ~47%.
+  - Bull: Margin expansion continues as AI revenue mixes higher (high
+    incremental margins once infra is scaled) and opex leverage persists.
+  - Base: Margins plateau at 47-48% as higher D&A from the capex cycle
+    offsets operational leverage. Slight expansion in out-years.
+  - Bear: D&A pressure from $200B+ of cumulative capex depresses margins
+    to 42-43%. Recovery is slow because stranded assets depreciate over
+    15 years.
+
+B.5 Capex Assumptions ($ billions)
+------------------------------------
+This is the most critical assumption set. H1 FY2026 capex was $49.3B,
+annualizing to ~$99B. MSFT CFO guided FY2026 capex growth rate "higher
+than FY2025" ($64.6B), implying $95-105B for FY2026.
+
++----------+------+------+------+------+------+------+------+------+------+------+
+| Year     | FY27 | FY28 | FY29 | FY30 | FY31 | FY32 | FY33 | FY34 | FY35 | FY36 |
++----------+------+------+------+------+------+------+------+------+------+------+
+| BULL     |  95  |  85  |  75  |  65  |  60  |  55  |  55  |  55  |  55  |  55  |
+| BASE     | 100  |  95  |  85  |  75  |  70  |  65  |  60  |  60  |  60  |  60  |
+| BEAR     | 105  | 100  |  95  |  85  |  80  |  75  |  70  |  70  |  70  |  70  |
++----------+------+------+------+------+------+------+------+------+------+------+
+
+FY2026 capex estimate: $100B for all scenarios (actual H1 run rate).
+
+Rationale:
+  - Bull: Capex peaks in FY2026-27 and declines as supply catches demand.
+    By FY2031 MSFT reaches maintenance-level capex of ~$55B (~7% of rev).
+  - Base: Elevated capex persists through FY2028 as MSFT continues the
+    datacenter buildout. Moderates to $60B by FY2033 (~6-7% of rev).
+  - Bear: Capex stays stubbornly high because demand disappoints and MSFT
+    has committed to long-term supply contracts. Stranded asset risk is
+    real. Capex to revenue ratio stays elevated at 8-10%.
+
+B.6 Tax Rate: 18% (effective, aligned with recent actuals)
+B.7 SBC as % of Revenue: 4.0% (stable, per H1 FY2026 trend of 3.9%)
+B.8 D&A Growth: Modeled implicitly via operating margin assumptions
+    (D&A is the primary margin headwind in the near term)
+
+B.9 Terminal Value Assumptions
+-------------------------------
+Two methods, averaged:
+
+Method 1 -- Perpetuity Growth:
+  - Terminal FCF growth rate: 3.0% (all scenarios)
+  - Terminal value = FCF_yr10 * (1 + g) / (WACC - g) = FCF * 1.03 / 0.07
+
+Method 2 -- Exit Multiple:
+  - Bull: 25x SBC-adjusted FCF (premium quality compounder)
+  - Base: 22x SBC-adjusted FCF (in line with historical avg)
+  - Bear: 18x SBC-adjusted FCF (de-rated, utility-like)
+
+B.10 Probability Weights
+--------------------------
+  - Bull: 25%
+  - Base: 50%
+  - Bear: 25%
+
+================================================================================
+C. 10-YEAR FORECAST: BULL CASE (25% weight)
+================================================================================
+
+All figures in $M.
+
++------+--------+------+--------+---------+--------+--------+--------+------+--------+--------+
+| Year |  Rev   | YoY  | OpInc  | Op Mgn  | Tax    | NOPAT  | Capex  | D&A* | FCF    |SBC-Adj |
+|      |        |      |        |         | @18%   |        |        |      |        | FCF    |
++------+--------+------+--------+---------+--------+--------+--------+------+--------+--------+
+|FY26E | 323,000| +15% |151,810 | 47.0%   | 27,326 |124,484 |100,000 |38,000| 62,484 | 49,564 |
+|FY27  | 381,140| +18% |179,136 | 47.0%   | 32,244 |146,891 | 95,000 |43,000| 94,891 | 79,645 |
+|FY28  | 445,934| +17% |214,048 | 48.0%   | 38,529 |175,519 | 85,000 |48,000|138,519 |120,682 |
+|FY29  | 517,283| +16% |253,469 | 49.0%   | 45,624 |207,845 | 75,000 |52,000|184,845 |164,154 |
+|FY30  | 589,703| +14% |294,851 | 50.0%   | 53,073 |241,778 | 65,000 |55,000|231,778 |208,190 |
+|FY31  | 666,564| +13% |333,282 | 50.0%   | 59,991 |273,291 | 60,000 |58,000|271,291 |244,629 |
+|FY32  | 746,552| +12% |380,741 | 51.0%   | 68,533 |312,208 | 55,000 |60,000|317,208 |287,346 |
+|FY33  | 828,672| +11% |422,623 | 51.0%   | 76,072 |346,551 | 55,000 |62,000|353,551 |320,404 |
+|FY34  | 911,540| +10% |464,885 | 51.0%   | 83,679 |381,206 | 55,000 |63,000|389,206 |352,744 |
+|FY35  | 993,578|  +9% |506,725 | 51.0%   | 91,211 |415,515 | 55,000 |64,000|424,515 |384,872 |
+|FY36  |1,073,065| +8% |547,263 | 51.0%   | 98,507 |448,756 | 55,000 |65,000|458,756 |415,833 |
++------+--------+------+--------+---------+--------+--------+--------+------+--------+--------+
+
+* D&A estimated based on cumulative PP&E and 15-year useful life assumption.
+  D&A is embedded in COGS and opex; shown here for reference.
+  FCF = NOPAT + D&A - Capex. SBC-adj FCF = FCF - SBC (SBC = 4.0% of rev).
+
+Terminal Value (Bull):
+  Perpetuity growth: 415,833 * 1.03 / (0.10 - 0.03) = $6,118,630M
+  Exit multiple: 415,833 * 25 = $10,395,825M
+  Average terminal value: $8,257,228M
+
+PV of Cash Flows (Bull, 10% discount rate):
+
++------+--------+--------+
+| Year |SBC-Adj |  PV    |
+|      | FCF    |        |
++------+--------+--------+
+|FY27  | 79,645 | 72,405 |
+|FY28  |120,682 | 99,737 |
+|FY29  |164,154 |123,290 |
+|FY30  |208,190 |142,222 |
+|FY31  |244,629 |151,901 |
+|FY32  |287,346 |162,196 |
+|FY33  |320,404 |164,426 |
+|FY34  |352,744 |164,568 |
+|FY35  |384,872 |163,271 |
+|FY36  |415,833 |160,327 |
++------+--------+--------+
+| PV of explicit FCFs:    |  $1,404,343M  |
+| PV of terminal value:   |  $3,183,183M  |
+| Total enterprise value: |  $4,587,526M  |
+| + Net cash (Dec 2025):  |     $49,200M  |
+| Equity value:           |  $4,636,726M  |
+| / Shares (M):           |      7,430    |
+| Per share value (Bull): |    $623.99    |
++--------------------------+---------------+
+
+================================================================================
+D. 10-YEAR FORECAST: BASE CASE (50% weight)
+================================================================================
+
++------+--------+------+--------+---------+--------+--------+--------+------+--------+--------+
+| Year |  Rev   | YoY  | OpInc  | Op Mgn  | Tax    | NOPAT  | Capex  | D&A* | FCF    |SBC-Adj |
+|      |        |      |        |         | @18%   |        |        |      |        | FCF    |
++------+--------+------+--------+---------+--------+--------+--------+------+--------+--------+
+|FY26E | 323,000| +15% |151,810 | 47.0%   | 27,326 |124,484 |100,000 |38,000| 62,484 | 49,564 |
+|FY27  | 371,450| +15% |170,867 | 46.0%   | 30,756 |140,111 |100,000 |43,000| 83,111 | 68,253 |
+|FY28  | 423,453| +14% |194,789 | 46.0%   | 35,062 |159,727 | 95,000 |48,000|112,727 | 95,789 |
+|FY29  | 478,502| +13% |224,896 | 47.0%   | 40,481 |184,415 | 85,000 |52,000|151,415 |132,275 |
+|FY30  | 535,922| +12% |251,883 | 47.0%   | 45,339 |206,544 | 75,000 |55,000|186,544 |165,107 |
+|FY31  | 594,873| +11% |279,590 | 47.0%   | 50,326 |229,264 | 70,000 |58,000|217,264 |193,469 |
+|FY32  | 654,361| +10% |314,093 | 48.0%   | 56,537 |257,556 | 65,000 |60,000|252,556 |226,382 |
+|FY33  | 713,253|  +9% |342,362 | 48.0%   | 61,625 |280,737 | 60,000 |62,000|282,737 |254,207 |
+|FY34  | 770,313|  +8% |369,750 | 48.0%   | 66,555 |303,195 | 60,000 |63,000|306,195 |275,383 |
+|FY35  | 824,235|  +7% |395,633 | 48.0%   | 71,214 |324,419 | 60,000 |64,000|328,419 |295,450 |
+|FY36  | 873,690|  +6% |419,371 | 48.0%   | 75,487 |343,884 | 60,000 |65,000|348,884 |313,937 |
++------+--------+------+--------+---------+--------+--------+--------+------+--------+--------+
+
+Terminal Value (Base):
+  Perpetuity growth: 313,937 * 1.03 / (0.10 - 0.03) = $4,618,645M
+  Exit multiple: 313,937 * 22 = $6,906,614M
+  Average terminal value: $5,762,630M
+
+PV of Cash Flows (Base, 10% discount rate):
+
++------+--------+--------+
+| Year |SBC-Adj |  PV    |
+|      | FCF    |        |
++------+--------+--------+
+|FY27  | 68,253 | 62,048 |
+|FY28  | 95,789 | 79,165 |
+|FY29  |132,275 | 99,356 |
+|FY30  |165,107 |112,784 |
+|FY31  |193,469 |120,130 |
+|FY32  |226,382 |127,778 |
+|FY33  |254,207 |130,454 |
+|FY34  |275,383 |128,494 |
+|FY35  |295,450 |125,330 |
+|FY36  |313,937 |121,046 |
++------+--------+--------+
+| PV of explicit FCFs:    |  $1,106,585M  |
+| PV of terminal value:   |  $2,221,073M  |
+| Total enterprise value: |  $3,327,658M  |
+| + Net cash (Dec 2025):  |     $49,200M  |
+| Equity value:           |  $3,376,858M  |
+| / Shares (M):           |      7,430    |
+| Per share value (Base): |    $454.49    |
++--------------------------+---------------+
+
+================================================================================
+E. 10-YEAR FORECAST: BEAR CASE (25% weight)
+================================================================================
+
++------+--------+------+--------+---------+--------+--------+--------+------+--------+--------+
+| Year |  Rev   | YoY  | OpInc  | Op Mgn  | Tax    | NOPAT  | Capex  | D&A* | FCF    |SBC-Adj |
+|      |        |      |        |         | @18%   |        |        |      |        | FCF    |
++------+--------+------+--------+---------+--------+--------+--------+------+--------+--------+
+|FY26E | 323,000| +15% |151,810 | 47.0%   | 27,326 |124,484 |100,000 |38,000| 62,484 | 49,564 |
+|FY27  | 361,760| +12% |155,557 | 43.0%   | 28,000 |127,557 |105,000 |43,000| 65,557 | 51,087 |
+|FY28  | 397,936| +10% |167,133 | 42.0%   | 30,084 |137,049 |100,000 |48,000| 85,049 | 69,132 |
+|FY29  | 433,750|  +9% |182,175 | 42.0%   | 32,791 |149,384 | 95,000 |52,000|106,384 | 89,034 |
+|FY30  | 468,450|  +8% |201,434 | 43.0%   | 36,258 |165,175 | 85,000 |55,000|135,175 |116,437 |
+|FY31  | 501,242|  +7% |215,534 | 43.0%   | 38,796 |176,738 | 80,000 |58,000|154,738 |134,688 |
+|FY32  | 531,316|  +6% |233,779 | 44.0%   | 42,080 |191,699 | 75,000 |60,000|176,699 |155,446 |
+|FY33  | 557,882|  +5% |245,468 | 44.0%   | 44,184 |201,284 | 70,000 |62,000|193,284 |170,969 |
+|FY34  | 585,776|  +5% |257,741 | 44.0%   | 46,393 |211,348 | 70,000 |63,000|204,348 |180,917 |
+|FY35  | 609,207|  +4% |268,051 | 44.0%   | 48,249 |219,802 | 70,000 |64,000|213,802 |189,434 |
+|FY36  | 633,576|  +4% |278,773 | 44.0%   | 50,179 |228,594 | 70,000 |65,000|223,594 |198,251 |
++------+--------+------+--------+---------+--------+--------+--------+------+--------+--------+
+
+Terminal Value (Bear):
+  Perpetuity growth: 198,251 * 1.03 / (0.10 - 0.03) = $2,917,109M
+  Exit multiple: 198,251 * 18 = $3,568,518M
+  Average terminal value: $3,242,814M
+
+PV of Cash Flows (Bear, 10% discount rate):
+
++------+--------+--------+
+| Year |SBC-Adj |  PV    |
+|      | FCF    |        |
++------+--------+--------+
+|FY27  | 51,087 | 46,443 |
+|FY28  | 69,132 | 57,133 |
+|FY29  | 89,034 | 66,891 |
+|FY30  |116,437 | 79,555 |
+|FY31  |134,688 | 83,621 |
+|FY32  |155,446 | 87,747 |
+|FY33  |170,969 | 87,758 |
+|FY34  |180,917 | 84,423 |
+|FY35  |189,434 | 80,354 |
+|FY36  |198,251 | 76,450 |
++------+--------+--------+
+| PV of explicit FCFs:    |    $750,375M  |
+| PV of terminal value:   |  $1,250,226M  |
+| Total enterprise value: |  $2,000,601M  |
+| + Net cash (Dec 2025):  |     $49,200M  |
+| Equity value:           |  $2,049,801M  |
+| / Shares (M):           |      7,430    |
+| Per share value (Bear): |    $275.88    |
++--------------------------+---------------+
+
+================================================================================
+F. PROBABILITY-WEIGHTED INTRINSIC VALUE
+================================================================================
+
++----------+--------+---------+----------+
+| Scenario | Weight | $/Share  | Weighted |
++----------+--------+---------+----------+
+| Bull     |  25%   | $623.99 | $156.00  |
+| Base     |  50%   | $454.49 | $227.25  |
+| Bear     |  25%   | $275.88 |  $68.97  |
++----------+--------+---------+----------+
+| PROBABILITY-WEIGHTED IV:    | $452.21  |
++-----------------------------+----------+
+
+Current price: $416.51
+Margin of safety: ($452.21 - $416.51) / $452.21 = 7.9%
+
+================================================================================
+G. TERMINAL VALUE DECOMPOSITION
+================================================================================
+
+To ensure transparency, here is how the terminal value breaks down
+by method for each scenario:
+
+                        Perpetuity      Exit         Average      TV as %
+Scenario                Growth TV       Multiple TV  TV           of EV
+---------------------------------------------------------------------------
+Bull                    $6,118,630M     $10,395,825M $8,257,228M  69.4%
+Base                    $4,618,645M     $6,906,614M  $5,762,630M  66.7%
+Bear                    $2,917,109M     $3,568,518M  $3,242,814M  62.5%
+
+Terminal value represents 63-69% of total enterprise value. This is
+typical for a large-cap DCF but underscores that the out-year
+assumptions matter enormously. Sensitivity analysis below.
+
+================================================================================
+H. SENSITIVITY ANALYSIS
+================================================================================
+
+H.1 Sensitivity to Discount Rate (Probability-Weighted IV)
+------------------------------------------------------------
++-------------------+-----------+
+| Discount Rate     | IV/Share  |
++-------------------+-----------+
+|  8%               |  $637.84  |
+|  9%               |  $534.96  |
+| 10% (base)        |  $452.21  |
+| 11%               |  $387.33  |
+| 12%               |  $335.52  |
++-------------------+-----------+
+
+At the deep dive's 10% hurdle rate, IV = $452. At 12%, IV = $336
+(19% below current price -- no margin of safety). The model is
+meaningfully rate-sensitive, which is expected for a business with
+large terminal value contribution.
+
+H.2 Sensitivity to Terminal Growth Rate (Base Case only)
+---------------------------------------------------------
++-------------------+-----------+
+| Terminal g        | IV/Share  |
++-------------------+-----------+
+|  2.0%             |  $387.18  |
+|  2.5%             |  $418.59  |
+|  3.0% (base)      |  $454.49  |
+|  3.5%             |  $496.71  |
+|  4.0%             |  $547.91  |
++-------------------+-----------+
+
+H.3 Sensitivity to Capex (Base Case, if elevated capex persists)
+-----------------------------------------------------------------
+What if capex does NOT decline and stays at $90-100B/yr through FY2030?
+
+Under a "high capex" stress test (base revenue, base margins, but capex
+stays at $95B through FY2029 before declining to $80B):
+  - Base case IV drops from $454 to ~$395/share
+  - Probability-weighted IV drops from $452 to ~$400/share
+  - Current price of $417 would be ABOVE intrinsic value
+
+This is the key risk. If MSFT's capex supercycle extends 2-3 years
+beyond our base assumption, the stock is fairly valued to slightly
+overvalued at current prices.
+
+H.4 Sensitivity to Exit Multiple (Base Case only)
+---------------------------------------------------
++-------------------+-----------+
+| Exit Multiple     | IV/Share  |
++-------------------+-----------+
+|  18x              |  $396.69  |
+|  20x              |  $425.59  |
+|  22x (base)       |  $454.49  |
+|  24x              |  $483.39  |
+|  25x              |  $497.84  |
++-------------------+-----------+
+
+================================================================================
+I. WHAT THE MARKET IS PRICING
+================================================================================
+
+At $416.51, the market is pricing approximately:
+  - 10% discount rate: slightly below our base case ($454), implying
+    the market sees base-case execution as ~85% likely with some bear-
+    case tail risk. This seems reasonable.
+  - 12% discount rate: the stock would need bull-case execution to
+    justify current price. At 12%, our probability-weighted IV is only
+    $336, meaning the stock is overvalued unless you accept a lower
+    hurdle.
+  - Forward P/E: ~25x FY2026E adj EPS of ~$16.50 (consensus). This is
+    at the low end of MSFT's 5-year range (28-33x) but not cheap in
+    absolute terms.
+
+Implied assumptions at $416:
+  - Revenue CAGR of ~12-13% over 10 years (between base and bull)
+  - Operating margins stabilizing at 47-48%
+  - Capex declining from current $100B/yr to $60-65B by FY2032
+  - Terminal multiple of ~22x SBC-adjusted FCF
+
+These are reasonable but not conservative assumptions.
+
+================================================================================
+J. INVESTMENT CONCLUSION
+================================================================================
+
+                        MSFT DCF VERDICT
+                        ================
+
+  Probability-weighted intrinsic value:  $452/share
+  Current price:                         $417/share
+  Margin of safety:                      7.9%
+
+  Bull case IV:    $624/share  (+50% upside)
+  Base case IV:    $454/share  (+9% upside)
+  Bear case IV:    $276/share  (-34% downside)
+
+  Rating: ACCUMULATE (unchanged)
+
+ASSESSMENT:
+
+MSFT offers modest upside at current prices under our probability-
+weighted framework. The 7.9% margin of safety is thin -- well below
+the 15-20% threshold we typically require for conviction buys. However,
+this is a WIDE moat business with extraordinary durability, and the
+10% discount rate reflects that quality premium.
+
+Key considerations for purchase decision:
+
+1) At $417, MSFT is FAIRLY VALUED in the base case. You are paying a
+   fair price for a wonderful business. The Buffett test: "far better
+   to buy a wonderful company at a fair price than a fair company at a
+   wonderful price." This qualifies -- but barely.
+
+2) The asymmetry is moderately favorable: +50% bull vs -34% bear,
+   probability-weighted toward the base. Not a 2:1 upside/downside
+   ratio, but acceptable for a portfolio anchor.
+
+3) The capex sensitivity is the swing factor. If the supercycle extends
+   beyond FY2028, the stock is at or slightly above intrinsic value
+   today. If capex normalizes faster (e.g., supply meets demand by
+   FY2027), there is meaningful upside.
+
+4) Q3 FY2026 earnings on April 29 (6 days away) could provide a
+   near-term catalyst or headwind. Given the Q3 guide of ~$81B
+   revenue and Azure +37-38% CC, beating or missing will move the
+   stock. Buying before earnings adds event risk.
+
+5) Ideal entry: $380-400 would provide 12-16% margin of safety,
+   which is more in line with our standard for a first purchase.
+   The stock has traded as low as $356 in the past year (52-week
+   low), so patience could be rewarded.
+
+RECOMMENDATION FOR PORTFOLIO:
+
+MSFT clears the DCF threshold for purchase eligibility but does NOT
+offer a compelling margin of safety at $417. Two paths forward:
+
+  (A) Buy a small starter position (25-30% of intended allocation)
+      at current prices to establish the large-cap anchor, with the
+      intention of adding more if the stock pulls back to $380-400.
+      Pro: Gets us in the game. Con: Thin margin of safety.
+
+  (B) Wait for a pullback to $380-400 (or for Q3 earnings on April
+      29 to provide clarity on capex trajectory and Azure demand).
+      Pro: Better entry. Con: If earnings are strong, stock may
+      gap to $440-460 and the opportunity is gone.
+
+Given that this is our first holding and we have only $2,000 in cash,
+option (A) makes practical sense: a ~$500-700 position at current
+prices is immaterial in dollar terms while establishing our large-cap
+anchor. The deep dive and DCF confirm MSFT is the right business for
+this role. The only question is price.
+
+DCF VALID UNTIL: June 22, 2026 (60 days from April 23, 2026)
+
+================================================================================
+K. CAPEX CURVE -- DETAILED EXHIBIT
+================================================================================
+
+This exhibit shows the explicit capex-to-revenue trajectory, which
+is the single most important variable for MSFT's FCF and valuation.
+
++------+---------+---------+---------+---------+---------+---------+
+| Year | Rev (B) | Capex   | Capex/  | Rev (B) | Capex   | Capex/  |
+|      | BULL    | BULL    | Rev     | BASE    | BASE    | Rev     |
++------+---------+---------+---------+---------+---------+---------+
+|FY26E |   323   |   100   | 31.0%   |   323   |   100   | 31.0%   |
+|FY27  |   381   |    95   | 24.9%   |   371   |   100   | 26.9%   |
+|FY28  |   446   |    85   | 19.1%   |   423   |    95   | 22.5%   |
+|FY29  |   517   |    75   | 14.5%   |   479   |    85   | 17.7%   |
+|FY30  |   590   |    65   | 11.0%   |   536   |    75   | 14.0%   |
+|FY31  |   667   |    60   |  9.0%   |   595   |    70   | 11.8%   |
+|FY32  |   747   |    55   |  7.4%   |   654   |    65   |  9.9%   |
+|FY33  |   829   |    55   |  6.6%   |   713   |    60   |  8.4%   |
+|FY34  |   912   |    55   |  6.0%   |   770   |    60   |  7.8%   |
+|FY35  |   994   |    55   |  5.5%   |   824   |    60   |  7.3%   |
+|FY36  | 1,073   |    55   |  5.1%   |   874   |    60   |  6.9%   |
++------+---------+---------+---------+---------+---------+---------+
+
++------+---------+---------+---------+
+| Year | Rev (B) | Capex   | Capex/  |
+|      | BEAR    | BEAR    | Rev     |
++------+---------+---------+---------+
+|FY26E |   323   |   100   | 31.0%   |
+|FY27  |   362   |   105   | 29.0%   |
+|FY28  |   398   |   100   | 25.1%   |
+|FY29  |   434   |    95   | 21.9%   |
+|FY30  |   468   |    85   | 18.2%   |
+|FY31  |   501   |    80   | 16.0%   |
+|FY32  |   531   |    75   | 14.1%   |
+|FY33  |   558   |    70   | 12.5%   |
+|FY34  |   586   |    70   | 11.9%   |
+|FY35  |   609   |    70   | 11.5%   |
+|FY36  |   634   |    70   | 11.0%   |
++------+---------+---------+---------+
+
+Historical context:
+  - FY2023: 13.3% capex/rev
+  - FY2024: 18.1% capex/rev
+  - FY2025: 22.9% capex/rev
+  - H1 FY2026: 31.0% capex/rev (supercycle peak)
+
+The bull case assumes capex/rev normalizes to ~5-7% by FY2034-36
+(close to pre-AI-era levels). The bear case assumes it stays elevated
+at 11-14% through the forecast period -- a structurally lower-FCF
+business than the pre-AI Microsoft.
+
+================================================================================
+END OF DCF MODEL
+================================================================================

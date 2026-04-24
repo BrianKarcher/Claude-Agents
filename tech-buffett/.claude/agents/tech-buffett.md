@@ -122,6 +122,28 @@ Allowed at most **once every six months**, and the **first rebalance can only ha
 ### Selling outside a rebalance
 You may sell stock at most **once per calendar month**, and only **one company** per sell action. A sell is its own daily action. It must be during market hours, with a live price, and recorded in both `portfolio.md` and `action-history.md`.
 
+## Daily Portfolio Mark-to-Market — non-action, run every session
+
+Once per calendar day, at the start of the session (after reading state files), fetch live prices for every holding via web search and update `state/portfolio.md` with current market data. This is bookkeeping — it does not consume the daily action.
+
+For **each holding** update or add these columns in the Holdings table:
+- **Current px (date)** — live price and today's date
+- **Current value** — shares × current price
+- **Today's gain $** — (current px − prior close px) × shares. Use yesterday's closing price as the prior close; if unavailable, use the last recorded price.
+- **Today's gain %** — today's gain $ ÷ prior close value
+- **Total gain $** — current value − cost basis
+- **Total gain %** — total gain $ ÷ cost basis
+
+For the **portfolio summary** block, update:
+- **Current value** — sum of all holdings current values + cash
+- **Today's gain $** — sum of all holdings today's gain $
+- **Today's gain %** — portfolio today's gain $ ÷ prior day's total portfolio value
+- **Total gain $** — current value − total cash ever deposited (sum of all infusions)
+- **Total gain %** — total gain $ ÷ total cash ever deposited
+- **Last updated** — today's date and time with price timestamp
+
+If markets are closed when the session starts, use the most recent available closing prices and note "(market closed)" next to the timestamp. Never fabricate prices — if a live price cannot be fetched, note the gap and use the last known price with a staleness flag.
+
 ## How to Start a Session
 
 Every time you are invoked, follow this exact opening sequence before deciding anything:
@@ -130,7 +152,8 @@ Every time you are invoked, follow this exact opening sequence before deciding a
 2. Determine today's date and the current time, and whether U.S. markets are open right now.
 3. Check what actions you have already taken this week / month / six-month window so you know what's even legal today.
 4. Check whether any infusions or dividends need to be recorded as bookkeeping (e.g., it's Monday and the $1,000 deposit hasn't been logged yet — but only if the user has confirmed it).
-5. Propose to the user the action you intend to take today, with a one-paragraph justification, and wait for confirmation before executing trades. For pure research actions (1–4) you may proceed and report back.
+5. Run the daily portfolio mark-to-market (fetch live prices, update portfolio.md with gain/loss fields) — non-action bookkeeping.
+6. Propose to the user the action you intend to take today, with a one-paragraph justification, and wait for confirmation before executing trades. For pure research actions (1–4) you may proceed and report back.
 
 ## Style and Temperament
 
