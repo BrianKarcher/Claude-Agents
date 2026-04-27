@@ -83,16 +83,83 @@ Not his manager, not assigned to that component — but stepped in to prevent hi
 
 ---
 
-## Story 4 — [title]
-**Tags:**
-**Company/Context:**
+## Story 4 — Cross-Functional Ownership on ML Billing Reconciliation Platform
+**Tags:** `[leadership]` `[cross-functional]` `[ownership]` `[ambiguity]`
+**Company/Context:** Optum (billing reconciliation platform)
 
 **Situation:**
+As technical lead for a billing reconciliation platform (architecture, data engineering, ML workflow design), operations leadership raised concerns about reviewer throughput, adoption readiness, and compliance workflows — all product/ops territory, not engineering. The PM was overloaded, creating risk that technically correct features wouldn't reflect how thousands of reviewers actually worked.
 
 **Task:**
+Bridge engineering, operations, and compliance to keep the program moving — work outside my comfort zone and outside traditional engineering scope.
 
 **Action:**
+- Shadowed operations teams during live triage sessions
+- Mapped reviewer workflows, tools, and pain points
+- Translated operational constraints into UX and system requirements
+- Hosted working sessions with product, compliance, and ops managers
+- Built reviewer personas and triage journey maps (first time producing UX/product artifacts)
+- Presented adoption risks and sequencing recommendations to leadership
 
 **Result:**
+- Reviewer throughput improved after explainability and bulk action changes
+- Compliance signed off faster because audit trails matched real-world workflows
+- Product adopted my artifacts for future launches
+- Leadership framed human-in-the-loop design as a competitive differentiator
 
-**Key message (1 sentence):**
+**Key message:** Shipping ML systems at scale is as much about people and workflows as models and services — I expanded from engineering owner to outcomes owner, which is the defining shift at Staff+ levels.
+
+---
+
+## Story 5 — Cross-Team Conflict: Release Readiness on Healthcare Billing Platform
+**Tags:** `[conflict]` `[cross-functional]` `[leadership]` `[ownership]`
+**Company/Context:** Optum (healthcare billing platform)
+
+**Situation:**
+During rollout of a large-scale billing platform, three stakeholders had conflicting priorities: Product wanted to accelerate launch for revenue impact, Operations/Compliance was concerned about billing errors and regulatory exposure, and Engineering was caught in the middle balancing speed with correctness.
+
+**Task:**
+Resolve the release readiness standoff without losing delivery momentum or creating compliance risk — no one owned this problem, but someone had to.
+
+**Action:**
+- Translated competing concerns into measurable risk: projected error rates, financial impact per incorrect claim, SLA implications, operational workload — shifting the conversation from emotional to analytical
+- Designed a phased rollout architecture: feature flags for controlled enablement, canary releases by customer segment, enhanced observability for early detection
+- Brokered shared success metrics: acceptable error thresholds, performance SLAs, rollback criteria, revenue impact targets — aligning all teams to the same objective function
+- Instrumented the system heavily so Operations had real-time visibility and Engineering had fast signal on anomalies
+
+**Result:**
+- Delivered on schedule with no spike in compliance issues
+- Avoided full rollback through early anomaly detection
+- Reduced inter-team friction on future releases
+- Established a repeatable phased-release framework adopted for subsequent launches
+
+**Key message:** Cross-team conflict is usually about risk tolerance and incentive misalignment, not personalities — quantifying risk and designing rollout architecture that satisfies multiple objective functions is how I resolve it.
+
+---
+
+## Story 6 — Explaining ML Threshold Decisions to Non-Technical Stakeholders
+**Tags:** `[cross-functional]` `[leadership]` `[ambiguity]`
+**Company/Context:** Optum (billing reconciliation platform — ML matching system)
+
+**Situation:**
+We built an ML model to match claims between payers and providers. The model scored each potential match with a confidence probability. The hardest part wasn't the model — it was helping three non-technical stakeholder groups make a joint decision about where to set the confidence thresholds, because that single decision simultaneously touched model accuracy, operational capacity, and financial risk.
+
+**Task:**
+Translate a technical ML concept — precision-recall tradeoffs at different confidence cutoffs — into terms each stakeholder group could reason about and commit to, so we could reach a threshold decision that all three could own.
+
+**Action:**
+- Worked with data science to evaluate the model's output distribution on historical data and generate precision-recall curves at different cutoffs — then translated those curves into three business-facing views:
+  - **For Operations:** "At this threshold, how many cases hit your human review queue per day — and is that within your reviewers' capacity?"
+  - **For Finance:** "At this threshold, what's our expected financial exposure from false positives — incorrectly flagging legitimate reimbursements?"
+  - **For Product/Leadership:** "At this threshold, what percentage of records are fully automated vs. routed to humans — and what's the risk tolerance tradeoff?"
+- Ran simulations on historical data for each threshold configuration, surfacing three outputs per scenario: expected automation rate, expected reviewer workload, expected financial error exposure
+- Facilitated a joint working session where all three groups could see their concerns reflected in the same model — moving from separate tribal opinions to a shared decision surface
+- Framed the final recommendation not as an engineering choice but as a risk policy decision: "Here's the automation rate you get, here's the queue load that creates, here's the financial risk — you tell me where to draw the line"
+- Built in recalibration as part of the system design, so the thresholds weren't permanent — stakeholders could commit without feeling locked in
+
+**Result:**
+- All three stakeholder groups aligned on thresholds without engineering having to arbitrate between them
+- Automation rate increased gradually over time as the model improved and stakeholders built confidence in the system
+- The framing — "thresholds as risk policy, not engineering parameters" — became the standard way the team communicated ML decisions to business stakeholders on future projects
+
+**Key message:** The technical work was building the model; the harder work was making the model's tradeoffs legible to people who couldn't evaluate them directly — and structuring the decision so stakeholders owned the risk tolerance call, not engineering.
