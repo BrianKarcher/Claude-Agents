@@ -163,3 +163,30 @@ Translate a technical ML concept — precision-recall tradeoffs at different con
 - The framing — "thresholds as risk policy, not engineering parameters" — became the standard way the team communicated ML decisions to business stakeholders on future projects
 
 **Key message:** The technical work was building the model; the harder work was making the model's tradeoffs legible to people who couldn't evaluate them directly — and structuring the decision so stakeholders owned the risk tolerance call, not engineering.
+
+---
+
+## Story 7 — Building Engineering Practices on the Billing Platform
+**Tags:** `[development]` `[leadership]` `[ownership]`
+**Company/Context:** Optum (healthcare billing platform — same project as Story 2, different dimension)
+
+**Situation:**
+The billing platform had a deeper problem beyond the technical architecture: the team's engineering habits hadn't kept pace with the system's complexity. Design happened too late — teams implemented first, then discovered scaling or consistency issues. Operability was an afterthought. There was no shared standard for what "done" meant. As a result, production issues were slow to debug, deployments were risky, and the same failure patterns kept recurring.
+
+**Task:**
+As technical lead, introduce engineering practices that would change how the team built systems — not just fix the current platform, but make good engineering the default behavior going forward.
+
+**Action:**
+- Introduced domain-aligned design docs as a required step before implementation — lightweight enough to not slow teams down, but structured to force clarity on data ownership, API contracts, failure modes, and scaling expectations; wrote the first several myself to set the standard
+- Tied missing patterns directly to real incidents: when a job failed or exceeded SLAs, walked through exactly which missing practice caused it — no retry strategy, unclear ownership, no observability — so the connection between habits and outcomes was concrete, not abstract
+- Made operability a first-class exit criterion: a service wasn't "done" until it had idempotent processing, explicit retry semantics, dead-letter handling, structured metrics, and SLA-based alerting; co-developed these standards with engineers and tech leads rather than mandating them top-down
+- Integrated design reviews into existing workflows rather than adding a separate process — adoption came through pull, not push
+
+**Result:**
+- Engineers began writing design docs and thinking about failure modes upfront without prompting — the behavior became self-sustaining
+- Operational concerns shifted from reactive firefighting to part of normal development
+- Incident detection and resolution time shortened significantly as structured metrics replaced log-digging
+- The patterns extended beyond this platform and became the foundation for how other teams in the organization approached distributed service design
+- Processing time dropped from 36+ hours to under 2 hours; deployment risk dropped to near zero (shared with Story 2 — different frame)
+
+**Key message:** The architectural changes fixed the system; the practice changes fixed how the team builds — and the second investment compounded longer than the first.
