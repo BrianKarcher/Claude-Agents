@@ -138,3 +138,24 @@
 - **Details:** Researched 22 tech/disruptor candidates across large, mid, and small cap buckets using live market data (prices as of April 14, 2026). Scored each on revenue growth, FCF margin, valuation, moat, and risk. Full raw notes saved to `research/scans/scan-2026-04-14.md`.
 - **Rationale:** First scan to populate the candidate list and identify the highest-conviction opportunities for further initiation reports.
 - **Resulting state:** `state/candidates.md` replaced with 22-candidate ranked list. Top 3: TTD (#1, 8/10), MSFT (#2, 8/10), NVDA (#3, 7/10).
+
+---
+
+## 2026-04-27 — Infusion (bookkeeping)
+
+- **Action:** Infusion (bookkeeping)
+- **Details:** $1,000.00 weekly Monday deposit recorded. Third infusion. Total deposited now $3,000.00.
+- **Rationale:** Standing weekly deposit per portfolio rules. User confirmed deposit occurred.
+- **Resulting state:** Cash $2,370.41 | Invested $629.60 (cost basis) | Total deposited $3,000.00
+
+---
+
+## 2026-04-28 — Initiation — MNDY
+
+- **Action:** Initiation of Coverage (Action 2)
+- **Ticker:** MNDY (monday.com Ltd., NASDAQ; Israeli FPI)
+- **Details:** Full initiation of coverage produced at `research/initiations/INIT-MNDY-2026-04-28.txt`. Two structured filing extracts created as non-action bookkeeping from user-supplied filings: `MNDY-20F-FY2025.md` and `MNDY-EARNINGS-FY2025-Q4.md` saved to `research/filings/`. Initiation covers: business description (founder-led Tel Aviv Work OS, IPO 2021, co-CEO structure), products (monday work management / CRM / dev / service + new unified AI layer: sidekick, vibe, agents, workflows), customers (250,000+ paid; >$500K customers +74% YoY; no customer >1% of revenue), GTM (bottom-up + sales-led-growth; 2025 leadership rebuild with new CRO/CMO/CCO), competitive landscape (Asana / Atlassian / ClickUp / Notion direct; Microsoft Loop + Salesforce + ServiceNow as bundled threats), moat assessment (NARROW, moderate confidence -- moderate-high switching costs, weak network effects, moderate scale economics, distinctive UX moat), management (Mann/Zinman co-CEOs since 2020; Glazer CFO since 2021 = stable; founder share veto rights as governance flag), key risks (structural deceleration 30% weight, Microsoft bundling 15%, AI disruption 15%, FX 10%, geopolitical 10%, governance 5%), recent results (FY2025 rev $1,232M +27%, adjusted FCF $322.7M = 26% margin, GAAP net income $118.7M with $61M one-time tax benefit, 89% gross margin; Q4 2025 rev +25%; FY2026 guide of $1,452-1,462M = +18-19% growth and FCF margin compression to 19-20%), and valuation snapshot (P/S 3.0x, EV/Sales 1.6x, EV/FCF 6.2x ex-cash, mkt cap $3.65B with $1.67B net cash = ~46% of mkt cap, lowest decile of historical SaaS valuation).
+- **Preliminary valuation framework:** Three scenarios (bear 25% / base 55% / bull 20%) probability-weighted intrinsic value ~$175/share vs. live $68.92 = +154% upside before time-discounting; even bear PV ~$85 = +23% upside.
+- **Rating:** WATCH / ACCUMULATE ON CONFIRMATION. Buy is gated on: (i) Q1 2026 earnings May 12-13 confirms revenue >=$338M and maintains FY26 guide, (ii) deep dive confirms >$100K NDR remains >=115%, (iii) DCF intrinsic clears $100/share at 10% hurdle or $120/share at 12% hurdle.
+- **Rationale:** MNDY ranked #6 on the April 14 quick scan (7/10) but the setup has improved meaningfully since the scan: stock is now at $68.92 vs. ~$70-75 at scan time, market cap squarely in mid-cap bucket ($3.65B), 78% drawdown from 52-wk high creates an asymmetric value setup (down $1.67B in net cash + $322.7M FCF + 14% non-GAAP op margin business). MNDY is the natural first mid-cap candidate to fill the empty mid-cap slot (currently 0% of portfolio target ~33%). Initiation completed to advance MNDY through the research pipeline (Init -> Deep Dive -> DCF -> Buy) ahead of the May 12-13 Q1 print catalyst.
+- **Resulting state:** Cash $2,370.41 unchanged. No trade. Deep Dive (Action 3) is the next eligible action for MNDY.

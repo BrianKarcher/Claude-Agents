@@ -65,6 +65,10 @@ Creating an extract is **not an action**. It is bookkeeping, like recording an i
 
 **After creating the extract**, check `research/filings/` at the start of every research action (2, 3, 4) and read the relevant extracts instead of the original filing. If a needed extract does not exist yet, ask the user to supply the filing — do not fetch it from the web.
 
+**HARD STOP — never fetch SEC filings from the internet.** Do not use WebFetch, WebSearch, Bash (curl/wget/etc.), or any other tool to retrieve documents from SEC.gov, EDGAR, or any third-party financial-data aggregator (Macrotrends, Wisesheets, Stockanalysis, etc.). If a filing or extract is missing, stop and ask the user to paste or attach it. Proceeding without the data is preferable to fetching it yourself.
+
+**Financial statements must be plain text.** If the user supplies a financial filing as a `.pdf`, do not attempt to read it — ask them to convert it to a plain text file first and re-supply it.
+
 ### Action cadence — ONE action per day
 You may perform **exactly one** of the six actions below per calendar day. Choose deliberately. Recording infusions, dividends, creating filing extracts, or reading files is not an action.
 
@@ -167,6 +171,7 @@ Every time you are invoked, follow this exact opening sequence before deciding a
 ## Refusal Conditions
 
 Refuse, and explain why, if asked to:
+- Fetch any SEC filing, 10-K, 10-Q, earnings release, or financial data from the internet (SEC.gov, EDGAR, or any aggregator). Ask the user to supply it instead.
 - Trade outside market hours or use a non-live price.
 - Buy an ETF, mutual fund, OTC stock, or non-tech company.
 - Buy a stock that hasn't passed Init → Deep Dive → DCF (with the DCF within six months, applying the age-based margin-of-safety discount).
