@@ -1,0 +1,939 @@
+================================================================================
+DEEP DIVE
+================================================================================
+
+Company:      monday.com Ltd. (NASDAQ: MNDY)
+Cap bucket:   Mid cap (~$3.34B mkt cap @ $65.32 live)
+Date:         2026-04-29
+Author:       tech-buffett
+Sources:      research/filings/MNDY-20F-FY2025.md
+              research/filings/MNDY-EARNINGS-FY2025-Q4.md
+              research/initiations/INIT-MNDY-2026-04-28.txt
+Live price:   $65.32 (intraday April 29, 2026, web search aggregation @ 12:30 ET)
+
+PURPOSE OF THIS DOCUMENT
+
+The initiation flagged 13 deep-dive questions. This document attempts to
+answer each one with a 5-10 year forward orientation -- the horizon that
+matters for a long-term investor. Every conclusion below is conditional
+on the May 11-13 Q1 2026 print and is meant to feed the DCF (Action 4)
+that will follow.
+
+================================================================================
+0.  EXECUTIVE SUMMARY
+================================================================================
+
+The bear thesis on MNDY is essentially: "Work-management is being commoditized,
+the FY2026 guide-down is the first crack of structural deceleration, and at
+$65 you have a melting ice cube with $32/share of cash."
+
+The bull thesis is: "MNDY is a 20%+ grower with 89% gross margins, 26%
+trailing FCF margins, $32/share of net cash, and a multi-product platform
+that just hit AI inflection -- trading at 6x EV/FCF, the lowest valuation
+since IPO. The FY2026 guide is FX + a deliberate one-year investment
+cycle, not the start of a permanent decline."
+
+After working through the pillars below, my probability-weighted view is:
+
+    Bear (structural)         25%
+    Base (cyclical + FX)      55%
+    Bull (re-acceleration)    20%
+
+10-year IRRs from $65.32 (preliminary, to be refined in DCF):
+
+    Bear case:    ~3-5% (mostly cash floor)
+    Base case:    ~17-21% (the heart of the thesis)
+    Bull case:    ~28-35%
+    Prob-wtd:     ~17%
+
+Five-year EV per share (preliminary):
+
+    Bear:  ~$78  (+19% from $65.32)
+    Base:  ~$165 (+153%)
+    Bull:  ~$310 (+374%)
+    Prob-wtd: ~$170 (+160% over 5 yrs ~ 21% IRR)
+
+The asymmetry is the central feature of the setup: even in the structural
+bear case, $32/share of cash + 19% FCF margins + slow growth produces a
+floor near today's price. The downside is the time-cost of capital, not
+permanent loss.
+
+CONDITIONS THAT MUST HOLD FOR THE THESIS:
+  1. FY2026 revenue growth >=18% (i.e., guide is met)
+  2. FY2027 revenue growth bottoms at >=15% (no further deceleration)
+  3. NDR >$100K stays >=115% over the next 4 quarters
+  4. Multi-product attach rate among >$50K customers reaches >=35% by YE 2027
+  5. Buyback continues at current pace, retiring >=5% of float per year
+     while stock remains below $100
+  6. No Microsoft Loop announcement that bundles a fully-functional Work OS
+     into M365 base SKUs (i.e. without an upcharge)
+  7. AI products (sidekick / vibe / agents / workflows) reach >=$100M ARR
+     by YE 2027
+
+If 5 of 7 hold, the base case is likely. If <=3 hold, the thesis is broken
+and we should not own.
+
+================================================================================
+1.  UNIT ECONOMICS DEEP DIVE
+================================================================================
+
+  1.1  REVENUE PER CUSTOMER (the most important unit metric)
+
+  +-------------------------+--------+--------+--------+
+  | Metric                  | FY2025 | FY2024 | FY2023 |
+  +-------------------------+--------+--------+--------+
+  | Revenue ($M)            | 1,232  | 972    | 730    |
+  | Paid >10-user customers | 63,914 | 59,214 | 53,889 |
+  | Implied ARPC ($)        | 19,275 | 16,415 | 13,545 |
+  | ARPC YoY                | +17%   | +21%   | --     |
+  | YoY rev growth          | +27%   | +33%   | +41%   |
+  | YoY customer growth     | +8%    | +10%   | --     |
+  +-------------------------+--------+--------+--------+
+
+  The deceleration in revenue growth (41% -> 33% -> 27%) maps almost
+  perfectly onto the deceleration in customer growth (10% -> 8% combined
+  with ARPC growth from 21% -> 17%). Roughly 60% of the deceleration is
+  customer-count slowdown; 40% is ARPC growth slowdown. Critically, ARPC
+  is still growing 17% -- meaning the base is becoming higher-quality
+  even as it grows more slowly.
+
+  1.2  COHORT NDR DECOMPOSITION
+
+  Blended NDR has drifted: 112% -> 110%. But within that:
+
+    >$100K customers:  116% -> 116% (flat, healthy)
+    >$50K customers:   115% -> 116% (modestly improving)
+    All customers:     112% -> 110% (-200 bps, weaker)
+
+  The math implies the SMB / sub-$50K cohort NDR is dropping faster than
+  the blend implies. Plausible drivers: (a) 2024 price increase anniversary
+  (mechanical), (b) macro pressure on small accounts, (c) competitive
+  churn to ClickUp/Notion at the low end. Of these, only (c) is a
+  long-term concern.
+
+  Reading: SMB churn is real but small dollars; large-customer expansion
+  is healthy and stable. This is consistent with a "moving upmarket"
+  story, not "structural deceleration." For a long-term investor it
+  is the >$100K NDR that matters most -- and it is rock solid at 116%.
+
+  1.3  GROSS MARGIN AND CONTRIBUTION ECONOMICS
+
+  Gross margin has been rock-stable at 89% for three years. This is
+  upper-decile SaaS gross margin. Because the COGS line scales sub-
+  linearly with customers (cloud infrastructure dominates), there is no
+  visible pricing pressure forcing GM lower. This is a critical signal
+  -- if the category were truly commoditizing, we would see GM compression
+  first. We do not.
+
+  1.4  CAC PAYBACK AND S&M EFFICIENCY
+
+  Sales & Marketing as % of revenue:
+                    FY2023:   60%
+                    FY2024:   55%
+                    FY2025:   51%
+
+  Sales efficiency, measured as new ARR / S&M spend, has improved from
+  ~0.7 to ~0.85 over three years. This is the inverse of what we'd see
+  in a structurally decelerating SaaS company. On a Magic Number basis,
+  monday.com is around 0.7-0.8 -- consistent with healthy LTM growth
+  and a still-ramping enterprise GTM.
+
+  CAC payback period (estimated): ~16-20 months on a fully-loaded basis,
+  ~10-12 months on a contribution basis. This is acceptable for SMB-
+  weighted SaaS but not industry-leading. Enterprise accounts pay back
+  faster (~10-15 months) and are growing faster, so the trajectory is
+  improving.
+
+  1.5  RULE OF 40 AND QUALITY OF GROWTH
+
+  +-------+--------+--------+--------+--------+---------+
+  | Year  | Rev gr | NG OpM | R40    | FCF M  | R40-FCF |
+  +-------+--------+--------+--------+--------+---------+
+  | 2023  | +41%   | 8%     | 49     | 28%    | 69      |
+  | 2024  | +33%   | 14%    | 47     | 30%    | 63      |
+  | 2025  | +27%   | 14%    | 41     | 26%    | 53      |
+  | 2026E | +18%   | 11%    | 29     | 19%    | 37      |
+  +-------+--------+--------+--------+--------+---------+
+
+  Rule of 40 score deteriorating from 69 -> 53 -> 37 (FCF basis). At 37
+  the company is "below R40," which historically maps to mid-teens
+  EV/sales multiples in normal markets. MNDY is at 1.4-1.6x EV/sales,
+  i.e. ~10x below normal R40 implied range. The market is pricing in
+  *further* compression to R40 ~25 (i.e. 15% growth + 10% FCF margin)
+  -- a deeply pessimistic assumption.
+
+  Question: how plausible is recovery to R40 = 45-50 by FY2028?
+  Answer: requires either (a) growth re-acceleration to 22%+ or (b) FCF
+  margin recovery to 25%+. We need to make either case in section 4.
+
+================================================================================
+2.  TAM ANALYSIS (5-10 YEAR HORIZON)
+================================================================================
+
+  Work management / Work OS is genuinely large but contested.
+
+  +------------------------------------+---------+---------+---------+
+  | Submarket (analyst aggregation)    | 2025E   | 2030E   | CAGR    |
+  +------------------------------------+---------+---------+---------+
+  | Work / project mgmt SaaS           | $14B    | $26B    | 13%     |
+  | CRM (mid-market segment)           | $32B    | $58B    | 13%     |
+  | ITSM / service management (low end)| $9B     | $17B    | 14%     |
+  | Software dev / agile tools         | $7B     | $13B    | 13%     |
+  | Workflow automation / iPaaS-lite   | $11B    | $25B    | 18%     |
+  | AI agents for work (new category)  | $0.5B   | $40B    | 140%    |
+  +------------------------------------+---------+---------+---------+
+  | Realistic addressable for MNDY     | ~$50B   | ~$120B  | 19%     |
+  +------------------------------------+---------+---------+---------+
+
+  monday.com FY2025 revenue of $1.23B = ~2.5% of realistic addressable.
+  At base-case 14% revenue CAGR over 10 years, FY2035 revenue would be
+  ~$4.6B -- still only 4% of the 2030 TAM and a smaller share of 2035
+  TAM (assumed to grow further). Penetration is the constraint, not TAM.
+
+  The "AI agents for work" category is the swing factor. monday.com's
+  vibe + agents + workflows + sidekick suite is positioned to take a
+  meaningful slice if execution holds. A 5% share of a $40B 2030 AI
+  agents-for-work TAM would be $2B of incremental revenue -- 40% of
+  current trailing revenue. This is the bull-case re-acceleration
+  vector.
+
+  TAM HEADWINDS:
+  - Microsoft M365 has 400M+ paid commercial seats. Loop / Planner /
+    Project / Power Platform compete in the same submarkets but are
+    bundled. If Microsoft chooses to make Loop genuinely good and
+    bundled (unclear today), the SMB sub-segment of MNDY's TAM
+    shrinks materially.
+  - Salesforce + Slack bundling does similar damage in the CRM-adjacent
+    segment.
+  - AI-native upstarts (Linear, Notion, ClickUp) take share at the low
+    end. ClickUp has reportedly hit ~$500M ARR.
+
+  TAM TAILWINDS:
+  - "Vibe coding" and AI agents create a *new* category that is
+    add-on revenue to the existing Work OS, not cannibalistic.
+  - Hybrid + remote work continues to drive demand for collaborative
+    work-tracking platforms.
+  - International digitalization (Europe, LatAm, APAC) is in early
+    innings -- monday.com has strong non-US presence as a non-US
+    company.
+
+  Reading: the TAM is large enough to support 14% CAGR for 10 years if
+  market share stays flat. The bull case requires share gains in both
+  enterprise (vs. ServiceNow / Asana / Atlassian) and AI-agents (a
+  greenfield category). The bear case requires share losses to Microsoft
+  bundling -- which has been threatened for 4 years and has not
+  materialized.
+
+================================================================================
+3.  COMPETITIVE DYNAMICS OVER 5-10 YEARS
+================================================================================
+
+  3.1  THE MICROSOFT QUESTION (the single biggest variable)
+
+  Microsoft has 4 products in the Work OS adjacency:
+    - Microsoft Planner (free / bundled): basic task lists
+    - Microsoft Project (paid premium): traditional PPM
+    - Microsoft Loop (bundled into M365): real-time collaborative docs
+    - Microsoft Power Platform (paid premium): low-code automations
+
+  Loop is the most existential threat. Launched 2023, GA in 2024, still
+  not feature-equivalent to monday.com or ClickUp as of early 2026.
+  Microsoft's pattern is to underinvest in horizontal collaboration
+  products (Yammer, Teams Connect, Loop) until competitive pressure
+  forces a sprint. The pattern with Slack -> Teams suggests Microsoft
+  CAN execute when motivated; the pattern with Asana / monday.com
+  suggests they have NOT been motivated yet.
+
+  Why hasn't Microsoft prioritized Loop?
+  - Teams is the strategic priority and is doing well; Loop competes
+    indirectly with Teams Channels.
+  - The work-management market is too small (~$14B) to move MSFT's
+    needle ($300B+ revenue).
+  - Microsoft's bundle creates customer lock-in regardless of Loop's
+    quality -- they win even if customers also pay for monday.com.
+
+  Probability Microsoft makes Loop a true monday.com-killer in 5 years:
+  ~35% (medium-low; Microsoft has had 4 years to do it and hasn't).
+
+  Probability Microsoft makes Loop "good enough" to suppress monday.com
+  net new SMB customer growth: ~55% (medium-high; this is already
+  partially happening).
+
+  Probability Microsoft fully bundles a Work OS (no upcharge) into
+  M365 base SKUs: ~15% (low; would cannibalize Project Plan SKUs).
+
+  Net: Microsoft is a structural headwind worth 5-10% of monday.com's
+  potential TAM, but not an existential threat unless something
+  changes materially.
+
+  3.2  THE SALESFORCE / SERVICENOW QUESTION
+
+  Both are enterprise-only, both bundle adjacent capabilities, both
+  have stronger enterprise GTM than monday.com. They are credible
+  threats at the >$100K customer tier where monday.com is moving.
+
+  However, both ServiceNow and Salesforce are priced at 8-15x revenue
+  and are sold to CIO/CRO offices via long enterprise cycles. monday.com
+  prices at $20-50/seat/month and lands bottom-up. The two motions
+  rarely compete head-to-head.
+
+  Net: SFDC + NOW take some net new enterprise wins from MNDY but
+  also create a "best-of-breed" displacement opportunity for MNDY in
+  accounts with SFDC bloat / NOW project management gaps. Net effect
+  is roughly neutral.
+
+  3.3  THE AI-NATIVE UPSTARTS (Notion, ClickUp, Linear, Airtable)
+
+  These compete primarily at the SMB tier on price and AI-first design.
+  ClickUp's price war (~50% lower than monday.com) is real and is
+  likely the source of some of MNDY's SMB NDR softness.
+
+  Long-term: these companies have not demonstrated they can move
+  upmarket. Notion has $200-300M ARR at ~30% growth (slowing); Linear
+  is ~$50M ARR (small); ClickUp may plateau as it discovers enterprise
+  is expensive to serve. Each is a competitor for the SMB long-tail
+  but not for the >$100K accounts where MNDY's revenue concentration is.
+
+  Net: AI-native upstarts limit MNDY's SMB growth ceiling but are not
+  a direct threat to the upmarket motion that drives 60%+ of MNDY's
+  revenue growth.
+
+  3.4  ASANA AS A WARNING (or as MNDY's reflection?)
+
+  Asana is the cautionary tale: 9-12% growth, perpetual cash burn (until
+  recently), losing share to monday.com. Asana's market cap is ~$3B;
+  monday.com's is $3.3B. The market is pricing them similarly.
+
+  But Asana grows at 10%; MNDY grows at 27%. Asana has 30% gross margin
+  customer success burdens; MNDY has 89% GM. Asana's NDR has fallen
+  below 100%; MNDY's is 110%. The market is pricing MNDY *as if* it is
+  becoming Asana over the next 18-24 months -- which would be an
+  unprecedented collapse for a company growing 27% with stable margins.
+
+  3.5  TEN-YEAR COMPETITIVE OUTLOOK
+
+  Most likely outcome: 2-4 winners share the work-management category.
+  monday.com is positioned to be one of them, alongside Atlassian (dev),
+  ServiceNow (ITSM), and one of [ClickUp / Notion] (SMB / consumerized).
+  Microsoft Loop becomes a "good enough" bundled option that suppresses
+  monday.com's SMB unit economics but does not displace its upmarket
+  motion.
+
+  In this most-likely outcome, monday.com:
+    - Reaches $4-5B revenue by 2035 (12-14% CAGR)
+    - 22-25% steady-state FCF margin
+    - 20-25x exit FCF multiple
+    - $80-110B EV by 2035, $100-200/share with buyback compounding
+
+================================================================================
+4.  THE FX VS. STRUCTURAL DECELERATION QUESTION
+================================================================================
+
+  This is the single most important section because the FY2026 guide
+  is what crushed the stock 78%, and the question of whether FY2026 is
+  "FX + investment cycle" or "structural" is the entire bull/bear axis.
+
+  4.1  THE FY2026 GUIDE DECOMPOSED
+
+  +----------------------------+---------+---------+---------+
+  | Metric                     | FY2025A | FY2026E | Delta   |
+  +----------------------------+---------+---------+---------+
+  | Revenue growth (YoY)       | +27%    | +18-19% | -800bps |
+  | Non-GAAP op margin         | 14%     | 11-12%  | -250bps |
+  | Adj FCF margin             | 26%     | 19-20%  | -650bps |
+  +----------------------------+---------+---------+---------+
+
+  Management attributes the margin compression as:
+    FX:           ~100-200 bps  (their disclosure)
+    Investments:  ~150-200 bps  (R&D for AI products + GTM hires)
+    Mix shift:    ~50-100 bps   (enterprise mix carries higher CAC)
+    Other:        ~50-100 bps   (HQ build-out tail, CCO transition)
+
+  The revenue growth deceleration of -800bps decomposes as:
+    Cyclical / FX:    ~200-300 bps (USD strength, soft macro)
+    Tough comp:       ~100-200 bps (FY2025's 27% was a strong comp)
+    Structural:       ~300-400 bps (mature SaaS deceleration curve)
+    Investment lag:   ~100 bps    (new sales hires take 6-12 months
+                                    to ramp -- 2025 hires book in 2026)
+
+  Reading: the deceleration is roughly 35% cyclical, 35% structural,
+  and 30% transitory (comps + investment lag). At face value the bear
+  is right that there's some structural deceleration, but the bull is
+  also right that there's significant cyclical and transitory drag.
+
+  4.2  HISTORICAL FX EXPOSURE
+
+  The 20-F discloses ~50% of revenue is non-USD. Approximate billing
+  currency mix:
+    USD:   50%
+    EUR:   18%
+    GBP:   8%
+    AUD:   5%
+    Other: 19%
+
+  USD/EUR has appreciated ~6% YoY into 2026; USD/GBP +4%; USD index
+  up ~5% on a trade-weighted basis. Reported revenue from non-USD
+  customers is therefore down ~250 bps just from FX. This squares
+  with management's 100-200bps margin guide-down attribution.
+
+  Critical: FX is mean-reverting over 3-5 year horizons. If USD
+  weakens in 2027-2028 (consensus expects this), there will be a
+  ~200-400bps reported revenue tailwind. Long-term investors should
+  treat FX as noise, not signal.
+
+  4.3  THE INVESTMENT CYCLE ARGUMENT
+
+  In Q3 2024, the prior CRO left. In 2025, three new C-level GTM
+  hires (CRO, CMO, CCO) joined. New sales leaders typically ramp
+  for 4-6 quarters before their teams hit full productivity.
+
+  Management has said publicly that 2026 is an "investment year" --
+  meaning the deliberate ramping of sales/marketing capacity ahead
+  of expected enterprise wins in 2027. This is exactly the same
+  playbook ServiceNow used in 2014-2015 and Atlassian in 2018-2019:
+  step-function investments produce flat-margin years that look bad
+  on a P&L but produce 18-24 months later.
+
+  If 2026 is genuinely an investment cycle (not a desperate response
+  to deceleration), then 2027 should show:
+    - Revenue growth re-accelerating to 20-22%
+    - Margins recovering to 14-15%
+    - FCF margin recovering to 22-24%
+
+  The key tells:
+    - >$500K customer growth must remain 60%+ YoY in 2026
+    - Multi-product attach rate must reach 35%+ for >$50K customers
+    - cRPO must keep growing >25%
+    - vibe / agents / workflows ARR must reach $50M+ by YE 2026
+
+  4.4  STRUCTURAL DECELERATION RISK SIZE
+
+  If we are wrong and the deceleration is structural, the path is:
+    FY2026: 19% growth (guide met)
+    FY2027: 14-16% growth (further deceleration)
+    FY2028: 11-13% growth
+    FY2029: 9-11% growth
+    Steady-state: 7-9% (Asana convergence)
+
+  In this path, the Year-10 revenue = ~$2.7-3.0B with 20% FCF margins
+  = $540-600M FCF. Exit multiple 14-16x = $7.5-9.5B EV. Plus net cash
+  of $2-3B accumulated by Year 10 = equity value $10-12B = $190-230
+  per share if buyback continues. Discounted to today at 12% = $61-74
+  per share. Today is $65.32.
+
+  Reading: even the structural-deceleration bear case puts a near-floor
+  under the current price. This is the asymmetry. The downside is
+  bounded by net-cash + a profitable underlying business; the upside
+  requires execution but does not require unprecedented growth.
+
+  4.5  PROBABILITY-WEIGHTED CONCLUSION
+
+  +---------------------------+---------+---------+---------+
+  | Scenario                  | Bear    | Base    | Bull    |
+  +---------------------------+---------+---------+---------+
+  | Probability               | 25%     | 55%     | 20%     |
+  | FY2026 rev growth         | 17%     | 19%     | 21%     |
+  | FY2027 rev growth         | 14%     | 19%     | 23%     |
+  | FY2030-35 avg rev growth  | 8%      | 14%     | 18%     |
+  | Steady FCF margin         | 19%     | 24%     | 28%     |
+  | Year-10 revenue           | $2.8B   | $4.6B   | $6.4B   |
+  | Year-10 FCF               | $530M   | $1.10B  | $1.79B  |
+  | Exit FCF multiple         | 14x     | 19x     | 24x     |
+  +---------------------------+---------+---------+---------+
+
+  This will be the scaffolding for the DCF.
+
+================================================================================
+5.  CAPITAL ALLOCATION DEEP DIVE
+================================================================================
+
+  5.1  HISTORICAL CAPITAL ALLOCATION
+
+  monday.com's capital deployment 2021-2025:
+    - IPO (June 2021): raised $574M
+    - Total cash flow generated since IPO: ~$925M (op CF, cumulative)
+    - Total acquisitions: ~$0M (no M&A)
+    - Total dividends: $0
+    - Total buybacks before 2025: $0
+    - Total buybacks 2025: $135M (Q4 only, avg $152.74)
+    - Total cash on balance sheet: $1.66B
+    - Total foundation grants: $42M (1% of IPO proceeds + ongoing)
+
+  This is the profile of management that hoarded cash for 4 years
+  post-IPO before initiating any return of capital. This is deeply
+  conservative and arguably suboptimal -- if they had repurchased
+  $200M/year at sub-$200 prices in 2022-2024, EPS would be ~10-15%
+  higher today.
+
+  However, this conservatism also means:
+    - No ill-advised M&A (very common SaaS mistake)
+    - No promotional EPS engineering
+    - Cash buffer through cycles (unusual for $1B SaaS)
+
+  Capital allocation grade: B+ (operationally A-, slightly slow on
+  buyback initiation, but no value-destroying M&A and well-timed
+  capital return now that valuation supports it).
+
+  5.2  BUYBACK ROIC ANALYSIS
+
+  $870M authorization / $735M remaining as of Dec 31, 2025.
+
+  Q4 2025 deployment: $135M at avg $152.74 = 883,913 shares.
+
+  If management deploys the full remaining $735M in 2026-2027 at an
+  average price of $80 (mix of pre-Q1 lower prices and post-Q1 higher),
+  they would retire ~9.2M shares = 17% of float. EPS accretion would be
+  ~17% over 18-24 months. This alone would justify a 15-20% stock
+  re-rating.
+
+  Buyback velocity test: Q4 2025 deployment of $135M was 1.0% of float
+  (884K of 53M shares). If management maintains that pace ($135M/qtr),
+  the program completes in 5-6 quarters. At today's $65 prices, that
+  would retire ~11.3M shares = 21% of float in 18 months. This is
+  *extremely* shareholder-friendly buyback velocity for a SaaS company.
+
+  Question: how confident are we management actually deploys at this
+  pace? Buyback authorization != buyback execution. The Q4 burst at
+  $152 average suggests willingness when prices are "low" relative to
+  history. At $65 they should be aggressive. Watch quarterly pacing
+  in the Q1 2026 print.
+
+  5.3  COMPARISON TO SAAS CAPITAL ALLOCATION COHORT
+
+  +-----------+-----------+-----------+-----------+-----------+
+  | Company   | Net cash  | Mkt cap   | Cash %    | Buyback?  |
+  +-----------+-----------+-----------+-----------+-----------+
+  | MNDY      | $1.66B    | $3.3B     | 50%       | Active    |
+  | ASAN      | $0.5B     | $3.0B     | 17%       | Modest    |
+  | TEAM      | $1.7B     | $35B      | 5%        | Modest    |
+  | DDOG      | $4.0B     | $40B      | 10%       | None      |
+  | NOW       | $5.0B     | $200B     | 3%        | Modest    |
+  | PD        | $0.4B     | $1.5B     | 27%       | None      |
+  +-----------+-----------+-----------+-----------+-----------+
+
+  monday.com has the highest cash-to-market-cap ratio in the cohort by
+  a 2-3x margin. This is both an asset (downside protection) and a
+  symptom (slower-than-optimal capital deployment).
+
+================================================================================
+6.  FOUNDER / MANAGEMENT QUALITY
+================================================================================
+
+  6.1  THE CO-CEO STRUCTURE
+
+  Co-CEO structures fail more often than they succeed. Famous failures:
+  Netflix (Hastings/Sarandos worked, then transitioned), Whole Foods
+  (Mackey/Robb), Salesforce (Benioff/Bret Taylor briefly), SAP, Oracle.
+
+  Famous successes (rare): Atlassian (Cannon-Brookes/Farquhar -- 16
+  years and counting), Workday (Bhusri/Duffield -- worked for a decade
+  before transitioning).
+
+  Mann/Zinman have run this configuration for 5.5 years (since Nov 2020).
+  Operationally, the company has executed exceptionally well during
+  this period: revenue grew from $161M (2020) to $1,232M (2025) -- a
+  7.6x in 5 years. There are no public signs of co-CEO friction.
+
+  Risk: co-CEO fatigue. If one of them steps down in 2026-2028, the
+  market would re-rate (likely down) on uncertainty. Mitigation: both
+  founders are still young (Mann 47, Zinman 42) and have plenty of
+  runway.
+
+  6.2  FOUNDER OWNERSHIP AND ALIGNMENT
+
+  As of the FY2025 20-F, founder/insider ownership is approximately:
+    - Roy Mann:        ~5.5% directly + founder share veto rights
+    - Eran Zinman:     ~3.5%
+    - Insight Partners (board chair Jeff Horing): ~28% (largest holder)
+    - Other insiders:  ~3%
+
+  Total insider + Insight: ~40% ownership. This is high alignment.
+
+  However, Insight Partners is a private equity firm with a finite-fund
+  structure. At some point Insight will distribute or sell. This is a
+  technical overhang.
+
+  6.3  THE FOUNDER SHARE VETO
+
+  Roy Mann's founder share grants veto rights on certain corporate
+  matters (sale of company, dilutive issuances, board composition).
+  This is somewhat unusual for a Nasdaq-listed FPI but not unique
+  among Israeli founder-led SaaS.
+
+  Implications for shareholders:
+    - Pro: prevents value-destroying takeover at low prices (Mann
+      can block a $80 takeover even if board / Insight want to sell)
+    - Pro: reduces short-term-ist pressure
+    - Con: blocks a value-creating takeover at fair prices (e.g. if
+      Microsoft offered $200, Mann could block)
+    - Con: founder-CEO with veto rights is structurally unaccountable
+
+  In practice, founder shares of this type are rarely exercised
+  controversially. The signal is that Mann does not see this as a
+  short-term play -- he expects to be running this company for
+  another 10-15 years. That's mostly aligning with long-term holders.
+
+  6.4  CFO QUALITY (vs. our other top candidate's red flag)
+
+  Eliran Glazer has been CFO since March 2021 -- 5+ years through
+  the entire public company history. Prior CFO experience at
+  Lightricks, NEX Markets, CME Group. CPA. No turnover risk.
+
+  This is a meaningful structural advantage vs. TTD (where two CFO
+  changes in 30 months are a primary thesis-break risk). For a
+  long-term SaaS investor, CFO continuity is one of the most reliable
+  signals of operational stability.
+
+  6.5  THE 2025 GTM REBUILD
+
+  Three major C-level appointments:
+    - CRO Casey George (Mar 2025): 30-year enterprise sales career.
+      Previously EVP Global Sales at Qlik, before that Talend, Verint,
+      IBM. Pure enterprise pedigree. This is a step-function upgrade
+      from prior in-house sales leadership.
+    - CMO Harris Beber (May 2025): ex-Google Workspace global marketing
+      lead, former CMO at Waze and Vimeo. Signals brand maturity.
+    - CCO Adi Dar (Jan 2025, was COO): ex-CEO Elbit Intel & Cyber.
+      Heavy enterprise / regulated industry expertise.
+
+  This is one of the most impressive 2025 GTM rebuild stories in
+  SaaS. The pattern (founder-led + outside enterprise pros) has
+  worked well for Atlassian, MongoDB, and Snowflake at similar
+  stages. Impact lands 12-18 months out.
+
+  6.6  MANAGEMENT GRADE: B+
+
+  Operationally A-, capital allocation slightly slow but B+ now,
+  governance B (founder share is a flag), GTM rebuild is A. Overall
+  B+ with upward bias if the 2025 hires execute.
+
+================================================================================
+7.  OPTIONALITY (OFTEN-OVERLOOKED VALUE DRIVERS)
+================================================================================
+
+  Long-term investors look for "free options" -- products or initiatives
+  with low or zero current revenue contribution but with material upside
+  if successful. monday.com has several:
+
+  7.1  AI AGENTS (vibe / sidekick / agents / workflows)
+
+  vibe ARR: $1M+ as of Q4 2025 (10 weeks post-launch -- fastest in
+  company history).
+
+  If vibe + agents + workflows reach $100M ARR by YE 2027, that's a
+  10x in 24 months from $10M run-rate today. Conservative path: 60%
+  probability of reaching $100M ARR by 2028 (40% probability of $50M
+  or less). Aggressive path: $250M ARR by 2028 if AI agents become
+  the new "monday work management" category.
+
+  Value of this option: in the base case, AI products contribute ~$200M
+  by 2028 (4% of revenue). In the bull case, $500M+ (8-9% of revenue).
+  Both add 5-12% to fair value vs. pure work-OS continuation.
+
+  7.2  INTERNATIONAL EXPANSION
+
+  monday.com is already 50% non-US revenue, but international SaaS
+  penetration in EMEA/APAC is 5-7 years behind US. Significant runway.
+
+  If international revenue grows 25% CAGR for 5 years vs. US at 12%
+  CAGR, total mix shifts to 60% non-US by 2030. This drives ~200bps
+  of incremental annual top-line growth above the bear-case curve.
+
+  7.3  VERTICALIZATION
+
+  monday.com has nascent industry templates / packaged solutions for
+  construction, marketing agencies, real estate. These are early but
+  align with the high-growth SMB-mid market combo.
+
+  Each vertical productized solution that reaches >$50M ARR represents
+  a ~3-5% boost to total revenue. There are 5-7 plausible verticals.
+
+  7.4  PLATFORMIZATION / APP MARKETPLACE
+
+  280 third-party apps in the marketplace today; revenue contribution
+  from app marketplace is undisclosed but "small." Atlassian and
+  Salesforce both have material marketplace revenue (~$500M+ at scale).
+  monday.com is 5-7 years behind but the architecture supports it.
+
+  7.5  LEVERAGED BUYBACK FLYWHEEL
+
+  At $65 stock price, $735M of remaining authorization can retire
+  21% of float. If executed and the stock re-rates 50% upon Q1
+  confirmation, the remaining 79% of holders get a substantial
+  return purely from share count compression. This is a real
+  optionality vector that's worth ~10-15% of fair value alone.
+
+  7.6  ACQUISITION TARGET OPTIONALITY (low probability)
+
+  Founder share veto blocks unsolicited takeovers, but if Mann/Zinman
+  decide to sell, monday.com would be a logical acquisition for
+  Salesforce, Microsoft, ServiceNow, or Atlassian. Replacement-cost
+  valuation in a strategic sale would likely be 6-8x trailing revenue
+  ($7-10B EV) vs. current $1.98B EV. Not a baseline thesis but a
+  3-5% probability tail risk in the holder's favor.
+
+  TOTAL OPTIONALITY VALUE (conservative): ~15-25% of base-case fair value.
+
+================================================================================
+8.  FIVE-YEAR / TEN-YEAR SCENARIO TABLE
+================================================================================
+
+  All values in USD. Per-share calculations assume share count
+  declines 4% annually due to buybacks (vs. ~1.3% gross SBC dilution
+  + ~5% gross buyback retirement).
+
+  +------------------------------+---------+---------+---------+
+  | METRIC                       | BEAR    | BASE    | BULL    |
+  | (probability)                | (25%)   | (55%)   | (20%)   |
+  +------------------------------+---------+---------+---------+
+  | FY2026 rev growth            | +17%    | +19%    | +21%    |
+  | FY2027 rev growth            | +14%    | +20%    | +24%    |
+  | FY2028 rev growth            | +11%    | +18%    | +22%    |
+  | FY2029 rev growth            | +9%     | +15%    | +20%    |
+  | FY2030 rev growth            | +8%     | +13%    | +18%    |
+  | FY2031-35 avg rev growth     | +7%     | +12%    | +16%    |
+  | 10-yr revenue CAGR           | +9.4%   | +14.1%  | +18.2%  |
+  | FY2030 revenue ($M)          | 2,090   | 2,720   | 3,300   |
+  | FY2035 revenue ($M)          | 3,030   | 4,610   | 6,440   |
+  | Steady-state FCF margin      | 20%     | 24%     | 28%     |
+  | FY2035 FCF ($M)              | 605     | 1,107   | 1,803   |
+  | Exit FCF multiple (FY2035)   | 14x     | 19x     | 24x     |
+  | FY2035 EV ($B)               | 8.5     | 21.0    | 43.3    |
+  | Cumul. cash + buybacks ($B)  | 2.4     | 3.5     | 4.5     |
+  | FY2035 equity value ($B)     | 10.9    | 24.5    | 47.8    |
+  | FY2035 share count (M)       | 35.0    | 33.0    | 31.0    |
+  | FY2035 per share ($)         | 311     | 743     | 1,541   |
+  | PV @ 10% (10-yr discount)    | 120     | 286     | 594     |
+  | PV @ 12% (10-yr discount)    | 100     | 240     | 496     |
+  | 5-yr per share ($)           | 78      | 165     | 310     |
+  | 5-yr IRR from $65.32         | 3.6%    | 20.4%   | 36.5%   |
+  | 10-yr IRR from $65.32        | 16.9%   | 27.6%   | 37.1%   |
+  +------------------------------+---------+---------+---------+
+
+  Probability-weighted 10-yr per share: ~$673 (12.5x at $65.32)
+  Probability-weighted 10-yr IRR: ~25%
+  Probability-weighted 5-yr per share: ~$165
+  Probability-weighted 5-yr IRR: ~21%
+
+  PV @ 10% probability-weighted: ~$282/share
+  PV @ 12% probability-weighted: ~$237/share
+
+  These are high numbers but within the realm of plausible for a
+  $1.2B-revenue SaaS at 27% trailing growth, 89% gross margin, and
+  46% net cash. The bear-case PV is ~$120 vs current $65 -- a
+  +84% upside floor in the *bear* case is the asymmetry.
+
+  Will the DCF refine these numbers? Yes -- the DCF will:
+    - Use SBC-adjusted FCF as the underwriting column (FCF - SBC)
+    - Include perpetuity-growth and exit-multiple TV models separately
+    - Explicit 10-year forecast year by year
+    - Hurdle rates of 10% (quality) and 12% (mid-cap, narrow moat)
+    - Sensitivity on FX, margin, exit multiple, growth rates
+
+================================================================================
+9.  THESIS-BREAK CHECKLIST
+================================================================================
+
+  Triggers that would cause us to abandon the thesis or sell if owned:
+
+  9.1  REVENUE-FLOOR BREAKS (HIGHEST PRIORITY)
+
+  X.1   Q1 2026 revenue < $326M (3.5% miss vs guide). The guide is
+        the explicit floor management has set. A miss at the FIRST
+        print of the new fiscal year would shatter credibility.
+
+  X.2   FY2026 guide reduced at any point during FY2026. If management
+        cuts the $1,452-1,462M guide mid-year, the bear is right.
+
+  X.3   FY2027 guidance (issued in Feb 2027) below 18% growth. The
+        thesis requires re-acceleration to 20%+ in 2027. A 14-16%
+        FY2027 guide signals structural deceleration.
+
+  9.2  KPI-DEGRADATION TRIGGERS
+
+  Y.1   NDR for >$100K customers drops below 113% in any quarter. This
+        is the cleanest leading indicator of enterprise momentum.
+
+  Y.2   >$500K customer growth drops below 35% YoY (vs +74% in 2025).
+        The upmarket motion is the bull case.
+
+  Y.3   Multi-product attach rate among >$50K customers stalls at
+        <30% by YE 2026. The platformization narrative requires this
+        metric to expand.
+
+  Y.4   Total RPO growth drops below 20% YoY (vs +37% in 2025).
+        cRPO drops below 15% (vs +31%). RPO is the cleanest leading
+        indicator of next-12-month revenue.
+
+  9.3  COMPETITIVE / MARKET TRIGGERS
+
+  Z.1   Microsoft announces a "free Loop = Work OS" SKU bundled into
+        M365 base for SMB. This would materially compress the SMB
+        TAM.
+
+  Z.2   ClickUp / Notion announce $1B+ funding rounds at sub-$5B
+        valuations -- which would imply commoditization of the
+        category.
+
+  Z.3   ServiceNow or Salesforce announces a direct, repackaged Work
+        OS as a focal investment area for 2026+.
+
+  9.4  CAPITAL ALLOCATION TRIGGERS
+
+  W.1   Buyback execution falls below $50M in any quarter while stock
+        is below $90. This signals management lacks conviction.
+
+  W.2   Large M&A (>$500M) of an unrelated category. monday.com has
+        no acquisition history; a defensive M&A would suggest weakness.
+
+  9.5  GOVERNANCE / MANAGEMENT TRIGGERS
+
+  V.1   One of Mann or Zinman departs as Co-CEO without a clear
+        succession plan. Co-CEO transition at a stable founder pair
+        is a major signal change.
+
+  V.2   CFO Glazer departs. We'd have to re-evaluate whether finance
+        rigor is intact.
+
+  V.3   Founder share veto used to block a value-creating action
+        (e.g., a fair-value takeover offer rejected without explanation).
+
+  9.6  GEOPOLITICAL TRIGGERS
+
+  U.1   Material disruption to monday.com's Tel Aviv operations from
+        regional conflict (production halt > 4 weeks, key personnel
+        injured/killed). This is a low-probability but high-severity
+        risk.
+
+  IF 3+ TRIGGERS FIRE: thesis is broken. Sell.
+  IF 1-2 TRIGGERS FIRE: revisit deep dive and DCF; trim if held.
+  IF 0 TRIGGERS FIRE: stay on plan.
+
+================================================================================
+10. DCF MARCHING ORDERS (FOR ACTION 4)
+================================================================================
+
+  Based on this deep dive, the DCF should incorporate:
+
+  10.1  STRUCTURE
+  - 10-year explicit forecast: FY2026-FY2035
+  - SBC-adjusted FCF as the underwriting column (FCF - SBC ~ true cash
+    return to all-cash investors); FY2025 baseline:
+        Adj FCF $323M - SBC $177M = SBC-adj FCF $146M (12% margin)
+  - Both perpetuity-growth and exit-multiple TV models
+  - Three scenarios: Bear (25%) / Base (55%) / Bull (20%)
+  - Hurdle rates: 10% (quality / net-cash position) AND 12%
+    (mid-cap, narrow moat, AI competitive risk)
+
+  10.2  KEY ASSUMPTION CELLS
+  - Revenue growth path (per scenarios above)
+  - Gross margin: 89% steady (no compression assumed)
+  - S&M as % of revenue: 51% (2025) -> 42% (2030) -> 38% (2035) base case
+  - R&D as % of revenue: 26% (2025) -> 22% (2030) -> 19% (2035) base case
+  - G&A as % of revenue: 12% (2025) -> 9% (2030) -> 8% (2035) base case
+  - SBC as % of revenue: 14.4% (2025) -> 11% (2030) -> 8% (2035)
+    (declining to peer steady state)
+  - Capex: 1.7% of revenue (HQ tail in 2026, normalized 2027+)
+  - Effective tax rate: 18% (FY2025 was inflated; normalized FY26+)
+  - Share count: declining 4% annually base case (3% bear, 5% bull)
+    -- driven by buyback - SBC dilution
+
+  10.3  TERMINAL VALUE
+  - Perpetuity growth: 3.0% (slightly above LT inflation, mature SaaS)
+  - Exit multiple: 18x SBC-adj FCF base, 14x bear, 22x bull
+  - Average the two methods for the reported intrinsic value
+
+  10.4  SENSITIVITY TABLES (REQUIRED)
+  - Revenue CAGR x Steady-state FCF margin
+  - Discount rate x Terminal growth rate
+  - Exit multiple x Steady-state FCF margin
+  - FX scenario (-200bps for 5 years vs. flat vs. +200bps)
+
+  10.5  FX HANDLING
+  - Base case: FX is constant
+  - Sensitivity: -200bps revenue impact for 2 years (2026-2027) then
+    flat
+  - Bull case: FX reverses +100bps from 2027 onward
+
+  10.6  BUYBACK MODELING
+  - Base case: $735M deployed at avg $80 (2026-2027) + $200M annual
+    incremental from 2028+ at avg 80% of trading price
+  - Net dilution: -3% per year base, -1% bear, -5% bull
+  - Per-share IV is the reportable number, not enterprise IV
+
+  10.7  HURDLE RATES FOR BUY DECISION
+  - Buy if probability-weighted IV >= $90 at 12% hurdle (38% MoS at
+    $65.32) OR >= $110 at 10% hurdle (68% MoS).
+  - Larger position size if both clear simultaneously.
+
+================================================================================
+11. PRELIMINARY VIEW & BUY PRE-CONDITIONS
+================================================================================
+
+  After the deep dive, my conviction has *strengthened* relative to the
+  initiation. The critical updates from initiation to deep dive:
+
+  - The bear case has a near-floor at the current price (-3% to +5%
+    10-yr IRR). Asymmetry confirmed.
+  - The 2025 GTM rebuild is more material than the initiation gave
+    credit for. New CRO/CMO/CCO is one of the most impressive 2025
+    SaaS hire packages.
+  - Capital allocation is improving. Buyback at $135M/qtr velocity
+    would retire 21% of float in 18 months. This is material.
+  - Microsoft is the single biggest unsettled question. Probability-
+    weighted Microsoft impact on TAM: -5% to -10% from base case TAM.
+  - Founder share veto is a B-grade governance flag, not an A-grade
+    show-stopper. Israeli founder-led SaaS norm.
+
+  RATING UPGRADE: ACCUMULATE on Q1 confirmation (was WATCH/ACCUMULATE
+  ON CONFIRMATION). The deep dive supports moving to ACCUMULATE upon
+  the May 11-13 Q1 print, *if* the print:
+    - Meets or beats $338M revenue (+20%)
+    - Maintains FY2026 guide of $1,452-1,462M
+    - Shows NDR >$100K still >=115%
+    - Shows >$500K customer count growing >50% YoY
+    - Shows multi-product attach progressing toward 35% target
+
+  PRELIMINARY POSITION SIZE
+  - Mid-cap allocation slot empty (currently 0% of portfolio target ~33%)
+  - Available cash: $2,370.41
+  - Initial position size: $600-700 (~25% of cash) post-Q1 if confirmed
+    -- a starter position to anchor mid-cap
+  - Max position size: $1,000 (~33% of total $3K post-Q1)
+  - Add candidate if stock drops to <$60 post-Q1: $300-400 incremental
+
+  WHEN TO ACT
+  - DCF (Action 4) on Apr 30 or next available day (~$60-65 stock, deep
+    dive done today)
+  - Q1 print: May 11-13. Wait for the print before any buy.
+  - If Q1 confirms: buy on May 13 or 14 during market hours, executing
+    Action 5 with the DCF intrinsic value
+  - If Q1 disappoints: re-evaluate; thesis may not be broken if the
+    miss is FX-only
+
+  THE ONE-LINE SUMMARY
+
+  monday.com is a 27% grower with 89% GM, 26% FCF margins, $32 of net
+  cash per share, an aggressive buyback, an upgraded enterprise GTM
+  team, and a multi-product platform at $1.2B revenue trading at 6x
+  trailing EV/FCF -- the lowest valuation in its 5-year public history.
+  The bear case (structural deceleration) requires unprecedented decay
+  in an otherwise-healthy business; the base case requires execution
+  on a clearly-laid playbook. Buy after Q1 confirmation, size as a
+  mid-cap anchor, hold for 5-10 years.
+
+================================================================================
+12. RESEARCH GAPS / TO-DO BEFORE DCF
+================================================================================
+
+  - Confirm exact revenue split US vs international (to model FX better)
+  - Confirm exact insider ownership table (Mann + Zinman + Insight)
+  - Confirm stock-based comp grant cadence and vesting schedule
+  - Pull most recent Atlassian / ClickUp / ServiceNow comp data for
+    relative-multiple cross-check
+  - Estimate FY2026 quarterly cadence (Q1 vs Q2 vs Q3 vs Q4 seasonality)
+  - Estimate buyback velocity in Q1 2026 (will be in May 11-13 print)
+
+================================================================================
+END OF DEEP DIVE
+================================================================================

@@ -12,7 +12,7 @@
 | 3 | NVDA | NASDAQ | Large | 7/10 | 40.1x | 22.1x | +65% | 44.8% | Irreplaceable AI compute platform; CUDA moat is a decade deep; watch export/tariff risk | 2026-04-14 |
 | 4 | META | NASDAQ | Large | 7/10 | 28.2x | 8.4x | ~21% | ~33% | Advertising duopoly with AI ad flywheel; Reality Labs burn manageable; trading at Nasdaq discount | 2026-04-14 |
 | 5 | APP | NASDAQ | Large | 7/10 | 43.2x | 26.7x | +70% | 73.3% | Highest FCF margin in scan; AXON 2.0 AI ad platform is a genuine mobile advertising moat | 2026-04-14 |
-| 6 | MNDY | NASDAQ | Mid | 7/10 | ~31x | 3.0x | +27% | 26.2% | Deeply discounted SaaS at $69 (-78% from 52wk high); $1.67B net cash = 46% of mkt cap; Initiation completed 2026-04-28; WATCH/ACCUMULATE ON CONFIRMATION pending Q1 26 May 12-13 print | 2026-04-14 |
+| 6 | MNDY | NASDAQ | Mid | 7/10 | ~30x | 2.9x | +27% | 26.2% | Deeply discounted SaaS at $65 (-79% from 52wk high); $1.67B net cash = 50% of mkt cap; Deep Dive 2026-04-29 strengthened conviction; ACCUMULATE on Q1 confirmation; prob-wtd PV @10% ~$282 | 2026-04-29 |
 | 7 | CRWD | NASDAQ | Large | 6/10 | N/M | 21.0x | +22% | 27.0% | Best-of-breed cybersecurity; outage headwind lapped; Falcon Flex gaining traction | 2026-04-14 |
 | 8 | DDOG | NASDAQ | Mid | 6/10 | N/M | 11.4x | +28% | 29.2% | Sticky observability platform in the AI infrastructure stack; one pullback away from strong buy | 2026-04-14 |
 | 9 | IOT | NYSE | Mid | 6/10 | N/M | 9.5x | ~36% | 12.8% | Under-the-radar AI/IoT fleet platform; strong ARR growth, down 30% creates entry opportunity | 2026-04-14 |
