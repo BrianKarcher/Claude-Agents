@@ -7,34 +7,53 @@
 
 | Rank | Ticker | Exchange | Cap bucket | Score | P/E (TTM) | P/S | Rev growth (YoY) | FCF margin | One-line thesis | Last scanned |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | TTD | NASDAQ | Mid | 8/10 | 23.4x | 3.4x | ~25% | 27.5% | World-class DSP at a distressed valuation; CEO buying; 57% selloff appears overdone with 122% analyst consensus upside | 2026-04-14 |
-| 2 | MSFT | NASDAQ | Large | 8/10 | ~26x | ~11x | ~17% | ~25% (FCF depressed by capex) | Best risk-adjusted large cap; Azure AI +40%, forward P/E ~22x below 5yr avg; ACCUMULATE rating; Initiation completed 2026-04-21 | 2026-04-21 |
-| 3 | NVDA | NASDAQ | Large | 7/10 | 40.1x | 22.1x | +65% | 44.8% | Irreplaceable AI compute platform; CUDA moat is a decade deep; watch export/tariff risk | 2026-04-14 |
-| 4 | META | NASDAQ | Large | 7/10 | 28.2x | 8.4x | ~21% | ~33% | Advertising duopoly with AI ad flywheel; Reality Labs burn manageable; trading at Nasdaq discount | 2026-04-14 |
-| 5 | APP | NASDAQ | Large | 7/10 | 43.2x | 26.7x | +70% | 73.3% | Highest FCF margin in scan; AXON 2.0 AI ad platform is a genuine mobile advertising moat | 2026-04-14 |
-| 6 | MNDY | NASDAQ | Mid | 7/10 | ~30x | 2.9x | +27% | 26.2% | Deeply discounted SaaS at $65 (-79% from 52wk high); $1.67B net cash = 50% of mkt cap; Deep Dive 2026-04-29 strengthened conviction; ACCUMULATE on Q1 confirmation; prob-wtd PV @10% ~$282 | 2026-04-29 |
-| 7 | CRWD | NASDAQ | Large | 6/10 | N/M | 21.0x | +22% | 27.0% | Best-of-breed cybersecurity; outage headwind lapped; Falcon Flex gaining traction | 2026-04-14 |
-| 8 | DDOG | NASDAQ | Mid | 6/10 | N/M | 11.4x | +28% | 29.2% | Sticky observability platform in the AI infrastructure stack; one pullback away from strong buy | 2026-04-14 |
-| 9 | IOT | NYSE | Mid | 6/10 | N/M | 9.5x | ~36% | 12.8% | Under-the-radar AI/IoT fleet platform; strong ARR growth, down 30% creates entry opportunity | 2026-04-14 |
-| 10 | MU | NASDAQ | Large | 6/10 | 20.1x | 9.0x | high | 17.7% | Best value in AI infrastructure at 4.7x forward PE; HBM supply shortage is a multi-year AI tailwind | 2026-04-14 |
-| 11 | GOOGL | NASDAQ | Large | 6/10 | 30.8x | 10.0x | ~14% | ~27% | Search + Cloud AI compounder; cheap if DOJ antitrust overhang resolves | 2026-04-14 |
-| 12 | AMZN | NASDAQ | Large | 6/10 | 34.7x | 3.7x | ~11% | ~8% | AWS + ads are world-class; retail drag and tariff risk suppress near-term conviction | 2026-04-14 |
-| 13 | AXON | NASDAQ | Mid | 5/10 | 252x | 11.0x | +33% | 2.7% | Near-monopoly public safety platform; down 33%; FCF temporarily depressed but ARR +35% | 2026-04-14 |
-| 14 | PLTR | NYSE | Large | 5/10 | 215x | 72.5x | +29% | 47.0% | Elite AI moat (AIP + gov't contracts) but 72.5x P/S makes it uninvestable at any reasonable DCF | 2026-04-14 |
-| 15 | NET | NYSE | Large | 5/10 | N/M | 29.0x | +30% | 13.3% | Unique distributed AI inference edge platform; long-term thesis compelling but currently too expensive | 2026-04-14 |
-| 16 | SNOW | NYSE | Mid | 5/10 | N/M | 10.0x | +29% | 24.0% | Best enterprise data platform for AI; Cortex AI layer is the catalyst; watch for consumption reacceleration | 2026-04-14 |
-| 17 | EVLV | NASDAQ | Small | 5/10 | N/M | ~3.0x | +25% | negative | AI weapons-detection niche play; too early-stage for this portfolio; watch for profitability inflection | 2026-04-14 |
-| 18 | AMD | NASDAQ | Large | 4/10 | 97.7x | 12.0x | +34% | ~16% | NVIDIA challenger gaining data center share; needs CUDA moat to crack for full bull case | 2026-04-14 |
-| 19 | AMAT | NASDAQ | Large | 4/10 | 40.5x | 11.1x | +4% | 22.0% | Great equipment business in an AI upcycle; currently priced for perfection after 173% 52-week run | 2026-04-14 |
-| 20 | HIMS | NYSE | Small | 4/10 | 41.7x | 2.1x | +59% | 3.2% | Explosive growth at a cheap price but GLP-1 compounding regulatory risk is existential; avoid until FDA clarity | 2026-04-14 |
-| 21 | CELH | NASDAQ | Small | 2/10 | N/M | 4.6x | declining | ~4% | Consumer brand (out of scope); declining revenue after loss of Pepsi exclusivity | 2026-04-14 |
+| 1 | TTD | NASDAQ | Mid | 8/10 | 23.4x | 3.4x | ~25% | 27.5% | World-class DSP at distressed valuation; DCF IV $33 vs $24 spot; Q1 reports May 7 — buy gated on print quality + permanent CFO + no adverse Amazon news | 2026-05-06 |
+| 2 | MSFT | NASDAQ | Large | 8/10 | ~26x | ~10.7x | +18% | ~22% (capex compressed) | HELD 1.5 sh @ $419.73; Q3 FY26 print 4/29 raised CY26 capex to ~$190B — yellow flag but thesis intact; DCF IV $452 (10% MoS) | 2026-05-06 |
+| 3 | GOOGL | NASDAQ | Large | 8/10 | ~22x fwd | ~10x | ~22% (re-accel) | ~30%+ | UPGRADED 6->8: GCP +63% Q1 print recasts AI thesis from laggard to co-leader; INITIATION NEEDED — no coverage on file | 2026-05-06 |
+| 4 | NVDA | NASDAQ | Large | 7/10 | 40.1x | 22.1x | +65% | 44.8% | Irreplaceable AI compute platform at $4.77T cap; Q1 print late May; valuation re-stretched after +41% rally | 2026-05-06 |
+| 5 | META | NASDAQ | Large | 7/10 | ~22x | 7.0x | +33% | ~25% | Q1 rev +33% (fastest since 2021); -10% selloff post-print on capex raise to $125-145B; cheaper than peers | 2026-05-06 |
+| 6 | APP | NASDAQ | Large | 7/10 | 43.2x | 26.7x | +70% | 73.3% | Highest FCF margin in scan; AXON 2.0 AI ad platform; Q1 reports tonight (5/6) — defer rescore | 2026-05-06 |
+| 7 | MNDY | NASDAQ | Mid | 7/10 | ~30x | ~3.4x | +27% | 26.2% | Full pipeline complete (Init+Deep+DCF); IV $172 prob-wtd at 10% (56% MoS at $76); Q1 prints 5/11 — buy gated on print | 2026-05-06 |
+| 8 | AMZN | NASDAQ | Large | 7/10 | 34.7x | 3.7x | +13% | <0% (capex peak) | UPGRADED 6->7: AWS +28% (3yr fastest); $200B FY26 capex headwind but visible returns clear | 2026-05-06 |
+| 9 | CRWD | NASDAQ | Large | 6/10 | N/M | 22.0x | +22% | 27.0% | Best-of-breed cybersecurity; outage headwind lapped; Falcon Flex traction | 2026-05-06 |
+| 10 | DDOG | NASDAQ | Mid | 6/10 | N/M | 11.7x | +28% | 29.2% | Sticky observability platform in AI infra stack | 2026-05-06 |
+| 11 | IOT | NYSE | Mid | 6/10 | N/M | 8.0x | ~36% | 12.8% | AI/IoT fleet platform; -16% pullback improves entry | 2026-05-06 |
+| 12 | MU | NASDAQ | Large | 6/10 | 20.1x | 9.0x | high | 17.7% | Best value in AI memory; HBM supply shortage thesis intact; **PRICE FLAGGED — aggregator data corrupted, confirm with user** | 2026-05-06 |
+| 13 | AMD | NASDAQ | Large | 6/10 | ~50x fwd | 12.0x | +38% | ~16% | UPGRADED 4->6: data center +57%; Q2 guide $11.2B beats; CUDA moat not broken but AMD has earned legitimacy | 2026-05-06 |
+| 14 | PUBM | NASDAQ | Small | 6/10 | N/M | ~1.5x | low-teens | small + | NEW: independent ad-tech SSP, paired play to TTD; cap $472M = ideal small-cap slot fit; Q1 reports 5/7 | 2026-05-06 |
+| 15 | DOCN | NYSE | Mid | 6/10 | ~25x fwd | ~8x | accel | positive | NEW: cloud for SMBs/devs; +33.7% post-Q1; FY26 guide $1.13-1.15B; AI cloud traction | 2026-05-06 |
+| 16 | CFLT | NASDAQ | Mid | 6/10 | N/M | ~8x | ~30% | small + | NEW: Kafka data streaming, founder-led, AI/ML pipeline infra; competitive dynamics need stress test | 2026-05-06 |
+| 17 | AXON | NASDAQ | Mid | 5/10 | 252x | 11.0x | +33% | 2.7% | Near-monopoly public safety; Q1 reports 5/6 PM | 2026-05-06 |
+| 18 | PLTR | NYSE | Large | 5/10 | 215x | 72.5x | +29% | 47.0% | Elite AI moat; up 43% — even more uninvestable on valuation | 2026-05-06 |
+| 19 | NET | NYSE | Large | 5/10 | N/M | 29.0x | +30% | 13.3% | Distributed AI inference edge; up 142%; earnings 5/7; thesis intact but fully priced | 2026-05-06 |
+| 20 | SNOW | NYSE | Mid | 5/10 | N/M | 10.0x | +29% | 24.0% | Best enterprise data platform for AI; -13%/-35% YTD; Cortex AI catalyst; entry improving | 2026-05-06 |
+| 21 | EVLV | NASDAQ | Small | 5/10 | N/M | ~3.0x | +18-22% | low | AI weapons-detection niche; revenue +40% in 2025; small-cap watch | 2026-05-06 |
+| 22 | HIMS | NYSE | Mid | 4/10 | 41.7x | ~3x | +59% | 3.2% | Now mid-cap at $6B; GLP-1 regulatory risk existential; avoid until FDA clarity | 2026-05-06 |
+| 23 | RBLX | NYSE | Large | 4/10 | N/M | high | guide cut | low | NEW: Q1 print -18% on child safety/booking guide cut; thesis cracked until clarity | 2026-05-06 |
+| 24 | AMAT | NASDAQ | Large | 4/10 | 40.5x | 11.1x | +4% | 22.0% | Up 167% YoY; priced for perfection after huge run | 2026-05-06 |
+| 25 | PATH | NYSE | Mid | 4/10 | N/M | ~3x | low/declining | small + | NEW: RPA/agentic AI; -31.8% YTD; classic value-trap-vs-LLM-disruption setup | 2026-05-06 |
+| 26 | CELH | NASDAQ | Small | 2/10 | N/M | 4.6x | declining | ~4% | Consumer brand (out of scope); declining revenue post-Pepsi exclusivity | 2026-05-06 |
 
 ---
 
 ## Priority watchlist for initiation reports
 
-1. **TTD** — Value case is urgent; cheapest quality name in scan
-2. **MSFT** — Safest large cap; ideal first buy candidate
-3. **MNDY** — High-risk/high-reward distressed SaaS play
-4. **MU** — Cheapest AI infrastructure name; cyclicality warrants DCF
+1. **GOOGL — Initiation needed.** Top-tier large-cap, no coverage on file. The single highest-priority new initiation; GCP +63% Q1 print is paradigm-shifting.
+2. **PUBM — Small-cap candidate.** Best fit for the empty small-cap slot. Paired with TTD as DSP/SSP construction. Wait for Q1 print 5/7.
+3. **CFLT — Mid-cap data-infra candidate.** Thesis durable; competitive dynamics need stress-testing.
+4. **TTD — Action 5 buy gated on Q1 print 5/7.** Pipeline complete; just needs the print.
+5. **MNDY — Action 5 buy gated on Q1 print 5/11.** Pipeline complete; just needs the print.
 
+## Active research pipeline (full Init -> Deep -> DCF -> Buy chain)
+
+| Ticker | Init | Deep | DCF | Buy | Status |
+|---|---|---|---|---|---|
+| MSFT | 4/21 | 4/22 | 4/23 | 4/24 ($419.73, 1.5sh) | HELD |
+| TTD | 4/15 | 4/16 | 4/17 | gated on 5/7 print | DCF expires 6/16 |
+| MNDY | 4/28 | 4/29 | 4/30 | gated on 5/11 print | DCF expires 10/30 |
+
+---
+
+## Removed from universe
+
+_None._

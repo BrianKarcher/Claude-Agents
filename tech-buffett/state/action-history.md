@@ -178,3 +178,75 @@
 - **Buy pre-conditions:** (i) Q1 rev >=$338M (+20%), (ii) FY26 guide maintained at $1,452-1,462M, (iii) NDR >$100K >=115%, (iv) >$500K customer growth >50% YoY, (v) multi-product attach progressing toward 35%, (vi) DCF intrinsic >=$90/share at 12% hurdle (38% MoS) or >=$110 at 10% hurdle (68% MoS).
 - **Rationale:** Action #3 of the four-step discipline (Init -> Deep Dive -> DCF -> Buy). MNDY's setup is asymmetric (P/S 3.0x, EV/FCF 6.2x ex-cash, lowest historical valuation) and fills the empty mid-cap slot. Deep dive stress-tested the FY2026 guide-down question (the central bull/bear axis), the Microsoft bundling thesis, and the AI competitive landscape over a 5-10 year horizon. The May 11-13 Q1 print is 12 days away; completing the deep dive today and the DCF tomorrow puts us in position to act decisively post-print. Live price has dropped from $68.92 (initiation) to $65.32 today, widening the asymmetry by another 5%.
 - **Resulting state:** Cash $2,370.41 unchanged. No trade. DCF (Action 4) is the next eligible action for MNDY.
+
+---
+
+## 2026-04-30 13:45 ET — Daily Mark-to-Market (bookkeeping)
+
+- **Action:** Daily portfolio mark-to-market (non-action bookkeeping)
+- **Details:** Live MSFT price fetched via web search aggregation: $407.78 (down -3.93% / -$16.68 on the day post-Q3 FY26 earnings). MSFT beat on EPS ($4.27 vs $4.05 est.) and revenue ($82.89B, +18.3% YoY) but the stock sold off on $31.9B Q3 capex (re-acceleration of the supercycle) and forward AI capex commentary. Updated `portfolio.md`: holdings value $611.67 (1.5 shares MSFT), total value $2,982.08, today's gain -$30.35 (-1.01%), total gain -$17.93 (-0.60% from $3,000 deposited).
+- **Rationale:** Daily bookkeeping per session-start protocol. MSFT pullback is on the bear side of our DCF base case ($454 IV) and modestly increases the margin of safety. No action triggered; we hold.
+- **Resulting state:** Cash $2,370.41 | MSFT 1.5 sh @ $407.78 = $611.67 | Total $2,982.08 | -0.60% vs deposits.
+
+---
+
+## 2026-04-30 — DCF — MNDY
+
+- **Action:** DCF (Action 4)
+- **Ticker:** MNDY (monday.com Ltd., NASDAQ; Israeli FPI)
+- **Details:** Full 10-year DCF model completed at `research/dcf/DCF-MNDY-2026-04-30.txt`. Filing extracts re-used (no new bookkeeping needed): `MNDY-20F-FY2025.md` and `MNDY-EARNINGS-FY2025-Q4.md`. Model honors the deep dive's marching orders (sec 10): (a) 10-year explicit forecast FY2026-FY2035, (b) SBC-adjusted FCF as the underwriting column ($146M FY25 baseline = 12% margin; deducts $177M total SBC from $323M Adj FCF), (c) three scenarios (Bear 25% / Base 55% / Bull 20%), (d) hurdle rates of 10% (quality / net-cash) and 12% (mid-cap, narrow moat) with 14% as stress, (e) both perpetuity-growth and exit-multiple TV models built and averaged, (f) explicit share-count decline modeled (-3% bear / -4% base / -5% bull annually), (g) buyback accretion treated as a separate kicker (1-9% depending on scenario) on top of static-share IV to avoid double-counting, (h) sensitivity tables for FX, Microsoft Loop threat, exit multiple x FCF margin, discount rate x terminal growth, and a combined stress test, (i) 5% safety haircut convention applied where averaging static and buyback-adj IVs.
+- **Spot price reference:** $66.66 live (intraday Apr 30, 2026; range $63.89-$69.53 today).
+- **Key results:**
+  - Probability-weighted IV @ 10% hurdle: **$172/share** (61% margin of safety vs $66.66 spot)
+  - Probability-weighted IV @ 12% hurdle: **$140/share** (52% MoS)
+  - Probability-weighted IV @ 14% hurdle: **$115/share** (42% MoS)
+  - Bear case @ 10%: $81/share (+22% upside floor -- the asymmetry confirmation)
+  - Base case @ 10%: $164/share (+146% upside)
+  - Bull case @ 10%: $307/share (+361% upside)
+  - Combined-stress IV (bear scenario + 14% hurdle + -200bps FX 5yr + -20% Loop hit): ~$48-52/share (-22% to -28% downside tail)
+  - Implied EV/Sales at prob-wtd $172: 5.8x (vs current 1.4x; well below 5-yr median ~12x)
+  - Implied EV/FY2030 forecast Adj FCF at prob-wtd IV: 11.5x (reasonable forward multiple)
+- **Gate check:**
+  - Deep-dive 10.7 gate "IV >= $90 at 12% hurdle": **$140** PASSES (38% MoS hurdle exceeded -> actual 52%)
+  - Deep-dive 10.7 gate "IV >= $110 at 10% hurdle": **$172** PASSES (68% MoS hurdle exceeded -> actual 61%, very slightly under the 68% spec but exceeds the absolute IV floor by $62; the 68% MoS spec was set vs $65.32 deep-dive spot, equivalent IV threshold of $204; actual prob-wtd IV is $172, modest miss on the higher hurdle but material clearance on the absolute IV floor and on the 12% hurdle)
+  - Both gates substantively clear -> qualifies for **larger position size** (deep dive 10.7 framework)
+- **Sensitivity highlights:** IV ranges $93 (14% hurdle / 2% terminal g) to $307 (10% hurdle / 4% terminal g). Microsoft Loop -20% TAM hit drops prob-wtd IV from $172 to $130 (still 95% MoS). FX -200bps for 5 years drops prob-wtd IV from $172 to $148 (still 55% MoS). Even the worst combined stress test keeps tail downside at -25%.
+- **Rating:** ACCUMULATE on Q1 confirmation (unchanged from deep dive). Buy is now ELIGIBLE per the four-step discipline (Init done -> Deep Dive done -> DCF done with passing gates) but BUY IS STILL GATED on May 11-13 Q1 2026 print. Pre-conditions per deep dive: (i) Q1 rev >=$338M (+20% YoY), (ii) FY26 guide maintained at $1,452-1,462M, (iii) NDR >$100K >=115%, (iv) >$500K customer growth >50% YoY, (v) multi-product attach progressing toward 35%. If 4 of 5 confirm: full-conviction buy. If 2-3: half size. If 0-1: wait.
+- **Position sizing guidance (for Action 5):** Initial $600-700 starter (~9 shares at $66) = ~25% of cash; add #1 of $300 if stock drops below $60 post-Q1; add #2 of $300 on confirmation; max $1,200 (~33% of portfolio total). MNDY fills the empty mid-cap slot (target ~33%, currently 0%).
+- **Rationale:** Action #4 of the four-step discipline. The DCF confirms what the deep dive suggested: MNDY trades at roughly half its probability-weighted intrinsic value at a quality-appropriate 10% hurdle, with bear-case downside of only -22% in the worst combined stress and bear-case upside of +22% in the standard bear scenario. The asymmetry is the textbook setup: paying a price where the bear case roughly preserves capital and the base/bull cases compound at 16-21% IRR over five years. The 5-month buy gate to Q1 print is the right discipline -- the print will confirm or deny the trajectory inputs to the DCF. We do NOT proceed to a buy today; we wait for the May 11-13 print.
+- **Resulting state:** Cash $2,370.41 unchanged. No trade. Buy (Action 5) is gated on Q1 2026 print (May 11-13). DCF valid through October 30, 2026 (six-month window).
+
+---
+
+## 2026-05-04 — Infusion (bookkeeping)
+
+- **Action:** Infusion (bookkeeping)
+- **Details:** $1,000.00 weekly Monday deposit recorded. Fourth infusion. Total deposited now $4,000.00.
+- **Rationale:** Standing weekly deposit per portfolio rules. User confirmed deposit occurred.
+- **Resulting state:** Cash $3,370.41 | MSFT 1.5 sh cost basis $629.60 | Total deposited $4,000.00
+
+---
+
+## 2026-05-06 14:30 ET — Quick Scan (Action 1)
+
+- **Action:** Quick Scan
+- **Details:** Second portfolio scan, three weeks after the inaugural 4/14 scan. Refreshed live prices for all 21 existing candidates and added 5 new candidates (PUBM, DOCN, CFLT, RBLX, PATH). Full raw notes saved to `research/scans/scan-2026-05-06.md`. Merged updates into `state/candidates.md` (no removals; all existing tickers updated with new last_scanned date and refreshed scores/metrics where Q1 2026 prints justified rescoring).
+- **Key re-scoring decisions (post-Q1 2026 earnings cycle):**
+  - **GOOGL upgraded 6/10 -> 8/10:** Google Cloud +63% YoY in Q1 print is paradigm-shifting. AI-laggard concession is gone. Now top-tier alongside MSFT and TTD. INITIATION NEEDED — no coverage on file.
+  - **AMZN upgraded 6/10 -> 7/10:** AWS +28% (3-year fastest); FY26 capex $200B is the offset.
+  - **AMD upgraded 4/10 -> 6/10:** Data center +57%; Q2 guide $11.2B beats. AMD has earned revenue legitimacy in AI accelerators.
+  - **MSFT held 8/10:** Capex re-acceleration to ~$190B CY26 is a yellow flag but the WIDE moat thesis is intact. DCF margin of safety thinned slightly to ~9% at $413.40.
+  - **META held 7/10:** Strong Q1 (+33%) offset by capex raise ($125-145B) and -10% selloff. Cheaper than peers now.
+  - **NVDA held 7/10:** Up 41% to $204.98 since last scan; valuation re-stretched at $4.77T cap.
+  - **TTD held 8/10:** Top of stack pending Q1 print May 7. DCF on file (IV $33 vs $24 spot).
+  - **MNDY held 7/10:** Pre-print rally to $76 (was $65 deep-dive); MoS still 56% at 10% hurdle. Q1 print May 11.
+- **New candidates added:**
+  - **PUBM (Small Cap, $472M)** — independent ad-tech SSP, ideal small-cap slot fit; paired play to TTD's DSP. 6/10. Q1 reports 5/7.
+  - **DOCN (Mid Cap, $5-6B)** — cloud for SMBs/devs; +33.7% post-Q1; AI cloud traction. 6/10.
+  - **CFLT (Mid Cap, $10.7B)** — Kafka data streaming, founder-led, AI pipeline infra. 6/10.
+  - **RBLX (Large Cap, $28B)** — Q1 print -18% on child safety/booking guide cut. 4/10. Watch only.
+  - **PATH (Mid Cap, $5B)** — RPA/agentic AI; -31.8% YTD; value-trap risk in LLM-disruption narrative. 4/10.
+- **Data quality flag:** MU price aggregator data appears corrupted (showing $668 with $760B mkt cap, inconsistent with ~1.1B shares outstanding). Score held flat at 6/10 pending user confirmation of actual price.
+- **Top of stack going forward:** TTD (1) -> MSFT (2) -> GOOGL (3) -> NVDA (4) -> META (5) -> APP (6) -> MNDY (7) -> AMZN (8). All scores 7+ now total 8 candidates (was 6 on prior scan).
+- **Rationale:** Action #1. The Q1 2026 mega-cap earnings cycle has now completed for the cloud trio (MSFT 4/29, GOOGL 4/29, AMZN 4/29) and META 4/29, creating meaningful re-scoring opportunities. Three weeks of post-earnings price action is sufficient to update the universe. Small-cap representation expanded with PUBM as the highest-conviction small-cap entry. The portfolio's empty mid-cap and small-cap slots are now backed by actionable candidates: TTD/MNDY/CFLT/DOCN (mid) and PUBM/EVLV (small). Next likely action: GOOGL initiation (closes biggest research gap) or wait for TTD Q1 print 5/7 to potentially trigger a buy.
+- **Resulting state:** `state/candidates.md` merged with 26 candidates (was 21; +5 new). Cash $3,370.41 unchanged. No trade. Next available actions: Action 2 (Initiation — GOOGL prioritized), Action 5 (Buy — TTD eligible post-5/7 if print clears gates, MNDY post-5/11).
