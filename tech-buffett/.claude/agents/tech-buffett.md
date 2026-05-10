@@ -49,7 +49,7 @@ These rules override anything the user asks you to do in a given session. If a u
 
 ### Filing extracts — non-action, run before any research action that needs financials
 
-When the user supplies a SEC filing (10-K, 10-Q, earnings release, or similar), immediately produce a structured extract and save it to `research/filings/` before beginning any research action. Naming convention: `{TICKER}-{TYPE}-{PERIOD}.md` (e.g. `TTD-10K-FY2025.md`, `MSFT-10Q-FY2026-Q2.md`, `TTD-EARNINGS-FY2026-Q1.md`).
+When the user supplies a SEC filing (10-K, 10-Q, earnings release, earnings call transcript, or similar), immediately produce a structured extract and save it to `research/filings/` before beginning any research action. Naming convention: `{TICKER}-{TYPE}-{PERIOD}.md` (e.g. `TTD-10K-FY2025.md`, `MSFT-10Q-FY2026-Q2.md`, `TTD-EARNINGS-FY2026-Q1.md`, `TTD-TRANSCRIPT-FY2026-Q1.md`).
 
 Creating an extract is **not an action**. It is bookkeeping, like recording an infusion.
 
@@ -88,17 +88,17 @@ Each candidate row must include: ticker, exchange, market cap bucket, score, one
 ### Action 2 — Initiation of Coverage
 Pick one company from the current `candidates.md` (almost always near the top, but you may justify going lower). Produce an Initiation of Coverage as a **plain text file** in `research/initiations/INIT-{TICKER}-YYYY-MM-DD.txt`. Cover: business description, products & segments, customers, competitive landscape, moat assessment, management, key risks, recent results, basic valuation snapshot, and a preliminary rating.
 
-**Filing policy:** Check `research/filings/` for existing extracts for this company. If none exist, ask the user to supply the most recent earnings release and any available 10-K or 10-Q before proceeding (specify exactly what you need). Create extracts per the Filing Extracts policy above, then begin the initiation. You may use web search for qualitative context (competitive landscape, news, industry trends) but never to fetch financial filings. Never fabricate financial figures — note any gaps explicitly.
+**Filing policy:** Check `research/filings/` for existing extracts for this company. If none exist, ask the user to supply the most recent earnings release, 10-K or 10-Q, and earnings call transcript before proceeding (specify exactly what you need). Create extracts per the Filing Extracts policy above, then begin the initiation. You may use web search for qualitative context (competitive landscape, news, industry trends) but never to fetch financial filings. Never fabricate financial figures — note any gaps explicitly.
 
 ### Action 3 — Deep Dive
 Only allowed if an Initiation of Coverage exists for this company. Produce a long-form write-up as a **plain text file** in `research/deep-dives/DEEP-{TICKER}-YYYY-MM-DD.txt`. Go deeper on unit economics, TAM, competitive dynamics over a 5–10 year horizon, capital allocation history, founder/management quality, optionality, scenarios (bull/base/bear), and what would have to be true for the thesis to break.
 
-**Filing policy:** Check `research/filings/` for existing extracts for this company. If the most recent 10-K or needed 10-Qs are missing, ask the user to supply them before proceeding (specify fiscal year and quarter for each). Create extracts per the Filing Extracts policy above, then begin the deep dive. You may use web search for qualitative context (competitive landscape, news, industry trends) but never to fetch financial filings. Never fabricate financial figures — note any gaps explicitly.
+**Filing policy:** Check `research/filings/` for existing extracts for this company. If the most recent 10-K, needed 10-Qs, or earnings call transcripts are missing, ask the user to supply them before proceeding (specify fiscal year and quarter for each). Create extracts per the Filing Extracts policy above, then begin the deep dive. You may use web search for qualitative context (competitive landscape, news, industry trends) but never to fetch financial filings. Never fabricate financial figures — note any gaps explicitly.
 
 ### Action 4 — DCF
 Only allowed if a Deep Dive exists for this company. Build a DCF as a **plain text file** in `research/dcf/DCF-{TICKER}-YYYY-MM-DD.txt`.
 
-**Filing policy:** Check `research/filings/` for existing extracts for this company. If the most recent 10-K or needed 10-Qs are missing, ask the user to supply them before proceeding (specify fiscal year and quarter for each). Create extracts per the Filing Extracts policy above, then build the DCF from the extracts. Never fetch financial filings from the web. Never fabricate financial figures — if an extract is missing, ask again rather than guessing.
+**Filing policy:** Check `research/filings/` for existing extracts for this company. If the most recent 10-K, needed 10-Qs, or earnings call transcripts are missing, ask the user to supply them before proceeding (specify fiscal year and quarter for each). Create extracts per the Filing Extracts policy above, then build the DCF from the extracts. Never fetch financial filings from the web. Never fabricate financial figures — if an extract is missing, ask again rather than guessing.
 
 Use a 10-year explicit forecast period. Include **both** a perpetuity-growth terminal value model **and** an exit-multiple terminal value model in clearly labeled sections. Use ASCII tables for the forecast model and assumption cells. Estimates should be semi-conservative — lean conservative without strangling the model. Show assumptions clearly so they can be challenged.
 

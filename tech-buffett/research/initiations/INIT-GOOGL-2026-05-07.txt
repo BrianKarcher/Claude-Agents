@@ -1,0 +1,781 @@
+================================================================================
+INITIATION OF COVERAGE
+ALPHABET INC. (NASDAQ: GOOGL / GOOG)
+================================================================================
+Author:      tech-buffett (long-term value, tech-focused)
+Date:        May 7, 2026
+Live price:  $397.32 GOOGL (intraday May 7, 2026)
+Market cap:  ~$4.86T
+Cap bucket:  Large
+Filings used: research/filings/GOOGL-10K-FY2025.md
+              research/filings/GOOGL-EARNINGS-FY2026-Q1.md
+              (source pdf->txt conversions in research/filings/google/)
+Pipeline:    Init (this) -> Deep Dive -> DCF -> Buy
+Quick scan:  2026-05-06 (#3 rank, 8/10; upgraded from 6/10)
+================================================================================
+
+0. EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Alphabet is the largest single research gap in the candidate universe. The
+business compounded revenue from $307.4B (2023) to $402.8B (2025) -- a 14.5%
+CAGR -- while raising operating margins from 27.4% to 32.0%. The recent Q1
+2026 print, dated April 29, 2026, is the most consequential data point for
+this name in years: Google Cloud revenue grew +63% YoY to $20.0B and Cloud
+operating margin expanded from 17.8% to 32.9% in a single quarter, while
+Cloud backlog roughly doubled QoQ to >$460B. The four-quarter narrative that
+GOOGL was an AI laggard is now empirically inverted -- GOOGL is showing the
+fastest cloud growth of the three hyperscalers (vs. AWS +28% and Azure
+~39-40%) and more importantly the fastest cloud margin expansion. The full-
+stack approach (TPUs + Gemini + Vertex + Workspace) is monetizing.
+
+Yet the market is not euphoric. At $397/share and ~22x forward P/E, GOOGL
+trades roughly in line with its 5-year average and at a discount to MSFT
+(~26x), AMZN (~35x), and META (~22x). Three offsetting concerns explain the
+multiple: (i) DOJ Search remedy is a final judgment as of December 2025 (on
+appeal); (ii) DOJ Ad Tech remedy is pending with structural-divestiture risk
+on publisher tools; (iii) capex is doubling from $91.4B in FY25 toward a
+likely $140-150B+ pace in FY26, which is depressing the very FCF metric we
+use to underwrite the business (SBC-adj FCF margin compressed from 14.3% in
+FY24 to 12.0% in FY25, and Q1'26 SBC-adj FCF dropped to $3.4B from $13.4B in
+Q1'25 -- a 75% YoY collapse driven by capex front-loading).
+
+This is a classic Buffett setup -- a wide-moat business with multi-year
+durability, trading at a reasonable price because of legible-but-bounded
+risks (antitrust + capex digestion). The question for the deep dive and DCF
+is not whether GOOGL is a quality business (it is, with HIGH confidence) but
+rather: (a) what is the steady-state SBC-adj FCF margin once capex
+normalizes, (b) what is the binding constraint from antitrust remedies on
+revenue and operating profit, and (c) is the Cloud margin expansion in Q1
+durable or a one-quarter optical artifact.
+
+PRELIMINARY RATING: ACCUMULATE (pending Deep Dive + DCF confirmation).
+PRELIMINARY POSITION SIZING (subject to DCF): large-cap anchor #2 alongside
+MSFT. Target sizing $700-$1,200 across two tranches.
+
+================================================================================
+1. BUSINESS DESCRIPTION
+================================================================================
+
+Alphabet Inc. is the holding company successor to Google, formed in 2015. It
+operates two reporting segments plus a third "Other Bets" portfolio:
+
+  GOOGLE SERVICES   - Search, YouTube, Android, Chrome, Gmail, Google Maps,
+                      Play Store, Pixel devices, Google One, NFL Sunday
+                      Ticket. Generates revenue from advertising (~86% of
+                      Services), subscriptions (~14% and rising), and devices.
+                      FY25 revenue: $342.7B (85% of total).
+
+  GOOGLE CLOUD      - GCP (infrastructure, Vertex AI, Gemini Enterprise),
+                      Google Workspace (Gmail/Docs/Drive/Meet for biz),
+                      cybersecurity (Mandiant + Wiz). Generates revenue from
+                      consumption-based fees and subscriptions.
+                      FY25 revenue: $58.7B (15% of total).
+
+  OTHER BETS        - Waymo (autonomous mobility -- now 500K rides/wk),
+                      Verily, Calico, X moonshots. Operating loss $7.5B FY25.
+
+Approximately 80% of Alphabet revenue is advertising-derived (Search +
+YouTube + Google Network = $294.7B FY25 = 73% of total; plus a portion of
+Google subscriptions/devices), but the trajectory is clear: Cloud is now a
+$80B annualized run-rate business growing 63% YoY with 33% operating margins
+-- it is becoming a meaningful second leg of the stool.
+
+Founded:   1998 (Larry Page + Sergey Brin)
+Re-orged:  2015 (Alphabet holding co.)
+Founders:  No longer in operating roles; retain Class B supervoting shares.
+CEO:       Sundar Pichai (CEO Alphabet & Google since Dec 2019; Google CEO
+           since Aug 2015). Long-tenured operator; Stanford/Wharton; joined
+           Google 2004 (product mgmt for Toolbar -> Chrome -> Android ->
+           overall Google).
+CFO:       Anat Ashkenazi (joined July 2024 from Eli Lilly; succeeded Ruth
+           Porat who became President & CIO). New, capable, but only ~21
+           months on the job at the close of Q1 2026 -- a yellow flag in the
+           sense that she is still establishing capital-allocation patterns.
+Listing:   NASDAQ. Class A (GOOGL, 1 vote), Class B (founders, 10 votes,
+           ~836M shares), Class C (GOOG, no votes). Total 12,088M shares
+           outstanding at Dec 31, 2025; 12,116M at Mar 31, 2026.
+
+================================================================================
+2. PRODUCTS, SEGMENTS, AND THE Q1 2026 ACCELERATION
+================================================================================
+
+2.1 GOOGLE SERVICES (FY25 $342.7B / 85% of revenue / 40.7% operating margin)
+
+  Search & other  ($224.5B FY25, +13% YoY; $60.4B Q1'26, +19% YoY)
+    - The single most valuable advertising surface in the world.
+    - 19% Q1'26 growth is a re-acceleration from low-double-digits in FY24
+      and ~12% in FY25. Pichai cited "queries at an all-time high" with AI
+      experiences (AI Overviews + AI Mode) driving usage.
+    - The bear case for years has been "ChatGPT/perplexity will erode
+      Search." The Q1 print is the strongest empirical refutation we have
+      seen: Search rev growth re-accelerated, not decelerated.
+    - Monetization metrics in 10-K: paid clicks +6%, cost-per-click +7%
+      (FY25 vs FY24). Healthy.
+
+  YouTube ads  ($40.4B FY25, +12% YoY; $9.9B Q1'26, +11% YoY)
+    - Stable mid-teens grower. Direct-response > brand drove FY25 growth.
+    - Connected TV exposure indirect (via YouTube on TV apps) competes
+      with TTD/AMZN DSP demand-side and with Netflix/Disney+ on ad-tier
+      time spent.
+    - Shorts monetization gap to long-form is closing but not closed --
+      remains a multi-year tailwind.
+
+  Google Network  ($29.8B FY25, -2% YoY; $7.0B Q1'26, -4% YoY)
+    - AdSense + AdMob + Ad Manager third-party publisher network.
+    - Declining segment. The DOJ Ad Tech case is most directly threatening
+      to this segment (publisher tools were ruled anticompetitive April
+      2025). Even pre-remedy, the segment is in secular decline as
+      publishers shift inventory to first-party direct + alt-SSPs (PubMatic,
+      Magnite, etc.).
+
+  Google subscriptions, platforms, devices  ($48.0B FY25, +19% YoY; $12.4B
+    Q1'26, +19% YoY)
+    - YouTube TV, YouTube Music/Premium, NFL Sunday Ticket, Google One
+      (which includes Gemini Advanced).
+    - 350M total paid subscribers as of Q1'26 (Pichai's number).
+    - This is the underrated, recurring-revenue compounder buried inside
+      Google Services. ~20% growth on a $48B base = $9.6B incremental
+      revenue per year, mostly margin-rich subscriptions.
+
+  Services operating margin: 39.8% FY24 -> 40.7% FY25 -> 45.3% Q1'26.
+  The Q1'26 margin print is the strongest in modern Alphabet history. To
+  what degree this is sustainable vs. cyclical (FX, mix, ad-spend strength)
+  is a question for the deep dive.
+
+2.2 GOOGLE CLOUD (FY25 $58.7B / 15% of revenue / 23.7% operating margin)
+
+  This is the segment that has changed the GOOGL thesis materially in 2026.
+
+  FY25 revenue: $58.7B (+36% YoY). Already accelerating from ~31% growth in
+  FY24. Operating income: $13.9B (+128% YoY). Operating margin 23.7% --
+  still below AWS (~37%) but the gap is closing.
+
+  Q1'26 revenue: $20.0B (+63% YoY). Operating income $6.6B (+203% YoY).
+  Operating margin 32.9% -- a +1,510bps step-up YoY in a single quarter.
+  This is unusual and warrants stress-testing in the deep dive (mix shift?
+  one-time licensing? larger commitments cohort)? But the directional
+  evidence -- combined with Pichai's $460B backlog claim (nearly double
+  QoQ) -- suggests this is structural, not optical.
+
+  Three sub-businesses inside Cloud:
+    - Google Cloud Platform (GCP):  AI Infrastructure (TPU), AI Solutions
+      (Vertex AI / Gemini Enterprise), core compute/storage/database. The
+      growth engine. Pichai called out "enterprise AI Solutions and
+      enterprise AI Infrastructure" plus core GCP services.
+    - Google Workspace:  Gmail/Docs/Drive/Meet for business, with Gemini
+      built in. Steady mid-teens grower.
+    - Cybersecurity:  Mandiant (acquired 2022, $5.4B) plus Wiz (closing
+      Q1 2026, $32B). Threat intel + cloud security posture management.
+
+  COMPETITIVE READ-THROUGHS:
+    - AWS (Q1'26 +28%, 3-yr fastest, but ~37% margin)
+    - Azure (Q1'26 ~39-40%)
+    - GCP (Q1'26 +63%)
+  GCP is now the fastest-growing of the three at sub-scale (~$80B run-rate
+  vs Azure ~$300B+ and AWS ~$120B+). The full-stack story (own TPUs +
+  own foundation model Gemini + own enterprise AI tools) is the moat.
+
+2.3 OTHER BETS (FY25 $1.5B revenue / -$7.5B operating loss)
+
+  Waymo is the only material asset:
+    - 500,000+ fully autonomous rides per week as of Q1'26 (Pichai)
+    - Feb 2026 funding round of $16B (significant majority Alphabet-funded)
+    - Q4'25 included $2.1B employee comp charge for Waymo (R&D line)
+  Verily, Calico, X moonshots are immaterial.
+
+  We treat Other Bets as zero-or-positive optionality for valuation purposes
+  -- the operating loss is real but Waymo's option value is non-trivial.
+
+================================================================================
+3. CUSTOMERS & GO-TO-MARKET
+================================================================================
+
+3.1 ADVERTISING CUSTOMERS (Google Services)
+
+  Customer count: millions of advertisers globally; no single customer >1%
+  of revenue (typical for an auction-based ad platform). Customer
+  concentration risk is effectively zero.
+
+  Channels:
+    - Self-serve (Google Ads, YouTube Ads): SMBs and mid-market
+    - Direct sales / agency: large brands, performance media buyers, the
+      "big six" agency holdcos (WPP, Publicis, Omnicom, IPG, Dentsu, Havas)
+    - Programmatic: through Google Ad Manager (formerly DFP) and Display &
+      Video 360 (DV360)
+
+  Note: DV360 is GOOGL's enterprise DSP, the direct competitor to TTD. We
+  hold that competitive read-through in mind -- TTD's 20% DSP share thesis
+  is in part a thesis that GOOGL DV360 is constrained from monetizing as
+  aggressively due to antitrust / conflicts.
+
+3.2 CLOUD CUSTOMERS (Google Cloud)
+
+  Backlog: >$460B Remaining Performance Obligations as of Q1'26 (per
+  Pichai). For comparison, MSFT RPO was $625B at Dec 2025. AWS does not
+  publish equivalent RPO.
+
+  Customer mix: not disclosed at granularity, but commentary calls out
+  large enterprise AI infrastructure deals as the driver of the backlog
+  doubling.
+
+  Multi-year, multi-billion-dollar enterprise commitments are now the
+  dominant unit of Cloud growth, similar to Azure's pattern from 2022-25.
+  This is the highest-quality flavor of recurring revenue in tech.
+
+3.3 SUBSCRIPTION CUSTOMERS (Services)
+
+  350M paid subscriptions across YouTube TV, YouTube Music/Premium, NFL
+  Sunday Ticket, and Google One. This is a true consumer-recurring-revenue
+  business hidden inside an ad-tech reporting segment.
+
+================================================================================
+4. COMPETITIVE LANDSCAPE & MOAT ASSESSMENT
+================================================================================
+
+4.1 SEARCH ECOSYSTEM (the legacy moat under acute LLM pressure)
+
+  Direct competitors:
+    - Microsoft Bing (with OpenAI integration)
+    - Perplexity AI (private, $9B post-money)
+    - OpenAI (ChatGPT browse mode, ChatGPT Atlas browser)
+    - Anthropic Claude (with web search)
+    - Brave Search, DuckDuckGo
+
+  GOOGL's response: AI Overviews (now standard on most queries), AI Mode
+  (full conversational search), Gemini App as standalone consumer product.
+  Pichai cited 16B tokens/min via direct API (+60% QoQ) -- usage
+  acceleration, not decay.
+
+  MOAT VERDICT FOR SEARCH: WIDE, but narrowing at the edges.
+    - Distribution moat (Chrome 65% browser share, default search on iOS
+      via Apple TAC paying $20B+/yr, default on Android) -- attacked by
+      DOJ remedies but final remedies stayed pending appeal.
+    - Data moat (20+ years of query/click data) -- still unmatched but
+      LLM-on-web data narrows the gap.
+    - Brand moat ("just google it" is in the dictionary) -- intact.
+    - Habit moat (4B+ users) -- intact and reinforced by AI experiences
+      driving usage growth.
+
+4.2 YOUTUBE (the durable second moat)
+
+  Direct competitors: TikTok (international, attacked by app stores +
+  geopolitics), Instagram Reels, Twitch (Amazon), Netflix on the long-form
+  side.
+
+  YouTube's moat:
+    - Network effects between creators and viewers (creator economy via
+      YouTube Partner Program)
+    - 2B+ logged-in monthly users (last disclosed)
+    - Cross-platform: phone, tablet, TV (#1 connected TV property in many
+      markets)
+    - YouTube Shorts is now competitive with TikTok/Reels on time spent
+      among under-25 demos.
+
+  MOAT VERDICT: WIDE. TikTok remains the only structural threat and is
+  geopolitically constrained.
+
+4.3 GOOGLE CLOUD (the new growth engine)
+
+  Direct competitors: AWS, Azure. Then Oracle Cloud, Alibaba (China only),
+  IBM (legacy).
+
+  GOOGL's structural advantages:
+    - TPU (Tensor Processing Units): the only major hyperscaler with a
+      first-party AI accelerator at scale (Gemini training + inference on
+      TPU; available to enterprise customers via Vertex). NVIDIA/CUDA is
+      still dominant in the broader market but TPU is a real second source
+      and a Google P&L lever.
+    - Gemini foundation models (1st party, no OpenAI dependency -- the
+      single biggest contrast with Microsoft).
+    - Vertex AI + Gemini Enterprise as the application layer.
+    - DeepMind + Google Research talent density.
+
+  Structural disadvantages:
+    - Smaller than AWS and Azure -- still ~6-7x smaller than Azure on rev.
+    - Enterprise sales motion historically weaker than MSFT (which has
+      40+ years of Fortune 500 relationships).
+    - Trust gap: some Fortune 500s historically skeptical that Google
+      treats enterprise as a strategic segment vs. an ad sideshow. The
+      Q1 print and $460B backlog are pushing back on that skepticism.
+
+  MOAT VERDICT FOR CLOUD: NARROW now, NARROWING-TO-WIDE in 5 years if
+  the Q1 trajectory holds. Biggest wildcard in the deep dive.
+
+4.4 ANDROID + PLAY STORE (the hidden distribution moat)
+
+  3B+ Android devices globally. Play Store is a 30%-take rent extraction
+  business (lower in some categories post-Epic vs. Google ruling).
+  DOJ-imposed Play Store remedies are still being negotiated.
+
+  MOAT VERDICT: WIDE on distribution (no realistic alternative mobile OS
+  outside Apple). NARROWING on monetization (regulatory pressure on rake).
+
+4.5 AGGREGATE MOAT ASSESSMENT
+
+  Five moat sources, framework per Buffett/Munger:
+    (i) INTANGIBLES (brand, search/YouTube/Android brands):  WIDE
+   (ii) SWITCHING COSTS (Workspace, Cloud, Android dev tooling):  MEDIUM
+        (Cloud rising; Search/YouTube low for individual users but high
+         for ecosystem participants like creators and advertisers)
+  (iii) NETWORK EFFECTS (Search query-data flywheel, YouTube creator-
+        viewer flywheel, Android dev-user flywheel):  WIDE
+   (iv) SCALE ECONOMICS (data center capex, TPU manufacturing scale,
+        global ad inventory):  WIDE -- and getting wider with $140B+
+        FY26 capex
+    (v) COST/EFFICIENCY (vertical integration in TPU, in-house Gemini
+        training, AI-driven ad targeting):  WIDE
+
+  Overall: WIDE moat, HIGH confidence.
+
+  Compared to MSFT (also WIDE/HIGH): the moats are different in flavor.
+  MSFT's moat is enterprise switching costs + ecosystem lock-in. GOOGL's
+  moat is consumer attention + network effects + scale economics. Both
+  are durable. GOOGL is arguably more exposed to AI-disruption risk
+  (search) but also arguably more exposed to AI-tailwind upside (TPU +
+  Gemini full stack). Net: comparable quality, with higher variance.
+
+================================================================================
+5. MANAGEMENT
+================================================================================
+
+CEO Sundar Pichai (53)
+  - CEO of Alphabet & Google since Dec 2019 (Google CEO since Aug 2015).
+  - Joined Google 2004; led Toolbar, Chrome, Android, Workspace before
+    becoming overall Google CEO.
+  - Engineer-operator profile. Conservative communicator. Has steered
+    GOOGL through multiple AI-narrative crises (initial ChatGPT shock
+    Nov 2022, Gemini launch failures Feb 2024) and emerged with the
+    business intact and now leading the AI cloud growth race.
+  - 2025 capital allocation: $45.4B in buybacks, $10B in dividends,
+    $32B announced for Wiz, $4.8B announced for Intersect. The Wiz deal
+    is the biggest GOOGL acquisition ever and the biggest tech M&A
+    announced in years -- a full-throated bet on cybersecurity as a
+    Cloud differentiator.
+
+CFO Anat Ashkenazi
+  - Joined July 2024 from Eli Lilly (where she was CFO).
+  - Pharma-CFO background is unusual for Big Tech. Less obviously domain-
+    fluent on technical infrastructure but well-credentialed on capital
+    allocation and large-number discipline.
+  - Track record at GOOGL still being established. Q1 2026 buyback pause
+    ($0 vs. ~$15B Q1'25) is the single biggest signal so far -- it is
+    almost certainly tied to the Wiz close + $31B notes issuance + capex
+    ramp, but warrants monitoring in case it indicates a structural shift
+    in capital return policy.
+
+Insider ownership
+  - Larry Page and Sergey Brin retain Class B supervoting shares (~836M
+    Class B at Dec 31, 2025) -- they collectively control >50% of voting
+    power despite owning ~14% of total economic shares.
+  - This is a governance flag (founder veto) but historically benign.
+    They have not used voting power to override management since the
+    holding-company restructuring.
+
+Compensation/SBC discipline
+  - SBC was $25.0B in FY25 = 6.2% of revenue (down from 6.5% in FY24).
+  - For a Big Tech peer comp: META ~9%, MSFT ~4%, AMZN ~7% of revenue.
+  - GOOGL's SBC ratio is mid-pack. Trending in the right direction.
+
+Capital allocation grade: A-
+  - Strong: aggressive buybacks (16% of FY25 FCF returned via buyback),
+    dividend instituted 2024 and growing, sensible large M&A (Wiz
+    cybersecurity), enormous Gemini/TPU R&D returning early signs of
+    payoff.
+  - Watch: the Q1 buyback pause; the magnitude of FY26 capex (~$140B+)
+    versus the marginal ROI thereof. If the Cloud margin expansion
+    trajectory holds, capex is value-creating. If Cloud margins flatten
+    at 30-33% and growth decelerates, FY26 capex risks becoming a
+    classic AI-overbuild moment.
+
+================================================================================
+6. KEY RISKS
+================================================================================
+
+6.1 ANTITRUST / REGULATORY (probability-weighted highest impact risk)
+
+  6.1.1 DOJ Search Case (US v. Google, search distribution):
+    - Final judgment Dec 2025 imposes restrictions on distribution
+      agreements (Apple TAC, Android default-search) and requires Google
+      to share certain search data with competitors and offer syndication
+      services.
+    - Alphabet appealed Jan 2026; DOJ also appealed Feb 2026. Remedies
+      stayed pending appeal.
+    - WORST CASE: divestiture of Chrome -- low probability in our view
+      (5-10%) but a tail risk that would materially recut the moat.
+    - LIKELY CASE: behavioral remedies on default-search payments (the
+      $20B+/yr Apple TAC), data-sharing requirements. Net annual EBIT
+      hit estimate $5-12B (conservative). Manageable on a $129B FY25
+      operating income base.
+
+  6.1.2 DOJ Ad Tech Case (US v. Google, ad tech stack):
+    - April 2025: publisher tools (DoubleClick for Publishers / Ad
+      Manager) ruled anticompetitive. Advertiser tools cleared.
+      DoubleClick + AdMeld acquisitions cleared.
+    - Remedy phase Sept-Nov 2025; final judgment pending as of 10-K
+      filing.
+    - DOJ proposed remedies include structural divestiture of publisher
+      tools.
+    - WORST CASE: forced divestiture of Google Ad Manager. Direct
+      revenue at risk: Google Network ($29.8B FY25, declining). EBIT
+      impact more contained because Network has lower margins.
+    - LIKELY CASE: behavioral remedies + partial divestiture of
+      publisher-side ad server. EBIT hit $1-3B/yr. Optically negative
+      but manageable.
+
+  6.1.3 EC fines (cumulative -- already in numbers):
+    - Recent: $3.5B EC fine accrued Q3 2025 (already in FY25 G&A).
+    - Historical: €2.4B (2017 Shopping), €4.3B (2018 Android), €1.5B
+      (2019 AdSense). All on appeal through European courts.
+    - Run-rate EC fine exposure: low single-digit billions annually
+      until DMA/DSA enforcement settles. Manageable.
+
+  6.1.4 Texas AG Ad Tech case + private follow-on litigation:
+    - Trial date follows DOJ remedies decision.
+    - Will likely produce additional behavioral/monetary remedies.
+    - Materiality: low single-digit billions in damages plus ongoing
+      compliance cost.
+
+  AGGREGATE ANTITRUST IMPACT (our preliminary estimate, to be refined in
+  deep dive): $6-15B annual EBIT impairment by 2028-2030 (vs. ~$170B+
+  base-case operating income), or ~3-9% EBIT haircut. Stock multiple
+  impact: a 1-2x P/E compression effect that may already be in the
+  current multiple.
+
+6.2 AI DISRUPTION / SEARCH SUBSTITUTION
+
+  Bear thesis: ChatGPT/Perplexity/Claude erode Search query share. Long-
+  term threat: ad-supported business model dilutes as users consume
+  fewer-but-higher-quality LLM answers without monetizable clicks.
+
+  Counter-evidence (Q1 2026 print):
+    - Search rev growth +19% Q1'26 (re-acceleration, not deceleration)
+    - Pichai cited "queries at all-time high"
+    - AI Overviews + AI Mode driving usage rather than substituting it
+    - 350M paid subscribers (incl. Google One/Gemini Advanced)
+
+  Our view: the bear thesis is real over 5-10 years but the empirical
+  evidence in 2026 is that GOOGL is winning the response cycle. We will
+  stress-test this in the deep dive with TAM scenarios.
+
+6.3 CAPEX RETURN UNCERTAINTY (the FCF compression risk)
+
+  - FY24 capex: $52.5B
+  - FY25 capex: $91.4B (+74% YoY)
+  - Q1'26 capex: $35.7B (annualized $143B; 10-K MD&A confirms FY26 will
+    be "significantly increased" vs FY25)
+  - FY26 estimate: $140-160B range
+
+  Implications:
+    - SBC-adj FCF margin already compressed from 14.3% (FY24) to 12.0%
+      (FY25). In Q1'26, SBC-adj FCF dropped to $3.4B (3.1% margin) vs.
+      $13.4B (14.9%) in Q1'25.
+    - On a TTM basis, FCF is $64.4B vs. $73.3B FY25 -- already declining.
+    - If capex stays at $140B+ for 3+ years (i.e., a longer supercycle
+      than our base case), then DCF-implied intrinsic value is materially
+      lower.
+
+  This is the central DCF question -- conviction on capex normalization
+  curve is what determines the IV.
+
+6.4 OPENAI / FRONTIER MODEL DISTILLATION
+
+  Less central than for MSFT, but real: if OpenAI/Anthropic continue to
+  build moats on multimodal frontier models, GOOGL's Gemini differentiation
+  must keep pace. Track record: Gemini 2.5 Pro and Gemini Ultra are at-
+  parity-or-leading on most public benchmarks as of early 2026. Watch.
+
+6.5 FOUNDER GOVERNANCE
+
+  Class B supervoting shares give Page + Brin >50% voting control with
+  ~14% economic ownership. Historically benign but a structural
+  governance flag.
+
+6.6 MACRO / AD CYCLE
+
+  ~73% of revenue is advertising. A severe 2027-2028 ad recession could
+  cut Services growth by 5-10pts for 2-4 quarters. Cloud growth would
+  partially insulate but not fully offset.
+
+  Less acute than for pure-play ad-tech (META, TTD) because Search has
+  long demonstrated counter-cyclical defensive characteristics (lower-
+  funnel, performance-led).
+
+6.7 WAYMO / OTHER BETS LOSS DRAG
+
+  Other Bets operating loss widened from $4.4B (FY24) to $7.5B (FY25).
+  Q4'25 included $2.1B Waymo employee comp charge. Feb 2026 $16B Waymo
+  funding round (majority Alphabet-funded) signals continued investment.
+
+  Optionality value (Waymo as ride-hailing TAM optionality + Verily as
+  health TAM optionality) is meaningful but not in our base case
+  valuation.
+
+================================================================================
+7. RECENT FINANCIAL RESULTS
+================================================================================
+
+7.1 FULL YEAR FY2025 (per 10-K)
+
+  Revenue:                    $402.8B (+15% YoY)
+  Operating income:           $129.0B (+15% YoY)
+  Operating margin:           32.0% (vs. 32.1% FY24; flat)
+  Net income (GAAP):          $132.2B (+32% YoY)
+    - Includes $24.1B unrealized gains on equity securities (volatile)
+  Diluted EPS (GAAP):         $10.81 (vs $8.04 FY24)
+  Effective tax rate:         16.8%
+  Operating cash flow:        $164.7B
+  Capex:                      $91.4B
+  Free cash flow:             $73.3B
+  SBC expense:                $25.0B
+  SBC-adj FCF:                $48.3B (12.0% margin)
+  Dividends paid:             $10.0B
+  Buybacks:                   $45.4B (240M shares retired)
+  Total return to holders:    $55.4B (~76% of FCF)
+  Cash + marketable secs:     $126.8B
+  Long-term debt:             $46.5B
+  Net cash:                   $80.3B
+  Buyback authorization rem:  $69.5B (as of Dec 31, 2025)
+  Shares (Class A+B+C):       12,088M (Dec 31, 2025)
+  Headcount:                  190,820 (Dec 31, 2025)
+
+7.2 Q1 FY2026 (per April 29, 2026 earnings release)
+
+  Revenue:                    $109.9B (+22% YoY, +19% constant currency)
+  Operating income:           $39.7B (+30% YoY)
+  Operating margin:           36.1% (+220 bps YoY)
+  Net income (GAAP):          $62.6B (+81% YoY)
+    - Includes $36.9B equity gains ($28.7B after tax = $2.35 EPS)
+    - Adjusted EPS ex equity gain ~$2.76 (broadly flat YoY)
+  Diluted EPS (GAAP):         $5.11 (vs. $2.81 Q1'25)
+  Operating cash flow:        $45.8B
+  Capex:                      $35.7B
+  FCF:                        $10.1B
+  SBC expense:                $6.75B
+  SBC-adj FCF:                $3.4B (vs. $13.4B Q1'25)
+  Buybacks:                   $0 (notable pause)
+  Dividends paid:             $2.5B (raised 5% to $0.22/qtr)
+  Notes issued:               $31.1B (general corporate / M&A funding)
+  Cash + marketable:          $126.8B (flat)
+  Long-term debt:             $77.5B (+$31B from notes)
+  Net cash:                   ~$49.3B (down from $80.3B due to M&A close +
+                                       capex front-load)
+  Headcount:                  194,668 (+5% sequentially)
+
+  Segment headlines:
+    - Google Services: $89.6B (+16%), op income $40.6B (+24%), margin
+      45.3% (+300 bps)
+    - Google Cloud: $20.0B (+63%), op income $6.6B (+203%), margin 32.9%
+      (+1,510 bps)
+    - Backlog (RPO): >$460B (Pichai; nearly doubled QoQ)
+
+7.3 GUIDANCE
+
+  No formal forward revenue or EPS guidance provided in the release.
+
+  Forward-looking commentary:
+    - FY26 capex "significantly increased" vs FY25 (already trending
+      $140B+ annualized)
+    - Continued investment in technical infrastructure for AI
+
+================================================================================
+8. VALUATION SNAPSHOT (PRELIMINARY)
+================================================================================
+
+Live price (May 7, 2026):     $397.32 GOOGL
+Market cap:                   ~$4.86T
+Diluted shares:               ~12,238M (Q1'26)
+Net cash (Q1'26):             ~$49.3B
+Enterprise value:             ~$4.81T
+
+TRAILING (FY2025):
+
+  P/E (GAAP, includes equity gains):    ~37x  (artificially low EPS denom
+                                              effect; not meaningful)
+  P/E (excl equity gains):              ~50x  (more meaningful)
+  P/Sales:                              ~12.1x
+  EV/Sales:                             ~11.9x
+  P/FCF:                                ~66x  (capex-depressed)
+  P/SBC-adj FCF:                        ~101x (very capex-depressed)
+  Operating income yield:               2.7%
+
+FORWARD (NTM, TTM-adjusted):
+
+  Revenue NTM est:           ~$465-480B (assumes ~17-19% growth)
+  Operating income NTM est:  ~$160-175B (assumes ~36% margin)
+  Net income NTM est (ex eq gains): ~$135-145B
+  EPS NTM est:               ~$11-12
+  Forward P/E:               ~33-36x  (BUT this is GAAP including some
+                                       equity-gain noise; consensus is
+                                       reportedly closer to ~22-24x on
+                                       adjusted basis -- candidates.md
+                                       has it at ~22x fwd which we will
+                                       verify in deep dive)
+  EV/EBITDA forward:         ~16-18x
+
+5-YEAR P/E AVERAGE (from external aggregator context, to verify):  ~22x
+
+VS. PEERS (forward P/E, approximate):
+  MSFT:    ~22x
+  GOOGL:   ~22-24x  (in line, lower in some aggregations)
+  AMZN:    ~35x
+  META:    ~22x
+  AAPL:    ~30x
+
+PRELIMINARY VIEW: At $397, GOOGL trades at a similar multiple to MSFT and
+META despite (a) faster Q1 cloud growth, (b) Search re-acceleration, (c)
+larger net cash, and (d) being the only Big Tech that has not yet had a
+material AI-narrative recovery rerating.
+
+The clearest valuation triangle:
+
+  +--------------+-----------+-----------+-----------+------------+
+  | Company      | Cloud Q1  | Cloud OM  | Fwd P/E   | Net Cash   |
+  +--------------+-----------+-----------+-----------+------------+
+  | MSFT (Azure) | ~+39-40%  | n/d ~45%? | ~22x      | $49B       |
+  | AMZN (AWS)   | +28%      | ~37%      | ~35x      | low/neg    |
+  | GOOGL (GCP)  | +63%      | 32.9%     | ~22-24x   | ~$49B Q1   |
+  +--------------+-----------+-----------+-----------+------------+
+
+GOOGL has the fastest cloud growth in the cohort and trades at the cheapest
+multiple in the cohort.
+
+The primary explanation for the discount is antitrust + capex digestion.
+Both are real, both are bounded.
+
+Preliminary IV framework (to refine in DCF):
+  - Bear case: $310-340 (heavy antitrust hit, cloud margin reversion,
+    sustained $140B+ capex)
+  - Base case: $440-490 (assumes manageable antitrust outcomes, cloud
+    margin stable at ~30%, capex normalizes by FY29 to ~$100B run rate)
+  - Bull case: $580-680 (cloud margin expands to 35%+, AI applications
+    layer monetizes, Waymo unlocks materially)
+
+  Probability-weighted: ~$455-475 (preliminary; +15-20% upside from $397).
+
+This is a quality-anchor setup -- not a deep-value home run, but a high-
+probability 10-15% compounder for a decade with embedded optionality from
+Cloud margin expansion and Waymo. The DCF needs to test that range and
+the deep dive needs to stress the antitrust + capex + cloud margin
+durability questions.
+
+================================================================================
+9. PRELIMINARY RATING & THESIS-BREAK CONDITIONS
+================================================================================
+
+PRELIMINARY RATING:  ACCUMULATE (pending Deep Dive + DCF)
+
+THESIS-MUST-HOLD (for the rating to survive Deep Dive):
+
+  (i) Cloud margin durability >= 28% on a normalized basis (current Q1
+      32.9%; FY25 23.7%; need to verify the Q1 print is structural, not
+      one-quarter mix)
+ (ii) Search rev growth >= 12% over the next 4 quarters (Q1 was +19%; we
+      want to see Q2-Q4 hold double-digits to confirm AI-led usage
+      acceleration is durable, not a one-print)
+(iii) Capex normalization curve: $140B+ for FY26-FY27, then declining
+      toward ~$100B by FY29. If capex stays elevated 3+ years longer,
+      DCF intrinsic compresses 10-15%.
+ (iv) Antitrust EBIT impact contained to <= $15B/yr by 2028-2030 (i.e.,
+      no Chrome divestiture; no full Ad Manager structural breakup;
+      behavioral remedies + partial divestiture = our base case)
+  (v) Wiz integration successful (no $32B writedown; cybersecurity
+      meaningfully accretive to Cloud margins by FY28)
+
+If 4 of 5 hold post-DCF, full-conviction ACCUMULATE.
+If 2-3, half-size starter.
+If 0-1, downgrade to WATCH.
+
+THESIS-BREAK TRIGGERS (post-buy):
+
+  - Cloud margin reverts below 22% for 2+ consecutive quarters
+  - Search rev growth turns negative for any quarter (excluding ad cycle)
+  - Chrome divestiture ordered and not stayed within 6 months
+  - Capex exceeds $200B in any single fiscal year
+  - Founder departure (Pichai or major Page/Brin governance change)
+  - Wiz writedown >$10B announced
+
+================================================================================
+10. PIPELINE & NEXT STEPS
+================================================================================
+
+Pipeline status:
+  Initiation:      DONE (this document, May 7, 2026)
+  Deep Dive:       NEXT (Action 3) -- estimated 1-2 sessions
+  DCF:             AFTER (Action 4)
+  Buy:             GATED on DCF clearing IV >= $450 at 10% hurdle (and
+                   probability-weighted scenarios providing 15%+ MoS)
+
+Deep Dive marching orders:
+
+  (1) Stress-test the Q1 Cloud margin (32.9%) -- decompose into mix vs.
+      one-time items vs. structural step-up. Compare to AWS margin trajectory
+      from 2018-2022 as a peer-historical analog.
+
+  (2) Antitrust scenario tree -- map DOJ Search remedies (5 outcomes from
+      behavioral-only to Chrome divestiture) and DOJ Ad Tech remedies
+      (4 outcomes from behavioral-only to Ad Manager structural breakup).
+      Apply probabilities and EBIT impacts.
+
+  (3) Capex normalization curve -- model 3 scenarios: (a) supercycle
+      ends FY27 at ~$130B (bull), (b) ends FY29 at ~$100B (base),
+      (c) sustained $140B+ through FY30 (bear).
+
+  (4) Cloud margin trajectory -- model 3 scenarios for FY30 Cloud OM:
+      35% (bull), 28% (base), 22% (bear).
+
+  (5) Search TAM under AI substitution -- decompose AI Overviews +
+      AI Mode monetization vs. classical search; estimate 10-year
+      Search rev CAGR under three substitution-rate scenarios.
+
+  (6) Capital allocation mapping -- with $69.5B buyback authorization
+      remaining and Q1 buyback pause, model FY26 capital return
+      scenarios. The buyback velocity is a meaningful per-share IV
+      lever.
+
+  (7) Waymo / Other Bets fair value -- separate sum-of-parts on Waymo
+      (compare to public mobility comps Uber + Tesla AV optionality);
+      treat as upside optionality, not base case.
+
+DCF marching orders (preliminary, to be refined in Deep Dive):
+
+  - 10-year explicit forecast FY2026-FY2035
+  - SBC-adj FCF as the underwriting column (deducting full $25B+ SBC)
+  - Three scenarios with probability weights (Bear 25% / Base 55% /
+    Bull 20%)
+  - Both perpetuity-growth and exit-multiple terminal value models
+  - Hurdle rates: 9% (quality / WIDE moat / net cash anchor) and 11%
+    (penalty for antitrust uncertainty); 13% as stress
+  - Explicit capex curve modeled per the three normalization scenarios
+  - Antitrust EBIT haircut applied as a separate sensitivity layer
+
+================================================================================
+11. DATA QUALITY & RESEARCH GAPS
+================================================================================
+
+Filings used:
+  - 10-K for FY2025 (Alphabet Inc.; filed early 2026)
+  - Q1 2026 earnings release (April 29, 2026)
+  - Q1 2026 10-Q (per filename; inferred to overlap with earnings release
+    on financial statements; supplemental disclosures not separately
+    extracted)
+
+Gaps and items for follow-up in Deep Dive:
+  - Q1 2026 10-Q: review for any segment-level RPO disclosure beyond the
+    Pichai backlog comment, and for any capex commentary on TPU vs. data
+    center split.
+  - Wiz purchase price allocation (PPA) -- final allocation not yet in
+    Q1 disclosures.
+  - Apple TAC payment magnitude FY25 -- 10-K mentions distribution
+    arrangements but does not specifically disclose Apple TAC dollar
+    amount; need to validate the ~$20B/yr public estimate.
+  - Five-year revenue mix shift toward subscriptions (Google One, Gemini
+    Advanced, YouTube Premium) -- ARPU disclosure granularity.
+  - Forward consensus EPS estimates for FY2026-FY2027 (we cite ~22x fwd
+    P/E from candidates.md but should validate the EPS denominator).
+  - Class B founder voting structure -- verify supervoting ratio is
+    10:1 and current Class B count (per 10-K: 836M Class B at Dec 31,
+    2025; 837M at Mar 31, 2026 -- governance structure stable).
+
+================================================================================
+END INITIATION OF COVERAGE
+================================================================================

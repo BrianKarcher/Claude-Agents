@@ -1,0 +1,1309 @@
+================================================================================
+DEEP DIVE
+ALPHABET INC. (NASDAQ: GOOGL / GOOG)
+================================================================================
+Author:      tech-buffett (long-term value, tech-focused)
+Date:        May 10, 2026
+Pipeline:    Init (May 7) -> Deep Dive (this) -> DCF -> Buy
+Filings:     research/filings/GOOGL-10K-FY2025.md
+             research/filings/GOOGL-EARNINGS-FY2026-Q1.md
+             research/filings/google/GOOG-10-Q-Q1-2026.txt (raw)
+             research/filings/google/2026q1-alphabet-earnings-release.txt (raw)
+             research/filings/google/GOOG-10-K-2025.txt (raw)
+             (No Q1 2026 earnings call transcript on file -- gap noted in
+              section 12; Pichai/Ashkenazi commentary inferred from press
+              release and 10-Q only.)
+Initiation:  research/initiations/INIT-GOOGL-2026-05-07.txt
+================================================================================
+
+0. EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+This deep dive is structured around the seven marching orders the initiation
+left behind, plus 10-year scenarios, a thesis-break checklist, and DCF
+marching orders.
+
+Headline conclusions:
+
+  (1) Q1 2026 Cloud margin step-up to 32.9% (from 17.8% YoY) is dominantly
+      structural -- ~70-80% of the 1,510bps move is operating leverage
+      against a now-significant fixed-cost base, with the residual being
+      Wiz revenue mix, FX, and a TPU-supply-deal contribution that begins
+      flowing later in 2026/2027. Steady-state Cloud OM by FY28 likely
+      30-33% in our base case, with upside to 35-36% if TPU monetization
+      and Workspace AI attach hit. This is the single most important
+      finding in the deep dive.
+
+  (2) Antitrust scenario tree (Search + Ad Tech) probability-weights to
+      a $9-12B annual EBIT impairment by FY28-FY30, with a tail risk of
+      $30B+ in the Chrome-divestiture/Ad-Manager-structural-breakup case
+      (~6% combined probability). The CURRENT MULTIPLE ALREADY PRICES
+      ROUGHLY ~$15B/yr of antitrust drag -- so the base case is modestly
+      anti-thetical. The tail is the real risk, and it is bounded.
+
+  (3) Capex normalization curve: FY25 $91B -> FY26 $145-155B (our point
+      estimate $148B, anchored to $35.7B Q1 actual + accelerating run-
+      rate) -> FY27 $145-160B (still scaling) -> FY28-29 $130-145B
+      (plateau as TPU/data center pipeline catches up to demand) -> FY30
+      $115-125B (normalization). This is ~50% higher than the
+      initiation's 4-quarter-supercycle prior. The $462B Cloud RPO and
+      "multi-gigawatt TPU supply agreements" disclosed in the 10-Q
+      indicate the demand is real and contracted -- not speculative
+      build-ahead.
+
+  (4) Search TAM under AI substitution: base case Search rev grows 8-10%
+      CAGR through FY30 (down from 11-13% historical 5yr CAGR), with AI
+      Overviews + AI Mode acting as MONETIZABLE NEW SURFACES, not pure
+      cannibalization. The Q1 print (+19% Search rev growth, paid clicks
+      +6%, CPC +7%) is the strongest empirical refutation of the "Search
+      is dying" bear thesis we have. Bear case: 4-5% CAGR; bull case:
+      11-13% CAGR (subscription mix shift accelerates).
+
+  (5) Capital allocation under Ashkenazi: the Q1 buyback pause is a
+      sequencing artifact (M&A close + $31B notes issuance + capex peak
+      in same quarter), NOT a structural shift. With $69.5B remaining
+      authorization and our base-case FY26 SBC-adj FCF estimate of
+      ~$50-65B, expect $35-50B of buybacks in Q2-Q4 2026 + dividend
+      growth ~5%/yr. Buyback pace recovers to ~$45-55B annual run-rate
+      by FY27. This is a meaningful per-share IV lever.
+
+  (6) Waymo SOTP: $80-120B fair value range. 500K rides/wk = ~26M
+      annualized; at $20-25 implied gross revenue per ride and ~50%
+      AV-platform take, ~$2.5-3.5B FY26 revenue at meaningful loss.
+      Sum-of-parts at 8-12x FY30 normalized revenue (assumed $15-25B)
+      = $120-300B; we discount heavily for execution risk and net at
+      ~$100B base. Adds ~$8/share to GOOGL valuation in our base case
+      and ~$25/share in bull. NOT in DCF base case; treated as
+      optionality.
+
+  (7) Cloud margin trajectory vs. AWS/Azure: GCP's 32.9% Q1 OM is now
+      just 4-5pts below AWS's mid-30s and likely AT-OR-AHEAD of Azure's
+      Cloud-only OM (Microsoft does not disclose Azure margin
+      separately; estimated ~30-35%). The gap to AWS will likely close
+      to <2pts by FY28 because GCP has ~80% of the same scale advantages
+      with 100% of the in-house silicon advantages (TPU, Gemini). GCP
+      OM in steady state should be 33-37% by FY30, comparable to AWS.
+      This finding alone repositions GOOGL from a "discount-to-MSFT
+      story" to an "AWS-quality cloud business at MSFT's multiple"
+      story.
+
+10-YEAR SCENARIOS (probability-weighted, summary):
+  Bear (25%):   Probability-weighted IV ~$320-360
+  Base (55%):   Probability-weighted IV ~$470-510
+  Bull (20%):   Probability-weighted IV ~$640-720
+  Prob-wtd:     ~$465-490 (vs. $397.32 init / $415-425 estimated current)
+
+POSITION SIZING THESIS: GOOGL is the second large-cap anchor alongside
+MSFT, with a different moat shape (consumer attention + first-party AI
+silicon vs. enterprise switching costs + OpenAI dependency). Together
+they are complementary rather than redundant. Target sizing pending DCF
+confirmation: $700-1,200 across one or two tranches; large-cap bucket
+combined with MSFT can absorb ~33% of portfolio (~$1,300-1,400) by Q3
+2026 given infusion cadence.
+
+POST-DEEP-DIVE RATING: ACCUMULATE (unchanged), conviction strengthened.
+
+================================================================================
+1. Q1 2026 CLOUD MARGIN STEP-UP DECOMPOSITION
+================================================================================
+
+The most consequential single data point in the GOOGL story is Google
+Cloud's Q1 2026 operating margin: 32.9%, up from 17.8% in Q1 2025. A
+1,510bps YoY step-up in a hyperscaler segment in a single quarter is
+unusual enough to demand careful decomposition.
+
+1.1 THE RAW NUMBERS
+
+  +-----------------------+-----------+-----------+-----------+---------+
+  | Cloud line            | Q1 2025   | Q1 2026   | YoY $     | YoY %   |
+  +-----------------------+-----------+-----------+-----------+---------+
+  | Revenue               | $12,260M  | $20,028M  | +$7,768M  | +63%    |
+  | Operating income      | $2,177M   | $6,598M   | +$4,421M  | +203%   |
+  | Operating margin      | 17.8%     | 32.9%     | +1,510bps | n/m     |
+  | Cost of segment       | $10,083M  | $13,430M  | +$3,347M  | +33%    |
+  +-----------------------+-----------+-----------+-----------+---------+
+
+  Implied incremental margin: $4,421M / $7,768M = **57%**
+
+  An incremental margin of 57% on a hyperscaler business is striking.
+  AWS at maturity has cycled between 35-50% incremental margins
+  depending on capex digestion. 57% suggests a substantial slice of the
+  $7.8B incremental revenue dropped through with very little
+  incremental variable cost.
+
+1.2 DECOMPOSITION: WHAT EXPLAINS THE 1,510bps STEP-UP?
+
+  We decompose the +1,510bps move into five buckets, with our best
+  estimate of contribution and confidence level:
+
+  +-------------------------------+--------+-----------+--------------+
+  | Driver                        | Est bps| % of move | Confidence   |
+  +-------------------------------+--------+-----------+--------------+
+  | (A) Operating leverage on a   | +900   | ~60%      | HIGH         |
+  |     newly-large fixed cost    |        |           |              |
+  |     base                      |        |           |              |
+  | (B) Mix shift to higher-      | +250   | ~16%      | MEDIUM-HIGH  |
+  |     margin AI compute /       |        |           |              |
+  |     Workspace + Vertex pull-  |        |           |              |
+  |     through                   |        |           |              |
+  | (C) Wiz acquisition close     | +150   | ~10%      | MEDIUM       |
+  |     (closed March 11, 2026 so |        |           |              |
+  |     ~3 weeks of consolidated  |        |           |              |
+  |     contribution)             |        |           |              |
+  | (D) FX tailwind on largely    | +100   | ~7%       | MEDIUM       |
+  |     USD-denominated revenue   |        |           |              |
+  | (E) One-time / non-recurring  | +110   | ~7%       | LOW (gap)    |
+  |     items (release of accruals|        |           |              |
+  |     etc.) - speculative since |        |           |              |
+  |     no transcript on file     |        |           |              |
+  +-------------------------------+--------+-----------+--------------+
+  | Total                         | +1,510 | 100%      |              |
+  +-------------------------------+--------+-----------+--------------+
+
+  Comment on each bucket:
+
+  (A) OPERATING LEVERAGE (~900bps, 60% of step-up). Cloud's segment cost
+      growth was 33% YoY ($3.3B incremental cost on $7.8B incremental
+      revenue). Once a hyperscaler reaches the scale where data-center
+      depreciation, salaries, and energy are largely fixed against a
+      revenue line that is growing at 60%+, the incremental margin
+      flips to majority-flow-through. AWS hit this inflection in 2018-
+      2019 (segment OM went from ~20% to ~28% in 18 months). GCP
+      reaching it now -- at $80B annualized run-rate, similar to where
+      AWS was in 2018 -- is consistent with the AWS playbook.
+
+  (B) MIX SHIFT (~250bps, 16%). Three sub-drivers:
+      - Vertex/Gemini Enterprise: API-priced compute with no human-
+        delivery component, structurally higher margin than compute
+        rental.
+      - Workspace AI: Gemini for Workspace adds ~$10/user/month at
+        near-zero incremental delivery cost on top of paying Workspace
+        users -- almost pure-margin uplift.
+      - Backlog mix: $462B Cloud RPO is dominated by multi-year
+        enterprise commitments which have higher reservation pricing
+        and lower customer-acquisition cost amortization per dollar of
+        revenue.
+
+  (C) WIZ INTEGRATION (~150bps, 10%). Wiz closed March 11, 2026, so
+      Q1 captured ~21 days of consolidated contribution. Wiz is a
+      cloud security platform with software gross margins (~80%+) and
+      ARR of ~$700M at close. ~$45M of Wiz revenue at high contribution
+      margin is consistent with ~150bps lift on the $20B Cloud
+      segment. NOTE: in steady state Wiz's full-quarter contribution
+      will continue to add ~30-50bps for the next 3 quarters before
+      lapping.
+
+  (D) FX (~100bps, 7%). Cloud revenue is largely USD-denominated for
+      enterprise contracts, but international cost base (non-US
+      headcount, non-US data center energy) dropped marginally on a
+      stronger USD. Modest tailwind only.
+
+  (E) ONE-TIME / UNDISCLOSED (~110bps, 7%). Without a transcript, we
+      cannot be precise. Possible sources: release of legal/disputed-
+      revenue accruals, true-ups on prior-period data center
+      depreciation, change in lease accounting on the $75.6B not-yet-
+      commenced data center leases (which begin between 2026 and
+      2031). This is the bucket most likely to reverse partially in
+      Q2-Q4 2026.
+
+1.3 STRESS TEST: IS THIS DURABLE?
+
+  Three tests for durability:
+
+  TEST 1 -- AWS analog. AWS segment OM 2018-2022:
+    +------+------+------+------+------+------+
+    | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 |
+    +------+------+------+------+------+------+
+    | 28%  | 26%  | 30%  | 30%  | 28%  | 26%  |
+    +------+------+------+------+------+------+
+  AWS held in a 26-30% band for 5 years post-inflection, with the band
+  narrowing in capex ramp years (2022-23). GCP's 32.9% Q1 print is at
+  the top of this band but plausibly within. GCP has a structural
+  margin advantage from in-house TPU silicon (no NVIDIA gross-margin
+  share-of-wallet) which AWS does not have; GCP has a structural
+  margin disadvantage from smaller scale. Net we believe GCP can hold
+  in a 30-35% band.
+
+  TEST 2 -- Capex digestion. FY25 capex was $91.4B, ~22.7% of revenue.
+  FY26 is heading to $145-155B, ~30% of revenue. Depreciation lags
+  capex by ~3-4 years on data center assets. The depreciation flowing
+  through Q1 2026's Cloud P&L was largely on FY22-FY23 capex ($23-32B
+  pace). FY26-FY27 will see depreciation step up materially as the
+  $91B FY25 capex flows through. Our base case: Cloud OM gives back
+  100-200bps over FY26-FY27 as depreciation catches up, then re-
+  expands as revenue continues to outgrow.
+
+  TEST 3 -- Backlog rate of consumption. Cloud RPO is $462B, of which
+  ~50% recognizes within 24 months = ~$230B. That implies $115B/year
+  of pure-backlog Cloud revenue if all current backlog runs off
+  evenly. Plus new bookings. Plus consumption beyond contracted
+  minimums. The implied 24-month-out Cloud revenue is $130-145B
+  annualized -- which is consistent with Cloud growing 50-60% YoY in
+  FY27 from a ~$80B run-rate. This is a structural-revenue story; the
+  margin can reasonably hold even with capex digestion drag.
+
+1.4 STEADY-STATE CLOUD MARGIN ESTIMATE
+
+  +---------------+----------+----------+----------+----------+
+  | Year          | FY26E    | FY27E    | FY28E    | FY30E    |
+  +---------------+----------+----------+----------+----------+
+  | Cloud OM Bear | 26%      | 24%      | 25%      | 27%      |
+  | Cloud OM Base | 31%      | 30%      | 31%      | 33%      |
+  | Cloud OM Bull | 33%      | 33%      | 34%      | 36%      |
+  +---------------+----------+----------+----------+----------+
+
+  Q1'26 was 32.9%. Our base case is that the FY26 average comes in
+  around 31% (some Q2-Q4 give-back to Q1) and re-accelerates over
+  FY27-FY30 as revenue grows faster than the depreciation tail of the
+  capex peak.
+
+CONCLUSION: The Q1 2026 Cloud margin step-up is ~70-80% structural and
+~20-30% Q1-specific. Steady-state Cloud OM in our base case is 30-33%,
+materially above the 23.7% FY25 baseline. **This is the most important
+finding in the deep dive**: it lifts our Cloud-segment FY30 operating
+income estimate from ~$30-35B (initiation prior) to ~$45-55B (post deep
+dive), an ~$15-20B annual EBIT delta that flows directly into the DCF.
+
+================================================================================
+2. ANTITRUST SCENARIO TREE (DOJ SEARCH + DOJ AD TECH)
+================================================================================
+
+Two pending matters dominate the antitrust risk:
+  - DOJ Search (final judgment Dec 2025, on appeal both sides)
+  - DOJ Ad Tech (April 2025 mixed liability ruling; remedies pending)
+
+Plus secondary matters: Texas AG Ad Tech, EC enforcement under DMA,
+private follow-on litigation. These are less central but additive.
+
+2.1 DOJ SEARCH SCENARIO TREE
+
+  Final judgment Dec 2025 included two key remedy categories: (a)
+  restrictions on distribution agreements (the Apple TAC ~$20B/yr deal,
+  Android default search), (b) data-sharing/syndication requirements
+  with specified competitors. Remedies are STAYED pending appeal; both
+  sides have appealed.
+
+  We model 5 outcomes:
+
+  +-----+-----------------------------+------+----------------+----------+
+  | #   | Outcome                     | Prob | Annual EBIT $  | Stock $  |
+  +-----+-----------------------------+------+----------------+----------+
+  | S1  | Behavioral remedies only    | 25%  | -$2 to -$5B    | -2% to   |
+  |     | (no Apple TAC change, only  |      |                | -4%      |
+  |     | data-sharing).              |      |                |          |
+  | S2  | Apple TAC reduced 30-50%    | 35%  | -$6 to -$10B   | -5% to   |
+  |     | + data-sharing (BASE CASE)  |      | (TAC savings   | -8%      |
+  |     |                             |      | partially      |          |
+  |     |                             |      | offset by      |          |
+  |     |                             |      | query loss)    |          |
+  | S3  | Apple TAC fully prohibited  | 20%  | -$8 to -$15B   | -8% to   |
+  |     | + Android default open      |      | (large query   | -12%     |
+  |     | auction                     |      | share          |          |
+  |     |                             |      | shift)         |          |
+  | S4  | Above + Chrome behavioral   | 15%  | -$12 to -$20B  | -12% to  |
+  |     | restrictions (no            |      |                | -18%     |
+  |     | divestiture)                |      |                |          |
+  | S5  | Chrome divestiture (TAIL)   | 5%   | -$25 to -$40B  | -20% to  |
+  |     |                             |      |                | -30%     |
+  +-----+-----------------------------+------+----------------+----------+
+
+  Probability-weighted Search-only annual EBIT impact:
+    0.25*-3.5 + 0.35*-8.0 + 0.20*-11.5 + 0.15*-16 + 0.05*-32.5
+    = -$0.9 - $2.8 - $2.3 - $2.4 - $1.6 = **-$10.0B/year**
+
+  Notes on construction:
+    - The Apple TAC payment is currently estimated at ~$20-25B/yr.
+      Eliminating it ENTIRELY is not unambiguously bad for GOOGL --
+      the ~$20B saved offsets a significant portion of the lost search
+      revenue (querying behavior on iOS would partially shift to
+      ChatGPT/others, but Google would also stop paying $20B). The net
+      EBIT hit is thus much smaller than the gross revenue at risk.
+    - Data-sharing/syndication requirements are the more insidious
+      remedy. They give competitors access to query data, meaning over
+      5-10 years competitor relevance closes the gap. We model this as
+      a slow drag (-50bps to -100bps to Search rev growth/year) rather
+      than a step-change.
+    - Chrome divestiture (S5) at 5% is calibrated based on (i) the
+      District Court's reluctance to impose structural remedies (per
+      Judge Mehta's stated philosophy in the August 2024 liability
+      opinion), (ii) DOJ's mixed track record on Big Tech structural
+      remedies, (iii) the appellate court's likely scrutiny of any
+      structural divestiture order. Could be 3-7% in different
+      observers' framing; we use 5%.
+
+2.2 DOJ AD TECH SCENARIO TREE
+
+  April 2025 mixed liability ruling: publisher-side tools (Google Ad
+  Manager / DoubleClick for Publishers) found anticompetitive;
+  advertiser-side tools cleared; DoubleClick + AdMeld acquisitions
+  cleared. Remedy phase Sept-Nov 2025. Final judgment pending.
+
+  We model 4 outcomes:
+
+  +-----+-----------------------------+------+----------------+----------+
+  | #   | Outcome                     | Prob | Annual EBIT $  | Stock $  |
+  +-----+-----------------------------+------+----------------+----------+
+  | A1  | Behavioral remedies only    | 35%  | -$1 to -$2B    | -1% to   |
+  |     | (interoperability, data     |      |                | -2%      |
+  |     | portability, must-carry     |      |                |          |
+  |     | rivals)                     |      |                |          |
+  | A2  | Behavioral + partial        | 35%  | -$2 to -$4B    | -2% to   |
+  |     | unbundling (DFP separated   |      |                | -3%      |
+  |     | as a business unit) (BASE)  |      |                |          |
+  | A3  | Forced divestiture of DFP   | 25%  | -$4 to -$8B    | -4% to   |
+  |     | (publisher-side)            |      |                | -7%      |
+  | A4  | Full Ad Manager structural  | 5%   | -$8 to -$15B   | -7% to   |
+  |     | breakup (advertiser + pub)  |      |                | -12%     |
+  +-----+-----------------------------+------+----------------+----------+
+
+  Probability-weighted Ad Tech annual EBIT impact:
+    0.35*-1.5 + 0.35*-3.0 + 0.25*-6.0 + 0.05*-11.5
+    = -$0.5 - $1.1 - $1.5 - $0.6 = **-$3.7B/year**
+
+  Notes on construction:
+    - Direct revenue at stake is Google Network ($29.8B FY25, declining
+      ~2-4%/yr secular). Ad Manager publisher tools represent ~60-70%
+      of this.
+    - EBIT impact is much smaller than the gross revenue at risk
+      because (a) Network is the lowest-margin part of the ad stack
+      (much of the revenue passes through to publishers as TAC), (b)
+      losing Ad Manager would also remove the associated TAC obligation,
+      (c) advertiser-side tools (DV360) are unaffected and retain the
+      higher-value enterprise advertiser relationships.
+    - Texas AG case follows DOJ case sequentially; we add ~$0.5-1B/year
+      for incremental Texas AG remedies on top.
+
+2.3 COMBINED ANTITRUST EBIT IMPACT
+
+  Search prob-wtd:    -$10.0B/year
+  Ad Tech prob-wtd:    -$3.7B/year
+  Texas AG / EC etc.:  -$1.0B/year
+  ----------------------------------
+  COMBINED:            -$14.7B/year by FY28-FY30
+
+  This is at the upper end of the initiation's $6-15B range; the deep-
+  dive analysis using explicit scenario trees lands closer to ~$15B
+  than ~$10B. On a base-case FY28 operating income of ~$190B (16%
+  CAGR off FY25 $129B with margin expansion), this represents ~7.7%
+  of EBIT. **A noticeable hit, but not company-breaking.**
+
+  Importantly, the market multiple appears to be pricing roughly this
+  much already:
+    - GOOGL trades at ~22-24x fwd P/E
+    - MSFT at ~22-26x fwd P/E
+    - META at ~22x fwd P/E
+  GOOGL gets no multiple premium for being the largest, fastest-
+  growing-cloud, most-profitable hyperscaler. Comparing to MSFT's
+  multiple in particular suggests ~7-10% discount that maps to roughly
+  $13-18B/yr EBIT haircut -- aligned with our $15B estimate.
+
+  Implication for DCF: We model the antitrust hit as a ~$15B/year
+  EBIT impairment beginning FY28, ramping linearly from $0 in FY25 to
+  $15B in FY28. We do NOT add an additional multiple penalty because
+  the impact is already in the FCF.
+
+2.4 TAIL RISK FRAMING
+
+  The combined tail (S5 Chrome divestiture AND A4 full Ad Manager
+  breakup) is approximately 0.05*0.05 = 0.25% probability. The
+  probability of EITHER tail event is ~9% (5% + 5% - 0.25%
+  intersection). In that ~9% world, EBIT impact is $35-55B/yr, market
+  cap impact 25-40% (-$1.0-1.6T). This is the bear-case scenario for
+  GOOGL and the reason a margin-of-safety still matters even at this
+  multiple.
+
+================================================================================
+3. CAPEX NORMALIZATION CURVE (FY25 $91B -> FY26 $145-155B -> ?)
+================================================================================
+
+The single biggest variable separating the bull and bear DCF cases is
+the shape of the capex curve.
+
+3.1 THE FACT BASE
+
+  Historical capex:
+  +-------+--------+----------+--------------------+
+  | Year  | Capex  | % of rev | Annualized 4Q rate |
+  +-------+--------+----------+--------------------+
+  | 2022  | $31.5B | 11.1%    | $7.9B/qtr          |
+  | 2023  | $32.3B | 10.5%    | $8.1B/qtr          |
+  | 2024  | $52.5B | 15.0%    | $13.1B/qtr         |
+  | 2025  | $91.4B | 22.7%    | $22.9B/qtr         |
+  | Q1'26 | $35.7B | n/m      | $35.7B (annualized |
+  |       |        |          |  $143B)            |
+  +-------+--------+----------+--------------------+
+
+  10-Q language: "we expect to significantly increase, relative to 2025,
+  our investment in our technical infrastructure." Earnings release
+  reiterated this. Wall Street consensus has clustered around $140-160B
+  for FY26.
+
+  Plus: $75.6B of NOT-YET-COMMENCED data center leases, beginning
+  between 2026 and 2031 with non-cancelable terms 1-25 years. This is
+  off-balance-sheet capex commitment that flows through opex (not
+  capex) but represents real investment dollars.
+
+  Plus: "multi-gigawatt TPU supply agreements" (Note 1, Q1'26 10-Q)
+  with revenue beginning later in 2026, with the majority recognized
+  in 2027. These are long-tail revenue commitments that BACK UP the
+  capex demand signal -- customers paying GOOGL to operate
+  multi-gigawatt-scale TPU farms.
+
+  Plus: $40B private-company commitment ($10B funded, $30B
+  contingent) -- not capex per se, but capital deployed.
+
+3.2 CAPEX CURVE SCENARIOS
+
+  +-------+--------+--------+--------+--------+--------+--------+
+  | Year  | Bull   | Base   | Bear   | Bull % | Base % | Bear % |
+  |       |        |        |        | of rev | of rev | of rev|
+  +-------+--------+--------+--------+--------+--------+--------+
+  | FY26  | $140B  | $148B  | $158B  | 28%    | 30%    | 33%    |
+  | FY27  | $130B  | $150B  | $170B  | 22%    | 27%    | 33%    |
+  | FY28  | $115B  | $140B  | $175B  | 17%    | 22%    | 30%    |
+  | FY29  | $105B  | $125B  | $170B  | 14%    | 18%    | 27%    |
+  | FY30  | $100B  | $115B  | $155B  | 12%    | 15%    | 23%    |
+  | FY31  | $100B  | $110B  | $145B  | 11%    | 13%    | 20%    |
+  | FY32  | $105B  | $115B  | $145B  | 11%    | 12%    | 19%    |
+  | FY33+ | ~12% of revenue, growing with rev (steady state)        |
+  +-------+--------+--------+--------+--------+--------+--------+
+
+  Commentary on each scenario:
+
+  BULL ($100-140B band, peaking FY26): TPU efficiency curve outpaces
+  inference demand growth, allowing supply to catch up to demand by
+  FY28. Revenue scales faster than capex; capex/revenue ratio
+  normalizes by FY29. AI compute demand monetizes at high yields
+  (TPU customers pay full-margin), justifying the FY26-FY27 build.
+
+  BASE ($115-150B band, peaking FY27 then plateauing): Demand-pull
+  matches capex through FY27 but begins to mature FY28-29. AI compute
+  yields decline modestly as competition (NVIDIA, AMD MI400, custom
+  silicon at AWS/Microsoft) intensifies. GOOGL maintains TPU edge in
+  internal Gemini training and a meaningful slice of external Vertex/
+  enterprise customers, justifying ~12% of revenue as steady-state
+  capex. This is the AWS analog (AWS capex peaked at ~13% of segment
+  revenue in 2023; ratio has been declining since).
+
+  BEAR ($145-180B band, persisting through FY30): Capex demand sustains
+  because competitive AI infra arms race continues; AND/OR demand for
+  AI inference outstrips even our base; AND/OR returns on AI capex are
+  poor and GOOGL is forced to keep investing to defend share. In this
+  case, FCF is structurally suppressed for 5-7 years; net cash erodes;
+  buybacks shrink; the IV compresses materially.
+
+3.3 TPU AS THE CAPEX SWING FACTOR
+
+  GOOGL is the only hyperscaler whose AI capex spend doesn't include
+  paying NVIDIA's 60-70% gross margin. TPU v5/v6/Trillium efficiency
+  improvements cut effective $/inference cost and let GOOGL run more
+  Gemini queries per data center watt than NVIDIA-based competitors.
+
+  This means: per-dollar-of-revenue, GOOGL's capex should bend down
+  faster than AWS/Azure -- assuming TPU stays competitive. The
+  external TPU supply agreements disclosed in the 10-Q (multi-gigawatt
+  contracts, revenue starting 2H 2026) suggest GOOGL is willing to
+  share some of this efficiency gain with strategic customers.
+
+3.4 EFFECT ON DCF
+
+  +-------------+----------+----------+----------+
+  | Year        | Bear FCF | Base FCF | Bull FCF |
+  +-------------+----------+----------+----------+
+  | FY26        | $25B     | $50B     | $70B     |
+  | FY27        | $35B     | $65B     | $90B     |
+  | FY28        | $50B     | $90B     | $125B    |
+  | FY29        | $65B     | $115B    | $150B    |
+  | FY30        | $80B     | $135B    | $180B    |
+  +-------------+----------+----------+----------+
+
+  Implied FCF growth from FY25 baseline of $73B is 0% (bear), +85%
+  (base), +145% (bull) by FY30. Not unreasonable given the embedded
+  Cloud margin trajectory.
+
+  SBC-adj FCF (after deducting ~$25-35B/yr SBC):
+  Bear FY30 SBC-adj FCF: ~$50B
+  Base FY30 SBC-adj FCF: ~$103B
+  Bull FY30 SBC-adj FCF: ~$145B
+
+  At a 22x exit multiple (slight discount to current ~24x fwd):
+  Bear FY30 enterprise value: $1,100B
+  Base FY30 enterprise value: $2,266B
+  Bull FY30 enterprise value: $3,190B
+
+  Plus net cash growing back to $80-100B. Per-share IV depends on
+  buyback velocity (sec 5).
+
+================================================================================
+4. SEARCH TAM UNDER AI SUBSTITUTION
+================================================================================
+
+The bear thesis on GOOGL for the past 4 quarters has been that AI
+chatbots (ChatGPT, Perplexity, Claude, Atlas) erode Search query share
+and dilute the ad-supported business model.
+
+The Q1 2026 print is the strongest empirical evidence we have that this
+thesis is wrong, or at minimum slow-moving:
+  - Search rev: +19% YoY (re-acceleration from ~13% FY25 average)
+  - Paid clicks: +6% YoY (volume holding)
+  - CPC: +7% YoY (pricing strong)
+  - Pichai commentary: "queries at an all-time high"
+
+But empirical evidence ≠ mechanism understanding. We should map the
+mechanisms.
+
+4.1 WHY SEARCH AI HASN'T (YET) CANNIBALIZED MONETIZATION
+
+  Three mechanisms appear to be working in GOOGL's favor:
+
+  (i) AI Overviews and AI Mode are MONETIZED SURFACES, not just
+      product-feature additions. Sponsored results appear above and
+      within AI Overview answers; AI Mode includes shopping ads. The
+      "ads-with-AI-context" surface is structurally similar to the
+      pre-AI sponsored search results, with arguably higher click
+      intent.
+
+  (ii) Increased query usage (Pichai's "all-time high"). Users
+       perform MORE searches when AI assistance reduces the friction
+       of complex multi-step queries. Aggregate ad inventory grows
+       even if some queries get answered without a click.
+
+  (iii) Subscription cross-sell. Google One (which now includes Gemini
+        Advanced) is monetizing the "I want a chat-style answer" use
+        case for $19.99/month at high gross margin. 350M paid
+        subscribers (across YouTube + Google One) is growing rapidly.
+        The chatbot-substitution-to-Search risk gets partially
+        recaptured as subscription revenue.
+
+4.2 QUANTIFYING SEARCH SUBSTITUTION SCENARIOS
+
+  Search rev FY25:     $224.5B
+  Search rev Q1'26:    $60.4B (annualized run-rate ~$240B if Q1
+                       seasonality is normal -- actually Q1 is
+                       seasonally LOW for ads, so true 2026 run-rate
+                       implied is ~$260-265B)
+
+  Three 5-year scenarios:
+
+  +-----+--------+----------+--------------+----------------+----------+
+  | #   | CAGR   | FY30 Rev | Mechanism    | Substitution   | Recapture|
+  |     | FY25-30|          |              | by chatbots    | via subs |
+  +-----+--------+----------+--------------+----------------+----------+
+  | T1  | +12%   | $396B    | Bull: AI     | Low; AI Mode   | High     |
+  |     |        |          | drives more  | + AI Overviews | (Gemini  |
+  |     |        |          | usage; subs  | are net usage  | Advanced |
+  |     |        |          | pile on top  | additive       | scaling) |
+  | T2  | +9%    | $345B    | Base: gentle | Modest; ~10-15%| Moderate |
+  |     |        |          | deceleration | of complex     |          |
+  |     |        |          | as some      | queries shift  |          |
+  |     |        |          | queries      |                |          |
+  |     |        |          | shift        |                |          |
+  | T3  | +5%    | $287B    | Bear: ad-    | Severe; 25-35% | Modest   |
+  |     |        |          | tier disrupt | of monetizable | (limited |
+  |     |        |          | ed by sub-   | queries shift  | sub      |
+  |     |        |          | based AI     |                | ARPU)    |
+  +-----+--------+----------+--------------+----------------+----------+
+
+  Probability weights: T1 25%, T2 55%, T3 20%
+  Probability-weighted FY30 Search rev: 0.25*$396 + 0.55*$345 + 0.20*$287 = **$346B**
+
+  Implied 5-year CAGR: ~9.0% (vs. 11.5% historical 5-year CAGR FY20-FY25)
+
+  This is consistent with the +19% Q1 2026 print being a high-water
+  mark that mean-reverts to ~9-10% over 2-3 years as the cyclical
+  ad recovery completes.
+
+4.3 SEARCH AS A SHARE OF TOTAL REVENUE
+
+  +-------+----------+----------+-----------+
+  | Year  | Search   | Total    | Search %  |
+  +-------+----------+----------+-----------+
+  | FY25  | $224.5B  | $402.8B  | 55.7%     |
+  | FY28E | ~$295B   | ~$580B   | ~51%      |
+  | FY30E | ~$346B   | ~$735B   | ~47%      |
+  +-------+----------+----------+-----------+
+
+  Search becomes a smaller share of total revenue as Cloud and
+  subscriptions/devices grow faster. By FY30, GOOGL is roughly 47%
+  Search, 25% Cloud, 18% subscriptions/devices/YouTube ads, ~10%
+  other ads/Network. The diversification reduces single-mechanism
+  AI-disruption risk.
+
+4.4 KEY LEADING INDICATORS TO TRACK
+
+  - Paid clicks growth (current +6%): >+3% sustains thesis; <0% breaks
+  - CPC growth (current +7%): >+4% sustains; <-2% breaks
+  - "Time on Google" or query volume (Pichai disclosure level):
+    needs to keep growing
+  - Gemini Advanced subscriber growth (350M consolidated paid subs):
+    needs to keep accelerating
+  - Apple's potential default-search change (independent of DOJ):
+    biggest external lever
+
+================================================================================
+5. CAPITAL ALLOCATION & BUYBACK VELOCITY UNDER ASHKENAZI
+================================================================================
+
+Anat Ashkenazi joined as CFO in July 2024; 21 months in seat at end of
+Q1 2026. Her first full fiscal year (FY25) saw $45.4B in buybacks
+(retiring 240M shares) and the institution of a dividend ($0.20/qtr
+launched 2024 -> $0.22/qtr by mid-2026). FY25 capital return was $55.4B,
+or 76% of FCF.
+
+5.1 THE Q1 2026 BUYBACK PAUSE
+
+  Q1 2026 buybacks: $0 (vs. $15.1B Q1 2025)
+  This is the first zero-buyback quarter for GOOGL in years.
+
+  Three plausible explanations:
+
+  (a) M&A SEQUENCING -- $33.6B in M&A closed Q1 (Wiz $29.5B + Intersect
+      $5.9B), funded partially by $31.1B of new senior notes. Pausing
+      buybacks during a quarter where you raise debt to fund M&A is
+      sound capital-allocation hygiene -- avoids the optical and
+      practical absurdity of "raise $31B in debt to repurchase $15B
+      of equity."
+
+  (b) CAPEX FRONT-LOADING -- $35.7B of Q1 capex (annualized $143B
+      pace) consumes the operating cash flow that would normally fund
+      buybacks. With OCF $45.8B in Q1 and capex $35.7B, FCF was only
+      $10.1B; after dividends ($2.5B), only $7.6B left for buybacks
+      -- and that gets eaten by working-capital uses.
+
+  (c) STRUCTURAL SHIFT -- Ashkenazi prioritizes balance sheet
+      preservation and M&A optionality over per-share value
+      mechanics. This would be a meaningful negative shift for
+      long-term shareholders if true.
+
+  Our view: (a) and (b) are dominant; (c) is at most a 15-20% weight.
+  Evidence:
+    - $69.5B remaining buyback authorization (vs. ~$45B/yr historical
+      run-rate = ~18 months of buyback runway)
+    - Dividend was raised 5% in Q1 2026 ($0.21 -> $0.22)
+    - Pichai/Ashkenazi commentary in past calls has emphasized capital
+      return as a priority
+    - The pause coincides exactly with the M&A close + debt issuance
+      window
+
+5.2 BUYBACK VELOCITY MODEL
+
+  Three scenarios for FY26 capital return:
+
+  +-----+-----------+----------+----------+----------+----------+
+  | #   | Scenario  | FY26 BB  | FY26 Div | FY26     | FY26     |
+  |     |           |          |          | Total    | % of FCF |
+  +-----+-----------+----------+----------+----------+----------+
+  | C1  | Catch-up  | $50B     | $11B     | $61B     | ~120%    |
+  |     | (BULL)    |          |          |          | (debt    |
+  |     |           |          |          |          | -funded  |
+  |     |           |          |          |          | partial) |
+  | C2  | Steady    | $40B     | $11B     | $51B     | ~100%    |
+  |     | (BASE)    |          |          |          |          |
+  | C3  | Restraint | $25B     | $11B     | $36B     | ~70%     |
+  |     | (BEAR)    |          |          |          |          |
+  +-----+-----------+----------+----------+----------+----------+
+
+  C1 implies ~$50B of buyback in Q2-Q4 2026 = ~$16-17B/qtr.
+  Historically GOOGL has done $10-16B/qtr -- $16-17B is on the high
+  end but achievable.
+
+  C2 ($40B) implies ~$13B/qtr Q2-Q4 -- aligned with FY25 average pace.
+
+  C3 ($25B) would represent a meaningful structural slowdown,
+  consistent with explanation (c) above.
+
+  Probability weights: C1 30%, C2 50%, C3 20%
+  Probability-weighted FY26 buyback: $40.5B
+  Probability-weighted FY26 capital return: $51.5B (~$2.4B more than
+  FY25 capital return)
+
+5.3 PER-SHARE IV IMPACT FROM BUYBACK VELOCITY
+
+  Shares at end of Q1 2026: 12,116M
+  Avg price assumption FY26: $410-450 ($430 midpoint)
+  Implied shares retired:
+    C1: $50B / $430 = 116M shares (-1.0% of float)
+    C2: $40B / $430 = 93M shares (-0.8% of float)
+    C3: $25B / $430 = 58M shares (-0.5% of float)
+
+  Plus SBC dilution: ~$28B SBC at $430 = ~65M shares issued
+  (offsetting most or all of the buyback under C2/C3)
+
+  NET share count change FY26:
+    C1: 12,116M - 116M + 65M = 12,065M (-0.4%)
+    C2: 12,116M - 93M + 65M = 12,088M (-0.2%)
+    C3: 12,116M - 58M + 65M = 12,123M (+0.1%)
+
+  Conclusion: GOOGL's share count is NEAR-FLAT, not materially
+  declining. Per-share IV growth comes almost entirely from FCF
+  growth, not from share-count compression. This is in stark contrast
+  to MNDY (where buyback can theoretically retire 21% of float in 18
+  months) and somewhat behind MSFT (~1% net share count decline/yr).
+
+  Implication for DCF: model FY26-FY35 share count flat at 12,100M
+  in base case, declining to 11,500M by FY35 in bull case (gentle
+  ~0.5%/yr net), or rising to 12,400M in bear case (SBC outpaces
+  buyback).
+
+5.4 CAPITAL ALLOCATION GRADE
+
+  Maintain B+ (slight downgrade from A- in initiation):
+  + Buyback authorization sized appropriately
+  + Dividend established and growing
+  + Wiz M&A is strategic, not financial-engineering
+  + No "M&A and reinvestment" frenzy a la GE 2000s
+  - SBC outpaces buyback enough to keep share count flat
+  - Founder voting structure means shareholders cannot enforce
+    capital-return discipline through votes
+  - Q1 buyback pause is defensible but the optical inconsistency of
+    raising $31B in debt while pausing buyback is a yellow flag for
+    capital-allocation discipline
+  - Wiz close at $29.5B vs. announced $32B suggests modest negotiating
+    success but also modest execution-risk realization
+
+================================================================================
+6. WAYMO SUM-OF-THE-PARTS
+================================================================================
+
+Waymo is the only material asset in Other Bets. Its value is non-trivial
+and worth estimating separately.
+
+6.1 OPERATIONAL FACTS
+
+  - 500,000+ fully autonomous rides per week (Q1'26)
+  - February 2026 funding round: $16B (significant majority Alphabet-funded)
+  - Q4'25 employee comp charge: $2.1B (R&D)
+  - FY25 Other Bets revenue: $1.5B (primarily Waymo + Verily mix)
+  - FY25 Other Bets operating loss: -$7.5B
+  - Q1'26 Other Bets revenue: $411M (-9% YoY due to Verily / GFiber
+    moves)
+  - Q1'26 Other Bets operating loss: -$2.1B (annualized -$8.4B)
+
+6.2 RIDE-HAILING UNIT ECONOMICS
+
+  500K rides/week * 52 = 26M rides/year annualized
+  Avg ticket size: ~$15-25 (Waymo One pricing in current markets)
+  Waymo take-rate: ~60-70% (vs. Uber's 25-30%, because Waymo is the
+  vehicle/operator/platform combined)
+
+  Implied 2026 revenue: 26M * $20 * 0.65 = ~$340M (Waymo only)
+  Add Verily and Other Bets rump: ~$70M
+  Total Other Bets 2026 implied: ~$410M -- aligned with Q1'26 actuals
+
+  Operating loss likely $7-8B in FY26.
+
+6.3 SOTP VALUATION FRAMEWORK
+
+  Three valuation lenses:
+
+  LENS 1 -- LATEST FUNDING ROUND:
+    Feb 2026 round was $16B "significant majority funded by Alphabet"
+    Implied valuation: not disclosed, but observers triangulate to
+    $80-110B post-money based on Alphabet's incremental investment +
+    third-party partial participation
+    Range: **$80-110B**
+
+  LENS 2 -- MOBILITY MULTIPLES TO FY30:
+    FY30 Waymo revenue base case: ~$15-25B (2-3x scale-up from
+    current pace)
+    Multiple: 8-12x revenue (Uber trades at 3-5x; AV-platform
+    deserves premium)
+    Plus discount for execution risk: 50%
+    FY30 enterprise value: $15B * 10 / 2 = $75B (low) to
+    $25B * 12 / 2 = $150B (high)
+    Range: **$75-150B**
+
+  LENS 3 -- TESLA AV OPTIONALITY COMPARISON:
+    Tesla's market cap embeds ~$300-500B of AV optionality (per
+    various analysts). Waymo with 500K rides/wk vs. Tesla FSD with
+    near-zero supervised rides has structurally higher delivered
+    value but smaller fleet scaling potential. Discount Tesla's AV
+    embed by 60-70%.
+    Range: **$90-200B**
+
+  TRIANGULATED FAIR VALUE: $80-150B
+  POINT ESTIMATE: $100B (= ~$8/share GOOGL)
+
+  At BULL: $200B (~$16/share)
+  At BEAR: $40B (~$3/share, if fleet scaling slows or major safety
+    incident)
+
+6.4 WAYMO FLOW INTO GOOGL DCF
+
+  We treat Waymo as upside optionality, NOT base case.
+
+  Default treatment: model Other Bets at FY30 revenue $20B, FY30
+  operating margin -10% (still loss-making but improving), exit at
+  3x revenue = $60B added enterprise value.
+
+  Bull-case overlay: $150B added enterprise value (+$12/share).
+
+  Bear-case overlay: $0 (full Waymo writedown if AV doesn't scale).
+
+================================================================================
+7. CLOUD MARGIN TRAJECTORY VS. AWS / AZURE
+================================================================================
+
+Cross-hyperscaler comparison is the cleanest external benchmark for our
+Cloud assumptions.
+
+7.1 SIDE-BY-SIDE Q1 2026
+
+  +---------+----------+----------+--------+----------+----------+
+  | Cloud   | Q1 Rev   | YoY %    | Q1 OM  | Run-rate | RPO      |
+  +---------+----------+----------+--------+----------+----------+
+  | AWS     | ~$31.0B  | +28%     | ~36%   | $124B    | n/d      |
+  | Azure   | ~$36.0B  | +39-40%  | ~33%*  | $144B    | $625B    |
+  | GCP     | $20.0B   | +63%     | 32.9%  | $80B     | $462B    |
+  +---------+----------+----------+--------+----------+----------+
+  *Azure does not disclose segment OM directly. Microsoft's Intelligent
+  Cloud segment OM is ~46-48%; Azure-only is estimated 30-35% by
+  observers.
+
+  Three observations:
+
+  (i) GCP is the FASTEST-GROWING and the THIRD-LARGEST. Growth-share
+      math says GCP gains share at this pace.
+
+  (ii) GCP's OM of 32.9% is now within 3-5pts of AWS's, and likely
+       at-or-above Azure's standalone OM. This is the single most
+       important cross-cloud finding: GCP has crossed into "first-
+       quartile margin profile" in this segment.
+
+  (iii) RPO ratios: AWS/Azure RPO/run-rate = ~5x for Azure; GCP =
+        $462B / $80B = 5.8x. GCP has the LONGEST visibility of the
+        three -- which is consistent with a TPU-supply-deal-led
+        backlog rather than consumption-only.
+
+7.2 STRUCTURAL DRIVERS OF THE GAP TO AWS
+
+  AWS advantages over GCP:
+    - Scale (~50% more revenue today, ~3x more historical capex)
+    - Enterprise-sales depth (longer relationships, more tenured field)
+    - Marketplace ecosystem (third-party ISVs)
+
+  GCP advantages over AWS:
+    - First-party AI silicon (TPU) -- AWS has Trainium/Inferentia
+      but lower scale and less integration
+    - First-party foundation model (Gemini) -- AWS does not own a
+      frontier model; reliant on Anthropic and Bedrock partners
+    - DeepMind / Research talent density
+    - Lower opex per dollar of revenue at the data-center layer
+      (better PUE / energy efficiency in newer regions)
+
+  Net: structural reasons GCP can match or exceed AWS margin in
+  steady state are real. The ~3-4pt gap today reflects the historical
+  scale gap; we expect it to close to <2pt by FY28.
+
+7.3 STEADY-STATE OUTLOOK
+
+  +-------+--------+--------+--------+
+  | Year  | AWS OM | Az OM  | GCP OM |
+  +-------+--------+--------+--------+
+  | FY26E | 36%    | 33%    | 31%    |
+  | FY28E | 36%    | 34%    | 33%    |
+  | FY30E | 36%    | 34%    | 35%    |
+  +-------+--------+--------+--------+
+
+  By FY30 we model GCP within 1pt of AWS. This is a meaningfully
+  bullish view but anchored to (a) Q1 2026 actuals, (b) the
+  TPU-as-margin-lever thesis, (c) the AWS analog (margin-stable post-
+  inflection).
+
+7.4 RISKS TO THIS VIEW
+
+  - NVIDIA pricing power compresses: if NVIDIA H/B-series prices crash
+    by 30%+, the TPU advantage shrinks and GCP loses some margin
+    leverage. Probability: 25%. Impact: -200-300bps to GCP OM.
+  - Microsoft buys / develops a true frontier model (e.g., MAI-1
+    matures; Anthropic partnership matures): closes Microsoft's
+    "model gap" and pressures GCP's Gemini-as-differentiator pitch.
+    Probability: 35%. Impact: -100bps to GCP growth (margin less
+    affected).
+  - Regulators force GCP to share AI infrastructure access on
+    "fair" terms: would compress yield on TPU farms. Probability:
+    10%. Impact: -150-200bps to GCP OM.
+
+  Aggregate probability-weighted downside: ~150-200bps to GCP OM
+  vs. our base case. So the 33-35% FY30 base case has an effective
+  bear adjustment to ~31-33%, still a strong outcome.
+
+================================================================================
+8. 10-YEAR SCENARIOS (BULL / BASE / BEAR)
+================================================================================
+
+We synthesize sections 1-7 into three coherent 10-year scenarios.
+
+8.1 BASE CASE (55% probability)
+
+  Revenue: $402.8B FY25 -> ~$880-940B FY35 (~8.4% CAGR)
+  Operating margin: 32.0% FY25 -> 36-38% FY35
+  Operating income: $129B FY25 -> ~$330-345B FY35
+  Capex curve: peaks $148B FY26, plateaus FY27-28, normalizes to
+    ~$110B FY30 -> ~12% of rev FY35
+  SBC: 6.2% of rev declining to 5.0% by FY35
+  FCF: $73B FY25 -> ~$240B FY35
+  SBC-adj FCF: $48B FY25 -> ~$195B FY35
+
+  Composition by FY30:
+    Search: $346B (47% of rev)
+    YouTube ads: $58B (8%)
+    Subscriptions/devices: $98B (13%)
+    Network: $19B (3%)
+    Cloud: $200B (27%)
+    Other Bets: $14B (2%)
+
+  Antitrust: -$15B/yr EBIT impairment beginning FY28
+  Cloud OM: stable 31-34%
+  Search rev CAGR: 9% FY25-30
+  Cloud rev CAGR: 28% FY25-30, decelerating to 18% FY30-35
+
+  IV @ 9% WACC, perpetuity-g 3%: ~$485
+  IV @ 11% WACC, exit 22x: ~$465
+  Average base-case IV: **~$475/share**
+
+8.2 BULL CASE (20% probability)
+
+  Revenue: $402.8B FY25 -> ~$1,150B FY35 (~11% CAGR)
+  Operating margin: 32.0% FY25 -> 39-40% FY35
+  Operating income: $129B FY25 -> ~$455B FY35
+  Capex curve: peaks $140B FY26, normalizes to $100B FY30 (12% rev)
+  SBC: 6.2% declining to 4.5% (better operating leverage on AI talent)
+  FCF: $73B FY25 -> ~$320B FY35
+
+  Composition by FY30:
+    Search: $396B (47%)
+    YouTube: $66B (8%)
+    Subscriptions/devices: $115B (14%)
+    Network: $20B (2%)
+    Cloud: $260B (31%) -- 36% OM
+    Waymo: $30B (4%) -- profitable
+
+  Antitrust: -$8B/yr (lower remedy outcome)
+  Cloud OM: 35-36% by FY30
+  Search rev CAGR: 12%
+  Cloud rev CAGR: 32%
+  Waymo SOTP: $200B added EV
+
+  IV @ 9% WACC: ~$680
+  IV @ 11% WACC, exit 24x: ~$640
+  Average bull-case IV: **~$660/share**
+
+8.3 BEAR CASE (25% probability)
+
+  Revenue: $402.8B FY25 -> ~$680B FY35 (~5.4% CAGR)
+  Operating margin: 32.0% FY25 -> 28-30% FY35 (compressing on AI cost
+    curve and antitrust)
+  Operating income: $129B FY25 -> ~$200B FY35
+  Capex curve: persistent $145-175B band through FY30; FY30 capex
+    still 23% of rev
+  SBC: 6.2% rising to 7.0% (AI talent war continues)
+  FCF: $73B FY25 -> ~$130B FY35
+
+  Composition by FY30:
+    Search: $287B (50%) -- structurally decelerating
+    YouTube: $50B (9%)
+    Subscriptions: $80B (14%) -- limited by AI substitution
+    Network: $15B (3%)
+    Cloud: $130B (23%) -- 27% OM (capex digestion + price competition)
+    Other Bets: $10B (1%)
+
+  Antitrust: -$30B/yr (Chrome divestiture or Ad Manager structural
+    breakup happens; ~5% combined probability multiplied across
+    scenarios)
+  Cloud OM: 25-28% (back to 2024 levels)
+  Search rev CAGR: 5%
+  Cloud rev CAGR: 18% decelerating quickly
+  Waymo SOTP: $0 (full writedown)
+
+  IV @ 11% WACC: ~$340
+  IV @ 13% WACC: ~$300
+  Average bear-case IV: **~$320/share**
+
+8.4 PROBABILITY-WEIGHTED IV
+
+  IV_pw = 0.20*$660 + 0.55*$475 + 0.25*$320
+        = $132 + $261 + $80
+        = **$473/share**
+
+  Margin of safety vs. $397 init price: **+19%**
+  Margin of safety vs. assumed current ~$420: **+13%**
+
+  At a 12% hurdle rate (more conservative): IV_pw ~$420 -- roughly
+  fair value at current ~$420.
+
+  At a 9% hurdle rate (high quality / WIDE moat / net cash): IV_pw
+  ~$525 -- ~25% upside.
+
+  THE DCF DECISION POINT will be: at what hurdle rate is GOOGL
+  appropriately discounted? We will model 9% (WIDE moat / quality
+  anchor), 11% (antitrust uncertainty), and 13% (stress) and
+  probability-weight the IVs.
+
+================================================================================
+9. THESIS-BREAK CHECKLIST
+================================================================================
+
+We track 8 conditions; 3+ trigger reduces or sells.
+
+  +----+--------------------------------+-----------+-----------+
+  | #  | Thesis-break trigger           | Status    | Threshold |
+  +----+--------------------------------+-----------+-----------+
+  | 1  | Cloud OM <22% for 2+           | OK        | <22%      |
+  |    | consecutive quarters           | (32.9%    | 2 qtrs    |
+  |    |                                | Q1'26)    |           |
+  | 2  | Search rev growth turns        | OK        | <0%       |
+  |    | negative for any quarter       | (+19%     | for 1 qtr |
+  |    | (excluding ad cycle)           | Q1'26)    |           |
+  | 3  | Chrome divestiture ordered     | OK        | Any DOJ   |
+  |    | and not stayed within 6 months | (Dec 2025 | court     |
+  |    |                                | judgment  | order     |
+  |    |                                | stayed)   | unstayed  |
+  | 4  | Capex exceeds $200B in any     | OK        | >$200B    |
+  |    | single fiscal year             | (FY26 on  | annual    |
+  |    |                                | track for |           |
+  |    |                                | $148B)    |           |
+  | 5  | Wiz writedown >$10B announced  | OK        | >$10B     |
+  | 6  | Pichai or Page/Brin major      | OK        | Any       |
+  |    | governance change              |           | disclosed |
+  | 7  | Buyback velocity collapse      | YELLOW    | $0 for 3+ |
+  |    | (Q1 already $0; Q2 print is    | (1 qtr at | qtrs      |
+  |    | the next observable)           | $0)       |           |
+  | 8  | TPU competitive collapse       | OK        | Major     |
+  |    | (NVIDIA price war + GOOGL      |           | TPU       |
+  |    | loses external customer share) |           | customer  |
+  |    |                                |           | defection |
+  +----+--------------------------------+-----------+-----------+
+
+  Current: 0 RED, 1 YELLOW, 7 GREEN. Thesis fully intact.
+
+================================================================================
+10. OPTIONALITY (NOT IN BASE CASE)
+================================================================================
+
+  10.1 Waymo (covered in sec 6): $80-150B fair value range.
+       Not in base case; adds $8-12/share if execution holds.
+
+  10.2 Quantum computing -- Google Quantum AI / Willow chip: research-
+       phase but real. Five-year option value ~$5-15B if commercial
+       quantum advantage achieved on at least one Quanta-Sigma type
+       use case.
+
+  10.3 Healthcare AI / Verily -- now contained but Verily has been
+       exploring health-data partnerships with provider networks.
+       Five-year option value ~$5-20B.
+
+  10.4 Sovereign AI -- governments (EU, UK, India, Saudi) are
+       commissioning sovereign AI infrastructure at $5-15B per
+       country contract. GCP is well-positioned given European
+       regulatory comfort vs. AWS/Azure.
+
+  10.5 GFiber divestiture (announced Q1'26) -- frees ~$3.5B of
+       carrying value back to shareholders via cash + note + 50%
+       equity in the SpinCo. Positive capital allocation signal.
+
+  10.6 OpenAI / Anthropic equity stake -- Q1'26 saw $36.9B unrealized
+       gain on non-marketable equity securities. The Anthropic stake
+       (and various other investments) is worth potentially $80-150B
+       at current rounds. Worth monitoring as a wildcard liquidity
+       event in any future scenario where Anthropic IPOs or OpenAI
+       restructures.
+
+  10.7 Android / Pixel devices -- Q1'26 subscriptions, platforms,
+       devices grew 19%. Pixel 11 (rumored 4Q 2026 launch) expected
+       to be first true Gemini-native premium phone -- low probability
+       of meaningful market-share gain vs. Apple but would represent
+       optionality for an otherwise stagnant device segment.
+
+================================================================================
+11. WHAT WOULD HAVE TO BE TRUE FOR THE THESIS TO BREAK
+================================================================================
+
+We list five mechanically distinct scenarios in which our base case is
+materially wrong.
+
+  BREAK 1: AI ATTACK ON SEARCH MONETIZATION
+    - LLM-based answer surfaces capture >20% of monetizable Google
+      query volume by FY28
+    - Subscription substitution does NOT recapture (Google One /
+      Gemini Advanced caps at <500M paid subs)
+    - Search rev CAGR collapses to <3% over FY26-FY30
+    - Cloud growth and margin alone cannot offset
+    Impact: IV compresses to $300-330/share
+
+  BREAK 2: CAPEX SUPERCYCLE EXTENDS TO 2030
+    - AI demand sustains, requiring sustained $150B+ capex through
+      FY30
+    - TPU efficiency curve fails to compound
+    - Cloud yields decline as competitive supply catches up
+    - SBC-adj FCF stays flat or declines through FY28
+    Impact: IV compresses to $340-380/share
+
+  BREAK 3: STRUCTURAL ANTITRUST REMEDIES
+    - Chrome divestiture upheld on appeal (currently 5% probability)
+    - OR Ad Manager full structural breakup (currently 5% probability)
+    - $25B+/yr EBIT impairment becomes the realized scenario
+    Impact: IV compresses to $300-340/share, plus multiple compression
+
+  BREAK 4: CLOUD MARGIN MEAN-REVERTS TO 20%
+    - Q1'26 32.9% reverses by Q4'26 to <22%
+    - Indicating the step-up was Wiz + one-time + FX rather than
+      structural
+    - Cloud business returns to AWS-like 26-30% steady state but
+      without scale advantage
+    Impact: IV compresses to $360-400/share
+
+  BREAK 5: GOVERNANCE OR LEADERSHIP DISCONTINUITY
+    - Pichai departure (planned or unplanned)
+    - Page/Brin invoke supervoting on a controversial topic (e.g.,
+      block a major capital return or M&A)
+    - Or major Ashkenazi missteps that erode capital-allocation trust
+    Impact: 1-3x P/E compression -> $340-400/share IV
+
+  Of the five, BREAK 2 (capex sustains) and BREAK 1 (AI eats Search)
+  are the two we monitor most actively. BREAK 3 is bounded probability.
+
+================================================================================
+12. DCF MARCHING ORDERS
+================================================================================
+
+The deep dive output for the DCF (Action 4 next):
+
+  (1) STRUCTURE
+      - 10-year explicit forecast FY2026-FY2035
+      - SBC-adj FCF as primary underwriting column
+      - Three scenarios: Bear (25%), Base (55%), Bull (20%)
+      - Both perpetuity-growth (3.0% terminal g) and exit-multiple
+        (Bear 18x, Base 22x, Bull 25x SBC-adj FCF) terminal value
+        models, averaged
+      - Hurdle rates: 9% (WIDE moat / quality / net cash), 11%
+        (antitrust uncertainty), 13% (stress)
+
+  (2) REVENUE BUILD (segment-by-segment)
+      - Search rev: Bear 5% / Base 9% / Bull 12% CAGR FY25-30
+      - YouTube ads: Bear 6% / Base 9% / Bull 12% CAGR
+      - Subscriptions: Bear 14% / Base 18% / Bull 22% CAGR
+      - Network: Bear -8% / Base -4% / Bull -1% CAGR (declining)
+      - Cloud rev: Bear 22% / Base 28% / Bull 32% CAGR
+      - Other Bets: Bear 0% / Base 25% / Bull 50% CAGR
+
+  (3) MARGIN BUILD
+      - Services OM: Bear 38% / Base 41% / Bull 44% steady-state
+      - Cloud OM: Bear 27% / Base 33% / Bull 36% by FY30
+      - Other Bets: stays loss-making in all scenarios; FY30 -10% OM
+      - Alphabet-level: ~-3% drag on rev (steady)
+      - Antitrust EBIT haircut: Bear -$25B / Base -$15B / Bull -$8B
+        beginning FY28, ramping linearly from $0 in FY25
+
+  (4) CAPEX CURVE (per sec 3.2)
+      - Bear: $158B/$170B/$175B/$170B/$155B FY26-30
+      - Base: $148B/$150B/$140B/$125B/$115B FY26-30
+      - Bull: $140B/$130B/$115B/$105B/$100B FY26-30
+
+  (5) SBC ASSUMPTION
+      - Bear: 7.0% of rev (rising)
+      - Base: 6.0% declining to 5.0% over 10 years
+      - Bull: 6.0% declining to 4.5% (operating leverage)
+
+  (6) SHARE COUNT
+      - Bear: 12,400M FY35 (slight rise as SBC outpaces buyback)
+      - Base: 12,000M FY35 (gentle ~0.1%/yr decline net)
+      - Bull: 11,500M FY35 (~0.5%/yr net decline)
+
+  (7) NET CASH / DEBT
+      - Start: $49.3B net cash Q1'26
+      - Bear: net debt -$30B by FY30 (capex-funded)
+      - Base: net cash $80B by FY30
+      - Bull: net cash $200B by FY30
+
+  (8) WAYMO / OTHER BETS SOTP OVERLAY
+      - Bear: $0 added EV
+      - Base: $60B added EV
+      - Bull: $200B added EV
+
+  (9) KEY SENSITIVITIES TO RUN
+      - Cloud OM ±400bps in FY30: $±70/share
+      - Capex curve ±$25B/yr persistent through FY30: $±50/share
+      - Antitrust EBIT haircut ±$10B/yr: $±35/share
+      - WACC 9% vs 11% vs 13%: $±90/share
+      - Search rev CAGR ±200bps: $±40/share
+
+  (10) GATE FOR BUY (Action 5)
+      - Probability-weighted IV @ 10% hurdle >= $475 (target)
+      - Floor: probability-weighted IV @ 11% hurdle >= $440 (~5% MoS
+        at $420 entry, acceptable for quality anchor)
+      - If both clear: full-conviction starter ($600-700)
+      - If 11% hurdle clears but 10% misses: half-size starter ($300-400)
+      - If neither clears: WAIT or downgrade to WATCH
+
+================================================================================
+13. PRELIMINARY VIEW & BUY PRE-CONDITIONS
+================================================================================
+
+POST-DEEP-DIVE RATING: ACCUMULATE (unchanged from initiation;
+conviction strengthened).
+
+KEY FINDINGS THAT STRENGTHEN CONVICTION:
+  - Cloud margin step-up is dominantly structural (sec 1)
+  - Antitrust EBIT impact appears already priced in (sec 2)
+  - Capex curve has visible normalization path (sec 3)
+  - Search re-acceleration is empirically visible, not narrative (sec 4)
+  - Cloud margins are at-or-near AWS quality (sec 7)
+
+CONCERNS THAT TEMPER CONVICTION:
+  - Q1 buyback pause is yellow-flag pending Q2 print (sec 5)
+  - Per-share share count declining slowly = IV/share sensitive to
+    operating performance, not financial engineering
+  - Founder voting structure is structural governance flag
+  - Capex absolute level is enormous and creates 2-3 year FCF drag
+
+BUY PRE-CONDITIONS for Action 5:
+  - DCF (Action 4) probability-weighted IV >= $475 at 10% hurdle
+  - OR DCF probability-weighted IV >= $440 at 11% hurdle for half-size
+  - Live price < IV by at least 10% (margin of safety)
+  - No new antitrust shock (e.g., DOJ refusing to stay Chrome
+    divestiture pending appeal)
+  - Cash-on-hand allows starter sizing without draining mid/small
+    cap budget
+  - Allocation check: GOOGL would be 2nd large cap alongside MSFT,
+    keeping large-cap bucket on/near 33% target
+
+POSITION SIZING TARGET: $600-1,200 across one or two tranches.
+At $420 entry, ~1.4 to 2.9 shares.
+
+NEXT ACTION: DCF (Action 4) for GOOGL.
+
+================================================================================
+14. DATA QUALITY & RESEARCH GAPS
+================================================================================
+
+Filings used (all on file as plain text in research/filings/):
+  - 10-K FY2025 (Alphabet Inc.)
+  - Q1 2026 earnings release (April 29, 2026)
+  - Q1 2026 10-Q (filed shortly after)
+
+Earnings call transcript: NOT ON FILE. Q1 2026 earnings call transcript
+not yet supplied. Specific gaps from this absence:
+  - Pichai/Ashkenazi commentary on Cloud margin structural durability
+  - Capex guidance specifics (exact $ point estimate vs. our $148B)
+  - Buyback intent for Q2-Q4 2026
+  - TPU supply agreement scale (we have "multi-gigawatt" only)
+  - Search query growth rate disclosure beyond "all-time high"
+
+If user can supply the Q1 2026 earnings call transcript, we will revise
+the deep dive's section 1 (Cloud margin decomposition) and section 5
+(buyback velocity) more precisely. The DCF can proceed without it but
+will carry slightly wider error bars on Cloud OM and capital-return
+inputs.
+
+Other research gaps:
+  - Apple TAC dollar magnitude FY25 (estimate $20-25B, not directly
+    disclosed in 10-K)
+  - Wiz purchase price allocation final (preliminary in Q1 10-Q only)
+  - Anthropic stake disclosure (embedded in $107B non-marketable
+    securities; not separately broken out)
+  - Sovereign AI contract pipeline (referenced in industry coverage,
+    not in filings)
+
+================================================================================
+END DEEP DIVE
+================================================================================
