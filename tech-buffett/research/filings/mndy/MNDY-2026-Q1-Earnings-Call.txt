@@ -1,0 +1,500 @@
+LSEG STREETEVENTS
+EDITED TRANSCRIPT
+MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+EVENT DATE/TIME: MAY 11, 2026 / 12:30PM GMT
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+CORPORATE PARTICIPANTS
+Byron Stephen monday.com Ltd - Director of Investor Relations
+Roy Mann monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Eran Zinman monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Eliran Glazer monday.com Ltd - Chief Financial Officer
+Casey George monday.com Ltd - Chief Revenue Officer
+CONFERENCE CALL PARTICIPANTS
+Damon Kogan Barclays - Analyst
+Josh Baer Morgan Stanley - Analyst
+Jackson Ader KeyBanc Capital Markets Inc - Equity Analyst
+Mark Murphy JPMorgan Chase & Co - Analyst
+Howard Ma Guggenheim Securities LLC - Equity Analyst
+Steven Enders Citi Infrastructure Investments LLC - Analyst
+David Hynes Canaccord Genuity Corp - Analyst
+Alex Zukin Wolfe Research LLC - Analyst
+Taylor McGinnis UBS AG - Analyst
+Allan Verkhovski BTIG LLC - Equity Analyst
+Matthew Bullock Bofa Merrill Lynch Asset Holdings Inc - Analyst
+PRESENTATION
+Operator
+Good day. My name is Desiree, and I'll be your conference operator today. At this time, I would like to welcome everyone to monday.com's
+first-quarter fiscal year 2026 earnings conference call.
+I would like to turn the call over to monday.com's Vice President of Investor Relations, Mr. Byron Stephen. Please go ahead.
+Byron Stephen - monday.com Ltd - Director of Investor Relations
+Hello, everyone, and thank you for joining us on today's conference call to discuss the financial results for monday.com's first quarter fiscal
+year 2026. Joining me today are Roy Mann and Eran Zinman co-CEO's of monday.com; Eliran Glazer, monday.com's CFO; and Casey George,
+monday.com's CRO.
+We released our results for the first quarter of fiscal year 2026 earlier today. You can find our quarterly shareholder letter, along with the
+investor presentation and a replay of today's webcast under the News and Events section of our IR website at ir.monday.com.
+Certain statements made on the call today will be forward-looking statements, which reflect management's best judgment based on currently
+available information. These statements involve risks and uncertainties that may cause actual results to differ from our expectations. Please
+refer to our earnings release for more information on the specific factors that could cause actual results to differ materially from our
+forward-looking statements.
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+2
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+Additionally, non-GAAP financial measures will be discussed on the call. Reconciliations to the most directly comparable GAAP financial
+measures are available in the earnings release and the earnings presentation for today's call, which are posted on our Investor Relations
+website.
+Now let me turn the call over to Roy.
+Roy Mann - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Thank you, Byron, and thank you, everyone, for joining us today. Monday.com delivered a strong start to 2026. Q1 revenue grew 24%
+year-over-year reflecting sustained demand for our platform as enterprises consolidate their work infrastructure. We generated a record
+$49 million in operating profit, demonstrating that our growth is increasingly efficient. Adjusted free cash flow margin expanded to 29%,
+underscoring the financial durability of our business model.
+Gross retention continued to improve in Q1, reaching historical highs for the company, reflecting how deeply monday.com is embedded in
+how our customers run their businesses.
+Enterprise momentum continued to build with 42% of ARR coming from our customers with over $50,000 in ARR. A record number of new
+customers with over $500,000 in ARR and average contract values continue to expand, reinforcing that the consolidation of work Instructure
+onto monday.com is a durable enterprise-led trend. The market is also responding to our AI product.
+Approximately 3% of our net new ARR in Q1 was driven by AI, a figure we expect to grow as our AI offering expand and mature. We are also
+seeing the benefits of AI play out in sanmina.com itself. Since 2025, AI has driven a 32% increase in our output per developer and a 38%
+reduction in product time to market. AI gives our engineers the bandwidth to be more rigorous about the architecture, edge cases and
+long-term maintainability.
+The result is a team that ships more and breaks less. We believe this is an early but meaningful signal of what AI native engineering looks
+like in practice, and we intend to keep pushing on that frontier.
+Now let me turn it over to Eran to walk you through some of the significant progress we've made in our AI-driven products during the quarter.
+Eran Zinman - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Thank you, Roy. At our Investor Day last September, we laid out a fundamental shift in how we see monday.com. Not a platform that helps
+teams manage work, but one that actually does the work for them. Last week, we do the most significant step in that journey, changing our
+core offering from monday Work Management to monday AI work platform. This is not a feature release or a rebrand.
+We have rearchitectured the core of our platform around single belief that work should be orchestrated between humans and AI agents at
+scale from a single system of records. AI agents that execute work flexible software that adopts to how teams operate and enterprise-grade
+governance all grounded in monday DV are single source of truth that give AI the context to drive real outcomes.
+This quarter, we took that foundation further with Money DB 3.0, delivering 100x increase in scale from 100,000 items for our board to over
+$10 million with high performance low latency execution designed to accelerate AI adoption rather than constrain it. A stand-alone AI tool
+that can automate a task, monday can run an entire operation.
+And with more than 250,000 customers already running their work in said monday, we have a data advantage that no point solution can
+replicate. Alongside the platform launch, we're making an equally important change to how customers pay for monday. We recently introduced
+a new seats credit pricing structure for new customers, moving to consumption-based pricing that aligns what customers pay with the value
+AI actually delivers.
+3
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+As AI agent takes on more work across organizations, revenue expands naturally without requiring additional seats purchases. We plan to
+allow existing customers to opt in to this new model with enterprise customers receiving complementary AI packages to support adoption
+at scale. In addition to that, we are excited to announce our agreement to acquire One AI.
+Their team spending years, solving one of the hardest problems in enterprise AI, making voice agents that actually work in production
+environments. With this acquisition, we are bringing native voice capabilities directly into the AI work platform, extending the way agents
+can engage with customers and teams. We're not managing monday.com as a company defending its position.
+We are rebuilding it as the company that defines what an AI work platform means for businesses. Q1 was a strong step in that direction. We
+remain focused on execution, and we look forward to demonstrating continued progress throughout 2026.
+With that, I'll turn it over to Eliran to cover our financial and guidance.
+Eliran Glazer - monday.com Ltd - Chief Financial Officer
+Thank you, Eran, and thank you to everyone for joining our call. Today, I'll review our first quarter fiscal year 2026 results in detail and
+provide updated fiscal year 2026 guidance. As Roy mentioned, we have had a strong start to 2026. Total revenue in Q1 came in at $351
+million, up 24% from the year ago quarter. Our overall NDR was 110% in Q1.
+we now expect overall NDR to slightly decline by the end of fiscal year 2026. As a reminder, our NDR is a trailing 4 quarter weighted average
+calculation. For the reminder of the financial metrics disclosed unless otherwise noted, I will be referencing non-GAAP financial measures.
+We have provided a reconciliation of GAAP to non-GAAP financials in our earnings release. First quarter gross margin was 89% compared
+to 90% in the year ago quarter. Research and development expense was $78.4 million in Q1 or 22% of revenue, up from 19% in the year
+ago quarter. Sales and marketing expense was $158.2 million in Q1 or 45% in revenue compared to 48% in the year ago quarter.
+General and administrative expense was $28.6 million in Q1 or 8% of revenue compared to 9% in the year ago quarter. Operating income
+was $49 million in Q1, up from $40.8 million from the year ago quarter, and operating margin was 14%, similar to the year ago quarter.
+Operating margin in Q1 had an approximately 190 basis points negative FX impact, mainly from the appreciation of the Israeli shekel compared
+to the U.S. dollar.
+Net income was $56 million in Q1 compared to $58.4 million from the year ago quarter. Diluted net income per share was $1.15 in Q1 based
+on 48.9 million fully diluted shares outstanding. Total employee head count was 3,211 an increase of 56 employees since Q4 '25. For the
+remainder of fiscal year 2026, we expect head count to stay largely flat, reflecting the productivity gains AI is already delivering across our
+organization.
+Moving on to the balance sheet and cash flow. We ended the quarter with $1.21 billion in cash, cash equivalents and marketable securities
+compared to $1.67 billion at the end of Q4 2025, reflecting $553 million of shares repurchase executed during the quarter. As of the end
+of Q1, approximately $182 million remained available under our existing share repurchase authorization program. Adjusted free cash flow
+for Q1 was $102.8 million, and adjusted free cash flow margin was 29%.
+We now estimate that the accelerated share buyback executed during Q1 will reduce full year 2026 adjusted free cash flow by approximately
+$20 million. Adjusted free cash flow is defined as net cash from operating activities, less cash used for property and equipment and capitalized
+software costs, plus costs associated with the build-out and expansion of our corporate headquarters.
+Let's now turn to our updated outlook for fiscal year 2026. For the second quarter of fiscal year 2026, we expect our revenue to be in the
+range of $354 million to $356 million, representing a growth rate of 18% to 19% year-over-year. We expect non-GAAP operating income of
+$46 million to $48 million with an operating margin of 13% to 14%, which assumes a negative FX impact of 100 to 200 basis points.
+4
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+For the full year 2026, we expect revenue to be in the range of $1.466 billion to $1.475 billion, representing growth of 19% to 20%
+year-over-year. We expect full year non-GAAP operating income of $185 million to $191 million, with an operating margin of approximately
+13%, which assumes a negative FX impact of 100 to 200 basis points. We expect full year adjusted free cash flow of $280 million to $290
+million with adjusted free cash flow margin of 19% to 20%, which assumes a negative FX impact of 100 to 200 basis points.
+Let me now turn it over to the operator for your questions.
+QUESTIONS AND ANSWERS
+Operator
+(Operator Instructions) Raimo Lenschow, Barclays.
+Damon Kogan - Barclays - Analyst
+Hey, guys. This is Damon Kogan of for Raimo. Can you help us understand the new updated NDR guide. As I think about the Q1 results and
+the full year guide, it seems like stabilization throughout the business and then I look at the NGR guide and print across your cohorts. It just
+seems like there's more stability in results than maybe the guide. Any help there would be great.
+Eliran Glazer - monday.com Ltd - Chief Financial Officer
+Ryan, this is Eliran. Thank you for the question. So there is a lot of retention and expansion side that we are very positive on. Gross retention
+is at historical highs. We're still seeing double-digit fee growth year-over-year in our mid-market and enterprise customers, 34% of our
+50,000 customers court has adopted more than one product.
+It was 29% in Q4. So we're seeing a lot of positive signs.
+As a reminder, we are lapping the pricing actions from 2024 2 years ago in 2025. And they increased our NDR by 12%. We're going to lap
+this at the end of Q2 or during -- sorry, at the end of Q2. And we don't believe that expansion or new adoption will now be enough to offset
+some of the pricing growth over that we have seen in the past.
+Damon Kogan - Barclays - Analyst
+Got it. And I guess, can you just provide an update on the top of funnel demand that you're seeing now compared to the end of 2025. I
+know the initial 2026 guide did imply some degradation to telefunnel. So I guess just what is the updated full year guide now implied maybe
+compared to Q1.
+Eran Zinman - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes, this is Eran. So look, we have nothing new to report with Pay Search. Overall, the top of funnel environment remains soft, but it's pretty
+much in line with our expectations that we gave in the beginning of the year. I would say that on top of that, ACV of new lands is increasing
+across touch and no touch. So we've seen high-quality leads coming into the platform.
+And we continue to manage performance marketing cautiously. So pretty much in line with what we expected.
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+5
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+Operator
+Josh Baer, Morgan Stanley.
+Josh Baer - Morgan Stanley - Analyst
+Great. Thanks for the question. Congrats on a good quarter. I wanted to talk a little bit more about the new sets credits pricing model. Maybe
+to start, like can you just provide a little more context on how exactly that works? And then also wondering what are the impacts in 2026
+from the new model?
+Eran Zinman - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes. Josh, this is EranSo maybe I can start and then hand it over to Casey. So look, we're very excited for this change. It's the biggest change
+in the company history we're changing the core offering of our products with the new native agents within the platform, customers be able
+to do the actual work in addition to managing work. Part of that change is that new customers will have 2 vectors of expansion.
+One with seats, meaning the more people they add, the more they pay for seats that the same way it used to be. But there's an additional
+factor on top of that for AI credit. So the more they consume a credit the more they pay, the more they're going to use our agents and other
+functionality. For existing products, it's going to be gradual.
+I'll let Casey kind of cover the change we're going to do with existing ones.
+Casey George - monday.com Ltd - Chief Revenue Officer
+Yes. So we spend a lot of time -- oh, hi, Josh, by the way, we spend a lot of time of getting feedback from our customers. And what we've
+rolled out is very consistent with how they want to consume value in our platform. As you heard from along with our new customers, it is -
+it comes with seeds plus credits. Our existing customers, it's going to be an opt-in motion.
+So we'll work with them over the next a couple of years as they look to move into this model. We are going to incentivize those customers
+to move to the new model, especially with our touch customers, where we spend a lot of time with them building use cases and finding new
+ways for them to consume our platform leveraging AI.
+Josh Baer - Morgan Stanley - Analyst
+Got it. And so for -- as far as 2026, are there any assumptions on the impacts from the new model, either from the new customers who are
+on it? Or I guess also, what are the assumptions as far as the adoption from existing customers? And then just last on this subject -
+Eliran Glazer - monday.com Ltd - Chief Financial Officer
+It's Eliran. So Josh, it's still early stage. -- we will have a much clearer picture in the coming months, and then we can provide update or more
+color on what we are going to see. For now, we didn't assume any significant impact or any impact on the numbers.
+Operator
+Jackson Ader, KeyBanc Capital Markets.
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+6
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+Jackson Ader - KeyBanc Capital Markets Inc - Equity Analyst
+Great. Thanks for taking our questions, guys. I guess if I can just quickly follow up on that pricing model as well. Are you guys actually seeing
+either slowing in employee head count or seat growth at existing customers? Or are you just kind of making this change in anticipation just
+to decouple yourselves from being so dependent on seats. I'm curious whether it's forward-looking or you're actually seeing it today?
+Casey George - monday.com Ltd - Chief Revenue Officer
+Yes. Thank you for the question. We have not seen any degradation in demand relative to seats. We have seen those customers looking
+to use our platform leveraging AI. And that's why we've launched this new platform. So overall, the demand continues to be strong for new
+seats, and we actually see acceleration in some of the emerging markets where we've invested. So upmarket is strong. Seat demand
+continues to be very solid, and they're taking on new workloads, leveraging AI.
+Jackson Ader - KeyBanc Capital Markets Inc - Equity Analyst
+Great. Okay. Actually, if we -- I'll stick with you. The larger lands from the direct sales motion with larger trying to land a little bit more upmarket.
+Curious how that's trended? I know the 50,000, 500,000 seats, but curious whether that's driven by new lands or are people kind of
+graduating up into that segment of the customer base. Thank you.
+Casey George - monday.com Ltd - Chief Revenue Officer
+Yes. And it's both. We saw double-digit growth for both mid-market and enterprise segments relative to seats. -- our ACV grew 22%
+year-to-year. Gross retention at historical highs.
+And obviously, with RPO, we see some seasonal decline in which we're anticipating. It's pretty much in line with what we've seen in prior
+Q1 performance. Pipeline is very strong. As a matter of fact, our March was 1 of the strongest months we've ever had.
+So as we move upmarket, as we've talked about before, we get exposed to the buying cycles of those larger customers. So we see less
+linearity in the quarter, but we're delivering in the last month of every quarter seems to be consistent.
+Operator
+Mark Murphy, JPMorgan.
+Mark Murphy - JPMorgan Chase & Co - Analyst
+And I'll add my congrats on a very nice performance. So with the understanding you had a solid quarter and the gross revenue retention
+improved. Could you share what you are observing within the customer base in the last several months as Claude code and Claude cowork
+have proliferated glue pretty rapidly.
+In other words, I'm just curious what are your customer conversations like regarding those products, they do bring forward some advancements
+in cogeneration, no, low code, agentic. Wondering if some of your customers are maybe using them in conjunction with monday or maybe
+something that you just don't see popping up too much?
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+7
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+Roy Mann - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes. It's Roy. So yes, we see a lot of comers having purchased Claude. And what our vision is, is having agents and people work together
+on the same platform, and that also includes external agents. So if you noticed, we opened up the platform completely to have any agent
+that is even external to monday sign up on itself and get an account a seat.
+And so that touches what Eran said on the hybrid model of having agents, whether they are external, they will have seats and our internal
+agents, which work really well within the monday platform and also external with other platforms. So this is the future we see, and that's like
+perfectly aligned, and it's great to see adoption of AI.
+Eran Zinman - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Maybe I'll just add on top of that. I think there's a big difference between people using blood or equivalent products on their own and using
+that around work with other people in cooperation -- and we see a lot of customers.
+I think agents essentially -- it's an amazing technology, it can be used in different ways. But I think where we shine is exactly how customers
+want to adopt it in a way that's kind of integrating their work, working with other people and native agents built within a work platform. So
+I think a lot of our customers are looking for a solution like that. We're going to can leverage AI and put out into their existing workflows.
+Mark Murphy - JPMorgan Chase & Co - Analyst
+Okay. And then as a quick follow-up, the stat that shows 10% of new ARR in Q1 was driven by AI. It's pretty impressive. Could you drill down
+into the stats so we just understand how are you driving that? What are you counting in there? Is it monday vibe? Is it the agent for AI
+workflow? is it the AI credit pack, if someone grades to Pro or enterprise and you deem that to be AI influenced or relating to some project,
+would you count something like that in there, et cetera?
+Eran Zinman - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes. This is Eran. So when we say AI contribution, we mean direct contribution, not contribution made possible by AI. Currently, it doesn't
+include an agent's product because it was just released about a week ago. Currently, what drives the AI revenue is our existing offering,
+including 5 AI blocks psychic and so on. Obviously, with agents, we have expectations for this going forward, but it's still early days.
+Mark Murphy - JPMorgan Chase & Co - Analyst
+Thank you.
+Operator
+Howard Ma, Guggenheim Securities.
+Howard Ma - Guggenheim Securities LLC - Equity Analyst
+Hey, thanks. I want to add my congratulations on a strong quarter as well. I want to ask about pricing and packaging. If we look 6 months
+from now, so heading into 2027, how much of your customer base do you think will be on this new seat base plus usage-based pricing
+model. And do you expect different adoption trends between mid-market versus large enterprise? And one more part to is, where does 1
+AI fit into pricing, it will be a separate add-on.
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+8
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+Eran Zinman - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes. So this is Eran. So look, as I said, we're opening up the ability to purchase agents from new customers. We feel the adoption for these
+ones is going to be very gradual. So it's hard to estimate that right now.
+I think we'll be able to provide more color going forward. New customers will buy both seats and AI credits. But again, it's really hard to give
+any more information about this right now. I would say that we're very excited for the Wana acquisition. It's a very strong team with a lot of
+special knowledge about those agents.
+We plan to integrate that deeply into our AI work platform also into our CRM. In terms of the commercial side, we're still working through
+the precise package in passing. But definitely, it's going to be part of our AI credit consumption model. So overall, I think it's a great addition
+to the team. They bring a lot of knowledge and expertise. I think overall voice we need to separate the technology from the adoption.
+Adoption is very complex among every customer. And I think they bring a lot of knowledge and expertise to help drive more adoption within
+our existing customer base.
+Howard Ma - Guggenheim Securities LLC - Equity Analyst
+Okay. Got it. And a follow-up for Eliran, I want to ask about the -- your expectation for head count being flattish this year. I think last quarter,
+you had called out headwinds from the Israeli shekel appreciation -- foregone interest payments due to share buybacks and cash taxes. I
+think those are the 3 items.
+I think the head count being flat should give you a lot of cushion relative to those headwinds unless there are any other headwinds that we
+should consider.
+Eliran Glazer - monday.com Ltd - Chief Financial Officer
+So with regards to head count being flat, this is being staged throughout the year. So there is still the impact of the hiring that we have done
+in prior years and the fact that the shekel is strong versus the dollar. So there is going to be some benefit from that, but we're going to see
+it more into -- going into next year rather than this year.
+Howard Ma - Guggenheim Securities LLC - Equity Analyst
+Okay. Thank you.
+Operator
+Steve Enders, Citi.
+Steven Enders - Citi Infrastructure Investments LLC - Analyst
+Okay, great. Thanks for taking the questions here. Maybe just following up on some of the guide philosophy. And I think trying to understand
+a little bit better just the upside that you saw this quarter. I guess, a, like what was the kind of key factors that drove the revenue upside?
+And then I guess, the kind of moving forward, how should we think about, I guess, the kind of what's kind of assumed there and maybe
+what's different in the guide velocity versus what we saw in 1Q?
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+9
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+Eliran Glazer - monday.com Ltd - Chief Financial Officer
+Steve, this is Eliran. So nothing has changed since what we have provided in Q1, but what we have seen is the outperformance was
+broad-based. It wasn't driven by any single segment and core to region, it was broad-based. Of course, (inaudible) momentum remains
+strong, as Casey spoke about.
+We have record net adds of 500,000, and we continue to grow upmarket. And obviously, the air contribution. As we mentioned, 10% of the
+net new ARR approximately is coming from -- so this is encouraging drivers that kind of drove the results and the bid for this quarter.
+Steven Enders - Citi Infrastructure Investments LLC - Analyst
+Okay. That makes sense. And then on -- I guess I want to follow up on some of the agents' discussion. And just kind of curious to how you're
+kind of viewing the monetization angle for both first-party agents and also for a third party? And I guess, kind of where you kind of feel like
+you have the right to win on using monday homegrown agents versus where it makes sense for third-party agents to be utilized instead?
+Roy Mann - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes, it's Roy. So we see that agents are going to be everywhere. Like really, people will have them for many different things like personal
+assistance, and maybe other different agents. And those, we want to allow them to monday to help people manage whatever they want to
+manage, whether it's even to know what's going on.
+Monday's own agents are really, really good at execution and analyzing and executing work and doing that together with other people. So
+the collaboration part being built on top of monday give them access to all the data seamlessly and they're out of the box, working really
+well, while people can customize them to do any kind of work and also connect them to other platforms.
+So we feel, as part of the future vision we have of doing the work and not only managing the work, those agents are going to be the best
+collaborative agents between people and agents together.
+Steven Enders - Citi Infrastructure Investments LLC - Analyst
+Perfect. Good to hear, and thanks for taking the questions.
+Operator
+Brent Thill, Jefferies.
+Unidentified Participant
+This is John on for Brent Thill. Two questions. On the credit pricing, the table has a lot of parameters depending on what type of usage
+there is. But -- and even at $0.01 per credit, I mean that could balloon of for customers. So I'm wondering how customers will measure what's
+been the customer reception on that new pricing table?
+And then second question, I don't know if you can talk a little bit about the in-quarter NDR since, I guess, thousand-plus has come down a
+little bit. And you did a little bit pricing lapping de facto. Thank you.
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+10
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+Casey George - monday.com Ltd - Chief Revenue Officer
+This is Casey George. So as it relates to the pricing model for AI credit, so it's been clear from our customers that they want transparency
+and control and governance of those credits. So we're giving them that as part of the platform, right? So they can see exactly who's using
+the credits. What is it used for?
+They can scope out the work that's being done that they can plan accordingly for their AI credit usage. So we're seeing that as a big driver
+for our platform. We continue to get feedback from customers that, that's what they want to see. So we're giving that power to the customers
+so that they can cover their credits.
+I'll hand it back to Eliran to answer the follow-on question.
+Eliran Glazer - monday.com Ltd - Chief Financial Officer
+This is Eliran. John, I will answer the question on the MDR. So John, to your question, so first of all, lending expand dynamics. So we are
+seeing recent enterprise deals, they are landing bigger but larger customers typically commit to a multiyear agreement with more tractor
+expansion. So if you think about the 100,000 customers, they are lending and taking multiyear deals.
+So this is 1 of the reasons why we are saying that 100,000 NDR is slightly below the 501. It's not related to churn. Actually, our growth
+retention is at all-time high. And we expect -- and it's important to that we expect 1% or 2% of temporary pressure for the upmarket and the
+metrics for the remainder of fiscal year 2026 as well have the pricing benefit that we spoke about.
+Operator
+DJ Hynes, Canaccord.
+David Hynes - Canaccord Genuity Corp - Analyst
+Hey. Thank you, guys, and congrats on a nice quarter. Eliran, does the addition of usage-based elements into the model more effectively
+match your revenue with your costs tied to AI so that we could see better gross margin preservation over time?
+Eliran Glazer - monday.com Ltd - Chief Financial Officer
+So as I said, when we were in the Investor Day, we said that we expect gross margin to be mid-80s. We were used to 90%, but because of
+the computing cost of AI, we said that we are expecting for the short term or for the foreseen future to have some impact. Overall, again,
+we're not seeing yet a significant impact on our gross margin. but we believe there is going to be additional cost regarding computing costs
+related to AI.
+David Hynes - Canaccord Genuity Corp - Analyst
+Okay. And then, Eran, maybe following up with you 1 on the product side. Does the addition of voice capabilities with 1 AI push you any
+closer to turning service into more of a customer-facing application over time?
+Eran Zinman - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes. So I think currently, we're going to focus mostly on the integration into CR M&A work platform going forward. It's definitely also an
+opportunity for the service team. But overall, I think voice capabilities are important almost in any product right now.
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+11
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+And like I said, the hardest part is not using technology, but actually customize it to your own needs. And I think both with agents and voice,
+this is exactly where we can shine. I think people are amazed at the technology where it's very hard to use it, especially when it's used
+through a prompt or a very hard-to-use user interface. And I think a monday really can help customers adopt agents and also voice agents
+in a very easy and intuitive way.
+David Hynes - Canaccord Genuity Corp - Analyst
+Yeah, okay. Thank you.
+Operator
+Alex Zukin, Wolfe Research.
+Alex Zukin - Wolfe Research LLC - Analyst
+Hey guys, thanks for taking the question. Maybe the first one on new product ARR. It was north of 11% now, it continues to grow nicely. But
+maybe just -- can you dig in a little bit on the interplay between CRM and service, maybe share some details on that progress in the quarter.
+Eran Zinman - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes. So this is Eran. So I'll just give a kind of high-level numbers. So as we said, new products account for over 11% of our ARR. We see
+significant opportunity to accelerate a cross-sell presentation, especially in mid-market segments.
+We see more and more customers adopting more than 2 products and even more. CRM, as we said, we suppressed $100 million. We
+continue to grow very nicely, mostly in the SMB segment. And the new product campaigns is off to a strong start as well.
+In regards to service, we still see 70% of our ARR coming from mid-market and enterprise. So the ACV is the highest across all products.
+Most of the growth with service is driven by seat expansion and cross-sell with customer support workflows. So overall, we continue to see
+good demand across the (inaudible) service. We continue to see acceleration -- not acceleration, but expansion of seats and usage.
+And we're very happy with the adoption so far.
+Alex Zukin - Wolfe Research LLC - Analyst
+Okay. Perfect. And then maybe just a second one. The the comment on maybe why the 50,000 and 100,000 ARR sequential adds were a
+bit lower. I realize some of that is seasonality, but I think in the last 6, 9 months, you talked about shifting performance marketing from lower
+end resources towards the upmarket, higher end. Maybe just comment on the performance of that shift. Is that driving out performance? Is
+that something we'll see later this year as seasonality improves?
+Eliran Glazer - monday.com Ltd - Chief Financial Officer
+Alex, this is Eliran. So we said that there is some seasonality usually with Q4 and Q2 are the strongest stock market performance. We saw
+record net adds of $100,000 in Q4 of last year. So there was possibly some pull forward. And when we look at the mid and upmarket metrics,
+we look at them as a whole.
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+12
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+So if you think about the 50,000 and the 500,000 customers, they were very healthy with 500,000 net adds at historical highs. So we look
+at them all together, and this is what kind of the way we view it.
+Alex Zukin - Wolfe Research LLC - Analyst
+Great. Thank you, guys.
+Operator
+Taylor McGinnis, UBS.
+Taylor McGinnis - UBS AG - Analyst
+So you mentioned that the strength in the quarter was broad-based, but it did seem like a bit of a turnaround from the trends that we saw
+last quarter and the upside was higher. So I guess anything surprised you in the quarter in terms of areas that were stronger than expected?
+And then when you think about some of those trends, maybe you could unpack what you're seeing at the start of 2Q as well. And then not
+to throw too many questions in there, but just a housekeeping item. Do you mind impacting FX impact to revenue in the quarter and what's
+being expected for the full year guide?
+Eliran Glazer - monday.com Ltd - Chief Financial Officer
+Taylor, this is Eliran. So as we said, I think the positive surprise was a contribution with ARR growing to almost 10% of net add ARR coming
+from the AI product, and this is something that we are very pleased with. Other than that, we continue to see the upmarket momentum that
+we have seen in the past and enterprise customers continue to grow with the 500,000 net adds and numbers. With regards to FX, we did
+see small tailwinds from FX in Q1, but it didn't impact the overall reported growth rate. So it was very small.
+Taylor McGinnis - UBS AG - Analyst
+Great. Thank you so much.
+Operator
+Allan Verkhovski, BTIG.
+Allan Verkhovski - BTIG LLC - Equity Analyst
+Hey there, thanks for taking the question and congrats on the strong quarter here. Can you talk about the level of engagement you've seen
+with your MCP? What types of customers you've seen use it more? Are there any trends you've seen thus far in terms of expansion activity
+of customers that have used MCP. And then I've got a quick follow-up.
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+13
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+Eran Zinman - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes. This is Eran. So yes, we see some usage through the MCP protocol. And overall, like we see more and more agents signing up to the
+platform. We actually did invest a lot of work making monday accessible to agents and make it easy to agents to use the platform and sign
+up, but it's still not very significant numbers.
+Roy Mann - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes. It's small numbers, but like the ones who use it have a way stronger retention profile.
+Allan Verkhovski - BTIG LLC - Equity Analyst
+Got it. And then maybe just as a follow-up to an earlier one about your guidance. It looks like the Q2 revenue guide implies lower sequential
+growth in Q1 despite being a seasonally stronger quarter. So can you just unpack like what are you factoring in there? How much of it is
+prudent versus maybe potential impacts from any new dynamics you're seeing there?
+Eliran Glazer - monday.com Ltd - Chief Financial Officer
+This is Eliran. So what we said is basically that we provided our guidance based on everything that we know today. And we believe that
+with the investment that we are doing on AI and the fact that we're going to see the impact throughout the year. We remain focused basically
+on managing your expectation rather than looking at just the next quarter.
+So on the cost side, we are investing in our product and GTM capabilities. The potential increase of expenses from AI, as I mentioned earlier,
+compute. We are expecting this to be increasing throughout the year. And there is an inherent uncertainty on how that revenue ramps when
+we are thinking about throughout the rest of the year. So when we take all of this together into account, our guidance does imply some
+moderation in H2.
+Operator
+Matt Bullock, Bank of America.
+Matthew Bullock - Bofa Merrill Lynch Asset Holdings Inc - Analyst
+Great. Thanks for taking the question. I wanted to follow up on the 10% of net new ARR comes from AI products. It seems like it was one of
+the sources of upside in the first quarter. So maybe it would be helpful if you could help us think through the assumptions for
+consumption-based revenue or AI product revenue for the 2026 guide and how to think about that as a potential upside lever as we move
+throughout the year.
+Eran Zinman - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes. Matt, this is Eran. So look, as I said, all the revenue that we got this quarter was not from agents and consumption, mostly driven by in
+NAA blocks and sake. We still don't know how to model and expect revenue coming from agents and token-based usage. Happy to give
+some more color next quarter, but it's really hard to kind of model it out right now.
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+14
+MAY 11, 2026 / 12:30PM, MNDY.OQ - Q1 2026 monday.com Ltd Earnings Call
+Matthew Bullock - Bofa Merrill Lynch Asset Holdings Inc - Analyst
+Understood. And then just 1 quick follow-up, if I could, as well. Can you just help me think through some of the incentives you're going to
+be providing the enterprise customers to migrate them over to the new sees usage model?
+Casey George - monday.com Ltd - Chief Revenue Officer
+Yes, happy to. So our customers today are buying AI capabilities a la carte. We'll continue to make that offer available to them, but we're
+also looking at ways for where they can buy just like our new customers where they get incentives for buying AI packages along with their
+products. So that's how we're looking at it. That has not been announced yet. We'll look to do that.
+And again, it's an opt-in policy for our existing customers, we are not forcing any of our existing customers to move. But again, we're going
+to make it highly incentivized for them to do that.
+Roy Mann - monday.com Ltd - Co-Chief Executive Officer, Co-Founder, Director
+Yes. And just to add to that is it's not a migration. It's like very -- it's like a click the switch kind of thing. There's nothing they really need to
+do other than agree to it. So there's no sort of migrating anything.
+Matthew Bullock - Bofa Merrill Lynch Asset Holdings Inc - Analyst
+Understood. Thank you.
+Operator
+Ladies and gentlemen, that concludes the question-and-answer session. Thank you all for joining. You may now disconnect.
+DISCLAIMER
+LSEG reserves the right to make changes to documents, content, or other information on this web site without obligation to notify any person of such changes.
+In the conference calls upon which Event Transcripts are based, companies may make projections or other forward-looking statements regarding a variety of items. Such forward-looking statements are
+based upon current expectations and involve risks and uncertainties. Actual results may differ materially from those stated in any forward-looking statement based on a number of important factors and
+risks, which are more specifically identified in the companies' most recent SEC filings. Although the companies may indicate and believe that the assumptions underlying the forward-looking statements
+are reasonable, any of the assumptions could prove inaccurate or incorrect and, therefore, there can be no assurance that the results contemplated in the forward-looking statements will be realized.
+THE INFORMATION CONTAINED IN EVENT TRANSCRIPTS IS A TEXTUAL REPRESENTATION OF THE APPLICABLE COMPANY'S CONFERENCE CALL AND WHILE EFFORTS ARE MADE TO PROVIDE AN
+ACCURATE TRANSCRIPTION, THERE MAY BE MATERIAL ERRORS, OMISSIONS, OR INACCURACIES IN THE REPORTING OF THE SUBSTANCE OF THE CONFERENCE CALLS. IN NO WAY DOES LSEG OR
+THE APPLICABLE COMPANY ASSUME ANY RESPONSIBILITY FOR ANY INVESTMENT OR OTHER DECISIONS MADE BASED UPON THE INFORMATION PROVIDED ON THIS WEB SITE OR IN ANY EVENT
+TRANSCRIPT. USERS ARE ADVISED TO REVIEW THE APPLICABLE COMPANY'S CONFERENCE CALL ITSELF AND THE APPLICABLE COMPANY'S SEC FILINGS BEFORE MAKING ANY INVESTMENT OR
+OTHER DECISIONS.
+©2026, LSEG. All Rights Reserved. 16743086-2026-05-11T15:04:06.060
+LSEG STREETEVENTS | www.lseg.com | Contact Us
+©2026 LSEG. All rights reserved. Republication or redistribution of LSEG content, including by framing or similar means, is prohibited without the prior written
+consent of LSEG. 'LSEG' and the LSEG logo are registered trademarks of LSEG and its affiliated companies.
+15

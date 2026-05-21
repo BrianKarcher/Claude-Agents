@@ -264,6 +264,71 @@
 
 ---
 
+## 2026-05-11 — Infusion (bookkeeping)
+
+- **Action:** Infusion (bookkeeping)
+- **Details:** $1,000.00 weekly Monday deposit recorded. Fifth infusion. Total deposited now $5,000.00.
+- **Rationale:** Standing weekly deposit per portfolio rules. User confirmed deposit occurred (logged retroactively on 2026-05-21).
+- **Resulting state:** Cash $4,370.41 | MSFT 1.5 sh cost basis $629.60 | Total deposited $5,000.00
+
+---
+
+## 2026-05-18 — Infusion (bookkeeping)
+
+- **Action:** Infusion (bookkeeping)
+- **Details:** $1,000.00 weekly Monday deposit recorded. Sixth infusion. Total deposited now $6,000.00.
+- **Rationale:** Standing weekly deposit per portfolio rules. User confirmed deposit occurred (logged retroactively on 2026-05-21).
+- **Resulting state:** Cash $5,370.41 | MSFT 1.5 sh cost basis $629.60 | Total deposited $6,000.00
+
+---
+
+## 2026-05-21 — Filing Extracts (bookkeeping)
+
+- **Action:** Filing Extracts (bookkeeping — not a daily action)
+- **Tickers:** TTD, MNDY
+- **Details:** Four structured filing extracts created from user-supplied source filings in `research/filings/ttd/` and `research/filings/mndy/`:
+  - `research/filings/TTD-EARNINGS-FY2026-Q1.md` — TTD Q1 FY2026 press release / earnings extract (filing date 2026-05-07)
+  - `research/filings/TTD-TRANSCRIPT-FY2026-Q1.md` — TTD Q1 FY2026 earnings call prepared remarks (call date 2026-05-07, Q&A not present in source)
+  - `research/filings/MNDY-EARNINGS-FY2026-Q1.md` — MNDY Q1 FY2026 press release / earnings extract (filing date 2026-05-11)
+  - `research/filings/MNDY-TRANSCRIPT-FY2026-Q1.md` — MNDY Q1 FY2026 earnings call full transcript including Q&A (call date 2026-05-11)
+- **Key TTD takeaways (thesis-relevant):**
+  - Revenue $689M, +12% YoY — beat company guide of $678M by 1.6%, exceeds deep-dive minimum of $645M (5/7 buy gate PASS)
+  - Q2 guide "at least $750M" implies further deceleration to ~+8% YoY against $694M Q2'25 comp (yellow flag, but framed cyclically by management)
+  - Adj EBITDA $206M / 30% margin (-400bps YoY); FY26 reaffirmed at "approximately in line with 2025 (≥40%)" — implies meaningful H2 ramp
+  - FCF $276M; net cash position $1.41B (up $103M QoQ even with $164M buyback)
+  - JBP signings +55% YoY; March was largest signings month on record (45 JBPs); new JBP spend ex-renewals +40% YoY — positive leading indicator
+  - Pharma JBP won back from Amazon DSP with +114% spend target — direct rebuttal to Amazon DSP thesis
+  - LinkedIn selected TTD as first DSP partner for B2B CTV — Microsoft-stack endorsement; OpenAds publisher wave (Hearst, BuzzFeed, Guardian, etc.) widens supply moat
+  - **Tahnil Davis still Interim CFO** — no permanent hire announced; user deep-dive deadline is July 2026 (~2 months remaining). This is the one remaining open buy condition.
+  - Drew Vollero added to Board of Directors (financial/operational depth)
+  - Macro: CPG, Auto, Home & Garden, Food & Drink soft; international outpacing US (82% / 18% split)
+  - Channel mix: Video low-50s%, Audio fastest-growing at ~6%, CTV momentum global
+  - DCF (2026-04-17) is ~34 days old (well within 0-2 month full conviction window); DCF prob-weighted IV $33.45 at 12% hurdle vs. last MSFT-session price reference around $21 still represents 30%+ MoS
+  - **3 of 4 buy gates PASS; 1 PENDING (permanent CFO).** Thesis materially intact.
+- **Key MNDY takeaways (thesis-relevant):**
+  - Revenue $351M, +24% YoY — beat deep-dive minimum of $338M by $13M (3.9% beat); FY26 guide RAISED from $1,452-1,462M to $1,466-1,475M (+19-20% growth)
+  - All 5 primary buy gates from deep dive sec 10.7 PASS: revenue, FY26 guide raise, NDR>$100K=115% at floor, $500K customers +74% YoY (>50% bar), multi-product attach 34% (toward 35% bar)
+  - >$500K customers grew 57 → 99 (+74%) — record net adds; multi-product attach jumped 29% → 34% (+500bps QoQ — fastest in company history)
+  - **Overall NDR fell to 110%** (guided to "slightly decline by end of FY26") — clean explanation: 2024 pricing actions added 12% to NDR and lap out end of Q2'26. Gross retention at all-time highs.
+  - Non-GAAP op margin held at 14% despite -190bps FX headwind; record GAAP op income $19.8M
+  - Adj FCF margin compressed to 29% from 39% (FY26 guide 19-20%) — drivers: $20M buyback interest income loss, FX, AI compute. Modeled in deep dive.
+  - **AI Work Platform launched** (biggest change in company history per Zinman); native agents + monday DB 3.0 (100x scale); new seats-plus-credits consumption pricing
+  - **AI products already ~10% of net new ARR** with agents not yet launched (released ~1 week before call) — materially ahead of deep-dive AI ARR ramp expectations
+  - **OneAI acquisition** announced — voice agents for AI Work Platform + CRM
+  - Internal AI productivity: +32% dev output, -38% time to market — operating leverage thesis quantified
+  - $553M deployed in buyback in Q1 (~7.27M shares at ~$76 average) — ~14% of float retired; $182M remaining of $870M authorization. **Capital allocation velocity at upper bound of deep-dive expectations.**
+  - Headcount flat for rest of FY26 (3,211 at Q1) — explicit operating-leverage commitment
+  - Gross margin held at 89% (vs. 90% prior year); long-term guide mid-80s as AI compute costs ramp
+  - Q2 guide $354-356M (+18-19%) is below Q1 actual +24% — implies H2 moderation, partly H2 AI compute investment
+  - Customers >$50K ARR represent 42% of ARR (up from 37%); >$100K = 29% (up from 24%); >$500K = 6% (up from 5%) — enterprise mix shift steady
+  - RPO +33% to $880M; cRPO +26% to $716M — booked future revenue accelerating
+  - Top-of-funnel SMB "remains soft" but in line with full-year expectations (Zinman). No new degradation.
+  - Claude/Anthropic framing: coexistence not displacement; "external agents" can sign up to monday — Mann
+  - DCF (2026-04-30) is ~21 days old (full conviction window); IV $172 at 10% hurdle / $140 at 12% hurdle — thesis improved by raised guide + AI traction. **6 of 5 gates PASS.**
+- **Resulting state:** Cash $5,370.41 unchanged. No trade. Both TTD and MNDY are buy-eligible for next session pending live price check. MNDY has stronger setup (all gates pass, fresh DCF, AI optionality monetizing earlier than modeled); TTD has 3-of-4 gates passing with the open CFO permanence condition still pending. Next-session priority: live-price MNDY and assess Action 5 (Buy) eligibility against position-sizing guidance ($600-700 starter at ~$66 era; need to re-check live post-print price for current MoS).
+
+---
+
 ## 2026-05-10 — Deep Dive — GOOGL
 
 - **Action:** Deep Dive (Action 3)
@@ -280,3 +345,39 @@
 - **Rating:** ACCUMULATE (unchanged from initiation; conviction strengthened). Buy is gated on DCF (Action 4) confirmation: prob-wtd IV >= $475 at 10% hurdle for full-conviction starter, OR >= $440 at 11% hurdle for half-size starter.
 - **Rationale:** Action #3 of the four-step discipline (Init -> Deep Dive -> DCF -> Buy). The deep dive resolved the seven marching orders left by the May 7 initiation and produced a coherent prob-weighted intrinsic value range of $320 (bear) / $475 (base) / $660 (bull) -> $473 prob-wtd. The Cloud margin decomposition (sec 1) is the single most consequential finding — it shifts our FY30 Cloud op income estimate up materially and supports the AWS-quality thesis. The capex curve (sec 3) and antitrust scenario tree (sec 2) bound the downside. GOOGL would be the second large-cap anchor alongside MSFT (different moat shape, different AI exposure, more antitrust risk but more Cloud margin upside) — complementary rather than redundant.
 - **Resulting state:** Cash $3,370.41 unchanged. No trade. DCF (Action 4) is the next eligible action for GOOGL. Active research pipeline: MSFT (held), TTD (Q1 print 5/7 — confirm next session), MNDY (gated on 5/11 print), GOOGL (DCF next eligible).
+
+---
+
+## 2026-05-21 14:12 ET — Buy — MNDY
+
+- **Action:** Buy (Action 5)
+- **Ticker:** MNDY (monday.com Ltd., NASDAQ; Israeli FPI)
+- **Shares:** 8.0
+- **Price:** $77.36 (live quote fetched at 2:11:54 PM ET on 2026-05-21 via Google Finance; -2.26% / -$1.79 on the day from $79.15 prior close; intraday range $76.71-$82.87)
+- **Total cost:** $618.88 (8.0 x $77.36)
+- **Cash before:** $5,370.41
+- **Cash after:** $4,751.53
+- **DCF reference:** `research/dcf/DCF-MNDY-2026-04-30.txt` (completed 2026-04-30; 21 days old = full conviction window, expires 2026-10-30)
+- **Margin of safety check (DCF age 0-2 months -> no additional discount required):**
+  - Prob-weighted IV @ 10% hurdle: $172/share -> MoS at $77.36 = **55.1%**
+  - Prob-weighted IV @ 12% hurdle: $140/share -> MoS = 44.7%
+  - Prob-weighted IV @ 14% hurdle: $115/share -> MoS = 32.7%
+  - Bear case @ 10% hurdle: $81/share -> still +4.7% upside in the bear scenario
+  - Combined-stress IV (bear scenario + 14% hurdle + -200bps FX 5yr + -20% Loop hit): ~$48-52 -> -33% to -38% downside tail at $77.36
+  - All MoS figures are FAR above the typical 15-20% buy threshold. Q1 2026 print materially strengthened (not weakened) the thesis, so the 4/30 DCF if anything understates current IV.
+- **Buy gates (all 5 from Deep Dive 10.7 PASS, per 2026-05-21 filing extracts bookkeeping):**
+  - (i) Q1 rev >=$338M: PASS — actual $351M (+24% YoY, +3.9% beat)
+  - (ii) FY26 guide maintained at $1,452-1,462M: PASS — RAISED to $1,466-1,475M (+19-20%)
+  - (iii) NDR >$100K >=115%: PASS — 115% at floor; >$500K cohort accelerating
+  - (iv) >$500K customer growth >50% YoY: PASS — +74% YoY (57 -> 99, record net adds)
+  - (v) Multi-product attach progressing toward 35%: PASS — 34% (+500bps QoQ, fastest in company history)
+  - Bonus signals beyond gates: AI products ~10% of net new ARR ahead of model; $553M buyback in Q1 (~14% of float retired); OneAI acquisition for voice agents; internal AI productivity +32% dev output / -38% time to market.
+- **Allocation check (post-buy, current value basis):**
+  - Large cap (MSFT $631.59): 10.5% of total portfolio
+  - Mid cap (MNDY $618.88): 10.3% of total portfolio (was 0%)
+  - Small cap: 0%
+  - Cash: 79.2%
+  - Per rules: "While the portfolio has fewer than ~6 holdings, the split may deviate." With 2 holdings the cap split is acceptable. MNDY fills the previously empty mid-cap slot. Next slot to fill is small-cap (PUBM is the priority candidate per the 2026-05-06 scan).
+- **Position sizing rationale:** DCF Action 5 guidance specified an initial $600-700 starter (~9 shares at $66) with adds of $300 below $60 and $300 on confirmation, max $1,200. We chose 8.0 shares ($618.88) -- literally within the $600-700 starter range -- rather than max-loading because: (1) MNDY's 52-wk range is $57.50-$316.98 (volatile), (2) preserving dry powder for the planned add-on tranches at lower prices honors a 'leg into the position on weakness' discipline, (3) cash also needs to fund the small-cap slot (PUBM) and a potential GOOGL DCF-to-buy chain, (4) TTD's CFO permanence condition is still open through July 2026 and we want to retain optionality to act once the 4th gate clears, (5) the starter is sized to roughly match the MSFT starter ($629.60 vs. $618.88) so neither anchor dominates the early portfolio.
+- **Rationale:** This is the textbook asymmetric-buy setup the deep dive and DCF were built to identify, and the Q1 print on 5/11 confirmed every condition that gated the trade. Five-for-five on the buy gates, FY26 guide RAISED, AI ARR already at ~10% of net new with agents not yet launched, $553M of buyback already executed in Q1 alone (capital allocation at the upper bound of the deep-dive model), and the stock is -2.26% on the day giving us an intraday entry below the morning print. The probability-weighted IV is $172 at a 10% hurdle vs. $77.36 spot -- a 55% margin of safety -- and even the bear case at a 10% hurdle ($81) preserves capital with +5% upside. The combined-stress tail (-33% to -38% to ~$48-52) is the real downside, but that requires bear scenario + 14% hurdle + -200bps FX + -20% Loop hit all stacking; the probability of that conjunction is low. The DCF is 21 days old, comfortably inside the 0-2 month full-conviction window, and Q1 results would increase rather than decrease IV if I refreshed it today. Sizing is the disciplined starter ($600-700 per DCF guidance) preserving ~$4,750 of dry powder for: (a) MNDY add tranches at lower prices, (b) the small-cap PUBM slot, (c) TTD once the permanent CFO gate clears, (d) potential GOOGL DCF-to-buy if the model clears the $475 gate. Founder-led ($35B+ founder skin in the game), 89% gross margins, $1.67B+ net cash, 14% non-GAAP op margin, and a clear AI-monetization path in agents and the Work Platform. This is not a moonshot -- the bear case is roughly capital-preserving and the base case is a 16-21% 5-year IRR.
+- **Resulting state:** Cash $4,751.53 | MSFT 1.5 sh ($631.59) + MNDY 8.0 sh ($618.88) = Invested $1,250.47 | Total $6,002.00 | Holdings: 2/10 | Allocation: Large 10.5% / Mid 10.3% / Small 0% / Cash 79.2%. Buy cadence: next buy eligible 2026-05-28 (one buy per week). Sell cadence: no sells yet; one per month available.
