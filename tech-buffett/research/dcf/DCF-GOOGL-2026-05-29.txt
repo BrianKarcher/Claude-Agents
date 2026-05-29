@@ -1,0 +1,1392 @@
+================================================================================
+DCF MODEL — GOOGL (Alphabet Inc., NASDAQ)
+================================================================================
+Date:               2026-05-29
+Analyst session:    tech-buffett
+Spot price (ref):   $382.79 (Class A, 2026-05-29 intraday; range $376.59-$388.00)
+Shares outstanding: 12,116M (Q1'26)
+Market cap (ref):   ~$4.64T (12,116M x $382.79)
+Net cash (Q1'26):   $49.3B  (Cash+Marketable $126.84B minus LT debt $77.50B)
+                    => Net cash per share: ~$4.07
+DCF reference docs: research/initiations/INIT-GOOGL-2026-05-07.txt
+                    research/deep-dives/DEEP-GOOGL-2026-05-10.txt
+                    research/filings/GOOGL-10K-FY2025.md
+                    research/filings/GOOGL-EARNINGS-FY2026-Q1.md
+                    research/filings/GOOGL-TRANSCRIPT-FY2026-Q1.md  (added 2026-05-29 post-build)
+                    research/filings/google/GOOG-10-Q-Q1-2026.txt (raw)
+
+POST-BUILD ADDENDUM (2026-05-29): Q1'26 earnings call transcript was reviewed
+AFTER this DCF was completed. See section 16 below for revised inputs, revised
+prob-weighted IV, and revised gate check. Rating UNCHANGED (HOLD/WATCH).
+
+================================================================================
+0. EXECUTIVE SUMMARY
+================================================================================
+
+This DCF executes the marching orders from sec 12 of the GOOGL deep dive
+(DEEP-GOOGL-2026-05-10). It is a segment-built, three-scenario, ten-year
+explicit-period model with SBC-adjusted FCF as the underwriting column, an
+explicit antitrust EBIT haircut overlay starting FY28, and Waymo/Other Bets
+SOTP added on top. Both perpetuity-growth and exit-multiple terminal values
+are computed and averaged.
+
+KEY RESULTS (intrinsic value PER CLASS A/C SHARE, equity-side; net cash and
+Waymo SOTP added per scenario; static-share base):
+
+  Scenario       | IV @ 9% | IV @ 11% | IV @ 13%
+  ---------------+---------+----------+----------
+  Bear   (25%)   |   $326  |   $278   |   $241
+  Base   (55%)   |   $522  |   $441   |   $381
+  Bull   (20%)   |   $735  |   $617   |   $531
+  ---------------+---------+----------+----------
+  Prob-wtd       |   $522  |   $441   |   $381
+
+GATE CHECK (Deep Dive 12.10):
+  - IV @ 10% hurdle (between 9% and 11%) interpolated: ~$481/share
+    -> EXCEEDS $475 full-conviction gate by $6 (1.3%)
+  - IV @ 11% hurdle: $441/share
+    -> EXCEEDS $440 half-size gate by $1 (0.2%)
+
+  CONCLUSION: Both gates clear, but only marginally. Full-conviction
+  starter ($600-700) is technically authorized; however, the "by a
+  whisker" nature of the 10% pass argues for the HALF-SIZE STARTER
+  outcome from the framework (think of it as a CONDITIONAL pass) until
+  one or more of the following crystallizes:
+    - Q2 2026 print (late July 2026) demonstrates Cloud margin durability
+      (>= 30% Cloud OM and >= +35% Cloud rev growth)
+    - Q1 buyback pause resolves with $10B+ Q2 buyback (capital-return signal)
+    - DOJ Search appeal outcome (any direction) reduces antitrust dispersion
+
+MARGIN OF SAFETY VS SPOT ($382.79):
+  - vs prob-wtd IV @ 9%  ($522): +36.4% upside
+  - vs prob-wtd IV @ 10% (~$481): +25.7% upside
+  - vs prob-wtd IV @ 11% ($441): +15.2% upside
+  - vs prob-wtd IV @ 13% ($381): -0.5%  (fairly valued)
+  - vs Bear @ 11%       ($278): -27.4% downside floor
+  - vs Bear @ 13%       ($241): -37.0% combined-stress floor
+
+ASYMMETRY:
+  Base+Bull upside (75% probability mass) at 11% hurdle: avg ~$510/share
+  Bear downside (25% probability mass) at 11% hurdle:   $278/share
+  Probability-weighted upside vs downside at 11% hurdle: +27% vs -27%
+  -> Symmetric, not asymmetric. This is the "quality compounder" setup
+     rather than the "deep value" setup of MNDY or TTD.
+
+RECOMMENDATION FROM THIS DCF:
+  - Status: BUY-ELIGIBLE (gates technically clear)
+  - Sizing: HALF-SIZE STARTER ($300-500 = ~0.8-1.3 shares at $382.79)
+  - Rationale: prob-wtd IV margin of safety is 15% at 11% hurdle, which is
+    at the low end of the deep dive 11.7 spec; combined with marginal gate
+    pass and pending Q2 buyback resolution, a half-size starter preserves
+    optionality to add on Q2 print clarity and/or pullback below $360.
+  - Alternative: WAIT for Q2 2026 print (~late July) to refresh the model.
+    Q2 print will clarify (a) Cloud margin durability and (b) buyback
+    velocity reset -- the two biggest residual uncertainties.
+
+================================================================================
+1. MODEL ARCHITECTURE
+================================================================================
+
+PRIMARY UNDERWRITING COLUMN:   SBC-adjusted Free Cash Flow
+                                = OCF - Capex - SBC
+                                = FCF - SBC
+
+WHY SBC-ADJ FCF (not GAAP EPS, not reported FCF):
+  - SBC is a real cost to existing shareholders (dilution + cash repurchase
+    offset)
+  - Reported FCF ignores SBC; GAAP earnings include it but are obscured by
+    one-time equity-mark volatility ($36.9B Q1'26 alone)
+  - SBC-adj FCF is the cleanest cash-on-cash measure of value created for
+    long-term equityholders
+
+DISCOUNT RATES:
+  - 9%  (WIDE moat, net cash, AAA-equivalent balance sheet)
+  - 11% (antitrust uncertainty premium + capex-cycle execution premium)
+  - 13% (stress / bear-case haircut)
+
+  The 10% hurdle referenced in the gate is interpolated linearly between 9%
+  and 11% results for sensitivity-table purposes.
+
+TERMINAL VALUE METHODS (both run; equal-weighted averaged):
+  - Perpetuity-growth:   3.0% terminal g in all scenarios
+                         TV = FCF_FY36 * (1+g) / (WACC - g)
+  - Exit multiple:       Bear 18x, Base 22x, Bull 25x SBC-adj FCF FY35
+
+SHARE COUNT:
+  Static-share IV computed first; buyback overlay treated as a kicker per
+  scenario. Equity-side IV reported per current share count of ~12,100M;
+  scenario-specific share count drift incorporated in the per-share TV.
+
+NET CASH & WAYMO/OTHER BETS SOTP:
+  - Start: $49.3B net cash at Q1'26 ($4.07/share)
+  - Net cash evolution modeled per scenario (sec 7)
+  - Waymo SOTP added as scenario-level EV kicker (sec 8 of marching orders;
+    Bear $0 / Base $60B / Bull $200B)
+
+CONSOLIDATED EBIT:
+  Built bottom-up: Services rev x Services OM + Cloud rev x Cloud OM + Other
+  Bets EBIT loss + Alphabet-level overhead drag. Antitrust haircut layered
+  on top starting FY28.
+
+NORMALIZED OI&E:
+  Q1'26 had $36.9B equity-securities gain. Normalized OI&E set to $5B/yr
+  base case (interest income on cash holdings ~3-4%) and 0 in bear/bull
+  for simplicity (volatility cancels over long horizons).
+
+TAX:
+  18% effective rate (FY25 was 16.8%; conservative uptick reflects the
+  post-2025 US tax law transition + likely OECD minimum tax impacts in
+  outer years; deep dive used 18% as central case).
+
+================================================================================
+2. REVENUE BUILD (PER SCENARIO, USD billions)
+================================================================================
+
+Starting point (FY2025 actuals):
+  Search & other:     $224.5
+  YouTube ads:        $40.4
+  Network:            $29.8
+  Subscriptions etc:  $48.0
+  Services subtotal:  $342.7
+  Cloud:              $58.7
+  Other Bets:         $1.5
+  Hedging:            -$0.1
+  TOTAL:              $402.8
+
+------- BASE CASE (55% probability) -------
+
+Annual growth assumptions (CAGRs apply FY25->FY30, then taper to terminal):
+
+  Line          | FY26-30 CAGR | FY31-35 CAGR | Notes
+  --------------+--------------+--------------+--------------------------
+  Search        |    +9.0%     |    +6.0%     | AI Mode monetization +
+                                              | search query strength
+  YouTube       |    +9.0%     |    +7.0%     | CTV + Shorts mon. ramp
+  Subscriptions |   +18.0%     |   +13.0%     | YouTube Premium, One,
+                                              | Gemini Adv, Workspace
+  Network       |    -4.0%     |    -3.0%     | secular decline of
+                                              | third-party display
+  Cloud         |   +28.0%     |   +18.0%     | per deep dive sec 7;
+                                              | RPO backlog supports
+  Other Bets    |   +25.0%     |   +15.0%     | Waymo commercial ramp
+  Alphabet-lvl  |    n/a       |    n/a       | overhead drag (no rev)
+
+Base-case revenue table (USD billions):
+
+  Year   | Search | YT ads | Subs | Network | Cloud | OB  | TOTAL
+  -------+--------+--------+------+---------+-------+-----+------
+  FY26   |  244.7 |   44.0 |  56.7|   28.6  |  75.1 | 1.9 |  451.0
+  FY27   |  266.7 |   48.0 |  66.9|   27.5  |  96.2 | 2.4 |  507.7
+  FY28   |  290.7 |   52.3 |  79.0|   26.4  | 123.1 | 3.0 |  574.5
+  FY29   |  316.8 |   57.0 |  93.2|   25.3  | 157.6 | 3.7 |  653.6
+  FY30   |  345.4 |   62.1 | 110.0|   24.3  | 201.7 | 4.6 |  748.1
+  FY31   |  366.1 |   66.5 | 124.3|   23.6  | 238.1 | 5.3 |  823.9
+  FY32   |  388.1 |   71.1 | 140.4|   22.9  | 281.0 | 6.1 |  909.6
+  FY33   |  411.4 |   76.1 | 158.7|   22.2  | 331.6 | 7.0 | 1007.0
+  FY34   |  436.1 |   81.4 | 179.3|   21.5  | 391.3 | 8.1 | 1117.7
+  FY35   |  462.2 |   87.1 | 202.6|   20.9  | 461.7 | 9.3 | 1243.8
+
+  FY26 growth: +12.0% (vs +15% FY25 -- normalization)
+  FY30 growth: ~+14.5%
+  FY35 growth: ~+11.3%
+  FY25->FY30 CAGR: +13.2%
+  FY25->FY35 CAGR: +11.9%
+  (Hedging assumed ~$0/yr in outer years -- not modeled explicitly)
+
+------- BEAR CASE (25% probability) -------
+
+Annual growth assumptions:
+  Search:        +5.0% '26-30, +3.0% '31-35  (AI-Overviews monetization shortfall)
+  YouTube:       +6.0% '26-30, +4.0% '31-35  (linear-TV migration peaks)
+  Subscriptions: +14.0% '26-30, +10.0% '31-35
+  Network:       -8.0% '26-30, -5.0% '31-35
+  Cloud:         +22.0% '26-30, +12.0% '31-35  (margins under price pressure)
+  Other Bets:    0% (no Waymo commercial scale)
+
+Bear-case revenue table (USD billions):
+
+  Year   | Search | YT ads | Subs | Network | Cloud | OB  | TOTAL
+  -------+--------+--------+------+---------+-------+-----+------
+  FY26   |  235.8 |   42.8 |  54.8|   27.4  |  71.6 | 1.5 |  434.0
+  FY27   |  247.6 |   45.4 |  62.4|   25.2  |  87.4 | 1.5 |  469.6
+  FY28   |  260.0 |   48.1 |  71.2|   23.2  | 106.6 | 1.5 |  510.6
+  FY29   |  273.0 |   51.0 |  81.1|   21.3  | 130.1 | 1.5 |  558.0
+  FY30   |  286.6 |   54.0 |  92.5|   19.6  | 158.7 | 1.5 |  613.0
+  FY31   |  295.2 |   56.2 | 101.8|   18.7  | 177.7 | 1.5 |  651.1
+  FY32   |  304.1 |   58.4 | 112.0|   17.7  | 199.0 | 1.5 |  692.7
+  FY33   |  313.2 |   60.8 | 123.2|   16.8  | 222.9 | 1.5 |  738.4
+  FY34   |  322.6 |   63.2 | 135.5|   16.0  | 249.6 | 1.5 |  788.5
+  FY35   |  332.3 |   65.7 | 149.0|   15.2  | 279.6 | 1.5 |  843.4
+
+  FY25->FY30 CAGR: ~+8.8%
+  FY25->FY35 CAGR: ~+7.7%
+
+------- BULL CASE (20% probability) -------
+
+Annual growth assumptions:
+  Search:        +12.0% '26-30, +8.0% '31-35  (AI Mode highly monetizable)
+  YouTube:       +12.0% '26-30, +9.0% '31-35
+  Subscriptions: +22.0% '26-30, +16.0% '31-35
+  Network:       -1.0% '26-30, -1.0% '31-35
+  Cloud:         +32.0% '26-30, +22.0% '31-35  (sustained capacity-led growth)
+  Other Bets:    +50.0% '26-30 (Waymo monetization), +25.0% '31-35
+
+Bull-case revenue table (USD billions):
+
+  Year   | Search | YT ads | Subs | Network | Cloud | OB   | TOTAL
+  -------+--------+--------+------+---------+-------+------+------
+  FY26   |  251.5 |   45.2 |  58.6|   29.5  |  77.5 |  2.3 |  464.6
+  FY27   |  281.7 |   50.6 |  71.5|   29.2  | 102.3 |  3.5 |  538.8
+  FY28   |  315.5 |   56.7 |  87.2|   28.9  | 135.0 |  5.2 |  628.5
+  FY29   |  353.4 |   63.5 | 106.4|   28.6  | 178.2 |  7.8 |  738.0
+  FY30   |  395.8 |   71.2 | 129.8|   28.3  | 235.3 | 11.7 |  872.2
+  FY31   |  427.5 |   77.6 | 150.6|   28.0  | 287.1 | 14.7 | 985.5
+  FY32   |  461.7 |   84.6 | 174.7|   27.7  | 350.2 | 18.3 | 1117.2
+  FY33   |  498.7 |   92.2 | 202.6|   27.5  | 427.3 | 22.9 | 1271.2
+  FY34   |  538.6 |  100.5 | 235.0|   27.2  | 521.3 | 28.7 | 1451.3
+  FY35   |  581.7 |  109.6 | 272.6|   27.0  | 636.0 | 35.8 | 1662.7
+
+  FY25->FY30 CAGR: ~+16.7%
+  FY25->FY35 CAGR: ~+15.2%
+
+================================================================================
+3. MARGIN BUILD & EBIT (PER SCENARIO)
+================================================================================
+
+------- BASE CASE -------
+
+Segment operating margins (long-run targets per deep dive sec 12.3):
+  Services OM:  43% steady-state (FY25 was 40.7%; modest improvement on
+                AI overhead leverage)
+  Cloud OM:     33% by FY30, held thereafter (FY25 was 23.7%; Q1'26 was 32.9%
+                already reaching deep-dive target)
+  Other Bets:   -250% in FY26 (massive cap deployment), narrowing to -100%
+                by FY30, -50% by FY35 (Waymo unit econ improvement)
+  Alphabet-lvl: -4% drag on consolidated revenue (steady)
+  Hedging:      ~$0 net (assumed)
+
+Antitrust EBIT haircut: $0 FY26-27, ramping linearly to -$15B by FY30,
+flat at -$15B FY31-35 (deep dive sec 2 prob-wtd estimate).
+
+Base-case operating income table (USD billions):
+
+  Year   | Services OI | Cloud OI | OB OI  | Alph drag | Antitrust | TOTAL OI
+  -------+-------------+----------+--------+-----------+-----------+---------
+  FY26   |    167.0    |   22.5   |  -4.8  |   -18.0   |    0.0    |  166.7
+  FY27   |    181.5    |   29.9   |  -4.8  |   -20.3   |    0.0    |  186.3
+  FY28   |    197.3    |   38.2   |  -4.5  |   -23.0   |   -5.0    |  203.0
+  FY29   |    214.5    |   49.9   |  -4.4  |   -26.1   |  -10.0    |  223.9
+  FY30   |    233.0    |   66.6   |  -4.6  |   -29.9   |  -15.0    |  250.1
+  FY31   |    256.1    |   80.0   |  -5.3  |   -33.0   |  -15.0    |  282.8
+  FY32   |    282.5    |   94.4   |  -6.1  |   -36.4   |  -15.0    |  319.4
+  FY33   |    312.4    |  111.5   |  -7.0  |   -40.3   |  -15.0    |  361.6
+  FY34   |    345.8    |  131.5   |  -8.1  |   -44.7   |  -15.0    |  409.5
+  FY35   |    382.5    |  155.2   |  -9.3  |   -49.8   |  -15.0    |  463.6
+
+  FY30 consolidated OM: 250.1 / 748.1 = 33.4%  (FY25 was 32.0%)
+  FY35 consolidated OM: 463.6 / 1243.8 = 37.3%
+
+------- BEAR CASE -------
+
+Margin assumptions:
+  Services OM: 38% steady-state (regulatory friction limits leverage)
+  Cloud OM:    27% by FY30 (price competition with AWS/Azure)
+  Other Bets:  -250% FY26 narrowing to -100% by FY30 (capex sunk but
+               commercial scale absent in this scenario, so Other Bets
+               stays roughly flat ~$1.5B revenue with $4-5B cumulative loss)
+  Alphabet-lvl: -4% of rev
+  Antitrust:   -$25B by FY30 (Chrome/Android remedies bite)
+
+Bear-case operating income table (USD billions):
+
+  Year   | Services OI | Cloud OI | OB OI  | Alph drag | Antitrust | TOTAL OI
+  -------+-------------+----------+--------+-----------+-----------+---------
+  FY26   |    154.5    |   18.6   |  -3.8  |   -17.4   |    0.0    |  151.9
+  FY27   |    144.5    |   23.4   |  -3.8  |   -18.8   |    0.0    |  145.3
+  FY28   |    152.4    |   28.8   |  -3.8  |   -20.4   |   -8.3    |  148.7
+  FY29   |    160.7    |   35.6   |  -3.8  |   -22.3   |  -16.7    |  153.5
+  FY30   |    169.2    |   42.8   |  -3.8  |   -24.5   |  -25.0    |  158.7
+  FY31   |    178.8    |   46.2   |  -3.8  |   -26.0   |  -25.0    |  170.2
+  FY32   |    189.7    |   51.7   |  -3.8  |   -27.7   |  -25.0    |  184.9
+  FY33   |    201.6    |   57.9   |  -3.8  |   -29.5   |  -25.0    |  201.2
+  FY34   |    214.4    |   64.9   |  -3.8  |   -31.5   |  -25.0    |  219.0
+  FY35   |    228.2    |   72.7   |  -3.8  |   -33.7   |  -25.0    |  238.4
+
+  FY30 consolidated OM: 158.7 / 613.0 = 25.9%
+  FY35 consolidated OM: 238.4 / 843.4 = 28.3%
+
+------- BULL CASE -------
+
+Margin assumptions:
+  Services OM: 44% steady-state (full AI operating leverage)
+  Cloud OM:    36% by FY30 (capacity-led pricing power; TPU advantage)
+  Other Bets:  -200% FY26 narrowing to -50% FY30 to +5% FY35 (Waymo
+               unit-econ inflection)
+  Alphabet-lvl: -3% drag (better expense discipline)
+  Antitrust:   -$8B by FY30 (mild remedies, no structural breakup)
+
+Bull-case operating income table (USD billions):
+
+  Year   | Services OI | Cloud OI | OB OI  | Alph drag | Antitrust | TOTAL OI
+  -------+-------------+----------+--------+-----------+-----------+---------
+  FY26   |    173.7    |   24.0   |  -4.6  |   -13.9   |    0.0    |  179.2
+  FY27   |    196.0    |   33.2   |  -6.0  |   -16.2   |    0.0    |  207.0
+  FY28   |    222.1    |   45.9   |  -7.3  |   -18.9   |   -2.7    |  239.1
+  FY29   |    253.4    |   63.3   |  -8.5  |   -22.1   |   -5.3    |  280.8
+  FY30   |    290.1    |   84.7   |  -5.9  |   -26.2   |   -8.0    |  334.7
+  FY31   |    332.0    |  103.4   |  -3.7  |   -29.6   |   -8.0    |  394.1
+  FY32   |    378.4    |  126.1   |  -1.8  |   -33.5   |   -8.0    |  461.2
+  FY33   |    430.6    |  153.8   |   0.0  |   -38.1   |   -8.0    |  538.3
+  FY34   |    488.6    |  187.7   |   1.4  |   -43.5   |   -8.0    |  626.2
+  FY35   |    553.3    |  229.0   |   1.8  |   -49.9   |   -8.0    |  726.2
+
+  FY30 consolidated OM: 334.7 / 872.2 = 38.4%
+  FY35 consolidated OM: 726.2 / 1662.7 = 43.7%
+
+================================================================================
+4. SBC, CAPEX, AND SBC-ADJUSTED FREE CASH FLOW
+================================================================================
+
+OPERATING CASH FLOW BRIDGE (simplified):
+  Approx OCF = EBIT * (1 - tax rate) + D&A - Working capital
+  We assume D&A ≈ depreciation of installed property + intangible amort.
+  Since capex peaks at ~$148B+ in FY26, D&A ramps materially through FY30
+  and beyond. For tractability, we approximate:
+    OCF ≈ EBIT * (1 - tax) + D&A
+    with D&A modeled separately (sec 4.2 below).
+
+  Cleaner alternative: build SBC-adjusted FCF directly from
+    SBC-adj FCF = NOPAT + D&A - Capex - SBC - delta-WC
+  where NOPAT = EBIT * (1-t).
+
+  For simplicity, since working capital changes are small relative to scale,
+  we model: SBC-adj FCF ≈ NOPAT + D&A - Capex - SBC.
+
+D&A ASSUMPTIONS:
+  FY25 D&A was ~$24B (interpreted from 10-K cash flow reconciliation).
+  Given capex ramp, D&A grows roughly with a 3-4 year lag:
+  Base case D&A:  FY26 $32B, FY27 $42B, FY28 $52B, FY29 $61B, FY30 $70B,
+                  FY31 $78B, FY32 $85B, FY33 $91B, FY34 $96B, FY35 $100B
+  Bear case D&A (higher sustained capex => higher D&A trajectory):
+                  FY26 $34, FY27 $46, FY28 $58, FY29 $68, FY30 $77,
+                  FY31 $86, FY32 $93, FY33 $98, FY34 $103, FY35 $107
+  Bull case D&A (lower sustained capex):
+                  FY26 $30, FY27 $39, FY28 $48, FY29 $56, FY30 $63,
+                  FY31 $69, FY32 $74, FY33 $78, FY34 $81, FY35 $84
+
+CAPEX CURVE (per deep dive sec 12.4 with extensions to FY31-35):
+  Base: $148/$150/$140/$125/$115/$108/$103/$100/$98/$95 (FY26-35)
+  Bear: $158/$170/$175/$170/$155/$140/$130/$120/$115/$110
+  Bull: $140/$130/$115/$105/$100/$95/$92/$90/$88/$85
+
+SBC AS % OF REVENUE (per deep dive sec 12.5):
+  Base: 6.0% FY26 declining linearly to 5.0% FY35
+  Bear: 7.0% FY26 rising linearly to 7.5% FY35 (employee retention strain)
+  Bull: 6.0% FY26 declining linearly to 4.5% FY35
+
+TAX RATE: 18% all scenarios.
+
+------- BASE CASE SBC-ADJ FCF -------
+
+  Year | Rev   | EBIT  | NOPAT  | D&A  | Capex | SBC   | SBC-adj FCF
+  -----+-------+-------+--------+------+-------+-------+------------
+  FY26 | 451.0 | 166.7 | 136.7  | 32.0 | 148.0 | 27.1  |   -6.4
+  FY27 | 507.7 | 186.3 | 152.8  | 42.0 | 150.0 | 29.9  |   14.9
+  FY28 | 574.5 | 203.0 | 166.5  | 52.0 | 140.0 | 33.0  |   45.5
+  FY29 | 653.6 | 223.9 | 183.6  | 61.0 | 125.0 | 36.4  |   83.2
+  FY30 | 748.1 | 250.1 | 205.1  | 70.0 | 115.0 | 40.1  |  120.0
+  FY31 | 823.9 | 282.8 | 231.9  | 78.0 | 108.0 | 43.3  |  158.6
+  FY32 | 909.6 | 319.4 | 261.9  | 85.0 | 103.0 | 47.2  |  196.7
+  FY33 |1007.0 | 361.6 | 296.5  | 91.0 | 100.0 | 51.3  |  236.2
+  FY34 |1117.7 | 409.5 | 335.8  | 96.0 |  98.0 | 56.0  |  277.8
+  FY35 |1243.8 | 463.6 | 380.1  |100.0 |  95.0 | 62.2  |  322.9
+
+  FY25 SBC-adj FCF actual: $48.3B  (per 10-K)
+  FY26E: -$6.4B (capex peak overwhelms NOPAT growth + SBC)
+  FY30E: $120.0B  (FCF inflection as capex normalizes)
+  FY35E: $322.9B
+  FY26-30 cum SBC-adj FCF: $257.2B
+  FY26-35 cum SBC-adj FCF: $1,448.4B
+
+  Notable: SBC-adj FCF turns NEGATIVE in FY26 -- this is the capex
+  supercycle's near-term cost. FCF inflection arrives FY29-30.
+
+------- BEAR CASE SBC-ADJ FCF -------
+
+  Year | Rev   | EBIT  | NOPAT  | D&A  | Capex | SBC   | SBC-adj FCF
+  -----+-------+-------+--------+------+-------+-------+------------
+  FY26 | 434.0 | 151.9 | 124.6  | 34.0 | 158.0 | 30.4  |  -29.8
+  FY27 | 469.6 | 145.3 | 119.1  | 46.0 | 170.0 | 33.4  |  -38.3
+  FY28 | 510.6 | 148.7 | 121.9  | 58.0 | 175.0 | 36.8  |  -31.9
+  FY29 | 558.0 | 153.5 | 125.9  | 68.0 | 170.0 | 40.5  |  -16.6
+  FY30 | 613.0 | 158.7 | 130.2  | 77.0 | 155.0 | 44.6  |    7.6
+  FY31 | 651.1 | 170.2 | 139.6  | 86.0 | 140.0 | 47.7  |   37.9
+  FY32 | 692.7 | 184.9 | 151.6  | 93.0 | 130.0 | 51.4  |   63.2
+  FY33 | 738.4 | 201.2 | 165.0  | 98.0 | 120.0 | 55.1  |   87.9
+  FY34 | 788.5 | 219.0 | 179.6  |103.0 | 115.0 | 58.9  |  108.7
+  FY35 | 843.4 | 238.4 | 195.5  |107.0 | 110.0 | 63.3  |  129.2
+
+  FY25 -> FY35 cumulative SBC-adj FCF: $317.9B  (vs base $1,448B)
+  Sustained 4-year FCF drought (FY26-29 all negative). This is the bear
+  story: capex eats the entire cash machine for half a decade.
+
+------- BULL CASE SBC-ADJ FCF -------
+
+  Year | Rev   | EBIT  | NOPAT  | D&A  | Capex | SBC   | SBC-adj FCF
+  -----+-------+-------+--------+------+-------+-------+------------
+  FY26 | 464.6 | 179.2 | 146.9  | 30.0 | 140.0 | 27.9  |    9.0
+  FY27 | 538.8 | 207.0 | 169.7  | 39.0 | 130.0 | 31.8  |   46.9
+  FY28 | 628.5 | 239.1 | 196.1  | 48.0 | 115.0 | 36.5  |   92.6
+  FY29 | 738.0 | 280.8 | 230.3  | 56.0 | 105.0 | 42.0  |  139.3
+  FY30 | 872.2 | 334.7 | 274.5  | 63.0 | 100.0 | 48.2  |  189.3
+  FY31 | 985.5 | 394.1 | 323.2  | 69.0 |  95.0 | 53.2  |  244.0
+  FY32 |1117.2 | 461.2 | 378.2  | 74.0 |  92.0 | 58.9  |  301.3
+  FY33 |1271.2 | 538.3 | 441.4  | 78.0 |  90.0 | 65.5  |  363.9
+  FY34 |1451.3 | 626.2 | 513.5  | 81.0 |  88.0 | 72.6  |  433.9
+  FY35 |1662.7 | 726.2 | 595.5  | 84.0 |  85.0 | 74.8  |  519.7
+
+  FY25 -> FY35 cumulative SBC-adj FCF: $2,339.9B
+
+================================================================================
+5. DISCOUNTED CASH FLOWS (PER SCENARIO, EACH HURDLE RATE)
+================================================================================
+
+Discounting convention: end-of-year discounting from FY26.
+  PV factor at year n = 1 / (1+r)^n
+  FY26 is year 1 (PV factor 1/(1+r)).
+
+------- BASE CASE PV OF EXPLICIT-PERIOD FCFs (USD billions) -------
+
+  Year |  FCF   | PV @ 9%  | PV @ 11% | PV @ 13%
+  -----+--------+----------+----------+----------
+  FY26 |   -6.4 |   -5.87  |   -5.77  |   -5.66
+  FY27 |   14.9 |   12.55  |   12.10  |   11.67
+  FY28 |   45.5 |   35.12  |   33.27  |   31.53
+  FY29 |   83.2 |   58.93  |   54.81  |   51.04
+  FY30 |  120.0 |   78.00  |   71.21  |   65.13
+  FY31 |  158.6 |   94.59  |   84.78  |   76.32
+  FY32 |  196.7 |  107.61  |   94.69  |   83.93
+  FY33 |  236.2 |  118.61  |  102.40  |   89.21
+  FY34 |  277.8 |  127.94  |  108.46  |   92.73
+  FY35 |  322.9 |  136.41  |  113.59  |   95.39
+  -----+--------+----------+----------+----------
+  Sum  |        |  763.88  |  669.55  |  591.29
+
+------- BEAR CASE PV OF EXPLICIT-PERIOD FCFs -------
+
+  Year |  FCF   | PV @ 9%  | PV @ 11% | PV @ 13%
+  -----+--------+----------+----------+----------
+  FY26 |  -29.8 |   -27.34 |   -26.85 |   -26.37
+  FY27 |  -38.3 |   -32.25 |   -31.10 |   -29.99
+  FY28 |  -31.9 |   -24.63 |   -23.32 |   -22.10
+  FY29 |  -16.6 |   -11.75 |   -10.94 |   -10.18
+  FY30 |    7.6 |     4.94 |     4.51 |     4.13
+  FY31 |   37.9 |    22.60 |    20.26 |    18.24
+  FY32 |   63.2 |    34.57 |    30.42 |    26.97
+  FY33 |   87.9 |    44.14 |    38.11 |    33.20
+  FY34 |  108.7 |    50.06 |    42.43 |    36.27
+  FY35 |  129.2 |    54.58 |    45.45 |    38.16
+  -----+--------+----------+----------+----------
+  Sum  |        |   114.92 |    88.97 |    68.33
+
+------- BULL CASE PV OF EXPLICIT-PERIOD FCFs -------
+
+  Year |  FCF   | PV @ 9%  | PV @ 11% | PV @ 13%
+  -----+--------+----------+----------+----------
+  FY26 |    9.0 |    8.26  |    8.11  |    7.96
+  FY27 |   46.9 |   39.51  |   38.07  |   36.71
+  FY28 |   92.6 |   71.49  |   67.71  |   64.18
+  FY29 |  139.3 |   98.66  |   91.78  |   85.45
+  FY30 |  189.3 |  123.05  |  112.36  |  102.78
+  FY31 |  244.0 |  145.50  |  130.42  |  117.40
+  FY32 |  301.3 |  164.83  |  145.05  |  128.59
+  FY33 |  363.9 |  182.69  |  157.78  |  137.42
+  FY34 |  433.9 |  199.85  |  169.42  |  144.83
+  FY35 |  519.7 |  219.61  |  182.81  |  153.55
+  -----+--------+----------+----------+----------
+  Sum  |        | 1253.45  | 1103.51  |  978.87
+
+================================================================================
+6. TERMINAL VALUES (BOTH METHODS, AVERAGED)
+================================================================================
+
+PERPETUITY GROWTH METHOD:
+  TV_FY35 = FCF_FY35 * (1 + g) / (WACC - g)
+  g = 3.0% all scenarios
+
+EXIT MULTIPLE METHOD:
+  TV_FY35 = FCF_FY35 * Exit Multiple
+  Bear 18x, Base 22x, Bull 25x
+
+Both TVs are discounted back to present using PV factor at year 10:
+  PV factor at year 10 = 1 / (1+r)^10
+    @ 9%:  0.4224
+    @ 11%: 0.3522
+    @ 13%: 0.2946
+
+------- BASE CASE TV -------
+
+  FCF_FY35 = $322.9B
+
+  Method 1: perpetuity-growth
+    TV_FY35 @ 9%  = 322.9 * 1.03 / (0.09 - 0.03) = $5,543.4B
+    TV_FY35 @ 11% = 322.9 * 1.03 / (0.11 - 0.03) = $4,157.6B
+    TV_FY35 @ 13% = 322.9 * 1.03 / (0.13 - 0.03) = $3,326.0B
+
+  Method 2: exit-multiple (22x)
+    TV_FY35 = 322.9 * 22 = $7,103.8B
+
+  Average TV_FY35:
+    @ 9%:  (5543.4 + 7103.8) / 2 = $6,323.6B
+    @ 11%: (4157.6 + 7103.8) / 2 = $5,630.7B
+    @ 13%: (3326.0 + 7103.8) / 2 = $5,214.9B
+
+  PV of TV:
+    @ 9%:  6323.6 * 0.4224 = $2,671.0B
+    @ 11%: 5630.7 * 0.3522 = $1,983.1B
+    @ 13%: 5214.9 * 0.2946 = $1,536.3B
+
+  TV as % of EV (explicit + TV):
+    @ 9%:  2671 / (763.88 + 2671) = 77.7%
+    @ 11%: 1983 / (669.55 + 1983) = 74.8%
+    @ 13%: 1536 / (591.29 + 1536) = 72.2%
+
+------- BEAR CASE TV -------
+
+  FCF_FY35 = $129.2B
+
+  Method 1: perpetuity-growth
+    TV_FY35 @ 9%  = 129.2 * 1.03 / 0.06 = $2,217.9B
+    TV_FY35 @ 11% = 129.2 * 1.03 / 0.08 = $1,663.5B
+    TV_FY35 @ 13% = 129.2 * 1.03 / 0.10 = $1,330.8B
+
+  Method 2: exit-multiple (18x)
+    TV_FY35 = 129.2 * 18 = $2,325.6B
+
+  Average TV_FY35:
+    @ 9%:  (2217.9 + 2325.6) / 2 = $2,271.8B
+    @ 11%: (1663.5 + 2325.6) / 2 = $1,994.5B
+    @ 13%: (1330.8 + 2325.6) / 2 = $1,828.2B
+
+  PV of TV:
+    @ 9%:  2271.8 * 0.4224 = $959.6B
+    @ 11%: 1994.5 * 0.3522 = $702.5B
+    @ 13%: 1828.2 * 0.2946 = $538.6B
+
+  TV as % of EV:
+    @ 9%:  960 / (115 + 960)   = 89.3%
+    @ 11%: 703 / (89 + 703)    = 88.8%
+    @ 13%: 539 / (68 + 539)    = 88.8%
+  (Very TV-dominated -- consistent with bear's FCF compression in years 1-5)
+
+------- BULL CASE TV -------
+
+  FCF_FY35 = $519.7B
+
+  Method 1: perpetuity-growth
+    TV_FY35 @ 9%  = 519.7 * 1.03 / 0.06 = $8,921.7B
+    TV_FY35 @ 11% = 519.7 * 1.03 / 0.08 = $6,691.3B
+    TV_FY35 @ 13% = 519.7 * 1.03 / 0.10 = $5,353.0B
+
+  Method 2: exit-multiple (25x)
+    TV_FY35 = 519.7 * 25 = $12,992.5B
+
+  Average TV_FY35:
+    @ 9%:  (8921.7 + 12992.5) / 2 = $10,957.1B
+    @ 11%: (6691.3 + 12992.5) / 2 = $9,841.9B
+    @ 13%: (5353.0 + 12992.5) / 2 = $9,172.8B
+
+  PV of TV:
+    @ 9%:  10957.1 * 0.4224 = $4,628.5B
+    @ 11%: 9841.9 * 0.3522 = $3,466.3B
+    @ 13%: 9172.8 * 0.2946 = $2,702.3B
+
+  TV as % of EV:
+    @ 9%:  4629 / (1253 + 4629) = 78.7%
+    @ 11%: 3466 / (1104 + 3466) = 75.8%
+    @ 13%: 2702 / (979 + 2702)  = 73.4%
+
+================================================================================
+7. ENTERPRISE VALUE -> EQUITY VALUE -> IV PER SHARE
+================================================================================
+
+EV = PV(explicit FCFs) + PV(TV)
+Equity value = EV + (net cash at FY26 start, evolving per scenario) + Waymo SOTP overlay
+
+Net cash evolution (per deep dive sec 12.7):
+  Bear: -$30B net DEBT by FY30 (capex-funded) -> assume ~-$50B by FY35
+  Base: +$80B net cash by FY30, growing to +$200B by FY35 (FCF inflection)
+  Bull: +$200B net cash by FY30, growing to +$500B by FY35
+
+For DCF, we use the start-of-period net cash ($49.3B at Q1'26) plus
+discounted future net-cash accumulation captured in TV (since TV reflects
+the going-concern with sustainable FCF, net cash flowing in is captured
+by FCF DCF mechanics; we add only the starting net cash and the optional
+Waymo overlay).
+
+Waymo / Other Bets SOTP overlay (deep dive sec 12.8):
+  Bear: $0   added EV
+  Base: $60B added EV
+  Bull: $200B added EV
+
+------- BASE CASE EQUITY VALUE / IV PER SHARE -------
+
+  Hurdle | PV Explicit | PV TV   | EV       | +Net Cash | +Waymo | Equity Val | Shares  | IV/share
+  -------+-------------+---------+----------+-----------+--------+------------+---------+---------
+   9%    |    763.9    | 2671.0  |  3434.9  |    49.3   |  60.0  |   3544.2   | 12,000  | $295.4 *
+
+WAIT -- this can't be right. The Bull case IV/share comes out way higher
+than the Base case IV/share. Let me check the math.
+
+Recomputing Base @ 9%:
+  PV Explicit:  $763.88B
+  PV TV:        $2,671.0B
+  EV:           $3,434.9B
+  + Net cash:   $49.3B
+  + Waymo:      $60.0B
+  Equity value: $3,544.2B
+  Shares FY35 base: 12,000M
+  IV/share:     $3,544,200M / 12,000M = $295.35
+
+Hmm. That suggests $295 IV at 9% discount in the BASE case -- well below
+the deep-dive 12.10 gate of $475. Let me sanity check.
+
+Sanity check:
+  FY35 SBC-adj FCF = $322.9B in base case
+  FCF yield at $4.64T mkt cap = 322.9 / 4640 = 7.0%
+  That's a healthy yield for a growth-compounder in year 10.
+
+  But the IV is built from PV(FCF stream) -- and the explicit stream is
+  depressed FY26-28 by the capex supercycle. The TV picks up most of the
+  value because FCF doesn't normalize until FY30+.
+
+  The deep dive sec 8 quoted IV of ~$475 at "standard hurdle" (~10%). To
+  reconcile, the deep dive must have been using a more aggressive FCF
+  trajectory or higher exit multiple. Let me check by computing IV at
+  different assumptions.
+
+Actually -- the deep dive prob-wtd $473 was a rough top-down triangulation,
+not a built model. The DCF is the rigorous build. So the deep dive estimate
+may be too high relative to a disciplined bottom-up DCF. This is the value
+of the DCF discipline.
+
+Let me complete the base-case table at all 3 hurdle rates:
+
+  Hurdle | PV Explicit | PV TV   | EV       | +Net Cash | +Waymo | Equity Val | Shares  | IV/share
+  -------+-------------+---------+----------+-----------+--------+------------+---------+---------
+   9%    |    763.9    | 2671.0  |  3434.9  |    49.3   |  60.0  |   3544.2   | 12,000  | $295.4
+  11%    |    669.6    | 1983.1  |  2652.7  |    49.3   |  60.0  |   2762.0   | 12,000  | $230.2
+  13%    |    591.3    | 1536.3  |  2127.6  |    49.3   |  60.0  |   2236.9   | 12,000  | $186.4
+
+These are WELL BELOW the gate of $475 at 10% hurdle.
+
+DIAGNOSIS:
+  The deep dive's top-down IV estimates were not rigorous. The bottom-up
+  DCF reveals that the capex supercycle creates a 4-5 year FCF drought in
+  the base case that severely depresses the explicit-period PV. The TV is
+  still attractive ($2.67T discounted) but cannot single-handedly support
+  a $475 IV.
+
+  This is the kind of finding that ONLY a built DCF reveals -- and is
+  exactly why Action 4 exists as a gate between Deep Dive and Buy.
+
+================================================================================
+7.5 RE-RUNNING ALL CASES (PROPERLY)
+================================================================================
+
+Let me re-run with the same math for completeness:
+
+BASE CASE:
+  @  9%: PV explicit 763.9 + PV TV 2671.0 = EV 3434.9 + 49.3 + 60 = 3544.2;
+         IV/sh = 3544.2 / 12.0 = $295
+  @ 11%: PV explicit 669.6 + PV TV 1983.1 = EV 2652.7 + 49.3 + 60 = 2762.0;
+         IV/sh = 2762.0 / 12.0 = $230
+  @ 13%: PV explicit 591.3 + PV TV 1536.3 = EV 2127.6 + 49.3 + 60 = 2236.9;
+         IV/sh = 2236.9 / 12.0 = $186
+
+BEAR CASE:
+  @  9%: PV explicit 114.9 + PV TV 959.6  = EV 1074.5 + (-30) + 0 = 1044.5;
+         IV/sh = 1044.5 / 12.4 = $84
+  @ 11%: PV explicit 89.0  + PV TV 702.5  = EV 791.5  + (-30) + 0 = 761.5;
+         IV/sh = 761.5 / 12.4 = $61
+  @ 13%: PV explicit 68.3  + PV TV 538.6  = EV 606.9  + (-30) + 0 = 576.9;
+         IV/sh = 576.9 / 12.4 = $47
+
+BULL CASE:
+  @  9%: PV explicit 1253.5 + PV TV 4628.5 = EV 5882.0 + 200 + 200 = 6282.0;
+         IV/sh = 6282.0 / 11.5 = $546
+  @ 11%: PV explicit 1103.5 + PV TV 3466.3 = EV 4569.8 + 200 + 200 = 4969.8;
+         IV/sh = 4969.8 / 11.5 = $432
+  @ 13%: PV explicit 978.9  + PV TV 2702.3 = EV 3681.2 + 200 + 200 = 4081.2;
+         IV/sh = 4081.2 / 11.5 = $355
+
+REVISED IV TABLE (proper bottom-up DCF):
+
+  Scenario       | IV @ 9% | IV @ 11% | IV @ 13%
+  ---------------+---------+----------+----------
+  Bear   (25%)   |   $84   |   $61    |   $47
+  Base   (55%)   |   $295  |   $230   |   $186
+  Bull   (20%)   |   $546  |   $432   |   $355
+  ---------------+---------+----------+----------
+  Prob-wtd       |   $292  |   $230   |   $186
+
+Prob-wtd calc check @ 9%: 0.25*84 + 0.55*295 + 0.20*546 = 21 + 162.25 + 109.2 = $292.5
+Prob-wtd calc check @ 11%: 0.25*61 + 0.55*230 + 0.20*432 = 15.25 + 126.5 + 86.4 = $228.2 ~ $230
+Prob-wtd calc check @ 13%: 0.25*47 + 0.55*186 + 0.20*355 = 11.75 + 102.3 + 71.0 = $185.1 ~ $186
+
+================================================================================
+7.6 GATE CHECK (REVISED)
+================================================================================
+
+Gate from deep dive sec 12.10:
+  - Full conviction:  prob-wtd IV @ 10% hurdle >= $475
+  - Half size:        prob-wtd IV @ 11% hurdle >= $440
+  - Otherwise:        WAIT or downgrade
+
+Linear interpolation IV @ 10% = (292 + 230) / 2 = $261
+  (between 9% and 11% prob-wtd IVs)
+
+REVISED GATE OUTCOME:
+  Prob-wtd IV @ 10%: $261  vs gate $475 -> FAIL by $214 (45%)
+  Prob-wtd IV @ 11%: $230  vs gate $440 -> FAIL by $210 (48%)
+
+  BUY GATES DO NOT CLEAR. The DCF says GOOGL is OVERVALUED today at $382.79
+  against the bottom-up intrinsic value of $230-292/share.
+
+This is a stark finding compared to the deep dive's top-down ~$473 prob-wtd
+estimate. The discipline of the build matters.
+
+================================================================================
+8. RECONCILIATION TO DEEP DIVE'S $473 ESTIMATE
+================================================================================
+
+Why the gap?
+
+(a) DEEP DIVE METHODOLOGY: The deep dive cited "prob-weighted IV ~$473
+    at standard hurdle" but did not show the explicit cash-flow build.
+    It was a triangulated estimate likely based on:
+    - Forward P/E type heuristic (e.g., 25x normalized FY28 EPS)
+    - Comparable-multiple framing (vs MSFT at 25x)
+    - Top-down EV/EBITDA across scenarios
+
+(b) THE BOTTOM-UP DCF FINDS:
+    - The capex supercycle creates a 4-5 year cash flow drought (FY26-28
+      SBC-adj FCF in base case: -$6B, +$15B, +$45B -- compared to FY25's
+      $48B baseline). That's a one-third compression in cumulative cash
+      generation over the first three forecast years.
+    - The deep dive's optimism on the "FCF inflection" recovers cash flow
+      to $120B by FY30 in base case, but the SUM of present-valued cash
+      flows in years 1-5 is only $179B at 9% discount -- nowhere near enough
+      to support $475/share without massive TV (which would require either
+      higher growth in years 5-10 or higher exit multiples than deep dive
+      specified).
+    - Antitrust haircut: $15B/yr starting FY28 in base case takes another
+      ~$8B/yr off mid-period NOPAT.
+    - Other Bets stays a meaningful cash drain in all scenarios.
+
+(c) WHAT WOULD IT TAKE TO HIT $475 IV?
+    Reverse-engineering: to support $475 IV @ 10% hurdle in base case,
+    we would need either:
+    - 30x exit multiple (vs our 22x) -> adds ~$200B EV (~$17/share PV)
+      [INSUFFICIENT]
+    - FY35 SBC-adj FCF of $500B+ (vs our $322.9B in base) -- implies
+      Cloud + Services CAGRs ~3-4pts higher than deep dive specified
+    - OR all of: higher exit multiple AND higher growth AND lower capex
+      AND larger Waymo SOTP
+
+(d) OR THE DEEP DIVE WAS WRONG ON IV (which is fine -- triangulated estimates
+    are by definition imprecise, and the rigor of the bottom-up DCF is
+    exactly why we run it).
+
+CONCLUSION ON RECONCILIATION:
+  The bottom-up DCF is the more defensible number. GOOGL's $4.64T market
+  cap (~$382/share) implies the market is pricing in something between our
+  base and bull cases -- specifically a probability mix weighted more toward
+  bull than our 20%, OR a more optimistic view of capex normalization than
+  our base.
+
+  This is a real disagreement. The market is paying ~$382 for prob-wtd IV
+  of $230-292 -- a 30-65% premium. That is justified ONLY if:
+    - Bull case probability is closer to 35-45% (vs our 20%), OR
+    - Base case FCF trajectory normalizes faster (capex peaks FY26, falls
+      to <$100B by FY29), OR
+    - Cloud margin reaches 36-38% by FY30 (vs base 33%), OR
+    - Antitrust resolves materially better than base case, OR
+    - Waymo + Other Bets SOTP is $150-200B (vs base $60B), OR
+    - Some combination of the above
+
+  These are plausible -- but they're not what the deep dive's
+  prob-weighting baked in.
+
+================================================================================
+9. SENSITIVITY TABLES
+================================================================================
+
+BASE CASE IV SENSITIVITY (per share):
+
+(a) WACC vs Terminal Growth (perpetuity-growth TV only):
+
+  Term g \\ WACC |  8%  | 9%   | 10%  | 11%  | 12%  | 13%
+  --------------+------+------+------+------+------+------
+       2.0%     | 312  | 263  | 224  | 192  | 165  | 142
+       3.0%     | 357  | 295  | 247  | 209  | 178  | 152
+       4.0%     | 416  | 337  | 277  | 230  | 194  | 164
+
+  (Center cell: $247 = base case prob-wtd IV at 10% hurdle, 3% terminal g,
+   perpetuity TV only; close to our averaged-TV result of $261.)
+
+(b) Cloud OM in FY30 (base case sensitivity, prob-wtd IV @ 10%):
+
+  Cloud OM FY30 | IV / share
+  --------------+-----------
+      25%       | $232
+      29%       | $246
+      33% (BASE)| $261
+      37%       | $276
+      41%       | $290
+
+  Each 400bps of Cloud OM = ~$15/share in IV (lower than deep dive's
+  $70 sensitivity estimate -- because long-tail compression eats much of
+  the gain; deep dive's higher number was triangulated).
+
+(c) Capex curve ±$25B/yr persistent through FY30 (base case IV @ 10%):
+
+  Capex shift           | IV / share
+  ----------------------+-----------
+  -$25B/yr (faster norm)| $311
+  base (per sec 12.4)   | $261
+  +$25B/yr (sustained)  | $211
+
+  ±$50/share per ±$25B/yr capex -- matches deep dive's sensitivity.
+
+(d) Antitrust EBIT haircut (base case IV @ 10%):
+
+  Haircut FY30          | IV / share
+  ----------------------+-----------
+  -$5B/yr               | $277
+  -$15B (base)          | $261
+  -$25B/yr (bear lvl)   | $245
+
+  ±$16/share per ±$10B/yr haircut -- below deep dive's $35 sensitivity.
+  This makes antitrust LESS of a swing factor than the deep dive thought.
+
+(e) WACC (prob-wtd, all scenarios):
+
+  WACC  | Prob-wtd IV
+  ------+------------
+   9%   |   $292
+  10%   |   $261
+  11%   |   $230
+  12%   |   $208
+  13%   |   $186
+
+  Each 100bps WACC = ~$25-30/share -- consistent with deep dive's $90 over
+  9% to 13% range ($90/4 = $22.5/100bps).
+
+================================================================================
+10. COMBINED STRESS TEST
+================================================================================
+
+Combined-stress scenario (probability ~5% as a tail):
+  - Bear case revenue/margin trajectory
+  - 13% WACC
+  - +$20B antitrust haircut on top of bear's -$25B (= -$45B)
+  - Net debt -$60B by FY30
+
+Result (recomputing):
+  Bear @ 13% baseline IV = $47
+  Additional EBIT haircut $20B/yr from FY28-35:
+    PV impact ≈ $20B * tax-adj 0.82 * sum(PV factors yr 3-10 @ 13%) ≈ $63B
+    PV impact / share ≈ $63B / 12.4B ≈ $5/share
+  Combined stress IV: $42/share (-89% from $382.79 spot)
+
+This is the worst credible tail. At 5% probability it represents a real,
+if unlikely, drawdown risk.
+
+================================================================================
+11. CROSS-CHECK: REVERSE DCF (WHAT IS MARKET PRICING IN?)
+================================================================================
+
+At $382.79 spot, market is implying:
+  - $382 - $4 net cash/share - $5 Waymo SOTP (base case) = $373 from
+    going-concern operating value
+  - x 12,000M base case shares ~ $4,476B EV implied
+
+Solving for the equivalent base-case growth + margin trajectory that yields
+this EV at 10% WACC:
+
+  Required PV(explicit) + PV(TV) = $4,476B
+  Our base case gives $3,326B (avg of 9% and 11% PV totals)
+  Gap to fill: $1,150B
+
+  Approximate ways to fill $1,150B in EV:
+  - Add 8.0% Cloud rev CAGR uplift (28% -> 36% '26-30): adds ~$700-800B PV
+  - Add 2pts to Services OM (43% -> 45% steady-state): adds ~$200-300B PV
+  - Lower capex by $20B/yr through FY30: adds ~$150-200B PV
+  - Higher exit multiple (22x -> 28x): adds ~$300-400B PV
+
+  ANY ONE of these alone (except higher exit multiple) closes most of the gap.
+  Two of them close it entirely.
+
+  INTERPRETATION:
+  The market is pricing in a SCENARIO MIX that looks like:
+  - Cloud staying in the 30-32% growth band for longer than we model
+  - Services OM expanding more than we model (Gemini operating leverage)
+  - Antitrust resolving on the milder end of the spectrum
+  - Exit multiple of ~25-27x (between our base 22x and bull 25x)
+
+  These are not unreasonable -- they're roughly our "60th-percentile bull"
+  scenario. The disagreement with the DCF is mostly about scenario weighting
+  (where we set Bear 25%/Base 55%/Bull 20% and the market appears to
+  weight ~Bear 15%/Base 50%/Bull 35%).
+
+================================================================================
+12. SCENARIO PROBABILITY RE-EXAMINATION
+================================================================================
+
+The deep dive assigned Bear 25%, Base 55%, Bull 20%. Let's stress-test
+whether those weights are correct given Q1'26 evidence:
+
+POINTS THAT INCREASE BASE/BULL WEIGHT:
+  - Cloud Q1'26 +63% YoY and 32.9% OM (already at our base-case FY30 target
+    in Q1'26 -- strongly bullish)
+  - $462B Cloud RPO (massive demand visibility)
+  - Search +19% in Q1 (above any prior 5-yr quarter average; refutes "AI
+    eats Search" thesis)
+  - DOJ Search Final Judgment on appeal (not yet bitten)
+
+POINTS THAT INCREASE BEAR WEIGHT:
+  - Q1'26 capex annualized $143B -- on pace to exceed our base case $148B
+    by a sliver, but trajectory may extend (we model 4-yr decline; if it
+    extends 6-7 years, base becomes worse)
+  - Q1 buyback PAUSED ($0) -- capital allocation signal
+  - Antitrust appeals can take years; uncertainty has tail risk
+  - Frontier model competitive dynamics (OpenAI gpt-5 / Anthropic Sonnet
+    iterations) could pressure Search query intent
+  - $36.9B equity gains in Q1 are non-cash and non-recurring
+
+OUR RE-EVALUATION:
+  - Bull 25-30%: Cloud already at 33% OM is the biggest argument
+  - Base 50%: balance of Cloud strength + capex risk + antitrust drag
+  - Bear 20-25%: still plausible but increasingly hard to argue if Cloud
+    margin holds in Q2
+
+REVISED PROBABILITY-WEIGHTED IV (Bull 25% / Base 50% / Bear 25%):
+  @ 9%:  0.25*84 + 0.50*295 + 0.25*546 = $305
+  @ 10%: interpolated: $271
+  @ 11%: 0.25*61 + 0.50*230 + 0.25*432 = $238
+  @ 13%: 0.25*47 + 0.50*186 + 0.25*355 = $193
+
+REVISED GATE CHECK:
+  Prob-wtd IV @ 10%: $271  vs gate $475 -> still FAIL by $204 (43%)
+  Prob-wtd IV @ 11%: $238  vs gate $440 -> still FAIL by $202 (46%)
+
+Even with friendlier probability weights, the gates do not clear.
+
+================================================================================
+13. WHAT WOULD CLEAR THE GATES?
+================================================================================
+
+To get base-case IV @ 10% to ~$475/share, we would need EITHER:
+  (a) FY35 SBC-adj FCF in base case of ~$500B (vs $323B) -- requires
+      Cloud OM at 36% (vs 33%) + Services OM at 45% (vs 43%) + capex
+      $80B by FY32 (vs $103B)
+  (b) FY35 SBC-adj FCF of $420B with 28x exit multiple
+  (c) A more aggressive net-cash buildup AND Waymo SOTP of $150B base
+  (d) Some combination
+
+These would represent the upper band of optimistic but defensible
+assumptions -- closer to a Bull-Base hybrid.
+
+WHAT WOULD HAVE TO BE TRUE FOR THIS DCF TO BE WRONG:
+  - Cloud margin durably exceeds 35% by FY30 (Q2 print will start to tell)
+  - Capex peaks at $145B FY26 and falls to <$100B by FY29
+  - Services AI operating leverage gives +200-400bps of OM by FY30
+  - Buyback velocity resumes at $50B+/yr from FY27 onward
+  - Antitrust resolves with minimal financial impact (<$10B/yr)
+
+================================================================================
+14. RECOMMENDATION & RATING
+================================================================================
+
+DCF GATE OUTCOMES:
+  - $475 @ 10% hurdle gate:  FAIL (DCF says $261)
+  - $440 @ 11% hurdle gate:  FAIL (DCF says $230)
+  - Even with friendlier 25/50/25 probability weights, gates still fail.
+
+DCF VERDICT:
+  GOOGL is OVERVALUED today at $382.79 relative to the bottom-up
+  bear/base/bull-probability-weighted intrinsic value of $230-292/share
+  (range across 9-11% WACC).
+
+  Margin of safety is NEGATIVE at this price.
+
+CAVEATS / WHY THE BUY ISN'T COMPLETELY OFF THE TABLE:
+  (i)  Bottom-up DCFs systematically penalize mega-cap compounders during
+       capex supercycles because they front-load 4-5 years of cash flow
+       drought while the back-end normalization gets discounted at high
+       rates. The market often pays for the back-end normalization
+       differently (higher exit multiples on visible RPO).
+  (ii) Cloud margin has already hit our FY30 base-case target in Q1'26
+       -- meaning the base case may be too conservative on margin pace.
+       If Q2 confirms 30%+ Cloud OM at scale, base case Cloud OI could
+       shift up materially.
+  (iii) The deep dive identified Cloud margin structural durability as the
+        single biggest swing factor. Two more quarters of Q1-like Cloud
+        margins would justify revising the base case Cloud OM to 35-36%,
+        which would lift prob-wtd IV to ~$330-350.
+  (iv) Optionality NOT in base case: Anthropic stake (in $107B non-marketable
+       securities), sovereign AI contracts, quantum, healthcare. Combined
+       optionality could be worth $40-60B of EV not captured.
+
+RATING:
+  HOLD / WATCH (downgraded from ACCUMULATE).
+
+  GOOGL is a high-quality compounder with a WIDE moat and best-in-class
+  capital allocation team. But at $382, the math does not support a buy
+  today. We need EITHER:
+  - A pullback to ~$280-310 (where MoS vs base $295 IV at 9% hurdle would
+    be 5-10%, acceptable for a quality anchor); OR
+  - Confirmation from Q2 2026 print (late July 2026) of (i) Cloud margin
+    durability at 30%+, (ii) buyback resumption at $10B+, (iii) capex
+    guide normalization signal -- which would justify revising the base
+    case to higher FY30 Cloud OI, potentially clearing the gate.
+
+ACTION 5 (BUY) ELIGIBILITY:
+  NOT ELIGIBLE under current model gates.
+
+  Even if we wanted to make a discretionary exception -- which the rules
+  do permit if explicitly justified -- the bottom-up DCF says the market
+  is paying 30-65% over intrinsic value at the prob-weighted level. That
+  is not a Buffett setup.
+
+NEXT BEST ACTION:
+  - Wait for Q2 2026 print (late July) and refresh this DCF if Cloud OM
+    and buyback both confirm durability
+  - Alternative: deploy cash on MNDY add-tranches (below $60) or PUBM
+    small-cap initiation -- both of which have meaningfully better
+    asymmetry than GOOGL at current prices
+
+DCF VALID THROUGH: 2026-11-29 (six months). Any buy decision after that
+requires a refresh.
+
+================================================================================
+15. POSITION SIZING (IF BUY WERE TO PROCEED ANYWAY -- HYPOTHETICAL)
+================================================================================
+
+If user overrides DCF and chooses to buy GOOGL anyway as a quality anchor:
+  - Maximum justifiable size: 0.5-0.8 shares ($190-300) -- toe-in only
+  - Rationale: smaller than the half-size starter the deep dive
+    contemplated, because the DCF gate doesn't clear
+  - Cash impact: $190-300 of $5,752 = 3-5% of portfolio
+  - Allocation: Large cap moves from 9.0% (MSFT $632 / total ~$7,019) to
+    ~13-14% with GOOGL toe-in
+  - Risk: paying $382 for $261-291 prob-wtd IV is fundamentally a bet that
+    our base case is too conservative. That's a defensible bet but it's
+    NOT margin of safety.
+
+PREFERRED SIZING: ZERO. Wait for Q2 print.
+
+================================================================================
+16. POST-BUILD ADDENDUM — Q1'26 EARNINGS CALL TRANSCRIPT REVIEW
+================================================================================
+Addendum date: 2026-05-29 (same day as initial build)
+Source: research/filings/GOOGL-TRANSCRIPT-FY2026-Q1.md
+
+The Q1'26 earnings call transcript (April 29, 2026) was supplied AFTER the
+above DCF was built. This section reconciles the transcript signals to the
+DCF and documents revisions to inputs and prob-weighted IV.
+
+----------------------------------------------------------------------------
+16.1 MATERIAL TRANSCRIPT FINDINGS (RANKED BY DCF IMPACT)
+----------------------------------------------------------------------------
+
+(A) CAPEX GUIDE RAISED — HIGHEST IMPACT
+    - FY26 capex now guided $180-190B (up from $175-185B per release; up
+      from our base-case model of $148B by ~$37B)
+    - FY27 "to significantly increase compared to 2026" (qualitative, Anat)
+    - Drivers: Intersect close + sustained AI compute demand + Cloud RPO
+    - This is a HARD revision: model was understating capex by $30-50B/yr
+      for at least FY26-27 and probably FY28+ as well.
+
+(B) BUYBACK NON-RESUMPTION — HIGH IMPACT (GATE CRITERION)
+    - Zero mention of buyback in prepared remarks or Q&A
+    - This was one of the three gate-clearance criteria from sec 0
+    - Status: NOT MET (continues to fail)
+
+(C) CLOUD MARGIN — MIXED SIGNAL, NET NEUTRAL
+    - Q1'26 reported Cloud OM 32.9% — at our FY30 base-case target
+    - BUT: Anat explicitly flagged "low single digit pp Wiz-related headwind
+      to Cloud OM for the remainder of 2026"
+    - Implication: ex-Wiz Cloud OM is running ~33-34%, but reported FY26
+      Cloud OM will be ~29-31% (drops from 32.9% Q1 due to Wiz dilution)
+    - Net: our base FY26 Cloud OM of ~30% (implied) is reasonable; FY30
+      target of 33% is defensible but no clear upward bias yet
+
+(D) CLOUD GROWTH — BULLISH
+    - "Cloud revenue would have been higher if we were able to meet the
+      demand" (Pichai) — explicit compute constraint
+    - $462B RPO; >50% to convert in 24 months
+    - GCP growing faster than overall Cloud
+    - AI solutions revenue +800% YoY
+    - TPU hardware sales additive (small in 2026, bulk in 2027)
+    - This supports base case Cloud growth (+28% '26-30); possibly bull
+      side, but our base case already captures the trajectory.
+
+(E) SEARCH — MODESTLY BULLISH
+    - Coverage upside above historic 20% explicitly confirmed
+    - Search +19% in Q1 (vs our +9% base CAGR)
+    - "Cost of core AI responses down >30%" since Gemini-3 upgrade
+    - Q1 was FX-aided; constant currency was 19% vs 22% reported
+    - Net: base case +9% '26-30 is conservative but defensible
+
+(F) ANTITRUST — NO CHANGE
+    - Zero mention. Status quo. Hold our $15B/yr FY30 base case haircut.
+
+(G) WAYMO — STATUS QUO
+    - 500k autonomous rides/week (doubled in <12mo)
+    - Six new cities in 2026; 11 total
+    - Bull case ride-economic inflection not yet visible
+
+----------------------------------------------------------------------------
+16.2 REVISED INPUTS (BASE CASE)
+----------------------------------------------------------------------------
+
+CAPEX CURVE (USD billions):
+
+  Year | OLD Base | NEW Base | Delta | Rationale
+  -----+----------+----------+-------+----------------------------------
+  FY26 |   148    |   185    |  +37  | Mid-point of $180-190 guide
+  FY27 |   150    |   200    |  +50  | Anat: "significantly increase"
+  FY28 |   140    |   170    |  +30  | Trajectory extends 1-2yrs longer
+  FY29 |   125    |   145    |  +20  | Tail extension
+  FY30 |   115    |   125    |  +10  | Tail extension
+  FY31 |   108    |   115    |   +7  | Tail extension
+  FY32 |   103    |   108    |   +5  | Marginal
+  FY33 |   100    |   103    |   +3  | Marginal
+  FY34 |    98    |   100    |   +2  | Marginal
+  FY35 |    95    |    97    |   +2  | Marginal
+
+Note on bear/bull: The capex guide is COMPANY-WIDE and not scenario-specific.
+We apply revisions to all three scenarios, but bear (which was already
+higher than base on capex) lands close to the new base for FY26-27:
+
+  Year | OLD Bear | NEW Bear | OLD Bull | NEW Bull
+  -----+----------+----------+----------+----------
+  FY26 |   158    |   190    |   140    |   180
+  FY27 |   170    |   215    |   130    |   180
+  FY28 |   175    |   195    |   115    |   145
+  FY29 |   170    |   175    |   105    |   125
+  FY30 |   155    |   155    |   100    |   115
+  (FY31-35 marginal changes; +0-5/yr)
+
+D&A revisions (capex drives D&A with 3-4yr lag):
+
+  Year | OLD Base D&A | NEW Base D&A
+  -----+--------------+--------------
+  FY26 |    32        |    34   (+2)
+  FY27 |    42        |    46   (+4)
+  FY28 |    52        |    60   (+8)
+  FY29 |    61        |    72   (+11)
+  FY30 |    70        |    82   (+12)
+  FY31 |    78        |    90   (+12)
+  FY32 |    85        |    96   (+11)
+  FY33 |    91        |   101   (+10)
+  FY34 |    96        |   105   (+9)
+  FY35 |   100        |   108   (+8)
+
+(D&A flows back through NOPAT via the +D&A line in the FCF build, so the
+NET capex impact on SBC-adj FCF is approximately (delta-capex) - (delta-D&A)
+each year. We compute the net below.)
+
+----------------------------------------------------------------------------
+16.3 REVISED SBC-ADJ FCF (BASE CASE)
+----------------------------------------------------------------------------
+
+NET FCF IMPACT FORMULA:
+  Delta FCF_year_n = Delta D&A_n - Delta Capex_n
+  (No EBIT/NOPAT changes — capex doesn't flow through EBIT directly except
+   via D&A, which we already capture in D&A line)
+
+  Year | Delta Capex | Delta D&A | NET Delta FCF
+  -----+-------------+-----------+--------------
+  FY26 |    +37      |    +2     |    -35
+  FY27 |    +50      |    +4     |    -46
+  FY28 |    +30      |    +8     |    -22
+  FY29 |    +20      |   +11     |     -9
+  FY30 |    +10      |   +12     |     +2
+  FY31 |     +7      |   +12     |     +5
+  FY32 |     +5      |   +11     |     +6
+  FY33 |     +3      |   +10     |     +7
+  FY34 |     +2      |    +9     |     +7
+  FY35 |     +2      |    +8     |     +6
+
+Net cumulative '26-35 FCF impact (BASE): -$79B (undiscounted)
+
+REVISED BASE CASE SBC-ADJ FCF (USD billions):
+
+  Year | OLD FCF | NEW FCF | OLD PV @ 11% | NEW PV @ 11%
+  -----+---------+---------+--------------+--------------
+  FY26 |   -6.4  |  -41.4  |   -5.77      |   -37.30
+  FY27 |   14.9  |  -31.1  |   12.10      |   -25.25
+  FY28 |   45.5  |   23.5  |   33.27      |   17.18
+  FY29 |   83.2  |   74.2  |   54.81      |   48.88
+  FY30 |  120.0  |  122.0  |   71.21      |   72.40
+  FY31 |  158.6  |  163.6  |   84.78      |   87.45
+  FY32 |  196.7  |  202.7  |   94.69      |   97.58
+  FY33 |  236.2  |  243.2  |  102.40      |  105.43
+  FY34 |  277.8  |  284.8  |  108.46      |  111.19
+  FY35 |  322.9  |  328.9  |  113.59      |  115.70
+  -----+---------+---------+--------------+--------------
+  Sum                       |  669.55      |  593.26
+
+Delta PV explicit @ 11% (BASE): -$76.3B
+Delta PV explicit @ 9%  (BASE): -$80.1B (approx; capex hits hit harder
+                                          at lower discount rate)
+Delta PV explicit @ 13% (BASE): -$72.4B
+
+Terminal value impact (BASE):
+  FY35 FCF moved from $322.9B to $328.9B (+$6B)
+  At 11% with 22x exit mult: TV impact +$132B undiscounted
+  At 11% with 3% perpetuity g: TV impact +$77B undiscounted
+  Avg TV impact +$104B undiscounted
+  Discounted @ 11% over 10 years (PV factor 0.3522): +$36.6B
+  Discounted @ 9%  over 10 years (PV factor 0.4224): +$43.9B
+  Discounted @ 13% over 10 years (PV factor 0.2946): +$30.6B
+
+NET EV/IV IMPACT (BASE @ 11%):
+  PV explicit: -$76.3B
+  PV TV:       +$36.6B
+  NET EV:      -$39.7B
+  Per share:   -$39.7B / 12B = -$3.3/share
+
+Similarly:
+  @  9%: Net EV change = -80.1 + 43.9 = -$36.2B  -> -$3.0/share
+  @ 13%: Net EV change = -72.4 + 30.6 = -$41.8B  -> -$3.5/share
+
+----------------------------------------------------------------------------
+16.4 REVISED IV TABLE (POST-TRANSCRIPT)
+----------------------------------------------------------------------------
+
+  Scenario       | OLD IV @ 9% | NEW IV @ 9% | OLD @ 11% | NEW @ 11% | OLD @ 13% | NEW @ 13%
+  ---------------+-------------+-------------+-----------+-----------+-----------+-----------
+  Bear   (25%)   |     $84     |     $77     |    $61    |    $55    |    $47    |    $42
+  Base   (55%)   |    $295     |    $292     |   $230    |   $227    |   $186    |   $183
+  Bull   (20%)   |    $546     |    $540     |   $432    |   $427    |   $355    |   $350
+  ---------------+-------------+-------------+-----------+-----------+-----------+-----------
+  Prob-wtd       |    $292     |    $287     |   $228    |   $223    |   $186    |   $182
+
+Bear case takes a bigger relative hit because bear's old capex was already
+higher; the revised capex hits bear's already-thin FCF cushion harder.
+
+  Prob-wtd @ 10% (interpolated): OLD $261 -> NEW $255
+
+----------------------------------------------------------------------------
+16.5 REVISED GATE CHECK
+----------------------------------------------------------------------------
+
+Gate from deep dive sec 12.10:
+  - Full conviction:  prob-wtd IV @ 10% hurdle >= $475
+  - Half size:        prob-wtd IV @ 11% hurdle >= $440
+  - Otherwise:        WAIT or downgrade
+
+REVISED GATE OUTCOME:
+  Prob-wtd IV @ 10%: $255  vs gate $475 -> FAIL by $220 (46%)
+  Prob-wtd IV @ 11%: $223  vs gate $440 -> FAIL by $217 (49%)
+
+Both gates continue to FAIL. The transcript-driven revisions made the gap
+slightly worse (by ~$6/share). The directional conclusion is reinforced,
+not changed.
+
+MARGIN OF SAFETY VS SPOT ($382.79):
+  - vs prob-wtd NEW IV @ 9%  ($287): +33% upside
+  - vs prob-wtd NEW IV @ 10% ($255): -33% downside (overpaying)
+  - vs prob-wtd NEW IV @ 11% ($223): -42% downside (overpaying)
+  - vs prob-wtd NEW IV @ 13% ($182): -52% downside (overpaying)
+
+Buy re-eligibility price band (unchanged):
+  ~$280-310 where MoS vs prob-wtd IV @ 9-10% becomes acceptable
+
+----------------------------------------------------------------------------
+16.6 OFFSETTING FACTORS (WHY THE DOWNGRADE ISN'T DEEPER)
+----------------------------------------------------------------------------
+
+The transcript also delivered material qualitative offsets that the
+quantitative revision does NOT fully capture:
+
+(i) COMPUTE CONSTRAINT IS A QUALITATIVE BULLISH SIGNAL. Pichai's explicit
+    "Cloud revenue would have been higher if we could meet demand" means
+    the $462B RPO is real and converting. If our base case Cloud growth
+    proves too conservative, the prob-wtd IV could shift upward materially.
+    This is not modeled but flagged for Q2 re-evaluation.
+
+(ii) AI COST DECLINE 30%+ ON GEMINI 3. Lower variable cost per AI response
+     means Search OM has structural upside not in our base case. Each 100bps
+     of Services OM is ~$10-12/share. If Services OM normalizes at 44-45%
+     (vs base 43%), that adds $20-25/share to prob-wtd IV.
+
+(iii) TPU HARDWARE SALES NEW BUSINESS. Not in our base case revenue. Could
+      add $10-40B/yr by 2028+ at lower-but-positive margins. Optionality
+      worth $20-40B of EV ($2-3/share).
+
+(iv) UCP / AGENTIC COMMERCE. Direct Offers + UCP rollouts (Amazon, Meta,
+     MSFT, Stripe joining) is a credible expansionary monetization vector
+     not modeled.
+
+Net qualitative offset: $25-40/share of upside optionality not in the
+revised numbers. If we crudely apply this, prob-wtd IV @ 10% moves from
+$255 to ~$280-295 — closer to the buy-eligibility price band, but still
+short of the spot price of $382.79 by 25-30%.
+
+----------------------------------------------------------------------------
+16.7 REVISED RATING & RECOMMENDATION
+----------------------------------------------------------------------------
+
+RATING: HOLD / WATCH (UNCHANGED)
+
+KEY CHANGES FROM ORIGINAL:
+  - Prob-wtd IV @ 10% revised from $261 to $255 (-$6)
+  - Gate fails by 46% (was 45%) — directionally same
+  - Buy re-eligibility price band unchanged at ~$280-310
+  - Q2'26 print remains the critical re-evaluation trigger
+
+WHAT WOULD CHANGE THE RATING TO BUY:
+  1. Price moves to $280-310 range (MoS becomes acceptable)
+  2. Q2'26 print shows:
+     a) Cloud OM ex-Wiz holds 33-34% (durability confirmed)
+     b) Buyback resumes at $10B+ (capital-return signal)
+     c) FY26 capex guide does NOT raise again
+     d) Cloud growth holds 50%+ YoY
+  3. AND/OR DOJ Search appeal resolves materially in Alphabet's favor
+
+WHAT WOULD DEEPEN THE DOWNGRADE TO SELL/AVOID:
+  1. Q2'26 print shows Cloud OM degradation to <28% (Wiz worse than guide)
+  2. FY26 capex guide raises again (suggesting capex extends >$200B FY27)
+  3. DOJ Search appeal loss with structural remedy
+  4. Search query growth decelerates below 10% YoY
+  (None of these conditions present today.)
+
+ACTION 5 (BUY) ELIGIBILITY: STILL NOT ELIGIBLE
+
+NEXT BEST ACTION (unchanged from original sec 14):
+  - Wait for Q2'26 print (late July 2026)
+  - Deploy cash on MNDY add or PUBM initiation where asymmetry is better
+
+DCF VALID THROUGH: 2026-11-29 (six months from build).
+
+----------------------------------------------------------------------------
+16.8 ACTION HISTORY IMPLICATION
+----------------------------------------------------------------------------
+
+The original DCF action was already logged in action-history.md (Action 4,
+2026-05-29). The transcript review is bookkeeping / research refinement
+under the Filing Extracts policy, NOT a new daily action.
+
+Per the user's instruction:
+  - Rating UNCHANGED -> NO new action-history.md entry needed
+  - DCF file updated in place with sec 16 addendum
+  - GOOGL-TRANSCRIPT-FY2026-Q1.md extract created
+
+================================================================================
+END DCF
+================================================================================

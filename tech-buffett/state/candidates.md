@@ -9,7 +9,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | TTD | NASDAQ | Mid | 8/10 | 23.4x | 3.4x | ~25% | 27.5% | World-class DSP at distressed valuation; DCF IV $33 vs $24 spot; Q1 reports May 7 — buy gated on print quality + permanent CFO + no adverse Amazon news | 2026-05-06 |
 | 2 | MSFT | NASDAQ | Large | 8/10 | ~26x | ~10.7x | +18% | ~22% (capex compressed) | HELD 1.5 sh @ $419.73; Q3 FY26 print 4/29 raised CY26 capex to ~$190B — yellow flag but thesis intact; DCF IV $452 (10% MoS) | 2026-05-06 |
-| 3 | GOOGL | NASDAQ | Large | 8/10 | ~22x fwd | ~10x | ~22% (re-accel) | ~30%+ | UPGRADED 6->8: GCP +63% Q1 print recasts AI thesis from laggard to co-leader; INITIATION NEEDED — no coverage on file | 2026-05-06 |
+| 3 | GOOGL | NASDAQ | Large | 7/10 | ~24x fwd | ~11x | +22% Q1 | ~12% SBC-adj (capex compressed) | DCF (5/29) prob-wtd IV $261 @ 10% / $230 @ 11% vs $383 spot — gates FAIL by 43-48%; HOLD/WATCH; wait for Q2 print or pullback to $280-310 | 2026-05-29 |
 | 4 | NVDA | NASDAQ | Large | 7/10 | 40.1x | 22.1x | +65% | 44.8% | Irreplaceable AI compute platform at $4.77T cap; Q1 print late May; valuation re-stretched after +41% rally | 2026-05-06 |
 | 5 | META | NASDAQ | Large | 7/10 | ~22x | 7.0x | +33% | ~25% | Q1 rev +33% (fastest since 2021); -10% selloff post-print on capex raise to $125-145B; cheaper than peers | 2026-05-06 |
 | 6 | APP | NASDAQ | Large | 7/10 | 43.2x | 26.7x | +70% | 73.3% | Highest FCF margin in scan; AXON 2.0 AI ad platform; Q1 reports tonight (5/6) — defer rescore | 2026-05-06 |
@@ -38,11 +38,11 @@
 
 ## Priority watchlist for initiation reports
 
-1. **GOOGL — DCF next (Action 4).** Init + Deep Dive done. Highest-priority research action.
-2. **PUBM — Small-cap initiation.** Best fit for the empty small-cap slot. Paired with TTD as DSP/SSP construction.
-3. **CFLT — Mid-cap data-infra candidate.** Thesis durable; competitive dynamics need stress-testing.
-4. **TTD — Action 5 buy gated on permanent CFO hire** (July 2026 deadline). Q1 print cleared 3/4 gates. Pipeline complete; just needs the CFO announcement.
-5. **MNDY — STARTER PURCHASED 5/21.** Add tranches reserved at <$60 and on further confirmation; max position $1,200 per DCF sizing.
+1. **PUBM — Small-cap initiation.** Best fit for the empty small-cap slot. Paired with TTD as DSP/SSP construction. NOW TOP PRIORITY after GOOGL DCF gate fail.
+2. **CFLT — Mid-cap data-infra candidate.** Thesis durable; competitive dynamics need stress-testing.
+3. **TTD — Action 5 buy gated on permanent CFO hire** (July 2026 deadline). Q1 print cleared 3/4 gates. Pipeline complete; just needs the CFO announcement.
+4. **MNDY — STARTER PURCHASED 5/21.** Add tranches reserved at <$60 and on further confirmation; max position $1,200 per DCF sizing.
+5. **GOOGL — DCF GATES FAILED 5/29.** HOLD/WATCH. Re-eligible if (a) pullback to $280-310, or (b) Q2 2026 print (late July) confirms Cloud OM durability + buyback resumption + capex normalization signal, enabling DCF refresh.
 
 ## Active research pipeline (full Init -> Deep -> DCF -> Buy chain)
 
@@ -51,7 +51,7 @@
 | MSFT | 4/21 | 4/22 | 4/23 | 4/24 ($419.73, 1.5sh) | HELD |
 | TTD | 4/15 | 4/16 | 4/17 | gated on permanent CFO hire (July 2026 deadline; 3/4 gates pass, Q1 print confirmed) | DCF expires 6/16 |
 | MNDY | 4/28 | 4/29 | 4/30 | **5/21 ($77.36, 8.0sh) — STARTER** | HELD; DCF expires 10/30; add tranches reserved <$60 and on further confirmation |
-| GOOGL | 5/7 | 5/10 | pending | gated on DCF | DCF (Action 4) next eligible |
+| GOOGL | 5/7 | 5/10 | 5/29 ($261 IV @ 10% vs $382 spot, GATES FAIL) | NOT eligible — IV gap -43% to -48% | HOLD/WATCH; refresh DCF after Q2'26 print or wait for pullback |
 
 ---
 
