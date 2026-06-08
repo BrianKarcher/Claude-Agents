@@ -1,0 +1,354 @@
+================================================================================
+INITIATION OF COVERAGE
+PubMatic, Inc. (Nasdaq: PUBM)
+================================================================================
+Date:           June 3, 2026
+Analyst:        tech-buffett
+Action:         Action 2 (Initiation of Coverage)
+Cap bucket:     Small cap (~$517M market cap @ ~$11.13 live, 2026-06-03)
+Live price ref: ~$11.13 (intraday 2026-06-03; 52-wk range $6.15-$13.88) — qualitative only, no trade
+Preliminary rating: WATCH / ACCUMULATE ON CONFIRMATION
+Filings used:   research/filings/PUBM-10K-FY2025.md
+                research/filings/PUBM-EARNINGS-FY2026-Q1.md
+                (created this session as bookkeeping from user-supplied source files)
+
+--------------------------------------------------------------------------------
+0. WHY PUBM, WHY NOW
+--------------------------------------------------------------------------------
+PubMatic is the portfolio's highest-conviction candidate for the empty small-cap
+slot (currently 0% of the portfolio vs. a ~33% long-run target). It is the
+sell-side mirror image of The Trade Desk (TTD), a name we already cover deeply:
+where TTD is the leading independent DSP (the buy side), PUBM is a leading
+independent SSP (the sell side). Owning both would let us construct a paired,
+independent open-internet ad-tech position that does not depend on either Google
+or Amazon's walled gardens.
+
+The setup is a classic small-cap value-with-optionality shape:
+  - The stock is near multi-year lows ($11 vs. a $76 era for MNDY-style
+    drawdowns; 52-wk range $6.15-$13.88) on a revenue line that has gone
+    BACKWARDS the last two years (-3% FY2025) due to a specific, identifiable,
+    and self-limiting "legacy DSP" headwind plus lost 2024 political spend.
+  - Underneath that optical decline, the UNDERLYING business (ex-legacy DSP)
+    grew +13% in Q1 2026, with CTV +18% (ex-DSP), mobile app +25%, and emerging
+    revenues +80%. Management guides to a return to reported growth in Q3 and
+    double-digit growth in H2 2026 as the legacy DSP laps.
+  - The balance sheet is fortress-grade for a company this size: $145M cash,
+    ZERO debt, against a ~$517M market cap. Net cash is ~28% of the entire
+    market cap.
+  - 40 consecutive quarters of positive adjusted EBITDA and consistent FCF
+    ($46M FY2025, $232M cumulative since 2021).
+  - Two free options sit on top: (a) a credible AI/agentic ad story (AgenticOS)
+    that is already ~14% of revenue and growing 80%+, and (b) the Google ad-tech
+    antitrust remedy, where management frames each 1% of share gained as
+    $50-75M of ~80%-margin revenue against a current ~4% share.
+
+This is exactly the kind of misunderstood-incumbent-at-a-cheap-price that fits
+our mandate. But "cheap and improving" is a thesis to be tested, not bought on
+sight. This initiation establishes the facts; the deep dive and DCF must
+confirm the asymmetry before any capital is committed.
+
+--------------------------------------------------------------------------------
+1. BUSINESS DESCRIPTION
+--------------------------------------------------------------------------------
+PubMatic (founded 2006, Delaware; IPO'd on Nasdaq Dec 9, 2020 at symbol PUBM) is
+an independent, AI-powered, sell-side advertising technology company. Its core
+function: an independent Supply-Side Platform (SSP) that lets digital publishers
+(websites, apps, streamers/CTV) monetize their ad inventory by connecting them,
+in real time, to buyers (DSPs, agencies, advertisers).
+
+Mechanics and economics:
+  - PubMatic charges publishers a fee that is generally a PERCENTAGE of the
+    value of the ad impressions monetized on its platform (a take rate on
+    spend). It earns money only when it successfully monetizes an impression —
+    its incentives are aligned with publisher yield and buyer ROI.
+  - Revenue is reported on a NET basis: gross billings to buyers, less amounts
+    paid to publishers, less SPO rebates. This is why accounts receivable
+    ($337M) and accounts payable ($343M) dwarf reported revenue ($283M) — PUBM
+    collects gross from buyers and pays publishers, keeping only its take.
+  - Critically, PubMatic OWNS AND OPERATES its own hardware/software
+    infrastructure globally rather than renting public cloud. At trillion-
+    impressions-per-day scale, this is a structural cost advantage: cost per
+    million impressions fell ~20% YoY even as volume grew ~26%. It also
+    underpins the AI story (owned NVIDIA GPU + Triton inference).
+
+Scale markers (FY2025 / Q1 2026):
+  - ~1,980 premium publishers worldwide; ~28 of the top 30 global streamers.
+  - >1 trillion impressions processed per day (94.2T in Q1 2026, +26% YoY).
+  - SPO (Supply Path Optimization) = ~55-56% of total platform activity.
+  - 1,030 employees: 322 US, 573 India (heavy, low-cost engineering base), 135
+    elsewhere.
+
+--------------------------------------------------------------------------------
+2. PRODUCTS & SEGMENTS
+--------------------------------------------------------------------------------
+PubMatic does not report GAAP segments, but the business decomposes into a core
+SSP plus a fast-growing "emerging revenue" layer and an AI layer on top.
+
+Core SSP / monetization:
+  - OpenWrap: omnichannel header-bidding solution (open-source Prebid based);
+    now integrated with all 3 leading mobile mediation platforms (AppLovin MAX,
+    Google AdMob, Unity LevelPlay) = >90% of global SDK inventory.
+  - Channel mix (Q1 2026 YoY): CTV (Americas +13%, global ex-DSP +18%), mobile
+    app (+25%+), display (+5%). CTV + mobile app + emerging together grew >20%
+    and are now the majority of revenue.
+
+Emerging revenue (Activate, Commerce Media/Convert, Connect, AI Solutions):
+  - +80%+ YoY, ~14% of total revenue in Q1 2026.
+  - Activate: PubMatic's direct-buying platform (buyers transact directly
+    against premium supply in PubMatic's environment). Grew >3x YoY. When a
+    buyer uses Activate, the WHOLE dollar stays in PubMatic's ecosystem
+    (incremental SSP rev share on top of Activate rev share) — a structurally
+    higher-value transaction than a third-party-DSP flow.
+  - Connect: data platform aggregating 300+ data/commerce-media partners;
+    enables sell-side audience targeting. Now augmented by Walmart Connect
+    Select (first-party shopper data) and PayPal Ads ID (25B+ transactions,
+    400M verified PayPal/Venmo accounts, deterministic identity).
+  - Commerce media TAM cited at ~$18B.
+
+AI / AgenticOS (launched Jan 2026 at CES):
+  - 20+ operational AI agents for buyers and publishers; 1,000+ AI-powered
+    deals transacted; 30+ live fully-autonomous end-to-end campaigns globally.
+  - 80-90% campaign setup time savings; 30-40% CPM improvement and 40% more
+    working media when used with Activate. Management frames agentic advertising
+    as the "third transformation" (after RTB and mobile) and larger than both.
+  - Pricing: Activate rev-share based today; subscription models being explored
+    for some AI tools. AI is positioned as both a revenue driver AND an internal
+    margin lever (engineering/finance/legal/customer-success productivity gains
+    funding GTM reinvestment; headcount down YoY).
+
+--------------------------------------------------------------------------------
+3. CUSTOMERS & GO-TO-MARKET
+--------------------------------------------------------------------------------
+Four customer types: (1) publishers, (2) buyers (DSPs, agency holdcos,
+independent agencies, advertisers), (3) data partners/curators, (4) retail/
+commerce media participants.
+
+Customer concentration — the central structural risk:
+  - PubMatic depends on a LIMITED number of large DSPs for a large share of
+    impressions purchased. Its two largest DSP relationships are Google and The
+    Trade Desk. Both contracts auto-renew and are terminable for convenience on
+    30 days' notice.
+  - This concentration is the proximate cause of the last two years of pain: a
+    "legacy DSP" buyer implemented bidding-methodology/platform changes (H2 2024
+    and another in H2 2025) that materially reduced spend routed through PUBM.
+    This is the single most important number to track — the company is
+    diversifying away from it (mid-market DSP spend +20%, 50+ new DSPs added).
+
+GTM:
+  - Dual sales motion: publisher acquisition/relationship teams + buyer-side
+    business development. SPO and Activate agreements signed directly with
+    advertisers/agencies to pull spend onto the platform without proportional
+    cost increases.
+  - Geographic diversification working: APAC +25%, EMEA +10% in Q1 2026,
+    offsetting an Americas -12% (legacy DSP drag).
+  - Net dollar-based retention: 96% FY2025 (down from 107% FY2024), "flattish"
+    in Q1 2026 — depressed by the legacy DSP. Management expects a return to
+    >100% in H2 2026. NDR is the cleanest single proxy for thesis confirmation.
+
+--------------------------------------------------------------------------------
+4. COMPETITIVE LANDSCAPE & MOAT ASSESSMENT
+--------------------------------------------------------------------------------
+The SSP market is competitive and consolidating. Competitors:
+  - Google's ad exchange (AdX / Google Ad Manager) — the ~60% gorilla, and the
+    subject of the DOJ ad-tech antitrust case (the upside catalyst).
+  - Magnite (the other scaled independent SSP, especially CTV).
+  - Index Exchange, OpenX, Sharethrough, and smaller/regional private SSPs.
+  - Amazon's Transparent Ad Marketplace and various walled-garden supply.
+
+PubMatic's differentiation:
+  - Independence/neutrality: it owns no media and does not arbitrage inventory,
+    so its algorithmic decisions are unconflicted — a genuine trust advantage
+    vs. Google, which sits on both sides of the auction.
+  - Owned infrastructure: structural unit-cost advantage and a faster AI
+    feedback loop (own GPUs, own data, end-to-end agentic execution).
+  - Five claimed advantages (mgmt framing): (1) scale of supply (~2,000
+    publishers / 100,000+ properties / 28 of top 30 streamers), (2) Activate
+    direct-buy, (3) AgenticOS + 20 agents, (4) owned NVIDIA GPU infra, (5)
+    Connect data platform (300+ partners). The claim is no competitor has all
+    five.
+
+MOAT VERDICT — NARROW, MODERATE confidence (preliminary):
+  - In favor: real switching costs for publishers (deep integrations,
+    header-bidding wrappers, customer-success embedding); scale economics in
+    owned infra that improve with volume; a genuine independence/neutrality
+    positioning the walled gardens structurally cannot replicate; an AI/data
+    flywheel that compounds with each transaction.
+  - Against: the SSP layer has historically been more commoditized and
+    take-rate-pressured than the DSP layer; PubMatic does NOT control demand
+    (its largest buyers can and did reroute spend with 30 days' notice); the
+    open-internet SSP is squeezed between Google's owned exchange and the walled
+    gardens. Take-rate compression is the structural long-term threat.
+  - Net: a narrow moat, not a wide one. The investability case rests less on an
+    impregnable moat and more on (a) a cheap price, (b) a fortress balance
+    sheet, (c) a real (if narrow) independence + owned-infra edge, and (d) two
+    free call options (AI + Google remedy).
+
+--------------------------------------------------------------------------------
+5. MANAGEMENT
+--------------------------------------------------------------------------------
+  - Rajeev Goel — co-founder and CEO since 2006. Long-tenured founder-operator;
+    deeply credible on the technology and industry-structure narrative. Founder-
+    led with skin in the game (dual-class structure gives insiders control).
+  - Steven Pantelick — CFO. Disciplined, consistent voice on margins, expense
+    control, and capital allocation; emphasizes the 40-quarter positive-EBITDA
+    streak and unit-cost discipline. CFO stability is a positive contrast to
+    TTD's revolving CFO seat.
+  - Governance flag: dual-class Class A (1 vote) / Class B (10 votes). Insiders
+    (founders) have substantial control. Standard founder-control flag — a
+    governance discount, not a disqualifier, and arguably protective against a
+    low-ball takeout at a depressed price.
+
+  - LEADERSHIP TRANSITION (yellow flag, Q1 2026): the Chief Growth Officer
+    (Pauline, 15 yrs, departing for health reasons) and the Americas CRO (Kyle
+    Dozeman, 13 yrs, leaving to pursue entrepreneurship) are BOTH exiting. Both
+    are framed as personal reasons and both remain through a transition. A
+    global CRO search (Heidrick & Struggles) is underway with intent to
+    consolidate revenue functions under one leader; hire expected "within a
+    couple of months." Two simultaneous senior revenue-org departures during a
+    revenue-trough year is a real execution risk that the deep dive must weigh —
+    even if the stated reasons are benign.
+
+Capital allocation: B+/A- preliminary. Consistent, opportunistic buybacks
+($181M cumulative through YE2025; 13.5M shares / $190M through Q1 2026; $85M
+remaining authorized through 2026), funded entirely from FCF with no debt, while
+the stock is demonstrably cheap. No dividend (appropriate at this stage). $3M
+equity investment in Q1 hints at small tuck-in M&A optionality.
+
+--------------------------------------------------------------------------------
+6. KEY RISKS
+--------------------------------------------------------------------------------
+Ranked by my preliminary weighting:
+
+  (1) DSP CONCENTRATION / TAKE-RATE COMPRESSION (highest weight, ~30%): a small
+      number of large DSPs (Google, TTD) drive a large share of impressions and
+      can reroute spend on 30 days' notice. The legacy-DSP headwind is the live
+      proof. Long-term SSP take-rate compression is the structural overhang.
+  (2) AI DISRUPTION — DOUBLE-EDGED (~20%): AgenticOS is the bull case, but if
+      buyers/LLMs (OpenAI's stated $100B ad ambition) disintermediate the SSP
+      layer or compress take rates, PUBM is on the wrong side. Mgmt argues it
+      partners; the deep dive must test the disintermediation tail.
+  (3) RETURN-TO-GROWTH EXECUTION (~15%): the entire thesis hinges on H2 2026
+      reacceleration to double digits. If Q3/Q4 do NOT reaccelerate as the
+      legacy DSP laps, the "trough" reframes as "structural decline."
+  (4) LEADERSHIP TURNOVER (~10%): two senior revenue-org exits mid-trough.
+  (5) GOOGLE LITIGATION + ANTITRUST (~10%, net positive but uncertain): PUBM is
+      in active litigation with Google AND a beneficiary of the DOJ remedy. The
+      remedy is upside optionality; the litigation is a contained cost/risk.
+  (6) PRIVACY / COOKIE / IDENTIFIER DEPRECATION + REGULATION (~10%): GDPR, CCPA,
+      state laws, cookie/ID deprecation could impair targeting/data value.
+  (7) MACRO / FX / SEASONALITY (~5%): ad spend is cyclical; Q1 seasonally weak;
+      EUR/GBP FX a recurring headwind; revenue concentrated in Q4.
+
+--------------------------------------------------------------------------------
+7. RECENT RESULTS
+--------------------------------------------------------------------------------
+FY2025 (10-K):
+  - Revenue $282.9M, -3% YoY (driven by ~$14.2M lost 2024 political spend + the
+    legacy-DSP platform changes). Gross margin 64%. Operating LOSS $(17.3)M
+    (-5% margin; first operating loss in years, driven by SBC + revenue decline
+    + opex growth). Net loss $(14.5)M. Adjusted EBITDA $61.6M (21.8% margin,
+    down from 31.7% in FY2024). OCF $81.1M; FCF ~$46M. SBC $38.4M (13.6% of
+    revenue — high relative to a sub-$300M revenue base; a key DCF input).
+  - NDR fell to 96% (from 107%). Net cash $145.5M, zero debt.
+
+Q1 2026 (earnings):
+  - Revenue $62.6M, -2% reported; +13% ex-legacy DSP (83% of revenue). Beat
+    guidance on both revenue and adjusted EBITDA.
+  - Gross margin 58.3%; operating loss $(15.3)M; net loss $(12.5)M; adj. EBITDA
+    $2.6M (4% margin, down from 13% — seasonally weakest quarter + investment +
+    FX). FCF $10.7M (17% margin, +47% YoY $). 40th consecutive positive-EBITDA
+    quarter.
+  - Channel: CTV ex-DSP +18%, mobile app +25%, emerging +80%. Mid-market DSP
+    +20%. Impressions +26% to 94.2T; unit cost -20% TTM.
+  - Q2 guide: revenue $68-70M, adj. EBITDA $8-10M. FY2026 capex only $16-19M
+    (capital-light). H2 2026: return to reported growth (Q3) and double-digit
+    growth (H2) with margin expansion.
+
+The shape: a company whose REPORTED line is masking a healthy +13% underlying
+business and an 80%-growing emerging/AI layer, with the masking headwind set to
+lap in mid-Q3 2026.
+
+--------------------------------------------------------------------------------
+8. VALUATION SNAPSHOT (preliminary — DCF will refine)
+--------------------------------------------------------------------------------
+Live reference (2026-06-03, ~$11.13; qualitative, no trade):
+  - Market cap ~$517M; net cash $145M => enterprise value ~$372M.
+  - EV / FY2025 revenue ($283M): ~1.3x. EV / FY2025 adj. EBITDA ($62M): ~6.0x.
+  - EV / FY2025 FCF ($46M): ~8.1x. P / FCF (on market cap): ~11.2x.
+  - Net cash is ~28% of market cap; the operating business is being valued at
+    ~6x trailing adj. EBITDA and ~8x FCF — trough-decile ad-tech multiples for
+    a FCF-positive, net-cash, narrow-moat platform.
+
+Preliminary framing (to be stress-tested in the deep dive / DCF):
+  - The market is pricing PUBM as a structurally declining business. If the H2
+    2026 reacceleration is real and underlying +13% growth resumes optically,
+    the multiple has meaningful room to re-rate from ~6x EBITDA toward a
+    mid-teens ad-tech multiple, independent of any AI or Google-remedy upside.
+  - Bull free options NOT in base case: (a) AgenticOS scaling emerging revenue,
+    (b) Google ad-tech remedy — mgmt's "each 1% share = $50-75M revenue at ~80%
+    margin" math implies enormous, high-incremental-margin upside on even a
+    modest share shift from a ~4% base. These are call options, not base case.
+  - Bear case: legacy-DSP decline proves structural, take rates compress, AI
+    disintermediates the SSP, and the stock is a slowly-melting ice cube whose
+    only floor is its net cash (~$3/share) — i.e., downside toward the high-
+    single-digits where it has already traded ($6.15 52-wk low).
+
+A formal DCF (Action 4) is required before any buy. The high SBC (13.6% of
+revenue) means the DCF MUST underwrite on SBC-adjusted FCF, not reported FCF,
+and must explicitly model take-rate trajectory and the H2 reacceleration.
+
+--------------------------------------------------------------------------------
+9. PRELIMINARY RATING & PIPELINE
+--------------------------------------------------------------------------------
+PRELIMINARY RATING: WATCH / ACCUMULATE ON CONFIRMATION.
+
+PUBM is the right candidate for the empty small-cap slot and has the right
+shape (cheap, net-cash, FCF-positive, narrow-moat, founder-led, with two free
+options). But the thesis is explicitly contingent on the H2 2026 reacceleration
+being real, and the deep dive must resolve several open questions before capital
+is committed.
+
+THESIS-MUST-HOLD conditions (to confirm in Deep Dive / subsequent prints):
+  (i)   H2 2026 returns to reported growth (Q3) and double-digit growth (H2).
+  (ii)  NDR returns toward / above 100% as the legacy DSP laps in mid-Q3.
+  (iii) Adj. EBITDA margin re-expands toward the high-20s%/30% on the fixed-cost
+        base as revenue scales (Q2 guide of $8-10M EBITDA on $68-70M = ~13% is
+        the first checkpoint).
+  (iv)  Emerging/AI revenue (AgenticOS) sustains 50%+ growth and shows a
+        credible path to a monetization model (rev-share + subscription).
+  (v)   A permanent global CRO is hired and the revenue org stabilizes.
+
+THESIS-BREAK triggers (preliminary; 3+ = avoid/exit):
+  - Q3 2026 does NOT return to reported YoY growth despite lapping the DSP.
+  - NDR stuck below ~98% into Q4 2026.
+  - Take-rate / SSP economics visibly compressing (gross margin breaking below
+    ~60% structurally).
+  - Emerging-revenue growth decelerates sharply (sub-30%), undercutting the AI
+    optionality.
+  - Another major DSP reroutes spend, or Google/TTD relationship deteriorates.
+
+DEEP DIVE MARCHING ORDERS (Action 3):
+  1. Decompose the "legacy DSP" headwind precisely: size it, confirm the
+     mid-Q3 2026 lap timing, and stress-test whether the remaining DSP
+     concentration is improving or merely shifting.
+  2. Unit economics: take-rate trajectory, gross-margin durability, SBC-adjusted
+     FCF margin, and the operating leverage of the owned-infra fixed-cost base.
+  3. TAM + AgenticOS: size the agentic-advertising and commerce-media
+     opportunity; assess the AI disintermediation tail (LLM/OpenAI ad ambition)
+     vs. PUBM's partner positioning.
+  4. Google ad-tech remedy scenario tree: probability-weight the share-gain
+     optionality (each 1% ~ $50-75M at ~80% margin) WITHOUT putting it in the
+     base case.
+  5. Competitive dynamics vs. Magnite and Google over 5-10 years; SSP
+     consolidation thesis.
+  6. Management/governance: weigh the dual revenue-leader departures and the
+     dual-class structure; capital-allocation track record.
+  7. 5/10-year bull/base/bear scenarios and a thesis-break checklist.
+  8. Explicit DCF marching orders: SBC-adjusted FCF underwriting, take-rate
+     sensitivity, H2-reacceleration base case, net-cash floor, 10% and 12%
+     hurdle rates, perpetuity-growth + exit-multiple terminal values.
+
+No position. No trade. This initiation advances PUBM from candidate (#14, 6/10
+on the 2026-05-06 scan; #1 small-cap initiation priority) into the active
+research pipeline. Deep Dive (Action 3) is the next eligible action.
+================================================================================

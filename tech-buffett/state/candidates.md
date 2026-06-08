@@ -20,7 +20,7 @@
 | 11 | IOT | NYSE | Mid | 6/10 | N/M | 8.0x | ~36% | 12.8% | AI/IoT fleet platform; -16% pullback improves entry | 2026-05-06 |
 | 12 | MU | NASDAQ | Large | 6/10 | 20.1x | 9.0x | high | 17.7% | Best value in AI memory; HBM supply shortage thesis intact; **PRICE FLAGGED — aggregator data corrupted, confirm with user** | 2026-05-06 |
 | 13 | AMD | NASDAQ | Large | 6/10 | ~50x fwd | 12.0x | +38% | ~16% | UPGRADED 4->6: data center +57%; Q2 guide $11.2B beats; CUDA moat not broken but AMD has earned legitimacy | 2026-05-06 |
-| 14 | PUBM | NASDAQ | Small | 6/10 | N/M | ~1.5x | low-teens | small + | NEW: independent ad-tech SSP, paired play to TTD; cap $472M = ideal small-cap slot fit; Q1 reports 5/7 | 2026-05-06 |
+| 14 | PUBM | NASDAQ | Small | 6/10 | N/M | ~1.3x (EV/rev) | -2% rep / +13% ex-DSP | ~16% FY25 | INITIATED 6/3 (INIT-PUBM-2026-06-03). Independent SSP / TTD's mirror; ~$517M cap / EV ~$372M (net cash ~28% of cap, zero debt); EV/adj-EBITDA ~6x; 40 straight +EBITDA qtrs; +13% underlying masked by self-limiting legacy-DSP headwind lapping mid-Q3; AgenticOS + Google-remedy free options. WATCH/ACCUMULATE ON CONFIRMATION; Deep Dive next | 2026-06-03 |
 | 15 | DOCN | NYSE | Mid | 6/10 | ~25x fwd | ~8x | accel | positive | NEW: cloud for SMBs/devs; +33.7% post-Q1; FY26 guide $1.13-1.15B; AI cloud traction | 2026-05-06 |
 | 16 | CFLT | NASDAQ | Mid | 6/10 | N/M | ~8x | ~30% | small + | NEW: Kafka data streaming, founder-led, AI/ML pipeline infra; competitive dynamics need stress test | 2026-05-06 |
 | 17 | AXON | NASDAQ | Mid | 5/10 | 252x | 11.0x | +33% | 2.7% | Near-monopoly public safety; Q1 reports 5/6 PM | 2026-05-06 |
@@ -38,7 +38,7 @@
 
 ## Priority watchlist for initiation reports
 
-1. **PUBM — Small-cap initiation.** Best fit for the empty small-cap slot. Paired with TTD as DSP/SSP construction. NOW TOP PRIORITY after GOOGL DCF gate fail.
+1. **PUBM — INITIATED 6/3.** Best fit for the empty small-cap slot. Paired with TTD as DSP/SSP construction. Deep Dive (Action 3) now next eligible. Buy gated on H2 2026 reacceleration + NDR recovery + permanent global CRO hire + passing Deep Dive/DCF.
 2. **CFLT — Mid-cap data-infra candidate.** Thesis durable; competitive dynamics need stress-testing.
 3. **TTD — Action 5 buy gated on permanent CFO hire** (July 2026 deadline). Q1 print cleared 3/4 gates. Pipeline complete; just needs the CFO announcement.
 4. **MNDY — STARTER PURCHASED 5/21.** Add tranches reserved at <$60 and on further confirmation; max position $1,200 per DCF sizing.
@@ -52,6 +52,7 @@
 | TTD | 4/15 | 4/16 | 4/17 | gated on permanent CFO hire (July 2026 deadline; 3/4 gates pass, Q1 print confirmed) | DCF expires 6/16 |
 | MNDY | 4/28 | 4/29 | 4/30 | **5/21 ($77.36, 8.0sh) — STARTER** | HELD; DCF expires 10/30; add tranches reserved <$60 and on further confirmation |
 | GOOGL | 5/7 | 5/10 | 5/29 ($261 IV @ 10% vs $382 spot, GATES FAIL) | NOT eligible — IV gap -43% to -48% | HOLD/WATCH; refresh DCF after Q2'26 print or wait for pullback |
+| PUBM | 6/3 | pending | pending | gated on H2'26 reaccel + NDR recovery + permanent CRO + passing Deep/DCF | Init done; Deep Dive next eligible |
 
 ---
 
