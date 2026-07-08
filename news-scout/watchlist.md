@@ -27,6 +27,7 @@
 | AMD | Advanced Micro Devices | MI300, ROCm, AI accelerator challenger |
 | CRM | Salesforce | Agentforce, enterprise AI |
 | SNOW | Snowflake | Data cloud, Cortex AI |
+| CHTR | Charter Communications | Broadband/cable, Spectrum, mobile bundling |
 
 ## Disruptors / High-Growth
 | Ticker | Company | Notes |
@@ -36,6 +37,11 @@
 | HIMS | Hims & Hers | Telehealth, GLP-1 |
 | NET | Cloudflare | Edge compute, AI inference at the edge |
 | DDOG | Datadog | Observability, LLM monitoring |
+| ADBE | Adobe | Creative Cloud, Firefly generative AI |
+| ASML | ASML Holding | EUV lithography, semiconductor equipment |
+| HOOD | Robinhood | Retail trading, crypto, prediction markets |
+| NOW | ServiceNow | Enterprise workflow AI, agentic automation |
+| PYPL | PayPal | Digital payments, Venmo, stablecoin push |
 
 ## Private / Non-Public (newsworthy for YouTube)
 | Company | Notes |
