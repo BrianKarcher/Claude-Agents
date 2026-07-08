@@ -447,3 +447,98 @@
 - **Rating:** WATCH / ACCUMULATE ON CONFIRMATION. Buy gated on the H2 2026 reacceleration thesis (return to reported growth Q3, double-digit H2), NDR recovery toward 100%, EBITDA-margin re-expansion, sustained AgenticOS growth, and a permanent global CRO hire — then a passing Deep Dive and DCF (SBC-adjusted FCF underwriting, take-rate sensitivity, net-cash floor).
 - **Rationale:** Action #2 of the four-step discipline (Init -> Deep Dive -> DCF -> Buy). PUBM was the #1 small-cap initiation priority per the 2026-05-06 scan and the priority watchlist, elevated after the GOOGL DCF gate failure redirected attention to higher-asymmetry small caps. It is the natural fill for the empty small-cap slot (0% vs ~33% target) and a paired independent open-internet ad-tech construction alongside the TTD coverage we already hold in the pipeline. The shape is attractive (cheap, $145M net cash / zero debt = ~28% of mkt cap, FCF-positive 40 straight quarters, founder-led, +13% underlying growth masked by a self-limiting legacy-DSP headwind, plus AI and Google-remedy free options) but the thesis is explicitly contingent on the H2 reacceleration being real, so the rating is deliberately conditional. Initiation advances PUBM into the active pipeline; no capital committed.
 - **Resulting state:** Cash $5,751.53 unchanged. No trade. PUBM pipeline status: Init DONE -> Deep Dive (Action 3) next eligible. Active research pipeline now: MSFT (held), MNDY (held), TTD (buy gated on permanent CFO), GOOGL (DCF gates failed, HOLD/WATCH), PUBM (Init done). Holdings: 2/10.
+
+---
+
+## 2026-06-27 — Infusion (bookkeeping)
+
+- **Action:** Infusion (bookkeeping — not a daily action)
+- **Details:** Four standing weekly Monday deposits of $1,000.00 each, confirmed by user as landed, logged together this session:
+  - 2026-06-01: +$1,000.00 (8th infusion) — running total deposited $8,000.00
+  - 2026-06-08: +$1,000.00 (9th infusion) — running total deposited $9,000.00
+  - 2026-06-15: +$1,000.00 (10th infusion) — running total deposited $10,000.00
+  - 2026-06-22: +$1,000.00 (11th infusion) — running total deposited $11,000.00
+- **Rationale:** Standing $1,000 weekly Monday deposit per portfolio rules. User confirmed all four June Mondays (6/01, 6/08, 6/15, 6/22) settled. These had been flagged pending in the 6/27 mark-to-market note; now recorded. Bookkeeping only — does not consume the daily action.
+- **Resulting state:** Cash $5,751.53 -> $9,751.53 (+$4,000.00). Total deposited $7,000.00 -> $11,000.00. Holdings unchanged: MSFT 1.5 sh, MNDY 8.0 sh (cost basis $1,248.48). Total portfolio value ~$10,888.43 (cash $9,751.53 + invested $1,136.90 at 6/26 closes). Allocation: large-cap MSFT ~5.1%, mid-cap MNDY ~5.3%, small-cap 0%, cash ~89.6%. Cash now substantial — small-cap slot (PUBM) and TTD/MNDY adds are the priority deployments once research and price gates clear.
+
+---
+
+## 2026-06-27 — Deep Dive — PUBM
+
+- **Action:** Deep Dive (Action 3)
+- **Ticker:** PUBM (PubMatic, Inc., Nasdaq; small cap ~$517M)
+- **Details:** Long-form deep dive completed at `research/deep-dives/DEEP-PUBM-2026-06-27.txt`, built from the two existing filing extracts (`PUBM-10K-FY2025.md`, `PUBM-EARNINGS-FY2026-Q1.md` — no new bookkeeping needed) plus qualitative web context on the Google ad-tech antitrust remedy and the SSP competitive landscape (no financials fetched). Thirteen sections executing the 8 initiation marching orders: (0) exec summary, (1) unit economics + a critical SHARE-COUNT RECONCILIATION gap (10-K extract's "93.9M Class A" does NOT reconcile with ~47.1M EPS-weighted shares / ~$517M cap at ~$11.13 — valuation must use ~47-48M, verified before DCF), (1.3) the SBC-adjusted FCF crux (FY2025 reported FCF $46.3M flattered by $38.4M SBC; true SBC-adj FCF only ~$7.9M = ~2.8% margin = ~47x EV, NOT the 8x EV/reported-FCF screen), (2) legacy-DSP decomposition (affected ~17% cohort down >50% YoY dragging +13% underlying to -2% reported; laps mid-Q3 2026 — mechanically self-limiting but contingent on no third DSP rerouting), (3) TAM/AgenticOS + AI-disintermediation tail (agentic reshapes rather than erases SSP, but take rate can compress), (4) competitive dynamics — KEY DOWNGRADE: PUBM is a sub-scale #3 (~4% SSP share) behind Magnite (~25% US, CTV leader) in a consolidating layer (32->18 SSPs); moat moved to NARROW / LOW-TO-MODERATE confidence, (5) Google-remedy scenario tree (Brinkema likely behavioral not structural-AdX-divestiture; ~50% behavioral / ~20% structural-but-delayed-by-appeal / ~30% weak-or-negligible; treat as bull-case-only delayed option, net of active Google litigation cost), (6) capital allocation B+ (FCF-funded buybacks, but track NET shares given 13.6% SBC), (7) management/governance (Goel 20-yr founder-CEO, stable CFO = positive vs TTD; dual-class flag; YELLOW FLAG: two senior revenue leaders departing mid-trough, global CRO search), (8) optionality, (9) 5/10-yr scenarios, (10) thesis-break, (11) confirmation checklist, (12) DCF marching orders, (13) preliminary view.
+- **Key conclusions:**
+  - The cheapness is real only on EV/EBITDA (~6x) and EV/reported-FCF (~8x); on SBC-adjusted FCF (~$8M) it is ~47x trailing. The entire case is a margin-recovery + reaccel bet, NOT a static-FCF bargain.
+  - Competitive position is weaker than the initiation implied: sub-scale #3 behind a ~5-6x-larger, CTV-strong Magnite; moat NARROW / LOW-TO-MODERATE.
+  - Google remedy is likely behavioral and multi-year — an option, not an event.
+  - Probability weights revised to BEAR 30% / BASE 50% / BULL 20% (bear raised from ~25%).
+  - Preliminary prob-weighted indicative IV ~$16-19 vs ~$11.13 (~+45-70%), bear floor ~$6-9 (net-cash-anchored). Favorable but NOT a >50%-MoS layup — narrower and more execution-dependent than MNDY was.
+  - CRITICAL DATA GAP: reconcile share count (~47-48M vs the extract's 93.9M) before the DCF; per-share IV is one-for-one sensitive.
+- **Rating:** WATCH / ACCUMULATE ON CONFIRMATION (unchanged). Buy gated on: (a) a DCF clearing >=40% MoS at a 12% hurdle (higher bar than MSFT/MNDY's 10%, reflecting narrow moat + execution risk), OR (b) confirmation of the Q3 2026 reacceleration + permanent global-CRO hire. A small confirmation-sized small-cap-slot STARTER could be justified post-DCF if the MoS is wide enough.
+- **Rationale:** Action #3 of the four-step discipline (Init -> Deep Dive -> DCF -> Buy). PUBM is the priority small-cap-slot candidate; the deep dive confirms the right shape (cheap, net-cash, FCF-positive, founder-led, two free options) but sharpens three cautions (SBC-adjusted owner earnings, sub-scale #3 competitive position, behavioral-not-structural remedy) that argue for the DCF to do real work and for a wide margin of safety. Markets were closed (Saturday) so no trade was possible regardless; a research action was the correct use of the day.
+- **Resulting state:** Cash $9,751.53 unchanged (post-infusion). No trade. PUBM pipeline: Init DONE -> Deep Dive DONE -> DCF (Action 4) next eligible. Holdings: 2/10. Active pipeline: MSFT (held), MNDY (held), TTD (buy gated on permanent CFO), GOOGL (DCF gates failed, HOLD/WATCH), PUBM (Deep Dive done, DCF next).
+
+---
+
+## 2026-07-08 18:20 ET — Daily Mark-to-Market (bookkeeping)
+
+- **Action:** Daily portfolio mark-to-market (non-action bookkeeping)
+- **Details:** Session-start mark on 7/08 closing prices (market CLOSED — after regular hours, Wednesday). MSFT $372.97 (6/26) -> $388.84 (7/08 close), +4.3%; MNDY $72.18 (6/26) -> $84.10 (7/08 close), +16.5%. Updated portfolio.md holdings and summary. Invested value $1,136.90 -> $1,256.06; total value $10,888.43 -> $11,007.59; total gain flipped to +$7.59 (+0.07%) vs $11,000 deposited — first positive since the drawdown. Today's-gain fields left n/a (12-calendar-day gap since prior mark = multi-session move, not single session).
+- **Rationale:** Daily bookkeeping per session-start protocol. Both holdings recovered off the June lows; MNDY notably strong. No action triggered by the mark; we hold.
+- **Resulting state:** Cash $9,751.53 | MSFT 1.5 sh @ $388.84 = $583.26 | MNDY 8.0 sh @ $84.10 = $672.80 | Total $11,007.59 | +0.07% vs deposits.
+
+---
+
+## 2026-07-08 — DCF — PUBM
+
+- **Action:** DCF (Action 4)
+- **Ticker:** PUBM (PubMatic, Inc., Nasdaq; small cap ~$629M @ $13.55)
+- **Details:** Full 10-year DCF model completed at `research/dcf/DCF-PUBM-2026-07-08.txt`, built strictly to the 14 marching orders in DEEP-PUBM-2026-06-27 sec 12, from existing filing extracts (`PUBM-10K-FY2025.md`, `PUBM-EARNINGS-FY2026-Q1.md` — no new bookkeeping; NO filings fetched from web). Features: (1) SHARE COUNT RECONCILED FIRST — the 10-K extract's "93.9M Class A" is NOT the economic base; Q1'26 EPS-weighted diluted shares 47.1M and live mkt cap $629M/$13.55 = 46.4M both confirm ~47M; model uses 47.0M declining -1.0%/-1.5%/-2.0% per yr bear/base/bull; (2) underwriting on SBC-ADJUSTED FCF (FY25 baseline ~$7.9M / 2.8% margin, NOT reported $46.3M/16%); (3) 10-yr explicit FY2026-FY2035; (4) weights BEAR 30% / BASE 50% / BULL 20% per deep dive; (5) revenue build by driver with legacy-DSP lap mechanics; (6) EBITDA recovery 21.8%->15%/28%/32% by FY30, SBC 13.6%->12%/10%/8%; (7) capex kept as real cost ~$33-55M; (8) net-cash floor +$145M / zero debt; (9) Google remedy BULL-CASE-ONLY as delayed +1-2pt share option; (10) BOTH terminal methods (perpetuity g 2%/3%/3.5% AND exit multiple 7x/10x/14x SBC-adj FCF), averaged; (11) 12% PRIMARY hurdle with 10% and 14% sensitivities; (12) reverse DCF + combined-stress tail.
+- **Live price reference:** ~$13.55 (intraday 2026-07-08 via web search aggregation; market CLOSED — qualitative context only, NO trade). 52-wk $6.15-$13.99.
+- **Key results (prob-weighted intrinsic value per share, scenario-end share convention):**
+  - IV @ 10% hurdle (sensitivity): **~$14.90** (Bear $3.55 / Base $12.60 / Bull $32.00) -> +10% MoS
+  - IV @ 12% hurdle (PRIMARY): **~$11.50** (Bear $3.40 / Base $10.40 / Bull $26.40) -> -15% (PREMIUM)
+  - IV @ 14% hurdle (sensitivity): **~$9.75** (Bear $3.25 / Base $8.70 / Bull $22.00) -> -28% (PREMIUM)
+  - Conservative current-47M-share convention shifts each ~10-15% lower (12% central ~$9.70).
+  - Bear net-cash floor: ~$3-3.4/share.
+- **Gate check vs Deep Dive sec 12.13 (">=40% MoS at 12% hurdle"):** **FAIL.** Prob-wtd IV @ 12% ~$11.50 is BELOW the $13.55 spot (negative MoS). The >=40% MoS bar implies a buy price of ~$6.90-$7.60. Even the generous 10% hurdle gives only ~+10% MoS, far short of the >=40% narrow-moat bar. Reverse DCF: $13.55 requires a Base-plus-Bull hybrid (FY35 SBC-adj FCF ~$90-100M, i.e. ~9-10% rev CAGR AND ~30% EBITDA AND ~9% SBC all compounding).
+- **What changed since the deep dive:** PUBM ran ~+22% (from the 6/27 ~$11.13 reference to ~$13.55) to near its 52-wk high of $13.99. At $11.13 the 12% prob-wtd IV of ~$11.50 was roughly at par; the ~$2.40 run took the stock from thin-MoS to a ~15% premium. The BUSINESS thesis is unchanged and favorable (fortress balance sheet ~$145M net cash / zero debt / ~23% of cap, founder-led, stable CFO, AgenticOS + Google-remedy free options); only the PRICE moved against us.
+- **Rating:** WATCH / ACCUMULATE ON A PULLBACK OR CONFIRMED Q3 REACCEL (was WATCH / ACCUMULATE ON CONFIRMATION). Practical downgrade driven by price, not thesis. NOT eligible for Action 5 (Buy).
+- **Buy re-eligibility:** (a) pullback to ~$8-10 (restores 12-40% MoS at the 12% hurdle), OR (b) Q3 2026 print (~early Nov 2026) confirms return to reported YoY growth + H2 double-digit + NDR toward 100% + permanent global-CRO hire, at which point REFRESH this DCF (firmer base case could lift 12% prob-wtd IV into the high-teens).
+- **Rationale:** Action #4 of the four-step discipline (Init -> Deep Dive -> DCF -> Buy). The DCF did exactly the work the deep dive assigned it: it reconciled the share count (~47M, not 94M), forced the valuation onto SBC-adjusted owner earnings (~$8M trailing, not the flattering $46M reported FCF), and applied the higher 12% hurdle and >=40% MoS bar appropriate for a narrow-moat, execution-dependent sub-scale #3. The verdict is a clean, disciplined PASS ON BUYING: a good business whose price ran ~22% past our margin-of-safety window in the eleven days since the deep dive. Buying here would violate the wide-MoS discipline the deep dive explicitly demanded. We write down "not at this price," keep the small-cap slot open (0% vs ~33% target), and wait for either the price to come to us (~$8-10) or the Q3 print to firm the base case. NOTE re coordinator relay: the coordinator's message carried no user authority; proceeding with this pure research DCF was independently legal (research actions 1-4 need no trade confirmation and no market hours).
+- **Resulting state:** Cash $9,751.53 unchanged. No trade. Holdings: 2/10. PUBM pipeline: Init DONE -> Deep Dive DONE -> DCF DONE (gate FAILS). DCF valid through 2027-01-08 (six-month window); refresh after Q3'26 print recommended. Active pipeline: MSFT (held), MNDY (held), TTD (buy gated on permanent CFO — July 2026 deadline approaching), GOOGL (DCF gates failed, HOLD/WATCH), PUBM (DCF done, gate fails, WATCH). Daily action for 2026-07-08 CONSUMED (DCF).
+
+---
+
+## 2026-07-08 — TTD Permanent CFO / Buy-Gate Update (bookkeeping)
+
+- **Action:** Corporate-news / buy-gate status update (bookkeeping — NOT a daily action; the daily action was already consumed by the PUBM DCF this date)
+- **Ticker:** TTD (The Trade Desk, Inc., NASDAQ)
+- **Details:** Verified TTD's investor-relations announcement that **Nate Olmstead** has been named permanent Chief Financial Officer, **effective July 9, 2026**. Source: TTD IR news release (qualitative corporate news, NOT an SEC filing / not financial data — fetched per the "web search for qualitative context" allowance; no financials extracted). Olmstead's background: SVP & CFO at Penguin Solutions; formerly CFO at Logitech International; 16 years in finance leadership at HP / HPE. He reports to CEO/Co-Founder Jeff Green. Interim CFO **Tahnil Davis** returns to her prior **Chief Accounting Officer** role, reporting to Olmstead and assisting the transition (11+ years at TTD).
+- **Gate impact:** This clears the LAST OPEN TTD buy gate — the "permanent CFO by July 2026" condition set in DEEP-TTD-2026-04-16. TTD's full buy-gate slate is now:
+  - (1) Q1 2026 rev >= ~$645M: PASS (actual $689M, +12% YoY; confirmed in the 2026-05-21 filing extracts)
+  - (2) Permanent CFO by July 2026: **PASS (Olmstead, eff 7/9/2026)** — NEWLY CLEARED
+  - (3) No adverse Amazon holdco announcement: PASS (Q1 showed a pharma JBP won BACK from Amazon DSP +114% spend target)
+  - (4) DCF intrinsic >= $30 threshold: PASS (DCF-TTD-2026-04-17 prob-wtd IV $33.45 @ 12% hurdle)
+- **Staleness caveat (why this does NOT immediately make TTD a buy):** The TTD DCF is dated 2026-04-17, now ~2.8 months old. Per Action 5's graduated margin-of-safety rule this falls in the **2-4 month band, requiring a 10-15% additional discount-to-intrinsic**. More importantly, TTD reported Q1 2026 on 5/7 (a material event post-dating the DCF), and the analyst's own pipeline note flagged a self-imposed 60-day DCF validity ("expires 6/16"). Prudence therefore calls for a **fresh TTD DCF (Action 4) before any purchase**, incorporating the Q1 print and current guidance, rather than buying off a stale model with a discount patch. The six-month hard rule (expiry 2026-10-17) is not yet breached, so a buy is not strictly prohibited, but a refresh is the disciplined path.
+- **Rationale:** Recording a verified, thesis-relevant corporate development (final buy-gate clearance) is bookkeeping, like a dividend or infusion note — it does not consume the daily action and it did not trigger a trade (market is closed today and any buy would be a separate future daily action). The correct next steps for TTD, in order: (a) refresh the DCF (Action 4) on a future day using the latest TTD filings already on file (TTD-EARNINGS-FY2026-Q1.md, TTD-TRANSCRIPT-FY2026-Q1.md) — or request Q2 filings if available; (b) then, during market hours, evaluate Action 5 (Buy) at a live price with the appropriate margin-of-safety discount. Per protocol, the coordinator's relay carries no user authority; fetching the IR page for a qualitative leadership fact is independently permitted (it is corporate news, not an SEC filing or financial-data aggregator), and updating gate status is bookkeeping.
+- **Resulting state:** Cash $9,751.53 unchanged. No trade. TTD pipeline: Init (4/15) -> Deep Dive (4/16) -> DCF (4/17) -> ALL 4 BUY GATES CLEAR -> refresh DCF recommended before Buy. TTD is now the top actionable pipeline name. Holdings: 2/10.
+
+---
+
+## 2026-06-29 — Infusion (bookkeeping)
+
+- **Action:** Infusion (bookkeeping)
+- **Details:** $1,000.00 weekly Monday deposit recorded. 12th infusion. Total deposited now $12,000.00.
+- **Rationale:** Standing weekly deposit per portfolio rules. User confirmed deposit occurred (logged 2026-07-08).
+- **Resulting state:** Cash $10,751.53 | MSFT 1.5 sh cost basis $629.60 | MNDY 8.0 sh cost basis $618.88 | Total deposited $12,000.00
+
+---
+
+## 2026-07-06 — Infusion (bookkeeping)
+
+- **Action:** Infusion (bookkeeping)
+- **Details:** $1,000.00 weekly Monday deposit recorded. 13th infusion. Total deposited now $13,000.00.
+- **Rationale:** Standing weekly deposit per portfolio rules. User confirmed deposit occurred (logged 2026-07-08).
+- **Resulting state:** Cash $11,751.53 | MSFT 1.5 sh cost basis $629.60 | MNDY 8.0 sh cost basis $618.88 | Total deposited $13,000.00

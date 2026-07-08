@@ -1,0 +1,512 @@
+================================================================================
+DEEP DIVE
+PubMatic, Inc. (Nasdaq: PUBM)
+================================================================================
+Date:            June 27, 2026
+Analyst:         tech-buffett
+Action:          Action 3 (Deep Dive) — builds on INIT-PUBM-2026-06-03
+Cap bucket:      Small cap (~$517M mkt cap @ ~$11.13 ref; net cash ~28% of cap)
+Rating coming in: WATCH / ACCUMULATE ON CONFIRMATION (from initiation)
+Rating leaving:  WATCH / ACCUMULATE ON CONFIRMATION (unchanged; conviction
+                 refined — see Sec 0 and Sec 12)
+Filings used:    research/filings/PUBM-10K-FY2025.md
+                 research/filings/PUBM-EARNINGS-FY2026-Q1.md
+Qualitative web context (NOT financials): Google ad-tech remedy status
+                 (Brinkema, DOJ closing args, 2026 ruling expected); SSP
+                 competitive landscape (Magnite ~25% US SSP share / CTV leader;
+                 field consolidating 32->18 SSPs 2023-2026).
+
+This deep dive executes the 8 marching orders set in INIT sec 9, plus the
+standard deep-dive scaffolding (unit economics, TAM, 5-10yr competition, capital
+allocation, management, optionality, scenarios, thesis-break, DCF orders).
+
+--------------------------------------------------------------------------------
+0. EXECUTIVE SUMMARY — WHAT THIS DEEP DIVE FOUND
+--------------------------------------------------------------------------------
+The initiation framed PUBM as a cheap, net-cash, FCF-positive, narrow-moat,
+founder-led independent SSP with two free options (AgenticOS + Google remedy).
+That framing survives the deep dive, but with three material refinements that
+TIGHTEN the discipline rather than loosen it:
+
+(1) THE CHEAPNESS IS REAL ONLY ON THE RIGHT METRIC, AND THINNER THAN IT LOOKS.
+    PUBM screens at ~6x EV/adj-EBITDA and ~8x EV/reported-FCF — trough-decile.
+    But the honest owner-earnings number is SBC-ADJUSTED FCF, and on that basis
+    FY2025 was only ~$7.9M ($46.3M reported FCF minus $38.4M of SBC), a ~2.8%
+    margin. EV/SBC-adj-FCF is therefore ~47x trailing, NOT 8x. The entire
+    investability case rests on margin RECOVERY (EBITDA back toward high-20s/30%
+    and SBC falling as a % of revenue) layered on top of revenue reacceleration.
+    This is the single most important finding: PUBM is not "cheap and you wait,"
+    it is "cheap ONLY IF the operating leverage and reacceleration are real."
+
+(2) THE COMPETITIVE POSITION IS WEAKER THAN THE INITIATION IMPLIED. PUBM is the
+    #3-ish independent SSP, not the #1. Magnite is roughly 5-6x larger in US SSP
+    share (~25% vs ~4%) and owns the CTV channel that is the industry's growth
+    engine (CTV >50% of Magnite's business vs ~39% video/omnichannel for PUBM).
+    The SSP layer is consolidating (32 -> 18 players) and structurally take-rate-
+    pressured. PUBM's edge is genuine but narrow: independence + owned infra +
+    an aggressive (unproven) agentic-AI bet. The moat verdict moves to NARROW /
+    LOW-TO-MODERATE confidence.
+
+(3) THE GOOGLE-REMEDY OPTION IS LIVE BUT LIKELY BEHAVIORAL, NOT STRUCTURAL.
+    Judge Brinkema (E.D. Va.) found Google liable (April ruling) and the remedy
+    phase closing arguments are done; a ruling is expected in 2026. But she has
+    signaled skepticism of a forced AdX divestiture (no clean buyer, appeal
+    timing) and appears more inclined toward BEHAVIORAL remedies (auction
+    interoperability, open-sourcing auction logic). Behavioral remedies still
+    help independents like PUBM — they lower Google's structural auction
+    advantage — but the "each 1% share = $50-75M at 80% margin / double our
+    share" math is a multi-year, probabilistic call option, not a near-term
+    earnings event. Plus PUBM is in active LITIGATION with Google (a contained
+    but real cost). Treat the remedy as upside optionality, weight it modestly,
+    and never put it in the base case.
+
+NET: The asymmetry is attractive but NARROWER and MORE EXECUTION-DEPENDENT than
+the initiation's framing. The bear case is genuinely floored by net cash
+(~$3/share) plus a still-FCF-generative core, but the base case requires a
+real H2-2026 reacceleration AND a multi-year margin recovery that the SBC-
+adjusted numbers do not yet show. This is a "show me" small cap. The right
+posture: complete the DCF (Action 4) with SBC-adjusted FCF as the binding
+underwriting column, reconcile the share-count discrepancy (critical — see
+Sec 1.0), and demand a wide margin of safety given the narrow moat and the
+fact that the thesis is contingent on Q3 2026 actually returning to reported
+growth. Rating stays WATCH / ACCUMULATE ON CONFIRMATION.
+
+Probability weights carried into the DCF: BEAR 30% / BASE 50% / BULL 20%.
+(Bear weight raised from the initiation's implied ~25% on the weaker-than-
+expected competitive read and the SBC-adjusted FCF reality.)
+
+--------------------------------------------------------------------------------
+1. UNIT ECONOMICS & FINANCIAL ARCHITECTURE (Marching Order #2)
+--------------------------------------------------------------------------------
+
+1.0 SHARE-COUNT RECONCILIATION — A CRITICAL DATA GAP TO RESOLVE BEFORE THE DCF
+The 10-K extract lists "Class A shares outstanding ~93,903,451." This does NOT
+reconcile with the rest of the financials:
+  - Q1 2026 weighted-avg diluted shares used for EPS: ~47.1M
+    (net loss $(12.5)M / 47.1M = $(0.27) GAAP EPS — checks out).
+  - Market cap ~$517M at ~$11.13 implies ~46.4M shares.
+  - Treasury stock $(202.3M); ~13.5M shares repurchased for ~$190M cumulatively.
+The market-cap-relevant, EPS-relevant, and valuation-relevant share count is
+therefore ~47-48M, NOT ~94M. The 93.9M figure is most likely a
+gross/issued/authorized or pre-treasury Class A figure (or an extract mislabel),
+not net shares outstanding for per-share value.
+
+==> ACTION FOR DCF: Use ~47-48M diluted shares as the base, and BEFORE finalizing
+    per-share IV, reconcile against the 10-K cover page / share-count footnote
+    in the source filing. Share count drives per-share IV one-for-one; a 2x error
+    here would halve the IV. This is the #1 data gap. Flag it; do not guess past it.
+
+1.1 THE NET-REVENUE MODEL AND TAKE RATE
+PUBM reports revenue NET of publisher payments and SPO rebates. That is why AR
+($337M) and AP ($343M) dwarf reported revenue ($283M) — it collects gross from
+buyers and remits to publishers, keeping only its take. Implications:
+  - Reported "revenue" IS effectively net take. The take rate on gross spend is
+    not separately disclosed cleanly, but the structural driver to watch is take
+    rate per impression x impression volume.
+  - Impression volume is GROWING FAST (FY2025 quarterly 74.7T->97.6T; Q1 2026
+    94.2T, +26% YoY; >1T/day). Yet net revenue FELL -3% in FY2025 and -2% in Q1.
+  - The arithmetic: revenue per impression is DECLINING faster than volume is
+    growing. Cost per impression fell ~20% YoY (good for margins) but net take
+    per impression also fell (legacy-DSP rerouting + CPM/mix). This is the
+    take-rate-compression risk made concrete. The bull case needs Activate and
+    AgenticOS (higher-value, full-dollar-in-ecosystem transactions) to lift
+    revenue-per-impression even as commoditized open-auction take compresses.
+
+1.2 GROSS MARGIN — OWNED-INFRA FIXED-COST LEVERAGE (DOUBLE-EDGED)
+  - FY2025 gross margin ~63.6% (cost of rev $103.1M / rev $282.9M).
+  - Q1 2026 gross margin 58.3% (cost of rev $26.1M / rev $62.6M).
+  - The gap is seasonality: PUBM OWNS its infrastructure (no public cloud), so
+    cost of revenue is largely FIXED. In seasonally weak Q1 (lowest revenue
+    quarter), fixed infra costs compress gross margin; in seasonally strong Q4,
+    they expand it. This is the operating-leverage engine in BOTH directions:
+    revenue reacceleration drops to the gross line at high incremental margin;
+    revenue stagnation crushes it. Owned infra is a moat ONLY at scale and ONLY
+    if volume keeps growing into the fixed base.
+  - Long-term gross-margin watch line: structural break below ~58% would signal
+    take-rate compression overwhelming unit-cost gains (a thesis-break trigger).
+
+1.3 THE EBITDA COLLAPSE AND THE SBC PROBLEM (the crux)
+  Adjusted EBITDA margin: FY2023 28% -> FY2024 31.7% -> FY2025 21.8% -> Q1'26 4%.
+  This is a ~10pt margin collapse in one year on a -3% revenue line. Drivers:
+  S&M up (+$7.6M FY25), G&A up (litigation), revenue down, fixed infra base.
+  SBC is the silent killer in the cash-flow translation:
+    +-----------------------------+---------+---------+
+    | Owner-earnings bridge (FY25)| $M      | % rev   |
+    +-----------------------------+---------+---------+
+    | OCF                         | 81.1    | 28.7%   |
+    | (-) PP&E capex              | (14.3)  |         |
+    | (-) Capitalized software    | (20.5)  |         |
+    | = Reported FCF              | 46.3    | 16.4%   |
+    | (-) SBC (real cost)         | (38.4)  | 13.6%   |
+    | = SBC-ADJUSTED FCF          | ~7.9    | ~2.8%   |
+    +-----------------------------+---------+---------+
+  The reported 16% FCF margin is flattered by (a) $38M of SBC added back in OCF
+  and (b) ~$20M of R&D expensed via the cash flow as capitalized software (a
+  real cash cost of the business). On an SBC-charged basis the company earns
+  ~$8M of true owner cash on $283M revenue. At EV ~$372M that is ~47x — NOT
+  cheap. The DCF MUST underwrite on this number and model its recovery, not on
+  the headline FCF.
+
+1.4 WHAT WOULD NORMALIZED MARGINS LOOK LIKE?
+  The bull thesis is that 2025 was a trough (legacy-DSP drag + investment year)
+  and that the owned-infra fixed base + AI-driven internal productivity
+  (headcount down YoY) restores EBITDA to the high-20s/30% as revenue
+  reaccelerates. If revenue returns to ~$340-380M by 2028-2029 at a 28-30%
+  EBITDA margin, EBITDA of ~$95-115M and SBC normalizing toward ~9-10% of
+  revenue would put SBC-adj FCF margin around 12-15% (~$45-55M). THAT is the
+  number that makes today's EV ~$372M look cheap (~7-8x forward SBC-adj FCF).
+  But it requires BOTH the top-line reaccel AND the margin recovery — two things
+  that must compound, neither yet proven in the reported numbers.
+
+--------------------------------------------------------------------------------
+2. THE "LEGACY DSP" HEADWIND — DECOMPOSED (Marching Order #1)
+--------------------------------------------------------------------------------
+This is the linchpin of the whole "trough vs. structural decline" debate.
+
+What it is: One (then a second) large DSP buyer changed its bidding methodology /
+platform behavior — first in H2 2024, then again in H2 2025 — rerouting spend
+away from PUBM's path. The two largest DSP relationships are GOOGLE and THE TRADE
+DESK; both contracts auto-renew and are terminable for convenience on 30 days'
+notice. Management labels the affected flow "legacy DSP."
+
+Sizing it (triangulation from disclosures):
+  - FY2025 reported -3% (-$8.3M) but that nets ~$14.2M of LOST 2024 political
+    spend (no 2026 analog) against underlying growth. So core ex-political was
+    roughly flat-to-slightly-up reported, with the legacy-DSP drag the main
+    suppressor.
+  - Q1 2026: reported -2%, but ex-legacy-DSP +13% (the ex-DSP base is ~83% of
+    revenue). That implies the legacy-DSP-affected ~17% of revenue declined
+    enough to drag a +13% underlying into a -2% reported — roughly a ~50-60%+
+    YoY decline in the affected cohort. That cohort is shrinking as a share of
+    revenue precisely because it is declining, which is why the drag self-limits.
+  - Lap timing: management guides the legacy DSP to lap by "mid-Q3 2026," after
+    which reported growth should re-converge toward the ~13%+ underlying rate,
+    accelerating to "double-digit growth in H2 2026 with margin expansion."
+
+Is the lap credible? Partly mechanical, partly faith:
+  - MECHANICAL: a cohort that has shrunk to a small share, declining against an
+    easier comp, mathematically stops dragging once it laps. This part is
+    high-confidence IF no NEW DSP reroutes spend.
+  - FAITH: the underlying +13% must persist AND no third DSP repeats the move.
+    The 30-day-termination concentration means this risk never fully goes away.
+    Mitigant: mid-market DSP spend +20% YoY, 50+ DSPs added in the past year,
+    Activate direct-buy >3x — genuine diversification away from the top-2 DSP
+    dependence. But the top-2 (Google, TTD) still matter enormously.
+
+VERDICT: The "trough" framing is more-likely-than-not correct (base case 50%),
+but the structural-decline tail is real enough to carry a 30% bear weight. The
+Q3 2026 print (return to reported growth) is THE single cleanest thesis
+confirmation/refutation event. No buy should pre-empt it without a wide MoS.
+
+--------------------------------------------------------------------------------
+3. TAM, AGENTICOS, AND THE AI DISINTERMEDIATION TAIL (Marching Order #3)
+--------------------------------------------------------------------------------
+TAM shape:
+  - Global programmatic advertising continues to grow (high-single/low-double
+    digits), with CTV and commerce/retail media the fastest segments. Commerce
+    media TAM cited ~$18B. CTV is the structural growth channel — and is exactly
+    where PUBM is WEAKEST relative to Magnite (see Sec 4).
+  - PUBM's serviceable opportunity is the independent (non-walled-garden,
+    non-Google-owned-exchange) open-internet sell side. That pool is real but
+    structurally squeezed between Google's owned exchange and the walled gardens
+    (Amazon, Meta, etc.).
+
+AgenticOS (the bull's growth + margin lever):
+  - Launched Jan 2026 (CES). 20+ operational agents; >1,000 AI-powered deals;
+    30+ live autonomous end-to-end campaigns across US/France/Netherlands/
+    Australia/India. Claims: 80-90% campaign-setup time savings; with Activate,
+    30-40% CPM improvement + 40% more working media; "every advertiser that ran
+    an agentic campaign returned to run more."
+  - Emerging revenue (Activate, Commerce/Convert, Connect, AI Solutions) is
+    +80% YoY and ~14% of revenue. If it sustains 50%+ growth, it becomes ~25%+
+    of revenue within 2-3 years and re-rates the whole company's growth profile.
+  - Monetization model is still forming: Activate rev-share today; subscription
+    being explored. This is the key uncertainty — agentic adoption is real but
+    "those investments haven't paid off yet in the immediate term" (industry
+    read). PUBM is the MOST aggressive SSP on agentic AI; that is both the bull
+    differentiator and a risk if the payoff slips.
+
+The AI disintermediation tail (the bear's existential risk):
+  - If LLM platforms (OpenAI's stated ~$100B ad ambition, agentic buyers) route
+    ad spend directly to supply and compress or bypass the SSP take, the open-
+    internet SSP layer is structurally threatened. PUBM's counter is to BE the
+    agentic execution layer (MCP integration with AdRoll; agents that external
+    buyers can plug into; owned GPU/Triton inference for low-latency execution).
+  - My read: agentic AI is more likely to RESHAPE the SSP than ERASE it in the
+    5-10yr window — someone must still run the real-time supply auction, enforce
+    publisher controls, and optimize yield. But the take rate on that function
+    can compress. So the tail is "margin erosion," more than "zero." Weight it
+    inside the bear case (take-rate compression), with a small disaster sub-tail.
+
+--------------------------------------------------------------------------------
+4. COMPETITIVE DYNAMICS OVER 5-10 YEARS (Marching Order #5)
+--------------------------------------------------------------------------------
+The SSP landscape (qualitative web context, 2026):
+  - GOOGLE (AdX / Google Ad Manager): ~60% ad-tech share; the gorilla on both
+    sides of the auction; the antitrust defendant (Sec 6).
+  - MAGNITE: the largest INDEPENDENT SSP; ~25% US SSP share; CTV leader (CTV
+    >50% of its business; 15-20% global programmatic CTV share; 1,500+ premium
+    publishers). Notably framing AI as an EFFICIENCY play, not a bet-the-company
+    pivot, while "just growing" — a pointed contrast to PUBM.
+  - PUBM: ~4% SSP share; omnichannel video (incl. CTV) ~39% of FY2025 revenue;
+    the most aggressive agentic-AI strategy among SSPs.
+  - INDEX EXCHANGE, OPENX, SHARETHROUGH, regional SSPs: the consolidating tail.
+    SSP count fell 32 (2023) -> 18 (2026).
+
+What this means for PUBM over 5-10 years:
+  - PUBM is a SUB-SCALE #3 in a consolidating, take-rate-pressured layer where
+    the #2 (Magnite) is ~5-6x larger and owns the growth channel (CTV). That is
+    a materially weaker competitive position than the initiation conveyed.
+  - PUBM's credible edges: (a) genuine independence/neutrality vs Google's
+    conflicted dual-side position; (b) owned infrastructure = structural unit-
+    cost advantage at scale (cost/impression -20% YoY) and a faster AI loop;
+    (c) the agentic-AI bet, IF it pays off, could leapfrog the efficiency-only
+    incumbents. The "no competitor has all five" (supply scale + Activate +
+    AgenticOS + owned GPU + Connect data) claim is plausible but unproven as a
+    durable moat.
+  - The consolidation trend cuts BOTH ways: it can squeeze a sub-scale player,
+    OR it can make PUBM a beneficiary/consolidator (it has $145M net cash and
+    made a $3M equity investment in Q1 — tuck-in optionality). Founder control +
+    net cash also make it a plausible acquisition target at a depressed price
+    (the dual-class structure protects against a low-ball takeout, which is
+    shareholder-protective here).
+  - MOAT VERDICT (refined): NARROW, LOW-TO-MODERATE confidence (down a notch
+    from the initiation's NARROW/MODERATE). The investability rests on price +
+    balance sheet + optionality, NOT on an impregnable moat. Underwrite
+    accordingly: wide margin of safety, modest terminal growth, conservative
+    terminal multiple.
+
+--------------------------------------------------------------------------------
+5. THE GOOGLE AD-TECH REMEDY — SCENARIO TREE (Marching Order #4)
+--------------------------------------------------------------------------------
+Status (qualitative web context, June 2026): Judge Leonie Brinkema (E.D. Va.)
+ruled Google liable for ad-tech monopolization (April liability ruling). The
+remedy-phase closing arguments are complete; a remedies ruling is expected in
+2026. The DOJ pushed for STRUCTURAL relief — divest AdX, and/or phase out/divest
+Google Ad Manager (DFP), plus open-sourcing auction logic. Brinkema signaled
+SKEPTICISM of a forced AdX divestiture (no obvious clean buyer; appeal-timing
+concerns) and appeared more receptive to BEHAVIORAL remedies and to weighing how
+fast structural vs. behavioral relief could take effect. Google will very likely
+APPEAL any structural remedy, pushing real-world effect years out.
+
+Scenario tree for PUBM impact (probability-weighted, qualitative):
+  +------+-------------------------------+--------+--------------------------------+
+  | Tag  | Outcome                       | Prob   | PUBM impact                    |
+  +------+-------------------------------+--------+--------------------------------+
+  | R1   | Behavioral remedy (auction    | ~50%   | Mildly positive over 2-4 yrs:  |
+  |      | interop / open auction logic) |        | lowers Google's structural edge|
+  |      |                               |        | independents gain share slowly |
+  | R2   | Structural (AdX or DFP        | ~20%   | Materially positive but DELAYED|
+  |      | divest/phase-out) upheld      |        | by appeals (3-5 yrs); reshapes |
+  |      |                               |        | the whole open exchange        |
+  | R3   | Narrow/weak remedy or stay    | ~20%   | Negligible near-term; status   |
+  |      | pending appeal                |        | quo persists                   |
+  | R4   | Remedy + Google appeal wins/  | ~10%   | Negligible to slightly negative|
+  |      | dilutes on appeal             |        | (litigation cost lingers)      |
+  +------+-------------------------------+--------+--------------------------------+
+Management's "each 1% of ~$X share captured = $50-75M revenue at ~80% margin /
+can more than double our ~4% share" is directionally enormous (a 4pt share gain
+= ~$200-300M of near-80%-margin revenue, i.e. potentially DOUBLING the company's
+revenue at far higher margins). BUT that is a multi-year, low-base-rate call
+option contingent on R1/R2 actually shifting share to a SUB-SCALE #3 (Magnite,
+larger and CTV-strong, would likely capture more of any reallocated share than
+PUBM).
+
+==> DCF TREATMENT: KEEP THE REMEDY OUT OF THE BASE CASE. Model it ONLY in the
+    bull case as a modest, delayed, probability-haircut share gain (e.g. +1-2pts
+    share phased over 2028-2031), and footnote the full optionality. Also carry
+    the OFFSETTING cost: PUBM is in ACTIVE LITIGATION with Google (a contained
+    but real G&A/legal expense and a small relationship risk).
+
+--------------------------------------------------------------------------------
+6. CAPITAL ALLOCATION (Marching Order #6, part A)
+--------------------------------------------------------------------------------
+Grade: B+ (solid, shareholder-friendly, FCF-funded; one watch item).
+  - Buybacks: ~$181M repurchased through YE2025; ~13.5M shares / ~$190M through
+    Q1 2026; FY2025 ~$46.5M; Q1 2026 ~$8.5M (1.0M shares, ~2.1% of FDS). $85M
+    remaining authorized through Dec 2026. Entirely FCF-funded, zero debt.
+  - The buyback is genuinely accretive at a depressed price ON REPORTED FCF,
+    BUT note the SBC tension: ~13.6% of revenue in SBC means a meaningful chunk
+    of the buyback is effectively OFFSETTING dilution rather than shrinking the
+    float for owners. Net share count IS falling (treasury $202M), which is good,
+    but track NET shares outstanding, not gross repurchases, to see true accretion.
+  - $3M equity investment in Q1 2026 — small tuck-in / strategic optionality.
+  - No dividend (appropriate at this stage).
+  - WATCH: do not let buybacks at a "cheap" multiple mask a structurally
+    declining business. Buybacks are only smart if the H2 reacceleration is real.
+    If revenue keeps sliding, the cash should be defended, not spent on stock.
+
+--------------------------------------------------------------------------------
+7. FOUNDER / MANAGEMENT / GOVERNANCE (Marching Order #6, part B)
+--------------------------------------------------------------------------------
+  - Rajeev Goel — co-founder & CEO since 2006 (20 years). Long-tenured founder-
+    operator; highly credible on technology and industry-structure narrative;
+    skin in the game via Class B control. The agentic-AI bet is HIS bet — a
+    high-conviction, differentiated strategy that is also a concentration of
+    strategic risk on one unproven thesis.
+  - Steven Pantelick — CFO; disciplined, consistent on margins/expense/capital.
+    CFO STABILITY is a real positive (notable contrast to TTD's revolving CFO
+    seat and a check in PUBM's favor on the quality side).
+  - GOVERNANCE FLAG: dual-class (Class A 1 vote / Class B 10 votes); insiders
+    control. Standard founder-control discount — protective against a low-ball
+    takeout here, but limits external accountability. Not a disqualifier.
+  - YELLOW FLAG (revenue org): TWO senior revenue leaders departing mid-trough —
+    Chief Growth Officer (Pauline, 15 yrs, health) and Americas CRO (Kyle
+    Dozeman, 13 yrs, entrepreneurship). Both framed as personal, both in
+    transition roles, with a global CRO search (Heidrick & Struggles) to
+    consolidate revenue under one leader, hire expected "within a couple of
+    months." Losing 28 combined years of revenue-org leadership DURING a
+    revenue-trough year is a genuine execution risk. The permanent global-CRO
+    hire is a thesis-must-hold confirmation item (Sec 11).
+
+--------------------------------------------------------------------------------
+8. OPTIONALITY NOT IN THE BASE CASE
+--------------------------------------------------------------------------------
+  (a) AgenticOS scaling emerging revenue from ~14% to ~25%+ with a subscription
+      layer (higher-margin, stickier than rev-share) — the biggest internal call.
+  (b) Google ad-tech remedy share reallocation (Sec 5) — biggest external call.
+  (c) Commerce/retail media (Walmart Connect Select, PayPal Ads ID, Connect's
+      300+ partners) — a ~$18B-TAM adjacency where PUBM has differentiated
+      first-party-data partnerships.
+  (d) Owned-infra cost curve: as volume compounds into the fixed base, unit cost
+      keeps falling (-20% YoY) — a margin tailwind the bull case can underwrite.
+  (e) M&A: $145M net cash + founder control = consolidator OR acquisition target
+      in a consolidating SSP field (32 -> 18). Either path can crystallize value.
+  (f) Live sports / global streaming (FIFA World Cup >100M impressions/day; 28 of
+      top 30 streamers) — a CTV catch-up vector vs Magnite.
+  None of (a)-(f) belong in the base case; they are the right-tail that justifies
+  paying attention to a sub-scale #3 at a trough multiple.
+
+--------------------------------------------------------------------------------
+9. FIVE/TEN-YEAR SCENARIOS (Marching Order #7)
+--------------------------------------------------------------------------------
+All per-share figures PRELIMINARY and indicative; the DCF (Action 4) refines
+them with explicit cash-flow builds. Net cash ~$145M / ~47-48M shares = ~$3.0/sh
+hard floor. Share count assumed ~47-48M (see Sec 1.0 reconciliation gap).
+
+BEAR (30%) — "Structural decline / take-rate compression wins."
+  - Legacy-DSP weakness proves structural; a third DSP reroutes; AI compresses
+    SSP take; gross margin drifts below 58%; EBITDA stuck low-teens; SBC stays
+    high; SBC-adj FCF hovers near zero. Revenue flat-to-down through the decade.
+  - Value ~ net cash + a small, low-quality operating stub. Indicative IV ~$6-9/
+    share. (The 52-wk low was $6.15 — the market has already rehearsed this.)
+
+BASE (50%) — "Trough confirmed; reaccel real; margins recover partway."
+  - Legacy DSP laps mid-Q3 2026; reported growth returns Q3; H2 double digit.
+    Revenue path: FY26 ~$300-305M (+6-8%), FY27 ~$338M (+11%), FY28 ~$375M
+    (+11%), FY29 ~$413M (+10%), FY30 ~$450M (+9%), tapering to ~5% by FY35.
+  - EBITDA margin recovers 21.8% -> ~28% by FY30; SBC falls toward ~9-10% of
+    revenue; SBC-adj FCF margin recovers to ~12-14% (~$55-60M by FY30).
+  - Re-rate from ~6x to a mid-teens normalized EBITDA / ~10-12x SBC-adj FCF.
+    Indicative IV ~$16-22/share over a multi-year hold (PV today toward the
+    lower end). Base-case asymmetry vs ~$11: ~+50-90%.
+
+BULL (20%) — "Reaccel + AgenticOS scales + behavioral Google remedy."
+  - Emerging/AI to ~25%+ of revenue; revenue compounds mid-to-high teens to
+    ~$520M+ by FY30; EBITDA margin to ~31-33%; SBC-adj FCF margin ~16-18%; a
+    +1-2pt Google-remedy share gain phases in 2028-2031. Re-rate to a growth
+    multiple.
+  - Indicative IV ~$30-45/share. Bull asymmetry vs ~$11: ~+170-300%.
+
+Probability-weighted indicative IV (rough, pre-DCF): ~$16-19/share => ~+45-70%
+vs ~$11.13. Bear floor ~$6-9 => ~-20% to -45% downside tail. The asymmetry is
+favorable but NOT the >50% margin-of-safety layup MNDY offered — it is a
+narrower, more execution-dependent setup that demands the DCF do real work and
+demands a wide MoS at purchase.
+
+--------------------------------------------------------------------------------
+10. WHAT WOULD HAVE TO BE TRUE FOR THE THESIS TO BREAK
+--------------------------------------------------------------------------------
+Mechanically distinct break scenarios:
+  (1) Q3 2026 does NOT return to reported YoY growth despite the legacy-DSP lap
+      => "trough" was actually "structural decline." (PRIMARY, cleanest signal.)
+  (2) A THIRD large DSP reroutes spend, or the Google/TTD relationship
+      deteriorates (30-day termination risk realized again).
+  (3) Gross margin breaks structurally below ~58% => take-rate compression is
+      overwhelming owned-infra unit-cost gains.
+  (4) Emerging/AI revenue growth decelerates below ~30% => AgenticOS optionality
+      deflates; PUBM is just a sub-scale commoditized SSP.
+  (5) SBC stays ~13%+ of revenue while EBITDA fails to recover => owner earnings
+      never materialize; reported FCF is permanently a SBC mirage.
+  (6) NDR stuck below ~98% into Q4 2026 (it was 96% FY25, "flattish" Q1'26).
+  3+ of these flashing red = avoid / exit. (1) alone materially impairs the base.
+
+--------------------------------------------------------------------------------
+11. THESIS-MUST-HOLD CONFIRMATION CHECKLIST (for the next prints / pre-buy)
+--------------------------------------------------------------------------------
+  (i)   Q3 2026 returns to reported YoY growth; H2 2026 double-digit. [PRIMARY]
+  (ii)  NDR recovers toward / above 100% as legacy DSP laps mid-Q3.
+  (iii) Adj. EBITDA margin re-expands (Q2 guide $8-10M on $68-70M = ~13% is the
+        first checkpoint; trajectory toward high-20s by 2027-28).
+  (iv)  Emerging/AI (AgenticOS) sustains 50%+ growth + a credible monetization
+        model (rev-share + subscription).
+  (v)   Permanent global CRO hired; revenue org stabilizes.
+  (vi)  SBC begins falling as a % of revenue (the owner-earnings unlock).
+
+--------------------------------------------------------------------------------
+12. DCF MARCHING ORDERS (Action 4)
+--------------------------------------------------------------------------------
+  1.  RECONCILE SHARE COUNT FIRST (Sec 1.0). Use ~47-48M diluted; verify against
+      the source 10-K cover/footnote. Per-share IV is one-for-one sensitive to it.
+  2.  UNDERWRITE ON SBC-ADJUSTED FCF, not reported FCF. FY2025 baseline ~$7.9M
+      (2.8% margin). Model the recovery path explicitly; do NOT let reported FCF
+      (16% margin) drive the valuation.
+  3.  10-year explicit forecast FY2026-FY2035.
+  4.  Three scenarios with the WEIGHTS SET HERE: BEAR 30% / BASE 50% / BULL 20%.
+  5.  Revenue build by driver: core SSP (legacy-DSP lap mechanics) + emerging/AI
+      (Activate, Commerce, Connect, AI) growing 50%+ tapering. Base FY26 ~$300-
+      305M; ramp per Sec 9.
+  6.  Take-rate / gross-margin sensitivity: model gross margin 56% (bear) / 60%
+      (base) / 63% (bull) steady-state; flag the <58% structural break line.
+  7.  Margin recovery curve: EBITDA 21.8% FY25 -> bear ~15% / base ~28% / bull
+      ~32% by FY30. SBC as % of revenue: 13.6% FY25 -> bear ~12% / base ~9-10% /
+      bull ~8% by FY30.
+  8.  Capex light: PP&E + capitalized software ~$35M/yr (FY26 guide $16-19M PP&E;
+      keep capitalized software ~$22-26M as a REAL cost). Do not understate it.
+  9.  Net-cash floor: +$145M (~$3/share); zero debt; add to equity value.
+  10. Google remedy: BULL CASE ONLY, as a delayed, probability-haircut +1-2pt
+      share gain phased 2028-2031. Footnote full optionality. Keep out of base.
+  11. Both terminal-value methods: perpetuity growth (terminal g 3.0% base / 2.0%
+      bear / 3.5% bull) AND exit multiple (EV/SBC-adj-FCF ~10x base / 7x bear /
+      14x bull, cross-checked vs EV/EBITDA ~9x/6x/12x). Average them.
+  12. Hurdle rates: 12% PRIMARY (small-cap, narrow moat, execution-dependent —
+      a HIGHER bar than MSFT/MNDY's 10%), with 10% and 14% as sensitivities.
+  13. Demand a WIDE margin of safety at buy given the narrow moat and contingent
+      thesis: target >=40% MoS at the 12% hurdle prob-weighted IV before buying,
+      OR a confirmed Q3 2026 reaccel that lets the base case firm up.
+  14. Combined-stress tail: bear scenario + 14% hurdle + <58% gross margin +
+      SBC stuck at 13% — confirm the downside floors near net cash (~$6-9), not
+      below it.
+
+--------------------------------------------------------------------------------
+13. PRELIMINARY VIEW, RATING & PIPELINE STATUS
+--------------------------------------------------------------------------------
+RATING: WATCH / ACCUMULATE ON CONFIRMATION (unchanged from initiation).
+
+PUBM remains the best-fit candidate for the empty small-cap slot and has the
+right SHAPE: cheap on EBITDA/reported-FCF, fortress balance sheet (~$145M net
+cash, zero debt, ~28% of cap), 40 straight positive-EBITDA quarters, founder-led
+with a stable CFO, a real (if narrow) independence + owned-infra edge, and two
+free options (AgenticOS + Google remedy). The deep dive CONFIRMS the thesis is
+investable but SHARPENS three cautions: (1) the owner-earnings reality is SBC-
+adjusted FCF of ~$8M (~47x EV), so the case is entirely a margin-recovery +
+reaccel bet, not a static-FCF bargain; (2) the competitive position is that of
+a sub-scale #3 behind a ~5-6x-larger, CTV-strong Magnite in a consolidating,
+take-rate-pressured layer; (3) the Google remedy is likely behavioral and
+multi-year, an option not an event. Bear weight is raised to 30%.
+
+This is a "show me" small cap. The cleanest catalyst is the Q3 2026 print
+(return to reported growth). The disciplined path:
+  - PROCEED TO DCF (Action 4) with the Sec 12 marching orders — SBC-adjusted FCF
+    underwriting, 30/50/20 weights, 12% primary hurdle, wide-MoS bar, and the
+    share-count reconciliation done first.
+  - BUY remains gated on: (a) a DCF that clears a >=40% MoS at the 12% hurdle, OR
+    (b) confirmation of the Q3 2026 reacceleration that firms the base case, plus
+    a permanent global-CRO hire. Given net-cash floor and favorable (if narrow)
+    asymmetry, a small CONFIRMATION-SIZED STARTER could be justified post-DCF
+    even ahead of Q3 if the MoS is wide enough — but only as a sub-scale,
+    small-cap-slot starter, not a core position.
+
+No position. No trade. Deep Dive complete. DCF (Action 4) is the next eligible
+action for PUBM.
+================================================================================

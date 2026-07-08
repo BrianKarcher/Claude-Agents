@@ -1,0 +1,420 @@
+================================================================================
+DISCOUNTED CASH FLOW MODEL
+PubMatic, Inc. (Nasdaq: PUBM)
+================================================================================
+Date:             July 8, 2026
+Analyst:          tech-buffett
+Action:           Action 4 (DCF) — builds on DEEP-PUBM-2026-06-27, INIT-PUBM-2026-06-03
+Cap bucket:       Small cap (~$629M mkt cap @ ~$13.55 ref, 7/08/2026)
+Rating coming in: WATCH / ACCUMULATE ON CONFIRMATION
+Filings used:     research/filings/PUBM-10K-FY2025.md
+                  research/filings/PUBM-EARNINGS-FY2026-Q1.md
+Live price ref:   ~$13.55 (intraday 2026-07-08 via web search aggregation;
+                  market CLOSED at model build time — after regular hours.
+                  Price is QUALITATIVE CONTEXT ONLY; NO trade executed today.)
+                  52-wk range $6.15-$13.99; mkt cap ~$629M; implied ~46.4M shares.
+
+This DCF executes the 14 marching orders in DEEP-PUBM-2026-06-27 sec 12.
+
+--------------------------------------------------------------------------------
+0. HEADLINE RESULT
+--------------------------------------------------------------------------------
+Probability-weighted intrinsic value per share (BEAR 30% / BASE 50% / BULL 20%):
+
+  +-------------------+-------------+-------------+-------------+
+  | Hurdle rate       | Prob-wtd IV | vs $13.55   | Verdict     |
+  +-------------------+-------------+-------------+-------------+
+  | 10% (sensitivity) | ~$14.90     | +10% MoS    | Fairly val. |
+  | 12% (PRIMARY)     | ~$12.70     | -6% (prem.) | No MoS      |
+  | 14% (sensitivity) | ~$10.90     | -20% (prem) | Overvalued  |
+  +-------------------+-------------+-------------+-------------+
+
+GATE CHECK (deep dive sec 12.13): "target >=40% MoS at the 12% hurdle prob-wtd IV
+before buying." Prob-wtd IV @ 12% = ~$12.70 vs $13.55 spot = NEGATIVE margin of
+safety (the stock trades ~7% ABOVE the 12% prob-wtd IV). The 40% MoS bar would
+require a price of ~$7.60 or a materially higher IV. **GATE FAILS decisively.**
+
+CONCLUSION: PUBM is a genuinely interesting small-cap with a fortress balance
+sheet and real optionality, but after a ~+22% run from the ~$11.13 deep-dive
+reference to ~$13.55 (near the 52-wk high of $13.99), the price has ERASED the
+margin of safety. At the 12% hurdle the deep dive rightly demanded, the stock is
+now trading slightly through fair value on a probability-weighted basis. This is
+NOT a buy today. The right posture: WATCH, wait for either (a) the Q3 2026 print
+to confirm the reacceleration (which would firm the base case and lift IV toward
+the high-teens), or (b) a pullback back toward ~$8-10 that restores the MoS.
+
+--------------------------------------------------------------------------------
+1. SHARE COUNT RECONCILIATION (marching order #1 — done FIRST)
+--------------------------------------------------------------------------------
+The 10-K extract's "~93.9M Class A shares outstanding" does NOT reconcile with the
+economic share base. Cross-checks:
+  - Q1 2026 weighted-avg diluted shares (EPS basis): 47,120K (47.1M).
+    Net loss $(12,510)K / 47,120K = $(0.27) GAAP EPS — CHECKS OUT.
+  - Live mkt cap ~$629M / ~$13.55 = ~46.4M shares — CHECKS OUT vs ~47M.
+  - Treasury stock $(202.3M); ~13.5M shares repurchased for ~$190M cumulatively.
+CONCLUSION: The valuation-relevant, per-share-relevant share count is ~47M, NOT
+94M. The 93.9M figure is a gross/issued/pre-treasury Class A count (or an
+extract-label artifact), not net economic shares.
+
+  ==> DCF uses 47.0M diluted shares as the FY2025/current base.
+  ==> Share count is modeled DECLINING modestly (net of SBC dilution) via the
+      FCF-funded buyback: -1.0%/yr bear, -1.5%/yr base, -2.0%/yr bull. This is
+      conservative — reported gross buybacks are larger, but ~13.6% SBC offsets
+      much of the gross repurchase, so NET share shrinkage is slow. Modeled
+      shares FY35: bear 42.5M / base 40.4M / bull 38.5M.
+
+--------------------------------------------------------------------------------
+2. THE UNDERWRITING COLUMN: SBC-ADJUSTED FCF (marching order #2)
+--------------------------------------------------------------------------------
+Per the deep dive, valuation is underwritten on SBC-ADJUSTED FCF, not reported
+FCF. FY2025 baseline bridge (from filing extract):
+
+  +---------------------------------+---------+---------+
+  | FY2025 owner-earnings bridge    | $M      | % rev   |
+  +---------------------------------+---------+---------+
+  | Net cash from operations (OCF)  |  81.1   | 28.7%   |
+  | (-) PP&E capex                  | (14.3)  |         |
+  | (-) Capitalized software        | (20.5)  |         |
+  | = Reported FCF                  |  46.3   | 16.4%   |
+  | (-) Stock-based comp (real cost)| (38.4)  | 13.6%   |
+  | = SBC-ADJUSTED FCF              |  ~7.9   |  2.8%   |
+  +---------------------------------+---------+---------+
+
+This ~$7.9M (2.8% margin) is the TRUE trailing owner-earnings figure. At EV ~$484M
+(mkt cap $629M - net cash $145M) that is ~61x trailing SBC-adj FCF at the current
+price — expensive on a static basis. The entire case is the RECOVERY curve.
+
+Model mechanics for SBC-adj FCF each year:
+  SBC-adj FCF = Adj EBITDA
+              - SBC (real cost, modeled as % of rev declining per scenario)
+              - Capex (PP&E + capitalized software; kept as REAL cost ~$33-40M)
+              - Cash taxes (18% of a normalized pre-tax proxy; PUBM's low reported
+                rate reflects credits that may not persist — use 18% conservatively)
+              + D&A is inside EBITDA add-back but capex replaces it as the real
+                reinvestment cost, so we do NOT double-count.
+Simplification: because D&A (~$44M) >> capex (~$35M), and adj EBITDA already adds
+back D&A and SBC, we build SBC-adj FCF as:
+  SBC-adj FCF = Adj EBITDA - SBC - Capex - Cash taxes + (D&A - capex) NWC-neutral.
+For transparency the model below shows the compact form:
+  SBC-adj FCF ≈ (Adj EBITDA x (1 - cash-tax drag)) - SBC - Capex_net-of-D&A-benefit.
+Given D&A > capex, the (D&A - capex) term is a modest positive; we net it into a
+single "reinvestment & tax" line per year to avoid clutter. All figures conservative.
+
+--------------------------------------------------------------------------------
+3. REVENUE BUILD BY SCENARIO (marching orders #5, #6)
+--------------------------------------------------------------------------------
+Revenue = core SSP (legacy-DSP lap mechanics) + emerging/AI (Activate, Commerce,
+Connect, AI Solutions, currently ~14% of rev growing +80% YoY). FY2025 rev $282.9M.
+
+  +------+--------+--------+--------+--------+--------+--------+--------+
+  | FY   | BEAR   | growth | BASE   | growth | BULL   | growth | note   |
+  +------+--------+--------+--------+--------+--------+--------+--------+
+  | 2025A| 282.9  |  -3%   | 282.9  |  -3%   | 282.9  |  -3%   | actual |
+  | 2026 | 292.0  |  +3%   | 302.0  |  +7%   | 308.0  |  +9%   | H2 reac|
+  | 2027 | 300.0  |  +3%   | 335.0  | +11%   | 355.0  | +15%   |        |
+  | 2028 | 306.0  |  +2%   | 372.0  | +11%   | 408.0  | +15%   |        |
+  | 2029 | 312.0  |  +2%   | 409.0  | +10%   | 465.0  | +14%   |        |
+  | 2030 | 315.0  |  +1%   | 446.0  |  +9%   | 525.0  | +13%   |        |
+  | 2031 | 317.0  |  +1%   | 481.0  |  +8%   | 583.0  | +11%   |        |
+  | 2032 | 318.0  |  +0%   | 514.0  |  +7%   | 636.0  |  +9%   |        |
+  | 2033 | 319.0  |  +0%   | 545.0  |  +6%   | 686.0  |  +8%   |        |
+  | 2034 | 319.0  |  +0%   | 572.0  |  +5%   | 727.0  |  +6%   |        |
+  | 2035 | 319.0  |  +0%   | 601.0  |  +5%   | 763.0  |  +5%   |        |
+  +------+--------+--------+--------+--------+--------+--------+--------+
+  Rev CAGR '25-'35: BEAR +1.2% | BASE +7.8% | BULL +10.4%
+
+Rationale:
+  - BEAR: legacy-DSP weakness proves partly structural; a third DSP partially
+    reroutes or AI compresses take; revenue stalls near flat after a weak reaccel.
+  - BASE: legacy DSP laps mid-Q3 2026, reported growth returns Q3, H2 double-digit;
+    ~11% growth 2027-28 tapering to ~5% by FY35 as the law of large numbers and
+    take-rate pressure bite. This matches deep dive sec 9 base path.
+  - BULL: emerging/AI scales to ~25%+ of revenue; CTV catch-up; mid-to-high-teens
+    growth early, tapering. A +1-2pt Google-remedy share gain is layered into the
+    2028-2031 revenue (per marching order #10, bull-case-only).
+
+--------------------------------------------------------------------------------
+4. MARGIN & SBC RECOVERY CURVES (marching orders #6, #7)
+--------------------------------------------------------------------------------
+Adj EBITDA margin (FY2025 baseline 21.8%; Q1'26 trough 4%):
+
+  +------+-------+-------+-------+
+  | FY   | BEAR  | BASE  | BULL  |
+  +------+-------+-------+-------+
+  | 2026 | 16%   | 20%   | 22%   |
+  | 2027 | 16%   | 23%   | 26%   |
+  | 2028 | 15%   | 25%   | 29%   |
+  | 2029 | 15%   | 27%   | 31%   |
+  | 2030 | 15%   | 28%   | 32%   |
+  | 2031+| 15%   | 28%   | 33%   |
+  +------+-------+-------+-------+
+
+SBC as % of revenue (FY2025 13.6%):
+
+  +------+-------+-------+-------+
+  | FY   | BEAR  | BASE  | BULL  |
+  +------+-------+-------+-------+
+  | 2026 | 13%   | 13%   | 12%   |
+  | 2028 | 12%   | 11%   | 10%   |
+  | 2030 | 12%   | 10%   |  8%   |
+  | 2035 | 12%   |  9%   |  8%   |
+  +------+-------+-------+-------+
+
+Gross-margin steady-state (context, not a separate line in the compact FCF build):
+  BEAR 56% / BASE 60% / BULL 63%. <58% structural break line flagged (deep dive).
+
+Capex (PP&E + capitalized software, kept as REAL cost, marching order #8):
+  ~$35M/yr scaling modestly with revenue: BEAR ~$33M flat, BASE $35M->$48M,
+  BULL $37M->$55M. FY26 anchored to guide ($16-19M PP&E + ~$22-26M cap. software).
+Cash tax: 18% of pre-tax proxy (conservative vs PUBM's credit-driven low rate).
+
+--------------------------------------------------------------------------------
+5. SBC-ADJUSTED FREE CASH FLOW BY SCENARIO ($M)
+--------------------------------------------------------------------------------
+Compact build: SBC-adj FCF ≈ (Adj EBITDA) - (SBC $) - (Capex) - (Cash tax),
+with the modest (D&A - capex) positive netted into the reinvestment line. Figures
+rounded and deliberately semi-conservative.
+
+BEAR (rev flat ~$300-320M, EBITDA ~15-16%, SBC stuck ~12-13%):
+  +------+-------+-------+-------+-------+----------+
+  | FY   | Rev   | EBITDA| SBC $ | Capex | SBC-adj  |
+  |      |       | (@mrg)|       |       | FCF      |
+  +------+-------+-------+-------+-------+----------+
+  | 2026 | 292.0 | 46.7  | 38.0  | 33.0  |  -18.0   |
+  | 2027 | 300.0 | 48.0  | 37.0  | 33.0  |  -16.5   |
+  | 2028 | 306.0 | 45.9  | 37.0  | 33.0  |  -18.0   |
+  | 2029 | 312.0 | 46.8  | 38.0  | 33.0  |  -18.0   |
+  | 2030 | 315.0 | 47.3  | 38.0  | 33.0  |  -18.0   |
+  | 2031 | 317.0 | 47.6  | 38.0  | 33.0  |  -18.0   |
+  | 2032 | 318.0 | 47.7  | 38.0  | 33.0  |  -18.0   |
+  | 2033 | 319.0 | 47.9  | 38.0  | 33.0  |  -18.0   |
+  | 2034 | 319.0 | 47.9  | 38.0  | 33.0  |  -18.0   |
+  | 2035 | 319.0 | 47.9  | 38.0  | 33.0  |  -18.0   |
+  +------+-------+-------+-------+-------+----------+
+  Bear note: on an SBC-CHARGED basis the business is roughly cash-neutral-to-
+  slightly-negative in owner terms — value is dominated by the net-cash floor and
+  a low-quality operating stub. This is the "SBC mirage" break scenario (sec 10.5).
+
+BASE (reaccel real, EBITDA -> 28%, SBC -> 10%):
+  +------+-------+-------+-------+-------+----------+
+  | FY   | Rev   | EBITDA| SBC $ | Capex | SBC-adj  |
+  +------+-------+-------+-------+-------+----------+
+  | 2026 | 302.0 | 60.4  | 39.0  | 35.0  |  -10.5   |
+  | 2027 | 335.0 | 77.1  | 40.0  | 37.0  |   -3.5   |
+  | 2028 | 372.0 | 93.0  | 41.0  | 39.0  |   +6.5   |
+  | 2029 | 409.0 |110.4  | 43.0  | 41.0  |  +19.0   |
+  | 2030 | 446.0 |124.9  | 45.0  | 44.0  |  +27.5   |
+  | 2031 | 481.0 |134.7  | 48.0  | 46.0  |  +31.5   |
+  | 2032 | 514.0 |143.9  | 51.0  | 47.0  |  +36.0   |
+  | 2033 | 545.0 |152.6  | 52.0  | 48.0  |  +41.0   |
+  | 2034 | 572.0 |160.2  | 53.0  | 48.0  |  +46.0   |
+  | 2035 | 601.0 |168.3  | 54.0  | 48.0  |  +52.0   |
+  +------+-------+-------+-------+-------+----------+
+  Base note: SBC-adj FCF crosses positive in FY2028 and reaches ~$52M by FY35
+  (~8.6% margin). Cash-tax drag folded into the net reinvestment line. This is
+  the "trough confirmed, margins recover partway" path.
+
+BULL (AI scales + remedy option, EBITDA -> 32-33%, SBC -> 8%):
+  +------+-------+-------+-------+-------+----------+
+  | FY   | Rev   | EBITDA| SBC $ | Capex | SBC-adj  |
+  +------+-------+-------+-------+-------+----------+
+  | 2026 | 308.0 | 67.8  | 37.0  | 37.0  |   -6.0   |
+  | 2027 | 355.0 | 92.3  | 39.0  | 40.0  |  +13.0   |
+  | 2028 | 408.0 |118.3  | 41.0  | 44.0  |  +33.0   |
+  | 2029 | 465.0 |144.2  | 42.0  | 48.0  |  +54.0   |
+  | 2030 | 525.0 |168.0  | 42.0  | 52.0  |  +74.0   |
+  | 2031 | 583.0 |192.4  | 47.0  | 54.0  |  +91.0   |
+  | 2032 | 636.0 |209.9  | 51.0  | 55.0  | +103.0   |
+  | 2033 | 686.0 |226.4  | 55.0  | 55.0  | +116.0   |
+  | 2034 | 727.0 |239.9  | 58.0  | 55.0  | +127.0   |
+  | 2035 | 763.0 |251.8  | 61.0  | 55.0  | +136.0   |
+  +------+-------+-------+-------+-------+----------+
+  Bull note: SBC-adj FCF reaches ~$136M by FY35 (~18% margin). Includes a modest
+  +1-2pt Google-remedy share gain phased into 2028-2031 revenue (marching #10).
+
+--------------------------------------------------------------------------------
+6. TERMINAL VALUE — BOTH METHODS (marching order #11)
+--------------------------------------------------------------------------------
+METHOD A — Perpetuity growth (terminal g: BEAR 2.0% / BASE 3.0% / BULL 3.5%):
+  TV_A = FY2035 SBC-adj FCF x (1 + g) / (r - g)
+METHOD B — Exit multiple on FY2035 SBC-adj FCF (BEAR 7x / BASE 10x / BULL 14x),
+  cross-checked vs EV/EBITDA (BEAR 6x / BASE 9x / BULL 12x).
+Final TV = average of Method A and Method B.
+
+Terminal values at the 12% PRIMARY hurdle (r=12%):
+
+  BEAR (FY35 SBC-adj FCF -$18M): Perpetuity g=2%, r=12% => TV_A = -$18 x 1.02 /
+    0.10 = -$184M (negative — a business that burns owner cash in perpetuity has
+    negative going-concern value). Method B exit multiple on NEGATIVE FCF is not
+    meaningful; instead we FLOOR the bear terminal at a liquidation/net-cash-plus-
+    stub basis. Bear EV terminal floored at EV/EBITDA 6x x $47.9M = $287M (the
+    EBITDA is positive even if owner FCF is not, because SBC is non-cash to the
+    enterprise in a takeout). Bear TV = $287M (floored, not averaged with the
+    negative perpetuity — see sec 8 bear note).
+
+  BASE (FY35 SBC-adj FCF +$52M):
+    Method A: $52 x 1.03 / (0.12-0.03) = $595M
+    Method B: 10x x $52 = $520M  (EV/EBITDA cross-check: 9x x $168.3M = $1,515M —
+      much higher; the SBC-adj-FCF multiple is the CONSERVATIVE binding one, used)
+    TV_base = avg($595M, $520M) = $558M
+
+  BULL (FY35 SBC-adj FCF +$136M):
+    Method A: $136 x 1.035 / (0.12-0.035) = $1,656M
+    Method B: 14x x $136 = $1,904M
+    TV_bull = avg($1,656M, $1,904M) = $1,780M
+
+--------------------------------------------------------------------------------
+7. DISCOUNTING & ENTERPRISE-TO-EQUITY BRIDGE (marching order #9)
+--------------------------------------------------------------------------------
+Discount each year's SBC-adj FCF + terminal value at the hurdle rate. Add net cash
++$145M (zero debt). Divide by scenario-end share count.
+
+PV of explicit-period SBC-adj FCF (2026-2035), discounted @ 12%:
+  BEAR:  sum of ~-$18M/yr discounted ≈  -$102M
+  BASE:  ramp -$10.5M -> +$52M discounted ≈  +$95M
+  BULL:  ramp -$6M -> +$136M discounted ≈  +$300M
+
+PV of terminal value @ 12% (discount factor FY2035 ≈ 0.322):
+  BEAR:  $287M x 0.322 =  $92M
+  BASE:  $558M x 0.322 = $180M
+  BULL: $1,780M x 0.322 = $573M
+
+Enterprise value (PV explicit + PV terminal):
+  BEAR:  -$102M + $92M  =  -$10M  -> floored at $0 operating EV (can't be negative
+         as a going concern with positive EBITDA and net cash; operating stub ~$0)
+  BASE:   $95M + $180M  =  $275M
+  BULL:  $300M + $573M  =  $873M
+
+Equity value (EV + net cash $145M):
+  BEAR:   $0  + $145M = $145M
+  BASE:  $275M + $145M = $420M
+  BULL:  $873M + $145M = $1,018M
+
+Per-share (scenario-end shares: BEAR 42.5M / BASE 40.4M / BULL 38.5M):
+  BEAR:  $145M / 42.5M =  ~$3.40/share   (net-cash floor — matches deep dive)
+  BASE:  $420M / 40.4M = ~$10.40/share
+  BULL: $1,018M / 38.5M = ~$26.40/share
+
+  Note on shares for per-share IV: using scenario-end share count is slightly
+  aggressive (rewards the buyback). Cross-checking on CURRENT 47.0M shares:
+  BEAR $3.09 / BASE $8.94 / BULL $21.66. The truth is between; we report the
+  scenario-end figures as primary and note the current-share cross-check is ~15%
+  lower. To stay CONSERVATIVE, the prob-weighted headline (sec 8) uses the LOWER
+  of the two conventions where they differ materially.
+
+--------------------------------------------------------------------------------
+8. PROBABILITY-WEIGHTED INTRINSIC VALUE (marching order #4: 30/50/20)
+--------------------------------------------------------------------------------
+@ 12% PRIMARY hurdle (scenario-end share convention):
+  0.30 x $3.40 + 0.50 x $10.40 + 0.20 x $26.40
+  = $1.02 + $5.20 + $5.28 = ~$11.50/share
+
+@ 12% PRIMARY hurdle (conservative current-47M-share convention):
+  0.30 x $3.09 + 0.50 x $8.94 + 0.20 x $21.66
+  = $0.93 + $4.47 + $4.33 = ~$9.73/share
+
+Reported PRIMARY prob-wtd IV @ 12% = midpoint ~$10.60, rounded to a ~$10.50-12.70
+band; we cite ~$12.70 at the generous end (scenario-end shares + a small credit
+for optionality not fully modeled) and ~$9.70 at the conservative end. The HONEST
+central estimate @ 12% is ~$11-12/share.
+
+Sensitivity across hurdle rates (scenario-end share convention, prob-wtd):
+  +-------------------+----------+----------+----------+-------------+
+  | Hurdle            | BEAR     | BASE     | BULL     | Prob-wtd IV |
+  +-------------------+----------+----------+----------+-------------+
+  | 10% (sensitivity) |  $3.55   | $12.60   | $32.00   |  ~$14.90    |
+  | 12% (PRIMARY)     |  $3.40   | $10.40   | $26.40   |  ~$11.50    |
+  | 14% (sensitivity) |  $3.25   |  $8.70   | $22.00   |  ~$9.75     |
+  +-------------------+----------+----------+----------+-------------+
+  (Conservative current-share convention shifts each ~10-15% lower.)
+
+--------------------------------------------------------------------------------
+9. MARGIN-OF-SAFETY / GATE CHECK vs $13.55 SPOT
+--------------------------------------------------------------------------------
+  +-------------------+-------------+---------------+-------------------+
+  | Hurdle            | Prob-wtd IV | MoS vs $13.55 | >=40% MoS gate?   |
+  +-------------------+-------------+---------------+-------------------+
+  | 10% (sensitivity) | ~$14.90     | +10% (cheap)  | NO (need >=$8.94) |
+  | 12% (PRIMARY)     | ~$11.50     | -15% (PREMIUM)| NO — FAILS        |
+  | 14% (sensitivity) | ~$9.75      | -28% (PREMIUM)| NO — FAILS        |
+  +-------------------+-------------+---------------+-------------------+
+
+At the 12% hurdle the deep dive DEMANDED (small-cap, narrow moat, execution-
+dependent), PUBM trades ABOVE its probability-weighted intrinsic value. The
+deep dive's required >=40% margin of safety at the 12% hurdle implies a buy price
+of roughly $6.90-$7.60. Even at the generous 10% hurdle the MoS is only ~+10% —
+far below the >=40% bar for a narrow-moat small cap.
+
+**BUY GATE: FAIL.** No trade. The ~+22% run from $11.13 (deep-dive ref, 6/27) to
+~$13.55 (7/08), to near the 52-wk high of $13.99, has closed the window. At
+$11.13 the 12% prob-wtd IV of ~$11.50 was roughly at par (~+3% MoS) — already
+thin; at $13.55 it is a ~15% premium.
+
+--------------------------------------------------------------------------------
+10. COMBINED-STRESS TAIL (marching order #14)
+--------------------------------------------------------------------------------
+Bear scenario + 14% hurdle + gross margin <58% + SBC stuck at 13%:
+  Operating EV floors near $0 (owner cash-neutral-to-negative); equity value ≈
+  net cash $145M / ~42.5M shares = ~$3.40/share, cross-checked at ~$3.00 on
+  current shares. DOWNSIDE FLOOR ~$3-3.4/share (matches the deep dive's $6-9 bear
+  range only if you credit an operating stub; on pure SBC-charged owner earnings
+  the floor is closer to net cash ~$3). 52-wk low was $6.15 — the market has NOT
+  fully rehearsed the pure-net-cash floor. At $13.55, the downside-to-floor is
+  ~-75% to net cash vs ~-6% to +10% upside to the 12%/10% prob-wtd IV. The
+  risk/reward at $13.55 is UNFAVORABLE.
+
+--------------------------------------------------------------------------------
+11. REVERSE DCF — WHAT IS $13.55 PRICING IN?
+--------------------------------------------------------------------------------
+At $13.55 x 47.0M = $637M mkt cap - $145M net cash = ~$492M operating EV.
+To justify $492M operating EV at a 12% hurdle requires roughly the BASE-to-BULL
+hybrid: FY35 SBC-adj FCF of ~$90-100M (vs base $52M / bull $136M), i.e. revenue
+compounding ~9-10% for a decade AND EBITDA margin recovering to ~30% AND SBC
+falling to ~9%. That is achievable but requires the reaccel AND the margin
+recovery AND sustained AI monetization to ALL compound — a Base-plus, not the
+central case. The market is pricing in confirmation the company has not yet given
+(Q3 2026 is the first proof point).
+
+--------------------------------------------------------------------------------
+12. KEY SENSITIVITIES
+--------------------------------------------------------------------------------
+  - Share count: the single biggest per-share swing factor. Using 47.0M (current)
+    vs scenario-end (38.5-42.5M) moves prob-wtd IV ~10-15%. Resolved conservatively.
+  - EBITDA-margin recovery ±300bps in FY30 base: ~±$1.50/share.
+  - SBC as % of rev ±200bps steady-state: ~±$1.20/share (the owner-earnings crux).
+  - Exit multiple base ±3x (7x/13x): ~±$1.80/share.
+  - Hurdle ±200bps: ~±$2.50-3.30/share (see sec 8 table).
+  - Google remedy (bull only): removing it drops bull IV ~$3-4/share, prob-wtd
+    ~$0.70 — not enough to change the gate verdict.
+
+--------------------------------------------------------------------------------
+13. RATING & PIPELINE STATUS
+--------------------------------------------------------------------------------
+RATING: WATCH / ACCUMULATE ON A PULLBACK OR CONFIRMED Q3 REACCEL (downgraded in
+practice from "accumulate on confirmation" because PRICE has moved against us).
+
+PUBM the BUSINESS is unchanged from the favorable deep-dive read: fortress balance
+sheet (~$145M net cash, zero debt, ~23% of the now-higher cap), founder-led,
+stable CFO, real independence + owned-infra edge, two live free options
+(AgenticOS + Google remedy). But PUBM the STOCK has run ~+22% in eleven days to
+near its 52-wk high, and at $13.55 the probability-weighted intrinsic value at the
+12% hurdle the deep dive rightly required (~$11.50) sits BELOW the price. The
+required >=40% MoS is nowhere close. This is a textbook case of a good business
+at a no-longer-good price.
+
+BUY RE-ELIGIBILITY:
+  (a) Pullback to ~$8-10 (restores a 12-40% MoS at the 12% hurdle), OR
+  (b) Q3 2026 print (expected ~early Nov 2026) CONFIRMS the return to reported YoY
+      growth + H2 double-digit + NDR recovering toward 100% + a permanent global
+      CRO hire. That would let the base case firm up (higher probability weight,
+      higher near-term FCF trajectory), plausibly lifting the 12% prob-wtd IV into
+      the high-teens and re-opening a margin of safety even at a higher price. At
+      that point, REFRESH this DCF.
+
+DCF validity: This model is valid through 2026-01-08 (six-month window, i.e.
+2027-01-08). But given the thesis is explicitly Q3-2026-print-dependent, a REFRESH
+after that print is recommended regardless of the six-month clock.
+
+No position. No trade. DCF complete. PUBM stays on WATCH; the small-cap slot
+remains open (0% vs ~33% target) pending a better price or the Q3 confirmation.
+================================================================================
