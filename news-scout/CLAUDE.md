@@ -8,7 +8,8 @@ A news research agent that scans for recent (24–48 hour) headlines and summari
 news-scout/
 ├── .claude/agents/news-scout.md   ← agent definition & full ruleset
 ├── watchlist.md                   ← companies, tickers, and topic categories to monitor
-└── seen-stories.md                ← append-only deduplication log
+├── seen-stories.md                ← append-only deduplication log
+└── scans/                         ← write-only per-run output files (never read back)
 ```
 
 ## How to use
@@ -32,5 +33,6 @@ use the news-scout agent
 - Deduplicates against seen-stories.md (URL-first; headline fallback)
 - Appends all surfaced stories to seen-stories.md after every run
 - seen-stories.md is append-only — never edit or delete past entries
+- Every run also writes its full output to a new file under scans/ (e.g. scans/2026-07-08-1423.md) — write-only, never read back by the agent, purely a saved copy for the user
 - Output is always ranked by priority (P1 → P4), with YouTube angle tags
 - No financial data aggregators or SEC filings — qualitative news sources only

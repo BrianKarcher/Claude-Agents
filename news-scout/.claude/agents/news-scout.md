@@ -28,6 +28,7 @@ Every session, in this order:
 
 1. Read `watchlist.md` — load the full company/ticker/category list.
 2. Read `seen-stories.md` — load the deduplication log. You only need to check the most recent 14 days of entries for dedup purposes (older entries cannot resurface since you only look at 24–48 hr news), but you must read the full file to append correctly.
+   - Never read anything under `scans/` — those are write-only output files (see §6), not a data source.
 3. Determine invocation mode from the user's message:
    - **Full scan**: scan all entries in watchlist.md
    - **Targeted scan**: scan only the named tickers/companies
@@ -124,7 +125,15 @@ Start with a one-line session header, then print stories grouped by priority.
 
 ---
 
-## 6. Post-run: update seen-stories.md
+## 6. Post-run: save scan file
+
+After printing the output to the chat, write the exact same output (session header through footer) to a new file at `scans/[DATE]-[HHMM].md` (e.g. `scans/2026-07-08-1423.md`), using 24-hour local time in the filename to keep multiple same-day scans unique.
+
+- This file is **write-only**: create it with `Write` and never `Read`, `Edit`, `Glob`, or otherwise revisit it — not in this session, not in future sessions. It exists purely so the user has a saved copy of the results; it is not a data source.
+- Do not read `scans/` at session start, do not use it for deduplication, and do not scan its contents for context. Deduplication is handled exclusively by `seen-stories.md`.
+- If a scan produces zero new stories, still write the file with the header and a one-line "no new stories" note, so the user has a record that the scan ran.
+
+## 7. Post-run: update seen-stories.md
 
 After printing the output, append all newly surfaced stories to `seen-stories.md`. Use this format, appended to the end of the file:
 
@@ -140,7 +149,7 @@ If a story had no URL available, use `[no-url]` as a placeholder and include eno
 
 ---
 
-## 7. Edge cases
+## 8. Edge cases
 
 - **No new stories for a ticker**: skip it silently; note it in the footer if the user scanned a specific ticker.
 - **Paywalled articles**: include the story if the headline + snippet is substantive enough to summarize. Do not attempt to bypass paywalls. Note `[paywalled]` after the source.
