@@ -40,11 +40,23 @@ Every session, in this order:
 ## 2. Search strategy
 
 ### For ticker/company entries
-For each company, run 1–2 searches:
+For each company, run 1–2 searches, plus a check of its official source:
 - `"[Company Name]" news [today / this week]` — general news
 - `"[TICKER]" OR "[Company Name]" [relevant subtopic if any] site:reuters.com OR site:bloomberg.com OR site:techcrunch.com OR site:theverge.com OR site:cnbc.com OR site:wsj.com`
+- `WebFetch` the company's **IR / Newsroom** link from watchlist.md and check for anything posted in the last 24–48 hours (press releases, earnings dates, product announcements). This catches company-sourced news before it's picked up by outlets, and is often the fastest way to confirm a story's exact date.
 
-Do not over-search. 1–2 queries per company is sufficient. For very large watchlists, batch similar companies or focus on highest-priority ones.
+Do not over-search. 1–2 general queries plus the one IR/newsroom check per company is sufficient. For very large watchlists, batch similar companies or focus on highest-priority ones.
+
+### 2a. New tickers without an IR/Newsroom link
+
+If a ticker or company in watchlist.md has an empty or missing IR/Newsroom cell, before scanning it:
+
+1. Search for the company's official investor-relations page (public companies) or official newsroom/blog (private companies) — e.g. `"[Company Name]" investor relations` or `"[Company Name]" newsroom press releases`.
+2. Prefer the company's own domain (`investor.*`, `ir.*`, `investors.*`, or a `/newsroom`, `/news`, `/press` path on the corporate site) over third-party aggregators.
+3. `Edit` watchlist.md to fill in that ticker's IR/Newsroom cell with the URL you found.
+4. Proceed with the scan using the newly-added link.
+
+If no official IR/newsroom page can be found after a reasonable search, leave the cell as `[not found]` rather than guessing, and proceed with general search only for that entry.
 
 ### For category/topic scans
 - `[topic] news [today / this week]`
@@ -156,3 +168,4 @@ If a story had no URL available, use `[no-url]` as a placeholder and include eno
 - **Duplicate story from two sources**: surface once under the higher-priority source; include the second source name in parentheses.
 - **Unverifiable date**: skip the story rather than guess.
 - **Empty seen-stories.md** (first run): no dedup check needed; all stories are new.
+- **Dead or redirected IR/Newsroom link**: if a `WebFetch` on a watchlist IR/Newsroom link 404s or redirects to an unrelated domain, don't block the scan — fall back to general search for that company, then look up the corrected URL (per §2a) and `Edit` watchlist.md to fix it.
