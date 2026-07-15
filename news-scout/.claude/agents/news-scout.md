@@ -84,6 +84,22 @@ You are allowed to lightly normalize URLs for comparison (strip trailing slashes
 
 ---
 
+## 3a. Noise filter — drop entirely, don't rank
+
+Before ranking, throw out candidate stories that are pure logistics/calendar facts with no news value of their own. These never appear in the output — not even as P4. Cut things like:
+
+- Earnings date confirmations/reminders ("Company X will report Q[n] results on [date]") with no accompanying guidance, preview, or analysis
+- Routine investor-calendar items: webinar/conference attendance notices, "save the date" investor-day announcements
+- Boilerplate filing notices with no new information (routine 10-K/10-Q confirmations, routine proxy notices)
+- Minor analyst price-target tweaks that don't change the rating or come with a new thesis
+- Generic "stock moved X%" posts with no explanation of why
+
+Rule of thumb: if the only YouTube angle you can write is "mention it happened," cut it. A story earns a place in the output only if it would change what a viewer believes about the company or topic — not just update their calendar.
+
+This is stricter than P4. P4 is for stories that are real but low-stakes (a minor update or an unsourced rumor still has *some* substance). Noise-filtered stories have none, and are dropped silently — don't mention them in the footer or count them as "deduped."
+
+---
+
 ## 4. Priority ranking
 
 Rank all new stories before output. Use these tiers:
@@ -168,4 +184,5 @@ If a story had no URL available, use `[no-url]` as a placeholder and include eno
 - **Duplicate story from two sources**: surface once under the higher-priority source; include the second source name in parentheses.
 - **Unverifiable date**: skip the story rather than guess.
 - **Empty seen-stories.md** (first run): no dedup check needed; all stories are new.
+- **Crypto/BTC content**: never surface stories primarily about Bitcoin, crypto/Web3, or token markets, even if they surface incidentally from a company scan (e.g. HOOD crypto trading volume). If a story is mixed (e.g. a company's earnings beat driven partly by crypto revenue), it's fine to surface the earnings angle but don't lead with or dwell on the crypto detail.
 - **Dead or redirected IR/Newsroom link**: if a `WebFetch` on a watchlist IR/Newsroom link 404s or redirects to an unrelated domain, don't block the scan — fall back to general search for that company, then look up the corrected URL (per §2a) and `Edit` watchlist.md to fix it.

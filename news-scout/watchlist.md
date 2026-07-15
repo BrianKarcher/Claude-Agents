@@ -33,6 +33,7 @@
 | CRM | Salesforce | https://investor.salesforce.com | Agentforce, enterprise AI |
 | SNOW | Snowflake | https://investors.snowflake.com | Data cloud, Cortex AI |
 | CHTR | Charter Communications | https://ir.charter.com | Broadband/cable, Spectrum, mobile bundling |
+| SPCX | SpaceX (Space Exploration Technologies Corp.) | https://ir.spacex.com/investors/default.aspx | Starship, Starlink; Nasdaq IPO June 2026, ~$1.75T valuation |
 
 ## Disruptors / High-Growth
 | Ticker | Company | IR / Newsroom | Notes |
@@ -45,7 +46,7 @@
 | ADBE | Adobe | https://www.adobe.com/investor-relations.html | Creative Cloud, Firefly generative AI |
 | ASML | ASML Holding | https://www.asml.com/en/investors | EUV lithography, semiconductor equipment |
 | HOOD | Robinhood | https://investors.robinhood.com | Retail trading, crypto, prediction markets |
-| NOW | ServiceNow | https://investors.servicenow.com | Enterprise workflow AI, agentic automation |
+| NOW | ServiceNow | https://www.servicenow.com/company/investor-relations.html | Enterprise workflow AI, agentic automation |
 | PYPL | PayPal | https://investor.pypl.com | Digital payments, Venmo, stablecoin push |
 
 ## Private / Non-Public (newsworthy for YouTube)
@@ -54,7 +55,6 @@
 | OpenAI | https://openai.com/news/ | GPT-5, Sora, operator products |
 | Anthropic | https://www.anthropic.com/news | Claude models, MCP ecosystem |
 | xAI / Grok | https://x.ai/news | Elon Musk AI; Grok model releases |
-| SpaceX / Starlink | https://www.spacex.com/updates | Starship, Starlink expansion |
 | Waymo | https://waymo.com/blog/ | Autonomous vehicles (Alphabet subsidiary but distinct news stream) |
 
 ## Topic Categories
@@ -67,5 +67,4 @@
 | Cloud computing | Hyperscaler CapEx, pricing, new services |
 | Agentic AI | AI agents, MCP, autonomous AI products |
 | Social media | TikTok, X/Twitter, YouTube policy, creator economy |
-| Crypto / Web3 | Bitcoin ETF, Ethereum, regulatory developments |
 | Cybersecurity | Major breaches, zero-days, AI-powered attacks |

@@ -1,0 +1,749 @@
+================================================================================
+PAYPAL HOLDINGS (PYPL) — DISCOUNTED CASH FLOW ANALYSIS
+Date: July 14, 2026
+Sources: FY2025 10-K, Q1 2026 10-Q, Q1 2026 Earnings Call Transcript (all
+         user-supplied; personal/ folder) + one live price/news check
+================================================================================
+
+*** TIME-SENSITIVE: SEE THE M&A SITUATION BEFORE READING FURTHER ***
+Reuters reported within the last 24 hours that Stripe and Advent International
+have offered $60.50/share (implying >$53B) to acquire PayPal — a ~28% premium
+to the pre-news close of $47.37. This is a PROPOSAL under discussion, NOT a
+signed definitive merger agreement — "a response [from PayPal's board] is
+still pending" per reporting. The stock is trading around $53 in early
+reaction, well below the $60.50 offer, implying the market is pricing real
+completion risk (see Section 9). Everything below is a standalone,
+fundamentals-only view of what PayPal is worth as an independent company —
+useful for judging whether $60.50 is a good price for shareholders, but NOT
+a substitute for tracking the deal itself, which could move faster than any
+DCF is useful for.
+
+EXECUTIVE SUMMARY
+-----------------
+Intrinsic value (base case, 10.0% WACC / 2.5% TGR, 13x exit): ~$78/share
+Intrinsic value (bull case, 8.5% WACC / 3.0% TGR, 16x exit):  ~$135/share
+Intrinsic value (bear case, 12.0% WACC / 1.5% TGR, 9x exit):   ~$38/share
+Probability-weighted IV (25% bull / 45% base / 30% bear):      ~$80/share
+
+Reference prices:
+  Stripe/Advent offer:        $60.50/share
+  Pre-news close (7/14):      $47.37/share
+  Early post-news trade:      ~$53/share (implies the deal has NOT closed
+                               and the market is discounting completion risk)
+
+vs. the $60.50 OFFER: base case says PayPal is worth ~29% MORE than the
+offer as a standalone business; only the bear case (structural share loss,
+margin compression continuing indefinitely) would make $60.50 look full.
+vs. the PRE-NEWS PRICE of $47.37: base case implies the market had PayPal
+priced at a discount rate above 16% before the offer leaked — a
+distressed-company discount rate for a company that generated over $6.4B of
+operating cash flow last year and carries almost no net debt. That gap is
+exactly the kind of pessimism a buyout offer exploits.
+
+This is the opposite conclusion from the AMD analysis in this folder: AMD
+was priced for perfection and this model couldn't justify the price under
+any assumption. PYPL, even after a 28% takeover premium, still screens as
+reasonably priced-to-cheap under base-case fundamentals — the standalone
+business case for holding rather than tendering is real, not a stretch.
+
+
+================================================================================
+SECTION 1 — BUSINESS SNAPSHOT & THE M&A SITUATION
+================================================================================
+
+PayPal operates a two-sided digital payments network (PayPal, Venmo,
+Braintree, and PayPal-branded processing/value-added services) monetizing
+via take rate on Total Payment Volume (TPV) plus interest/fee income on a
+consumer credit and buy-now-pay-later (BNPL) loan book. FY2025 revenue mix:
+
+  - Transaction revenue (take-rate on TPV):        $30,150M   90.9% of total
+  - Revenue from other value-added services:         $3,022M    9.1% of total
+    (partner revenue share, subscriptions, gateway fees, loan interest/fees)
+  Total FY2025 revenue:                             $33,172M   +4.3% YoY
+
+PayPal reports as a SINGLE operating segment today. Effective this quarter
+(April 2026), new CEO Enrique Lores (former HP Inc. CEO, previously a PayPal
+board member) reorganized the company into three internal business lines —
+Checkout Solutions & PayPal; Consumer Financial Services & Venmo; Payment
+Services & Crypto — with external segment reporting planned for "sometime
+next year." See Section 3.
+
+THE STRIPE/ADVENT PROPOSAL (breaking news, last 24 hours)
+  - Reuters: Stripe and Advent International have offered $60.50/share,
+    valuing PayPal at over $53 billion — a ~28% premium to the last
+    undisturbed close ($47.37).
+  - Structure reported: Stripe and Advent as equal co-owners, ~$50B of
+    committed acquisition financing lined up.
+  - Status: this followed discussions dating to "early April" 2026; a
+    response from PayPal's board is still pending. This is NOT a signed
+    merger agreement — treat it as a live, unresolved situation, not a
+    completed transaction.
+  - Strategic logic: Stripe is PayPal's most credible modern-era competitor
+    in payment processing/infrastructure (the same competitive pressure
+    referenced in PayPal's own PSP/Braintree commentary). A combination
+    would be one of the largest fintech M&A transactions ever and would
+    likely draw serious antitrust scrutiny given the two companies compete
+    directly in payment processing for merchants.
+  - Market reaction: the stock is trading meaningfully below $60.50 in
+    early post-news action (~$53, based on the data available at the time
+    of this analysis), which is the market pricing deal-completion risk
+    (regulatory risk, financing risk, possibility the board rejects or
+    renegotiates, possibility of a competing bid). This is a classic
+    merger-arbitrage spread, not a fundamentals signal.
+
+The thesis in three sentences (standalone, ignoring the deal):
+  1. PayPal is a large, profitable, still-growing payments network (TPV +11%
+     spot / +8% currency-neutral in Q1 2026) trading, pre-news, at a
+     depressed multiple that reflected years of decelerating branded
+     checkout growth, take-rate compression, and leadership uncertainty.
+  2. A brand-new CEO has just launched a real reorganization (three focused
+     business lines, simplified decision-making) paired with a disclosed
+     $1.5B+ gross annualized cost-savings target over 2-3 years — a
+     credible, quantified turnaround lever, not just a vague promise.
+  3. Even without the turnaround working, PayPal throws off $6B+ of
+     adjusted free cash flow a year against an ~$41-53B market cap
+     (depending which price you use) and has been retiring ~8-9% of its
+     share count annually through buybacks — a large, disciplined capital
+     return program that compounds per-share value even in a low-growth
+     scenario.
+
+
+================================================================================
+SECTION 2 — HISTORICAL FINANCIALS
+================================================================================
+
+All figures in $M unless noted. Fiscal year ends December 31.
+
+INCOME STATEMENT SUMMARY
+                                 FY2025      FY2024      FY2023    Q1 2026    Q1 2025
+                                 ------      ------      ------    -------    -------
+Net revenues                    33,172      31,797      29,771      8,353      7,791
+  YoY growth (spot)               +4.3%       +6.8%         --       +7.2%        --
+Total operating expenses        27,107      26,472      24,743      6,865      6,261
+Operating income                 6,065       5,325       5,028      1,488      1,530
+  Operating margin                18.3%       16.8%       16.9%      17.8%      19.6%
+Other income (expense), net        227           4         383        (95)        73
+Income tax expense               1,059       1,182       1,165        280        316
+  Effective tax rate              16.8%       22.2%       21.5%      20.1%      19.7%
+Net income                       5,233       4,147       4,246      1,113      1,287
+Diluted EPS (GAAP)                 5.41        3.99        3.84       1.21       1.29
+Diluted weighted avg shares        968       1,039       1,107        920        999
+
+Note the Q1 2026 print: revenue grew 7.2% YoY but operating income FELL 2.7%
+(margin compressed from 19.6% to 17.8%), and net income fell 13.5% while
+diluted EPS fell only ~6% — the gap between net income decline and EPS
+decline is entirely the buyback program (see below). This is the "prove it"
+transition year management has explicitly guided to (Section 3).
+
+FREE CASH FLOW RECONCILIATION
+                                 FY2025      FY2024      FY2023    Q1 2026    Q1 2025
+Operating cash flow (GAAP)       6,416       7,450       4,843      1,134      1,160
+Capital expenditures               (852)       (683)       (623)      (231)      (196)
+Free cash flow (GAAP)             5,564       6,767       4,220        903        964
+D&A                                 963       1,032       1,072        238        245
+Stock-based compensation          1,002       1,230       1,475        259        249
+  SBC % of revenue                  3.0%        3.9%        5.0%       3.1%       3.2%
+
+Management's own non-GAAP metric, "adjusted free cash flow" (excludes the
+large, noisy swings from originating/selling BNPL loans held for sale), was
+$1.7B in Q1 2026 alone — ~$6.8B on a trailing-12-month basis. GAAP operating
+cash flow is depressed in any given period by the timing of loan
+originations vs. sales; this model works from operating income (NOPAT) +
+D&A - Capex rather than raw GAAP operating cash flow, which avoids this
+loan-book timing noise without needing to model the BNPL balance sheet
+explicitly (consistent with how management's own adjusted FCF metric
+handles it).
+
+CAPITAL RETURN — the dominant per-share value driver
+                                 FY2025      FY2024      FY2023    Q1 2026
+Share repurchases                6,053       6,047       5,002      1,500
+Dividends paid                     130          --          --        130
+Diluted shares (period end-ish)    968       1,039       1,107        920
+  YoY share count change           -6.8%       -6.1%         --      -7.9%
+
+Shares outstanding fell from 1,107M (FY2023) to 892M (March 31, 2026) — a
+~19.4% reduction in about 2.25 years. FY2026 guidance reiterates ~$6B of
+buybacks and "at least $6B" of adjusted free cash flow.
+
+BALANCE SHEET HIGHLIGHTS (Q1 2026 / March 31, 2026, per management's own
+framing on the earnings call)
+Cash, cash equivalents & investments (short + long-term):    ~$13.5B
+Total debt:                                                   ~$11.6B
+Net cash:                                                      ~$1.9B
+Total equity:                                                 $20,024M
+
+(The GAAP balance sheet also carries a large, roughly self-funding pair of
+"funds receivable and customer accounts" / "funds payable and amounts due
+to customers" — ~$39.5B / ~$41.5B as of Q1 2026 — representing customer
+balances held in transit; these net to a small liability and are excluded
+from the net cash figure above, consistent with how a payments company's
+balance sheet is normally analyzed.)
+
+OPERATING METRICS (Q1 2026 vs Q1 2025)
+Total Payment Volume (TPV):        $463,955M vs $417,208M   (+11% spot / +8% CC)
+Monthly active accounts:                 225M vs   223M     (+1% — flat)
+Number of payment transactions:        6,475M vs 6,045M     (+7%)
+Transaction take rate:                  1.62% vs   1.68%    (-6 bps)
+
+The flat active-account growth (+1%) alongside strong TPV growth (+11%) and
+a declining take rate (-6bps) tells the real story: existing users are
+transacting more and PayPal is monetizing each dollar of volume slightly
+less, as volume mix shifts toward lower-take-rate Venmo and Enterprise
+Payments/Braintree. Branded checkout — historically the highest-margin
+part of the business — grew TPV only 2% currency-neutral in Q1 2026.
+
+
+================================================================================
+SECTION 3 — STRATEGIC CONTEXT: THE TURNAROUND UNDER A NEW CEO
+================================================================================
+
+Enrique Lores (former HP Inc. CEO, joined PayPal's board before taking the
+CEO role) took over as President & CEO shortly before this earnings call —
+his first as CEO. His framing, in his own words on the call: "our foundation
+is strong... [but] we need to make significant changes to improve the
+strategic and operational issues the company has faced."
+
+KEY MOVES ANNOUNCED THIS QUARTER
+  - Reorganization (announced April 29, 2026) into three business lines,
+    each with a single accountable leader: Checkout Solutions & PayPal;
+    Consumer Financial Services & Venmo; Payment Services & Crypto (which
+    absorbs Braintree and the PSP/enterprise processing business, plus
+    PYUSD stablecoin).
+  - Cost program: "at least $1.5 billion of gross run-rate savings over the
+    next two to three years," from (1) structural realignment/delayering
+    and (2) "aggressive deployment of AI" in customer support, risk, and
+    engineering. Management explicitly said a "vast majority" of the $1.5B
+    comes from these two waves, phased over 2026-2028, with savings largely
+    REINVESTED into growth rather than dropping fully to the bottom line —
+    this is NOT a pure margin-expansion story in the near term.
+  - Branded checkout (the crown jewel, highest-margin segment) is being
+    treated as "the highest priority" — investments in presentment,
+    top-50-merchant relationships, a new PayPal+ loyalty program (launched
+    UK, expanding), and rebalancing focus back toward the consumer side of
+    the network after years of merchant-side focus.
+  - Stablecoin (PYUSD): "largest federally regulated stablecoin" as of
+    December 2025, expanded to 70 markets — a call-out but not yet a
+    disclosed material revenue line.
+
+FY2026 GUIDANCE (qualitative, from the call — no explicit full-year revenue
+or EPS dollar figure was given in the transcript provided, only ranges/
+direction; treat the figures below as guidance color, not exact targets)
+  - Full year: transaction margin dollars (ex-interest) roughly flat to
+    slightly down; non-transaction opex +~3%; non-GAAP EPS "ranging from
+    down low-single digits to slightly positive" — i.e., a roughly flat
+    year at best on a per-share earnings basis, with the cost program not
+    yet meaningfully net-accretive.
+  - Q2 2026 (the toughest comp of the year): low-single-digit revenue
+    growth (CC), transaction margin dollars down ~2-3%, non-GAAP EPS down
+    ~9% YoY — a genuinely weak-looking quarter is already flagged and
+    expected by management, driven by a large prior-year one-time partner
+    benefit rolling off.
+  - Reiterated capital return: ~$6B buybacks, "at least $6B" adjusted FCF
+    for the year.
+
+READ-THROUGH FOR THE MODEL: FY2026 is explicitly a trough/transition year
+by management's own framing — margin compression continues near-term, and
+the payoff from the reorg and cost program is a 2027-2028 story, not a 2026
+one. The Base case below reflects this: modest revenue growth, only slow
+margin recovery starting FY2027, with real margin expansion only showing up
+from FY2028 onward as the savings program matures.
+
+
+================================================================================
+SECTION 4 — DCF ASSUMPTIONS
+================================================================================
+
+MODELING APPROACH
+- 10-year explicit forecast: 2027E-2036E, off a FY2026E anchor built
+  bottom-up from Q1 actual + qualitative full-year guidance color
+- Unlevered FCF (FCFF): FCF = NOPAT + D&A - CapEx; "SBC-adjusted FCF"
+  (subtracting stock-based comp as a real economic cost) is what's
+  discounted and used for terminal value — consistent with the AMD model
+  in this folder
+- NOPAT = GAAP operating income x (1 - 20% effective tax rate)
+- Net cash (not net debt) added to enterprise value: ~$1.9B per
+  management's own Q1 2026 disclosure ($13.5B cash+investments vs $11.6B
+  debt); the customer funds receivable/payable pair is excluded as
+  operating float, not net cash
+- SHARE COUNT: held FLAT at 900M (current-ish diluted count) throughout the
+  forecast — NOT walked down for future buybacks. This is intentional, not
+  an oversight: discounting all future FCF back to today's shareholders and
+  ALSO shrinking the share count from that same future FCF would double-count
+  the value of the buyback program. A standard DCF already assumes today's
+  shareholders capture 100% of future cash flow, whether it arrives as
+  dividends, buybacks, or retained earnings — this is the same convention
+  used in the AMD model in this folder.
+- Each scenario (Bull/Base/Bear) uses its own discount rate, terminal
+  growth rate, and exit multiple, mirroring the CHTR/AMD DCFs in this folder
+
+FY2026E REVENUE BUILD (bottom-up, not a consensus number)
+  Q1 2026 (actual):         $8,353M
+  Q2 2026E:                 $8,632M  (~4% spot growth, "low-single-digit CC"
+                                       per guidance, similar spot/CC gap to Q1)
+  Q3 2026E:                 $8,873M  (~5% growth, modest sequential
+                                       improvement assumed)
+  Q4 2026E:                 $9,063M  (~5% growth, seasonally strongest
+                                       quarter)
+  FY2026E total:            $34,900M (+5.2% YoY)
+
+  (Q2-Q4 2025 quarterly splits are estimated from the FY2025 total less
+  Q1 2025 actual, using a typical Q1-light/Q4-heavy seasonal pattern, since
+  only full-year and Q1 figures were in the supplied filings.)
+
+REVENUE GROWTH ASSUMPTIONS (2027E-2036E, % YoY)
+                 2027  2028  2029  2030  2031  2032  2033  2034  2035  2036
+BULL               8%    7%    7%    6%    6%    5%    5%    5%    4%    4%
+BASE               5%    5%    5%    4%    4%    4%    4%    3%    3%    3%
+BEAR               2%    1%    1%    2%    2%    2%    2%    2%    2%    2%
+
+Rationale:
+  - Bull: the reorg works — branded checkout growth re-accelerates as
+    presentment/loyalty investments pay off, Venmo monetization scales
+    (14% TPV growth already, accelerating), Enterprise Payments/Braintree
+    continues mid-teens growth, and take-rate compression stabilizes as the
+    mix shift matures rather than continuing indefinitely.
+  - Base: modest continuation of current trends — TPV keeps growing
+    high-single/low-double-digits but take-rate compression eats most of
+    the difference between TPV growth and revenue growth, similar to the
+    current gap (TPV +11% vs. revenue +7% in Q1 2026); branded checkout
+    stabilizes around flat-to-low-single-digit growth rather than
+    reaccelerating meaningfully.
+  - Bear: branded checkout continues to lose share to Apple Pay/Google Pay,
+    stablecoin-based payment rails, and BNPL-native competitors (Klarna,
+    Affirm); Enterprise Payments/Braintree pricing compresses under Stripe
+    and Adyen competition; the reorg proves to be a distraction (leadership
+    transition risk) rather than a catalyst, consistent with the pattern of
+    prior PayPal turnaround attempts that didn't fully deliver.
+
+OPERATING MARGIN ASSUMPTIONS (GAAP, % of revenue)
+                 2027  2028  2029  2030  2031  2032  2033  2034  2035  2036
+BULL             18.0% 19.0% 20.0% 21.0% 22.0% 22.0% 23.0% 23.0% 23.0% 23.0%
+BASE             17.0% 17.5% 18.0% 18.5% 19.0% 19.0% 19.5% 19.5% 20.0% 20.0%
+BEAR             16.0% 16.0% 15.5% 15.5% 15.0% 15.0% 15.0% 15.0% 15.0% 15.0%
+
+FY2026E: 17.0% (below FY2025's 18.3% — reflects management's own guidance
+of a first-half-weighted investment year with flat-to-down EPS)
+
+Rationale: the $1.5B+ cost program is real and disclosed but management was
+explicit that savings are phased over 2-3 years and largely reinvested —
+Bull assumes the program becomes meaningfully net-accretive to margin by
+2028-2029 AND the take-rate mix shift stabilizes; Base assumes slower,
+partial net accretion (most of the near-term savings get reinvested as
+guided, with only gradual net margin recovery); Bear assumes the take-rate
+compression from mix shift toward lower-margin Venmo/Enterprise Payments
+volume outpaces any cost savings indefinitely, consistent with FY2025's
+GAAP margin (18.3%) already being below its FY2021 peak.
+
+D&A, CAPEX, SBC (% of revenue, same schedule across scenarios — driven by
+technology-platform investment and historical run-rate, not demand):
+                 2027  2028  2029  2030  2031  2032  2033  2034  2035  2036
+D&A              2.6%  2.5%  2.4%  2.3%  2.3%  2.2%  2.2%  2.1%  2.1%  2.1%(2036: 2.1%)
+Capex            2.9%  2.9%  2.8%  2.8%  2.7%  2.7%  2.6%  2.6%  2.5%  2.5%
+SBC              2.7%  2.6%  2.5%  2.4%  2.3%  2.2%  2.1%  2.0%  2.0%  2.0%(2036: 2.0%)
+
+Capex trends modestly UP as % of revenue near-term (new CEO explicitly
+flagged "years of underinvestment" in the technology platform and a push to
+"become cloud-native"), then eases. SBC continues its multi-year decline
+(5.0% of revenue in FY2023 to 3.0% in FY2025) as the company matures.
+
+TAX RATE: 20% flat (recent effective rates have ranged 16.8%-22.2%; 20% is
+a reasonable through-cycle blend).
+
+SHARES OUTSTANDING: 900M, held flat (see Modeling Approach above). Current
+diluted weighted-average was 920M in Q1 2026; shares outstanding at
+March 31, 2026 were 892M; 900M reflects continued buybacks through the
+analysis date without assuming further reduction over the forecast.
+
+TERMINAL VALUE: perpetuity growth and exit-multiple methods, averaged.
+  BULL: TGR 3.0%, exit 16x SBC-adj FCF
+  BASE: TGR 2.5%, exit 13x SBC-adj FCF
+  BEAR: TGR 1.5%, exit 9x SBC-adj FCF
+(Payments/fintech businesses structurally trade at lower FCF multiples than
+high-growth software or semis — 13x base-case exit reflects a mature,
+still-growing payments network, not a compounder re-rating story.)
+
+DISCOUNT RATE DERIVATION
+PayPal carries real execution risk (a new CEO's first turnaround attempt,
+competitive share pressure in its core checkout business, a genuinely
+unresolved M&A situation overhanging the stock) but also a strong balance
+sheet, real cash generation, and a scaled two-sided network that would be
+very expensive for a challenger to replicate from scratch. This sits between
+MSFT's 10% (used elsewhere in this portfolio) and AMD's 11.5%/13.5% — I use:
+  BASE:  10.0%  (moderate execution risk, offset by balance sheet quality
+         and real, already-visible cash generation)
+  BULL:  8.5%   (turnaround de-risks itself with 2-3 quarters of proof;
+         market re-rates PayPal back toward a quality-compounder multiple)
+  BEAR:  12.0%  (structural share loss narrative confirmed; take-rate
+         compression never stabilizes; reorg proves to be a distraction)
+
+PROBABILITY WEIGHTS: Bull 25% / Base 45% / Bear 30% — same split used for
+AMD, reflecting genuine two-sided uncertainty on whether a first-year CEO's
+turnaround plan will work, balanced against a business that is already
+solidly profitable and cash-generative even if nothing improves.
+
+
+================================================================================
+SECTION 5 — DCF MODEL (BASE CASE)
+================================================================================
+
+All figures in $M. WACC 10.0%, TGR 2.5%, exit multiple 13x SBC-adj FCF.
+
+               Rev      YoY   OpInc  OpMgn    Tax   NOPAT  Capex   D&A     FCF   SBC  SBC-Adj
+                                                                                          FCF
+2026E        34,900    --    5,933  17.0%  1,187   4,746  1,012   942   4,677 1,012   3,664
+2027E        36,645     5%   6,230  17.0%  1,246   4,984  1,063   989   4,910 1,026   3,884
+2028E        38,477     5%   6,734  17.5%  1,347   5,387  1,116 1,000   5,271 1,039   4,232
+2029E        40,401     5%   7,272  18.0%  1,454   5,818  1,131 1,010   5,697 1,050   4,646
+2030E        42,017     4%   7,773  18.5%  1,555   6,219  1,176 1,008   6,050 1,050   5,000
+2031E        43,698     4%   8,303  19.0%  1,661   6,642  1,180 1,005   6,467 1,049   5,419
+2032E        45,446     4%   8,635  19.0%  1,727   6,908  1,227 1,045   6,726 1,045   5,681
+2033E        47,264     4%   9,216  19.5%  1,843   7,373  1,229 1,040   7,184 1,040   6,144
+2034E        48,681     3%   9,493  19.5%  1,899   7,594  1,266 1,071   7,400 1,022   6,377
+2035E        50,142     3%  10,028  20.0%  2,006   8,023  1,254 1,053   7,822 1,003   6,819
+2036E        51,646     3%  10,329  20.0%  2,066   8,263  1,291 1,085   8,057 1,033   7,024
+
+PRESENT VALUE OF EXPLICIT SBC-ADJUSTED FCFs (10.0% WACC)
+
+Year      SBC-Adj FCF   Discount Factor   PV
+2027E         3,884          0.9091      3,531
+2028E         4,232          0.8264      3,498
+2029E         4,646          0.7513      3,491
+2030E         5,000          0.6830      3,415
+2031E         5,419          0.6209      3,364
+2032E         5,681          0.5645      3,207
+2033E         6,144          0.5132      3,153
+2034E         6,377          0.4665      2,975
+2035E         6,819          0.4241      2,892
+2036E         7,024          0.3855      2,708
+                                       -------
+Sum of PV of explicit FCFs:            32,234
+
+TERMINAL VALUE — PERPETUITY GROWTH (g = 2.5%)
+Terminal year (2036E) SBC-adj FCF:                        $7,024M
+TV = 7,024 x 1.025 / (10.0% - 2.5%):                      $95,993M
+PV of TV (x 0.3855):                                      $37,006M
+
+TERMINAL VALUE — EXIT MULTIPLE (13x SBC-adj FCF)
+TV = 7,024 x 13:                                          $91,310M
+PV of TV (x 0.3855):                                      $35,207M
+
+Average PV of terminal value:                             $36,107M
+
+EQUITY BRIDGE
+Sum of PV of explicit FCFs:                                $32,234M
++ PV of terminal value (avg):                               $36,107M
+= Enterprise value:                                          $68,341M
++ Net cash (Q1 2026):                                          $1,900M
+= Equity value:                                               $70,241M
+/ Shares (flat):                                                  900M
+= Intrinsic value per share:                                    $78.05
+
+
+================================================================================
+SECTION 6 — SENSITIVITY ANALYSIS
+================================================================================
+
+TABLE A: BASE-CASE IV PER SHARE — WACC x TERMINAL GROWTH RATE (13x exit)
+
+WACC \ TGR    1.5%      2.0%      2.5%      3.0%      3.5%
+8.0%         $93.33    $95.84    $98.79   $102.34   $106.68
+9.0%         $83.44    $85.15    $87.12    $89.43    $92.15
+10.0%        $75.45    $76.67    $78.05    $79.62    $81.44   <- base case
+11.0%        $68.82    $69.71    $70.71    $71.83    $73.10
+12.0%        $63.21    $63.88    $64.62    $65.44    $66.36
+
+Even at the LOW end of this grid (12.0% WACC, 1.5% TGR — essentially the
+Bear case's own risk assumptions), the base-case operating build still
+produces $63/share — above the pre-news $47.37 price and only modestly
+below the $60.50 offer.
+
+TABLE B: BASE-CASE IV PER SHARE — EXIT MULTIPLE (10.0% WACC / 2.5% TGR)
+  9x     $72.03
+  10x    $73.53
+  11x    $75.04
+  12x    $76.54
+  13x    $78.05   <- base case
+  14x    $79.55
+  15x    $81.05
+  16x    $82.56
+
+TABLE C: SCENARIO SUMMARY
+
+Scenario   WACC    TGR    Exit   2036E Rev   2036E SBC-FCF   IV/Share
+BULL        8.5%   3.0%   16x     $60,710M       $9,714M      $134.74
+BASE       10.0%   2.5%   13x     $51,646M       $7,024M       $78.05
+BEAR       12.0%   1.5%    9x     $41,713M       $4,004M       $38.06
+
+Probability-weighted (25/45/30):                                 $80.22
+Simple average of the three:                                     $83.62
+
+WACC IMPLIED BY THE TWO REFERENCE PRICES (Base-case operating assumptions,
+2.5% TGR, 13x exit, solving for the discount rate that reproduces each price):
+  $60.50 (offer price)     implies ~12.8% WACC
+  $47.37 (pre-news price)  implies ~16.1% WACC
+
+A 16% implied discount rate is a distressed-company number — well above
+what this model uses even for the Bear case (12%). That gap is the entire
+argument for why the pre-news price looked cheap, and why an acquirer would
+be motivated to move now.
+
+
+================================================================================
+SECTION 7 — SCENARIO ANALYSIS
+================================================================================
+
+BULL CASE (~$135/share; 8.5% WACC, 3.0% TGR, 16x exit)
+  - Enrique Lores's reorg works: branded checkout re-accelerates as
+    presentment, loyalty (PayPal+), and top-merchant investments pay off
+  - Venmo monetization continues scaling (already 6 consecutive quarters of
+    double-digit TPV growth) and becomes a meaningfully larger profit pool
+  - The $1.5B+ cost program becomes net-accretive to margin by 2028-2029
+    (not just reinvested) as AI/automation savings materialize on schedule
+  - Take-rate compression stabilizes as the Venmo/Enterprise Payments mix
+    shift matures rather than continuing indefinitely
+  - Market re-rates PayPal back toward a quality-compounder multiple as
+    2-3 quarters of clean execution reduce perceived turnaround risk
+
+BASE CASE (~$78/share; 10.0% WACC, 2.5% TGR, 13x exit)
+  - Modest continuation of current trends: TPV keeps growing at a healthy
+    high-single/low-double-digit clip, but take-rate compression eats most
+    of the gap between TPV growth and revenue growth (similar to Q1 2026's
+    TPV +11% vs. revenue +7%)
+  - Cost savings materialize roughly as guided but are mostly reinvested
+    near-term, with only gradual net margin improvement starting 2027-2028
+  - Branded checkout stabilizes around flat-to-low-single-digit growth
+    rather than reaccelerating meaningfully — "good enough," not "fixed"
+  - Buybacks continue at a healthy (if not necessarily $6B/year for a
+    full decade) pace, remaining the most reliable per-share value driver
+
+BEAR CASE (~$38/share; 12.0% WACC, 1.5% TGR, 9x exit)
+  - Branded checkout continues losing share structurally to Apple Pay,
+    Google Pay, stablecoin-based rails, and BNPL-native competitors
+    (Klarna, Affirm) — the multi-year erosion pattern that predates this
+    CEO simply continues under new management
+  - Enterprise Payments/Braintree pricing compresses under intensifying
+    competition from Stripe and Adyen (notably, one of PayPal's most
+    credible competitors is also the company reportedly trying to acquire
+    it — a signal of how competitive this market has become)
+  - The reorg proves to be a distraction rather than a catalyst: this would
+    not be the first PayPal "reset" that didn't fully deliver
+  - Take-rate compression never stabilizes as low-margin volume keeps
+    growing faster than high-margin branded checkout
+  - If the M&A situation collapses with no resolution and no competing
+    bidder emerges, sentiment could sour further on standalone execution
+    risk, reinforcing the depressed multiple rather than closing it
+
+
+================================================================================
+SECTION 8 — KEY RISKS
+================================================================================
+
+1. THE M&A SITUATION ITSELF IS THE DOMINANT NEAR-TERM RISK/CATALYST
+   This is not a signed deal — it's a reported proposal with "a response
+   still pending." Outcomes include: (a) PayPal's board accepts at $60.50
+   or negotiates a higher price, (b) a competing bidder emerges given how
+   cheap this model suggests PayPal is, (c) the board rejects the offer and
+   the stock reverts toward something between the pre-news price and this
+   model's standalone fair value, or (d) the deal is announced but faces
+   protracted antitrust review (a horizontal combination of two major
+   payment processors) and could ultimately be blocked. Any position taken
+   on the stock right now is partly a bet on which of these plays out, on
+   a timeline this DCF has no ability to predict.
+
+2. EXECUTION RISK ON A BRAND-NEW CEO'S FIRST TURNAROUND (HIGH)
+   Enrique Lores's plan is credible (clear framework, quantified cost
+   target, reorganized accountability) but unproven — this is his first
+   earnings call as CEO. PayPal has attempted prior resets that didn't
+   fully restore growth. The market's historically skeptical pricing of
+   PayPal (reflected in the pre-news ~16% implied discount rate) is not
+   irrational given this history.
+
+3. TAKE-RATE COMPRESSION (MEDIUM-HIGH, already in progress)
+   Transaction take rate fell 6bps YoY to 1.62% in Q1 2026 as volume mix
+   shifts toward lower-take-rate Venmo and Enterprise Payments/Braintree.
+   This is a structural, not cyclical, dynamic — every incremental dollar
+   of TPV growth from these channels is worth less than a dollar of legacy
+   branded checkout volume. The Base and Bear cases both assume this
+   continues to some degree; only Bull assumes it stabilizes.
+
+4. COMPETITIVE INTENSITY (MEDIUM-HIGH)
+   Apple Pay/Google Pay at the wallet layer, Stripe and Adyen in payment
+   processing, Klarna/Affirm in BNPL, and emerging stablecoin-based rails
+   all compete for pieces of PayPal's network simultaneously. The fact that
+   Stripe — a direct competitor — is the reported acquirer underscores how
+   contested this market has become.
+
+5. FLAT ACTIVE ACCOUNT GROWTH (MEDIUM)
+   Monthly active accounts grew only 1% YoY (225M) even as TPV grew 11%.
+   Growth is coming entirely from existing users transacting more, not new
+   user acquisition — a sustainable dynamic for a while, but a ceiling risk
+   if it persists for years.
+
+6. COST PROGRAM EXECUTION RISK (MEDIUM)
+   The $1.5B+ savings target is disclosed and quantified, which is a
+   credibility positive relative to vague turnaround promises, but
+   management itself has not yet detailed the cadence — "we plan to share
+   more details in the coming months." Multi-year cost programs at large
+   companies frequently take longer and cost more (in restructuring
+   charges) than initially guided.
+
+7. INTEREST RATE SENSITIVITY (LOW-MEDIUM)
+   A portion of "other value added services" revenue comes from interest
+   earned on customer balances and the loan book; FY2025's growth in this
+   line was partially offset by "lower revenues from interest earned...
+   resulting from lower interest rates." Further rate cuts would be a
+   modest headwind to this revenue line, independent of the operating
+   turnaround.
+
+8. REGULATORY (LOW-MEDIUM, both standalone and deal-related)
+   PayPal operates a lending business (BNPL, PayPal/Venmo credit cards)
+   and a stablecoin (PYUSD) in an evolving regulatory environment. A
+   Stripe/PayPal combination specifically would combine two of the
+   largest global payment processors — a serious antitrust question
+   independent of the fintech-regulatory questions each company already
+   navigates alone.
+
+
+================================================================================
+SECTION 9 — INVESTMENT ASSESSMENT
+================================================================================
+
+IS $60.50 A GOOD PRICE FOR SHAREHOLDERS?
+Based on this standalone model: probably not obviously good, and arguably
+light. Base case says PayPal is worth ~$78/share as an independent company
+executing a plausible (not heroic) turnaround — 29% above the offer. Even
+the Bear case, which assumes the turnaround largely fails and competitive
+erosion continues indefinitely, produces $38/share — meaning the offer
+already prices in a real amount of pessimism, but not the FULL bear case,
+and nowhere close to the base or bull cases. The offer looks like a price
+that's attractive relative to where the stock WAS trading (28% premium to
+a genuinely depressed multiple) but not obviously full relative to what the
+business can be worth if the new CEO's plan works even moderately well.
+
+WHY THE MARKET IS STILL TRADING BELOW $60.50 RIGHT NOW
+The reported ~$53 early post-news price versus a $60.50 offer is a normal
+merger-arbitrage discount — it reflects deal-completion risk (no signed
+agreement yet, antitrust risk given Stripe is a direct competitor,
+financing risk on ~$50B of committed debt, and the general uncertainty of
+an early-stage, reportedly unsolicited-or-preliminary proposal), not a
+view that $60.50 is too rich. That spread compresses if/when a definitive
+agreement is signed and widens further if the deal looks likely to collapse
+or draw a blocking antitrust challenge.
+
+POSITIVES (WHY THIS COULD STILL WORK OUT WELL FOR HOLDERS)
+  + This model's base case, built conservatively off management's own
+    "trough year" guidance, still clears both reference prices
+  + Real, disclosed, quantified cost-savings program ($1.5B+) gives the
+    turnaround thesis something concrete to hold management accountable to
+  + Massive, sustained buyback program (~19% share count reduction in just
+    over two years) compounds per-share value even in a low-growth outcome
+  + Near-net-cash balance sheet — no leverage risk overhang, unlike a name
+    like CHTR in this same folder
+  + The M&A interest itself is a market signal: a sophisticated financial
+    and strategic buyer with real competitive knowledge of the payments
+    business is willing to pay a premium for it, which is at minimum a
+    data point that "the business is broken" is not the consensus view
+    among the people who understand it best
+
+NEGATIVES (WHY CAUTION IS WARRANTED)
+  - The standalone DCF conclusion (PayPal is undervalued) is exactly the
+    kind of analysis that looks smart right up until a real acquirer
+    validates it and then the situation resolves in a way this model can't
+    forecast — deal timelines, negotiated final prices, and antitrust
+    outcomes are not fundamentals questions
+  - If the deal falls apart with no competing bid, the stock could revert
+    toward something between the pre-news $47 and this model's fair value —
+    a real gap remains even in that "bad" outcome, but the round-trip could
+    be painful and slow
+  - The turnaround thesis genuinely depends on an unproven, brand-new CEO's
+    first attempt — history with PayPal turnarounds specifically warrants
+    some humility here
+  - Take-rate compression is a real, structural headwind already visible in
+    the numbers, not a hypothetical risk
+
+BOTTOM LINE
+On fundamentals alone, PayPal screens as a reasonably priced-to-cheap
+business even after a 28% takeover premium — a rare, useful, and slightly
+unusual conclusion in a market where most quality names (see: the AMD
+analysis in this folder) screen as expensive. But the fundamentals analysis
+is now secondary to the deal dynamics: what matters most over the coming
+weeks is whether PayPal's board accepts, rejects, or renegotiates, whether
+a competing bidder appears (which this model's math would encourage), and
+how regulators view a Stripe/PayPal combination. Treat this DCF as an
+input to judging deal fairness, not as a standalone buy/sell signal on its
+own — the situation is moving faster than any 10-year model can capture.
+
+Conviction level on base case (standalone): MODERATE-HIGH
+Conviction on near-term price direction: LOW — genuinely event-driven and
+outside the scope of a DCF; monitor the news, not the model, for the next
+several weeks.
+
+
+================================================================================
+SECTION 10 — SUMMARY VALUATION TABLE
+================================================================================
+
+METHOD                                    VALUE/SHARE    NOTES
+----------------------------------------  -----------    -----
+Bull (8.5% WACC, 3.0% TGR, 16x exit)        $134.74      Turnaround works
+Base (10.0% WACC, 2.5% TGR, 13x exit)        $78.05      Central estimate
+Bear (12.0% WACC, 1.5% TGR, 9x exit)         $38.06      Turnaround stalls,
+                                                           structural erosion
+Probability-weighted (25/45/30)              $80.22
+Simple average of three scenarios            $83.62
+
+Stripe/Advent offer                          $60.50      28% premium to
+                                                           pre-news close;
+                                                           NOT a signed deal
+Pre-news close (July 14, 2026)               $47.37      Implies ~16% WACC
+                                                           under base-case
+                                                           operating assumptions
+Early post-news trade                        ~$53        Implies market is
+                                                           pricing real deal-
+                                                           completion risk
+
+Central estimate (base case) vs. offer:      +29.0% (offer looks light)
+Central estimate (base case) vs. pre-news:   +64.8% (pre-news looked cheap)
+
+
+================================================================================
+DISCLOSURES & LIMITATIONS
+================================================================================
+
+- This analysis was built from the three user-supplied documents in
+  personal/ (PYPL 2025 10-K, PYPL 2026-Q1 10-Q, PYPL 2026-Q1 Earnings Call
+  Transcript) plus live price/news checks (Yahoo Finance and Reuters via
+  web search, July 14, 2026). No other filings were fetched, consistent
+  with this project's filing policy.
+- The M&A situation is breaking news as of this writing and could be
+  materially stale within days or even hours — a signed agreement, a
+  rejected offer, a competing bid, or a leaked collapse in talks would each
+  change the relevant analysis entirely. Re-verify the deal status before
+  acting on anything in this file.
+- FY2026E revenue is a bottom-up estimate built from Q1 actuals and
+  qualitative guidance color — it is NOT a company-disclosed full-year
+  number or a consensus estimate. Q2-Q4 2025 quarterly splits (used to
+  estimate FY2026E growth) are ALSO estimated, from the FY2025 total less
+  Q1 2025 actual, using an assumed typical seasonal pattern.
+- The loan book / BNPL balance sheet (funds receivable/payable, held-for-
+  sale and held-for-investment loans receivable) is NOT explicitly modeled;
+  its economics are assumed to be adequately captured in reported operating
+  income and the "transaction and credit losses" and "other value added
+  services" line items. A materially different credit environment (e.g., a
+  consumer credit cycle downturn) could invalidate this simplification.
+- Share count is deliberately held flat at 900M for the reasons explained
+  in Section 4 (avoiding double-counting the value of the buyback program).
+  This is a modeling convention, not a prediction that PayPal will stop
+  buying back stock.
+- WACC selection is a judgment call under real uncertainty. A reasonable
+  analyst who weighs the M&A situation itself as evidence of undervaluation
+  could use a lower Base-case WACC (closer to 9%), which would raise the
+  base-case IV toward $87 — see Table A in Section 6 for the full grid.
+- This is a personal, standalone research file, prepared outside the
+  tech-buffett agent's Init -> Deep Dive -> DCF pipeline. It does NOT
+  qualify PYPL for purchase in the official portfolio under the rules in
+  CLAUDE.md and .claude/agents/tech-buffett.md.
+- Prepared for personal investment research purposes only. Does not
+  constitute investment advice, and is especially not advice on how to
+  respond to a pending, unresolved acquisition offer.
+================================================================================

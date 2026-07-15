@@ -1,0 +1,694 @@
+================================================================================
+ADVANCED MICRO DEVICES (AMD) — DISCOUNTED CASH FLOW ANALYSIS
+Date: July 9, 2026
+Sources: FY2025 10-K, Q1 2026 10-Q, Q1 2026 Earnings Call Transcript (all
+         user-supplied; personal/ folder)
+================================================================================
+
+EXECUTIVE SUMMARY
+-----------------
+Intrinsic value (base case, 11.5% WACC / 3.0% TGR, 20x exit): ~$167/share
+Intrinsic value (bull case, 10.0% WACC / 3.5% TGR, 26x exit): ~$357/share
+Intrinsic value (bear case, 13.5% WACC / 2.0% TGR, 14x exit): ~$57/share
+Probability-weighted IV (25% bull / 45% base / 30% bear):     ~$181/share
+
+Current stock price (close, July 8, 2026): $517.41
+Implied downside (base case): -68% (price is 3.1x base-case IV)
+Implied downside (bull case): -31% (price is 1.45x bull-case IV)
+Implied downside (prob-weighted): -65%
+
+AMD is priced for a scenario more aggressive than my Bull case: closing the
+gap requires either (a) discounting Bull-case cash flows at ~7.5% instead of
+10%, or (b) roughly 1.5x the Bull case's terminal cash flow, which implies
+2036 revenue near $340B — larger than any semiconductor company operates
+at today. This is a high-quality, inflecting business, but the current price
+embeds near-flawless execution on the AI buildout for a decade, priced at a
+risk premium closer to a bond than a semiconductor cyclical. This DCF does
+NOT clear a purchase threshold under any assumption set I can construct
+without discarding the discount rate discipline used elsewhere in this
+portfolio.
+
+NOTE ON SCOPE: This is a personal, standalone analysis requested outside the
+tech-buffett agent's normal pipeline. No Initiation of Coverage or Deep Dive
+exists for AMD in research/, and this file intentionally lives in personal/
+rather than research/dcf/ — it does not qualify AMD for purchase under the
+agent's rules (Action 4 requires a prior Deep Dive; Action 5 requires a DCF
+from research/dcf/ within six months). If AMD is ever to be considered for
+the actual portfolio, it needs to go through Init -> Deep Dive -> DCF like
+every other holding.
+
+
+================================================================================
+SECTION 1 — BUSINESS SNAPSHOT
+================================================================================
+
+AMD is a fabless semiconductor company (TSMC-manufactured) competing across
+four segments. FY2025 revenue mix:
+
+  - Data Center (EPYC server CPUs + Instinct AI GPUs):  $16,635M  48.0%  +32.2% YoY
+  - Client (Ryzen desktop/mobile CPUs):                 $10,640M  30.7%  +50.9% YoY
+  - Gaming (Radeon GPUs + semi-custom console silicon):  $3,910M   11.3%  +50.7% YoY
+  - Embedded (FPGA/adaptive SoC, ex-Xilinx):              $3,454M   10.0%   -2.9% YoY
+  ------------------------------------------------------------------------
+  Total FY2025 revenue:                                 $34,639M            +34.3% YoY
+
+By Q1 2026, Data Center had grown to 56.3% of total revenue ($5,775M of
+$10,253M), up from 49.4% a year earlier — the mix shift toward AI compute is
+happening fast and is the entire investment thesis.
+
+The thesis in three sentences:
+  1. AMD has gone from "credible #2 to Nvidia in AI accelerators, credible #1
+     alternative to Intel in server CPUs" to a company management now says is
+     on track for "tens of billions of dollars in annual data center AI
+     revenue in 2027" — the Instinct MI450/Helios rack-scale platform ramps
+     production in H2 2026, backed by multi-gigawatt commitments from Meta
+     and OpenAI.
+  2. Server CPU demand is inflecting independently of the AI GPU story:
+     management raised its server CPU TAM estimate from ~$60B (Oct 2025
+     Analyst Day) to >$120B by 2030 in a single quarter, driven by agentic
+     AI's CPU-orchestration requirements, and guided Q2 2026 server CPU
+     revenue growth of >70% YoY.
+  3. The business is inflecting operationally: Q1 2026 revenue +38% YoY,
+     GAAP operating margin expanded from 7.4% (FY24) to 14.4% (Q1 26), and
+     free cash flow more than tripled YoY to a record $2.6B in the quarter
+     (25% of revenue) — this is not a story requiring imagination, the
+     numbers are already moving.
+
+Key pending items (as of July 2026):
+  - Meta partnership (Feb 2026): up to 6 gigawatts of AMD Instinct GPUs over
+    multiple product generations, first gigawatt on custom MI450-based
+    silicon. AMD issued Meta a warrant for up to 160M shares (~9.7% of
+    shares outstanding) at a $0.01 strike, vesting on GPU purchase milestones
+    and AMD stock price targets. None vested as of Q1 2026 — this is a real,
+    uncapped-until-triggered dilution overhang not reflected in my share
+    count (see Section 8).
+  - OpenAI partnership (previously announced, referenced again this quarter)
+    — another large multi-generation Instinct commitment.
+  - MI450/Helios: sampling to lead customers now; production ramp begins
+    H2 2026 (initial volume Q3, "significant ramp" Q4). This product carries
+    below-corporate-average gross margin at launch — a near-term margin
+    headwind even as it's the long-term growth driver.
+  - AMD's "Advancing AI" event in July 2026 (this month) is expected to
+    detail next-gen Instinct, EPYC (Venice), and Helios roadmap — could move
+    estimates materially in either direction.
+  - Long-term target reiterated on the call: management sees "a clear path
+    to exceed" prior long-term targets, "including delivering more than $20
+    in EPS over the strategic time frame" (non-GAAP, multi-year horizon,
+    unconfirmed exact date — treated with skepticism in this model; see
+    Section 4).
+
+
+================================================================================
+SECTION 2 — HISTORICAL FINANCIALS
+================================================================================
+
+All figures in $M unless noted. Fiscal year ends late December (52/53-week).
+
+INCOME STATEMENT SUMMARY
+                                 FY2025      FY2024      FY2023    Q1 2026    Q1 2025
+                                 ------      ------      ------    -------    -------
+Net revenue                     34,639      25,785      22,680     10,253      7,438
+  YoY growth                    +34.3%      +13.7%         --       +37.8%       --
+Total cost of sales             17,487      13,060      12,220      4,837      3,702
+Gross profit                    17,152      12,725      10,460      5,416      3,736
+  Gross margin                   49.5%       49.3%       46.1%      52.8%      50.2%
+R&D expense                      8,091       6,456       5,872      2,397      1,728
+Marketing, G&A                   4,144       2,735       2,318      1,253        886
+Operating income                 3,694       1,900         401      1,476        806
+  Operating margin                10.7%        7.4%        1.8%      14.4%      10.8%
+Net income                       4,335       1,641         854      1,383        709
+Diluted EPS (GAAP)                2.65        1.00        0.53       0.84       0.44
+Diluted shares                   1,636       1,637       1,625      1,650      1,626
+
+Non-GAAP color from the call (not in the 10-Q GAAP statements, included for
+context only): Q1 2026 non-GAAP gross margin 55%, non-GAAP operating margin
+25%, non-GAAP diluted EPS $1.37 (+43% YoY). The GAAP/non-GAAP gap is large
+and mostly SBC + acquisition-intangible amortization (see below) — this
+model works from GAAP figures and adds back the non-cash items explicitly
+rather than relying on management's non-GAAP framing.
+
+FREE CASH FLOW RECONCILIATION (continuing operations)
+                                 FY2025      FY2024      FY2023    Q1 2026    Q1 2025
+Operating cash flow               6,493       3,041       1,667      2,955        939
+Capital expenditures               (974)       (636)       (546)      (389)      (212)
+Free cash flow                    5,519       2,405       1,121      2,566        727
+  FCF margin                       15.9%        9.3%        4.9%      25.0%       9.8%
+
+Depreciation                        750         671         642        206        175
+Amortization of acq. intangibles  2,254       2,394       2,811        551        567
+  Total D&A + amortization        3,004       3,065       3,453        757        742
+Stock-based compensation          1,638       1,407       1,384        487        364
+  SBC % of revenue                 4.7%        5.5%        6.1%       4.7%       4.9%
+
+Note on amortization: the $2.0-2.8B/year of acquisition-related intangible
+amortization (Xilinx 2022, Pensando 2022) is a real GAAP expense but
+non-cash — it depresses GAAP operating income by roughly 6-9 points of
+margin every year and will run off over the forecast as those intangible
+pools (Xilinx: $16.7B net as of Dec 2025) fully amortize. This is the
+single biggest reason GAAP operating income understates cash-generating
+power, and why the FCF build below adds it back explicitly rather than
+using GAAP operating income directly as a cash flow proxy.
+
+BALANCE SHEET HIGHLIGHTS (Q1 2026 / March 28, 2026)
+Cash & equivalents:                  $5,585M
+Short-term investments:              $6,762M
+  Cash + ST investments:            $12,347M
+Current portion of LT debt:            $874M
+Long-term debt:                      $2,350M
+  Total debt:                        $3,224M
+Net cash:                            $9,123M
+Total stockholders' equity:         $64,462M
+
+SEGMENT DETAIL — Q1 2026 vs Q1 2025 ($M)
+                          Revenue           Op. Income
+                      Q1'26    Q1'25      Q1'26    Q1'25
+Data Center           5,775    3,674      1,599      932   (28% / 25% margin)
+Client                 2,885    2,294        --       --
+Gaming                   720      647        --       --
+  Client + Gaming      3,605    2,941        575      496   (16% / 17% margin)
+Embedded                 873      823        338      328   (39% / 40% margin)
+All other (corp SBC,
+  amortization, etc.)     --       --     (1,036)    (950)
+Total                 10,253    7,438      1,476      806
+
+
+================================================================================
+SECTION 3 — STRATEGIC CONTEXT: THE AI RAMP AND THE DILUTION OVERHANG
+================================================================================
+
+Management commentary this quarter (Lisa Su, Jean Hu) contained an unusually
+large amount of forward-leaning color, most of it bullish. Key data points
+extracted directly from the transcript:
+
+  - Server CPU TAM raised from ~$60B (Oct 2025 Analyst Day, ~18% CAGR) to
+    >$120B by 2030 (>35% CAGR) — a doubling of the addressable market
+    estimate in roughly one quarter, attributed to agentic AI's CPU
+    orchestration requirements (head nodes, data movement, parallel
+    execution for AI agents).
+  - Data center AI: "strong and increasing confidence in our ability to
+    deliver tens of billions of dollars in annual data center AI revenue in
+    2027, and to exceed our long-term growth target of greater than 80% [CAGR]
+    in the coming years."
+  - Q2 2026 guidance: revenue ~$11.2B (+46% YoY), non-GAAP gross margin ~56%,
+    server CPU revenue growth >70% YoY continuing through H2 2026.
+  - Gross margin long-term target reiterated at 55-58% (from the Oct 2025
+    Analyst Day), with management stating Q1 2026 is "making good progress"
+    toward it.
+  - "$20 in EPS over the strategic time frame" — this is a non-GAAP,
+    multi-year aspirational target restated from the Analyst Day, not a
+    dated commitment. At ~1.65B diluted shares, $20 non-GAAP EPS implies
+    roughly $33B of non-GAAP net income — a bar this model's Bull case does
+    not clear even by 2036 on a comparable cash basis (Bull case 2036 NOPAT
+    is $59.8B pre-add-backs, but non-GAAP EPS and after-tax owner earnings
+    are not the same metric; treat the $20 figure as promotional framing,
+    not a modeling anchor).
+
+THE META WARRANT — a real, quantifiable dilution risk not in my base share
+count: as part of the February 2026 agreement for Meta to deploy up to 6
+gigawatts of AMD Instinct GPUs, AMD issued Meta a warrant for up to 160
+million shares at a $0.01 exercise price (~9.7% of the current 1,650M
+diluted share count). Vesting is tied to (a) Meta's GPU purchase milestones
+and (b) AMD stock price targets. None of the tranches had vested as of
+Q1 2026. If materially vested, this is a mechanical ~9-10% reduction to
+per-share intrinsic value, roughly offsetting a full year of assumed
+Base-case FCF growth. I have NOT built this into the base share count
+because vesting is contingent and the trigger prices/volumes are not
+disclosed in the filings provided — but any purchase decision should treat
+per-share IV as ~9% lower than shown here on a fully-diluted basis if the
+warrant looks likely to vest.
+
+MI450 MARGIN DRAG: management was explicit that MI450/Helios "will start to
+ramp in Q3 and ramp significantly in Q4 [2026]. That is below corporate
+average [gross margin]." This is a real near-term margin headwind that the
+model's FY26E operating margin (17.5%) and 2027E margin (Base: 19%) already
+attempt to reflect conservatively rather than extrapolating Q1's 14.4% GAAP
+margin straight up.
+
+
+================================================================================
+SECTION 4 — DCF ASSUMPTIONS
+================================================================================
+
+MODELING APPROACH
+- 10-year explicit forecast: 2027E-2036E, off a FY2026E anchor built
+  bottom-up from Q1 actual + Q2 guidance + qualitative H2 color (below)
+- Unlevered FCF (FCFF) approach: FCF = NOPAT + D&A (incl. acquisition
+  amortization) - CapEx; a second metric, "SBC-adjusted FCF," further
+  subtracts stock-based compensation as a real economic (if non-cash) cost
+  to shareholders — SBC-adjusted FCF is what is discounted and used for
+  terminal value
+- NOPAT = GAAP operating income x (1 - 15% effective tax rate)
+- Net cash (not net debt) added back to enterprise value — AMD carries only
+  $3.2B of debt against $12.3B of cash/investments
+- Each scenario (Bull/Base/Bear) uses its OWN discount rate and terminal
+  growth assumption, not just different operating assumptions — a scenario
+  where AMD executes flawlessly for a decade also, in practice, carries less
+  residual risk than one where competition and execution disappoint. This
+  mirrors the CHTR/HIMS DCFs in this folder.
+
+FY2026E REVENUE BUILD (bottom-up from guidance, not extrapolated)
+  Q1 2026 (actual):        $10,253M
+  Q2 2026 (guided mid):    $11,200M  (+46% YoY per guidance)
+  Q3 2026E:                $12,500M  (Helios initial volume, server CPU
+                                       >70% YoY continuing, gaming starts
+                                       its guided H2 decline)
+  Q4 2026E:                $14,800M  ("significant" Helios ramp per mgmt,
+                                       server CPU strength continues,
+                                       gaming down >20% H2 vs H1 per guide)
+  FY2026E total:           $48,750M  (+40.7% YoY)
+
+REVENUE GROWTH ASSUMPTIONS (2027E-2036E, % YoY)
+                 2027  2028  2029  2030  2031  2032  2033  2034  2035  2036
+BULL              38%   30%   24%   19%   15%   13%   11%    9%    8%    7%
+BASE              30%   23%   18%   14%   12%   10%    9%    8%    7%    6%
+BEAR              16%   11%    9%    8%    7%    6%    6%    5%    5%    4%
+
+Rationale:
+  - Bull: Data center AI revenue scales into the "tens of billions" range by
+    2027 as guided and continues compounding near management's raised >80%
+    CAGR target for several more years; server CPU captures >50% share of a
+    $120B+ TAM by 2030; Helios ramps without supply or power constraints.
+  - Base: Data center AI and server CPU both grow very fast but below
+    management's most aggressive framing — treat the TAM raise and the
+    "tens of billions in 2027" comment as real signal but discount execution
+    risk (this is a company executing a genuinely difficult multi-generation
+    rack-scale ramp against a well-capitalized leader in Nvidia). Client and
+    gaming decelerate as guided (memory cost headwinds, gaming H2 down >20%).
+  - Bear: Nvidia and/or custom silicon (Google TPU, Amazon Trainium,
+    OpenAI's own chip ambitions) cap AMD's AI accelerator share gains;
+    server CPU TAM growth disappoints as agentic AI adoption is slower than
+    guided; memory cost inflation compresses client/gaming demand more than
+    guided; China export restrictions tighten further.
+
+OPERATING MARGIN ASSUMPTIONS (GAAP, % of revenue)
+                 2027  2028  2029  2030  2031  2032  2033  2034  2035  2036
+BULL              20%   23%   25%   27%   28%   29%   30%   30%   30%   30%
+BASE              19%   21%   22%   23%   24%   25%   25%   25%   25%   25%
+BEAR              16%   16%   17%   17%   18%   18%   18%   18%   18%   18%
+
+FY2026E: 17.5% (blended full-year estimate; Q1 actual was 14.4%, Q2 implied
+non-GAAP guide is ~26.5%, full year drags lower on MI450 launch dilution
+in Q4 GAAP terms)
+
+Rationale: acquisition-intangible amortization (currently ~$2.3B/year,
+embedded in COGS and opex) runs off over the forecast as the Xilinx/Pensando
+pools amortize out, mechanically expanding GAAP operating margin even before
+crediting any real operating leverage. Management's own long-term non-GAAP
+gross margin target is 55-58%; a GAAP operating margin ceiling in the
+high-20s/low-30s (Bull) vs. Nvidia's ~60%+ operating margin reflects AMD's
+lower gross margin structure (more CPU/console mix, thinner AI-GPU margins
+at scale than Nvidia's near-monopoly pricing) and continued heavy R&D
+investment to stay competitive.
+
+D&A (depreciation + acquisition-intangible amortization, $M, same across
+scenarios — driven by historical acquisition cost basis, not demand):
+   2027    2028   2029   2030   2031   2032   2033   2034   2035   2036
+  2,600   2,200  1,800  1,500  1,300  1,200  1,200  1,250  1,300  1,350
+
+Declining through 2032 as Xilinx/Pensando/ZT intangibles amortize out, then
+gradually rising again as pure depreciation grows with the (modest) capex
+base. FY2026E: $3,000M.
+
+CAPEX ($M; AMD is fabless — capex is packaging/test capacity and strategic
+supply-chain investment, not fab or hyperscale datacenter construction):
+                 2027  2028  2029  2030  2031  2032  2033  2034  2035  2036
+BULL             2,200 2,800 3,200 3,400 3,300 3,200 3,100 3,000 2,900 2,800
+BASE             1,900 2,300 2,600 2,700 2,700 2,600 2,500 2,400 2,300 2,200
+BEAR             1,500 1,700 1,800 1,800 1,700 1,700 1,600 1,600 1,500 1,500
+
+FY2026E: $1,460M (~3.0% of revenue, in line with Q1 run rate of 3.8% easing
+as revenue scales). Even the Bull case tops out near 2.5-3% of revenue —
+an order of magnitude lighter than MSFT/GOOGL's AI capex intensity, which is
+a structural advantage of AMD's fabless model but also means AMD does not
+capture the datacenter-construction economics its hyperscaler customers do.
+
+SBC (% of revenue, same across scenarios): 4.7% (FY2026E) declining to 3.0%
+by 2036 as revenue scale outgrows equity grant growth (operating leverage).
+
+TAX RATE: 15% flat (effective GAAP rate has been volatile — FY2025 was
+actually a tax BENEFIT due to one-time items; Q1 2026 GAAP effective rate
+was 14.8%; Q2 2026 non-GAAP guide is 13%). 15% is a conservative blend
+above the recent non-GAAP guide.
+
+SHARES OUTSTANDING: 1,650M diluted, held flat across the forecast (assumes
+buybacks roughly offset SBC dilution, consistent with FY2024-25 experience
+where diluted shares were flat to down slightly). Does NOT include the Meta
+warrant (see Section 3) — treat as a ~9% haircut to per-share IV if it
+appears likely to vest.
+
+TERMINAL VALUE: perpetuity growth and exit-multiple methods, averaged.
+  BULL: TGR 3.5%, exit 26x SBC-adj FCF
+  BASE: TGR 3.0%, exit 20x SBC-adj FCF
+  BEAR: TGR 2.0%, exit 14x SBC-adj FCF
+
+DISCOUNT RATE DERIVATION
+AMD carries materially more risk than a mega-cap software compounder like
+MSFT (used elsewhere in this portfolio at 10%): customer concentration in a
+handful of hyperscalers, direct competition with a much larger and
+better-capitalized Nvidia, cyclicality in client/gaming, memory/supply-chain
+cost exposure, and execution risk on a genuinely difficult multi-generation
+rack-scale product ramp (Helios). I use:
+  BASE:  11.5% (semiconductor/AI-hardware risk premium over MSFT's 10%)
+  BULL:  10.0% (reflects a world where the AI ramp de-risks itself through
+         proven execution — comparable to a mega-cap quality compounder)
+  BEAR:  13.5% (reflects competitive/execution disappointment plus
+         cyclical semiconductor risk re-rating)
+
+PROBABILITY WEIGHTS: Bull 25% / Base 45% / Bear 30%. Weighted slightly more
+bearish than the MSFT model's 25/50/25 split, reflecting AMD's higher
+execution and competitive risk relative to a company with a much wider,
+more entrenched moat.
+
+
+================================================================================
+SECTION 5 — DCF MODEL (BASE CASE)
+================================================================================
+
+All figures in $M. WACC 11.5%, TGR 3.0%, exit multiple 20x SBC-adj FCF.
+
+                Rev      YoY   OpInc  OpMgn    Tax    NOPAT  Capex   D&A     FCF    SBC  SBC-Adj
+                                                                                            FCF
+2026E         48,750    --     8,531  17.5%  1,280   7,252   1,460  3,000   8,792  2,291   6,500
+2027E         63,375    30%   12,041  19.0%  1,806  10,235   1,900  2,600  10,935  2,852   8,083
+2028E         77,951    23%   16,370  21.0%  2,455  13,914   2,300  2,200  13,814  3,274  10,540
+2029E         91,982    18%   20,236  22.0%  3,035  17,201   2,600  1,800  16,401  3,587  12,813
+2030E        104,860    14%   24,118  23.0%  3,618  20,500   2,700  1,500  19,300  3,775  15,525
+2031E        117,443    12%   28,186  24.0%  4,228  23,958   2,700  1,300  22,558  3,993  18,565
+2032E        129,188    10%   32,297  25.0%  4,845  27,452   2,600  1,200  26,052  4,134  21,918
+2033E        140,814     9%   35,204  25.0%  5,281  29,923   2,500  1,200  28,623  4,365  24,258
+2034E        152,080     8%   38,020  25.0%  5,703  32,317   2,400  1,250  31,167  4,562  26,605
+2035E        162,725     7%   40,681  25.0%  6,102  34,579   2,300  1,300  33,579  4,882  28,697
+2036E        172,489     6%   43,122  25.0%  6,468  36,654   2,200  1,350  35,804  5,175  30,629
+
+PRESENT VALUE OF EXPLICIT SBC-ADJUSTED FCFs (11.5% WACC)
+
+Year      SBC-Adj FCF   Discount Factor   PV
+2027E         8,083          0.8969      7,249
+2028E        10,540          0.8044      8,478
+2029E        12,813          0.7214      9,244
+2030E        15,525          0.6470     10,045
+2031E        18,565          0.5803     10,773
+2032E        21,918          0.5204     11,407
+2033E        24,258          0.4667     11,322
+2034E        26,605          0.4186     11,137
+2035E        28,697          0.3754     10,774
+2036E        30,629          0.3367     10,313
+                                       -------
+Sum of PV of explicit FCFs:           100,741
+
+TERMINAL VALUE — PERPETUITY GROWTH (g = 3.0%)
+Terminal year (2036E) SBC-adj FCF:                       $30,629M
+TV = 30,629 x 1.03 / (11.5% - 3.0%):                    $371,154M
+PV of TV (x 0.3367):                                    $124,979M
+
+TERMINAL VALUE — EXIT MULTIPLE (20x SBC-adj FCF)
+TV = 30,629 x 20:                                       $612,584M
+PV of TV (x 0.3367):                                    $206,297M
+
+Average PV of terminal value:                            $165,615M
+(= average of the two TV methods, each discounted, then averaged;
+ equivalent to averaging the two TVs first then discounting once)
+
+EQUITY BRIDGE
+Sum of PV of explicit FCFs:                              $100,741M
++ PV of terminal value (avg):                             $165,615M
+= Enterprise value:                                       $266,356M
++ Net cash (Mar 2026):                                       $9,123M
+= Equity value:                                            $275,479M
+/ Diluted shares:                                              1,650M
+= Intrinsic value per share:                                  $166.96
+
+
+================================================================================
+SECTION 6 — SENSITIVITY ANALYSIS
+================================================================================
+
+TABLE A: BASE-CASE IV PER SHARE — WACC x TERMINAL GROWTH RATE
+(20x exit multiple held constant)
+
+WACC \ TGR    2.0%      2.5%      3.0%      3.5%      4.0%
+9.5%        $199.25   $203.16   $207.66   $212.92   $219.13
+10.5%       $179.30   $182.08   $185.23   $188.83   $192.98
+11.5%       $162.64   $164.68   $166.96   $169.52   $172.42   <- base case
+12.5%       $148.46   $149.99   $151.68   $153.56   $155.66
+13.5%       $136.21   $137.38   $138.67   $140.08   $141.65
+
+Even at the most generous corner shown (9.5% WACC / 4.0% TGR), base-case
+operating assumptions produce $219/share — still 58% below the current
+$517.41 price.
+
+TABLE B: BASE-CASE IV PER SHARE — EXIT MULTIPLE (11.5% WACC / 3.0% TGR)
+  14x    $148.21
+  16x    $154.46
+  18x    $160.71
+  20x    $166.96   <- base case
+  22x    $173.21
+  24x    $179.46
+  26x    $185.71
+
+TABLE C: SCENARIO SUMMARY
+
+Scenario   WACC    TGR    Exit   2036E Rev   2036E SBC-FCF   IV/Share
+BULL       10.0%   3.5%   26x    $234,476M     $51,307M       $356.89
+BASE       11.5%   3.0%   20x    $172,489M     $30,629M       $166.96
+BEAR       13.5%   2.0%   14x    $101,862M     $12,379M        $56.97
+
+Probability-weighted (25/45/30):                                $181.44
+Simple average of the three:                                    $193.60
+
+
+================================================================================
+SECTION 7 — SCENARIO ANALYSIS
+================================================================================
+
+BULL CASE (~$357/share; 10.0% WACC, 3.5% TGR, 26x exit)
+  - Data center AI revenue reaches the "tens of billions" range in 2027 as
+    guided and continues compounding near an 80%+ CAGR for several more years
+  - Server CPU captures >50% share of a $120B+ TAM by 2030 (management's
+    stated target)
+  - Helios ramps in H2 2026 without material supply, power, or yield issues
+  - Gross margin reaches the top of the 55-58% long-term target range and
+    GAAP operating margin scales to 30% as amortization runs off and mix
+    shifts further toward Data Center
+  - No major competitive share loss to Nvidia's next-gen platforms or
+    hyperscaler custom silicon (Google TPU, Amazon Trainium, etc.)
+  - Meta and OpenAI relationships expand rather than plateau; new large
+    AI-native customers materialize (as management hinted on the call)
+
+BASE CASE (~$167/share; 11.5% WACC, 3.0% TGR, 20x exit)
+  - Data center AI and server CPU both grow very fast but below management's
+    most bullish framing; execution on the multi-generation Helios ramp is
+    real but bumpier than guided
+  - Client/gaming soften in H2 2026 as guided (memory cost inflation,
+    gaming down >20% H2 vs H1) and grow modestly thereafter
+  - Gross margin reaches the low end of the 55-58% target range; GAAP
+    operating margin plateaus at 25%
+  - Some competitive share pressure from Nvidia's roadmap and growing
+    hyperscaler custom-silicon programs caps upside without derailing growth
+
+BEAR CASE (~$57/share; 13.5% WACC, 2.0% TGR, 14x exit)
+  - Nvidia's incumbency (CUDA ecosystem, next-gen Rubin platform) and/or
+    hyperscaler custom ASICs (Google TPU, Amazon Trainium, Microsoft Maia,
+    OpenAI's own silicon ambitions) cap AMD's AI accelerator share gains
+    well below the "tens of billions in 2027" framing
+  - Server CPU TAM growth disappoints as agentic AI CPU-demand claims prove
+    overstated, or Intel's supply/competitive position improves faster than
+    expected
+  - Memory cost inflation (DRAM/HBM tightness) compresses client and gaming
+    demand more than the guided >20% H2 gaming decline
+  - China export restrictions tighten further, permanently removing a
+    meaningful revenue pool (already saw a sequential AI revenue dip in Q1
+    2026 attributed to "the China transition")
+  - Helios ramp encounters yield, power, or supply-chain delays, pushing the
+    AI margin inflection out 1-2 years
+  - Meta warrant vests at scale, adding realized dilution on top of
+    disappointing fundamentals (a genuine "worst of both worlds" tail risk)
+
+
+================================================================================
+SECTION 8 — KEY RISKS
+================================================================================
+
+1. VALUATION / MULTIPLE COMPRESSION (VERY HIGH — the dominant risk today)
+   At $517/share (~$844B market cap), AMD trades at ~17x FY2026E revenue and,
+   per this model, at 3.1x base-case intrinsic value and 1.45x even the Bull
+   case. News flow around the current price already shows the fragility of
+   this: the stock fell 6.5% in a single session this week on competitive
+   fears (a Chinese AI developer reportedly designing its own processor) even
+   as Goldman Sachs simultaneously raised its price target to $640. A stock
+   priced for perfection reacts violently to any data point that isn't
+   perfect. This is the single largest risk to an investor buying today,
+   independent of whether the underlying business execution is good.
+
+2. CUSTOMER CONCENTRATION & THE META WARRANT (HIGH)
+   The AI growth story now rests heavily on a small number of hyperscaler
+   relationships (Meta, OpenAI). The Meta warrant (up to 160M shares, ~9.7%
+   of shares outstanding, $0.01 strike) is a direct, quantifiable dilution
+   risk tied to Meta's own purchasing behavior and AMD's stock price — a
+   structure that gives Meta significant negotiating leverage on future
+   pricing while AMD shareholders absorb the dilution. See Section 3.
+
+3. COMPETITIVE POSITIONING VS. NVIDIA (HIGH)
+   Nvidia remains far larger, better-capitalized, and has a much stronger
+   software moat (CUDA) in AI accelerators. AMD's ROCm software stack is
+   improving (management cited MLPerf results and expanded model support)
+   but is not at parity. AMD's AI GPU share gains are real but could stall
+   if Nvidia's roadmap (or aggressive pricing) outpaces expectations.
+
+4. HYPERSCALER CUSTOM SILICON (MEDIUM-HIGH)
+   Google (TPU), Amazon (Trainium), Microsoft (Maia), and reportedly OpenAI
+   itself are all developing custom AI accelerators. To the extent AMD's
+   largest potential customers are simultaneously its long-term competitors
+   in silicon, the TAM AMD can actually capture may be structurally smaller
+   than the "TAM" figures management cites.
+
+5. GROSS MARGIN DILUTION FROM THE MI450 RAMP (MEDIUM, near-term)
+   Management explicitly flagged that MI450/Helios will carry below-
+   corporate-average gross margin during the H2 2026 ramp. This is already
+   reflected in the model's conservative FY2026E/2027E margin assumptions
+   but is a real quarter-to-quarter risk to consensus estimates through 2027.
+
+6. MEMORY COST INFLATION (MEDIUM)
+   Rising DRAM/HBM prices are a genuine industry-wide dynamic (also affecting
+   Nvidia, Google, everyone building AI infrastructure). Management flagged
+   H2 2026 demand risk in client and gaming specifically from this. A
+   sustained memory shortage could also constrain the pace of AI accelerator
+   deployment industry-wide, independent of AMD's own execution.
+
+7. CYCLICALITY (MEDIUM)
+   Client and gaming (41% of FY2025 revenue) remain cyclical, PC/console-
+   demand-driven businesses. A broader consumer or enterprise IT spending
+   slowdown would hit these segments before the AI-driven Data Center
+   segment, which is running on multi-year committed capacity deals.
+
+8. CHINA / EXPORT CONTROLS (MEDIUM)
+   Q1 2026 data center AI revenue actually declined sequentially, which
+   management attributed to "the China transition" — export control policy
+   is a real, non-hypothetical revenue swing factor, evidenced by the ~$440M
+   of net inventory/related charges tied to MI308 export controls disclosed
+   in the FY2025 10-K.
+
+9. EXECUTION RISK ON A GENUINELY HARD PRODUCT (MEDIUM)
+   Helios is a rack-scale, multi-generation, co-engineered platform (GPUs +
+   EPYC CPUs + networking, integrated with named hyperscaler deployments
+   down to "which data centers the GPUs going into"). This is a much more
+   complex execution challenge than a standalone chip launch, with more
+   points of failure.
+
+
+================================================================================
+SECTION 9 — INVESTMENT ASSESSMENT
+================================================================================
+
+POSITIVES (WHY IT COULD STILL WORK FROM HERE)
+  + The underlying business is genuinely inflecting, not just guided to
+    inflect: Q1 2026 revenue +38% YoY, FCF more than tripled YoY to a
+    record $2.6B (25% of revenue), operating margin expanding sequentially
+  + Server CPU TAM raise (~$60B to >$120B by 2030) is a real, independently
+    verifiable data point, not just AI-accelerator hype — and it comes with
+    a >70% YoY Q2 guide already booked
+  + Multi-gigawatt, multi-generation commitments from Meta and OpenAI provide
+    genuine multi-year revenue visibility ("down to which data centers the
+    GPUs are going to be installed in," per Lisa Su)
+  + Fabless model means capex intensity is a fraction of hyperscaler AI
+    capex — FCF conversion on incremental revenue is structurally high
+  + Net cash balance sheet ($9.1B net cash) — zero balance-sheet risk,
+    unlike a levered story like CHTR in this same folder
+  + If the bull case plays out, $357/share is still meaningfully below
+    today's $517 print, which sets a real bar: the market needs the AI
+    ramp to outperform even the most optimistic scenario I can construct
+    from management's own words
+
+NEGATIVES (WHY THIS IS NOT A BUY AT $517)
+  - Every scenario in this model — including Bull — produces an intrinsic
+    value below the current price. Closing the gap requires assumptions I
+    am not willing to make: either a ~7.5% discount rate on Bull-case cash
+    flows (implying AMD is nearly as safe as an investment-grade bond
+    issuer), or 2036 revenue near $340B (larger than any semiconductor
+    company today, in a market AMD would have to largely create or take
+    from Nvidia, Intel, and every custom-silicon program simultaneously)
+  - The Meta warrant is real, disclosed, uncapped-until-triggered dilution
+    that is not in the current share count or in most sell-side models
+  - The stock's own recent behavior (-6.5% in a single session this week on
+    competitive headlines, despite a same-week price target increase from
+    Goldman) confirms the market has priced in very little room for error
+  - This is a much higher-variance bet than the portfolio's current holdings
+    (MSFT, MNDY): AMD's fate over the next 3 years is genuinely more
+    uncertain, tied to execution on a hard multi-generation product ramp
+    against a far larger competitor
+
+BOTTOM LINE
+AMD is a real business inflecting on real demand, and the qualitative case
+for continued share gains in AI accelerators and server CPUs is stronger
+than it has been in years. But price and value are different things. At
+$517/share the market is not pricing "AMD executes well" — it is pricing
+"AMD executes at the very top of what management itself has guided to, for
+a decade, at a discount rate more appropriate for a monopoly infrastructure
+asset than a semiconductor challenger." That is not a bet this model can
+underwrite. If AMD pulled back toward $150-200/share, this becomes a
+genuinely interesting, high-conviction name; at $517 it is a pass.
+
+Conviction level on base case: MODERATE (business quality) / LOW (as a
+purchase at current price)
+Would need to see: a pullback of 60%+ from current levels, OR a materially
+de-risked view of the Helios ramp (2-3 quarters of clean execution data)
+that would justify moving the Bull case's discount rate meaningfully below
+10% — neither is likely to happen quickly.
+
+
+================================================================================
+SECTION 10 — SUMMARY VALUATION TABLE
+================================================================================
+
+METHOD                                    VALUE/SHARE    NOTES
+----------------------------------------  -----------    -----
+Bull (10.0% WACC, 3.5% TGR, 26x exit)        $356.89     Requires flawless
+                                                           execution for a decade
+Base (11.5% WACC, 3.0% TGR, 20x exit)        $166.96     Central estimate
+Bear (13.5% WACC, 2.0% TGR, 14x exit)         $56.97     Competitive/execution
+                                                           disappointment
+Probability-weighted (25/45/30)              $181.44
+Simple average of three scenarios            $193.60
+Market-implied (current price)               $517.41     Requires ~7.5% WACC
+                                                           on Bull cash flows,
+                                                           or ~$340B 2036 revenue
+
+Central estimate (base case):                $166.96/share
+Current price:                               $517.41/share
+Margin of "safety" at current price:         -209.9% (i.e., overvalued by
+                                              ~210% relative to base case)
+
+
+================================================================================
+DISCLOSURES & LIMITATIONS
+================================================================================
+
+- This analysis was built entirely from the three user-supplied documents in
+  personal/ (AMD 2025 10-K, AMD 2026-Q1 10-Q, AMD 2026-Q1 Transcript) plus
+  one live price check (Yahoo Finance, July 8, 2026 close). No other filings
+  were fetched from the internet, consistent with this project's filing
+  policy.
+- FY2026E revenue is a bottom-up estimate built from Q1 actuals, Q2 guidance,
+  and qualitative H2 commentary (Helios ramp timing, gaming decline guide,
+  server CPU growth guide) — it is NOT a consensus estimate or a number
+  disclosed by the company for the full year.
+- The Meta warrant's dilutive effect is explicitly NOT included in the share
+  count used for per-share values. Treat all per-share figures as ~9%
+  optimistic if the warrant is likely to vest at scale.
+- Non-GAAP figures from the earnings call (gross margin, operating margin,
+  EPS) are cited for context only; all modeling uses GAAP figures from the
+  10-K/10-Q with explicit, itemized add-backs (D&A, amortization, SBC) — this
+  avoids relying on management's own non-GAAP adjustments, which can be
+  aggressive.
+- WACC selection is a judgment call under real uncertainty; a reasonable
+  analyst more bullish on AMD's competitive position could reasonably use
+  8-9% for the Base case, which would meaningfully close (but not eliminate)
+  the gap to the current price — see Table A in Section 6 for the full
+  sensitivity grid.
+- This is a personal, standalone research file, prepared outside the
+  tech-buffett agent's Init -> Deep Dive -> DCF pipeline. It does NOT
+  qualify AMD for purchase in the official portfolio under the rules in
+  CLAUDE.md and .claude/agents/tech-buffett.md.
+- Prepared for personal investment research purposes only. Does not
+  constitute investment advice.
+================================================================================
