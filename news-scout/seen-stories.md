@@ -23,3 +23,17 @@
 - https://www.anthropic.com/news/alberta-government-claude-cybersecurity | Anthropic case study: Alberta government uses Claude to find and fix cybersecurity vulnerabilities
 - https://www.amd.com/en/newsroom/press-releases/2026-7-8-amd-to-report-fiscal-second-quarter-2026-financial.html | AMD confirms it will report fiscal Q2 2026 results on Aug 4
 
+## 2026-07-26
+- https://nvidianews.nvidia.com/news/sk-group-and-nvidia-expand-strategic-partnership-across-ai-factories-and-next-generation-memory | SK Group and NVIDIA announce $500B+ AI infrastructure partnership; NAVER/Brookfield expand Korea AI factory to 200MW
+- https://www.space.com/news/live/spacex-starship-flight-13-launch-updates-july-24-2026 | SpaceX Starship Flight 13 succeeds, deploys first Starlink V3 satellites
+- https://www.gurufocus.com/news/8978283/hims-hers-health-hims-shares-fall-after-fda-panels-negative-vote-on-emideltide | Hims & Hers stock plunges 11% after FDA panel rejects peptide emideltide
+- https://www.testingcatalog.com/anthropic-launched-claude-opus-5-across-all-platforms/ | Anthropic quietly rolls out Claude Opus 5 across all platforms
+- https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/ | Meta AI gains full agentic follow-through via Muse Spark 1.1; Facebook launches Verified badges
+- https://newsroom.amd.com/news/aai-2026-cerebras-inference/ | AMD and Cerebras team up on disaggregated AI inference, claim 5x throughput gains
+- https://www.hngn.com/articles/272362/20260726/wall-street-analysts-raise-amazon-earnings-estimates-ahead-of-july-30-report-aws-growth.htm | Wall Street raises AWS growth estimates ahead of Amazon's July 30 earnings
+- https://www.tradingkey.com/analysis/stocks/us-stocks/262052667-microsoft-msft-stock-week-review-july-24-2026-earnings-july-29-azure-tradingkey | Microsoft earnings preview: Azure, Copilot monetization and FY2027 capex in focus ahead of July 29 report
+- https://stockhouse.com/news/press-releases/2026/07/26/nvidia-expands-nvidia-agent-toolkit-with-nvidia-physicsnemo-and-cuda-x-libraries | NVIDIA expands Agent Toolkit with PhysicsNeMo and CUDA-X, partners with Cadence and Synopsys
+- https://www.apple.com/newsroom/2026/07/apple-maps-to-power-navigation-experience-for-ford-uev-platform/ | Apple Maps to power in-car navigation for Ford's new Universal EV Platform
+- https://www.fool.com/investing/2026/07/24/elon-musk-wouldnt-rule-out-a-tesla-spacex-merger-o/ | Musk keeps Tesla-SpaceX merger speculation alive
+- https://about.fb.com/news/2026/07/ | Meta launches new seller app for Facebook Marketplace, marks 10-year anniversary
+

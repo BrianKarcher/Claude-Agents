@@ -1,0 +1,655 @@
+================================================================================
+CHARTER COMMUNICATIONS (CHTR) — DISCOUNTED CASH FLOW ANALYSIS (UPDATE)
+Date: July 25, 2026
+Sources: FY2025 10-K, Q1 2026 10-Q, Q2 2026 10-Q, Q2 2026 Earnings Call Transcript (Jul 24, 2026)
+Prior version: DCF-CHTR-2026-06-26.txt (superseded by this file)
+================================================================================
+
+WHAT CHANGED SINCE THE JUNE 26 MODEL
+-------------------------------------
+1. STOCK PRICE COLLAPSED. Shares closed 7/24 at ~$123.29 (a 52-week low) and
+   traded as low as ~$111 in the following premarket session — down ~40-45%
+   from the ~$210-225 level the prior model was benchmarked against. This is
+   the single biggest input change. Nothing else in this update comes close.
+2. Q2 results confirm the deceleration is not stabilizing. Revenue -1.7% YoY
+   (vs -0.6% for FY25), Adjusted EBITDA -4.3% YoY (worse than Q1's implied
+   trajectory), Internet losses of 172K (worse than -120K in Q1). Management
+   cut FY26 standalone EBITDA guidance to "around -1% YoY ex-transition costs."
+3. Leverage ticked UP, not down: 4.18x net debt/LTM EBITDA at 6/30/26 vs
+   4.15x at 3/31/26 — EBITDA is shrinking faster than debt is being repaid,
+   even as management executes real deleveraging (see #4).
+4. Real deleveraging actions are underway: $1.2B of debt repurchased in the
+   open market in Q2 for ~$1.0B cash (~$243M gain on extinguishment), plus a
+   newly announced capped exchange offer targeting $20B par of discounted
+   investment-grade debt. Leverage target firmed up to a flat 3.5x long-term
+   (from a prior 3.5-4.0x range framing).
+5. Cox transaction terms refined slightly: cash consideration now specified
+   as $3.5B (Equity Sale) + $650M (Contribution) = $4.15B total cash, and
+   assumed Cox net debt narrowed to ~$12.4B (from ~$12.6B estimated). The
+   $6.0B convertible preferred (6.875%, $477.41 conversion price) is
+   unchanged. Pro forma shares at close now guided to ~177M (down from 179M).
+6. Share buybacks are PAUSED through Q3 2026 (financing/liability management
+   priority ahead of Cox close), expected to restart in Q4. Remaining board
+   buyback authority was down to just $365M as of 6/30/26 before the pause.
+7. Management explicitly disclosed combined post-Cox 2027 figures for the
+   first time: ~$67B revenue, ~$28B EBITDA, ~37M customers, ~70M passings.
+   This closely validates (rather than requires re-deriving) the prior
+   model's 2027E assumptions.
+8. NEW DISCLOSURE: the 10-Q flags that if the depressed stock price persists,
+   Charter may need to run a goodwill/franchise impairment test. This was not
+   a live risk in the June model and is now explicitly on the table.
+9. Management's own FCF-yield framing moved with the stock: on the Q2 call
+   they now cite "a bit over 2x" FCF multiple / "nearly 50%" FCF yield using
+   2028 run-rate CapEx assumptions (vs "~3.8x / ~25%" cited on the Q1 call at
+   the higher share price) — same underlying capex-cliff logic, mechanically
+   re-priced.
+
+NET EFFECT: the underlying operating model is only modestly worse (EBITDA
+guide trimmed, sub losses continuing), while deleveraging is running slightly
+AHEAD of the prior model's net-debt assumption. But the equity has been
+repriced by ~40%+. The result: base-case intrinsic value is roughly FLAT to
+the June estimate (~$670-680/share vs ~$646/share), while the market-implied
+discount rate has jumped from ~12% to ~13-14%. Whether that gap is opportunity
+or the market pricing in something this model doesn't capture (accelerating
+impairment risk, an EBITDA guide that keeps sliding) is the central question
+— see Section 9.
+
+
+================================================================================
+SECTION 1 — BUSINESS SNAPSHOT
+================================================================================
+
+Charter is the #2 US cable operator by subscribers (Spectrum brand), serving
+homes across 41 states via a converged fiber/HFC network. Revenue mix
+(H1 2026 actual):
+
+  - Internet:                  $11,628M  42.9% of total  -2.3% YoY
+  - Mobile service:              $2,147M   7.9%          +17.0% YoY
+  - Video (linear, declining):   $6,401M  23.6%           -9.4% YoY
+  - Voice (VoIP, declining):       $669M   2.5%           -4.7% YoY
+  - Commercial (SMB + Enterprise): $3,704M  13.7%          +1.2% YoY
+  - Advertising + Other:         $2,574M   9.5%          mixed (political tailwind)
+  -------------------------------------------------------------------
+  Total H1 2026 Revenue:        $27,123M                  -1.4% YoY
+
+The thesis is unchanged in structure, only in degree of conviction:
+  1. Broadband is near-monopoly infrastructure in most of Charter's footprint
+     — a fiber-powered HFC network with no viable fourth wire at scale.
+  2. The CapEx supercycle (network evolution + rural buildout) is guided to
+     end in 2027-28: standalone CapEx from ~$12.1B (LTM) to <$8B by 2028 —
+     management now frames this as ~$30/share of FCF (up from ~$28/share
+     cited last quarter, purely because the share count keeps shrinking).
+  3. The Cox acquisition adds ~$12.5B of revenue, ~6.5M customers, and
+     $800M+ (management now says "conservative," likely trending to $1B) in
+     run-rate synergies. Expected to close mid-to-late August 2026.
+
+Key pending events (as of July 2026):
+  - Cox transaction close: management now targets mid-to-late August 2026
+    (delayed from the "summer 2026" framing in June; California PUC process
+    is resolved per the July call, hiring of 1,000+ frontline Cox-market
+    staff has begun).
+  - Liberty Broadband merger: closing simultaneously with Cox.
+  - Nick Jeffrey (ex-Vodafone) joins as COO September 1, 2026.
+  - Buybacks paused through Q3 2026; expected to restart Q4 2026.
+  - New $20B capped exchange offer for discounted IG debt, launched
+    July 24, 2026 (outcome/participation rate not yet known).
+
+
+================================================================================
+SECTION 2 — HISTORICAL FINANCIALS (UPDATED THROUGH Q2 2026)
+================================================================================
+
+All figures in $M unless noted.
+
+INCOME STATEMENT SUMMARY
+                                Q2 2026   Q2 2025   H1 2026    H1 2025    FY2025A
+                                -------   -------   -------    -------    -------
+Total revenues                  13,526    13,766    27,123     27,501     54,774
+  Internet                       5,776     5,969    11,628     11,899     23,765
+  Mobile service                 1,095       921     2,147      1,835      3,762
+  Video                          3,149     3,488     6,401      7,068     13,703
+  Voice                            331       346       669        702      1,350
+  Residential total              10,351    10,724    20,845     21,504    42,580
+  Commercial total (SMB+MM/LB)    1,865     1,836     3,704      3,658      7,315
+  Advertising                       416       371       774        711      1,468
+  Other                             894       835     1,800      1,628      3,411
+
+Operating costs & expenses        8,215     8,230    16,378     16,424    32,739
+Depreciation & amortization       2,197     2,176     4,408      4,357      8,711
+Other operating expenses, net        51        81        66        204        416
+Income from operations            3,063     3,279     6,271      6,516     12,908
+Interest expense, net            (1,276)   (1,263)   (2,532)    (2,504)    (5,042)
+Other income (expenses), net        212      (107)       88       (249)        NM
+Income before taxes               1,999     1,909     3,827      3,763      7,458
+Tax expense                        (475)     (414)     (940)      (859)    (1,692)
+Net income (Charter shareholders) 1,292     1,301     2,455      2,518      4,987
+
+Adjusted EBITDA                   5,449     5,693    11,086     11,456     22,708
+  EBITDA margin                   40.3%     41.3%     40.9%      41.7%      41.5%
+Diluted EPS                      $10.66     $9.18    $19.81     $17.59        NM
+Diluted shares (weighted avg)  121,255,667  141,684,415  123,969,262  143,098,493   NM
+
+NOTE: Q2 EBITDA margin (40.3%) came in below both Q1 2026 (41.5%, per
+derived figure) and the year-ago quarter (41.3%) — the sequential margin
+trend has weakened, and full-year margin is now tracking below what the
+prior model assumed for FY26 (41.6%).
+
+FREE CASH FLOW RECONCILIATION
+                                Q2 2026   Q2 2025   H1 2026    H1 2025    FY2025A
+Operating cash flow               3,925     3,600     8,229      7,836     16,077
+Capital expenditures             (2,871)   (2,874)   (5,726)    (5,273)   (11,659)
+Change in accrued CapEx             (85)      320      (162)        47         586
+Free cash flow                      969     1,046     2,341      2,610      5,004
+
+H1 2026 FCF of $2,341M is down 10.3% YoY, driven by lower EBITDA and less
+favorable working capital, partly offset by lower cash taxes paid.
+
+BALANCE SHEET (as of June 30, 2026)
+Cash & equivalents:                    $509M
+Total debt principal (Note 4):      $93,845M
+  (Senior secured notes: $54,658M; Senior unsecured notes: $26,734M;
+   Credit facilities: $12,453M)
+Total debt carrying value:          $93,959M
+EIP Financing Facility (separate):   $1,596M  (not included in net debt below,
+                                                consistent with prior model)
+Net debt (principal basis):         $93,336M
+Leverage ratio (net debt/LTM EBITDA, company-reported): 4.18x
+  (vs 4.15x at 3/31/26 — leverage rose slightly QoQ despite real debt paydown,
+   because LTM EBITDA is shrinking)
+Credit facility availability:        $3.7B
+Total assets:                      $155,618M
+Total shareholders' equity:         $21,901M
+
+CAPITAL EXPENDITURE DETAIL (H1 2026, NCTA categories)
+Customer premise equipment:          $1,322M
+Scalable infrastructure:               $646M
+Upgrade/rebuild (network evolution): $1,066M
+Support capital:                       $657M  (wait: see note below)
+Subsidized rural construction:         $818M
+Other line extensions:                 $129M
+Total CapEx:                         $5,726M
+FY2026 guidance (ex-Cox): ~$11.4B — REAFFIRMED, unchanged from Q1 guidance.
+
+CUSTOMER METRICS (as of June 30, 2026 vs June 30, 2025)
+Total Internet customers:           29,388K (down 520K YoY, -1.7%)
+Total Mobile lines:                 12,540K (up 1,684K YoY, +15.5%)
+Total Video customers:              12,524K (down 107K YoY, -0.8%; improving —
+                                              Q2 loss of 21K vs 80K a year ago)
+Total Voice customers:               5,694K (down 692K YoY)
+Total Customer relationships:       31,499K (down 561K YoY)
+Monthly residential ARPU:            $117.52 (vs $119.70 prior year, -1.8%)
+
+Q2 net adds/losses: Internet -172K (vs -120K in Q1 — worse, not better),
+Mobile +406K, Video -21K (materially improved YoY).
+
+
+================================================================================
+SECTION 3 — COX TRANSACTION IMPACT (UPDATED TERMS)
+================================================================================
+
+Per Q2 2026 10-Q Note 2, refined from the original May 2025 Transaction
+Agreement:
+  - Charter pays $3.5B cash to Cox Enterprises (Equity Sale consideration)
+  - Charter Holdings pays $650M cash + issues $6.0B convertible preferred
+    units (6.875% annual dividend, $477.41 initial conversion price) +
+    ~33.6M Charter Holdings common units (Contribution consideration)
+  - Total cash required at close: ~$4.15B (consistent with the $4.2B figure
+    management cites for liquidity planning)
+  - Combined entity assumes ~$12.4B of Cox net debt and finance leases
+    (narrowed from the ~$12.6B estimate used in the June model)
+  - Charter issues one share of new Class C common stock to Cox Enterprises
+    for voting-power purposes only (no economic dilution)
+
+Estimated Cox financials — MANAGEMENT NOW DISCLOSES COMBINED FIGURES
+DIRECTLY, reducing reliance on estimation:
+  - Post-close combined: ~$67B revenue, ~$28B EBITDA (~41.8% margin),
+    ~37M customers, ~70M passings, ~1.3M network miles
+  - Implied Cox contribution: ~$12.5B revenue (consistent with prior estimate)
+  - Run-rate synergies: "at least $800M/year," management now says this
+    "will grow to a billion dollars" post-close (upgraded from "$800M+")
+  - Implied transaction EV (per CEO, using Charter's share price on the call
+    date): ~$27B, ~5.0x transaction EBITDA, ~4.4x including synergies.
+    CAVEAT: this figure embeds Charter's stock price on 7/24, which moved
+    sharply intraday/after-hours around the same earnings release. Because
+    most of the consideration is cash + assumed debt (not stock), the EV
+    estimate is not highly sensitive to Charter's share price swings — only
+    the ~33.6M common units (and the preferred's conversion optionality,
+    currently far out of the money) are equity-linked.
+  - Frontline hiring: 1,000+ new residential/business sales roles in Cox
+    markets now being recruited (could not begin until CA approval visibility)
+
+PRO FORMA CAPITAL STRUCTURE (post-close, per management's own July 2026 guidance)
+Standalone Charter net debt (6/30/26):        $93,336M
+Pro forma net debt, end of Q3 2026E (mgmt):  ~$109,000-110,000M
+  (includes Cox + Liberty Broadband assumed debt, Q2 debt repurchases, and
+   ASSUMES SUCCESS of the newly announced $20B exchange offer)
+  Implied leverage: "just above 3.9x" combined LTM Adjusted EBITDA (mgmt-stated)
+Cox convertible preferred (quasi-debt, out of the money at $123 vs $477.41
+  conversion price):                            $6,000M
+Total adjusted net debt (for equity bridge):  ~$115,000-116,000M
+
+Pro forma fully diluted shares at close (management, "as-converted,
+as-exchanged basis"):                            ~177.0M
+Less: shares implied by preferred conversion (~$6.0B / $477.41 ≈ 12.6M,
+  backed out for consistency since preferred is treated as quasi-debt above,
+  not as converted equity — same methodology as the June model):  ~(12.6M)
+= Adjusted diluted share count used in this DCF:                 ~164.4M
+
+
+================================================================================
+SECTION 4 — DCF ASSUMPTIONS (UPDATED)
+================================================================================
+
+MODELING APPROACH (unchanged methodology from June model)
+- Standalone Charter modeled for 2026 (Cox now expected to close Aug 2026)
+- Combined Charter + Cox modeled from 2027 onward
+- 10-year explicit forecast period: 2026-2035
+- Terminal value via both perpetuity growth and EV/EBITDA exit multiple
+- FCFF = NOPAT + D&A - CapEx (ΔNWC ~zero; cable is broadly WC-neutral)
+- NOPAT = EBIT x (1 - 22% tax rate)
+
+REVENUE ASSUMPTIONS (2026E revised down slightly; 2027E now anchored to
+management's own disclosed combined figure rather than derived)
+2025A: $54,774M (actual)
+2026E: $54,100M (-1.2%) — standalone; H1 actual ran -1.4%, modest H2
+  improvement assumed from political ad revenue and the internet cost
+  pass-through management flagged for late July/August
+2027E: $67,000M — MATCHES management's own disclosed combined-entity figure
+  almost exactly (this used to be a derived estimate; it's now a direct
+  management data point, which increases confidence in this line)
+2028E-2035E: UNCHANGED from the June model ($68,500M -> $79,200M, 2.0-2.3%
+  annual growth) — no new information changes the long-run growth assumptions
+
+EBITDA MARGIN ASSUMPTIONS (2026E revised down to reflect the Q2 miss)
+2025A: 41.5% (actual)
+2026E: 41.2% (REVISED DOWN from 41.6% in the June model) — H1 actual margin
+  was only 40.9%; management's own guide is "FY26 EBITDA ex-transition down
+  ~1% YoY," which nets to roughly this level once transition costs (running
+  above plan, per the 10-Q) are included
+2027E: 41.8% — closely matches management's own ~$28B EBITDA / ~$67B revenue
+  disclosure (41.8% implied margin) rather than being independently assumed
+2028E-2035E: UNCHANGED from the June model (42.5% -> 45.0%)
+
+CAPEX ASSUMPTIONS — REAFFIRMED, UNCHANGED
+2026E: $11,400M (21.1% of revenue) — management guidance unchanged
+2027E: $13,400M (20.0%) — Cox integration capex + continued network evolution
+2028E: $10,275M (15.0%) — the capex cliff; management explicitly reaffirmed
+  this on the July call ("our outlook for a significant reduction in capital
+  expenditures has not changed")
+2029E-2035E: UNCHANGED (13.5% -> 12.0% of revenue, tapering to steady state)
+
+D&A: 15.5% of revenue (unchanged assumption; H1 2026 actual ran slightly
+  higher at 16.25% of revenue, expected to normalize toward the assumption
+  as purchase-accounting effects and network-evolution capitalization settle)
+
+TAX RATE: 22% effective on EBIT (cash taxes still guided at $500-800M for
+  FY26, materially below book taxes due to bonus depreciation — unchanged)
+
+WACC DERIVATION — recomputed given the much lower stock price
+Cost of debt: 5.2% (management-stated, unchanged)
+After-tax cost of debt: 5.2% x (1 - 22%) = 4.06%
+Asset (unlevered) beta: 0.60 (unchanged, sector assumption)
+Capital structure at CURRENT market price (~$123, pro forma basis):
+  Pro forma net debt ~$110B; pro forma market cap ~177M sh x $123 = ~$21.8B
+  D/EV = 83.5%, E/EV = 16.5% (MORE levered on a market-value basis than the
+  June model's 75/25 split — because the equity fell much further than debt)
+Levered beta = 0.60 x (1 + 0.78 x 83.5/16.5) = 0.60 x 4.95 = 2.97
+Cost of equity = 4.5% + 2.97 x 5.5% = 20.8%
+CAPM-mechanical WACC = 0.835 x 4.06% + 0.165 x 20.8% = 6.8%
+(Nearly identical to the June model's ~6.9% mechanical WACC — the
+Modigliani-Miller offset: higher market leverage lowers the weighted average
+even as the cost of equity itself rises. This is a reminder that the
+mechanical WACC is not very informative here; execution/leverage risk needs
+to be layered on judgmentally, same as before.)
+
+Base case WACC used in this model: 9.0% (unchanged from June, for the same
+conservatism/execution-risk-premium reasoning)
+
+MARKET-IMPLIED DISCOUNT RATE — recomputed at the new price
+Solving for the WACC that reconciles this model's FCFF stream with a ~$123
+share price and ~164.4M adjusted diluted shares: approximately 13.0-13.5%
+(UP from ~12% implied in the June model). The market has gotten meaningfully
+more pessimistic about Charter's cost of capital / execution risk over the
+past month — more than the ~1 percentage point of fundamental deterioration
+in this quarter's results would obviously justify on its own.
+
+
+================================================================================
+SECTION 5 — DCF MODEL
+================================================================================
+
+All figures in $M.
+
+REVENUE, EBITDA, AND FCFF BRIDGE
+                        2026E    2027E    2028E    2029E    2030E
+Revenue               54,100   67,000   68,500   70,100   71,600
+EBITDA margin           41.2%    41.8%    42.5%    43.0%    43.5%
+EBITDA                 22,289   28,006   29,113   30,143   31,146
+D&A (15.5% rev)          8,386   10,385   10,618   10,866   11,098
+EBIT                    13,903   17,621   18,495   19,277   20,048
+NOPAT (78%)             10,844   13,744   14,426   15,036   15,637
+CapEx                   11,400   13,400   10,275    9,464    8,950
+FCFF                     7,830   10,729   14,769   16,438   17,785
+                         (a)
+
+                        2031E    2032E    2033E    2034E    2035E
+Revenue               73,100   74,600   76,100   77,600   79,200
+EBITDA margin           44.0%    44.5%    44.5%    44.5%    45.0%
+EBITDA                 32,164   33,197   33,865   34,532   35,640
+D&A (15.5% rev)         11,331   11,563   11,796   12,028   12,276
+EBIT                    20,833   21,634   22,069   22,504   23,364
+NOPAT (78%)             16,250   16,875   17,214   17,553   18,224
+CapEx (12.0% rev)        8,772    8,952    9,132    9,312    9,504
+FCFF                    18,809   19,486   19,878   20,269   20,996
+
+(a) 2026 FCFF is standalone Charter; 2027+ is the combined entity. Note the
+2027-2035 FCFF path is nearly identical to the June model — the operating
+assumptions barely moved; only 2026 and the equity bridge below changed
+materially.
+
+PRESENT VALUE OF EXPLICIT FCFFs — BASE CASE: 9.0% WACC, end-of-year discounting
+
+Year    FCFF      Discount Factor    PV of FCFF
+2026    7,830     0.9174             7,183
+2027   10,729     0.8417             9,031
+2028   14,769     0.7722            11,403
+2029   16,438     0.7084            11,642
+2030   17,785     0.6499            11,559
+2031   18,809     0.5963            11,215
+2032   19,486     0.5470            10,659
+2033   19,878     0.5019             9,977
+2034   20,269     0.4604             9,332
+2035   20,996     0.4224             8,869
+                                    -------
+Sum of PV of FCFFs:               100,870
+
+TERMINAL VALUE — PERPETUITY GROWTH MODEL (Base: g = 2.0%)
+Terminal year FCFF:                         $20,996M
+Terminal Value = $20,996M x 1.02 / (9% - 2%): $305,943M
+PV of Terminal Value (x 0.4224):            $129,231M
+
+Total Enterprise Value (perpetuity, base):  $230,101M
+
+TERMINAL VALUE — EV/EBITDA EXIT MULTIPLE MODEL (Base: 8.0x)
+Terminal year EBITDA:                        $35,640M
+Terminal Value at 8.0x EBITDA:             $285,120M
+PV of Terminal Value (x 0.4224):            $120,435M
+
+Total Enterprise Value (exit multiple, 8x): $221,305M
+
+EQUITY BRIDGE (net debt and share count both updated — see Section 3)
+                                     Perpetuity    Exit Multiple
+Enterprise Value                      $230,101M      $221,305M
+Less: Pro forma net debt             ($109,500M)    ($109,500M)
+Less: Cox convertible preferred       ($6,000M)      ($6,000M)
+                                     ----------     ----------
+Equity Value                         $114,601M      $105,805M
+Adjusted diluted shares                 164.4M         164.4M
+                                     ----------     ----------
+Intrinsic Value per Share               $697           $644
+
+Average of two methods:                 $671/share
+
+
+================================================================================
+SECTION 6 — SENSITIVITY ANALYSIS (UPDATED)
+================================================================================
+
+TABLE A: INTRINSIC VALUE PER SHARE — PERPETUITY GROWTH MODEL
+(Equity value / 164.4M shares; net debt + preferred = $115.5B)
+
+              Terminal Growth Rate
+WACC          1.5%     2.0%     2.5%
+----          ----     ----     ----
+8.0%          $867     $949    $1,046
+9.0%          $642     $697      $762
+10.0%         $469     $509      $554
+11.0%         $334     $363      $395
+12.0%         $224     $246      $271
+13.0%         $135     $151      $170
+
+Current price (7/24 close ~$123; premarket low ~$111) sits between the 12%
+and 13% rows — i.e., the market is now implying a discount rate of roughly
+13-13.5%, up from ~12% a month ago.
+
+TABLE B: INTRINSIC VALUE PER SHARE — EV/EBITDA EXIT MULTIPLE
+(9.0% WACC; 2035 EBITDA = $35,640M; net debt + preferred = $115.5B)
+
+Exit Multiple    Terminal Value     Total EV     Equity Value    Per Share
+    6.0x          $213,840M        $191,196M       $75,696M         $460
+    7.0x          $249,480M        $206,250M       $90,750M         $552
+    8.0x          $285,120M        $221,305M      $105,805M         $644
+    9.0x          $320,760M        $236,359M      $120,859M         $735
+   10.0x          $356,400M        $251,413M      $135,913M         $827
+
+TABLE C: ILLUSTRATIVE LEVERED FCF PER SHARE TRAJECTORY
+(post-Cox, 164.4M shares; interest declining as leverage moves toward 3.5x)
+
+Year     FCFF      After-tax interest (approx)   Levered FCF    Per Share
+2026     7,830     ~3,782 (on $93.3B standalone)    4,048         $24.62
+2027    10,729     ~4,441 (on ~$109.5B post-close)  6,288         $38.25
+2028    14,769     ~4,057 (debt declining)          10,712         $65.16
+2029    16,438     ~3,853                           12,585         $76.55
+2030    17,785     ~3,650 (approaching 3.5x target) 14,135         $85.99
+2031    18,809     ~3,528                           15,281         $92.95
+2035    20,996     ~3,245 (steady state)            17,751        $107.98
+
+Management's own current framing (Q2 2026 call, CEO): "If we take consensus
+2026 free cash flow for standalone Charter and substitute our expected 2028
+CapEx for 2026 CapEx, our current stock price would imply a free cash flow
+multiple of a bit over 2x and a free cash flow yield of nearly 50%." This is
+the same capex-cliff logic as the June model, mechanically re-priced by the
+~40% stock decline (the Q1 call cited "~3.8x / ~25% yield" at the higher price).
+
+
+================================================================================
+SECTION 7 — SCENARIO ANALYSIS (UPDATED)
+================================================================================
+
+BULL CASE (~$970/share; 8.0% WACC, 2.5% TGR)
+  - Broadband subscriber losses stabilize by 2027 (no evidence of this yet —
+    Q2 losses of 172K were WORSE than Q1's 120K, so this remains aspirational)
+  - Mobile lines reach 20M+ by 2029; MVNO economics improve vs Verizon
+  - Cox integration delivers $1B+ in synergies (management is now guiding
+    toward this, an upgrade from "$800M+")
+  - CapEx cliff happens exactly as guided; $20B exchange offer succeeds and
+    accelerates deleveraging meaningfully beyond the 3-year target
+  - Stock re-rates as leverage and impairment concerns fade
+
+BASE CASE (~$671/share; 9.0% WACC, 2.0% TGR)
+  - Broadband losses continue near current pace through 2027-28, then moderate
+  - Mobile grows to 16-18M lines by 2030
+  - Cox delivers the guided $800M-$1B in synergies; Spectrum rebrand in Cox
+    markets proceeds on the delayed (Aug 2026) timeline without major hiccups
+  - CapEx cliff happens as guided; combined entity CapEx ~$10B by 2028
+  - Leverage declines toward 3.5x within 3 years of Cox close (guided)
+  - EBITDA margin expands from ~41% to ~44.5% by 2031 despite the FY26 dip
+
+BEAR CASE (~$115-135/share; 12.5-13.5% WACC, 1.5% TGR — i.e., roughly where
+the stock trades today)
+  - Internet losses keep accelerating (Q2 already worse than Q1) rather than
+    stabilizing; ARPU stays under pressure from competitive promotions
+  - EBITDA guidance gets cut again in Q3/Q4, as it already was this quarter
+  - Cox integration disappoints or the Aug 2026 close slips further
+  - A sustained low stock price forces a goodwill/franchise IMPAIRMENT
+    charge (flagged as a live possibility in the 10-Q) — non-cash, but a
+    signal the market reads as confirming its skepticism
+  - The $20B exchange offer under-subscribes, slowing the leverage glide path
+  - Note: this is essentially where the market is pricing Charter TODAY —
+    the "bear case" and the "current price" have converged this quarter,
+    which is itself the key change from a month ago.
+
+
+================================================================================
+SECTION 8 — KEY RISKS (UPDATED)
+================================================================================
+
+1. LEVERAGE (HIGH, ticked up this quarter)
+   Standalone leverage rose to 4.18x (from 4.15x at Q1) despite real debt
+   paydown, because LTM EBITDA is shrinking. Pro forma post-Cox leverage is
+   guided to ~3.9x by end of Q3 2026, contingent on the new $20B exchange
+   offer succeeding — an unproven, just-announced program.
+
+2. NEW: GOODWILL / FRANCHISE IMPAIRMENT RISK (MEDIUM, newly disclosed)
+   The Q2 10-Q explicitly states that if the depressed stock price persists,
+   Charter "may need to evaluate whether this market perception represents a
+   sustained decline in the market value of our business and perform a
+   quantitative impairment assessment" on franchises ($67.5B carrying value)
+   and goodwill ($29.7B carrying value). This is a new, material disclosure
+   that did not exist in the June model. A large non-cash impairment would
+   not change the DCF's cash-flow-based intrinsic value, but would likely
+   further damage market sentiment and could pressure debt covenants
+   indirectly via rating-agency reactions.
+
+3. BROADBAND SUBSCRIBER LOSSES — ACCELERATING, NOT STABILIZING (HIGH)
+   Q2 Internet loss of 172K was WORSE than Q1's 120K loss, contradicting the
+   "stabilizing" narrative management offered on the Q1 call. Management now
+   attributes part of this to a deliberate pullback of overly aggressive Q1
+   retention offers (a self-inflicted, correctable issue per the CEO) plus
+   ongoing fixed-wireless/fiber competition. The next 1-2 quarters are the
+   key tell on whether this was temporary or a trend re-acceleration.
+
+4. COX EXECUTION RISK (MEDIUM-HIGH, timeline slipped again)
+   Close now targeted mid-to-late August 2026, later than the "summer 2026"
+   framing from June. Transition expenses are "coming in a bit higher than
+   expected" per the CFO (though total transition cost + capex is still
+   expected at or better than plan). Frontline hiring in Cox markets could
+   not begin until closing visibility improved, compressing the ramp window.
+
+5. MOBILE MARGINS (MEDIUM, unchanged)
+   Spectrum Mobile remains a Verizon MVNO. 12.5M lines now, WiFi/CBRS offload
+   at 87-88% (temporarily dipped from ~89% this quarter due to a deliberate
+   product change, per CEO explanation on the call — not a negative signal).
+
+6. VIDEO (LOW/IMPROVING)
+   Video losses improved sharply YoY (-21K vs -80K a year ago) on seamless
+   app bundling and Xumo — one of the few clearly positive trend lines this
+   quarter.
+
+7. REGULATORY / POLITICAL (LOW-MEDIUM, unchanged)
+
+8. CAPEX OVERRUN / TIMING RISK (MEDIUM, reaffirmed but unproven)
+   Management explicitly reaffirmed the capex-cliff guidance on the July
+   call with no change, which is reassuring, but the guidance itself has not
+   yet been tested — 2026 is still a peak-spend year.
+
+9. SATELLITE / LEO (LOW near-term, unchanged) — no meaningful share loss
+   observed to Starlink per management, including in subsidized rural areas.
+
+10. NEW: BUYBACK PAUSE REMOVES A NEAR-TERM SUPPORT/ACCRETION LEVER (LOW-MEDIUM)
+    With buybacks paused through Q3 2026 at exactly the moment the stock is
+    at a 52-week low, Charter is foregoing what would (on this model's
+    numbers) be highly accretive repurchases, in favor of deleveraging
+    ahead of the Cox close. Defensible capital allocation given the pending
+    financing needs, but it means no repurchase-driven per-share support
+    into a falling stock for at least one more quarter.
+
+
+================================================================================
+SECTION 9 — INVESTMENT ASSESSMENT (UPDATED)
+================================================================================
+
+WHAT'S GENUINELY NEW AND POSITIVE
+  + Deleveraging is real and ahead of the June model's net-debt assumption:
+    $1.2B repurchased in the open market plus a newly launched $20B exchange
+    offer, both executed/announced since the last model
+  + Combined post-Cox 2027 revenue/EBITDA are now management-disclosed
+    figures (~$67B / ~$28B) rather than estimates — and they closely match
+    what the June model had independently derived, which is a real
+    validation of that framework
+  + CapEx-cliff guidance was explicitly reaffirmed with zero change
+  + Video trends continue to improve materially
+  + Combined synergy guidance moved up ("$800M+" -> trending toward "$1B")
+
+WHAT'S GENUINELY NEW AND NEGATIVE
+  - Internet losses got worse quarter over quarter, not better — the
+    "stabilizing" narrative from Q1 did not hold in Q2
+  - FY26 EBITDA guidance was cut
+  - A new, explicit impairment-risk disclosure exists that did not exist a
+    quarter ago
+  - Leverage ticked up on a trailing basis despite real paydown
+  - Cox close timeline slipped again (June: "summer 2026" -> July: "mid-to-
+    late August")
+  - Buybacks paused at the worst possible moment optically (a 52-week low)
+
+BOTTOM LINE
+This model's base case says Charter is worth roughly what it said a month
+ago (~$670-680/share) because the two changes that matter most for a
+cash-flow valuation — deleveraging progress and reaffirmed capex guidance —
+were both modestly POSITIVE. But the stock is down ~40%+ on a quarter that
+was, on balance, modestly negative operationally (worse sub losses, a
+guidance cut, a new impairment disclosure). That gap is either:
+  (a) a market overreaction to a single disappointing quarter layered on
+      top of an already-hated, highly levered stock, or
+  (b) the market correctly pricing in that "worse sub losses two quarters
+      running" plus "leverage still rising" plus "impairment now on the
+      table" adds up to more than this model's linear, guidance-anchored
+      assumptions capture — i.e., a regime change the DCF's smooth 10-year
+      trajectory is not built to detect.
+
+Given that Internet losses just accelerated for a second straight quarter
+against management's own prior "stabilizing" claim, (b) deserves real
+weight. The single most important thing to watch next quarter is simply
+whether Internet net adds improve or deteriorate further — that data point
+will do more to resolve this valuation gap than any model refinement.
+
+Conviction level on base case: MODERATE (down from MODERATE-HIGH in June —
+not because the numbers changed much, but because management's own prior
+"stabilization" call was wrong this quarter, which should lower confidence
+in taking their forward-looking commentary at face value until it's proven
+out again).
+
+Position sizing: unchanged guidance — size for the leverage risk, monitor:
+  - Internet subscriber trend (the key swing factor right now)
+  - Cox close (mid-to-late August) and post-close ARPU trajectory
+  - $20B exchange offer participation/results
+  - Whether an impairment charge is actually taken
+  - Q3/Q4 buyback restart and pace
+
+
+================================================================================
+SECTION 10 — SUMMARY VALUATION TABLE
+================================================================================
+
+METHOD                            VALUE/SHARE    NOTES
+----------------------------      -----------    -----
+Perpetuity (8% WACC, 2% TGR)       $949         Bull-ish
+Perpetuity (9% WACC, 2% TGR)       $697         Base case
+Perpetuity (10% WACC, 2% TGR)      $509         Conservative
+Perpetuity (11% WACC, 2% TGR)      $363         Stress case
+Exit multiple (8x EBITDA, 9%)       $644         Base case (alt)
+Exit multiple (7x EBITDA, 9%)       $552         Conservative alt
+Exit multiple (9x EBITDA, 9%)       $735         Bull alt
+Market-implied (~13.0-13.5% WACC)   $123-151     Approx. current price
+
+Central estimate (avg of two base case methods):  $671/share
+Current price (7/24/26 close):                     ~$123/share
+Current price (premarket, 7/25/26):                ~$111/share
+Margin of safety at $123:                          81.7%
+Margin of safety at $111:                          83.4%
+
+For reference — June 26 model: central estimate $646/share vs. then-price
+~$225/share (65.2% margin of safety). The central estimate barely moved;
+the price did all the work.
+
+
+================================================================================
+DISCLOSURES & LIMITATIONS
+================================================================================
+
+- Cox financial figures beyond the newly disclosed combined totals (~$67B
+  rev / ~$28B EBITDA) are still partly estimated; Cox is a private company
+  and full standalone financials are not filed.
+- 2026 contains H1 2026 actual data (through 6/30/26); remainder is modeled.
+- WACC reflects a judgment call under uncertainty; the CAPM-mechanical
+  calculation (~6.8%) and the market-implied rate (~13-13.5%) bracket a wide
+  range — reasonable analysts could land anywhere in between depending on
+  how much weight they give the last two quarters' execution misses.
+- The pro forma net debt figure (~$109-110B) assumes the $20B exchange offer
+  succeeds; if it under-subscribes materially, leverage and interest expense
+  assumptions in this model would need to be revised upward.
+- Stock price data reflects a fast-moving, still-settling post-earnings
+  tape (7/24-7/25/26); exact "current price" is a moving target.
+- This analysis was prepared for personal investment research purposes only.
+- Does not constitute investment advice.
+================================================================================
