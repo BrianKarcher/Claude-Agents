@@ -1,11 +1,11 @@
 ---
 name: news-scout
 description: >
-  A news research agent that scans for recent (24–48 hour) headlines and
-  summaries across a watchlist of tech companies and topics, for use as
-  YouTube channel content sourcing. Use this agent when asked to scan for
-  news, surface recent headlines, or find content ideas from a ticker list
-  or topic category.
+  A news research agent that scans for recent (24–48 hour, extended to 72
+  hours on weekend scans) headlines and summaries across a watchlist of tech
+  companies and topics, for use as YouTube channel content sourcing. Use
+  this agent when asked to scan for news, surface recent headlines, or find
+  content ideas from a ticker list or topic category.
 tools:
   - WebSearch
   - WebFetch
@@ -68,6 +68,8 @@ If no official IR/newsroom page can be found after a reasonable search, leave th
 
 ### Date discipline
 Always include the current date or "today" in your queries. Only surface stories published within the last 48 hours. If you cannot confirm a story's publication date, skip it.
+
+**Weekend extension**: If today (the day the scan is run) is a Saturday or Sunday, extend the lookback window to 72 hours instead of 48. News volume drops on weekends, so the extra day compensates without you having to guess at staleness. This extension applies only when the scan itself runs on a Saturday/Sunday — a scan run on a weekday still uses the standard 48-hour window, even if it would otherwise span a weekend. Note the window used (48h or 72h) in the session output footer.
 
 ---
 
@@ -138,7 +140,7 @@ Start with a one-line session header, then print stories grouped by priority.
 ...
 
 ---
-[N] stories surfaced. Watchlist coverage: [tickers/topics scanned]. Deduped: [M] stories skipped (already seen).
+[N] stories surfaced. Watchlist coverage: [tickers/topics scanned]. Deduped: [M] stories skipped (already seen). Lookback window: [48h / 72h (weekend)].
 ```
 
 **YouTube angle tags** (use the most fitting one or combine):

@@ -37,3 +37,19 @@
 - https://www.fool.com/investing/2026/07/24/elon-musk-wouldnt-rule-out-a-tesla-spacex-merger-o/ | Musk keeps Tesla-SpaceX merger speculation alive
 - https://about.fb.com/news/2026/07/ | Meta launches new seller app for Facebook Marketplace, marks 10-year anniversary
 
+## 2026-07-30
+- https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx | Amazon Q2 2026: AWS revenue $42.2B (+37%), total revenue tops $200B for first time, stock jumps 9%
+- https://www.cnbc.com/2026/07/29/microsoft-msft-q4-earnings-report-2026.html | Microsoft Q4 FY26 blowout: Azure crosses $100B annual revenue (+43%), Copilot hits 30M paid seats, FY27 capex guided to $255-260B
+- https://www.macrumors.com/2026/07/30/apple-3q-2026-earnings/ | Apple Q3 2026: record $109.4B revenue (+16%), EPS up 29%, iPhone revenue $54.3B
+- https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx | Meta Q2 2026: revenue up 28% to $60.8B but EPS misses estimates, net income falls 14% on AI capex/Reality Labs costs
+- https://techcrunch.com/2026/07/30/ftc-sues-hims-hers-for-allegedly-sharing-patients-medical-data-with-advertisers-meta-and-snap/ | FTC and Utah sue Hims & Hers over deceptive practices, sharing patient health data with Meta and Snap; stock falls 15%
+- https://www.globenewswire.com/news-release/2026/07/29/3335576/0/en/robinhood-reports-second-quarter-2026-results.html | Robinhood Q2 2026: record revenue $1.31B (+32%), EPS up 48% to $0.62, 13 business lines now over $100M annualized
+- https://www.prnewswire.com/news-releases/paypal-reports-second-quarter-2026-results-302836401.html | PayPal Q2 2026 beats estimates, raises full-year adjusted EPS guidance; stock up 4%
+- https://www.cbsnews.com/video/openai-ceo-sam-altman-meets-with-government-officials-preview-new-ai-model/ | Sam Altman meets Trump administration officials in DC to preview OpenAI's next model family, faces questions on AI agent's recent cyberattack
+- https://www.cnn.com/2026/07/28/tech/ai-development-tech-employees-open-letter | 1,290+ employees at OpenAI, Anthropic, Google DeepMind and Meta sign "Pacing the Frontier" letter urging US government to build a verifiable AI slowdown mechanism
+- https://techcrunch.com/2026/07/29/waymo-robotaxis-are-starting-to-return-to-freeways/ | Waymo begins resuming freeway routes for robotaxis, starting with Phoenix
+- https://techcrunch.com/2026/07/28/waymo-robotaxi-operators-face-fresh-scrutiny-over-emergency-response-failures/ | Waymo and other robotaxi operators face fresh regulatory scrutiny over emergency response failures
+- https://finance.yahoo.com/news/nvidia-stock-rises-to-lead-chip-rally-after-meta-microsoft-back-ai-investment-plans-124324390.html | Hyperscaler AI capex race intensifies: combined 2026 capex forecasts hit ~$730B (up from ~$485B in January), NVDA swings on the numbers
+- https://openai.com/index/chatgpt-for-academic-researchers/ | OpenAI launches ChatGPT for Academic Researchers, free frontier model access starting with 10,000 scientists, scaling to 100,000 by 2027
+- https://claude.com/blog/bringing-mcp-2026-07-28-to-claude | Anthropic brings new MCP 2026-07-28 spec to Claude: stateless core, production OAuth/OIDC, versioned Apps/Tasks extensions
+

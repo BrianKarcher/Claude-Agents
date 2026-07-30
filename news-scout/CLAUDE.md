@@ -29,7 +29,7 @@ use the news-scout agent
 
 ## Key constraints (enforced by the agent)
 
-- Only surfaces stories from the last 24–48 hours
+- Only surfaces stories from the last 24–48 hours (extended to 72 hours when the scan itself runs on a Saturday or Sunday, to offset lower weekend news volume)
 - Deduplicates against seen-stories.md (URL-first; headline fallback)
 - Appends all surfaced stories to seen-stories.md after every run
 - seen-stories.md is append-only — never edit or delete past entries
