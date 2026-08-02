@@ -60,7 +60,15 @@
   @keyframes sweep { 0% { background-position: 220% 0%; } 100% { background-position: -220% 0%; } }
   @media (prefers-reduced-motion: reduce) { .scan-sweep { animation: none; opacity: 0; } }
 
-  /* webcam safe-zone reference (bottom-right, ~340x260 kept clear of controls/text) */
+  /* webcam keep-out zone (bottom-right). Declared oversized relative to the
+     actual facecam (~340x260) so it stays clear even if the cam is resized
+     or the recording canvas is narrower than 1920px. Enforced as a hard
+     floor via max(), not just centering slack, so it holds at any viewport
+     width -- see .slide padding-right / padding-bottom below. */
+  :root {
+    --cam-gutter-w: 380px;
+    --cam-gutter-h: 300px;
+  }
 
   /* ---------- deck / slides ---------- */
   .deck { position: relative; z-index: 1; height: 100vh; overflow-y: auto; scroll-snap-type: y mandatory; }
@@ -70,6 +78,8 @@
     scroll-snap-align: start; scroll-snap-stop: always;
     display: flex; flex-direction: column; justify-content: center;
     padding: clamp(2.5rem, 5vw, 5rem) clamp(1.5rem, 7vw, 7rem);
+    padding-right: max(clamp(1.5rem, 7vw, 7rem), var(--cam-gutter-w));
+    padding-bottom: max(clamp(2.5rem, 5vw, 5rem), var(--cam-gutter-h));
     border-bottom: 1px solid var(--line);
   }
   .slide-inner { width: 100%; max-width: 1180px; margin: 0 auto; }
@@ -121,12 +131,7 @@
     font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--ink-muted); text-align: right; z-index: 2;
   }
-  .strip {
-    position: absolute; left: clamp(1.5rem, 7vw, 7rem); bottom: clamp(1.25rem, 3vw, 2rem);
-    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em;
-    color: var(--ink-muted); text-transform: uppercase;
-    border-top: 1px solid var(--line); padding-top: 0.6rem;
-  }
+  .strip { display: none; } /* superseded by .corner-tag (top-right) + .indexbadge (bottom-left, fixed) — kept in markup, hidden to avoid overlapping the fixed badge */
 
   /* ---------- SLIDE 1 : title / hook ---------- */
   #s1 { padding: 0; justify-content: center; }
@@ -261,17 +266,21 @@
   }
   .bartip.show { opacity: 1; }
 
-  /* bar chart grow-in (slide 7) */
-  .bar rect { transform-box: fill-box; transform-origin: bottom; transform: scaleY(0); transition: transform .85s cubic-bezier(.16,.84,.44,1); transition-delay: calc(var(--i, 0) * 120ms + .15s); }
-  .slide.revealed .bar rect { transform: scaleY(1); }
+  /* bar chart wipe-in (slide 7): clip-path reveal bottom -> top, keeps the hatch fill undistorted */
+  .bar rect {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path .85s cubic-bezier(.16,.84,.44,1);
+    transition-delay: calc(var(--i, 0) * 120ms + .15s);
+  }
+  .slide.revealed .bar rect { clip-path: inset(0 0 0% 0); }
   .bar text { opacity: 0; transition: opacity .45s ease; transition-delay: calc(var(--i, 0) * 120ms + .62s); }
   .slide.revealed .bar text { opacity: 1; }
 
-  /* segment mix bar grow-in (slide 6) */
-  .mixbar rect { transform-box: fill-box; transform-origin: left; transform: scaleX(0); transition: transform .9s cubic-bezier(.16,.84,.44,1); }
+  /* segment mix bar wipe-in (slide 6): clip-path reveal left -> right */
+  .mixbar rect { clip-path: inset(0 100% 0 0); transition: clip-path .9s cubic-bezier(.16,.84,.44,1); }
   .mixbar rect.comm { transition-delay: .15s; }
   .mixbar rect.gov { transition-delay: .42s; }
-  .slide.revealed .mixbar rect { transform: scaleX(1); }
+  .slide.revealed .mixbar rect { clip-path: inset(0 0% 0 0); }
   .legend { opacity: 0; transform: translateY(8px); transition: opacity .5s ease .9s, transform .5s ease .9s; }
   .slide.revealed .legend { opacity: 1; transform: none; }
 
@@ -323,6 +332,14 @@
   .source-list div { break-inside: avoid; font-size: 0.82rem; color: var(--ink-secondary); padding: 0.5rem 0; border-bottom: 1px solid var(--line); }
   .source-list .k { font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-muted); letter-spacing: 0.06em; text-transform: uppercase; display: block; margin-bottom: 0.15rem; }
 
+  /* peer multiples comparison table */
+  .comp-table { margin-top: 2.2rem; width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.86rem; }
+  .comp-table th, .comp-table td { text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  .comp-table th { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); font-weight: 400; }
+  .comp-table td { color: var(--ink-secondary); }
+  .comp-table tr.highlight td { color: var(--ink-primary); background: var(--cyan-soft); }
+  .comp-table td.num { font-variant-numeric: tabular-nums; }
+
   /* ---------- nav controls : LEFT side, keeps bottom-right clear for webcam ---------- */
   .navcluster {
     position: fixed; left: clamp(1rem, 3vw, 2rem); top: 50%; transform: translateY(-50%);
@@ -349,7 +366,7 @@
   }
   .indexbadge strong { color: var(--ink-primary); font-weight: 400; }
 
-  /* explicit clear zone reminder: nothing is placed in the bottom-right quadrant by design */
+  /* bottom-right quadrant is kept clear by .slide's padding-right/padding-bottom floor above, not by centering luck */
 
   @media (max-width: 640px) { .navcluster { display: none; } }
 </style>
@@ -396,13 +413,17 @@
         <div class="agenda-item"><span class="n">01</span><span class="t">What Palantir Is</span><span class="tag">Background</span></div>
         <div class="agenda-item"><span class="n">02</span><span class="t">How The Product Actually Works</span><span class="tag">Explainer</span></div>
         <div class="agenda-item"><span class="n">03</span><span class="t">The Four Platforms</span><span class="tag">Explainer</span></div>
-        <div class="agenda-item"><span class="n">04</span><span class="t">Government vs. Commercial</span><span class="tag">Business Mix</span></div>
-        <div class="agenda-item"><span class="n">05</span><span class="t">The Growth Trajectory</span><span class="tag">Data</span></div>
-        <div class="agenda-item"><span class="n">06</span><span class="t">Last Quarter's Scorecard</span><span class="tag">Data</span></div>
-        <div class="agenda-item"><span class="n">07</span><span class="t">What Wall Street Expects Monday</span><span class="tag">Preview</span></div>
-        <div class="agenda-item"><span class="n">08</span><span class="t">Bull Case vs. Bear Case</span><span class="tag">Analysis</span></div>
-        <div class="agenda-item"><span class="n">09</span><span class="t">The Valuation Reality Check</span><span class="tag">Analysis</span></div>
-        <div class="agenda-item"><span class="n">10</span><span class="t">What To Watch During The Call</span><span class="tag">Checklist</span></div>
+        <div class="agenda-item"><span class="n">04</span><span class="t">AIP &amp; The Bootcamp Sales Model</span><span class="tag">Deep Dive</span></div>
+        <div class="agenda-item"><span class="n">05</span><span class="t">Government vs. Commercial</span><span class="tag">Business Mix</span></div>
+        <div class="agenda-item"><span class="n">06</span><span class="t">The Growth Trajectory</span><span class="tag">Data</span></div>
+        <div class="agenda-item"><span class="n">07</span><span class="t">Last Quarter's Scorecard</span><span class="tag">Data</span></div>
+        <div class="agenda-item"><span class="n">08</span><span class="t">What Wall Street Expects Monday</span><span class="tag">Preview</span></div>
+        <div class="agenda-item"><span class="n">09</span><span class="t">Bull Case vs. Bear Case</span><span class="tag">Analysis</span></div>
+        <div class="agenda-item"><span class="n">10</span><span class="t">The "Skynet" Narrative</span><span class="tag">Risk</span></div>
+        <div class="agenda-item"><span class="n">11</span><span class="t">The Valuation Reality Check</span><span class="tag">Analysis</span></div>
+        <div class="agenda-item"><span class="n">12</span><span class="t">How PLTR Stacks Up</span><span class="tag">Peer Comps</span></div>
+        <div class="agenda-item"><span class="n">13</span><span class="t">Retail vs. Institutional Ownership</span><span class="tag">Market Structure</span></div>
+        <div class="agenda-item"><span class="n">14</span><span class="t">What To Watch During The Call</span><span class="tag">Checklist</span></div>
       </div>
     </div>
     <div class="strip">PLTR Q2 2026 Briefing</div>
@@ -513,11 +534,37 @@
     <div class="strip">PLTR Q2 2026 Briefing</div>
   </section>
 
+  <!-- 5b : AIP DEEP DIVE / BOOTCAMP MODEL -->
+  <section class="slide" id="s5b">
+    <div class="corner-tag">04 / AIP Bootcamps</div>
+    <div class="slide-inner">
+      <div class="eyebrow">04 · AIP Deep Dive</div>
+      <h2>The real growth engine isn't a feature. It's a sales motion.</h2>
+      <p class="lede">Most enterprise software gets sold with a slide deck and a multi-quarter pilot. Palantir sells AIP with a <strong style="color:var(--ink-primary)">bootcamp</strong>: a short, intensive, hands-on build session where Palantir engineers sit with a prospect's own data and ship a working application before the week is out — production use cases, not sandboxed demo data.</p>
+
+      <div class="checklist">
+        <div class="check-item"><span class="box"></span><div class="txt"><strong>Day 1–2 · Scope &amp; connect</strong><span>Palantir engineers work with the prospect's own data, wired through Foundry, without a lengthy procurement cycle first.</span></div></div>
+        <div class="check-item"><span class="box"></span><div class="txt"><strong>Day 3–4 · Build live</strong><span>Real use cases get built and iterated on in the room, in front of the business users who'll actually use them.</span></div></div>
+        <div class="check-item"><span class="box"></span><div class="txt"><strong>Day 5 · Ship something real</strong><span>The bootcamp ends with a working application in production, not a proposal — the "pitch" is the delivered product.</span></div></div>
+        <div class="check-item"><span class="box"></span><div class="txt"><strong>Why it compresses the sales cycle</strong><span>Traditional enterprise software can take 12–18 months from first call to signed contract. Bootcamps let prospects feel value in days, then expand from a live deployment instead of a slide deck.</span></div></div>
+      </div>
+
+      <div class="callout" style="background:var(--cyan-soft); border-color:var(--cyan-line);">
+        <span class="dot" style="background:var(--cyan);"></span>
+        <div>
+          <span class="label" style="color:var(--cyan);">Why It Matters For The Model</span>
+          <p>Management points to the bootcamp motion as a key driver behind U.S. commercial revenue's acceleration to 133% YoY growth — it's as much a distribution advantage as a product one.</p>
+        </div>
+      </div>
+    </div>
+    <div class="strip">PLTR Q2 2026 Briefing</div>
+  </section>
+
   <!-- 6 : GOV vs COMMERCIAL -->
   <section class="slide" id="s6">
-    <div class="corner-tag">04 / Business Mix<br>Q1 2026 actuals</div>
+    <div class="corner-tag">05 / Business Mix<br>Q1 2026 actuals</div>
     <div class="slide-inner">
-      <div class="eyebrow">04 · Business Mix</div>
+      <div class="eyebrow">05 · Business Mix</div>
       <h2>Two businesses. The "slow" one isn't slow anymore.</h2>
       <p class="lede">Government work built Palantir's reputation. But in the most recent quarter (Q1 2026), U.S. commercial revenue grew faster than the government business that founded the company.</p>
 
@@ -543,9 +590,9 @@
 
   <!-- 7 : GROWTH TRAJECTORY -->
   <section class="slide" id="s7">
-    <div class="corner-tag">05 / Growth<br>YoY revenue %</div>
+    <div class="corner-tag">06 / Growth<br>YoY revenue %</div>
     <div class="slide-inner">
-      <div class="eyebrow">05 · The Growth Trajectory</div>
+      <div class="eyebrow">06 · The Growth Trajectory</div>
       <h2>Growth has accelerated for four straight quarters.</h2>
 
       <div class="chart-wrap" style="position:relative;">
@@ -608,9 +655,9 @@
 
   <!-- 8 : LAST QUARTER SCORECARD -->
   <section class="slide" id="s8">
-    <div class="corner-tag">06 / Scorecard<br>Reported May 4, 2026</div>
+    <div class="corner-tag">07 / Scorecard<br>Reported May 4, 2026</div>
     <div class="slide-inner">
-      <div class="eyebrow">06 · Last Quarter's Scorecard</div>
+      <div class="eyebrow">07 · Last Quarter's Scorecard</div>
       <h2>Q1 2026: the eighth straight beat.</h2>
       <div class="stat-grid">
         <div class="stat-tile"><div class="v" data-to="1.633" data-decimals="3" data-prefix="$" data-suffix="B">$0.000B</div><div class="l">Revenue</div><div class="d">+85% YoY</div></div>
@@ -625,9 +672,9 @@
 
   <!-- 9 : WHAT WALL STREET EXPECTS -->
   <section class="slide" id="s9">
-    <div class="corner-tag">07 / Monday's Setup<br>Pre-earnings, as of Jul 31</div>
+    <div class="corner-tag">08 / Monday's Setup<br>Pre-earnings, as of Jul 31</div>
     <div class="slide-inner">
-      <div class="eyebrow">07 · Monday's Setup</div>
+      <div class="eyebrow">08 · Monday's Setup</div>
       <h2>What Wall Street expects for Q2 2026.</h2>
       <div class="stat-grid">
         <div class="stat-tile"><div class="v">$1.797–1.801B</div><div class="l">Company's own guidance</div><div class="d">~79% YoY at midpoint</div></div>
@@ -647,9 +694,9 @@
 
   <!-- 10 : BULL vs BEAR -->
   <section class="slide" id="s10">
-    <div class="corner-tag">08 / The Debate</div>
+    <div class="corner-tag">09 / The Debate</div>
     <div class="slide-inner">
-      <div class="eyebrow">08 · The Debate</div>
+      <div class="eyebrow">09 · The Debate</div>
       <h2>Bull case vs. bear case.</h2>
       <div class="compare">
         <div class="clash-line" aria-hidden="true"></div>
@@ -680,11 +727,47 @@
     <div class="strip">PLTR Q2 2026 Briefing</div>
   </section>
 
+  <!-- 10b : THE "SKYNET" NARRATIVE -->
+  <section class="slide" id="s10b">
+    <div class="corner-tag amber" style="color:var(--amber)">10 / The "Skynet" Narrative</div>
+    <div class="slide-inner">
+      <div class="eyebrow amber">10 · The "Skynet" Narrative</div>
+      <h2>The bear case Wall Street doesn't put in a model: reputation risk.</h2>
+      <p class="lede">Gotham — the platform that built Palantir's reputation — was designed for defense and intelligence work, and critics have never let that go. The company is a recurring target of activists, journalists, and some of its own employees over its military and government surveillance contracts, and detractors have nicknamed it a "Skynet" stock, after the fictional AI that turns on humanity in <em>Terminator</em>. None of that shows up in a DCF, but it shapes headlines, protests, and occasionally deal risk.</p>
+
+      <div class="card-grid">
+        <div class="card gov">
+          <span class="tag">The Criticism</span>
+          <h3>"A war-tool company"</h3>
+          <p>Gotham has been used in military targeting, border enforcement (including ICE), and predictive-policing contexts. Critics — including some current and former employees — argue the technology enables surveillance and lethal decisions with insufficient public accountability.</p>
+        </div>
+        <div class="card gov">
+          <span class="tag">The Criticism</span>
+          <h3>Optics risk, not just political risk</h3>
+          <p>Periodic employee walkouts, campus protests, and activist campaigns targeting Palantir's government work create recurring negative press cycles, even in quarters when they don't move revenue at all.</p>
+        </div>
+        <div class="card">
+          <span class="tag">The Response</span>
+          <h3>"We work with the West, by design"</h3>
+          <p>CEO Alex Karp has been unusually blunt in defending the government business, arguing democracies — not authoritarian rivals — should have the best software, and that Palantir deliberately won't sell to adversarial regimes.</p>
+        </div>
+        <div class="card">
+          <span class="tag">The Response</span>
+          <h3>Human-in-the-loop, by policy</h3>
+          <p>Palantir's public position is that its software assists human decision-makers rather than acting autonomously, and that it maintains use-policy and audit commitments around lethal and surveillance applications.</p>
+        </div>
+      </div>
+
+      <p class="chart-caption" style="margin-top:1.6rem;">None of this moves the revenue line directly — but it's a real factor in how some institutional allocators, and some prospective employees, decide whether they'll touch the stock or the company at all.</p>
+    </div>
+    <div class="strip">PLTR Q2 2026 Briefing</div>
+  </section>
+
   <!-- 11 : VALUATION REALITY CHECK -->
   <section class="slide" id="s11">
-    <div class="corner-tag amber" style="color:var(--amber)">09 / Valuation<br>As of late July 2026</div>
+    <div class="corner-tag amber" style="color:var(--amber)">11 / Valuation<br>As of late July 2026</div>
     <div class="slide-inner">
-      <div class="eyebrow amber">09 · Valuation Reality Check</div>
+      <div class="eyebrow amber">11 · Valuation Reality Check</div>
       <h2>A stock priced for years of flawless execution.</h2>
       <div class="stat-grid">
         <div class="stat-tile"><div class="v amber" data-to="80" data-decimals="0" data-prefix="~" data-suffix="x">~0x</div><div class="l">Trailing price / sales</div></div>
@@ -732,11 +815,62 @@
     <div class="strip">PLTR Q2 2026 Briefing</div>
   </section>
 
+  <!-- 11b : PEER MULTIPLES COMPARISON -->
+  <section class="slide" id="s11b">
+    <div class="corner-tag">12 / Peer Comps</div>
+    <div class="slide-inner">
+      <div class="eyebrow">12 · How PLTR Stacks Up</div>
+      <h2>Expensive is relative. How does Palantir compare to other AI-era winners?</h2>
+      <p class="lede">Palantir isn't the only high-growth software or AI name trading at a premium. Lined up against Nvidia and Snowflake, the picture is less "PLTR is uniquely overvalued" and more "the market pays up differently for compute, data, and software."</p>
+
+      <div style="overflow-x:auto;">
+        <table class="comp-table">
+          <thead>
+            <tr><th>Company</th><th>Trailing P/S</th><th>Revenue growth YoY</th><th>Gross margin</th></tr>
+          </thead>
+          <tbody>
+            <tr class="highlight"><td>Palantir (PLTR)</td><td class="num">~80x</td><td class="num">~85%</td><td class="num">~88%</td></tr>
+            <tr><td>Nvidia (NVDA)</td><td class="num">~18x</td><td class="num">~40%</td><td class="num">~75%</td></tr>
+            <tr><td>Snowflake (SNOW)</td><td class="num">~14x</td><td class="num">~30%</td><td class="num">~68%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="chart-caption">Nvidia and Snowflake trade at a fraction of Palantir's sales multiple, but they're also both growing more slowly off a much larger revenue base. Palantir's multiple isn't explained by growth alone — it also prices in margin quality and the bootcamp motion continuing to compound. Figures are illustrative approximations, not point-in-time quotes.</p>
+    </div>
+    <div class="strip">PLTR Q2 2026 Briefing</div>
+  </section>
+
+  <!-- 11c : RETAIL VS INSTITUTIONAL OWNERSHIP -->
+  <section class="slide" id="s11c">
+    <div class="corner-tag">13 / Ownership</div>
+    <div class="slide-inner">
+      <div class="eyebrow">13 · Retail vs. Institutional</div>
+      <h2>A stock that trades on conviction as much as on fundamentals.</h2>
+      <p class="lede">Palantir has one of the most engaged retail shareholder bases in large-cap software — a legacy of its 2020 direct listing, which let employees and early investors sell straight to the public instead of through a traditional IPO lockup. That retail energy still shapes how the stock trades around news.</p>
+
+      <div class="stat-grid">
+        <div class="stat-tile"><div class="v">~40%</div><div class="l">Institutional ownership</div><div class="d">Well below the ~70–80% typical for mega-cap software</div></div>
+        <div class="stat-tile"><div class="v amber">Elevated</div><div class="l">Retail trading share</div><div class="d">Among the most actively retail-traded large-cap tech names</div></div>
+        <div class="stat-tile"><div class="v">Rising</div><div class="l">Institutional adoption trend</div><div class="d">More funds initiating positions as index weight has grown</div></div>
+      </div>
+
+      <div class="callout">
+        <span class="dot"></span>
+        <div>
+          <span class="label">Why It Matters Monday</span>
+          <p>A retail-heavy shareholder base tends to amplify moves in both directions around earnings — reactions can be faster and larger than the fundamentals alone would suggest.</p>
+        </div>
+      </div>
+    </div>
+    <div class="strip">PLTR Q2 2026 Briefing</div>
+  </section>
+
   <!-- 12 : WHAT TO WATCH -->
   <section class="slide" id="s12">
-    <div class="corner-tag">10 / Watchlist</div>
+    <div class="corner-tag">14 / Watchlist</div>
     <div class="slide-inner">
-      <div class="eyebrow">10 · What To Watch During The Call</div>
+      <div class="eyebrow">14 · What To Watch During The Call</div>
       <h2>The scorecard for Monday, August 3.</h2>
       <div class="checklist">
         <div class="check-item"><span class="box"></span><div class="txt"><strong>US commercial growth rate</strong><span>Was 133% last quarter — can it stay above 100%?</span></div></div>
@@ -777,6 +911,10 @@
         <div><span class="k">Valuation &amp; price targets</span>The Motley Fool, "Bull vs. Bear" (Jul 2026); TipRanks bull/bear forecast; FinanceFeeds</div>
         <div><span class="k">Product &amp; company background</span>Palantir Investor Relations; company product documentation summaries</div>
         <div><span class="k">Stock price / market cap</span>Market data as quoted July 31, 2026 close; figures fluctuate intraday and across providers</div>
+        <div><span class="k">AIP bootcamp model</span>Palantir company blog and investor commentary on the AIP bootcamp go-to-market motion</div>
+        <div><span class="k">Government contracts &amp; criticism</span>Public reporting on Gotham's defense/intelligence use, including ICE-related coverage; employee-protest coverage from business press</div>
+        <div><span class="k">Peer multiples (NVDA, SNOW)</span>Illustrative approximations based on public market data as of late July 2026; not point-in-time quotes</div>
+        <div><span class="k">Ownership &amp; retail sentiment</span>Institutional ownership estimates from public 13F-based trackers; retail trading share commentary from financial media</div>
       </div>
     </div>
     <div class="strip">PLTR Q2 2026 Briefing · Appendix</div>
@@ -810,8 +948,16 @@
     idxNow.textContent = String(i + 1).padStart(2, '0');
   }
 
+  function nearestIndex() {
+    var top = deck.scrollTop, best = 0, bestDist = Infinity;
+    slides.forEach(function (s, i) {
+      var d = Math.abs(s.offsetTop - top);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    return best;
+  }
   function go(delta) {
-    var next = Math.min(slides.length - 1, Math.max(0, current + delta));
+    var next = Math.min(slides.length - 1, Math.max(0, nearestIndex() + delta));
     slides[next].scrollIntoView({ behavior: 'smooth' });
   }
   document.getElementById('prevBtn').addEventListener('click', function () { go(-1); });
@@ -857,18 +1003,20 @@
   document.querySelectorAll('#s7 svg > .bar').forEach(function (b, i) { b.style.setProperty('--i', i); });
   document.querySelectorAll('#s11 .pt-point').forEach(function (p, i) { p.style.setProperty('--i', i); });
 
-  // ---- reveal-on-scroll (adds .revealed once; triggers count-ups) ----
+  // ---- reveal-on-scroll (replays each time a slide becomes substantially visible) ----
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) {
+      if (e.isIntersecting && e.intersectionRatio > 0.4) {
         if (!e.target.classList.contains('revealed')) {
           e.target.classList.add('revealed');
           e.target.querySelectorAll('[data-to]').forEach(countUp);
         }
-        if (e.intersectionRatio > 0.55) setActive(slides.indexOf(e.target));
+      } else if (!e.isIntersecting) {
+        e.target.classList.remove('revealed');
       }
+      if (e.isIntersecting && e.intersectionRatio > 0.55) setActive(slides.indexOf(e.target));
     });
-  }, { root: deck, threshold: [0, 0.3, 0.55, 1] });
+  }, { root: deck, threshold: [0, 0.4, 0.55, 1] });
   slides.forEach(function (s) { io.observe(s); });
 
   // ---- bar chart hover tooltips (slide 7) ----
