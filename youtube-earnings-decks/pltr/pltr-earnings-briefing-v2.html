@@ -19,6 +19,9 @@
     --amber-line: rgba(189, 126, 34, 0.45);
     --warn: #C4574B;
     --warn-soft: rgba(196, 87, 74, 0.14);
+    --violet: #7B6FD1;
+    --violet-soft: rgba(123, 111, 209, 0.14);
+    --violet-line: rgba(123, 111, 209, 0.45);
 
     --font-display: "Bahnschrift", "Arial Narrow", "Helvetica Neue", sans-serif;
     --font-body: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
@@ -284,6 +287,26 @@
   .legend { opacity: 0; transform: translateY(8px); transition: opacity .5s ease .9s, transform .5s ease .9s; }
   .slide.revealed .legend { opacity: 1; transform: none; }
 
+  /* quarterly P&L trend chart (revenue / gross profit / operating income) */
+  .pnl-line {
+    fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 2000; stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 1.6s cubic-bezier(.16,.84,.44,1);
+  }
+  .pnl-line.rev { stroke: var(--cyan); transition-delay: .1s; }
+  .pnl-line.gp { stroke: var(--violet); transition-delay: .3s; }
+  .pnl-line.oi { stroke: var(--amber); transition-delay: .5s; }
+  .slide.revealed .pnl-line { stroke-dashoffset: 0; }
+  .pnl-end circle {
+    transform-box: fill-box; transform-origin: center; transform: scale(0); opacity: 0;
+    transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .3s ease; transition-delay: 1.5s;
+  }
+  .slide.revealed .pnl-end circle { transform: scale(1); opacity: 1; }
+  .pnl-end text { opacity: 0; transition: opacity .4s ease; transition-delay: 1.65s; }
+  .slide.revealed .pnl-end text { opacity: 1; }
+  .qhit { fill: transparent; pointer-events: all; cursor: pointer; }
+  .qhit:hover { fill: rgba(232,230,222,0.045); }
+
   /* price target ladder (slide 11) */
   .axis-line { stroke-dasharray: 780; stroke-dashoffset: 780; transition: stroke-dashoffset 1s ease .1s; }
   .slide.revealed .axis-line { stroke-dashoffset: 0; }
@@ -419,14 +442,15 @@
         <div class="agenda-item"><span class="n">07</span><span class="t">The Shapes AIP Agents Take</span><span class="tag">Agent Archetypes</span></div>
         <div class="agenda-item"><span class="n">08</span><span class="t">Government vs. Commercial</span><span class="tag">Business Mix</span></div>
         <div class="agenda-item"><span class="n">09</span><span class="t">The Growth Trajectory</span><span class="tag">Data</span></div>
-        <div class="agenda-item"><span class="n">10</span><span class="t">Last Quarter's Scorecard</span><span class="tag">Data</span></div>
-        <div class="agenda-item"><span class="n">11</span><span class="t">What Wall Street Expects Monday</span><span class="tag">Preview</span></div>
-        <div class="agenda-item"><span class="n">12</span><span class="t">Bull Case vs. Bear Case</span><span class="tag">Analysis</span></div>
-        <div class="agenda-item"><span class="n">13</span><span class="t">The "Skynet" Narrative</span><span class="tag">Risk</span></div>
-        <div class="agenda-item"><span class="n">14</span><span class="t">The Valuation Reality Check</span><span class="tag">Analysis</span></div>
-        <div class="agenda-item"><span class="n">15</span><span class="t">How PLTR Stacks Up</span><span class="tag">Peer Comps</span></div>
-        <div class="agenda-item"><span class="n">16</span><span class="t">Retail vs. Institutional Ownership</span><span class="tag">Market Structure</span></div>
-        <div class="agenda-item"><span class="n">17</span><span class="t">What To Watch During The Call</span><span class="tag">Checklist</span></div>
+        <div class="agenda-item"><span class="n">10</span><span class="t">The Quarterly Trend</span><span class="tag">Revenue &amp; Profit</span></div>
+        <div class="agenda-item"><span class="n">11</span><span class="t">Last Quarter's Scorecard</span><span class="tag">Data</span></div>
+        <div class="agenda-item"><span class="n">12</span><span class="t">What Wall Street Expects Monday</span><span class="tag">Preview</span></div>
+        <div class="agenda-item"><span class="n">13</span><span class="t">Bull Case vs. Bear Case</span><span class="tag">Analysis</span></div>
+        <div class="agenda-item"><span class="n">14</span><span class="t">The "Skynet" Narrative</span><span class="tag">Risk</span></div>
+        <div class="agenda-item"><span class="n">15</span><span class="t">The Valuation Reality Check</span><span class="tag">Analysis</span></div>
+        <div class="agenda-item"><span class="n">16</span><span class="t">How PLTR Stacks Up</span><span class="tag">Peer Comps</span></div>
+        <div class="agenda-item"><span class="n">17</span><span class="t">Retail vs. Institutional Ownership</span><span class="tag">Market Structure</span></div>
+        <div class="agenda-item"><span class="n">18</span><span class="t">What To Watch During The Call</span><span class="tag">Checklist</span></div>
       </div>
     </div>
     <div class="strip">PLTR Q2 2026 Briefing</div>
@@ -788,11 +812,97 @@
     <div class="strip">PLTR Q2 2026 Briefing</div>
   </section>
 
+  <!-- 7b : QUARTERLY P&L TREND -->
+  <section class="slide" id="s7b">
+    <div class="corner-tag">10 / Quarterly P&amp;L<br>Since Q1 2021</div>
+    <div class="slide-inner">
+      <div class="eyebrow">10 · The Quarterly Trend</div>
+      <h2>Twenty-two straight quarters — and the bottom line is outrunning the top line.</h2>
+      <p class="lede">Revenue has compounded every quarter since Q1 2021. The more important story is underneath it: gross profit and operating income have both grown <em>faster</em> than revenue itself, as margins expanded alongside scale.</p>
+
+      <div class="chart-wrap" style="position:relative;">
+        <svg viewBox="0 0 1180 350" role="img" aria-label="Line chart of quarterly revenue, gross profit, and operating income in millions of dollars from Q1 2021 through Q2 2026 guidance, showing all three metrics accelerating, with operating income growing fastest">
+          <g stroke="var(--line)" stroke-width="1">
+            <line x1="60" y1="300" x2="1080" y2="300"/>
+            <line x1="60" y1="230" x2="1080" y2="230"/>
+            <line x1="60" y1="160" x2="1080" y2="160"/>
+            <line x1="60" y1="90" x2="1080" y2="90"/>
+            <line x1="60" y1="20" x2="1080" y2="20"/>
+          </g>
+          <g class="chip-text" fill="var(--ink-muted)" text-anchor="end">
+            <text x="54" y="304">$0</text>
+            <text x="54" y="234">$500M</text>
+            <text x="54" y="164">$1,000M</text>
+            <text x="54" y="94">$1,500M</text>
+            <text x="54" y="24">$2,000M</text>
+          </g>
+
+          <path class="pnl-line oi" d="M70,293 L118,291 L166,292 L214,288 L262,287 L310,287 L359,290 L407,286 L455,283 L503,281 L551,280 L599,275 L647,272 L695,268 L743,261 L791,248 L840,246 L888,235 L936,216 L984,192 L1032,163 L1080,149"/>
+          <path class="pnl-line gp" d="M70,266 L118,262 L166,259 L214,254 L262,252 L310,248 L359,248 L407,244 L455,241 L503,240 L551,237 L599,231 L647,227 L695,221 L743,216 L791,203 L840,195 L888,179 L936,156 L984,129 L1032,99 L1080,78"/>
+          <path class="pnl-line rev" d="M70,252 L118,247 L166,245 L214,239 L262,238 L310,234 L359,233 L407,229 L455,227 L503,225 L551,222 L599,215 L647,211 L695,205 L743,198 L791,184 L840,176 L888,159 L936,135 L984,103 L1032,71 L1080,48"/>
+
+          <g class="pnl-end">
+            <circle cx="1080" cy="149" r="5" fill="var(--amber)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1092" y="153" fill="var(--ink-primary)">$1.08B</text>
+            <circle cx="1080" cy="78" r="5" fill="var(--violet)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1092" y="82" fill="var(--ink-primary)">$1.58B</text>
+            <circle cx="1080" cy="48" r="5" fill="var(--cyan)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1092" y="52" fill="var(--ink-primary)">$1.80B</text>
+          </g>
+
+          <g class="chip-text" fill="var(--ink-muted)" text-anchor="middle">
+            <text x="70" y="322">Q1 '21</text>
+            <text x="262" y="322">Q1 '22</text>
+            <text x="455" y="322">Q1 '23</text>
+            <text x="647" y="322">Q1 '24</text>
+            <text x="840" y="322">Q1 '25</text>
+            <text x="1032" y="322">Q1 '26</text>
+          </g>
+
+          <g aria-hidden="true">
+            <rect class="qhit" x="46" y="20" width="48" height="280" data-label="Q1 2021" data-val="Revenue $341M · Gross Profit $242M · Op Income $51M"/>
+            <rect class="qhit" x="94" y="20" width="48" height="280" data-label="Q2 2021" data-val="Revenue $376M · Gross Profit $274M · Op Income $64M"/>
+            <rect class="qhit" x="142" y="20" width="48" height="280" data-label="Q3 2021" data-val="Revenue $392M · Gross Profit $294M · Op Income $59M"/>
+            <rect class="qhit" x="190" y="20" width="48" height="280" data-label="Q4 2021" data-val="Revenue $433M · Gross Profit $329M · Op Income $87M"/>
+            <rect class="qhit" x="238" y="20" width="48" height="280" data-label="Q1 2022" data-val="Revenue $446M · Gross Profit $343M · Op Income $94M"/>
+            <rect class="qhit" x="286" y="20" width="48" height="280" data-label="Q2 2022" data-val="Revenue $473M · Gross Profit $369M · Op Income $95M"/>
+            <rect class="qhit" x="335" y="20" width="48" height="280" data-label="Q3 2022" data-val="Revenue $478M · Gross Profit $373M · Op Income $72M"/>
+            <rect class="qhit" x="383" y="20" width="48" height="280" data-label="Q4 2022" data-val="Revenue $509M · Gross Profit $402M · Op Income $97M"/>
+            <rect class="qhit" x="431" y="20" width="48" height="280" data-label="Q1 2023" data-val="Revenue $525M · Gross Profit $420M · Op Income $121M"/>
+            <rect class="qhit" x="479" y="20" width="48" height="280" data-label="Q2 2023" data-val="Revenue $533M · Gross Profit $426M · Op Income $133M"/>
+            <rect class="qhit" x="527" y="20" width="48" height="280" data-label="Q3 2023" data-val="Revenue $558M · Gross Profit $452M · Op Income $145M"/>
+            <rect class="qhit" x="575" y="20" width="48" height="280" data-label="Q4 2023" data-val="Revenue $608M · Gross Profit $492M · Op Income $182M"/>
+            <rect class="qhit" x="623" y="20" width="48" height="280" data-label="Q1 2024" data-val="Revenue $634M · Gross Profit $520M · Op Income $197M"/>
+            <rect class="qhit" x="671" y="20" width="48" height="280" data-label="Q2 2024" data-val="Revenue $678M · Gross Profit $563M · Op Income $231M"/>
+            <rect class="qhit" x="719" y="20" width="48" height="280" data-label="Q3 2024" data-val="Revenue $726M · Gross Profit $603M · Op Income $276M"/>
+            <rect class="qhit" x="767" y="20" width="48" height="280" data-label="Q4 2024" data-val="Revenue $828M · Gross Profit $696M · Op Income $373M"/>
+            <rect class="qhit" x="816" y="20" width="48" height="280" data-label="Q1 2025" data-val="Revenue $884M · Gross Profit $751M · Op Income $389M"/>
+            <rect class="qhit" x="864" y="20" width="48" height="280" data-label="Q2 2025" data-val="Revenue $1,004M · Gross Profit $863M · Op Income $462M"/>
+            <rect class="qhit" x="912" y="20" width="48" height="280" data-label="Q3 2025" data-val="Revenue $1,181M · Gross Profit $1,027M · Op Income $602M"/>
+            <rect class="qhit" x="960" y="20" width="48" height="280" data-label="Q4 2025" data-val="Revenue $1,408M · Gross Profit $1,225M · Op Income $774M"/>
+            <rect class="qhit" x="1008" y="20" width="48" height="280" data-label="Q1 2026" data-val="Revenue $1,633M · Gross Profit $1,437M · Op Income $980M"/>
+            <rect class="qhit" x="1056" y="20" width="48" height="280" data-label="Q2 2026 (guide)" data-val="Revenue ~$1,799M · Gross Profit ~$1,583M · Op Income ~$1,079M"/>
+          </g>
+        </svg>
+        <div class="bartip" id="pnltip"></div>
+      </div>
+
+      <div class="legend">
+        <div class="li"><span class="sw" style="background:var(--cyan)"></span>Revenue</div>
+        <div class="li"><span class="sw" style="background:var(--violet)"></span>Gross Profit</div>
+        <div class="li"><span class="sw" style="background:var(--amber)"></span>Operating Income</div>
+      </div>
+
+      <p class="chart-caption">Revenue is actual reported results through Q4 2025, then this deck's Q1–Q2 2026 figures. Gross profit and operating income are illustrative reconstructions from approximate historical margins, not exact reported figures for every quarter — treat the shape of the trend as the takeaway, not the individual dollar amounts.</p>
+    </div>
+    <div class="strip">PLTR Q2 2026 Briefing</div>
+  </section>
+
   <!-- 8 : LAST QUARTER SCORECARD -->
   <section class="slide" id="s8">
-    <div class="corner-tag">10 / Scorecard<br>Reported May 4, 2026</div>
+    <div class="corner-tag">11 / Scorecard<br>Reported May 4, 2026</div>
     <div class="slide-inner">
-      <div class="eyebrow">10 · Last Quarter's Scorecard</div>
+      <div class="eyebrow">11 · Last Quarter's Scorecard</div>
       <h2>Q1 2026: the eighth straight beat.</h2>
       <div class="stat-grid">
         <div class="stat-tile"><div class="v" data-to="1.633" data-decimals="3" data-prefix="$" data-suffix="B">$0.000B</div><div class="l">Revenue</div><div class="d">+85% YoY</div></div>
@@ -807,9 +917,9 @@
 
   <!-- 9 : WHAT WALL STREET EXPECTS -->
   <section class="slide" id="s9">
-    <div class="corner-tag">11 / Monday's Setup<br>Pre-earnings, as of Jul 31</div>
+    <div class="corner-tag">12 / Monday's Setup<br>Pre-earnings, as of Jul 31</div>
     <div class="slide-inner">
-      <div class="eyebrow">11 · Monday's Setup</div>
+      <div class="eyebrow">12 · Monday's Setup</div>
       <h2>What Wall Street expects for Q2 2026.</h2>
       <div class="stat-grid">
         <div class="stat-tile"><div class="v">$1.797–1.801B</div><div class="l">Company's own guidance</div><div class="d">~79% YoY at midpoint</div></div>
@@ -829,9 +939,9 @@
 
   <!-- 10 : BULL vs BEAR -->
   <section class="slide" id="s10">
-    <div class="corner-tag">12 / The Debate</div>
+    <div class="corner-tag">13 / The Debate</div>
     <div class="slide-inner">
-      <div class="eyebrow">12 · The Debate</div>
+      <div class="eyebrow">13 · The Debate</div>
       <h2>Bull case vs. bear case.</h2>
       <div class="compare">
         <div class="clash-line" aria-hidden="true"></div>
@@ -864,9 +974,9 @@
 
   <!-- 10b : THE "SKYNET" NARRATIVE -->
   <section class="slide" id="s10b">
-    <div class="corner-tag amber" style="color:var(--amber)">13 / The "Skynet" Narrative</div>
+    <div class="corner-tag amber" style="color:var(--amber)">14 / The "Skynet" Narrative</div>
     <div class="slide-inner">
-      <div class="eyebrow amber">13 · The "Skynet" Narrative</div>
+      <div class="eyebrow amber">14 · The "Skynet" Narrative</div>
       <h2>The bear case Wall Street doesn't put in a model: reputation risk.</h2>
       <p class="lede">Gotham — the platform that built Palantir's reputation — was designed for defense and intelligence work, and critics have never let that go. The company is a recurring target of activists, journalists, and some of its own employees over its military and government surveillance contracts, and detractors have nicknamed it a "Skynet" stock, after the fictional AI that turns on humanity in <em>Terminator</em>. None of that shows up in a DCF, but it shapes headlines, protests, and occasionally deal risk.</p>
 
@@ -900,9 +1010,9 @@
 
   <!-- 11 : VALUATION REALITY CHECK -->
   <section class="slide" id="s11">
-    <div class="corner-tag amber" style="color:var(--amber)">14 / Valuation<br>As of late July 2026</div>
+    <div class="corner-tag amber" style="color:var(--amber)">15 / Valuation<br>As of late July 2026</div>
     <div class="slide-inner">
-      <div class="eyebrow amber">14 · Valuation Reality Check</div>
+      <div class="eyebrow amber">15 · Valuation Reality Check</div>
       <h2>A stock priced for years of flawless execution.</h2>
       <div class="stat-grid">
         <div class="stat-tile"><div class="v amber" data-to="80" data-decimals="0" data-prefix="~" data-suffix="x">~0x</div><div class="l">Trailing price / sales</div></div>
@@ -952,9 +1062,9 @@
 
   <!-- 11b : PEER MULTIPLES COMPARISON -->
   <section class="slide" id="s11b">
-    <div class="corner-tag">15 / Peer Comps</div>
+    <div class="corner-tag">16 / Peer Comps</div>
     <div class="slide-inner">
-      <div class="eyebrow">15 · How PLTR Stacks Up</div>
+      <div class="eyebrow">16 · How PLTR Stacks Up</div>
       <h2>Expensive is relative. How does Palantir compare to other AI-era winners?</h2>
       <p class="lede">Palantir isn't the only high-growth software or AI name trading at a premium. Lined up against Nvidia and Snowflake, the picture is less "PLTR is uniquely overvalued" and more "the market pays up differently for compute, data, and software."</p>
 
@@ -978,9 +1088,9 @@
 
   <!-- 11c : RETAIL VS INSTITUTIONAL OWNERSHIP -->
   <section class="slide" id="s11c">
-    <div class="corner-tag">16 / Ownership</div>
+    <div class="corner-tag">17 / Ownership</div>
     <div class="slide-inner">
-      <div class="eyebrow">16 · Retail vs. Institutional</div>
+      <div class="eyebrow">17 · Retail vs. Institutional</div>
       <h2>A stock that trades on conviction as much as on fundamentals.</h2>
       <p class="lede">Palantir has one of the most engaged retail shareholder bases in large-cap software — a legacy of its 2020 direct listing, which let employees and early investors sell straight to the public instead of through a traditional IPO lockup. That retail energy still shapes how the stock trades around news.</p>
 
@@ -1003,9 +1113,9 @@
 
   <!-- 12 : WHAT TO WATCH -->
   <section class="slide" id="s12">
-    <div class="corner-tag">17 / Watchlist</div>
+    <div class="corner-tag">18 / Watchlist</div>
     <div class="slide-inner">
-      <div class="eyebrow">17 · What To Watch During The Call</div>
+      <div class="eyebrow">18 · What To Watch During The Call</div>
       <h2>The scorecard for Monday, August 3.</h2>
       <div class="checklist">
         <div class="check-item"><span class="box"></span><div class="txt"><strong>US commercial growth rate</strong><span>Was 133% last quarter — can it stay above 100%?</span></div></div>
@@ -1047,6 +1157,7 @@
         <div><span class="k">Product &amp; company background</span>Palantir Investor Relations; company product documentation summaries</div>
         <div><span class="k">Stock price / market cap</span>Market data as quoted July 31, 2026 close; figures fluctuate intraday and across providers</div>
         <div><span class="k">Ontology object model</span>Palantir Foundry/AIP product documentation summaries on ontology object types and archetypes</div>
+        <div><span class="k">Quarterly revenue history</span>Palantir SEC 10-Q/10-K filings and press releases, Q1 2021–Q4 2025; gross profit and operating income are illustrative reconstructions from approximate margins, not exact reported figures</div>
         <div><span class="k">AIP bootcamp model</span>Palantir company blog and investor commentary on the AIP bootcamp go-to-market motion</div>
         <div><span class="k">Government contracts &amp; criticism</span>Public reporting on Gotham's defense/intelligence use, including ICE-related coverage; employee-protest coverage from business press</div>
         <div><span class="k">Peer multiples (NVDA, SNOW)</span>Illustrative approximations based on public market data as of late July 2026; not point-in-time quotes</div>
@@ -1167,6 +1278,19 @@
       tip.style.top = (e.clientY - r.top) + 'px';
     });
     g.addEventListener('mouseleave', function () { tip.classList.remove('show'); });
+  });
+
+  // ---- quarterly P&L chart hover tooltips (slide 7b) ----
+  var ptip = document.getElementById('pnltip');
+  var pwrap = ptip ? ptip.parentElement : null;
+  document.querySelectorAll('#s7b .qhit').forEach(function (g) {
+    g.addEventListener('mouseenter', function () { ptip.textContent = g.dataset.label + ' — ' + g.dataset.val; ptip.classList.add('show'); });
+    g.addEventListener('mousemove', function (e) {
+      var r = pwrap.getBoundingClientRect();
+      ptip.style.left = (e.clientX - r.left) + 'px';
+      ptip.style.top = (e.clientY - r.top) + 'px';
+    });
+    g.addEventListener('mouseleave', function () { ptip.classList.remove('show'); });
   });
 
   // ---- countdown to earnings call ----
