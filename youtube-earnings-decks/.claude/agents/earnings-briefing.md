@@ -32,6 +32,60 @@ If you catch yourself about to write a specific dollar figure, percentage, or da
 - An AI web-search tool's synthesized paragraph answer, alone, with no primary source opened = **not sufficiently verified on its own** for a number you're about to put on a slide. Use it to find the right primary source, then open that source.
 - Your own recollection of "I think revenue was around $X that quarter" = never sufficient, no matter how confident it feels. Treat it as a hypothesis to verify, not a fact to report — even when you turn out to be right, that's luck, not verification.
 
+## Data cache & extracts
+
+Historical financial data is expensive to verify once and cheap to reuse. Store it — don't re-fetch it every session.
+
+```
+youtube-earnings-decks/
+└── data/
+    └── <TICKER>/
+        ├── quarterly-financials.md   ← the cache: one running table per company
+        └── extracts/                 ← one file per primary source actually opened
+            ├── <TICKER>-8K-Q1-2021.md
+            ├── <TICKER>-8K-Q2-2021.md
+            └── ...
+```
+
+### The cache table — `data/<TICKER>/quarterly-financials.md`
+
+One file per company: a running ASCII table of every verified quarter (revenue, gross profit, operating income, and whatever else decks for this company need — net income, FCF, margins), each row citing which extract it came from and the date it was verified. **Read this file first, before fetching anything**, whenever you need a historical figure for that company. Only fetch/verify a quarter that is missing from the table or explicitly marked as a gap below.
+
+- Never overwrite a row that already has a citation — once a quarter is reported, its actuals don't change; the cache entry is permanent.
+- New quarters get **appended** as the company reports them, never backfilled by estimation — a missing row stays missing until verified, it does not get "reasonably" filled in just to keep the table looking complete (see the never-fabricate rule above; it applies to this cache exactly as it applies to a slide).
+- Guidance, consensus estimates, and price targets do **not** belong in this table — it's for reported actuals only. Forward-looking numbers go stale, so fetch them fresh each time they're needed and keep them only in the deck itself, clearly labeled as estimates.
+- If a specific line item genuinely could not be verified for a quarter, record that explicitly as a gap row (template below) instead of silently omitting it — that tells the next session "checked, unavailable" instead of "never checked," so it doesn't either waste time re-attempting a known dead end or, worse, assume the gap is fine to fill in.
+
+### Extracts — `data/<TICKER>/extracts/`
+
+An extract is a compact, structured capture of exactly what a primary source (or a data-aggregator table) reported, written the first time you actually open and parse that source. Once an extract exists, **read the extract, not the original source** — a 40-page 10-Q doesn't need re-parsing to pull one number that's already been recorded.
+
+Naming: `<TICKER>-<FILING-TYPE>-<PERIOD>.md`, e.g. `PLTR-8K-Q1-2026.md`, or `PLTR-AGGREGATOR-Q2-2021-Q1-2026.md` for a single aggregator-table fetch that covered many quarters at once.
+
+Extract template:
+
+```markdown
+# <TICKER> — <period(s)> (<filing type>)
+
+**Source:** <exact URL>
+**Fetched:** <YYYY-MM-DD>
+**Cross-checked against:** <second source, or "internal consistency: quarters sum to reported FY total">
+
+## Figures ($ thousands unless noted)
+| Metric | Value | Prior-year comparable |
+|---|---|---|
+| Revenue | ... | ... |
+| Gross profit | ... | ... |
+| Operating income | ... | ... |
+
+## Notes
+- Anything unusual (one-time charges, restatements, GAAP vs. adjusted distinctions) that a future session needs to know when reusing this figure.
+```
+
+After writing an extract, immediately update the company's `quarterly-financials.md` cache table with a row pointing to it — an extract that isn't reflected in the cache table won't get found next time.
+
+**Cached ≠ exempt from scrutiny.** If the cache has a quarter but something doesn't reconcile (the user flags it, or it conflicts with a number you're independently fetching), re-verify from the primary source and correct both the extract and the cache row rather than trusting the cache blindly.
+
 ## Deck design system
 
 Decks are a single self-contained `.html` file per company (e.g. `pltr/pltr-earnings-briefing-v2.html`), built as scroll-snap full-viewport `<section class="slide">` elements, dark theme (`--bg-void`, `--ink-primary`, etc.), with a fixed left-side nav cluster and bottom-left index badge. When starting a new company's deck, copy the structure and CSS system from the most recent existing deck in this project rather than inventing a new visual language — the channel should look consistent across videos.
@@ -49,7 +103,7 @@ Decks are a single self-contained `.html` file per company (e.g. `pltr/pltr-earn
 ## Workflow
 
 1. If this is a new company's deck, ask which existing deck to use as the template, and what earnings date/quarter it's built around.
-2. For any new data-driven slide (a chart, a stat, a comparison table), do the research and verification *before* writing any markup — know every number and its source first.
+2. For any new data-driven slide (a chart, a stat, a comparison table), first check `data/<TICKER>/quarterly-financials.md` and `data/<TICKER>/extracts/` for what's already verified. Only fetch what's missing or marked as a gap — then write a new extract and update the cache table before touching the deck.
 3. For structural changes (reordering, adding/removing slides), state the plan briefly before making a large batch of renumbering edits, especially if it touches many slides.
 4. Build the slide(s), keeping the existing CSS/component vocabulary.
 5. Update the agenda list, the Sources slide, and the webcam-gutter check.

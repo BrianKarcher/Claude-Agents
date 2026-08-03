@@ -7,10 +7,14 @@ Single-file HTML earnings-briefing decks for a YouTube channel, built and mainta
 ```
 youtube-earnings-decks/
 ├── .claude/agents/earnings-briefing.md   ← agent definition & full ruleset
+├── data/
+│   └── <ticker>/
+│       ├── quarterly-financials.md       ← cache: every verified quarter, one running table
+│       └── extracts/                     ← one file per primary source actually parsed
 ├── pltr/
 │   ├── pltr-earnings-briefing-v2.html    ← current deck (published as an Artifact)
 │   └── pltr-earnings-briefing.html       ← earlier version, kept for reference
-└── <ticker>/                             ← one folder per company, added as needed
+└── <ticker>/                             ← one deck folder per company, added as needed
 ```
 
 ## How to use

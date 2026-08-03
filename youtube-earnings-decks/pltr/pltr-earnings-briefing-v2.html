@@ -419,8 +419,8 @@
         <span class="cd">T&ndash;MINUS <span class="num" id="cdOut">calculating&hellip;</span></span>
       </div>
       <div class="statrow">
-        <div class="item"><div class="v" data-to="121.00" data-decimals="2" data-prefix="$">$0.00</div><div class="l">Price · Jul 31 close</div></div>
-        <div class="item"><div class="v" data-to="290" data-decimals="0" data-prefix="~$" data-suffix="B">~$0B</div><div class="l">Market Cap</div></div>
+        <div class="item"><div class="v" data-to="123.06" data-decimals="2" data-prefix="$">$0.00</div><div class="l">Price · Jul 31 close</div></div>
+        <div class="item"><div class="v" data-to="295" data-decimals="0" data-prefix="$" data-suffix="B">$0B</div><div class="l">Market Cap · Jul 31</div></div>
         <div class="item"><div class="v" data-to="85" data-decimals="0" data-prefix="+" data-suffix="%">+0%</div><div class="l">Last Qtr Revenue Growth</div></div>
       </div>
     </div>
@@ -465,7 +465,7 @@
       <p class="lede">Founded in 2003 in Palo Alto by Peter Thiel, Alex Karp, Stephen Cohen, Joe Lonsdale, and Nathan Gettings — with early backing from In-Q-Tel, the CIA's venture capital arm. Its first software helped intelligence analysts find patterns buried in data nobody could connect. Two decades later it's one of the most valuable software companies trading publicly, and the pitch has barely changed: connect the data, then act on it.</p>
       <div class="stat-grid">
         <div class="stat-tile"><div class="v">2003</div><div class="l">Founded</div><div class="d">Palo Alto, CA</div></div>
-        <div class="stat-tile"><div class="v">Denver, CO</div><div class="l">Headquarters</div><div class="d">Since 2020</div></div>
+        <div class="stat-tile"><div class="v">Aventura, FL</div><div class="l">Headquarters</div><div class="d">Per Q1 2026 10-Q cover</div></div>
         <div class="stat-tile"><div class="v">Alex Karp</div><div class="l">CEO &amp; Co-Founder</div><div class="d">Leading since inception</div></div>
         <div class="stat-tile"><div class="v">2020</div><div class="l">Went Public</div><div class="d">NYSE direct listing → now Nasdaq</div></div>
       </div>
@@ -729,20 +729,21 @@
 
       <div class="chart-wrap">
         <svg class="mixbar" viewBox="0 0 900 60" role="img" aria-label="Revenue mix bar: US Commercial 595 million dollars versus US Government 687 million dollars, Q1 2026">
-          <rect class="comm" x="0" y="14" width="410" height="32" rx="3" fill="var(--cyan)"/>
-          <rect class="gov" x="416" y="14" width="484" height="32" rx="3" fill="var(--amber)"/>
+          <rect class="comm" x="0" y="14" width="415" height="32" rx="3" fill="var(--cyan)"/>
+          <rect class="gov" x="421" y="14" width="479" height="32" rx="3" fill="var(--amber)"/>
         </svg>
         <div class="legend">
-          <div class="li"><span class="sw" style="background:var(--cyan)"></span>US Commercial — $595M (46%)</div>
-          <div class="li"><span class="sw" style="background:var(--amber)"></span>US Government — $687M (54%)</div>
+          <div class="li"><span class="sw" style="background:var(--cyan)"></span>US Commercial — $595M (46% of US revenue)</div>
+          <div class="li"><span class="sw" style="background:var(--amber)"></span>US Government — $687M (54% of US revenue)</div>
         </div>
       </div>
 
       <div class="stat-grid" style="margin-top:2rem;">
         <div class="stat-tile"><div class="v" data-to="133" data-decimals="0" data-prefix="+" data-suffix="%">+0%</div><div class="l">US Commercial growth YoY</div></div>
         <div class="stat-tile"><div class="v amber" data-to="84" data-decimals="0" data-prefix="+" data-suffix="%">+0%</div><div class="l">US Government growth YoY</div></div>
-        <div class="stat-tile"><div class="v" data-to="1007" data-decimals="0" data-comma="1">0</div><div class="l">Commercial customers (TTM, +31% YoY)</div></div>
+        <div class="stat-tile"><div class="v" data-to="615" data-decimals="0" data-comma="1">0</div><div class="l">US commercial customers</div><div class="d">TTM ended Mar 31, 2026 · +42% YoY</div></div>
       </div>
+      <p class="chart-caption">The $595M / $687M split is the <em>US</em> business only — it excludes $351M of non-US revenue, so the two bars sum to US revenue ($1.282B), not to total Q1 2026 revenue ($1.633B).</p>
     </div>
     <div class="strip">PLTR Q2 2026 Briefing</div>
   </section>
@@ -755,7 +756,7 @@
       <h2>Growth has accelerated for four straight quarters.</h2>
 
       <div class="chart-wrap" style="position:relative;">
-        <svg viewBox="0 0 640 320" role="img" aria-label="Year over year revenue growth by quarter: Q2 2025 48 percent, Q3 2025 63 percent, Q4 2025 70 percent, Q1 2026 85 percent, Q2 2026 estimated 81 percent">
+        <svg viewBox="0 0 640 320" role="img" aria-label="Year over year revenue growth by quarter: Q2 2025 48 percent, Q3 2025 63 percent, Q4 2025 70 percent, Q1 2026 85 percent — all reported. Q2 2026 shown hatched at 79 percent, which is company guidance, not a reported result.">
           <defs>
             <pattern id="hatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
               <line x1="0" y1="0" x2="0" y2="6" stroke="var(--cyan)" stroke-width="1.6" opacity="0.55"/>
@@ -792,9 +793,9 @@
             <rect x="402" y="59" width="70" height="221" rx="3" fill="var(--cyan)"/>
             <text class="chip-text" x="437" y="49" text-anchor="middle" fill="var(--ink-primary)"><tspan class="cnt" data-to="85" data-decimals="0">0</tspan>%</text>
           </g>
-          <g class="bar" data-label="Q2 2026 (estimate)" data-val="~81% YoY — Street consensus">
-            <rect x="510" y="69" width="70" height="211" rx="3" fill="url(#hatch)" stroke="var(--cyan)" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <text class="chip-text" x="545" y="59" text-anchor="middle" fill="var(--ink-primary)">~<tspan class="cnt" data-to="81" data-decimals="0">0</tspan>%<tspan fill="var(--cyan)">E</tspan></text>
+          <g class="bar" data-label="Q2 2026 — GUIDANCE, not reported" data-val="+79% YoY implied by company guidance of $1.797–1.801B (midpoint)">
+            <rect x="510" y="75" width="70" height="205" rx="3" fill="url(#hatch)" stroke="var(--cyan)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text class="chip-text" x="545" y="65" text-anchor="middle" fill="var(--ink-primary)">+<tspan class="cnt" data-to="79" data-decimals="0">0</tspan>%<tspan fill="var(--cyan)">G</tspan></text>
           </g>
 
           <g class="chip-text" fill="var(--ink-muted)" text-anchor="middle">
@@ -807,7 +808,7 @@
         </svg>
         <div class="bartip" id="bartip"></div>
       </div>
-      <p class="chart-caption">Four straight quarters of accelerating year-over-year revenue growth. Monday's print decides whether that streak continues — or breaks.</p>
+      <p class="chart-caption">Solid bars are reported GAAP results. The hatched Q2 2026 bar is <strong style="color:var(--ink-primary)">Palantir's own guidance</strong> ($1.797–1.801B, issued May 4, 2026), not a reported number and not a Street estimate — at the midpoint it implies +79% YoY, a step <em>down</em> from Q1's +85%. Monday's print decides whether the acceleration streak continues or breaks.</p>
     </div>
     <div class="strip">PLTR Q2 2026 Briefing</div>
   </section>
@@ -817,71 +818,70 @@
     <div class="corner-tag">10 / Quarterly P&amp;L<br>Since Q1 2021</div>
     <div class="slide-inner">
       <div class="eyebrow">10 · The Quarterly Trend</div>
-      <h2>Twenty-two straight quarters — and the bottom line is outrunning the top line.</h2>
-      <p class="lede">Revenue has compounded every quarter since Q1 2021. The more important story is underneath it: gross profit and operating income have both grown <em>faster</em> than revenue itself, as margins expanded alongside scale.</p>
+      <h2>Twenty-one quarters: from a $114M quarterly loss to $754M in operating profit.</h2>
+      <p class="lede">Revenue has compounded every quarter since Q1 2021. The bigger story is the bottom line: Palantir ran an operating <em>loss</em> every quarter through Q4 2022, crossed into profit in Q1 2023, and has since expanded operating income far faster than revenue.</p>
 
       <div class="chart-wrap" style="position:relative;">
-        <svg viewBox="0 0 1180 350" role="img" aria-label="Line chart of quarterly revenue, gross profit, and operating income in millions of dollars from Q1 2021 through Q2 2026 guidance, showing all three metrics accelerating, with operating income growing fastest">
+        <svg viewBox="0 0 1180 350" role="img" aria-label="Line chart of quarterly GAAP revenue, gross profit, and operating income in millions of dollars from Q1 2021 through Q1 2026. Revenue rises from 341 million to 1,633 million. Operating income starts at negative 114 million, bottoms at negative 146 million in Q2 2021, crosses zero in Q1 2023, and reaches 754 million in Q1 2026.">
           <g stroke="var(--line)" stroke-width="1">
+            <line x1="60" y1="49.5" x2="1080" y2="49.5"/>
+            <line x1="60" y1="123.2" x2="1080" y2="123.2"/>
+            <line x1="60" y1="196.8" x2="1080" y2="196.8"/>
             <line x1="60" y1="300" x2="1080" y2="300"/>
-            <line x1="60" y1="230" x2="1080" y2="230"/>
-            <line x1="60" y1="160" x2="1080" y2="160"/>
-            <line x1="60" y1="90" x2="1080" y2="90"/>
-            <line x1="60" y1="20" x2="1080" y2="20"/>
           </g>
+          <line x1="60" y1="270.5" x2="1080" y2="270.5" stroke="var(--line-strong)" stroke-width="1"/>
           <g class="chip-text" fill="var(--ink-muted)" text-anchor="end">
-            <text x="54" y="304">$0</text>
-            <text x="54" y="234">$500M</text>
-            <text x="54" y="164">$1,000M</text>
-            <text x="54" y="94">$1,500M</text>
-            <text x="54" y="24">$2,000M</text>
+            <text x="54" y="53.5">$1,500M</text>
+            <text x="54" y="127.2">$1,000M</text>
+            <text x="54" y="200.8">$500M</text>
+            <text x="54" y="274.5" fill="var(--ink-secondary)">$0</text>
+            <text x="54" y="304">&#8722;$200M</text>
           </g>
 
-          <path class="pnl-line oi" d="M70,293 L118,291 L166,292 L214,288 L262,287 L310,287 L359,290 L407,286 L455,283 L503,281 L551,280 L599,275 L647,272 L695,268 L743,261 L791,248 L840,246 L888,235 L936,216 L984,192 L1032,163 L1080,149"/>
-          <path class="pnl-line gp" d="M70,266 L118,262 L166,259 L214,254 L262,252 L310,248 L359,248 L407,244 L455,241 L503,240 L551,237 L599,231 L647,227 L695,221 L743,216 L791,203 L840,195 L888,179 L936,156 L984,129 L1032,99 L1080,78"/>
-          <path class="pnl-line rev" d="M70,252 L118,247 L166,245 L214,239 L262,238 L310,234 L359,233 L407,229 L455,227 L503,225 L551,222 L599,215 L647,211 L695,205 L743,198 L791,184 L840,176 L888,159 L936,135 L984,103 L1032,71 L1080,48"/>
+          <path class="pnl-line oi" d="M70.0,287.3 L120.5,292.1 L171.0,284.1 L221.5,279.2 L272.0,276.3 L322.5,276.7 L373.0,279.7 L423.5,273.2 L474.0,269.9 L524.5,269.0 L575.0,264.6 L625.5,260.8 L676.0,258.6 L726.5,255.0 L777.0,253.9 L827.5,268.9 L878.0,244.6 L928.5,230.8 L979.0,212.6 L1029.5,185.7 L1080.0,159.4"/>
+          <path class="pnl-line gp" d="M70.0,231.2 L120.5,228.6 L171.0,225.5 L221.5,219.6 L272.0,218.7 L322.5,215.9 L373.0,216.0 L423.5,210.9 L474.0,209.0 L524.5,207.7 L575.0,204.2 L625.5,196.9 L676.0,194.2 L726.5,189.5 L777.0,185.2 L827.5,174.3 L878.0,165.8 L928.5,151.0 L979.0,127.0 L1029.5,95.0 L1080.0,61.7"/>
+          <path class="pnl-line rev" d="M70.0,220.2 L120.5,215.2 L171.0,212.7 L221.5,206.7 L272.0,204.7 L322.5,200.8 L373.0,200.1 L423.5,195.6 L474.0,193.1 L524.5,191.9 L575.0,188.3 L625.5,180.9 L676.0,177.0 L726.5,170.6 L777.0,163.6 L827.5,148.6 L878.0,140.3 L928.5,122.6 L979.0,96.5 L1029.5,63.2 L1080.0,29.9"/>
 
           <g class="pnl-end">
-            <circle cx="1080" cy="149" r="5" fill="var(--amber)" stroke="var(--bg-void)" stroke-width="2"/>
-            <text class="chip-text" x="1092" y="153" fill="var(--ink-primary)">$1.08B</text>
-            <circle cx="1080" cy="78" r="5" fill="var(--violet)" stroke="var(--bg-void)" stroke-width="2"/>
-            <text class="chip-text" x="1092" y="82" fill="var(--ink-primary)">$1.58B</text>
-            <circle cx="1080" cy="48" r="5" fill="var(--cyan)" stroke="var(--bg-void)" stroke-width="2"/>
-            <text class="chip-text" x="1092" y="52" fill="var(--ink-primary)">$1.80B</text>
+            <circle cx="1080" cy="159.4" r="5" fill="var(--amber)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1092" y="163.4" fill="var(--ink-primary)">$754M</text>
+            <circle cx="1080" cy="61.7" r="5" fill="var(--violet)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1092" y="65.7" fill="var(--ink-primary)">$1,417M</text>
+            <circle cx="1080" cy="29.9" r="5" fill="var(--cyan)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1092" y="33.9" fill="var(--ink-primary)">$1,633M</text>
           </g>
 
           <g class="chip-text" fill="var(--ink-muted)" text-anchor="middle">
             <text x="70" y="322">Q1 '21</text>
-            <text x="262" y="322">Q1 '22</text>
-            <text x="455" y="322">Q1 '23</text>
-            <text x="647" y="322">Q1 '24</text>
-            <text x="840" y="322">Q1 '25</text>
-            <text x="1032" y="322">Q1 '26</text>
+            <text x="272" y="322">Q1 '22</text>
+            <text x="474" y="322">Q1 '23</text>
+            <text x="676" y="322">Q1 '24</text>
+            <text x="878" y="322">Q1 '25</text>
+            <text x="1080" y="322">Q1 '26</text>
           </g>
 
           <g aria-hidden="true">
-            <rect class="qhit" x="46" y="20" width="48" height="280" data-label="Q1 2021" data-val="Revenue $341M · Gross Profit $242M · Op Income $51M"/>
-            <rect class="qhit" x="94" y="20" width="48" height="280" data-label="Q2 2021" data-val="Revenue $376M · Gross Profit $274M · Op Income $64M"/>
-            <rect class="qhit" x="142" y="20" width="48" height="280" data-label="Q3 2021" data-val="Revenue $392M · Gross Profit $294M · Op Income $59M"/>
-            <rect class="qhit" x="190" y="20" width="48" height="280" data-label="Q4 2021" data-val="Revenue $433M · Gross Profit $329M · Op Income $87M"/>
-            <rect class="qhit" x="238" y="20" width="48" height="280" data-label="Q1 2022" data-val="Revenue $446M · Gross Profit $343M · Op Income $94M"/>
-            <rect class="qhit" x="286" y="20" width="48" height="280" data-label="Q2 2022" data-val="Revenue $473M · Gross Profit $369M · Op Income $95M"/>
-            <rect class="qhit" x="335" y="20" width="48" height="280" data-label="Q3 2022" data-val="Revenue $478M · Gross Profit $373M · Op Income $72M"/>
-            <rect class="qhit" x="383" y="20" width="48" height="280" data-label="Q4 2022" data-val="Revenue $509M · Gross Profit $402M · Op Income $97M"/>
-            <rect class="qhit" x="431" y="20" width="48" height="280" data-label="Q1 2023" data-val="Revenue $525M · Gross Profit $420M · Op Income $121M"/>
-            <rect class="qhit" x="479" y="20" width="48" height="280" data-label="Q2 2023" data-val="Revenue $533M · Gross Profit $426M · Op Income $133M"/>
-            <rect class="qhit" x="527" y="20" width="48" height="280" data-label="Q3 2023" data-val="Revenue $558M · Gross Profit $452M · Op Income $145M"/>
-            <rect class="qhit" x="575" y="20" width="48" height="280" data-label="Q4 2023" data-val="Revenue $608M · Gross Profit $492M · Op Income $182M"/>
-            <rect class="qhit" x="623" y="20" width="48" height="280" data-label="Q1 2024" data-val="Revenue $634M · Gross Profit $520M · Op Income $197M"/>
-            <rect class="qhit" x="671" y="20" width="48" height="280" data-label="Q2 2024" data-val="Revenue $678M · Gross Profit $563M · Op Income $231M"/>
-            <rect class="qhit" x="719" y="20" width="48" height="280" data-label="Q3 2024" data-val="Revenue $726M · Gross Profit $603M · Op Income $276M"/>
-            <rect class="qhit" x="767" y="20" width="48" height="280" data-label="Q4 2024" data-val="Revenue $828M · Gross Profit $696M · Op Income $373M"/>
-            <rect class="qhit" x="816" y="20" width="48" height="280" data-label="Q1 2025" data-val="Revenue $884M · Gross Profit $751M · Op Income $389M"/>
-            <rect class="qhit" x="864" y="20" width="48" height="280" data-label="Q2 2025" data-val="Revenue $1,004M · Gross Profit $863M · Op Income $462M"/>
-            <rect class="qhit" x="912" y="20" width="48" height="280" data-label="Q3 2025" data-val="Revenue $1,181M · Gross Profit $1,027M · Op Income $602M"/>
-            <rect class="qhit" x="960" y="20" width="48" height="280" data-label="Q4 2025" data-val="Revenue $1,408M · Gross Profit $1,225M · Op Income $774M"/>
-            <rect class="qhit" x="1008" y="20" width="48" height="280" data-label="Q1 2026" data-val="Revenue $1,633M · Gross Profit $1,437M · Op Income $980M"/>
-            <rect class="qhit" x="1056" y="20" width="48" height="280" data-label="Q2 2026 (guide)" data-val="Revenue ~$1,799M · Gross Profit ~$1,583M · Op Income ~$1,079M"/>
+            <rect class="qhit" x="44.8" y="20" width="50.5" height="280" data-label="Q1 2021" data-val="Revenue $341M · Gross profit $267M · Operating income &#8722;$114M"/>
+            <rect class="qhit" x="95.2" y="20" width="50.5" height="280" data-label="Q2 2021" data-val="Revenue $376M · Gross profit $285M · Operating income &#8722;$146M"/>
+            <rect class="qhit" x="145.8" y="20" width="50.5" height="280" data-label="Q3 2021" data-val="Revenue $392M · Gross profit $305M · Operating income &#8722;$92M"/>
+            <rect class="qhit" x="196.2" y="20" width="50.5" height="280" data-label="Q4 2021" data-val="Revenue $433M · Gross profit $345M · Operating income &#8722;$59M"/>
+            <rect class="qhit" x="246.8" y="20" width="50.5" height="280" data-label="Q1 2022" data-val="Revenue $446M · Gross profit $352M · Operating income &#8722;$39M"/>
+            <rect class="qhit" x="297.2" y="20" width="50.5" height="280" data-label="Q2 2022" data-val="Revenue $473M · Gross profit $371M · Operating income &#8722;$42M"/>
+            <rect class="qhit" x="347.8" y="20" width="50.5" height="280" data-label="Q3 2022" data-val="Revenue $478M · Gross profit $370M · Operating income &#8722;$62M"/>
+            <rect class="qhit" x="398.2" y="20" width="50.5" height="280" data-label="Q4 2022" data-val="Revenue $509M · Gross profit $404M · Operating income &#8722;$18M"/>
+            <rect class="qhit" x="448.8" y="20" width="50.5" height="280" data-label="Q1 2023" data-val="Revenue $525M · Gross profit $418M · Operating income $4M &#8212; first profitable quarter"/>
+            <rect class="qhit" x="499.2" y="20" width="50.5" height="280" data-label="Q2 2023" data-val="Revenue $533M · Gross profit $426M · Operating income $10M"/>
+            <rect class="qhit" x="549.8" y="20" width="50.5" height="280" data-label="Q3 2023" data-val="Revenue $558M · Gross profit $450M · Operating income $40M"/>
+            <rect class="qhit" x="600.2" y="20" width="50.5" height="280" data-label="Q4 2023" data-val="Revenue $608M · Gross profit $500M · Operating income $66M"/>
+            <rect class="qhit" x="650.8" y="20" width="50.5" height="280" data-label="Q1 2024" data-val="Revenue $634M · Gross profit $518M · Operating income $81M"/>
+            <rect class="qhit" x="701.2" y="20" width="50.5" height="280" data-label="Q2 2024" data-val="Revenue $678M · Gross profit $550M · Operating income $105M"/>
+            <rect class="qhit" x="751.8" y="20" width="50.5" height="280" data-label="Q3 2024" data-val="Revenue $726M · Gross profit $579M · Operating income $113M"/>
+            <rect class="qhit" x="802.2" y="20" width="50.5" height="280" data-label="Q4 2024" data-val="Revenue $828M · Gross profit $653M · Operating income $11M &#8212; one-off margin compression"/>
+            <rect class="qhit" x="852.8" y="20" width="50.5" height="280" data-label="Q1 2025" data-val="Revenue $884M · Gross profit $711M · Operating income $176M"/>
+            <rect class="qhit" x="903.2" y="20" width="50.5" height="280" data-label="Q2 2025" data-val="Revenue $1,004M · Gross profit $811M · Operating income $269M"/>
+            <rect class="qhit" x="953.8" y="20" width="50.5" height="280" data-label="Q3 2025" data-val="Revenue $1,181M · Gross profit $974M · Operating income $393M"/>
+            <rect class="qhit" x="1004.2" y="20" width="50.5" height="280" data-label="Q4 2025" data-val="Revenue $1,407M · Gross profit $1,191M · Operating income $575M"/>
+            <rect class="qhit" x="1054.8" y="20" width="50.5" height="280" data-label="Q1 2026" data-val="Revenue $1,633M · Gross profit $1,417M · Operating income $754M"/>
           </g>
         </svg>
         <div class="bartip" id="pnltip"></div>
@@ -893,7 +893,7 @@
         <div class="li"><span class="sw" style="background:var(--amber)"></span>Operating Income</div>
       </div>
 
-      <p class="chart-caption">Revenue is actual reported results through Q4 2025, then this deck's Q1–Q2 2026 figures. Gross profit and operating income are illustrative reconstructions from approximate historical margins, not exact reported figures for every quarter — treat the shape of the trend as the takeaway, not the individual dollar amounts.</p>
+      <p class="chart-caption">All three lines are <strong style="color:var(--ink-primary)">as-reported GAAP figures</strong> for every quarter from Q1 2021 through Q1 2026, taken from Palantir's SEC filings and earnings releases — no estimates, no interpolation. Operating income was negative through Q4 2022 and crosses zero in Q1 2023; the dip in Q4 2024 is a real, reported margin compression, not a data error. Q2 2026 is deliberately not plotted: Palantir guides only to <em>adjusted</em> (non-GAAP) operating income and gives no gross-profit guidance, so there is no comparable GAAP figure to show.</p>
     </div>
     <div class="strip">PLTR Q2 2026 Briefing</div>
   </section>
@@ -903,14 +903,14 @@
     <div class="corner-tag">11 / Scorecard<br>Reported May 4, 2026</div>
     <div class="slide-inner">
       <div class="eyebrow">11 · Last Quarter's Scorecard</div>
-      <h2>Q1 2026: the eighth straight beat.</h2>
+      <h2>Q1 2026: Palantir's highest-ever year-over-year growth rate.</h2>
       <div class="stat-grid">
-        <div class="stat-tile"><div class="v" data-to="1.633" data-decimals="3" data-prefix="$" data-suffix="B">$0.000B</div><div class="l">Revenue</div><div class="d">+85% YoY</div></div>
-        <div class="stat-tile"><div class="v" data-to="88" data-decimals="0" data-suffix="%">0%</div><div class="l">Adj. Gross Margin</div></div>
-        <div class="stat-tile"><div class="v" data-to="60" data-decimals="0" data-suffix="%">0%</div><div class="l">Adj. Operating Margin</div></div>
-        <div class="stat-tile"><div class="v" data-to="925" data-decimals="0" data-prefix="$" data-suffix="M">$0M</div><div class="l">Free Cash Flow</div></div>
+        <div class="stat-tile"><div class="v" data-to="1.633" data-decimals="3" data-prefix="$" data-suffix="B">$0.000B</div><div class="l">Revenue <span style="color:var(--ink-muted)">(GAAP)</span></div><div class="d">+85% YoY</div></div>
+        <div class="stat-tile"><div class="v" data-to="88" data-decimals="0" data-suffix="%">0%</div><div class="l">Adj. Gross Margin <span style="color:var(--ink-muted)">(non-GAAP)</span></div><div class="d">87% on a GAAP basis</div></div>
+        <div class="stat-tile"><div class="v" data-to="60" data-decimals="0" data-suffix="%">0%</div><div class="l">Adj. Operating Margin <span style="color:var(--ink-muted)">(non-GAAP)</span></div><div class="d">46% on a GAAP basis</div></div>
+        <div class="stat-tile"><div class="v" data-to="925" data-decimals="0" data-prefix="$" data-suffix="M">$0M</div><div class="l">Adj. Free Cash Flow <span style="color:var(--ink-muted)">(non-GAAP)</span></div><div class="d">$899M operating cash flow, $7M capex</div></div>
       </div>
-      <p class="lede" style="margin-top:2rem;">Management raised full-year 2026 revenue guidance to <strong style="color:var(--ink-primary)">$7.65–7.66B</strong> (~71% YoY growth) and lifted U.S. commercial guidance to more than $3.22B — both increases from the outlook given just one quarter earlier.</p>
+      <p class="lede" style="margin-top:2rem;">Management raised full-year 2026 revenue guidance to <strong style="color:var(--ink-primary)">$7.65–7.66B</strong> (~71% YoY growth) and lifted U.S. commercial guidance to more than $3.22B — both increases from the outlook given just one quarter earlier. One wrinkle worth naming on camera: <strong style="color:var(--ink-primary)">GAAP EPS of $0.34 came in above adjusted EPS of $0.33</strong>, because the non-GAAP tax adjustment outweighed the stock-comp add-backs.</p>
     </div>
     <div class="strip">PLTR Q2 2026 Briefing</div>
   </section>
@@ -922,15 +922,16 @@
       <div class="eyebrow">12 · Monday's Setup</div>
       <h2>What Wall Street expects for Q2 2026.</h2>
       <div class="stat-grid">
-        <div class="stat-tile"><div class="v">$1.797–1.801B</div><div class="l">Company's own guidance</div><div class="d">~79% YoY at midpoint</div></div>
-        <div class="stat-tile"><div class="v">~$1.7–1.81B</div><div class="l">Street consensus revenue</div><div class="d">Some estimates imply ~81% YoY</div></div>
-        <div class="stat-tile"><div class="v">$0.34–0.35</div><div class="l">Consensus adj. EPS</div><div class="d">vs. $0.16 a year ago</div></div>
+        <div class="stat-tile"><div class="v">$1.797–1.801B</div><div class="l">Q2 2026 revenue &mdash; company guidance</div><div class="d">+79% YoY at the midpoint</div></div>
+        <div class="stat-tile"><div class="v">$1.063–1.067B</div><div class="l">Q2 2026 adj. operating income &mdash; guidance</div><div class="d">Non-GAAP; no GAAP guide given</div></div>
+        <div class="stat-tile"><div class="v" data-to="0.16" data-decimals="2" data-prefix="$">$0.00</div><div class="l">Q2 2025 adj. EPS &mdash; the year-ago actual</div><div class="d">The number Monday's print gets compared to</div></div>
       </div>
+      <p class="chart-caption" style="margin-top:1.2rem;">Both guidance figures were issued by Palantir on May 4, 2026 and are forward-looking, not results. A quarter-level Street consensus for Q2 2026 revenue and EPS could not be verified against a named source, so none is shown here rather than quoting an approximate one.</p>
       <div class="callout">
         <span class="dot"></span>
         <div>
           <span class="label">Analyst Watch</span>
-          <p>Oppenheimer's Martin Yang (Buy, $200 PT) expects ~85% YoY growth — above the guidance midpoint — and thinks management raises its full-year growth outlook past 75%, up from the current 71%.</p>
+          <p><strong style="color:var(--ink-primary)">Oppenheimer</strong> reaffirmed an Outperform rating and a <strong style="color:var(--ink-primary)">$200</strong> price target on July 27, days before the print. <strong style="color:var(--ink-primary)">Bank of America</strong> maintained a Buy on July 28 without publishing a new target, and <strong style="color:var(--ink-primary)">RBC Capital</strong> reiterated Underperform at $90 on July 31. Across 32 analysts the consensus target is $182.20 — roughly 48% above Friday's close, on a stock the same panel rates "Buy."</p>
         </div>
       </div>
     </div>
