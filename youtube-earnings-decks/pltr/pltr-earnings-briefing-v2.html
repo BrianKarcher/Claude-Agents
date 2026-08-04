@@ -287,16 +287,21 @@
   .legend { opacity: 0; transform: translateY(8px); transition: opacity .5s ease .9s, transform .5s ease .9s; }
   .slide.revealed .legend { opacity: 1; transform: none; }
 
-  /* quarterly P&L trend chart (revenue / gross profit / operating income) */
-  .pnl-line {
-    fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-    stroke-dasharray: 2000; stroke-dashoffset: 2000;
-    transition: stroke-dashoffset 1.6s cubic-bezier(.16,.84,.44,1);
+  /* quarterly P&L chart — grouped bars (revenue / gross profit / operating income).
+     Bars are paths, not rects, so the 4px corner rounding sits only on the DATA end
+     and the baseline end stays square. Negative bars mirror the rounding downward.
+     Each quarter group scales out of the zero line (y=270.5 in viewBox units), which
+     animates positive and negative bars correctly in one transform. */
+  .pb path, .pb rect { stroke: none; }
+  .pb.rev path, .pb.rev rect { fill: var(--cyan); }
+  .pb.gp path,  .pb.gp rect  { fill: var(--violet); }
+  .pb.oi path,  .pb.oi rect  { fill: var(--amber); }
+  .pnl-bars .qgrp {
+    transform: scaleY(0); transform-box: view-box; transform-origin: 0px 270.5px;
+    transition: transform .6s cubic-bezier(.16,.84,.44,1);
+    transition-delay: calc(var(--i, 0) * 40ms + .12s);
   }
-  .pnl-line.rev { stroke: var(--cyan); transition-delay: .1s; }
-  .pnl-line.gp { stroke: var(--violet); transition-delay: .3s; }
-  .pnl-line.oi { stroke: var(--amber); transition-delay: .5s; }
-  .slide.revealed .pnl-line { stroke-dashoffset: 0; }
+  .slide.revealed .pnl-bars .qgrp { transform: scaleY(1); }
   .pnl-end circle {
     transform-box: fill-box; transform-origin: center; transform: scale(0); opacity: 0;
     transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .3s ease; transition-delay: 1.5s;
@@ -822,7 +827,7 @@
       <p class="lede">Revenue has compounded every quarter since Q1 2021. The bigger story is the bottom line: Palantir ran an operating <em>loss</em> every quarter through Q4 2022, crossed into profit in Q1 2023, and has since expanded operating income far faster than revenue.</p>
 
       <div class="chart-wrap" style="position:relative;">
-        <svg viewBox="0 0 1180 350" role="img" aria-label="Line chart of quarterly GAAP revenue, gross profit, and operating income in millions of dollars from Q1 2021 through Q1 2026. Revenue rises from 341 million to 1,633 million. Operating income starts at negative 114 million, bottoms at negative 146 million in Q2 2021, crosses zero in Q1 2023, and reaches 754 million in Q1 2026.">
+        <svg viewBox="0 0 1180 350" role="img" aria-label="Grouped bar chart of quarterly GAAP revenue, gross profit, and operating income in millions of dollars, for each of the 21 quarters from Q1 2021 through Q1 2026. Three bars per quarter. Revenue rises from 341 million to 1,633 million. Operating income bars fall below the zero line through Q4 2022, deepest at negative 146 million in Q2 2021, turn positive in Q1 2023, and reach 754 million in Q1 2026.">
           <g stroke="var(--line)" stroke-width="1">
             <line x1="60" y1="49.5" x2="1080" y2="49.5"/>
             <line x1="60" y1="123.2" x2="1080" y2="123.2"/>
@@ -838,50 +843,154 @@
             <text x="54" y="304">&#8722;$200M</text>
           </g>
 
-          <path class="pnl-line oi" d="M70.0,287.3 L120.5,292.1 L171.0,284.1 L221.5,279.2 L272.0,276.3 L322.5,276.7 L373.0,279.7 L423.5,273.2 L474.0,269.9 L524.5,269.0 L575.0,264.6 L625.5,260.8 L676.0,258.6 L726.5,255.0 L777.0,253.9 L827.5,268.9 L878.0,244.6 L928.5,230.8 L979.0,212.6 L1029.5,185.7 L1080.0,159.4"/>
-          <path class="pnl-line gp" d="M70.0,231.2 L120.5,228.6 L171.0,225.5 L221.5,219.6 L272.0,218.7 L322.5,215.9 L373.0,216.0 L423.5,210.9 L474.0,209.0 L524.5,207.7 L575.0,204.2 L625.5,196.9 L676.0,194.2 L726.5,189.5 L777.0,185.2 L827.5,174.3 L878.0,165.8 L928.5,151.0 L979.0,127.0 L1029.5,95.0 L1080.0,61.7"/>
-          <path class="pnl-line rev" d="M70.0,220.2 L120.5,215.2 L171.0,212.7 L221.5,206.7 L272.0,204.7 L322.5,200.8 L373.0,200.1 L423.5,195.6 L474.0,193.1 L524.5,191.9 L575.0,188.3 L625.5,180.9 L676.0,177.0 L726.5,170.6 L777.0,163.6 L827.5,148.6 L878.0,140.3 L928.5,122.6 L979.0,96.5 L1029.5,63.2 L1080.0,29.9"/>
+          <g class="pnl-bars">
+            <g class="qgrp" style="--i:0">
+              <g class="pb rev"><path d="M64.3,270.53 L64.3,224.24 Q64.3,220.24 68.3,220.24 L72.3,220.24 Q76.3,220.24 76.3,224.24 L76.3,270.53 Z"/></g>
+              <g class="pb gp"><path d="M78.3,270.53 L78.3,235.16 Q78.3,231.16 82.3,231.16 L86.3,231.16 Q90.3,231.16 90.3,235.16 L90.3,270.53 Z"/></g>
+              <g class="pb oi"><path d="M92.3,270.53 L92.3,283.33 Q92.3,287.33 96.3,287.33 L100.3,287.33 Q104.3,287.33 104.3,283.33 L104.3,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:1">
+              <g class="pb rev"><path d="M112.9,270.53 L112.9,219.17 Q112.9,215.17 116.9,215.17 L120.9,215.17 Q124.9,215.17 124.9,219.17 L124.9,270.53 Z"/></g>
+              <g class="pb gp"><path d="M126.9,270.53 L126.9,232.57 Q126.9,228.57 130.9,228.57 L134.9,228.57 Q138.9,228.57 138.9,232.57 L138.9,270.53 Z"/></g>
+              <g class="pb oi"><path d="M140.9,270.53 L140.9,288.06 Q140.9,292.06 144.9,292.06 L148.9,292.06 Q152.9,292.06 152.9,288.06 L152.9,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:2">
+              <g class="pb rev"><path d="M161.4,270.53 L161.4,216.74 Q161.4,212.74 165.4,212.74 L169.4,212.74 Q173.4,212.74 173.4,216.74 L173.4,270.53 Z"/></g>
+              <g class="pb gp"><path d="M175.4,270.53 L175.4,229.53 Q175.4,225.53 179.4,225.53 L183.4,225.53 Q187.4,225.53 187.4,229.53 L187.4,270.53 Z"/></g>
+              <g class="pb oi"><path d="M189.4,270.53 L189.4,280.08 Q189.4,284.08 193.4,284.08 L197.4,284.08 Q201.4,284.08 201.4,280.08 L201.4,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:3">
+              <g class="pb rev"><path d="M210.0,270.53 L210.0,210.73 Q210.0,206.73 214.0,206.73 L218.0,206.73 Q222.0,206.73 222.0,210.73 L222.0,270.53 Z"/></g>
+              <g class="pb gp"><path d="M224.0,270.53 L224.0,223.64 Q224.0,219.64 228.0,219.64 L232.0,219.64 Q236.0,219.64 236.0,223.64 L236.0,270.53 Z"/></g>
+              <g class="pb oi"><path d="M238.0,270.53 L238.0,275.21 Q238.0,279.21 242.0,279.21 L246.0,279.21 Q250.0,279.21 250.0,275.21 L250.0,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:4">
+              <g class="pb rev"><path d="M258.6,270.53 L258.6,208.75 Q258.6,204.75 262.6,204.75 L266.6,204.75 Q270.6,204.75 270.6,208.75 L270.6,270.53 Z"/></g>
+              <g class="pb gp"><path d="M272.6,270.53 L272.6,222.66 Q272.6,218.66 276.6,218.66 L280.6,218.66 Q284.6,218.66 284.6,222.66 L284.6,270.53 Z"/></g>
+              <g class="pb oi"><path d="M286.6,270.53 L286.6,273.43 Q286.6,276.34 289.5,276.34 L295.7,276.34 Q298.6,276.34 298.6,273.43 L298.6,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:5">
+              <g class="pb rev"><path d="M307.1,270.53 L307.1,204.82 Q307.1,200.82 311.1,200.82 L315.1,200.82 Q319.1,200.82 319.1,204.82 L319.1,270.53 Z"/></g>
+              <g class="pb gp"><path d="M321.1,270.53 L321.1,219.88 Q321.1,215.88 325.1,215.88 L329.1,215.88 Q333.1,215.88 333.1,219.88 L333.1,270.53 Z"/></g>
+              <g class="pb oi"><path d="M335.1,270.53 L335.1,273.60 Q335.1,276.68 338.2,276.68 L344.1,276.68 Q347.1,276.68 347.1,273.60 L347.1,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:6">
+              <g class="pb rev"><path d="M355.7,270.53 L355.7,204.10 Q355.7,200.10 359.7,200.10 L363.7,200.10 Q367.7,200.10 367.7,204.10 L367.7,270.53 Z"/></g>
+              <g class="pb gp"><path d="M369.7,270.53 L369.7,219.96 Q369.7,215.96 373.7,215.96 L377.7,215.96 Q381.7,215.96 381.7,219.96 L381.7,270.53 Z"/></g>
+              <g class="pb oi"><path d="M383.7,270.53 L383.7,275.69 Q383.7,279.69 387.7,279.69 L391.7,279.69 Q395.7,279.69 395.7,275.69 L395.7,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:7">
+              <g class="pb rev"><path d="M404.3,270.53 L404.3,199.57 Q404.3,195.57 408.3,195.57 L412.3,195.57 Q416.3,195.57 416.3,199.57 L416.3,270.53 Z"/></g>
+              <g class="pb gp"><path d="M418.3,270.53 L418.3,214.94 Q418.3,210.94 422.3,210.94 L426.3,210.94 Q430.3,210.94 430.3,214.94 L430.3,270.53 Z"/></g>
+              <g class="pb oi"><path d="M432.3,270.53 L432.3,271.84 Q432.3,273.15 433.6,273.15 L443.0,273.15 Q444.3,273.15 444.3,271.84 L444.3,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:8">
+              <g class="pb rev"><path d="M452.9,270.53 L452.9,197.13 Q452.9,193.13 456.9,193.13 L460.9,193.13 Q464.9,193.13 464.9,197.13 L464.9,270.53 Z"/></g>
+              <g class="pb gp"><path d="M466.9,270.53 L466.9,212.99 Q466.9,208.99 470.9,208.99 L474.9,208.99 Q478.9,208.99 478.9,212.99 L478.9,270.53 Z"/></g>
+              <g class="pb oi"><rect x="480.9" y="269.92" width="12.0" height="0.8"/></g>
+            </g>
+            <g class="qgrp" style="--i:9">
+              <g class="pb rev"><path d="M501.4,270.53 L501.4,195.93 Q501.4,191.93 505.4,191.93 L509.4,191.93 Q513.4,191.93 513.4,195.93 L513.4,270.53 Z"/></g>
+              <g class="pb gp"><path d="M515.4,270.53 L515.4,211.69 Q515.4,207.69 519.4,207.69 L523.4,207.69 Q527.4,207.69 527.4,211.69 L527.4,270.53 Z"/></g>
+              <g class="pb oi"><path d="M529.4,270.53 L529.4,269.78 Q529.4,269.04 530.2,269.04 L540.7,269.04 Q541.4,269.04 541.4,269.78 L541.4,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:10">
+              <g class="pb rev"><path d="M550.0,270.53 L550.0,192.27 Q550.0,188.27 554.0,188.27 L558.0,188.27 Q562.0,188.27 562.0,192.27 L562.0,270.53 Z"/></g>
+              <g class="pb gp"><path d="M564.0,270.53 L564.0,208.18 Q564.0,204.18 568.0,204.18 L572.0,204.18 Q576.0,204.18 576.0,208.18 L576.0,270.53 Z"/></g>
+              <g class="pb oi"><path d="M578.0,270.53 L578.0,267.58 Q578.0,264.63 580.9,264.63 L587.1,264.63 Q590.0,264.63 590.0,267.58 L590.0,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:11">
+              <g class="pb rev"><path d="M598.6,270.53 L598.6,184.87 Q598.6,180.87 602.6,180.87 L606.6,180.87 Q610.6,180.87 610.6,184.87 L610.6,270.53 Z"/></g>
+              <g class="pb gp"><path d="M612.6,270.53 L612.6,200.88 Q612.6,196.88 616.6,196.88 L620.6,196.88 Q624.6,196.88 624.6,200.88 L624.6,270.53 Z"/></g>
+              <g class="pb oi"><path d="M626.6,270.53 L626.6,264.83 Q626.6,260.83 630.6,260.83 L634.6,260.83 Q638.6,260.83 638.6,264.83 L638.6,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:12">
+              <g class="pb rev"><path d="M647.1,270.53 L647.1,181.04 Q647.1,177.04 651.1,177.04 L655.1,177.04 Q659.1,177.04 659.1,181.04 L659.1,270.53 Z"/></g>
+              <g class="pb gp"><path d="M661.1,270.53 L661.1,198.18 Q661.1,194.18 665.1,194.18 L669.1,194.18 Q673.1,194.18 673.1,198.18 L673.1,270.53 Z"/></g>
+              <g class="pb oi"><path d="M675.1,270.53 L675.1,262.61 Q675.1,258.61 679.1,258.61 L683.1,258.61 Q687.1,258.61 687.1,262.61 L687.1,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:13">
+              <g class="pb rev"><path d="M695.7,270.53 L695.7,174.59 Q695.7,170.59 699.7,170.59 L703.7,170.59 Q707.7,170.59 707.7,174.59 L707.7,270.53 Z"/></g>
+              <g class="pb gp"><path d="M709.7,270.53 L709.7,193.54 Q709.7,189.54 713.7,189.54 L717.7,189.54 Q721.7,189.54 721.7,193.54 L721.7,270.53 Z"/></g>
+              <g class="pb oi"><path d="M723.7,270.53 L723.7,259.00 Q723.7,255.00 727.7,255.00 L731.7,255.00 Q735.7,255.00 735.7,259.00 L735.7,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:14">
+              <g class="pb rev"><path d="M744.3,270.53 L744.3,167.61 Q744.3,163.61 748.3,163.61 L752.3,163.61 Q756.3,163.61 756.3,167.61 L756.3,270.53 Z"/></g>
+              <g class="pb gp"><path d="M758.3,270.53 L758.3,189.22 Q758.3,185.22 762.3,185.22 L766.3,185.22 Q770.3,185.22 770.3,189.22 L770.3,270.53 Z"/></g>
+              <g class="pb oi"><path d="M772.3,270.53 L772.3,257.85 Q772.3,253.85 776.3,253.85 L780.3,253.85 Q784.3,253.85 784.3,257.85 L784.3,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:15">
+              <g class="pb rev"><path d="M792.9,270.53 L792.9,152.58 Q792.9,148.58 796.9,148.58 L800.9,148.58 Q804.9,148.58 804.9,152.58 L804.9,270.53 Z"/></g>
+              <g class="pb gp"><path d="M806.9,270.53 L806.9,178.30 Q806.9,174.30 810.9,174.30 L814.9,174.30 Q818.9,174.30 818.9,178.30 L818.9,270.53 Z"/></g>
+              <g class="pb oi"><path d="M820.9,270.53 L820.9,269.71 Q820.9,268.90 821.7,268.90 L832.0,268.90 Q832.9,268.90 832.9,269.71 L832.9,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:16">
+              <g class="pb rev"><path d="M841.4,270.53 L841.4,144.27 Q841.4,140.27 845.4,140.27 L849.4,140.27 Q853.4,140.27 853.4,144.27 L853.4,270.53 Z"/></g>
+              <g class="pb gp"><path d="M855.4,270.53 L855.4,169.76 Q855.4,165.76 859.4,165.76 L863.4,165.76 Q867.4,165.76 867.4,169.76 L867.4,270.53 Z"/></g>
+              <g class="pb oi"><path d="M869.4,270.53 L869.4,248.58 Q869.4,244.58 873.4,244.58 L877.4,244.58 Q881.4,244.58 881.4,248.58 L881.4,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:17">
+              <g class="pb rev"><path d="M890.0,270.53 L890.0,126.57 Q890.0,122.57 894.0,122.57 L898.0,122.57 Q902.0,122.57 902.0,126.57 L902.0,270.53 Z"/></g>
+              <g class="pb gp"><path d="M904.0,270.53 L904.0,155.05 Q904.0,151.05 908.0,151.05 L912.0,151.05 Q916.0,151.05 916.0,155.05 L916.0,270.53 Z"/></g>
+              <g class="pb oi"><path d="M918.0,270.53 L918.0,234.84 Q918.0,230.84 922.0,230.84 L926.0,230.84 Q930.0,230.84 930.0,234.84 L930.0,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:18">
+              <g class="pb rev"><path d="M938.6,270.53 L938.6,100.48 Q938.6,96.48 942.6,96.48 L946.6,96.48 Q950.6,96.48 950.6,100.48 L950.6,270.53 Z"/></g>
+              <g class="pb gp"><path d="M952.6,270.53 L952.6,131.02 Q952.6,127.02 956.6,127.02 L960.6,127.02 Q964.6,127.02 964.6,131.02 L964.6,270.53 Z"/></g>
+              <g class="pb oi"><path d="M966.6,270.53 L966.6,216.57 Q966.6,212.57 970.6,212.57 L974.6,212.57 Q978.6,212.57 978.6,216.57 L978.6,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:19">
+              <g class="pb rev"><path d="M987.1,270.53 L987.1,67.18 Q987.1,63.18 991.1,63.18 L995.1,63.18 Q999.1,63.18 999.1,67.18 L999.1,270.53 Z"/></g>
+              <g class="pb gp"><path d="M1001.1,270.53 L1001.1,99.01 Q1001.1,95.01 1005.1,95.01 L1009.1,95.01 Q1013.1,95.01 1013.1,99.01 L1013.1,270.53 Z"/></g>
+              <g class="pb oi"><path d="M1015.1,270.53 L1015.1,189.73 Q1015.1,185.73 1019.1,185.73 L1023.1,185.73 Q1027.1,185.73 1027.1,189.73 L1027.1,270.53 Z"/></g>
+            </g>
+            <g class="qgrp" style="--i:20">
+              <g class="pb rev"><path d="M1035.7,270.53 L1035.7,33.87 Q1035.7,29.87 1039.7,29.87 L1043.7,29.87 Q1047.7,29.87 1047.7,33.87 L1047.7,270.53 Z"/></g>
+              <g class="pb gp"><path d="M1049.7,270.53 L1049.7,65.71 Q1049.7,61.71 1053.7,61.71 L1057.7,61.71 Q1061.7,61.71 1061.7,65.71 L1061.7,270.53 Z"/></g>
+              <g class="pb oi"><path d="M1063.7,270.53 L1063.7,163.41 Q1063.7,159.41 1067.7,159.41 L1071.7,159.41 Q1075.7,159.41 1075.7,163.41 L1075.7,270.53 Z"/></g>
+            </g>
+          </g>
 
           <g class="pnl-end">
-            <circle cx="1080" cy="159.4" r="5" fill="var(--amber)" stroke="var(--bg-void)" stroke-width="2"/>
-            <text class="chip-text" x="1092" y="163.4" fill="var(--ink-primary)">$754M</text>
-            <circle cx="1080" cy="61.7" r="5" fill="var(--violet)" stroke="var(--bg-void)" stroke-width="2"/>
-            <text class="chip-text" x="1092" y="65.7" fill="var(--ink-primary)">$1,417M</text>
-            <circle cx="1080" cy="29.9" r="5" fill="var(--cyan)" stroke="var(--bg-void)" stroke-width="2"/>
-            <text class="chip-text" x="1092" y="33.9" fill="var(--ink-primary)">$1,633M</text>
+            <circle cx="1086" cy="159.4" r="5" fill="var(--amber)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1095" y="163.4" fill="var(--ink-primary)">$754M</text>
+            <circle cx="1086" cy="61.7" r="5" fill="var(--violet)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1095" y="65.7" fill="var(--ink-primary)">$1,417M</text>
+            <circle cx="1086" cy="29.9" r="5" fill="var(--cyan)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1095" y="33.9" fill="var(--ink-primary)">$1,633M</text>
           </g>
 
           <g class="chip-text" fill="var(--ink-muted)" text-anchor="middle">
-            <text x="70" y="322">Q1 '21</text>
-            <text x="272" y="322">Q1 '22</text>
-            <text x="474" y="322">Q1 '23</text>
-            <text x="676" y="322">Q1 '24</text>
-            <text x="878" y="322">Q1 '25</text>
-            <text x="1080" y="322">Q1 '26</text>
+            <text x="84.3" y="322">Q1 '21</text>
+            <text x="278.6" y="322">Q1 '22</text>
+            <text x="472.9" y="322">Q1 '23</text>
+            <text x="667.1" y="322">Q1 '24</text>
+            <text x="861.4" y="322">Q1 '25</text>
+            <text x="1055.7" y="322">Q1 '26</text>
           </g>
 
           <g aria-hidden="true">
-            <rect class="qhit" x="44.8" y="20" width="50.5" height="280" data-label="Q1 2021" data-val="Revenue $341M · Gross profit $267M · Operating income &#8722;$114M"/>
-            <rect class="qhit" x="95.2" y="20" width="50.5" height="280" data-label="Q2 2021" data-val="Revenue $376M · Gross profit $285M · Operating income &#8722;$146M"/>
-            <rect class="qhit" x="145.8" y="20" width="50.5" height="280" data-label="Q3 2021" data-val="Revenue $392M · Gross profit $305M · Operating income &#8722;$92M"/>
-            <rect class="qhit" x="196.2" y="20" width="50.5" height="280" data-label="Q4 2021" data-val="Revenue $433M · Gross profit $345M · Operating income &#8722;$59M"/>
-            <rect class="qhit" x="246.8" y="20" width="50.5" height="280" data-label="Q1 2022" data-val="Revenue $446M · Gross profit $352M · Operating income &#8722;$39M"/>
-            <rect class="qhit" x="297.2" y="20" width="50.5" height="280" data-label="Q2 2022" data-val="Revenue $473M · Gross profit $371M · Operating income &#8722;$42M"/>
-            <rect class="qhit" x="347.8" y="20" width="50.5" height="280" data-label="Q3 2022" data-val="Revenue $478M · Gross profit $370M · Operating income &#8722;$62M"/>
-            <rect class="qhit" x="398.2" y="20" width="50.5" height="280" data-label="Q4 2022" data-val="Revenue $509M · Gross profit $404M · Operating income &#8722;$18M"/>
-            <rect class="qhit" x="448.8" y="20" width="50.5" height="280" data-label="Q1 2023" data-val="Revenue $525M · Gross profit $418M · Operating income $4M &#8212; first profitable quarter"/>
-            <rect class="qhit" x="499.2" y="20" width="50.5" height="280" data-label="Q2 2023" data-val="Revenue $533M · Gross profit $426M · Operating income $10M"/>
-            <rect class="qhit" x="549.8" y="20" width="50.5" height="280" data-label="Q3 2023" data-val="Revenue $558M · Gross profit $450M · Operating income $40M"/>
-            <rect class="qhit" x="600.2" y="20" width="50.5" height="280" data-label="Q4 2023" data-val="Revenue $608M · Gross profit $500M · Operating income $66M"/>
-            <rect class="qhit" x="650.8" y="20" width="50.5" height="280" data-label="Q1 2024" data-val="Revenue $634M · Gross profit $518M · Operating income $81M"/>
-            <rect class="qhit" x="701.2" y="20" width="50.5" height="280" data-label="Q2 2024" data-val="Revenue $678M · Gross profit $550M · Operating income $105M"/>
-            <rect class="qhit" x="751.8" y="20" width="50.5" height="280" data-label="Q3 2024" data-val="Revenue $726M · Gross profit $579M · Operating income $113M"/>
-            <rect class="qhit" x="802.2" y="20" width="50.5" height="280" data-label="Q4 2024" data-val="Revenue $828M · Gross profit $653M · Operating income $11M &#8212; one-off margin compression"/>
-            <rect class="qhit" x="852.8" y="20" width="50.5" height="280" data-label="Q1 2025" data-val="Revenue $884M · Gross profit $711M · Operating income $176M"/>
-            <rect class="qhit" x="903.2" y="20" width="50.5" height="280" data-label="Q2 2025" data-val="Revenue $1,004M · Gross profit $811M · Operating income $269M"/>
-            <rect class="qhit" x="953.8" y="20" width="50.5" height="280" data-label="Q3 2025" data-val="Revenue $1,181M · Gross profit $974M · Operating income $393M"/>
-            <rect class="qhit" x="1004.2" y="20" width="50.5" height="280" data-label="Q4 2025" data-val="Revenue $1,407M · Gross profit $1,191M · Operating income $575M"/>
-            <rect class="qhit" x="1054.8" y="20" width="50.5" height="280" data-label="Q1 2026" data-val="Revenue $1,633M · Gross profit $1,417M · Operating income $754M"/>
+            <rect class="qhit" x="60.0" y="20" width="48.57" height="280" data-label="Q1 2021" data-val="Revenue $341M · Gross profit $267M · Operating income &#8722;$114M"/>
+            <rect class="qhit" x="108.6" y="20" width="48.57" height="280" data-label="Q2 2021" data-val="Revenue $376M · Gross profit $285M · Operating income &#8722;$146M"/>
+            <rect class="qhit" x="157.1" y="20" width="48.57" height="280" data-label="Q3 2021" data-val="Revenue $392M · Gross profit $305M · Operating income &#8722;$92M"/>
+            <rect class="qhit" x="205.7" y="20" width="48.57" height="280" data-label="Q4 2021" data-val="Revenue $433M · Gross profit $345M · Operating income &#8722;$59M"/>
+            <rect class="qhit" x="254.3" y="20" width="48.57" height="280" data-label="Q1 2022" data-val="Revenue $446M · Gross profit $352M · Operating income &#8722;$39M"/>
+            <rect class="qhit" x="302.9" y="20" width="48.57" height="280" data-label="Q2 2022" data-val="Revenue $473M · Gross profit $371M · Operating income &#8722;$42M"/>
+            <rect class="qhit" x="351.4" y="20" width="48.57" height="280" data-label="Q3 2022" data-val="Revenue $478M · Gross profit $370M · Operating income &#8722;$62M"/>
+            <rect class="qhit" x="400.0" y="20" width="48.57" height="280" data-label="Q4 2022" data-val="Revenue $509M · Gross profit $404M · Operating income &#8722;$18M"/>
+            <rect class="qhit" x="448.6" y="20" width="48.57" height="280" data-label="Q1 2023" data-val="Revenue $525M · Gross profit $418M · Operating income $4M &#8212; first profitable quarter"/>
+            <rect class="qhit" x="497.1" y="20" width="48.57" height="280" data-label="Q2 2023" data-val="Revenue $533M · Gross profit $426M · Operating income $10M"/>
+            <rect class="qhit" x="545.7" y="20" width="48.57" height="280" data-label="Q3 2023" data-val="Revenue $558M · Gross profit $450M · Operating income $40M"/>
+            <rect class="qhit" x="594.3" y="20" width="48.57" height="280" data-label="Q4 2023" data-val="Revenue $608M · Gross profit $500M · Operating income $66M"/>
+            <rect class="qhit" x="642.9" y="20" width="48.57" height="280" data-label="Q1 2024" data-val="Revenue $634M · Gross profit $518M · Operating income $81M"/>
+            <rect class="qhit" x="691.4" y="20" width="48.57" height="280" data-label="Q2 2024" data-val="Revenue $678M · Gross profit $550M · Operating income $105M"/>
+            <rect class="qhit" x="740.0" y="20" width="48.57" height="280" data-label="Q3 2024" data-val="Revenue $726M · Gross profit $579M · Operating income $113M"/>
+            <rect class="qhit" x="788.6" y="20" width="48.57" height="280" data-label="Q4 2024" data-val="Revenue $828M · Gross profit $653M · Operating income $11M &#8212; one-off margin compression"/>
+            <rect class="qhit" x="837.1" y="20" width="48.57" height="280" data-label="Q1 2025" data-val="Revenue $884M · Gross profit $711M · Operating income $176M"/>
+            <rect class="qhit" x="885.7" y="20" width="48.57" height="280" data-label="Q2 2025" data-val="Revenue $1,004M · Gross profit $811M · Operating income $269M"/>
+            <rect class="qhit" x="934.3" y="20" width="48.57" height="280" data-label="Q3 2025" data-val="Revenue $1,181M · Gross profit $974M · Operating income $393M"/>
+            <rect class="qhit" x="982.9" y="20" width="48.57" height="280" data-label="Q4 2025" data-val="Revenue $1,407M · Gross profit $1,191M · Operating income $575M"/>
+            <rect class="qhit" x="1031.4" y="20" width="48.57" height="280" data-label="Q1 2026" data-val="Revenue $1,633M · Gross profit $1,417M · Operating income $754M"/>
           </g>
         </svg>
         <div class="bartip" id="pnltip"></div>
@@ -893,7 +1002,7 @@
         <div class="li"><span class="sw" style="background:var(--amber)"></span>Operating Income</div>
       </div>
 
-      <p class="chart-caption">All three lines are <strong style="color:var(--ink-primary)">as-reported GAAP figures</strong> for every quarter from Q1 2021 through Q1 2026, taken from Palantir's SEC filings and earnings releases — no estimates, no interpolation. Operating income was negative through Q4 2022 and crosses zero in Q1 2023; the dip in Q4 2024 is a real, reported margin compression, not a data error. Q2 2026 is deliberately not plotted: Palantir guides only to <em>adjusted</em> (non-GAAP) operating income and gives no gross-profit guidance, so there is no comparable GAAP figure to show.</p>
+      <p class="chart-caption">Every bar is an <strong style="color:var(--ink-primary)">as-reported GAAP figure</strong> — three per quarter, all 21 quarters from Q1 2021 through Q1 2026, taken from Palantir's SEC filings and earnings releases with no estimates and no interpolation. The amber operating-income bars sit <em>below</em> the zero line through Q4 2022 and turn positive in Q1 2023; the near-zero amber bar in Q4 2024 is a real, reported margin compression, not a missing value. Hover any quarter for its exact figures. Q2 2026 is deliberately not plotted: Palantir guides only to <em>adjusted</em> (non-GAAP) operating income and gives no gross-profit guidance, so there is no comparable GAAP bar to draw.</p>
     </div>
     <div class="strip">PLTR Q2 2026 Briefing</div>
   </section>

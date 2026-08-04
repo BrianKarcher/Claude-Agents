@@ -55,6 +55,16 @@ One file per company: a running ASCII table of every verified quarter (revenue, 
 - New quarters get **appended** as the company reports them, never backfilled by estimation — a missing row stays missing until verified, it does not get "reasonably" filled in just to keep the table looking complete (see the never-fabricate rule above; it applies to this cache exactly as it applies to a slide).
 - Guidance, consensus estimates, and price targets do **not** belong in this table — it's for reported actuals only. Forward-looking numbers go stale, so fetch them fresh each time they're needed and keep them only in the deck itself, clearly labeled as estimates.
 - If a specific line item genuinely could not be verified for a quarter, record that explicitly as a gap row (template below) instead of silently omitting it — that tells the next session "checked, unavailable" instead of "never checked," so it doesn't either waste time re-attempting a known dead end or, worse, assume the gap is fine to fill in.
+- **The table's main metric columns (revenue, gross profit, operating income, net income, etc.) hold the as-reported figure exactly as filed, with one-time items still in it — never a figure with a one-time item silently backed out.** Add a `One-time items` column to the table (last column) and use it exactly as described below; never fold a one-time adjustment into a main column or drop it silently.
+
+### One-time items: always flagged, never silently excluded
+
+Quarterly figures sometimes include a one-time item — a restructuring charge, litigation settlement, gain/loss on an asset sale, impairment, tax valuation-allowance release, debt-extinguishment gain, etc. — that distorts a clean quarter-over-quarter or year-over-year comparison. Handle these consistently everywhere a quarter's figures are recorded:
+
+- **Never quietly strip a one-time item out of the reported figure.** The as-reported GAAP number in the main column is always the real, filed number, one-time items included — that's what "never fabricate" requires.
+- **When an extract or cache row's underlying source discloses a one-time item, note it in a separate `One-time items` column** (in both the extract's Figures table and the cache table), naming the item and its dollar impact, e.g. `Restructuring charge, -$45M op. income` or `Gain on sale of business, +$120M net income`. Leave the cell blank (not "None" — just empty) when the source discloses no such item; don't guess at one that isn't disclosed.
+- **If a source flags a figure as "adjusted" or "non-GAAP" specifically because it excludes a one-time item, capture both**: the as-reported GAAP figure in the main column, and the adjusted figure plus what was excluded in the notes/one-time-items column — never present the adjusted number alone as if it were GAAP (this is also covered by the refusal conditions below).
+- **When building a chart or narrative that compares quarters, call out the quarter(s) with a disclosed one-time item** (an annotation, footnote, or asterisk) rather than letting a one-time spike or dip read as organic trend — the viewer should be able to tell a real swing from a one-off.
 
 ### Extracts — `data/<TICKER>/extracts/`
 
@@ -72,14 +82,16 @@ Extract template:
 **Cross-checked against:** <second source, or "internal consistency: quarters sum to reported FY total">
 
 ## Figures ($ thousands unless noted)
-| Metric | Value | Prior-year comparable |
-|---|---|---|
-| Revenue | ... | ... |
-| Gross profit | ... | ... |
-| Operating income | ... | ... |
+| Metric | Value | Prior-year comparable | One-time items |
+|---|---|---|---|
+| Revenue | ... | ... | |
+| Gross profit | ... | ... | |
+| Operating income | ... | ... | |
+
+One-time items column: name the disclosed item and its dollar impact (e.g. `Restructuring charge, -$45M`), leave blank if the source discloses none. Value/comparable columns always carry the as-reported GAAP figure with the one-time item still included — never a figure with it backed out.
 
 ## Notes
-- Anything unusual (one-time charges, restatements, GAAP vs. adjusted distinctions) that a future session needs to know when reusing this figure.
+- Anything unusual (restatements, GAAP vs. adjusted distinctions) that a future session needs to know when reusing this figure.
 ```
 
 After writing an extract, immediately update the company's `quarterly-financials.md` cache table with a row pointing to it — an extract that isn't reflected in the cache table won't get found next time.
@@ -92,7 +104,19 @@ Decks are a single self-contained `.html` file per company (e.g. `pltr/pltr-earn
 
 **Webcam gutter (non-negotiable layout rule):** the presenter's facecam sits in the bottom-right corner of the recording canvas. Every slide must keep that corner clear via a hard `padding-right`/`padding-bottom` floor on `.slide` (`max()` against the responsive clamp(), not just centering slack — centering slack disappears on narrower recording canvases). Verify this with real box-geometry checks (a headless-in-iframe JS audit comparing element bounding rects against the reserved zone), not by eyeballing a screenshot.
 
-**Charts:** invoke the `dataviz` skill before writing any chart. Follow it precisely: pick the right form, assign categorical colors in a fixed order and run `scripts/validate_palette.js` against this deck's dark surface color before using a new hue, one axis only (never dual-axis — index or facet instead), 2px lines with round caps, ≥8px end-markers with a 2px surface-color ring, a legend for ≥2 series, direct end-labels only (never a label on every point), and a hover tooltip layer (reuse this project's existing `.bartip`/`.qhit` pattern rather than inventing a new interaction mechanism per chart).
+**Charts:** invoke the `dataviz` skill before writing any chart. Follow it precisely: pick the right form, assign categorical colors in a fixed order and run `scripts/validate_palette.js` against this deck's dark surface color before using a new hue, one axis only (never dual-axis — index or facet instead), a legend for ≥2 series, direct end-labels only (never a label on every point), and a hover tooltip layer (reuse this project's existing `.bartip`/`.qhit` pattern rather than inventing a new interaction mechanism per chart).
+
+**Bar charts are the default form for financial figures.** For reported dollar amounts — revenue, gross profit, operating income, net income, cash flow, segment or geographic mix, per-quarter or per-year anything — build a bar chart unless there's a specific reason not to. Bars read as discrete reported periods, which is what these numbers are; a line implies a continuous quantity that was sampled, and invites the eye to interpolate between points that don't exist. Reserve lines for rates, ratios, margins, indexed comparisons, or a series long enough that bars would turn into a comb (roughly 30+ periods) — and say why in the caption when a line is chosen for a dollar series.
+
+Rules for the bar form specifically:
+
+- **Never stack nested measures.** Revenue ⊃ gross profit ⊃ operating income: stacking those triple-counts revenue and is wrong by construction. Group them. Stacking is only valid for true additive components that sum to the total (e.g. cost of revenue + gross profit = revenue), and only when every component is separately verified — deriving one component by subtracting two reported figures is fine (it's an identity), inventing one is not.
+- **Anchor to a real zero baseline, always.** A truncated bar axis misrepresents magnitude. If any value is negative, extend the axis below zero, draw an emphasized zero line, and render negative bars *below* it. Never plot the absolute value, never clip a negative bar to zero, never quietly drop the loss-making quarters to keep the axis tidy — the loss years are usually the most interesting part of the story.
+- **Draw bars as `<path>`, not `<rect>`,** so the ~4px corner rounding sits only on the data end and the baseline end stays square; mirror the rounding downward for negative bars. Clamp the radius on very short bars so near-zero values still render as a visible sliver rather than a malformed shape.
+- **Gap hierarchy:** ~2px between bars inside a group, visibly more between groups, so groups read as units.
+- **Label the final group only** (or the notable outlier), never every bar. Series identity comes from the legend plus a colored mark beside neutral-ink text.
+- **Animate out of the zero line**, not up from the bottom of the plot — a bottom-up wipe renders negative bars backwards.
+- **Verify bars against the cache by decoding the geometry back into values** and diffing every bar against `data/<TICKER>/*.md`. Eyeballing a bar chart will not catch a transposed or stale figure; this check will.
 
 **Slide numbering discipline:** slides are numbered via a `.corner-tag` + matching `.eyebrow` prefix, and mirrored in the agenda slide's list. Whenever you insert, remove, or reorder a slide, renumber every downstream corner-tag/eyebrow pair and the agenda list in the same pass — don't leave a gap or duplicate. Before publishing, grep-verify: section/div/svg/g tag balance, and that the corner-tag sequence reads as a clean, unbroken 1..N.
 
@@ -116,6 +140,7 @@ Decks are a single self-contained `.html` file per company (e.g. `pltr/pltr-earn
 Refuse, and explain why, rather than doing it anyway, if asked to:
 - Fill in a missing historical figure with an estimate, average, or "reconstruction" and present it as data.
 - Present a non-GAAP/adjusted figure as if it were GAAP, or vice versa, without labeling which it is.
+- Back a one-time item out of a reported figure without flagging it in the `One-time items` column, or fold it silently into a main column.
 - Round, smooth, or interpolate between two known data points to invent points in between.
 - Ship a chart or stat sourced only from an unverified AI-search-summary paragraph, with no primary source checked.
 - Drop the Sources slide or omit a citation for a new data claim.
