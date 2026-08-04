@@ -1,4 +1,4 @@
-<title>AMD — 20 Years of Revenue, Gross Profit &amp; Operating Income</title>
+<title>AMD &mdash; 26 Years of Revenue, Gross Profit &amp; Operating Income</title>
 <style>
   :root {
     --bg-void: #0B0E11;
@@ -112,6 +112,25 @@
   .slide.revealed p.lede { opacity: 1; transform: none; transition-delay: .3s; }
   .slide.revealed .callout { opacity: 1; transform: none; transition-delay: .5s; }
 
+  /* ---------- nav controls : LEFT side, keeps bottom-right clear for the webcam ---------- */
+  .navcluster {
+    position: fixed; left: clamp(1rem, 3vw, 2rem); top: 50%; transform: translateY(-50%);
+    z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 0.9rem;
+  }
+  .navbar { display: flex; flex-direction: column; gap: 0.55rem; }
+  .navdot { width: 7px; height: 7px; border-radius: 50%; background: var(--line-strong); border: none; padding: 0; cursor: pointer; }
+  .navdot:hover { background: var(--ink-muted); }
+  .navdot.active { background: var(--cyan); width: 9px; height: 9px; }
+  .navdot:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+  .arrowbtn {
+    background: var(--bg-panel); border: 1px solid var(--line-strong); color: var(--ink-secondary);
+    width: 2.2rem; height: 2.2rem; cursor: pointer; font-family: var(--font-mono); font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .arrowbtn:hover { color: var(--cyan); border-color: var(--cyan-line); }
+  .arrowbtn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  @media (max-width: 640px) { .navcluster { display: none; } }
+
   /* ---------- corner tag / index badge ---------- */
   .corner-tag {
     position: absolute; top: clamp(1.5rem, 3vw, 2.25rem); right: clamp(1.5rem, 3vw, 2.25rem);
@@ -127,7 +146,7 @@
   /* the bottom-right quadrant is kept clear by .slide's padding floor above, not by centering luck */
 
   /* ---------- chart ---------- */
-  .chart-wrap { margin-top: 0.9rem; opacity: 0; transform: translateY(14px); transition: opacity .7s ease .3s, transform .7s ease .3s; }
+  .chart-wrap { margin-top: 0.9rem; position: relative; opacity: 0; transform: translateY(14px); transition: opacity .7s ease .3s, transform .7s ease .3s; }
   .slide.revealed .chart-wrap { opacity: 1; transform: none; }
   .chart-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
   .chip-text { font-family: var(--font-mono); font-size: 12.5px; fill: var(--ink-secondary); letter-spacing: 0.02em; }
@@ -147,19 +166,21 @@
   }
   .bartip.show { opacity: 1; }
 
-  /* Annual P&L chart — grouped bars (revenue / gross profit / operating income).
+  /* Annual P&L charts &mdash; grouped bars (revenue / gross profit / operating income).
      Nested measures, so GROUPED, never stacked. Bars are paths, not rects, so the
      4px corner rounding sits only on the DATA end and the baseline end stays square;
-     negative bars mirror the rounding downward. Near-zero values fall back to a
-     0.8px rect sliver rather than a malformed rounded shape. Each year group scales
-     out of the real zero line (y=278.37 in viewBox units), which animates positive
-     and negative bars correctly in one transform. */
+     negative bars mirror the rounding downward. Values shorter than 2px fall back to
+     a >=0.8px rect sliver rather than a malformed rounded shape. Each year group
+     scales out of its own chart's REAL zero line, supplied per slide as --zero, so
+     positive and negative bars animate correctly in one transform. The two slides
+     use different y-scales (each fitted to its own value domain) and therefore
+     different zero lines; never copy one slide's geometry onto the other. */
   .pb path, .pb rect { stroke: none; }
   .pb.rev path, .pb.rev rect { fill: var(--cyan); }
   .pb.gp  path, .pb.gp  rect { fill: var(--violet); }
   .pb.oi  path, .pb.oi  rect { fill: var(--amber); }
   .pnl-bars .ygrp {
-    transform: scaleY(0); transform-box: view-box; transform-origin: 0px 278.37px;
+    transform: scaleY(0); transform-box: view-box; transform-origin: 0px var(--zero);
     transition: transform .6s cubic-bezier(.16,.84,.44,1);
     transition-delay: calc(var(--i, 0) * 42ms + .12s);
   }
@@ -169,8 +190,8 @@
     transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .3s ease; transition-delay: 1.5s;
   }
   .slide.revealed .pnl-end circle { transform: scale(1); opacity: 1; }
-  .pnl-end text { opacity: 0; transition: opacity .4s ease; transition-delay: 1.65s; }
-  .slide.revealed .pnl-end text { opacity: 1; }
+  .pnl-end text, .pnl-end line { opacity: 0; transition: opacity .4s ease; transition-delay: 1.65s; }
+  .slide.revealed .pnl-end text, .slide.revealed .pnl-end line { opacity: 1; }
   .yhit { fill: transparent; pointer-events: all; cursor: pointer; }
   .yhit:hover { fill: rgba(232,230,222,0.045); }
 
@@ -204,250 +225,243 @@
 <div class="hud-grid" aria-hidden="true"></div>
 <div class="scan-sweep" aria-hidden="true"></div>
 
-<div class="indexbadge"><strong>01</strong> / 01 &nbsp;·&nbsp; AMD &nbsp;·&nbsp; 20-YEAR P&amp;L</div>
+<div class="navcluster">
+  <button class="arrowbtn" id="prevBtn" aria-label="Previous slide">&uarr;</button>
+  <nav class="navbar" id="navbar" aria-label="Slide navigation"></nav>
+  <button class="arrowbtn" id="nextBtn" aria-label="Next slide">&darr;</button>
+</div>
+
+<div class="indexbadge"><strong id="idxNow">01</strong> / <span id="idxTotal">02</span> &nbsp;&#183;&nbsp; AMD &nbsp;&#183;&nbsp; 26-YEAR P&amp;L</div>
 
 <main class="deck" id="deck">
 
-  <!-- SINGLE SLIDE : AMD 20-YEAR REVENUE / GROSS PROFIT / OPERATING INCOME -->
+  <!-- ========== SLIDE 01 : FY2000 - FY2016 ========== -->
   <section class="slide" id="s1">
-    <div class="corner-tag">Advanced Micro Devices<br>FY2006 &ndash; FY2025 &nbsp;·&nbsp; GAAP</div>
+    <div class="corner-tag">01 / The Seventeen Lost Years<br>FY2000 &ndash; FY2016 &nbsp;&#183;&nbsp; GAAP, as reported</div>
     <div class="slide-inner">
-      <div class="eyebrow"><span class="pulse-dot"></span>Nasdaq: AMD &nbsp;·&nbsp; Twenty Fiscal Years</div>
-      <h2>From a $2.9B operating loss to $3.7B in operating profit.</h2>
-      <p class="lede">Sixty bars, twenty fiscal years, every one an <strong style="color:var(--ink-primary)">as-reported GAAP figure</strong> from AMD's own 10-K filings &mdash; no estimates, no interpolation. Revenue barely moved from FY2006 to FY2019, then multiplied roughly five-fold in six years. Operating income sat <em>below</em> the zero line in seven of those twenty years.</p>
+      <div class="eyebrow"><span class="pulse-dot"></span>01 &nbsp;&#183;&nbsp; Nasdaq: AMD &nbsp;&#183;&nbsp; FY2000 &ndash; FY2016</div>
+      <h2>Seventeen fiscal years. Ten of them operating losses.</h2>
+      <p class="lede">Fifty-one bars, every one an <strong style="color:var(--ink-primary)">as-reported GAAP figure</strong> from AMD's own 10-K filings &mdash; no estimates, no interpolation. Revenue never once cleared <strong style="color:var(--ink-primary)">$6.6B</strong> here, and FY2016's $4,272M finished <em>below</em> FY2000's $4,644M. Sum the seventeen reported operating-income lines and you get a <strong style="color:var(--ink-primary)">cumulative $5,121M operating loss</strong>.</p>
 
-      <div class="chart-wrap" style="position:relative;">
-        <svg viewBox="0 0 1180 324" role="img" aria-labelledby="chartTitle chartDesc">
-          <title id="chartTitle">AMD annual GAAP revenue, gross profit and operating income, fiscal 2006 through fiscal 2025</title>
-          <desc id="chartDesc">Grouped bar chart, three bars per fiscal year, in millions of dollars, on a zero baseline. Revenue runs from 5,649 in fiscal 2006 to 34,639 in fiscal 2025. Gross profit runs from 2,793 to 17,152. Operating income falls below zero in fiscal 2006, 2007, 2008, 2012, 2014, 2015 and 2016 &mdash; deepest at negative 2,865 in fiscal 2007 &mdash; and reaches 3,694 in fiscal 2025. Exact values are in the data table that follows.</desc>
+      <div class="chart-wrap">
+        <svg viewBox="0 0 1180 324" role="img" aria-labelledby="chartTitleA chartDescA">
+          <title id="chartTitleA">AMD annual GAAP revenue, gross profit and operating income, fiscal 2000 through fiscal 2016</title>
+          <desc id="chartDescA">Grouped bar chart, three bars per fiscal year, seventeen fiscal years, in millions of dollars, on a real zero baseline that extends below zero. Revenue ranges from a low of 2,697 in fiscal 2002 to a high of 6,568 in fiscal 2011, and ends at 4,272 in fiscal 2016. Gross profit ranges from 591 in fiscal 2002 to 2,961 in fiscal 2010, and ends at 998. Operating income is negative in ten of the seventeen years &mdash; fiscal 2001, 2002, 2003, 2006, 2007, 2008, 2012, 2014, 2015 and 2016 &mdash; reaching its deepest point at negative 2,865 in fiscal 2007, and its highest at positive 889 in fiscal 2000. Gross profit for fiscal 2000 through fiscal 2005 is derived as revenue minus cost of sales, because AMD's income statement carried no gross-profit line in that era. Exact values are in the data table that follows.</desc>
 
-          <!-- gridlines -->
+<!-- ==== SLIDE 1 FY2000-FY2016 :  zero line y=217.80   scale 0.027400 px per $M ==== -->
           <g stroke="var(--line)" stroke-width="1">
-            <line x1="76" y1="62.05" x2="1080" y2="62.05"/>
-            <line x1="76" y1="134.16" x2="1080" y2="134.16"/>
-            <line x1="76" y1="206.26" x2="1080" y2="206.26"/>
-            <line x1="76" y1="300.00" x2="1080" y2="300.00"/>
+            <line x1="76" y1="53.40" x2="1080" y2="53.40"/>
+            <line x1="76" y1="108.20" x2="1080" y2="108.20"/>
+            <line x1="76" y1="163.00" x2="1080" y2="163.00"/>
+            <line x1="76" y1="272.60" x2="1080" y2="272.60"/>
           </g>
           <!-- emphasized real zero baseline -->
-          <line x1="76" y1="278.37" x2="1080" y2="278.37" stroke="var(--line-strong)" stroke-width="1.4"/>
-
+          <line x1="76" y1="217.80" x2="1080" y2="217.80" stroke="var(--line-strong)" stroke-width="1.4"/>
           <g class="tick-text" text-anchor="end">
-            <text x="68" y="66.05">$30,000M</text>
-            <text x="68" y="138.16">$20,000M</text>
-            <text x="68" y="210.26">$10,000M</text>
-            <text x="68" y="282.37" fill="var(--ink-secondary)">$0</text>
-            <text x="68" y="304.00">&#8722;$3,000M</text>
+            <text x="68" y="57.40">$6,000M</text>
+            <text x="68" y="112.20">$4,000M</text>
+            <text x="68" y="167.00">$2,000M</text>
+            <text x="68" y="221.80" fill="var(--ink-secondary)">$0</text>
+            <text x="68" y="276.60">&#8722;$2,000M</text>
           </g>
-
-          <g class="pnl-bars">
+          <g class="pnl-bars" style="--zero:217.80px">
             <g class="ygrp" style="--i:0">
-              <g class="pb rev"><path d="M81.10,278.37 L81.10,241.64 Q81.10,237.64 85.10,237.64 L89.10,237.64 Q93.10,237.64 93.10,241.64 L93.10,278.37 Z"/></g>
-              <g class="pb gp"><path d="M95.10,278.37 L95.10,262.23 Q95.10,258.23 99.10,258.23 L103.10,258.23 Q107.10,258.23 107.10,262.23 L107.10,278.37 Z"/></g>
-              <g class="pb oi"><rect x="109.10" y="278.37" width="12" height="0.80"/></g>
+              <g class="pb rev"><path d="M82.53,217.80 L82.53,94.55 Q82.53,90.55 86.53,90.55 L92.53,90.55 Q96.53,90.55 96.53,94.55 L96.53,217.80 Z"/></g>
+              <g class="pb gp"><path d="M98.53,217.80 L98.53,163.44 Q98.53,159.44 102.53,159.44 L108.53,159.44 Q112.53,159.44 112.53,163.44 L112.53,217.80 Z"/></g>
+              <g class="pb oi"><path d="M114.53,217.80 L114.53,197.44 Q114.53,193.44 118.53,193.44 L124.53,193.44 Q128.53,193.44 128.53,197.44 L128.53,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:1">
-              <g class="pb rev"><path d="M131.30,278.37 L131.30,239.01 Q131.30,235.01 135.30,235.01 L139.30,235.01 Q143.30,235.01 143.30,239.01 L143.30,278.37 Z"/></g>
-              <g class="pb gp"><path d="M145.30,278.37 L145.30,266.06 Q145.30,262.06 149.30,262.06 L153.30,262.06 Q157.30,262.06 157.30,266.06 L157.30,278.37 Z"/></g>
-              <g class="pb oi"><path d="M159.30,278.37 L159.30,295.03 Q159.30,299.03 163.30,299.03 L167.30,299.03 Q171.30,299.03 171.30,295.03 L171.30,278.37 Z"/></g>
+              <g class="pb rev"><path d="M141.59,217.80 L141.59,115.16 Q141.59,111.16 145.59,111.16 L151.59,111.16 Q155.59,111.16 155.59,115.16 L155.59,217.80 Z"/></g>
+              <g class="pb gp"><path d="M157.59,217.80 L157.59,186.13 Q157.59,182.13 161.59,182.13 L167.59,182.13 Q171.59,182.13 171.59,186.13 L171.59,217.80 Z"/></g>
+              <g class="pb oi"><rect x="173.59" y="217.80" width="14.00" height="1.59"/></g>
             </g>
             <g class="ygrp" style="--i:2">
-              <g class="pb rev"><path d="M181.50,278.37 L181.50,240.49 Q181.50,236.49 185.50,236.49 L189.50,236.49 Q193.50,236.49 193.50,240.49 L193.50,278.37 Z"/></g>
-              <g class="pb gp"><path d="M195.50,278.37 L195.50,265.64 Q195.50,261.64 199.50,261.64 L203.50,261.64 Q207.50,261.64 207.50,265.64 L207.50,278.37 Z"/></g>
-              <g class="pb oi"><path d="M209.50,278.37 L209.50,288.46 Q209.50,292.46 213.50,292.46 L217.50,292.46 Q221.50,292.46 221.50,288.46 L221.50,278.37 Z"/></g>
+              <g class="pb rev"><path d="M200.65,217.80 L200.65,147.90 Q200.65,143.90 204.65,143.90 L210.65,143.90 Q214.65,143.90 214.65,147.90 L214.65,217.80 Z"/></g>
+              <g class="pb gp"><path d="M216.65,217.80 L216.65,205.61 Q216.65,201.61 220.65,201.61 L226.65,201.61 Q230.65,201.61 230.65,205.61 L230.65,217.80 Z"/></g>
+              <g class="pb oi"><path d="M232.65,217.80 L232.65,247.37 Q232.65,251.37 236.65,251.37 L242.65,251.37 Q246.65,251.37 246.65,247.37 L246.65,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:3">
-              <g class="pb rev"><path d="M231.70,278.37 L231.70,243.41 Q231.70,239.41 235.70,239.41 L239.70,239.41 Q243.70,239.41 243.70,243.41 L243.70,278.37 Z"/></g>
-              <g class="pb gp"><path d="M245.70,278.37 L245.70,265.99 Q245.70,261.99 249.70,261.99 L253.70,261.99 Q257.70,261.99 257.70,265.99 L257.70,278.37 Z"/></g>
-              <g class="pb oi"><path d="M259.70,278.37 L259.70,275.97 Q259.70,273.58 262.09,273.58 L269.31,273.58 Q271.70,273.58 271.70,275.97 L271.70,278.37 Z"/></g>
+              <g class="pb rev"><path d="M259.71,217.80 L259.71,125.38 Q259.71,121.38 263.71,121.38 L269.71,121.38 Q273.71,121.38 273.71,125.38 L273.71,217.80 Z"/></g>
+              <g class="pb gp"><path d="M275.71,217.80 L275.71,189.14 Q275.71,185.14 279.71,185.14 L285.71,185.14 Q289.71,185.14 289.71,189.14 L289.71,217.80 Z"/></g>
+              <g class="pb oi"><path d="M291.71,217.80 L291.71,220.99 Q291.71,224.18 294.90,224.18 L302.51,224.18 Q305.71,224.18 305.71,220.99 L305.71,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:4">
-              <g class="pb rev"><path d="M281.90,278.37 L281.90,235.54 Q281.90,231.54 285.90,231.54 L289.90,231.54 Q293.90,231.54 293.90,235.54 L293.90,278.37 Z"/></g>
-              <g class="pb gp"><path d="M295.90,278.37 L295.90,261.02 Q295.90,257.02 299.90,257.02 L303.90,257.02 Q307.90,257.02 307.90,261.02 L307.90,278.37 Z"/></g>
-              <g class="pb oi"><path d="M309.90,278.37 L309.90,275.31 Q309.90,272.25 312.96,272.25 L318.84,272.25 Q321.90,272.25 321.90,275.31 L321.90,278.37 Z"/></g>
+              <g class="pb rev"><path d="M318.76,217.80 L318.76,84.77 Q318.76,80.77 322.76,80.77 L328.76,80.77 Q332.76,80.77 332.76,84.77 L332.76,217.80 Z"/></g>
+              <g class="pb gp"><path d="M334.76,217.80 L334.76,167.85 Q334.76,163.85 338.76,163.85 L344.76,163.85 Q348.76,163.85 348.76,167.85 L348.76,217.80 Z"/></g>
+              <g class="pb oi"><path d="M350.76,217.80 L350.76,214.76 Q350.76,211.72 353.81,211.72 L361.72,211.72 Q364.76,211.72 364.76,214.76 L364.76,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:5">
-              <g class="pb rev"><path d="M332.10,278.37 L332.10,235.01 Q332.10,231.01 336.10,231.01 L340.10,231.01 Q344.10,231.01 344.10,235.01 L344.10,278.37 Z"/></g>
-              <g class="pb gp"><path d="M346.10,278.37 L346.10,261.17 Q346.10,257.17 350.10,257.17 L354.10,257.17 Q358.10,257.17 358.10,261.17 L358.10,278.37 Z"/></g>
-              <g class="pb oi"><path d="M360.10,278.37 L360.10,277.04 Q360.10,275.71 361.43,275.71 L370.77,275.71 Q372.10,275.71 372.10,277.04 L372.10,278.37 Z"/></g>
+              <g class="pb rev"><path d="M377.82,217.80 L377.82,61.56 Q377.82,57.56 381.82,57.56 L387.82,57.56 Q391.82,57.56 391.82,61.56 L391.82,217.80 Z"/></g>
+              <g class="pb gp"><path d="M393.82,217.80 L393.82,156.26 Q393.82,152.26 397.82,152.26 L403.82,152.26 Q407.82,152.26 407.82,156.26 L407.82,217.80 Z"/></g>
+              <g class="pb oi"><path d="M409.82,217.80 L409.82,214.62 Q409.82,211.44 413.00,211.44 L420.65,211.44 Q423.82,211.44 423.82,214.62 L423.82,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:6">
-              <g class="pb rev"><path d="M382.30,278.37 L382.30,243.27 Q382.30,239.27 386.30,239.27 L390.30,239.27 Q394.30,239.27 394.30,243.27 L394.30,278.37 Z"/></g>
-              <g class="pb gp"><path d="M396.30,278.37 L396.30,273.46 Q396.30,269.46 400.30,269.46 L404.30,269.46 Q408.30,269.46 408.30,273.46 L408.30,278.37 Z"/></g>
-              <g class="pb oi"><path d="M410.30,278.37 L410.30,282.18 Q410.30,285.98 414.11,285.98 L418.49,285.98 Q422.30,285.98 422.30,282.18 L422.30,278.37 Z"/></g>
+              <g class="pb rev"><path d="M436.88,217.80 L436.88,67.02 Q436.88,63.02 440.88,63.02 L446.88,63.02 Q450.88,63.02 450.88,67.02 L450.88,217.80 Z"/></g>
+              <g class="pb gp"><path d="M452.88,217.80 L452.88,145.27 Q452.88,141.27 456.88,141.27 L462.88,141.27 Q466.88,141.27 466.88,145.27 L466.88,217.80 Z"/></g>
+              <g class="pb oi"><rect x="468.88" y="217.80" width="14.00" height="1.29"/></g>
             </g>
             <g class="ygrp" style="--i:7">
-              <g class="pb rev"><path d="M432.50,278.37 L432.50,244.16 Q432.50,240.16 436.50,240.16 L440.50,240.16 Q444.50,240.16 444.50,244.16 L444.50,278.37 Z"/></g>
-              <g class="pb gp"><path d="M446.50,278.37 L446.50,268.11 Q446.50,264.11 450.50,264.11 L454.50,264.11 Q458.50,264.11 458.50,268.11 L458.50,278.37 Z"/></g>
-              <g class="pb oi"><rect x="460.50" y="277.57" width="12" height="0.80"/></g>
+              <g class="pb rev"><path d="M495.94,217.80 L495.94,57.04 Q495.94,53.04 499.94,53.04 L505.94,53.04 Q509.94,53.04 509.94,57.04 L509.94,217.80 Z"/></g>
+              <g class="pb gp"><path d="M511.94,217.80 L511.94,159.82 Q511.94,155.82 515.94,155.82 L521.94,155.82 Q525.94,155.82 525.94,159.82 L525.94,217.80 Z"/></g>
+              <g class="pb oi"><path d="M527.94,217.80 L527.94,292.30 Q527.94,296.30 531.94,296.30 L537.94,296.30 Q541.94,296.30 541.94,292.30 L541.94,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:8">
-              <g class="pb rev"><path d="M482.70,278.37 L482.70,242.67 Q482.70,238.67 486.70,238.67 L490.70,238.67 Q494.70,238.67 494.70,242.67 L494.70,278.37 Z"/></g>
-              <g class="pb gp"><path d="M496.70,278.37 L496.70,269.11 Q496.70,265.11 500.70,265.11 L504.70,265.11 Q508.70,265.11 508.70,269.11 L508.70,278.37 Z"/></g>
-              <g class="pb oi"><rect x="510.70" y="278.37" width="12" height="1.12"/></g>
+              <g class="pb rev"><path d="M555.00,217.80 L555.00,62.66 Q555.00,58.66 559.00,58.66 L565.00,58.66 Q569.00,58.66 569.00,62.66 L569.00,217.80 Z"/></g>
+              <g class="pb gp"><path d="M571.00,217.80 L571.00,158.23 Q571.00,154.23 575.00,154.23 L581.00,154.23 Q585.00,154.23 585.00,158.23 L585.00,217.80 Z"/></g>
+              <g class="pb oi"><path d="M587.00,217.80 L587.00,267.37 Q587.00,271.37 591.00,271.37 L597.00,271.37 Q601.00,271.37 601.00,267.37 L601.00,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:9">
-              <g class="pb rev"><path d="M532.90,278.37 L532.90,253.59 Q532.90,249.59 536.90,249.59 L540.90,249.59 Q544.90,249.59 544.90,253.59 L544.90,278.37 Z"/></g>
-              <g class="pb gp"><path d="M546.90,278.37 L546.90,274.47 Q546.90,270.58 550.79,270.58 L555.01,270.58 Q558.90,270.58 558.90,274.47 L558.90,278.37 Z"/></g>
-              <g class="pb oi"><path d="M560.90,278.37 L560.90,280.10 Q560.90,281.84 562.63,281.84 L571.17,281.84 Q572.90,281.84 572.90,280.10 L572.90,278.37 Z"/></g>
+              <g class="pb rev"><path d="M614.06,217.80 L614.06,73.76 Q614.06,69.76 618.06,69.76 L624.06,69.76 Q628.06,69.76 628.06,73.76 L628.06,217.80 Z"/></g>
+              <g class="pb gp"><path d="M630.06,217.80 L630.06,159.55 Q630.06,155.55 634.06,155.55 L640.06,155.55 Q644.06,155.55 644.06,159.55 L644.06,217.80 Z"/></g>
+              <g class="pb oi"><path d="M646.06,217.80 L646.06,203.61 Q646.06,199.61 650.06,199.61 L656.06,199.61 Q660.06,199.61 660.06,203.61 L660.06,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:10">
-              <g class="pb rev"><path d="M583.10,278.37 L583.10,251.57 Q583.10,247.57 587.10,247.57 L591.10,247.57 Q595.10,247.57 595.10,251.57 L595.10,278.37 Z"/></g>
-              <g class="pb gp"><path d="M597.10,278.37 L597.10,274.77 Q597.10,271.17 600.70,271.17 L605.50,271.17 Q609.10,271.17 609.10,274.77 L609.10,278.37 Z"/></g>
-              <g class="pb oi"><path d="M611.10,278.37 L611.10,279.71 Q611.10,281.05 612.44,281.05 L621.76,281.05 Q623.10,281.05 623.10,279.71 L623.10,278.37 Z"/></g>
+              <g class="pb rev"><path d="M673.12,217.80 L673.12,43.86 Q673.12,39.86 677.12,39.86 L683.12,39.86 Q687.12,39.86 687.12,43.86 L687.12,217.80 Z"/></g>
+              <g class="pb gp"><path d="M689.12,217.80 L689.12,140.67 Q689.12,136.67 693.12,136.67 L699.12,136.67 Q703.12,136.67 703.12,140.67 L703.12,217.80 Z"/></g>
+              <g class="pb oi"><path d="M705.12,217.80 L705.12,198.56 Q705.12,194.56 709.12,194.56 L715.12,194.56 Q719.12,194.56 719.12,198.56 L719.12,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:11">
-              <g class="pb rev"><path d="M633.30,278.37 L633.30,243.94 Q633.30,239.94 637.30,239.94 L641.30,239.94 Q645.30,239.94 645.30,243.94 L645.30,278.37 Z"/></g>
-              <g class="pb gp"><path d="M647.30,278.37 L647.30,269.22 Q647.30,265.22 651.30,265.22 L655.30,265.22 Q659.30,265.22 659.30,269.22 L659.30,278.37 Z"/></g>
-              <g class="pb oi"><rect x="661.30" y="276.90" width="12" height="1.47"/></g>
+              <g class="pb rev"><path d="M732.18,217.80 L732.18,41.84 Q732.18,37.84 736.18,37.84 L742.18,37.84 Q746.18,37.84 746.18,41.84 L746.18,217.80 Z"/></g>
+              <g class="pb gp"><path d="M748.18,217.80 L748.18,141.24 Q748.18,137.24 752.18,137.24 L758.18,137.24 Q762.18,137.24 762.18,141.24 L762.18,217.80 Z"/></g>
+              <g class="pb oi"><path d="M764.18,217.80 L764.18,211.72 Q764.18,207.72 768.18,207.72 L774.18,207.72 Q778.18,207.72 778.18,211.72 L778.18,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:12">
-              <g class="pb rev"><path d="M683.50,278.37 L683.50,235.68 Q683.50,231.68 687.50,231.68 L691.50,231.68 Q695.50,231.68 695.50,235.68 L695.50,278.37 Z"/></g>
-              <g class="pb gp"><path d="M697.50,278.37 L697.50,264.72 Q697.50,260.72 701.50,260.72 L705.50,260.72 Q709.50,260.72 709.50,264.72 L709.50,278.37 Z"/></g>
-              <g class="pb oi"><path d="M711.50,278.37 L711.50,276.74 Q711.50,275.12 713.13,275.12 L721.87,275.12 Q723.50,275.12 723.50,276.74 L723.50,278.37 Z"/></g>
+              <g class="pb rev"><path d="M791.24,217.80 L791.24,73.24 Q791.24,69.24 795.24,69.24 L801.24,69.24 Q805.24,69.24 805.24,73.24 L805.24,217.80 Z"/></g>
+              <g class="pb gp"><path d="M807.24,217.80 L807.24,187.96 Q807.24,183.96 811.24,183.96 L817.24,183.96 Q821.24,183.96 821.24,187.96 L821.24,217.80 Z"/></g>
+              <g class="pb oi"><path d="M823.24,217.80 L823.24,242.73 Q823.24,246.73 827.24,246.73 L833.24,246.73 Q837.24,246.73 837.24,242.73 L837.24,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:13">
-              <g class="pb rev"><path d="M733.70,278.37 L733.70,233.83 Q733.70,229.83 737.70,229.83 L741.70,229.83 Q745.70,229.83 745.70,233.83 L745.70,278.37 Z"/></g>
-              <g class="pb gp"><path d="M747.70,278.37 L747.70,261.69 Q747.70,257.69 751.70,257.69 L755.70,257.69 Q759.70,257.69 759.70,261.69 L759.70,278.37 Z"/></g>
-              <g class="pb oi"><path d="M761.70,278.37 L761.70,276.09 Q761.70,273.82 763.97,273.82 L771.43,273.82 Q773.70,273.82 773.70,276.09 L773.70,278.37 Z"/></g>
+              <g class="pb rev"><path d="M850.29,217.80 L850.29,76.61 Q850.29,72.61 854.29,72.61 L860.29,72.61 Q864.29,72.61 864.29,76.61 L864.29,217.80 Z"/></g>
+              <g class="pb gp"><path d="M866.29,217.80 L866.29,167.60 Q866.29,163.60 870.29,163.60 L876.29,163.60 Q880.29,163.60 880.29,167.60 L880.29,217.80 Z"/></g>
+              <g class="pb oi"><path d="M882.29,217.80 L882.29,216.39 Q882.29,214.98 883.71,214.98 L894.88,214.98 Q896.29,214.98 896.29,216.39 L896.29,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:14">
-              <g class="pb rev"><path d="M783.90,278.37 L783.90,211.97 Q783.90,207.97 787.90,207.97 L791.90,207.97 Q795.90,207.97 795.90,211.97 L795.90,278.37 Z"/></g>
-              <g class="pb gp"><path d="M797.90,278.37 L797.90,251.02 Q797.90,247.02 801.90,247.02 L805.90,247.02 Q809.90,247.02 809.90,251.02 L809.90,278.37 Z"/></g>
-              <g class="pb oi"><path d="M811.90,278.37 L811.90,272.50 Q811.90,268.50 815.90,268.50 L819.90,268.50 Q823.90,268.50 823.90,272.50 L823.90,278.37 Z"/></g>
+              <g class="pb rev"><path d="M909.35,217.80 L909.35,70.94 Q909.35,66.94 913.35,66.94 L919.35,66.94 Q923.35,66.94 923.35,70.94 L923.35,217.80 Z"/></g>
+              <g class="pb gp"><path d="M925.35,217.80 L925.35,171.41 Q925.35,167.41 929.35,167.41 L935.35,167.41 Q939.35,167.41 939.35,171.41 L939.35,217.80 Z"/></g>
+              <g class="pb oi"><path d="M941.35,217.80 L941.35,219.92 Q941.35,222.05 943.48,222.05 L953.23,222.05 Q955.35,222.05 955.35,219.92 L955.35,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:15">
-              <g class="pb rev"><path d="M834.10,278.37 L834.10,163.87 Q834.10,159.87 838.10,159.87 L842.10,159.87 Q846.10,159.87 846.10,163.87 L846.10,278.37 Z"/></g>
-              <g class="pb gp"><path d="M848.10,278.37 L848.10,225.20 Q848.10,221.20 852.10,221.20 L856.10,221.20 Q860.10,221.20 860.10,225.20 L860.10,278.37 Z"/></g>
-              <g class="pb oi"><path d="M862.10,278.37 L862.10,256.06 Q862.10,252.06 866.10,252.06 L870.10,252.06 Q874.10,252.06 874.10,256.06 L874.10,278.37 Z"/></g>
+              <g class="pb rev"><path d="M968.41,217.80 L968.41,112.45 Q968.41,108.45 972.41,108.45 L978.41,108.45 Q982.41,108.45 982.41,112.45 L982.41,217.80 Z"/></g>
+              <g class="pb gp"><path d="M984.41,217.80 L984.41,192.21 Q984.41,188.21 988.41,188.21 L994.41,188.21 Q998.41,188.21 998.41,192.21 L998.41,217.80 Z"/></g>
+              <g class="pb oi"><path d="M1000.41,217.80 L1000.41,226.98 Q1000.41,230.98 1004.41,230.98 L1010.41,230.98 Q1014.41,230.98 1014.41,226.98 L1014.41,217.80 Z"/></g>
             </g>
             <g class="ygrp" style="--i:16">
-              <g class="pb rev"><path d="M884.30,278.37 L884.30,112.19 Q884.30,108.19 888.30,108.19 L892.30,108.19 Q896.30,108.19 896.30,112.19 L896.30,278.37 Z"/></g>
-              <g class="pb gp"><path d="M898.30,278.37 L898.30,205.92 Q898.30,201.92 902.30,201.92 L906.30,201.92 Q910.30,201.92 910.30,205.92 L910.30,278.37 Z"/></g>
-              <g class="pb oi"><path d="M912.30,278.37 L912.30,273.25 Q912.30,269.25 916.30,269.25 L920.30,269.25 Q924.30,269.25 924.30,273.25 L924.30,278.37 Z"/></g>
-            </g>
-            <g class="ygrp" style="--i:17">
-              <g class="pb rev"><path d="M934.50,278.37 L934.50,118.83 Q934.50,114.83 938.50,114.83 L942.50,114.83 Q946.50,114.83 946.50,118.83 L946.50,278.37 Z"/></g>
-              <g class="pb gp"><path d="M948.50,278.37 L948.50,206.95 Q948.50,202.95 952.50,202.95 L956.50,202.95 Q960.50,202.95 960.50,206.95 L960.50,278.37 Z"/></g>
-              <g class="pb oi"><path d="M962.50,278.37 L962.50,276.92 Q962.50,275.48 963.95,275.48 L973.05,275.48 Q974.50,275.48 974.50,276.92 L974.50,278.37 Z"/></g>
-            </g>
-            <g class="ygrp" style="--i:18">
-              <g class="pb rev"><path d="M984.70,278.37 L984.70,96.45 Q984.70,92.45 988.70,92.45 L992.70,92.45 Q996.70,92.45 996.70,96.45 L996.70,278.37 Z"/></g>
-              <g class="pb gp"><path d="M998.70,278.37 L998.70,190.61 Q998.70,186.61 1002.70,186.61 L1006.70,186.61 Q1010.70,186.61 1010.70,190.61 L1010.70,278.37 Z"/></g>
-              <g class="pb oi"><path d="M1012.70,278.37 L1012.70,268.67 Q1012.70,264.67 1016.70,264.67 L1020.70,264.67 Q1024.70,264.67 1024.70,268.67 L1024.70,278.37 Z"/></g>
-            </g>
-            <g class="ygrp" style="--i:19">
-              <g class="pb rev"><path d="M1034.90,278.37 L1034.90,32.60 Q1034.90,28.60 1038.90,28.60 L1042.90,28.60 Q1046.90,28.60 1046.90,32.60 L1046.90,278.37 Z"/></g>
-              <g class="pb gp"><path d="M1048.90,278.37 L1048.90,158.69 Q1048.90,154.69 1052.90,154.69 L1056.90,154.69 Q1060.90,154.69 1060.90,158.69 L1060.90,278.37 Z"/></g>
-              <g class="pb oi"><path d="M1062.90,278.37 L1062.90,255.73 Q1062.90,251.73 1066.90,251.73 L1070.90,251.73 Q1074.90,251.73 1074.90,255.73 L1074.90,278.37 Z"/></g>
+              <g class="pb rev"><path d="M1027.47,217.80 L1027.47,104.75 Q1027.47,100.75 1031.47,100.75 L1037.47,100.75 Q1041.47,100.75 1041.47,104.75 L1041.47,217.80 Z"/></g>
+              <g class="pb gp"><path d="M1043.47,217.80 L1043.47,194.45 Q1043.47,190.45 1047.47,190.45 L1053.47,190.45 Q1057.47,190.45 1057.47,194.45 L1057.47,217.80 Z"/></g>
+              <g class="pb oi"><path d="M1059.47,217.80 L1059.47,223.99 Q1059.47,227.99 1063.47,227.99 L1069.47,227.99 Q1073.47,227.99 1073.47,223.99 L1073.47,217.80 Z"/></g>
             </g>
           </g>
-
-          <!-- direct end-labels: final group only -->
           <g class="pnl-end">
-            <circle cx="1086.00" cy="28.60" r="5" fill="var(--cyan)" stroke="var(--bg-void)" stroke-width="2"/>
-            <text class="chip-text" x="1095.00" y="32.60" fill="var(--ink-primary)">$34,639M</text>
-            <circle cx="1086.00" cy="154.69" r="5" fill="var(--violet)" stroke="var(--bg-void)" stroke-width="2"/>
-            <text class="chip-text" x="1095.00" y="158.69" fill="var(--ink-primary)">$17,152M</text>
-            <circle cx="1086.00" cy="251.73" r="5" fill="var(--amber)" stroke="var(--bg-void)" stroke-width="2"/>
-            <text class="chip-text" x="1095.00" y="255.73" fill="var(--ink-primary)">$3,694M</text>
+            <circle cx="534.94" cy="296.30" r="3.4" fill="var(--amber)" stroke="var(--bg-void)" stroke-width="1.6"/>
+            <line x1="540.94" y1="296.30" x2="556.94" y2="296.30" stroke="var(--line-strong)" stroke-width="1"/>
+            <text class="chip-text" x="562.94" y="300.50" fill="var(--ink-secondary)">FY2007 &#8212; deepest operating loss of the era, &#8722;$2,865M</text>
+            <circle cx="1086.00" cy="100.75" r="5" fill="var(--cyan)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1095.00" y="104.75" fill="var(--ink-primary)">$4,272M</text>
+            <circle cx="1086.00" cy="190.45" r="5" fill="var(--violet)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1095.00" y="194.45" fill="var(--ink-primary)">$998M</text>
+            <circle cx="1086.00" cy="227.99" r="5" fill="var(--amber)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1095.00" y="231.99" fill="var(--ink-primary)">&#8722;$372M</text>
           </g>
-
           <g class="tick-text" text-anchor="middle">
-            <text x="101.10" y="313">'06*</text>
-            <text x="151.30" y="313">'07*</text>
-            <text x="201.50" y="313">'08*</text>
-            <text x="251.70" y="313">'09*</text>
-            <text x="301.90" y="313">'10</text>
-            <text x="352.10" y="313">'11</text>
-            <text x="402.30" y="313">'12</text>
-            <text x="452.50" y="313">'13</text>
-            <text x="502.70" y="313">'14</text>
-            <text x="552.90" y="313">'15</text>
-            <text x="603.10" y="313">'16</text>
-            <text x="653.30" y="313">'17</text>
-            <text x="703.50" y="313">'18</text>
-            <text x="753.70" y="313">'19</text>
-            <text x="803.90" y="313">'20</text>
-            <text x="854.10" y="313">'21</text>
-            <text x="904.30" y="313">'22</text>
-            <text x="954.50" y="313">'23</text>
-            <text x="1004.70" y="313">'24*</text>
-            <text x="1054.90" y="313">'25*</text>
+            <text x="105.53" y="313">'00*</text>
+            <text x="164.59" y="313">'01*</text>
+            <text x="223.65" y="313">'02*</text>
+            <text x="282.71" y="313">'03*</text>
+            <text x="341.76" y="313">'04*</text>
+            <text x="400.82" y="313">'05*</text>
+            <text x="459.88" y="313">'06*</text>
+            <text x="518.94" y="313">'07*</text>
+            <text x="578.00" y="313">'08*</text>
+            <text x="637.06" y="313">'09*</text>
+            <text x="696.12" y="313">'10</text>
+            <text x="755.18" y="313">'11</text>
+            <text x="814.24" y="313">'12</text>
+            <text x="873.29" y="313">'13</text>
+            <text x="932.35" y="313">'14</text>
+            <text x="991.41" y="313">'15</text>
+            <text x="1050.47" y="313">'16</text>
           </g>
-
-          <!-- hover hit targets: one per fiscal year, wider than the bar group -->
           <g aria-hidden="true">
-            <rect class="yhit" x="76.00" y="20" width="50.20" height="280.00" data-label="FY2006" data-val="Revenue $5,649M &#183; Gross profit $2,793M &#183; Operating income &#8722;$47M &#183; One-time: $416M in-process R&amp;D charge (ATI) in operating expenses"/>
-            <rect class="yhit" x="126.20" y="20" width="50.20" height="280.00" data-label="FY2007" data-val="Revenue $6,013M &#183; Gross profit $2,262M &#183; Operating income &#8722;$2,865M &#183; One-time: $1,608M goodwill / acquired-intangible impairment"/>
-            <rect class="yhit" x="176.40" y="20" width="50.20" height="280.00" data-label="FY2008" data-val="Revenue $5,808M &#183; Gross profit $2,320M &#183; Operating income &#8722;$1,955M &#183; One-time: $1,089M impairment, $90M restructuring, $193M gain on 200mm equipment sale"/>
-            <rect class="yhit" x="226.60" y="20" width="50.20" height="280.00" data-label="FY2009" data-val="Revenue $5,403M &#183; Gross profit $2,272M &#183; Operating income $664M &#183; One-time: +$1,242M Intel legal-settlement credit &mdash; without it FY2009 operating income is a loss"/>
-            <rect class="yhit" x="276.80" y="20" width="50.20" height="280.00" data-label="FY2010" data-val="Revenue $6,494M &#183; Gross profit $2,961M &#183; Operating income $848M"/>
-            <rect class="yhit" x="327.00" y="20" width="50.20" height="280.00" data-label="FY2011" data-val="Revenue $6,568M &#183; Gross profit $2,940M &#183; Operating income $368M"/>
-            <rect class="yhit" x="377.20" y="20" width="50.20" height="280.00" data-label="FY2012" data-val="Revenue $5,422M &#183; Gross profit $1,235M &#183; Operating income &#8722;$1,056M"/>
-            <rect class="yhit" x="427.40" y="20" width="50.20" height="280.00" data-label="FY2013" data-val="Revenue $5,299M &#183; Gross profit $1,978M &#183; Operating income $103M"/>
-            <rect class="yhit" x="477.60" y="20" width="50.20" height="280.00" data-label="FY2014" data-val="Revenue $5,506M &#183; Gross profit $1,839M &#183; Operating income &#8722;$155M"/>
-            <rect class="yhit" x="527.80" y="20" width="50.20" height="280.00" data-label="FY2015" data-val="Revenue $3,991M &#183; Gross profit $1,080M &#183; Operating income &#8722;$481M"/>
-            <rect class="yhit" x="578.00" y="20" width="50.20" height="280.00" data-label="FY2016" data-val="Revenue $4,272M &#183; Gross profit $998M &#183; Operating income &#8722;$372M"/>
-            <rect class="yhit" x="628.20" y="20" width="50.20" height="280.00" data-label="FY2017" data-val="Revenue $5,329M &#183; Gross profit $1,823M &#183; Operating income $204M"/>
-            <rect class="yhit" x="678.40" y="20" width="50.20" height="280.00" data-label="FY2018" data-val="Revenue $6,475M &#183; Gross profit $2,447M &#183; Operating income $451M"/>
-            <rect class="yhit" x="728.60" y="20" width="50.20" height="280.00" data-label="FY2019" data-val="Revenue $6,731M &#183; Gross profit $2,868M &#183; Operating income $631M"/>
-            <rect class="yhit" x="778.80" y="20" width="50.20" height="280.00" data-label="FY2020" data-val="Revenue $9,763M &#183; Gross profit $4,347M &#183; Operating income $1,369M"/>
-            <rect class="yhit" x="829.00" y="20" width="50.20" height="280.00" data-label="FY2021" data-val="Revenue $16,434M &#183; Gross profit $7,929M &#183; Operating income $3,648M"/>
-            <rect class="yhit" x="879.20" y="20" width="50.20" height="280.00" data-label="FY2022" data-val="Revenue $23,601M &#183; Gross profit $10,603M &#183; Operating income $1,264M"/>
-            <rect class="yhit" x="929.40" y="20" width="50.20" height="280.00" data-label="FY2023" data-val="Revenue $22,680M &#183; Gross profit $10,460M &#183; Operating income $401M"/>
-            <rect class="yhit" x="979.60" y="20" width="50.20" height="280.00" data-label="FY2024" data-val="Revenue $25,785M &#183; Gross profit $12,725M &#183; Operating income $1,900M &#183; One-time: $186M restructuring charges"/>
-            <rect class="yhit" x="1029.80" y="20" width="50.20" height="280.00" data-label="FY2025" data-val="Revenue $34,639M &#183; Gross profit $17,152M &#183; Operating income $3,694M &#183; One-time: ~$440M net inventory and related charges tied to the MI308 export control (in cost of sales)"/>
+            <rect class="yhit" x="76.00" y="20" width="59.06" height="280.00" data-label="FY2000" data-val="Revenue $4,644M &#183; Gross profit $2,130M&#8224; &#183; Operating income $889M &#183; 53-week fiscal year &#183; One-time: +$337M pre-tax gain on the Legerity sale &mdash; it sits <em>below</em> the operating line, so it does not lift this bar"/>
+            <rect class="yhit" x="135.06" y="20" width="59.06" height="280.00" data-label="FY2001" data-val="Revenue $3,892M &#183; Gross profit $1,302M&#8224; &#183; Operating income &#8722;$58M &#183; One-time: $89M 2001 restructuring charge &mdash; the charge is what puts this year below zero"/>
+            <rect class="yhit" x="194.12" y="20" width="59.06" height="280.00" data-label="FY2002" data-val="Revenue $2,697M &#183; Gross profit $591M&#8224; &#183; Operating income &#8722;$1,225M &#183; One-time: $331M 2002 restructuring charge, plus a $42M product-development-services payment booked inside R&amp;D"/>
+            <rect class="yhit" x="253.18" y="20" width="59.06" height="280.00" data-label="FY2003" data-val="Revenue $3,519M &#183; Gross profit $1,192M&#8224; &#183; Operating income &#8722;$233M &#183; One-time: a net restructuring <em>recovery</em> of +$14M &mdash; a credit, not a charge &#183; Spansion consolidated from 30 Jun 2003"/>
+            <rect class="yhit" x="312.24" y="20" width="59.06" height="280.00" data-label="FY2004" data-val="Revenue $5,001M &#183; Gross profit $1,969M&#8224; &#183; Operating income $222M &#183; One-time: &#8722;$5M 2002-plan accrual adjustment (immaterial) &#183; first full year of consolidated Spansion"/>
+            <rect class="yhit" x="371.29" y="20" width="59.06" height="280.00" data-label="FY2005" data-val="Revenue $5,848M &#183; Gross profit $2,392M&#8224; &#183; Operating income $232M &#183; One-time: $16M write-off of all Spansion goodwill, buried inside MG&amp;A &#183; last year containing Flash-memory revenue"/>
+            <rect class="yhit" x="430.35" y="20" width="59.06" height="280.00" data-label="FY2006" data-val="Revenue $5,649M &#183; Gross profit $2,793M &#183; Operating income &#8722;$47M &#183; One-time: $416M in-process R&amp;D charge from the ATI acquisition &#183; first year with no Flash revenue; carries only ~one quarter of ATI"/>
+            <rect class="yhit" x="489.41" y="20" width="59.06" height="280.00" data-label="FY2007" data-val="Revenue $6,013M &#183; Gross profit $2,262M &#183; Operating income &#8722;$2,865M &#183; One-time: $1,608M goodwill / acquired-intangible impairment &mdash; the bulk of the loss"/>
+            <rect class="yhit" x="548.47" y="20" width="59.06" height="280.00" data-label="FY2008" data-val="Revenue $5,808M &#183; Gross profit $2,320M &#183; Operating income &#8722;$1,955M &#183; One-time: $1,089M impairment, $90M restructuring, +$193M gain on sale of 200mm equipment"/>
+            <rect class="yhit" x="607.53" y="20" width="59.06" height="280.00" data-label="FY2009" data-val="Revenue $5,403M &#183; Gross profit $2,272M &#183; Operating income $664M &#183; One-time: +$1,242M Intel legal-settlement credit and $65M restructuring &mdash; without the credit FY2009 is an operating loss"/>
+            <rect class="yhit" x="666.59" y="20" width="59.06" height="280.00" data-label="FY2010" data-val="Revenue $6,494M &#183; Gross profit $2,961M &#183; Operating income $848M &#183; One-time items not yet catalogued for this year"/>
+            <rect class="yhit" x="725.65" y="20" width="59.06" height="280.00" data-label="FY2011" data-val="Revenue $6,568M &#183; Gross profit $2,940M &#183; Operating income $368M &#183; highest revenue AMD reported in this seventeen-year window &#183; One-time items not yet catalogued"/>
+            <rect class="yhit" x="784.71" y="20" width="59.06" height="280.00" data-label="FY2012" data-val="Revenue $5,422M &#183; Gross profit $1,235M &#183; Operating income &#8722;$1,056M &#183; Context: the depressed gross profit reflects large inventory and GlobalFoundries-related charges &#183; One-time items not yet catalogued"/>
+            <rect class="yhit" x="843.76" y="20" width="59.06" height="280.00" data-label="FY2013" data-val="Revenue $5,299M &#183; Gross profit $1,978M &#183; Operating income $103M &#183; One-time items not yet catalogued for this year"/>
+            <rect class="yhit" x="902.82" y="20" width="59.06" height="280.00" data-label="FY2014" data-val="Revenue $5,506M &#183; Gross profit $1,839M &#183; Operating income &#8722;$155M &#183; One-time items not yet catalogued for this year"/>
+            <rect class="yhit" x="961.88" y="20" width="59.06" height="280.00" data-label="FY2015" data-val="Revenue $3,991M &#183; Gross profit $1,080M &#183; Operating income &#8722;$481M &#183; One-time items not yet catalogued for this year"/>
+            <rect class="yhit" x="1020.94" y="20" width="59.06" height="280.00" data-label="FY2016" data-val="Revenue $4,272M &#183; Gross profit $998M &#183; Operating income &#8722;$372M &#183; the pivot year, shown on both slides &#183; restated to $4,319M / $1,003M / &#8722;$373M under ASC 606 in the FY2018 10-K; the as-reported basis is plotted &#183; One-time items not yet catalogued"/>
           </g>
         </svg>
-        <div class="bartip" id="pnltip"></div>
+        <div class="bartip"></div>
       </div>
 
       <div class="legend">
         <div class="li"><span class="sw" style="background:var(--cyan)"></span>Revenue</div>
         <div class="li"><span class="sw" style="background:var(--violet)"></span>Gross Profit</div>
         <div class="li"><span class="sw" style="background:var(--amber)"></span>Operating Income</div>
-        <div class="li" style="color:var(--ink-secondary)">* Year contains a disclosed one-time item &mdash; see notes</div>
+        <div class="li" style="color:var(--ink-secondary)">* Disclosed one-time item &nbsp;&#183;&nbsp; FY2010&ndash;FY2016 not catalogued, so no star there means <em>not checked</em>, not <em>clean</em></div>
       </div>
 
       <div class="callout">
         <span class="dot"></span>
-        <p><span class="label">Read this before reading FY2009</span>FY2009 is the only pre-2013 year with positive operating income, and it is <strong style="color:var(--ink-primary)">not an operating turnaround</strong> &mdash; the reported $664M includes a one-time <strong style="color:var(--ink-primary)">+$1,242M Intel legal-settlement credit</strong> inside operating expenses. The bar shows the real filed GAAP number; the credit has deliberately <em>not</em> been backed out of it.</p>
+        <p><span class="label">Read this before reading FY2009</span>FY2009's positive $664M is <strong style="color:var(--ink-primary)">not an operating turnaround</strong> &mdash; it includes a one-time <strong style="color:var(--ink-primary)">+$1,242M Intel legal-settlement credit</strong> booked inside operating expenses. The bar shows the real filed GAAP number; the credit is deliberately <em>not</em> backed out. Same trap in reverse at FY2003, where the restructuring line is a <em>recovery</em> of +$14M, not a charge.</p>
       </div>
 
-      <div class="notegrid">
+      <div class="notegrid" style="grid-template-columns:1.05fr 0.85fr 1.1fr">
         <div>
           <h3>* Disclosed one-time items &mdash; bars stay as-reported, nothing netted out</h3>
           <ul>
-            <li><span class="yr">FY06</span>$416M in-process R&amp;D charge from the ATI acquisition (FY2006 carries only ~one quarter of ATI).</li>
-            <li><span class="yr">FY07</span>$1,608M goodwill / acquired-intangible impairment &mdash; the bulk of the &#8722;$2,865M operating loss.</li>
-            <li><span class="yr">FY08</span>$1,089M impairment, $90M restructuring, $193M gain on sale of 200mm equipment.</li>
-            <li><span class="yr">FY09</span>+$1,242M Intel legal-settlement credit (see note above).</li>
-            <li><span class="yr">FY24</span>$186M restructuring charges. &nbsp;<span class="yr">FY25</span>~$440M net inventory and related charges from the Instinct MI308 export control &mdash; booked in cost of sales, so it hits gross profit too.</li>
+            <li><span class="yr">FY00</span>+$337M Legerity gain &mdash; <em>below</em> the operating line; the bar is unmoved.</li>
+            <li><span class="yr">FY01</span>$89M restructuring &mdash; the cause of the &#8722;$58M loss. &nbsp;<span class="yr">FY02</span>$331M restructuring, plus $42M inside R&amp;D.</li>
+            <li><span class="yr">FY03</span>Net restructuring <strong>recovery</strong> of +$14M &mdash; a credit, not a charge.</li>
+            <li><span class="yr">FY04</span>&#8722;$5M accrual tweak. &nbsp;<span class="yr">FY05</span>$16M Spansion goodwill write-off, inside MG&amp;A.</li>
+            <li><span class="yr">FY06</span>$416M ATI in-process R&amp;D. &nbsp;<span class="yr">FY07</span>$1,608M goodwill / intangible impairment.</li>
+            <li><span class="yr">FY08</span>$1,089M impairment, $90M restructuring, +$193M equipment-sale gain.</li>
+            <li><span class="yr">FY09</span>+$1,242M Intel settlement credit, $65M restructuring (see callout).</li>
+            <li><span class="yr">FY10&#8211;16</span><strong>Not catalogued</strong> &mdash; unstarred there means not checked, not clean.</li>
           </ul>
         </div>
         <div>
-          <h3>Basis</h3>
+          <h3>Structural breaks inside this window</h3>
           <ul>
-            <li><strong>GAAP, as originally reported</strong> in each fiscal year's own 10-K. AMD captions the line "Gross margin" through FY2018 and "Gross profit" from FY2019. Not AMD's non-GAAP figures, which run materially higher.</li>
-            <li><strong>Later-recast alternates are not plotted:</strong> FY2006/FY2007 were recast for discontinued operations in the FY2008 10-K, and FY2016/FY2017 restated under ASC 606 in the FY2018 10-K. Both bases are as-filed; one consistent basis is used across all twenty years.</li>
+            <li><strong>FY2000 was a 53-week year</strong>; FY2001&ndash;FY2005 were 52.</li>
+            <li><strong>Legerity</strong> sold Aug 2000. <strong>Spansion</strong> (Flash) consolidated Jun 2003, deconsolidated at its Dec 2005 IPO with no restatement &mdash; so FY2005&nbsp;&rarr;&nbsp;FY2006 ($5,848M&nbsp;&rarr;&nbsp;$5,649M) is a mix change, not a decline.</li>
+            <li><strong>ATI</strong> acquired Oct 2006 (~1 quarter of it in FY2006); <strong>GlobalFoundries</strong> spun off Mar 2009.</li>
+            <li><strong>FY2012's</strong> $1,235M gross profit reflects large inventory / GlobalFoundries charges.</li>
           </ul>
         </div>
         <div>
-          <h3>Sources</h3>
+          <h3>Basis &amp; sources</h3>
           <ul>
-            <li><span class="k">SEC</span>AMD 10-K FY2007 (0001193125-08-038588), FY2008 (0001193125-09-036235), FY2009 (0001193125-10-035218), FY2025 (0000002488-26-000018).</li>
-            <li><span class="k">SEC</span>XBRL company-concept API, CIK 0000002488 &mdash; GrossProfit, OperatingIncomeLoss, SalesRevenueGoodsNet / SalesRevenueNet / RevenueFromContractWithCustomerExcludingAssessedTax; annual 10-K facts FY2008&ndash;FY2025, each year tagged identically in two or three separately filed 10-Ks.</li>
-            <li><span class="k">X-CHK</span>stockanalysis.com/stocks/amd/financials &mdash; FY2021&ndash;FY2025, exact match on all fifteen values.</li>
+            <li><strong>GAAP as originally filed</strong> in each year's own 10-K &mdash; not AMD's non-GAAP. Later recasts (FY2006/07 discontinued ops, FY2016 ASC 606) are not plotted.</li>
+            <li>&#8224; <strong>FY2000&ndash;FY2005 gross profit is derived</strong> (revenue &minus; cost of sales, in thousands) &mdash; no gross-profit line existed before FY2006. Each reconciles to AMD's own disclosed gross-margin&nbsp;%.</li>
+            <li><span class="k">SEC</span>10-K FY00 0001012870-01-001228, FY01 0001012870-02-001071, FY02 0001012870-03-001181, FY03 0001193125-04-037179, FY04 0001193125-05-039876, FY05 0001193125-06-040130, FY07 0001193125-08-038588, FY08 0001193125-09-036235, FY09 0001193125-10-035218.</li>
+            <li><span class="k">SEC</span>XBRL company-concept API, CIK 0000002488, for FY2010&ndash;FY2016. Every year here appears identically in three to five separately filed annual reports and foots to its own quarterly columns.</li>
           </ul>
         </div>
       </div>
 
-      <table class="sr-only">
-        <caption>AMD annual GAAP results, fiscal 2006 to fiscal 2025, in millions of US dollars, as originally reported</caption>
+      <table class="sr-only" id="tblA">
+        <caption>AMD annual GAAP results, fiscal 2000 to fiscal 2016, in millions of US dollars, as originally reported. Gross profit marked with a dagger for fiscal 2000 to fiscal 2005 is derived as revenue minus cost of sales, because AMD's income statement carried no gross-profit line in that era.</caption>
         <thead>
           <tr><th scope="col">Fiscal year</th><th scope="col">Revenue</th><th scope="col">Gross profit</th><th scope="col">Operating income</th></tr>
         </thead>
         <tbody>
+          <tr><th scope="row">FY2000</th><td>4,644</td><td>2,130&#8224;</td><td>889</td></tr>
+          <tr><th scope="row">FY2001</th><td>3,892</td><td>1,302&#8224;</td><td>&#8722;58</td></tr>
+          <tr><th scope="row">FY2002</th><td>2,697</td><td>591&#8224;</td><td>&#8722;1,225</td></tr>
+          <tr><th scope="row">FY2003</th><td>3,519</td><td>1,192&#8224;</td><td>&#8722;233</td></tr>
+          <tr><th scope="row">FY2004</th><td>5,001</td><td>1,969&#8224;</td><td>222</td></tr>
+          <tr><th scope="row">FY2005</th><td>5,848</td><td>2,392&#8224;</td><td>232</td></tr>
           <tr><th scope="row">FY2006</th><td>5,649</td><td>2,793</td><td>&#8722;47</td></tr>
           <tr><th scope="row">FY2007</th><td>6,013</td><td>2,262</td><td>&#8722;2,865</td></tr>
           <tr><th scope="row">FY2008</th><td>5,808</td><td>2,320</td><td>&#8722;1,955</td></tr>
@@ -458,6 +472,177 @@
           <tr><th scope="row">FY2013</th><td>5,299</td><td>1,978</td><td>103</td></tr>
           <tr><th scope="row">FY2014</th><td>5,506</td><td>1,839</td><td>&#8722;155</td></tr>
           <tr><th scope="row">FY2015</th><td>3,991</td><td>1,080</td><td>&#8722;481</td></tr>
+          <tr><th scope="row">FY2016</th><td>4,272</td><td>998</td><td>&#8722;372</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 02 : FY2016 - FY2025 ========== -->
+  <section class="slide" id="s2">
+    <div class="corner-tag">02 / The Zen Decade<br>FY2016 &ndash; FY2025 &nbsp;&#183;&nbsp; GAAP, as reported</div>
+    <div class="slide-inner">
+      <div class="eyebrow"><span class="pulse-dot"></span>02 &nbsp;&#183;&nbsp; Nasdaq: AMD &nbsp;&#183;&nbsp; FY2016 &ndash; FY2025</div>
+      <h2>Same company, ten years later: revenue up 8&times;, gross profit up 17&times;.</h2>
+      <p class="lede">FY2016 repeats from the previous slide as the pivot &mdash; same bars, same filings, a y-axis spanning 3.6&times; the dollar range. Revenue went <strong style="color:var(--ink-primary)">$4,272M &rarr; $34,639M</strong>, gross profit <strong style="color:var(--ink-primary)">$998M &rarr; $17,152M</strong>. FY2025's gross profit alone is <strong style="color:var(--ink-primary)">2.6&times; the highest revenue</strong> AMD reported in the seventeen years before it, and operating income has been positive every year since FY2017.</p>
+
+      <div class="chart-wrap">
+        <svg viewBox="0 0 1180 324" role="img" aria-labelledby="chartTitleB chartDescB">
+          <title id="chartTitleB">AMD annual GAAP revenue, gross profit and operating income, fiscal 2016 through fiscal 2025</title>
+          <desc id="chartDescB">Grouped bar chart, three bars per fiscal year, ten fiscal years, in millions of dollars, on a real zero baseline that extends below zero. Revenue rises from 4,272 in fiscal 2016 to 34,639 in fiscal 2025, dipping once from 23,601 in fiscal 2022 to 22,680 in fiscal 2023. Gross profit rises from 998 to 17,152 over the same span. Operating income is negative only in fiscal 2016, at negative 372; it is positive in every year from fiscal 2017 onward, peaking at 3,694 in fiscal 2025, with a pronounced dip to 1,264 in fiscal 2022 and 401 in fiscal 2023 despite record revenue in both years. Exact values are in the data table that follows.</desc>
+
+<!-- ==== SLIDE 2 FY2016-FY2025 :  zero line y=292.39   scale 0.007611 px per $M ==== -->
+          <g stroke="var(--line)" stroke-width="1">
+            <line x1="76" y1="64.06" x2="1080" y2="64.06"/>
+            <line x1="76" y1="140.17" x2="1080" y2="140.17"/>
+            <line x1="76" y1="216.28" x2="1080" y2="216.28"/>
+            <line x1="76" y1="300.00" x2="1080" y2="300.00"/>
+          </g>
+          <!-- emphasized real zero baseline -->
+          <line x1="76" y1="292.39" x2="1080" y2="292.39" stroke="var(--line-strong)" stroke-width="1.4"/>
+          <g class="tick-text" text-anchor="end">
+            <text x="68" y="68.06">$30,000M</text>
+            <text x="68" y="144.17">$20,000M</text>
+            <text x="68" y="220.28">$10,000M</text>
+            <text x="68" y="296.39" fill="var(--ink-secondary)">$0</text>
+            <text x="68" y="304.00">&#8722;$1,000M</text>
+          </g>
+          <g class="pnl-bars" style="--zero:292.39px">
+            <g class="ygrp" style="--i:0">
+              <g class="pb rev"><path d="M91.20,292.39 L91.20,263.87 Q91.20,259.87 95.20,259.87 L109.20,259.87 Q113.20,259.87 113.20,263.87 L113.20,292.39 Z"/></g>
+              <g class="pb gp"><path d="M115.20,292.39 L115.20,288.59 Q115.20,284.79 119.00,284.79 L133.40,284.79 Q137.20,284.79 137.20,288.59 L137.20,292.39 Z"/></g>
+              <g class="pb oi"><path d="M139.20,292.39 L139.20,293.80 Q139.20,295.22 140.62,295.22 L159.78,295.22 Q161.20,295.22 161.20,293.80 L161.20,292.39 Z"/></g>
+            </g>
+            <g class="ygrp" style="--i:1">
+              <g class="pb rev"><path d="M191.60,292.39 L191.60,255.83 Q191.60,251.83 195.60,251.83 L209.60,251.83 Q213.60,251.83 213.60,255.83 L213.60,292.39 Z"/></g>
+              <g class="pb gp"><path d="M215.60,292.39 L215.60,282.51 Q215.60,278.51 219.60,278.51 L233.60,278.51 Q237.60,278.51 237.60,282.51 L237.60,292.39 Z"/></g>
+              <g class="pb oi"><rect x="239.60" y="290.84" width="22.00" height="1.55"/></g>
+            </g>
+            <g class="ygrp" style="--i:2">
+              <g class="pb rev"><path d="M292.00,292.39 L292.00,247.11 Q292.00,243.11 296.00,243.11 L310.00,243.11 Q314.00,243.11 314.00,247.11 L314.00,292.39 Z"/></g>
+              <g class="pb gp"><path d="M316.00,292.39 L316.00,277.76 Q316.00,273.76 320.00,273.76 L334.00,273.76 Q338.00,273.76 338.00,277.76 L338.00,292.39 Z"/></g>
+              <g class="pb oi"><path d="M340.00,292.39 L340.00,290.67 Q340.00,288.96 341.72,288.96 L360.28,288.96 Q362.00,288.96 362.00,290.67 L362.00,292.39 Z"/></g>
+            </g>
+            <g class="ygrp" style="--i:3">
+              <g class="pb rev"><path d="M392.40,292.39 L392.40,245.16 Q392.40,241.16 396.40,241.16 L410.40,241.16 Q414.40,241.16 414.40,245.16 L414.40,292.39 Z"/></g>
+              <g class="pb gp"><path d="M416.40,292.39 L416.40,274.56 Q416.40,270.56 420.40,270.56 L434.40,270.56 Q438.40,270.56 438.40,274.56 L438.40,292.39 Z"/></g>
+              <g class="pb oi"><path d="M440.40,292.39 L440.40,289.99 Q440.40,287.59 442.80,287.59 L460.00,287.59 Q462.40,287.59 462.40,289.99 L462.40,292.39 Z"/></g>
+            </g>
+            <g class="ygrp" style="--i:4">
+              <g class="pb rev"><path d="M492.80,292.39 L492.80,222.08 Q492.80,218.08 496.80,218.08 L510.80,218.08 Q514.80,218.08 514.80,222.08 L514.80,292.39 Z"/></g>
+              <g class="pb gp"><path d="M516.80,292.39 L516.80,263.30 Q516.80,259.30 520.80,259.30 L534.80,259.30 Q538.80,259.30 538.80,263.30 L538.80,292.39 Z"/></g>
+              <g class="pb oi"><path d="M540.80,292.39 L540.80,285.97 Q540.80,281.97 544.80,281.97 L558.80,281.97 Q562.80,281.97 562.80,285.97 L562.80,292.39 Z"/></g>
+            </g>
+            <g class="ygrp" style="--i:5">
+              <g class="pb rev"><path d="M593.20,292.39 L593.20,171.31 Q593.20,167.31 597.20,167.31 L611.20,167.31 Q615.20,167.31 615.20,171.31 L615.20,292.39 Z"/></g>
+              <g class="pb gp"><path d="M617.20,292.39 L617.20,236.04 Q617.20,232.04 621.20,232.04 L635.20,232.04 Q639.20,232.04 639.20,236.04 L639.20,292.39 Z"/></g>
+              <g class="pb oi"><path d="M641.20,292.39 L641.20,268.62 Q641.20,264.62 645.20,264.62 L659.20,264.62 Q663.20,264.62 663.20,268.62 L663.20,292.39 Z"/></g>
+            </g>
+            <g class="ygrp" style="--i:6">
+              <g class="pb rev"><path d="M693.60,292.39 L693.60,116.76 Q693.60,112.76 697.60,112.76 L711.60,112.76 Q715.60,112.76 715.60,116.76 L715.60,292.39 Z"/></g>
+              <g class="pb gp"><path d="M717.60,292.39 L717.60,215.69 Q717.60,211.69 721.60,211.69 L735.60,211.69 Q739.60,211.69 739.60,215.69 L739.60,292.39 Z"/></g>
+              <g class="pb oi"><path d="M741.60,292.39 L741.60,286.77 Q741.60,282.77 745.60,282.77 L759.60,282.77 Q763.60,282.77 763.60,286.77 L763.60,292.39 Z"/></g>
+            </g>
+            <g class="ygrp" style="--i:7">
+              <g class="pb rev"><path d="M794.00,292.39 L794.00,123.77 Q794.00,119.77 798.00,119.77 L812.00,119.77 Q816.00,119.77 816.00,123.77 L816.00,292.39 Z"/></g>
+              <g class="pb gp"><path d="M818.00,292.39 L818.00,216.78 Q818.00,212.78 822.00,212.78 L836.00,212.78 Q840.00,212.78 840.00,216.78 L840.00,292.39 Z"/></g>
+              <g class="pb oi"><path d="M842.00,292.39 L842.00,290.86 Q842.00,289.34 843.53,289.34 L862.47,289.34 Q864.00,289.34 864.00,290.86 L864.00,292.39 Z"/></g>
+            </g>
+            <g class="ygrp" style="--i:8">
+              <g class="pb rev"><path d="M894.40,292.39 L894.40,100.14 Q894.40,96.14 898.40,96.14 L912.40,96.14 Q916.40,96.14 916.40,100.14 L916.40,292.39 Z"/></g>
+              <g class="pb gp"><path d="M918.40,292.39 L918.40,199.54 Q918.40,195.54 922.40,195.54 L936.40,195.54 Q940.40,195.54 940.40,199.54 L940.40,292.39 Z"/></g>
+              <g class="pb oi"><path d="M942.40,292.39 L942.40,281.93 Q942.40,277.93 946.40,277.93 L960.40,277.93 Q964.40,277.93 964.40,281.93 L964.40,292.39 Z"/></g>
+            </g>
+            <g class="ygrp" style="--i:9">
+              <g class="pb rev"><path d="M994.80,292.39 L994.80,32.75 Q994.80,28.75 998.80,28.75 L1012.80,28.75 Q1016.80,28.75 1016.80,32.75 L1016.80,292.39 Z"/></g>
+              <g class="pb gp"><path d="M1018.80,292.39 L1018.80,165.84 Q1018.80,161.84 1022.80,161.84 L1036.80,161.84 Q1040.80,161.84 1040.80,165.84 L1040.80,292.39 Z"/></g>
+              <g class="pb oi"><path d="M1042.80,292.39 L1042.80,268.27 Q1042.80,264.27 1046.80,264.27 L1060.80,264.27 Q1064.80,264.27 1064.80,268.27 L1064.80,292.39 Z"/></g>
+            </g>
+          </g>
+          <g class="pnl-end">
+            <circle cx="1086.00" cy="28.75" r="5" fill="var(--cyan)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1095.00" y="32.75" fill="var(--ink-primary)">$34,639M</text>
+            <circle cx="1086.00" cy="161.84" r="5" fill="var(--violet)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1095.00" y="165.84" fill="var(--ink-primary)">$17,152M</text>
+            <circle cx="1086.00" cy="264.27" r="5" fill="var(--amber)" stroke="var(--bg-void)" stroke-width="2"/>
+            <text class="chip-text" x="1095.00" y="268.27" fill="var(--ink-primary)">$3,694M</text>
+          </g>
+          <g class="tick-text" text-anchor="middle">
+            <text x="126.20" y="313">'16</text>
+            <text x="226.60" y="313">'17</text>
+            <text x="327.00" y="313">'18</text>
+            <text x="427.40" y="313">'19</text>
+            <text x="527.80" y="313">'20</text>
+            <text x="628.20" y="313">'21</text>
+            <text x="728.60" y="313">'22</text>
+            <text x="829.00" y="313">'23</text>
+            <text x="929.40" y="313">'24*</text>
+            <text x="1029.80" y="313">'25*</text>
+          </g>
+          <g aria-hidden="true">
+            <rect class="yhit" x="76.00" y="20" width="100.40" height="280.00" data-label="FY2016" data-val="Revenue $4,272M &#183; Gross profit $998M &#183; Operating income &#8722;$372M &#183; the pivot year, shown on both slides &#183; restated to $4,319M / $1,003M / &#8722;$373M under ASC 606 in the FY2018 10-K; the as-reported basis is plotted &#183; One-time items not yet catalogued"/>
+            <rect class="yhit" x="176.40" y="20" width="100.40" height="280.00" data-label="FY2017" data-val="Revenue $5,329M &#183; Gross profit $1,823M &#183; Operating income $204M &#183; restated to $5,253M / $1,787M / $127M under ASC 606 in the FY2018 10-K; the as-reported basis is plotted &#183; One-time items not yet catalogued"/>
+            <rect class="yhit" x="276.80" y="20" width="100.40" height="280.00" data-label="FY2018" data-val="Revenue $6,475M &#183; Gross profit $2,447M &#183; Operating income $451M &#183; first year reported on the ASC 606 basis &#183; One-time items not yet catalogued"/>
+            <rect class="yhit" x="377.20" y="20" width="100.40" height="280.00" data-label="FY2019" data-val="Revenue $6,731M &#183; Gross profit $2,868M &#183; Operating income $631M &#183; One-time items not yet catalogued for this year"/>
+            <rect class="yhit" x="477.60" y="20" width="100.40" height="280.00" data-label="FY2020" data-val="Revenue $9,763M &#183; Gross profit $4,347M &#183; Operating income $1,369M &#183; One-time items not yet catalogued for this year"/>
+            <rect class="yhit" x="578.00" y="20" width="100.40" height="280.00" data-label="FY2021" data-val="Revenue $16,434M &#183; Gross profit $7,929M &#183; Operating income $3,648M &#183; last full year before Xilinx &#183; One-time items not yet catalogued"/>
+            <rect class="yhit" x="678.40" y="20" width="100.40" height="280.00" data-label="FY2022" data-val="Revenue $23,601M &#183; Gross profit $10,603M &#183; Operating income $1,264M &#183; Xilinx closed 14 Feb 2022: it drives the revenue step-up, and the acquisition-intangible amortization it brings is what compresses GAAP operating income &#183; One-time items not yet catalogued"/>
+            <rect class="yhit" x="778.80" y="20" width="100.40" height="280.00" data-label="FY2023" data-val="Revenue $22,680M &#183; Gross profit $10,460M &#183; Operating income $401M &#183; carries $1,869M of acquisition-intangible amortization in operating expenses plus $942M in cost of sales &#183; restructuring line reported as nil; other one-time items not catalogued"/>
+            <rect class="yhit" x="879.20" y="20" width="100.40" height="280.00" data-label="FY2024" data-val="Revenue $25,785M &#183; Gross profit $12,725M &#183; Operating income $1,900M &#183; One-time: $186M restructuring charges"/>
+            <rect class="yhit" x="979.60" y="20" width="100.40" height="280.00" data-label="FY2025" data-val="Revenue $34,639M &#183; Gross profit $17,152M &#183; Operating income $3,694M &#183; One-time: ~$440M net inventory and related charges tied to the MI308 export control &mdash; booked in cost of sales, so it hits gross profit too &#183; restructuring line reported as nil"/>
+          </g>
+        </svg>
+        <div class="bartip"></div>
+      </div>
+
+      <div class="legend">
+        <div class="li"><span class="sw" style="background:var(--cyan)"></span>Revenue</div>
+        <div class="li"><span class="sw" style="background:var(--violet)"></span>Gross Profit</div>
+        <div class="li"><span class="sw" style="background:var(--amber)"></span>Operating Income</div>
+        <div class="li" style="color:var(--ink-secondary)">* Disclosed one-time item &nbsp;&#183;&nbsp; FY2016&ndash;FY2023 not catalogued, so no star there means <em>not checked</em>, not <em>clean</em></div>
+      </div>
+
+      <div class="callout">
+        <span class="dot"></span>
+        <p><span class="label">Why the amber bar sags in FY2022&ndash;FY2023</span>Revenue and gross profit both hit records in FY2022, yet GAAP operating income fell to <strong style="color:var(--ink-primary)">$1,264M</strong> and then <strong style="color:var(--ink-primary)">$401M</strong>. That is <strong style="color:var(--ink-primary)">not a one-time charge</strong> &mdash; it is recurring amortization of acquisition-related intangibles from Xilinx (closed 14 Feb 2022): $1,869M in operating expenses plus $942M in cost of sales in FY2023 alone. It is exactly the gap AMD's non-GAAP figures exclude. These bars are GAAP.</p>
+      </div>
+
+      <div class="notegrid" style="grid-template-columns:0.95fr 1fr 1.15fr">
+        <div>
+          <h3>* Disclosed one-time items &mdash; bars stay as-reported, nothing netted out</h3>
+          <ul>
+            <li><span class="yr">FY24</span>$186M restructuring charges, in operating expenses.</li>
+            <li><span class="yr">FY25</span>~$440M of net inventory and related charges tied to the U.S. export control on Instinct <strong>MI308</strong> &mdash; booked in cost of sales, so it hits the gross-profit bar too. FY2025's restructuring line is nil.</li>
+            <li><span class="yr">FY16&#8211;23</span><strong>Not catalogued</strong> &mdash; unstarred here means not checked, not clean. The one thing that <em>is</em> checked: FY2023's restructuring line is nil.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Structural notes &amp; why FY2016 repeats</h3>
+          <ul>
+            <li><strong>FY2016 sits on both slides</strong> so the cut is visible rather than hidden. Same filing, same figures &mdash; only the y-axis changes, and it spans 3.6&times; the dollar range.</li>
+            <li><strong>Xilinx</strong> acquired Feb 2022 &mdash; it drives the revenue step-up and the amortization that suppresses FY2022&ndash;FY2023 GAAP operating income.</li>
+            <li><strong>ZT Systems</strong> acquired 2025; its manufacturing business is discontinued operations in FY2025. Bars are continuing operations, and FY2024 / FY2023 were <em>not</em> recast by it.</li>
+            <li><strong>FY2025 ended 27 Dec 2025</strong>; its 10-K, filed 4 Feb 2026, is the most recent annual filing. FY2026 is in progress and deliberately absent.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Basis &amp; sources</h3>
+          <ul>
+            <li><strong>GAAP as originally filed</strong> in each year's own 10-K. AMD's investor materials headline non-GAAP figures that run <em>materially</em> higher post-Xilinx; none of that is plotted here.</li>
+            <li><strong>Mixed-basis boundary, stated plainly:</strong> FY2018 onward is ASC 606; FY2016 and FY2017 are plotted as originally filed (pre-606). Their FY2018 10-K restatements are $4,319M / $1,003M / &#8722;$373M and $5,253M / $1,787M / $127M. FY2015 and earlier were never restated, so as-filed is the only basis consistent across all 26 years.</li>
+            <li><span class="k">SEC</span>AMD 10-K FY2025 (0000002488-26-000018) for FY2023&ndash;FY2025, including the MI308 and restructuring disclosures.</li>
+            <li><span class="k">SEC</span>XBRL company-concept API, CIK 0000002488 &mdash; GrossProfit, OperatingIncomeLoss, SalesRevenueGoodsNet / SalesRevenueNet / RevenueFromContractWithCustomerExcludingAssessedTax; FY2016&ndash;FY2025 annual 10-K facts, each tagged identically in two or three separately filed 10-Ks.</li>
+            <li><span class="k">X-CHK</span>stockanalysis.com/stocks/amd/financials &mdash; FY2021&ndash;FY2025, exact match on all fifteen values.</li>
+          </ul>
+        </div>
+      </div>
+
+      <table class="sr-only" id="tblB">
+        <caption>AMD annual GAAP results, fiscal 2016 to fiscal 2025, in millions of US dollars, as originally reported. Fiscal 2016 is repeated from the preceding chart as the pivot year.</caption>
+        <thead>
+          <tr><th scope="col">Fiscal year</th><th scope="col">Revenue</th><th scope="col">Gross profit</th><th scope="col">Operating income</th></tr>
+        </thead>
+        <tbody>
           <tr><th scope="row">FY2016</th><td>4,272</td><td>998</td><td>&#8722;372</td></tr>
           <tr><th scope="row">FY2017</th><td>5,329</td><td>1,823</td><td>204</td></tr>
           <tr><th scope="row">FY2018</th><td>6,475</td><td>2,447</td><td>451</td></tr>
@@ -479,29 +664,67 @@
 (function () {
   var deck = document.getElementById('deck');
   var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var navbar = document.getElementById('navbar');
+  var idxNow = document.getElementById('idxNow');
+  var idxTotal = document.getElementById('idxTotal');
+  idxTotal.textContent = String(slides.length).padStart(2, '0');
 
-  // ---- reveal-on-scroll (replays each time the slide becomes substantially visible) ----
+  // ---- left-side nav dots (bottom-right stays clear for the facecam) ----
+  slides.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.className = 'navdot' + (i === 0 ? ' active' : '');
+    b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    b.addEventListener('click', function () { s.scrollIntoView({ behavior: 'smooth' }); });
+    navbar.appendChild(b);
+  });
+  var dots = Array.prototype.slice.call(navbar.children);
+  function setActive(i) {
+    dots.forEach(function (d, j) { d.classList.toggle('active', j === i); });
+    idxNow.textContent = String(i + 1).padStart(2, '0');
+  }
+  function nearestIndex() {
+    var top = deck.scrollTop, best = 0, bestDist = Infinity;
+    slides.forEach(function (s, i) {
+      var d = Math.abs(s.offsetTop - top);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    return best;
+  }
+  function go(delta) {
+    var next = Math.min(slides.length - 1, Math.max(0, nearestIndex() + delta));
+    slides[next].scrollIntoView({ behavior: 'smooth' });
+  }
+  document.getElementById('prevBtn').addEventListener('click', function () { go(-1); });
+  document.getElementById('nextBtn').addEventListener('click', function () { go(1); });
+  window.addEventListener('keydown', function (e) {
+    if (['ArrowDown', 'ArrowRight', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); go(1); }
+    if (['ArrowUp', 'ArrowLeft', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); go(-1); }
+    if (e.key === 'Home') { e.preventDefault(); slides[0].scrollIntoView(); }
+    if (e.key === 'End') { e.preventDefault(); slides[slides.length - 1].scrollIntoView(); }
+  });
+
+  // ---- reveal-on-scroll (replays each time a slide becomes substantially visible) ----
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting && e.intersectionRatio > 0.4) e.target.classList.add('revealed');
       else if (!e.isIntersecting) e.target.classList.remove('revealed');
+      if (e.isIntersecting && e.intersectionRatio > 0.55) setActive(slides.indexOf(e.target));
     });
-  }, { root: deck, threshold: [0, 0.4, 1] });
+  }, { root: deck, threshold: [0, 0.4, 0.55, 1] });
   slides.forEach(function (s) { io.observe(s); });
-  // single-slide deck: it is already on screen at load, so reveal immediately
-  requestAnimationFrame(function () { slides.forEach(function (s) { s.classList.add('revealed'); }); });
 
-  // ---- annual P&L chart hover tooltips ----
-  var ptip = document.getElementById('pnltip');
-  var pwrap = ptip ? ptip.parentElement : null;
+  // ---- annual P&L chart hover tooltips (both slides; each chart owns its own .bartip) ----
   document.querySelectorAll('.yhit').forEach(function (g) {
-    g.addEventListener('mouseenter', function () { ptip.innerHTML = g.dataset.label + ' &mdash; ' + g.dataset.val; ptip.classList.add('show'); });
+    var wrap = g.closest('.chart-wrap');
+    var tip = wrap ? wrap.querySelector('.bartip') : null;
+    if (!tip) return;
+    g.addEventListener('mouseenter', function () { tip.innerHTML = g.dataset.label + ' &mdash; ' + g.dataset.val; tip.classList.add('show'); });
     g.addEventListener('mousemove', function (e) {
-      var r = pwrap.getBoundingClientRect();
-      ptip.style.left = Math.min(Math.max(e.clientX - r.left, 180), r.width - 180) + 'px';
-      ptip.style.top = (e.clientY - r.top) + 'px';
+      var r = wrap.getBoundingClientRect();
+      tip.style.left = Math.min(Math.max(e.clientX - r.left, 180), r.width - 180) + 'px';
+      tip.style.top = (e.clientY - r.top) + 'px';
     });
-    g.addEventListener('mouseleave', function () { ptip.classList.remove('show'); });
+    g.addEventListener('mouseleave', function () { tip.classList.remove('show'); });
   });
 })();
 </script>
