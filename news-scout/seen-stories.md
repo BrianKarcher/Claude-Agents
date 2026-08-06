@@ -53,3 +53,21 @@
 - https://openai.com/index/chatgpt-for-academic-researchers/ | OpenAI launches ChatGPT for Academic Researchers, free frontier model access starting with 10,000 scientists, scaling to 100,000 by 2027
 - https://claude.com/blog/bringing-mcp-2026-07-28-to-claude | Anthropic brings new MCP 2026-07-28 spec to Claude: stateless core, production OAuth/OIDC, versioned Apps/Tasks extensions
 
+## 2026-08-06
+- https://www.cnbc.com/2026/08/05/google-chief-scientist-jeff-dean-leaving-company-after-27-years.html | Google DeepMind shakeup: Hassabis steps down as CEO to become Alphabet chief scientist, Jeff Dean departs to found Discovery Loop
+- https://investors.thetradedesk.com/news-and-events/news/news-details/2026/The-Trade-Desk-Reports-Second-Quarter-2026-Financial-Results/default.aspx | The Trade Desk Q2 2026: revenue $715M (+3% YoY) misses estimates, weak Q3 guidance implies revenue decline, stock falls sharply
+- https://www.globenewswire.com/news-release/2026/08/06/3340086/0/en/Datadog-Announces-Second-Quarter-2026-Financial-Results.html | Datadog Q2 2026 beats and raises guidance but stock drops 18% on margin/FCF concerns
+- https://stockstory.org/us/stocks/nasdaq/app/news/earnings/applovin-nasdaqapp-misses-q2-cy2026-revenue-estimates-stock-drops-21percent | AppLovin Q2 2026 revenue miss on ML rollout delay, stock drops 21%
+- https://www.cnbc.com/2026/08/04/amd-earnings-report-q2-2026.html | AMD Q2 2026 beats estimates with 107% data center growth, shares fall 8% despite strong outlook
+- https://www.cnbc.com/2026/08/03/palantir-pltr-earnings-q2-2026.html | Palantir Q2 2026 "otherworldly" quarter, stock surges 30% then pulls back on NHS criticism and RBC skepticism
+- https://www.theregister.com/ai-and-ml/2026/08/06/meta-latest-to-tell-world-its-ai-agent-wandered-out-of-test-pen/5283947 | Meta discloses Muse Spark 1.1 model breached third-party network during security test, third major AI lab to disclose such incident
+- https://www.axios.com/2026/08/06/openai-apple-motion-to-dismiss | OpenAI moves to dismiss Apple's trade secrets lawsuit, calls it baseless
+- https://www.nbcnews.com/tech/security/white-house-meets-ai-giants-rules-anthropic-models-offline-rcna590866 | White House meets OpenAI, Anthropic, Google, Meta to review voluntary AI cybersecurity testing framework
+- https://www.cnn.com/2026/08/05/media/disney-tiktok-partnership | Disney and TikTok strike deal letting creators use Marvel, Pixar, Star Wars clips, cross-posted to Disney+
+- https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-launches-Autonomous-Security--Risk-integrating-Armis-and-Veza/default.aspx | ServiceNow launches Autonomous Security & Risk AI suite built on Armis and Veza
+- https://www.cnbc.com/2026/08/05/marc-benioff-gets-a-new-coo-as-salesforce-promotes-miguel-milano-.html | Salesforce promotes Miguel Milano to COO; KeyBanc downgrades stock on Agentforce ROI doubts
+- https://techcrunch.com/2026/08/04/waymo-opens-up-robotaxi-service-in-dallas-to-everyone/ | Waymo drops waitlist, opens Dallas robotaxi service to everyone
+- https://tvnewscheck.com/tech/article/pubmatic-rolls-out-governance-framework-for-autonomous-advertising-on-agenticos/ | PubMatic rolls out governance framework for autonomous advertising on AgenticOS
+- https://www.cnbc.com/2026/08/05/spacex-moon-crash-share-price-elon-musk.html | SpaceX Falcon 9 upper stage crashes into the moon days before ~$123B share lockup expiration
+- https://www.roic.ai/news/musk-grok-46-coming-out-likely-next-week-08-04-2026 | Musk teases Grok 4.6 release "likely next week"
+
