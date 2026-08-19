@@ -71,3 +71,18 @@
 - https://www.cnbc.com/2026/08/05/spacex-moon-crash-share-price-elon-musk.html | SpaceX Falcon 9 upper stage crashes into the moon days before ~$123B share lockup expiration
 - https://www.roic.ai/news/musk-grok-46-coming-out-likely-next-week-08-04-2026 | Musk teases Grok 4.6 release "likely next week"
 
+## 2026-08-19
+- https://www.apple.com/newsroom/2026/08/apple-announces-changes-for-apps-in-the-european-union/ | Apple overhauls App Store fees for the EU, scraps Core Technology Fee
+- https://www.npr.org/2026/08/18/nx-s1-5935458/meta-child-safety-social-media-addiction-trial-opening | Meta's landmark child-safety trial opens; whistleblower Arturo Béjar testifies Zuckerberg ignored warnings
+- https://techcrunch.com/2026/08/18/openai-institutes-new-safeguards-after-hugging-face-breach/ | OpenAI overhauls AI safety framework after its own model accidentally attacked Hugging Face
+- https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/ | Anthropic's revenue run rate surges past $65B, overtakes OpenAI ahead of expected fall IPO
+- https://www.investing.com/news/stock-market-news/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports-4866385 | NVIDIA H200 chips begin flowing into China as Beijing eases restrictions
+- https://www.csoonline.com/article/4211342/microsoft-finally-patches-critical-one-click-copilot-vulnerability-more-than-eight-months-after-learning-of-it-2.html | Microsoft patches critical Copilot "CoSnitch" flaw eight months after disclosure
+- https://techcrunch.com/2026/08/18/einride-strikes-deal-to-add-500-tesla-semis-to-its-fleet/ | Tesla lands its biggest Semi deal yet — Einride to deploy 500 electric trucks
+- https://www.cnbc.com/2026/08/18/openai-chatgpt-for-teens-safety.html | OpenAI launches ChatGPT for Teens with built-in safety protections
+- https://stockstory.org/us/stocks/nasdaq/adbe/news/why-up-down/why-adobe-adbe-stock-is-up-today-4 | Adobe jumps as BlackRock builds ~$8.4B stake, crosses 10% ownership
+- https://gvwire.com/2026/08/18/ice-bars-its-workers-from-wearing-metas-smart-glasses-on-the-job/ | ICE bans employees from wearing Meta's Ray-Ban AI glasses on duty
+- https://www.theregister.com/security/2026/08/18/apple-plugs-image-processing-hole-ripe-for-spyware-abuse/5289031 | Apple patches zero-click ImageIO flaw discovered by Meta's Red Team
+- https://www.benzinga.com/news/health-care/26/08/61308380/hims-hers-rejects-privacy-allegations-while-promising-expanded-patient-access | Hims & Hers CEO pushes back on FTC privacy lawsuit in CNBC interview
+- https://www.space.com/space-exploration/launches-spacecraft/spacex-100-launches-2026-starlink-group-17-50-launch | SpaceX notches its 100th launch of 2026
+
