@@ -1,0 +1,917 @@
+================================================================================
+NVIDIA CORPORATION (NVDA) — DISCOUNTED CASH FLOW ANALYSIS
+Date: August 27, 2026
+Sources: research extracts in this folder — NVDA-EARNINGS-FY2027-Q2.md,
+         NVDA-EARNINGS-FY2027-Q1.md, NVDA-10K-FY2026.md (annual/FY2026 data),
+         plus current-price web data pulled live for this personal analysis
+         (see Disclosures). No filing PDFs were read directly; figures are
+         drawn from company press releases and reputable secondary
+         financial-news sources, structured into the extracts above before
+         this DCF was built.
+================================================================================
+
+EXECUTIVE SUMMARY
+-----------------
+Intrinsic value (base case, 10.5% WACC / 3.0% TGR, 22x exit): ~$330.05/share
+Intrinsic value (bull case, 9.0% WACC / 3.5% TGR, 28x exit):  ~$843.44/share
+Intrinsic value (bear case, 13.0% WACC / 2.0% TGR, 14x exit):  ~$82.97/share
+Probability-weighted IV (30% bull / 50% base / 20% bear):     ~$434.65/share
+
+Current stock price (close, August 27, 2026): $227.98
+  (stock closed at $209.66 the prior session and surged the day of/after the
+  Aug 26 print, which beat on revenue, EPS, and guidance)
+Implied upside (base case): +44.8% (price is 0.69x base-case IV)
+Implied upside (bull case): +270% (price is 0.27x bull-case IV)
+Implied downside (bear case): -63.6% (price is 2.75x bear-case IV)
+Implied upside (probability-weighted): +90.7%
+
+CORRECTION (added after initial draft): the first draft of this model
+mistakenly carried Q2 FY2027 net income forward as $53.95B (implying $2.22
+diluted EPS) and assumed total debt was flat at ~$8.5B from FY2026 year-end.
+Both were wrong. A direct pull of NVIDIA's own press release confirms Q2
+FY2027 GAAP net income was $59,688M ($2.46 diluted EPS on 24,285M diluted
+shares), and total debt actually JUMPED from $8.5B (Jan 25, 2026) to $33.4B
+(Jul 26, 2026) — a real, material new bond issuance, not a data gap. Net
+cash used in this model is corrected to $23,220M (was $48,100M). The
+per-share effect of the net-cash correction is small (about -$1.02/share
+uniformly across every scenario and sensitivity cell, since net cash is a
+flat addition to the equity bridge) — all figures below reflect the
+corrected numbers. See Sections 2, 4, 8, and Disclosures for detail.
+
+UNLIKE the AMD model in this same folder — which failed to clear a purchase
+threshold under any scenario — this NVDA model's Base and Bull cases both sit
+meaningfully ABOVE the current price, and even the probability-weighted
+estimate implies the stock is not obviously overvalued today. That is a
+real finding, not a foregone conclusion: NVDA just printed $96.2B of
+quarterly revenue (+106% YoY), beat its own guide by nearly 6%, and guided
+Q3 revenue to $108B — a company of this size still growing at triple-digit
+rates is genuinely rare. BUT the reader should treat this conclusion with
+real skepticism for one structural reason: at $96.2B/quarter run-rate NVDA
+is already larger than most FORTUNE 50 companies' full-year revenue, and
+this model's 10-year explicit forecast requires it to compound for another
+decade before settling into single-digit terminal growth. The sensitivity
+tables in Section 6 show IV swinging from ~$266 to ~$451/share across a
+plausible WACC/TGR range at the SAME operating assumptions — a wider
+absolute dollar swing than this model's entire margin of safety. Treat the
+headline "undervalued" conclusion as directionally interesting, not as a
+green light.
+
+NOTE ON SCOPE: This is a personal, standalone analysis requested outside the
+tech-buffett agent's normal pipeline. No Initiation of Coverage or Deep Dive
+exists for NVDA in research/, and this file intentionally lives in
+personal/ rather than research/dcf/ — it does not qualify NVDA for purchase
+under the agent's rules (Action 4 requires a prior Deep Dive; Action 5
+requires a DCF from research/dcf/ within six months). If NVDA is ever to be
+considered for the actual portfolio, it needs to go through
+Init -> Deep Dive -> DCF like every other holding.
+
+
+================================================================================
+SECTION 1 — BUSINESS SNAPSHOT
+================================================================================
+
+NVIDIA designs GPUs and full-stack AI infrastructure (compute, networking,
+and the CUDA software ecosystem) and is the dominant supplier of AI training
+and inference silicon. Starting in fiscal Q1 2027 (quarter ended April 2026),
+NVIDIA collapsed its historical five-way reporting (Data Center, Gaming,
+Professional Visualization, Automotive, OEM & Other) into two segments:
+
+  - Data Center: GPUs, networking (NVLink, InfiniBand, Ethernet), and
+    systems for AI training/inference — now ~92-93% of total revenue
+  - Edge Computing: gaming (GeForce), professional visualization
+    (workstations/RTX), automotive, and robotics — the former "everything
+    else" bucket, now folded into one line
+
+Q2 FY2027 (quarter ended July 26, 2026) revenue mix:
+  - Data Center:      $89.0B   92.5%   (~+117% YoY per company disclosure)
+  - Edge Computing:     $7.2B    7.5%   +27% YoY, +13% QoQ
+  ------------------------------------------------------------------------
+  Total Q2 FY2027 revenue: $96.2B, +106% YoY, +18% QoQ — beat the company's
+  own $91.0B guide by ~5.7% and consensus (~$92.2B) by ~4.5%
+
+Customer mix disclosed on the call: hyperscale customers ~$49B of Data
+Center revenue (+13% QoQ, Blackwell-driven); "ACIE" (AI Compute
+Infrastructure & Enterprise — NeoClouds, industrial, sovereign AI,
+enterprise) ~$40B (+25% QoQ, +138% YoY), now roughly HALF of total revenue
+and growing at a reported ~100% annualized rate — a genuine and welcome
+diversification away from a handful of hyperscaler contracts, though still
+concentrated in AI-capex-cycle demand broadly.
+
+The thesis in three sentences:
+  1. NVIDIA is not just riding the AI infrastructure buildout, it effectively
+     IS the AI infrastructure buildout for training and most inference
+     workloads today — management framed the revenue opportunity per
+     gigawatt of deployed compute at ~$18B (Hopper) -> ~$25B (Blackwell) ->
+     ~$40B (Vera Rubin, next-gen), a monetization curve moving up and to
+     the right with each platform generation.
+  2. Growth is currently supply-constrained, not demand-constrained:
+     management stated supply supports roughly 70% growth while demand
+     exceeds that — the opposite problem of most businesses, and the reason
+     this quarter (again) beat a raised guide.
+  3. The business generates extraordinary operating leverage (Q2 FY2027
+     GAAP operating margin ~66%, gross margin 75.0%) even as it scales
+     capex-light relative to its hyperscaler customers — NVIDIA's own FY2026
+     capex was just $6.0B against $215.9B of revenue (2.8%), a structurally
+     different capital intensity than the companies buying its chips.
+
+Key near-term dynamics (as of the Aug 26, 2026 print):
+  - Q3 FY2027 guidance: revenue $108.0B ±2% (+12.3% QoQ at midpoint), GAAP
+    and non-GAAP gross margin 74.0% ±50bps — down from Q2's 75.0%.
+  - Management guided Q4 FY2027 gross margin to BOTTOM at 71-72%, citing
+    rising memory (DRAM/HBM) costs — a real, quantified near-term margin
+    headwind shared with every other AI-hardware buyer of memory.
+  - A press summary referenced management guiding to roughly 70% revenue
+    growth for FY2028 (next fiscal year) — consistent with the "supply
+    supports ~70% growth" framing above; this model treats 70% as closer to
+    a supply-ceiling/Bull-case anchor for FY2028E rather than the Base case
+    (see Section 4).
+  - China: NVIDIA's revenue share from China fell to a single-digit
+    percentage of total revenue due to export controls; recent H200 export
+    approvals were cited as a potential (not yet realized at scale) re-entry
+    path. This model does NOT assume a material China recovery in any
+    scenario except partially in the Bull case.
+  - Balance sheet: as of July 26, 2026, NVIDIA held $56.6B of cash + cash
+    equivalents + marketable DEBT securities, plus a separately disclosed
+    $42.8B of marketable EQUITY securities (strategic stakes in AI-ecosystem
+    companies, e.g. OpenAI/xAI/CoreWeave-type investments) — the latter is
+    treated as a memo item, NOT added to the DCF equity bridge (see
+    Section 4), a deliberately conservative choice. Total debt, however, is
+    NOT flat: it rose from $8.5B (Jan 25, 2026) to $33.4B (Jul 26, 2026), a
+    real new bond issuance during H1 FY2027 (likely financing the AI
+    infrastructure buildout and/or the strategic equity stakes above) —
+    net cash used in this model is $23.2B, not the ~$48.1B a flat-debt
+    assumption would imply.
+  - Cash-flow nuance worth flagging up front: Q2 FY2027 free cash flow was
+    $21.4B against $59.7B of GAAP net income — a much lower conversion
+    ratio (~36%) than NVIDIA's historical norm, driven by inventory build
+    and supplier prepayments to secure Blackwell/Rubin supply chain
+    capacity. This is a real, current dynamic (not a modeling assumption)
+    and is discussed further in Section 3 and Section 8.
+
+
+================================================================================
+SECTION 2 — HISTORICAL FINANCIALS
+================================================================================
+
+All figures in $M unless noted. Fiscal year ends late January.
+
+INCOME STATEMENT SUMMARY (GAAP)
+                              FY2026     FY2025     FY2024   Q2 FY27   Q1 FY27
+                              ------     ------     ------   -------   -------
+Revenue                      215,938    130,497     60,922    96,220    81,600
+  YoY growth                  +65.4%     +114.2%       --     +106%      +85%
+Gross profit                 153,463     97,858     44,301    72,165    61,118
+  Gross margin                 71.1%      75.0%      72.7%     75.0%     74.9%
+Operating income              130,387     81,453     32,972    63,734       --
+  Operating margin              60.4%      62.4%      54.1%     66.2%       --
+Net income                    120,067     72,880     29,760    59,688       --
+Diluted EPS                     $4.90      $2.94      $1.19     $2.46       --
+Diluted shares (approx.)       24,514     24,770     24,940     24,285  ~24,400
+
+Note: Q1 FY2027 operating income/net income were not separately re-verified
+line-by-line for this model — Q1 revenue ($81.6B) and gross margin (74.9%
+GAAP / 75.0% non-GAAP) were confirmed; Q1 op/net income figures are treated
+as a gap rather than guessed (see Disclosures and NVDA-EARNINGS-FY2027-Q1.md).
+
+Note on Q2 FY2027 EPS (RESOLVED — corrected from the initial draft): a
+direct pull of NVIDIA's press release confirms GAAP diluted EPS of $2.46
+on GAAP net income of $59,688M and 24,285M diluted shares ($59,688M /
+24,285M = $2.458, ties out). Non-GAAP diluted EPS was $2.22 — LOWER than
+GAAP, the reverse of NVIDIA's usual pattern, consistent with the
+hypothesis in the original draft: GAAP net income this quarter was lifted
+by mark-to-market gains on NVIDIA's $42.8B marketable equity securities
+book (included in GAAP net income under ASU 2016-01, excluded from
+non-GAAP). The initial draft's $53.95B net income / $2.22 EPS figures were
+incorrect and are corrected throughout this file.
+
+FREE CASH FLOW RECONCILIATION
+                                       FY2026      FY2025      Q2 FY2027
+Operating cash flow                   102,718      64,089        24,077
+Capital expenditures                   (6,042)     (3,236)       (2,677)
+Free cash flow                         96,575      60,724        21,400
+  FCF margin (FY)                       44.7%       46.5%           --
+Stock-based compensation                6,386       4,737         2,027
+  SBC % of revenue                       3.0%        3.6%          2.1%
+Depreciation & amortization                --          --         1,127
+
+Q2 FY2027 FCF of $21.4B (vs. $59.7B GAAP net income, a ~36% conversion
+rate) is a marked step-down from NVIDIA's historical 90%+ FCF/NI
+conversion — driven by inventory build and prepayments to lock up
+Blackwell/Rubin manufacturing and HBM memory supply. This is a genuine
+near-term data point, not a modeling assumption, and is treated as a risk
+factor (Section 8) rather than smoothed away.
+
+BALANCE SHEET HIGHLIGHTS
+                                    Jul 26, 2026     Jan 25, 2026    Jan 26, 2025
+Cash + cash equiv. + marketable
+  debt securities                       56,586          62,556          43,210
+Marketable EQUITY securities            42,783              --              --
+  (strategic AI-ecosystem stakes; memo item, excluded from EV bridge)
+Total debt (CONFIRMED — a real
+  increase, not held flat; see
+  note below)                           33,366           8,468           8,463
+Net cash (cash+debt securities
+  minus total debt)                     23,220          54,088          34,747
+Shareholders' equity (FY2026)               --         157,293          79,327
+
+Total debt more than tripled during H1 FY2027, from $8.5B at FY2026
+year-end to $33.4B as of July 26, 2026 — a real new bond issuance, not a
+figure held flat by assumption (the initial draft of this model incorrectly
+assumed debt was flat; corrected here after confirming via NVIDIA's own
+press release). This is a material capital-structure change worth watching
+independent of its modest effect on this DCF's per-share output (~-$1.02/
+share, since net cash is a small fraction of total enterprise value) — see
+Section 8, Risk #9.
+
+FY2026 SEGMENT DETAIL (legacy 5-segment reporting, last full year before the
+Q1 FY2027 restructure to Data Center / Edge Computing)
+  Compute & Networking:  $193,479M  (+67% YoY)   Op income $130,141M
+  Graphics:                $22,459M  (+57% YoY)   Op income   $9,156M
+  Within Compute & Networking: Data Center computing +59% YoY, Data Center
+  networking +142% YoY (NVLink/GB200/GB300 ramp, Ethernet/InfiniBand growth)
+  FY2026 operating income included a $4.5B Q1 charge for H20 excess
+  inventory and purchase obligations tied to China export controls.
+
+
+================================================================================
+SECTION 3 — STRATEGIC CONTEXT: SUPPLY-CONSTRAINED GROWTH, MEMORY COSTS, AND
+THE INVENTORY BUILD
+================================================================================
+
+WHY THIS QUARTER MATTERED: NVIDIA beat its own guide by ~5.7% and issued
+Q3 guidance (+12.3% QoQ at the midpoint) that itself implies continued
+acceleration, not deceleration — an unusual pattern for a company already
+generating triple-digit YoY growth off a $215.9B prior-year base. The stock
+traded up ~8.7% the session of/after the print (from $209.66 to $227.98),
+and Deutsche Bank raised its price target to $220 around the same window
+(i.e., a sell-side target that the stock had already exceeded by the time
+of this analysis) — a reminder that sell-side targets can lag a fast-moving
+tape in either direction and should not be treated as a valuation anchor.
+
+SUPPLY, NOT DEMAND, IS THE BINDING CONSTRAINT: management's own framing —
+"supply chain is broadly constrained... supply sufficient to support
+approximately 70% growth, while demand exceeds that level" — is the single
+most important qualitative data point in this model. It reframes the
+company's growth ceiling as a manufacturing/packaging/HBM capacity problem,
+not a customer-willingness-to-pay problem. That is a genuinely different
+risk profile than a typical hardware cyclical, but it also means near-term
+results are more sensitive to TSMC/memory supply chain execution than to
+NVIDIA's own execution.
+
+THE PER-GIGAWATT MONETIZATION LADDER: management quantified the revenue
+opportunity per gigawatt of deployed AI compute at ~$18B (Hopper) -> ~$25B
+(Blackwell) -> ~$40B (Vera Rubin). This is the clearest articulation yet of
+why NVIDIA's growth doesn't necessarily require a 1:1 relationship with
+"number of chips sold" — each successive platform generation extracts more
+revenue per unit of power/compute deployed, a structurally favorable dynamic
+IF the company can keep executing the platform cadence.
+
+MEMORY COST PRESSURE — A REAL AND QUANTIFIED HEADWIND: gross margin is
+guided to step down from 75.0% (Q2) to 74.0% (Q3) to a 71-72% bottom in
+Q4 FY2027, explicitly attributed to rising DRAM/HBM prices — an
+industry-wide dynamic affecting every AI hardware buyer, not an NVIDIA-
+specific execution issue, but a real near-term margin drag nonetheless.
+
+THE INVENTORY/PREPAYMENT BUILD: Q2 FCF of $21.4B against $59.7B of GAAP net
+income is a meaningfully lower conversion ratio (~36%) than NVIDIA's
+historical 90%+ norm. This reflects deliberate working-capital investment — building
+inventory and prepaying suppliers (TSMC packaging capacity, HBM memory) to
+secure the Blackwell/Rubin ramp. This is arguably a sign of discipline
+(securing scarce capacity ahead of demand) but is also a real near-term
+cash-flow and balance-sheet risk if demand were ever to disappoint after
+inventory has been built at scale — a dynamic worth tracking each quarter.
+
+CUSTOMER DIVERSIFICATION IS IMPROVING BUT CONCENTRATION REMAINS REAL: ACIE
+(enterprise/NeoCloud/sovereign AI, ex-hyperscaler) is now ~half of revenue
+and growing ~100% annualized — a genuine diversification signal versus the
+historical narrative of "NVIDIA is just a call option on 4 hyperscalers'
+capex budgets." That said, the hyperscaler cohort (Microsoft, Google,
+Amazon, Meta, Oracle, and now increasingly OpenAI/xAI-adjacent NeoClouds)
+still represents the majority of dollars, and any pause or digestion in
+that cohort's capex plans remains the single largest swing factor for
+NVIDIA's near-term results — see Section 8.
+
+COMPETITIVE CONTEXT: AMD's Instinct/Helios platform (see the AMD DCF in this
+same folder) is a credible, well-capitalized #2 with real hyperscaler
+commitments (Meta, OpenAI) but is explicitly targeting the low-hundreds-of-
+billions revenue range by the mid-2030s in even its own Bull case — an order
+of magnitude below what this model's NVDA Base case implies, consistent with
+NVIDIA's continued CUDA software-ecosystem moat and multi-generation
+execution lead. Hyperscaler custom silicon (Google TPU, Amazon Trainium,
+Microsoft Maia, reported OpenAI silicon ambitions) is a structural,
+longer-duration risk to NVIDIA's TAM capture rather than a near-term one —
+these programs reduce the ceiling on how much of each hyperscaler's capex
+NVIDIA can ultimately capture, even if they don't show up in quarterly
+results yet.
+
+
+================================================================================
+SECTION 4 — DCF ASSUMPTIONS
+================================================================================
+
+MODELING APPROACH
+- 10-year explicit forecast: FY2028E-FY2037E, off an FY2027E anchor built
+  bottom-up from two actual quarters + one guided quarter + one estimated
+  quarter (below)
+- Unlevered FCF (FCFF) approach: FCF = NOPAT + D&A - CapEx; SBC-adjusted FCF
+  further subtracts stock-based compensation as a real economic cost —
+  SBC-adjusted FCF is what is discounted and used for terminal value,
+  consistent with the AMD/CHTR/HIMS models in this folder
+- NOPAT = GAAP operating income x (1 - 15% effective tax rate), consistent
+  with the tax-rate convention used across this folder's other models
+- Net cash (not net debt) added to enterprise value: $23.2B, computed as
+  $56.6B of cash + marketable debt securities MINUS $33.4B of total debt
+  (CONFIRMED as of Jul 26, 2026 — debt more than tripled from $8.5B at
+  FY2026 year-end via a real new bond issuance; see Section 2). NVIDIA's
+  separately disclosed $42.8B of marketable EQUITY securities (strategic
+  stakes in AI-ecosystem companies) is DELIBERATELY EXCLUDED from this
+  bridge — a conservative choice, since those holdings are volatile,
+  illiquid in practice, and not core operating cash. Treat all per-share
+  values here as understating true asset backing by roughly $1.75-1.80/
+  share if those stakes are given even a 50% haircut and added back.
+- Each scenario (Bull/Base/Bear) uses its own WACC, terminal growth rate,
+  and exit multiple, not just different operating assumptions
+
+FY2027E REVENUE BUILD (bottom-up from actuals + guidance, not extrapolated)
+  Q1 2027 (actual):        $81,600M
+  Q2 2027 (actual):        $96,220M  (+106% YoY, beat $91.0B guide)
+  Q3 2027E (guided mid):  $108,000M  (+12.3% QoQ per guidance, ±2%)
+  Q4 2027E:                $120,000M  (assumes continued ~11% QoQ growth,
+                                        consistent with "supply supports
+                                        ~70% growth" framing, moderated for
+                                        the guided gross-margin bottom
+                                        suggesting some near-term friction)
+  FY2027E total:           $405,820M  (+87.9% YoY)
+
+This bottom-up FY2027E figure ($405.8B) is used as the common anchor for
+ALL three scenarios below — it is built almost entirely from actuals and
+company guidance, not from this model's own judgment, so it should NOT be
+treated as more conservative or aggressive under one scenario vs. another.
+
+REVENUE GROWTH ASSUMPTIONS (FY2028E-FY2037E, % YoY, off the FY2027E anchor)
+              FY28  FY29  FY30  FY31  FY32  FY33  FY34  FY35  FY36  FY37
+BULL           65%   45%   32%   24%   19%   16%   13%   11%   10%    9%
+BASE           45%   30%   22%   17%   14%   12%   10%    9%    8%    7%
+BEAR           20%   12%    8%    6%    6%    5%    5%    4%    4%    3%
+
+Rationale:
+  - Bull: growth approaches management's own ~70% supply-ceiling framing
+    for FY2028E and decelerates only gradually as Vera Rubin's higher
+    per-gigawatt monetization ($40B/GW vs Blackwell's $25B) offsets slowing
+    unit growth; ACIE/enterprise/sovereign AI demand continues compounding
+    near its recent ~100% annualized pace for several more years; China
+    re-opens meaningfully via H200-class approvals.
+  - Base: growth remains very fast but BELOW management's own supply-ceiling
+    framing (45% FY2028E vs. the ~70% figure referenced on the call) —
+    treating the 70% figure as closer to a ceiling than a floor, since it
+    describes supply capacity rather than a committed outcome, and because
+    a company already this large compounding at 45-65%/year for multiple
+    consecutive years would be a historically unprecedented outcome even
+    among mega-cap tech. Deceleration to high-single-digit growth by
+    FY2037E reflects the law of large numbers eventually dominating even a
+    dominant-moat business.
+  - Bear: AI capex digestion/pause among 1-2 major hyperscalers (a real risk
+    given customer concentration), meaningful share loss to AMD Instinct
+    and/or hyperscaler custom silicon (TPU/Trainium/Maia) over the decade,
+    China remains largely closed, and memory/supply-chain constraints
+    persist as a structural ceiling rather than a temporary one.
+
+OPERATING MARGIN ASSUMPTIONS (GAAP, % of revenue)
+              FY28  FY29  FY30  FY31  FY32  FY33  FY34  FY35  FY36  FY37
+BULL           62%   61%   60%   60%   59%   59%   58%   58%   57%   57%
+BASE           58%   56%   55%   54%   53%   52%   51%   51%   50%   50%
+BEAR           52%   48%   45%   43%   42%   41%   40%   40%   39%   39%
+
+FY2027E (anchor, blended full-year estimate): ~61% (Q2 actual was 66.2%;
+full-year estimate reflects Q1's lower margin, memory-cost-driven guided
+compression into Q3/Q4, and continued opex scaling)
+
+Rationale: even the Base case holds operating margin near 50-58% through
+FY2037E — well above any semiconductor peer's historical range — reflecting
+the CUDA software moat and NVIDIA's continued full-stack platform pricing
+power. The Bear case (~39-52%) still assumes a highly profitable business,
+just one facing real margin compression from memory costs, competitive
+share loss, and a lower-margin product mix over time (Bear assumes NVIDIA
+increasingly competes on hardware specs alone in an eroding-moat scenario).
+
+CAPEX (% of revenue) — NVIDIA is fundamentally fabless/capital-light versus
+its hyperscaler customers, but is assumed to gradually increase its own
+capital intensity (owned AI infrastructure/labs, potential foundry-adjacent
+investment) over the forecast:
+              FY28  FY29  FY30  FY31  FY32  FY33  FY34  FY35  FY36  FY37
+BULL          3.0%  3.2%  3.4%  3.5%  3.6%  3.7%  3.8%  3.9%  4.0%  4.0%
+BASE          3.2%  3.5%  3.7%  3.9%  4.0%  4.1%  4.2%  4.3%  4.4%  4.5%
+BEAR          3.5%  3.8%  4.0%  4.2%  4.3%  4.4%  4.5%  4.5%  4.6%  4.6%
+
+FY2026A capex was just $6.0B on $215.9B revenue (2.8%) — even the Bear
+case's rising capex ratio stays well below the capital intensity of NVIDIA's
+own hyperscaler customers, a structural advantage that persists across all
+three scenarios.
+
+D&A (% of revenue, rising gradually as the owned-asset base grows):
+              FY28  FY29  FY30  FY31  FY32  FY33  FY34  FY35  FY36  FY37
+BULL          2.0%  2.2%  2.4%  2.5%  2.6%  2.7%  2.8%  2.9%  3.0%  3.1%
+BASE          2.2%  2.4%  2.6%  2.8%  2.9%  3.0%  3.1%  3.2%  3.3%  3.5%
+BEAR          2.5%  2.8%  3.0%  3.2%  3.3%  3.4%  3.5%  3.6%  3.7%  3.8%
+
+SBC (% of revenue, declining as revenue scale outgrows equity grant growth):
+              FY28  FY29  FY30  FY31  FY32  FY33  FY34  FY35  FY36  FY37
+BULL          2.6%  2.4%  2.2%  2.0%  1.9%  1.8%  1.7%  1.7%  1.6%  1.6%
+BASE          2.8%  2.6%  2.4%  2.2%  2.1%  2.0%  2.0%  1.9%  1.9%  1.8%
+BEAR          3.2%  3.0%  2.8%  2.6%  2.5%  2.4%  2.3%  2.3%  2.2%  2.2%
+
+FY2026A SBC was 3.0% of revenue ($6.4B/$215.9B), consistent with the
+starting points above.
+
+TAX RATE: 15% flat across all scenarios, consistent with the convention
+used in the AMD/CHTR models in this folder. NVIDIA's actual effective rate
+has fluctuated; 15% is treated as a reasonable long-run blended estimate
+absent a detailed jurisdictional build.
+
+SHARES OUTSTANDING: 24,300M diluted, held flat across the forecast. NVIDIA
+returned ~$20B to shareholders via buybacks + dividends in Q1 FY2027 alone
+and has been shrinking diluted share count modestly (24,940M FY2024 ->
+24,514M FY2026 -> ~24,300M estimated Q2 FY2027) — flat-shares assumes
+continued buybacks roughly offset SBC dilution. Note this is NOT guaranteed:
+Q2 FY2027 FCF ($21.3B) was well below the ~$20B/quarter buyback pace when
+netted against other cash needs (inventory build, capex) — if FCF
+conversion does not recover toward historical norms, the pace of buybacks
+(and thus this flat-share assumption) could prove optimistic.
+
+TERMINAL VALUE: perpetuity growth and exit-multiple methods, averaged.
+  BULL: TGR 3.5%, exit 28x SBC-adjusted FCF
+  BASE: TGR 3.0%, exit 22x SBC-adjusted FCF
+  BEAR: TGR 2.0%, exit 14x SBC-adjusted FCF
+
+DISCOUNT RATE DERIVATION
+This portfolio's other models anchor a mature, diversified mega-cap software
+compounder (MSFT) at a 10% Base WACC and a smaller, higher-risk semiconductor
+challenger (AMD) at 11.5% Base. NVIDIA sits between these two reference
+points but closer to MSFT than to AMD: it has a far larger, better-proven,
+multi-generation execution track record than AMD, a dominant (not
+challenger) market position, and a fortress balance sheet — but it also
+carries real risks MSFT does not share to the same degree: customer
+concentration in a relatively small number of hyperscaler/NeoCloud buyers,
+a demonstrated willingness of the stock to swing violently on single data
+points, direct exposure to a memory-cost cycle, and China/export-control
+policy risk. I use:
+  BASE:  10.5% (between MSFT's 10% and AMD's 11.5% — reflects NVIDIA's
+         scale/moat advantage over AMD, offset by concentration and
+         AI-capex-cycle risk that a diversified software compounder like
+         MSFT doesn't carry)
+  BULL:  9.0% (a world where the AI buildout proves structurally durable
+         and NVIDIA's moat + diversifying ACIE customer base de-risk the
+         business toward a MSFT-like risk profile)
+  BEAR:  13.0% (a world where AI capex proves more cyclical than durable,
+         competitive share erodes, and the market re-rates the entire
+         AI-hardware complex the way it currently re-rates any semiconductor
+         cyclical facing a demand air-pocket)
+
+PROBABILITY WEIGHTS: Bull 30% / Base 50% / Bear 20% — weighted more
+optimistically than the AMD model's 25/45/30 split, reflecting NVIDIA's
+demonstrated multi-year track record of beating its own guidance (this
+quarter again beat by ~5.7%) versus AMD's still-unproven multi-generation
+ramp. This weighting is a judgment call, not a statistical estimate — a
+reader more concerned about AI-capex cyclicality or customer concentration
+could reasonably shift 10-15 points from Base/Bull into Bear.
+
+
+================================================================================
+SECTION 5 — DCF MODEL (BASE CASE)
+================================================================================
+
+All figures in $M. WACC 10.5%, TGR 3.0%, exit multiple 22x SBC-adj FCF.
+
+               Rev        YoY   OpInc  OpMgn    Tax     NOPAT   Capex    D&A     FCF     SBC   SBC-Adj
+                                                                                                    FCF
+FY27E       405,820    88%    247,550  61.0%  37,133  210,417  12,175   8,116  206,358  12,175  194,183
+FY28E       588,439    45%    341,295  58.0%  51,194  290,101  18,830  12,946  284,217  16,476  267,741
+FY29E       764,971    30%    428,384  56.0%  64,258  364,127  26,774  18,359  355,712  19,889  335,823
+FY30E       933,465    22%    513,406  55.0%  77,011  436,345  34,538  24,270  426,077  22,403  403,674
+FY31E     1,092,154    17%    589,763  54.0%  88,464  501,298  42,594  30,580  489,284  24,027  465,257
+FY32E     1,245,056    14%    659,880  53.0%  98,982  560,898  49,802  36,107  547,203  26,146  521,057
+FY33E     1,394,463    12%    725,121  52.0% 108,768  616,353  57,173  41,834  601,014  27,889  573,125
+FY34E     1,533,909    10%    782,294  51.0% 117,344  664,950  64,424  47,551  648,077  30,678  617,399
+FY35E     1,671,961     9%    852,700  51.0% 127,905  724,796  71,894  53,503  706,405  31,767  674,638
+FY36E     1,805,718     8%    902,859  50.0% 135,429  767,430  79,452  59,589  747,567  34,309  713,258
+FY37E     1,932,118     7%    966,059  50.0% 144,909  821,150  86,945  67,624  801,829  34,778  767,051
+
+PRESENT VALUE OF EXPLICIT SBC-ADJUSTED FCFs (10.5% WACC)
+
+Year      SBC-Adj FCF   Discount Factor   PV
+FY28E        267,741          0.9050    242,300
+FY29E        335,823          0.8190    275,035
+FY30E        403,674          0.7412    299,196
+FY31E        465,257          0.6707    312,066
+FY32E        521,057          0.6070    316,287
+FY33E        573,125          0.5493    314,829
+FY34E        617,399          0.4971    306,903
+FY35E        674,638          0.4499    303,486
+FY36E        713,258          0.4071    290,374
+FY37E        767,051          0.3684    282,597
+                                       ---------
+Sum of PV of explicit FCFs:           2,943,073
+
+TERMINAL VALUE — PERPETUITY GROWTH (g = 3.0%)
+Terminal year (FY37E) SBC-adj FCF:                    $767,051M
+TV = 767,051 x 1.03 / (10.5% - 3.0%):               $10,534,167M
+PV of TV (x 0.3684):                                 $3,880,997M
+
+TERMINAL VALUE — EXIT MULTIPLE (22x SBC-adj FCF)
+TV = 767,051 x 22:                                  $16,875,122M
+PV of TV (x 0.3684):                                 $6,217,173M
+
+Average PV of terminal value:                         $5,049,085M
+(= average of the two TV methods, each discounted, then averaged)
+
+EQUITY BRIDGE
+Sum of PV of explicit FCFs:                            $2,943,073M
++ PV of terminal value (avg):                          $5,049,085M
+= Enterprise value:                                     $7,992,158M
++ Net cash (Jul 2026, confirmed):                          $23,220M
+= Equity value:                                          $8,015,378M
+/ Diluted shares:                                             24,285M
+= Intrinsic value per share:                                  $330.05
+
+For scale: this implied equity value (~$8.02T) is roughly 44.8% above
+NVIDIA's current market capitalization (~$5.54T at $227.98/share x 24.285B
+shares) — a genuinely large gap that should be read alongside the
+sensitivity tables below before drawing conclusions.
+
+
+================================================================================
+SECTION 6 — SENSITIVITY ANALYSIS
+================================================================================
+
+TABLE A: BASE-CASE IV PER SHARE — WACC x TERMINAL GROWTH RATE
+(22x exit multiple held constant)
+
+WACC \ TGR    2.0%      2.5%      3.0%      3.5%      4.0%
+8.5%        $398.60   $408.32   $419.89   $433.58   $450.45
+9.5%        $355.36   $362.00   $369.67   $378.62   $389.28
+10.5%       $319.96   $324.70   $330.05   $336.17   $343.25   <- base case
+11.5%       $290.33   $293.81   $297.67   $302.03   $306.98
+12.5%       $264.98   $267.58   $270.50   $273.76   $277.24
+
+Even at the most conservative corner shown (12.5% WACC / 2.0% TGR), base-
+case operating assumptions produce $264.98/share — still above the current
+$227.98 price. The current price sits below EVERY cell in this grid,
+which is the main reason this model's headline conclusion differs so
+sharply from the AMD model's. That is either a genuine mispricing signal
+or a sign that this model's operating assumptions (not just the discount
+rate) are too optimistic — see the Investment Assessment in Section 9 for
+how to weigh that.
+
+TABLE B: BASE-CASE IV PER SHARE — EXIT MULTIPLE (10.5% WACC / 3.0% TGR)
+  14x    $283.50
+  16x    $295.16
+  18x    $306.79
+  20x    $318.41
+  22x    $330.05   <- base case
+  24x    $341.69
+  26x    $353.32
+  28x    $364.97
+
+TABLE C: SCENARIO SUMMARY
+
+Scenario   WACC    TGR    Exit   FY37E Rev     FY37E SBC-FCF   IV/Share
+BULL       9.0%    3.5%   28x    $3,299,184M     $1,515,976M    $843.44
+BASE       10.5%   3.0%   22x    $1,932,118M       $767,051M    $330.05
+BEAR       13.0%   2.0%   14x      $812,925M       $245,097M     $82.97
+
+Probability-weighted (30/50/20):                                $434.65
+Simple average of the three:                                    $418.82
+
+
+================================================================================
+SECTION 7 — SCENARIO ANALYSIS
+================================================================================
+
+BULL CASE (~$843/share; 9.0% WACC, 3.5% TGR, 28x exit)
+  - FY2028E growth (65%) approaches management's own ~70% supply-ceiling
+    framing; supply chain constraints ease meaningfully via TSMC/HBM
+    capacity expansion
+  - Vera Rubin's higher per-gigawatt monetization (~$40B/GW vs. Blackwell's
+    ~$25B) sustains high growth even as unit/gigawatt deployment growth
+    naturally slows
+  - ACIE/enterprise/sovereign AI demand continues compounding near its
+    recent ~100% annualized pace for several more years, further
+    diversifying the customer base away from hyperscaler capex cycles
+  - Operating margin holds in the high-50s to low-60s throughout the
+    forecast as the CUDA software moat continues commanding full-stack
+    platform pricing power
+  - China re-opens meaningfully via H200-class export approvals, restoring
+    a currently near-shut-off revenue pool
+  - No material share loss to AMD Instinct or hyperscaler custom silicon
+    over the forecast window
+
+BASE CASE (~$330/share; 10.5% WACC, 3.0% TGR, 22x exit)
+  - Growth remains very fast (45% FY2028E) but meaningfully below
+    management's own supply-ceiling framing, reflecting the view that
+    sustaining near-70% growth for multiple consecutive years at this
+    revenue base would be a historically unprecedented outcome
+  - Memory-cost pressure (already guided into Q3-Q4 FY2027) persists as a
+    multi-year margin headwind, holding operating margin in the low-to-mid
+    50s rather than the 60%+ level seen in early FY2027 quarters
+  - ACIE diversification continues but at a decelerating pace as it scales
+    off a larger base
+  - China remains largely closed; no material recovery assumed
+  - Some competitive share pressure from AMD and hyperscaler custom silicon
+    caps upside without derailing growth
+
+BEAR CASE (~$83/share; 13.0% WACC, 2.0% TGR, 14x exit)
+  - One or more major hyperscalers pause or materially slow AI capex
+    spending — a real risk given that hyperscaler capex still represents
+    the majority of NVIDIA's revenue even after ACIE diversification
+  - Hyperscaler custom silicon (Google TPU, Amazon Trainium, Microsoft
+    Maia) and/or AMD's Instinct/Helios platform capture meaningfully more
+    share than the Base case assumes, particularly in inference workloads
+    where NVIDIA's moat is thinner than in training
+  - Memory/HBM cost inflation proves structural rather than transitory,
+    permanently compressing gross margin below the guided 71-72% floor
+  - China export controls remain in place indefinitely with no H200-class
+    recovery
+  - The current inventory/prepayment build (Q2 FCF conversion well below
+    historical norms) proves to have been over-earnest positioning ahead of
+    demand that doesn't fully materialize, creating a working-capital
+    unwind and margin pressure in a downturn
+  - The AI infrastructure buildout proves more cyclical than structural —
+    a multi-year digestion period follows the current capex surge, similar
+    to prior computing infrastructure cycles (telecom fiber buildout,
+    cloud capex cycles)
+
+
+================================================================================
+SECTION 8 — KEY RISKS
+================================================================================
+
+1. TERMINAL VALUE / LAW-OF-LARGE-NUMBERS RISK (VERY HIGH — the dominant
+   risk in this specific model)
+   NVIDIA is already generating a $384B annualized revenue run-rate (Q2 FY27
+   x 4). This model's Base case has that figure compounding to $1.93
+   TRILLION by FY2037E — a ~4.75x increase over a decade, on top of the
+   ~3.5x increase NVIDIA has already delivered from FY2024 to the current
+   run-rate. Small changes to the out-year growth/margin assumptions swing
+   intrinsic value by tens to hundreds of dollars per share (see Table A) —
+   more than the entire margin of safety this model calculates. This is
+   fundamentally a bet on whether a company already this large can keep
+   compounding at rates historically reserved for much smaller companies.
+
+2. CUSTOMER CONCENTRATION AND HYPERSCALER CAPEX CYCLICALITY (HIGH)
+   Even with ACIE now ~half of revenue, the majority of NVIDIA's dollars
+   still flow from a relatively small number of hyperscaler/NeoCloud
+   buyers whose own capex plans are set by their boards, not by NVIDIA.
+   Any coordinated pause or "AI capex digestion" narrative taking hold
+   among 2-3 of these buyers would hit NVIDIA's growth rate immediately
+   and disproportionately, given how much of current growth is
+   Data-Center-concentrated (92.5% of Q2 revenue).
+
+3. MEMORY COST / GROSS MARGIN COMPRESSION (HIGH, and already realized)
+   This is not a hypothetical risk — management has already guided gross
+   margin down from 75.0% (Q2) to a 71-72% floor (Q4 FY2027) explicitly
+   citing DRAM/HBM cost inflation. The Base case assumes this pressure
+   persists for years rather than proving transitory; if memory costs
+   normalize faster than assumed, this model's margins (and thus IV) would
+   prove conservative; if they worsen, the Base case could still be
+   optimistic.
+
+4. INVENTORY / WORKING-CAPITAL BUILD (MEDIUM-HIGH, near-term)
+   Q2 FY2027 FCF conversion (~40% of net income) was well below NVIDIA's
+   historical norm, driven by inventory and supplier prepayments securing
+   Blackwell/Rubin capacity. This is a real, current balance-sheet dynamic:
+   if demand growth decelerates faster than this inventory build assumed,
+   NVIDIA could face write-downs or a working-capital unwind — echoing
+   (at a much larger scale) the $4.5B H20 inventory charge NVIDIA already
+   took in Q1 FY2026 when China demand was cut off by export controls.
+
+5. COMPETITIVE SHARE LOSS — AMD AND CUSTOM SILICON (MEDIUM-HIGH,
+   longer-duration)
+   AMD's Instinct/Helios platform is a credible, well-capitalized #2 with
+   real multi-generation hyperscaler commitments (see the AMD DCF in this
+   folder). Google TPU, Amazon Trainium, and Microsoft Maia are all
+   maturing custom-silicon programs at NVIDIA's largest customers — meaning
+   NVIDIA's most important customers are simultaneously becoming its
+   longer-term competitors in silicon, a structural risk to how much of the
+   growing AI compute TAM NVIDIA can ultimately capture, even if it doesn't
+   show up in near-term results.
+
+6. VALUATION / STOCK VOLATILITY (MEDIUM-HIGH, independent of the
+   fundamental thesis)
+   At ~$5.5T market cap, NVIDIA is among the largest companies in market
+   history. Stocks of this size and growth profile have historically
+   proven capable of both sustained re-rating higher (this model's Bull/
+   Base cases) AND sharp multiple compression on any disappointment,
+   given how much of the current price already embeds continued
+   triple-digit-adjacent growth. The magnitude of the one-day move on this
+   quarter's print (+8.7%) illustrates how much the market's expectations
+   can swing on a single data point.
+
+7. CHINA / EXPORT CONTROLS (MEDIUM)
+   Revenue share from China has fallen to a single-digit percentage of
+   total revenue. Recent H200-class export approvals are a potential (not
+   yet realized at scale) re-opening path this model treats conservatively
+   (largely excluded from Base, partially included in Bull) — but policy
+   risk cuts both ways and could tighten further rather than ease.
+
+8. GAAP/NON-GAAP AND DISCLOSURE TRANSPARENCY (LOW-MEDIUM, a modeling
+   caveat more than a business risk)
+   This model relies on press-release-level and secondary-source figures
+   rather than a line-by-line 10-Q read (see Disclosures). Q1 FY2027
+   operating/net income remains unverified. The Q2 FY2027 EPS
+   reconciliation was resolved on a second pass ($2.46 GAAP / $2.22
+   non-GAAP, confirmed directly from NVIDIA's press release), but that a
+   first pass carried the wrong net income figure ($53.95B instead of the
+   correct $59.7B) for a company this closely followed is itself a reminder
+   to treat every secondary-sourced figure in this model with appropriate
+   skepticism until corroborated by a primary source.
+
+9. NEW DEBT ISSUANCE (LOW-MEDIUM as a per-share DCF effect, but a genuine
+   capital-structure signal worth tracking)
+   Total debt more than tripled during H1 FY2027, from $8.5B to $33.4B —
+   NVIDIA's first material new borrowing in years. The direct effect on
+   this DCF's per-share output is small (~$1/share, since net cash is a
+   small fraction of enterprise value at this scale), but the SHIFT itself
+   is a data point worth watching: it could reflect financing for owned
+   AI infrastructure, the growing book of strategic equity stakes
+   (OpenAI/xAI/CoreWeave-type investments), or accelerated shareholder
+   returns funded partly by debt rather than pure FCF. None of these were
+   independently confirmed as the specific use of proceeds for this model;
+   flagged as an open question rather than assumed.
+
+
+================================================================================
+SECTION 9 — INVESTMENT ASSESSMENT
+================================================================================
+
+POSITIVES (WHY THE BASE/BULL CASES COULD BE RIGHT)
+  + This is not a "story stock" — the numbers are already extraordinary and
+    getting more extraordinary: Q2 FY2027 revenue +106% YoY off a base that
+    was already the largest in the semiconductor industry, beating its own
+    guide by ~5.7% for at least the second consecutive quarter of this
+    magnitude
+  + Growth is supply-constrained, not demand-constrained — a genuinely
+    unusual and favorable position, meaning near-term results are more a
+    function of TSMC/HBM capacity ramping than of NVIDIA convincing anyone
+    to buy more
+  + The CUDA software moat, full-stack platform strategy, and per-gigawatt
+    monetization ladder ($18B->$25B->$40B across Hopper->Blackwell->Rubin)
+    give NVIDIA real, demonstrated pricing power that competitors have not
+    matched despite years of trying
+  + ACIE/enterprise/sovereign AI diversification (now ~half of revenue,
+    growing ~100% annualized) meaningfully reduces the "4 hyperscalers"
+    concentration risk that dominated the bear case a year or two ago
+  + Still net-cash-positive despite a new $33.4B debt load: $23.2B net
+    cash in this model's conservative treatment, PLUS a separately-excluded
+    $42.8B of strategic equity stakes not even counted here — real
+    optionality on top of the core DCF, though the balance sheet is
+    meaningfully more levered than a quarter ago (see Risk #9)
+  + Even the Bull case's aggressive assumptions (65% FY2028E growth) sit
+    at or below management's own stated ~70% supply-ceiling framing — this
+    is not a scenario built on assumptions more optimistic than the
+    company's own guidance
+
+NEGATIVES (WHY THIS SHOULD NOT BE TAKEN AT FACE VALUE)
+  - The Base case requires NVIDIA's revenue to compound at a declining-but-
+    still-very-high rate for a full decade, off a base that is ALREADY
+    larger than most economies' individual industries — this is the
+    single largest source of model risk, and the sensitivity tables show
+    the "undervalued" conclusion is not robust to modest changes in
+    long-run assumptions
+  - Q2 FY2027's FCF conversion (~40% of net income) was a real, current
+    warning sign about working-capital intensity that this model's
+    forward capex/D&A assumptions may not fully capture if the pattern
+    persists
+  - Every dollar of this model's upside assumes continued AI infrastructure
+    capex growth from a customer base that is still meaningfully
+    concentrated, even after diversification progress
+  - This model deliberately excludes $42.8B of marketable equity securities
+    from the equity bridge for conservatism, but their existence also
+    signals NVIDIA is increasingly playing a financial/strategic-investor
+    role in its own customer ecosystem (stakes in AI-ecosystem companies)
+    — a dynamic that adds complexity to reading the "real" underlying
+    hardware business economics
+  - Data gaps remain (Q1 FY2027 operating income — see Disclosures) and the
+    fact that this model's own first draft initially misstated Q2 FY2027
+    net income and total debt (both since corrected against a primary
+    press release) is itself evidence that parts of this analysis rest on
+    secondary-source synthesis that warrants independent verification
+    before acting on it
+
+BOTTOM LINE
+This model's headline conclusion — that NVDA at $227.98 is not obviously
+overvalued, and may even carry a real margin of safety versus a
+semi-conservative Base case — is a genuinely different outcome than the
+AMD model in this same folder, and it should be read with commensurate
+skepticism precisely because it is the more comfortable, less contrarian
+conclusion to reach. The single biggest reason to distrust it is scale:
+this is a 10-year forecast for what is very likely about to be the world's
+most valuable company, built on the assumption that a business already
+generating a $384B annualized run-rate can nearly quintuple over a decade.
+The Bear case ($84/share) is a genuine reminder of what happens if AI
+capex proves more cyclical than structural, or if competitive share erodes
+faster than assumed — and it implies more than 60% downside from here.
+The honest takeaway is not "NVDA is cheap," it is "NVDA's price today is
+broadly consistent with continued (not accelerating) execution against
+its own recently-issued guidance, priced by a market that has already seen
+this company beat its guide in most recent quarters" — which is a very
+different, much more fragile claim than a traditional margin-of-safety
+value case.
+
+Conviction level on base case: MODERATE (business quality and near-term
+momentum are both genuinely exceptional) / LOW-MODERATE (as a valuation
+call — the terminal-value sensitivity is simply too large relative to the
+apparent margin of safety to treat this as a high-conviction "cheap" call)
+Would need to see: at least 2-3 more quarters confirming FCF conversion
+recovers toward historical norms (i.e., the inventory build was tactical,
+not a sign of slowing demand), and continued ACIE growth at scale (proof
+the hyperscaler-concentration risk is genuinely structurally declining) —
+before treating the Base case's growth assumptions as more than
+plausible-but-unproven.
+
+
+================================================================================
+SECTION 10 — SUMMARY VALUATION TABLE
+================================================================================
+
+METHOD                                    VALUE/SHARE    NOTES
+----------------------------------------  -----------    -----
+Bull (9.0% WACC, 3.5% TGR, 28x exit)         $843.44     Approaches mgmt's
+                                                           own ~70% growth
+                                                           framing
+Base (10.5% WACC, 3.0% TGR, 22x exit)        $330.05     Central estimate
+Bear (13.0% WACC, 2.0% TGR, 14x exit)         $82.97     Capex digestion /
+                                                           competitive erosion
+Probability-weighted (30/50/20)              $434.65
+Simple average of three scenarios            $418.82
+Market price (Aug 27, 2026 close)            $227.98     Below every cell in
+                                                           the Base-case
+                                                           WACC x TGR grid
+
+Central estimate (base case):                $330.05/share
+Current price:                               $227.98/share
+Margin of safety at current price:           +30.9% (i.e., price sits
+                                              30.9% below base-case IV —
+                                              see Section 9 for why this
+                                              should be read cautiously)
+
+
+================================================================================
+DISCLOSURES & LIMITATIONS
+================================================================================
+
+- This analysis was built from structured extracts in this folder
+  (NVDA-EARNINGS-FY2027-Q2.md, NVDA-EARNINGS-FY2027-Q1.md,
+  NVDA-10K-FY2026.md) created for this personal request from live web
+  searches — NOT from user-supplied filings, and NOT under the
+  tech-buffett agent's "never fetch financial filings from the internet"
+  rule (that rule governs the portfolio agent's own actions only; this is
+  a personal, standalone request explicitly authorized to use
+  WebSearch/WebFetch). Primary sources referenced include NVIDIA's own
+  press releases (nvidianews.nvidia.com, investor.nvidia.com), SEC EDGAR
+  filing index pages, and secondary financial-news aggregation (CNBC,
+  GlobeNewswire syndication of the Q2 FY2027 release, stockanalysis.com for
+  multi-year historical financials). A direct SEC.gov 8-K fetch returned an
+  HTTP 403 and could not be read directly; figures from that filing were
+  instead corroborated via the GlobeNewswire syndicated copy and secondary
+  coverage. See the extract files for full source URLs per document.
+- CORRECTIONS MADE AFTER THE INITIAL DRAFT: the first pass of this model
+  carried Q2 FY2027 net income as $53.95B (implying $2.22 diluted EPS) and
+  assumed total debt was flat at ~$8.5B. A direct fetch of NVIDIA's own
+  press release (nvidianews.nvidia.com/news/nvidia-announces-financial-
+  results-for-second-quarter-fiscal-2027) confirmed the correct figures:
+  GAAP net income $59,688M, GAAP diluted EPS $2.46 (non-GAAP $2.22 — lower
+  than GAAP, the reverse of NVIDIA's usual pattern, attributable to
+  mark-to-market gains on the $42.8B equity securities book flowing through
+  GAAP but not non-GAAP income), operating cash flow $24,077M, capex
+  $2,677M, D&A $1,127M, SBC $2,027M, and total debt of $33,366M (up from
+  $8.5B at FY2026 year-end — a real new bond issuance, not a flat-debt
+  assumption). All figures throughout this file have been corrected
+  accordingly; the net effect on per-share intrinsic value is small
+  (roughly -$1.02/share uniformly, since net cash is a small fraction of
+  total enterprise value at NVIDIA's scale) but the underlying facts (a
+  materially more levered balance sheet, and net income ~11% higher than
+  first assumed) are worth knowing independent of the DCF impact.
+- REMAINING KNOWN DATA GAP: Q1 FY2027 GAAP operating income and net income
+  were not independently verified (only revenue and gross margin were
+  confirmed with confidence) — see NVDA-EARNINGS-FY2027-Q1.md.
+- FY2027E revenue is a bottom-up estimate built from two actual quarters,
+  one guided quarter, and one estimated quarter (Q4 FY2027) — it is NOT a
+  consensus estimate or a number disclosed by the company for the full
+  year.
+- The $42.8B of marketable equity securities (strategic AI-ecosystem
+  stakes) is deliberately excluded from the equity bridge for conservatism.
+  Including even half of it at a 50% haircut would add roughly $0.88/share
+  to every scenario's IV.
+- WACC selection is a judgment call under genuine uncertainty about how to
+  price a company of NVIDIA's scale and growth rate; a reader more
+  concerned about AI-capex cyclicality could reasonably add 100-200bps to
+  every WACC used here, which (per Table A) would move Base-case IV down
+  into the $265-300/share range — still generally at or above the current
+  price, but with a much thinner margin of safety.
+- This is a personal, standalone research file, prepared outside the
+  tech-buffett agent's Init -> Deep Dive -> DCF pipeline. It does NOT
+  qualify NVDA for purchase in the official portfolio under the rules in
+  CLAUDE.md and .claude/agents/tech-buffett.md.
+- Prepared for personal investment research purposes only. Does not
+  constitute investment advice.
+================================================================================
