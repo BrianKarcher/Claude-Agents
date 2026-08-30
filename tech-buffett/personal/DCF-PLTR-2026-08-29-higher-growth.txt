@@ -1,0 +1,457 @@
+================================================================================
+PALANTIR TECHNOLOGIES INC. (PLTR) — DISCOUNTED CASH FLOW ANALYSIS
+Higher-growth scenario set
+Date: August 29, 2026
+Sources: research extracts in this folder — PLTR-EARNINGS-2026-Q2.md,
+         PLTR-EARNINGS-2026-Q1.md, PLTR-10K-FY2025.md — built from company
+         press releases, the Q2 2026 Form 10-Q (third-party transcription),
+         and reputable secondary financial-news sources. Current-price data
+         pulled live (see Disclosures).
+================================================================================
+
+This model takes the view that Palantir's revenue growth decelerates
+slowly and shallowly from its 2026 peak — i.e., that durable hyper-growth
+is the central expectation, not the optimistic one. The three scenarios
+below differ ONLY in the revenue-growth path. Operating margins, stock-based
+compensation, the discount rate, the terminal assumptions, tax, and share
+count are held constant across all three, so the scenario spread is a clean
+read on revenue-growth risk alone.
+
+
+EXECUTIVE SUMMARY
+-----------------
+Intrinsic value (base case):   ~$106.88/share   (revenue -> ~$56B by FY2035E, ~24% CAGR)
+Intrinsic value (bull case):   ~$142.52/share   (revenue -> ~$78B by FY2035E, ~28% CAGR)
+Intrinsic value (bear case):    ~$73.85/share   (revenue -> ~$37B by FY2035E, ~18% CAGR)
+Probability-weighted (25% bull / 50% base / 25% bear):  ~$107.53/share
+Simple average of the three:                            ~$107.75/share
+
+Current stock price (close, August 28, 2026):            $185.42
+  (~11% below the 52-week high of ~$207.52; 52-week low ~$106.37)
+
+Implied downside (base case):        -42.4%  (price is 1.74x base-case IV)
+Implied downside (bull case):        -23.0%  (price is 1.30x bull-case IV)
+Implied downside (bear case):        -60.2%
+Implied downside (probability-weighted): -42.0%
+
+FINDING: Even with a deliberately generous revenue path as the base case —
+a ~24% nine-year revenue CAGR, revenue reaching ~$56B by FY2035E — Palantir
+at ~$185 trades ~42% above intrinsic value. The bull case (revenue ~$78B by
+FY2035E) still lands ~23% below the current price. A cash-flow valuation
+does not support the current quote unless revenue growth exceeds even this
+model's bull path AND the market keeps paying a premium multiple on the
+result.
+
+SCOPE: personal, standalone analysis, prepared outside the tech-buffett
+agent's Init -> Deep Dive -> DCF pipeline. Lives in personal/, not
+research/dcf/. Does NOT qualify PLTR for portfolio purchase. Not investment
+advice.
+
+
+================================================================================
+SECTION 1 — BUSINESS SNAPSHOT
+================================================================================
+
+Palantir builds software platforms — Gotham (government/defense), Foundry
+(commercial), and the Ontology/AIP layer that wires large language models
+into an organization's live operational data, actions, and workflows
+("operational AI"). Two reporting segments: Government and Commercial, each
+split U.S. vs. international. The U.S. business is the growth engine.
+
+Q2 2026 (quarter ended June 30, 2026):
+  - Total revenue:      $1,935M   +93% YoY, +19% QoQ
+  - U.S. commercial:      $764M   +149% YoY
+  - U.S. government:      $809M   +90% YoY
+  - International:        $362M   (~19% of total; slow-growing)
+  - GAAP operating margin ~47%; adjusted operating margin ~62%
+  - Rule of 40 score: 155%
+  - ~$9.4B cash + marketable securities; zero debt
+
+The thesis in three sentences:
+  1. Palantir is the current leader in operational AI for large enterprises
+     and Western governments; its Ontology/AIP layer is a real
+     differentiator competitors have not matched at the operational-
+     decision level.
+  2. Revenue growth has ACCELERATED four years running: +17% (2023) ->
+     +29% (2024) -> +56% (2025) -> +82% guided (2026) — rare above $4B of
+     revenue.
+  3. Economics are elite: ~85% gross margin, ~60% adjusted operating
+     margin, fortress balance sheet, GAAP-profitable every quarter.
+
+FY2026 guidance (raised at Q2, the largest raise in company history):
+  - Revenue $8.150-$8.158B (~+82% YoY)
+  - U.S. commercial revenue >$3.424B (>=+134%)
+  - Adjusted operating income $4.889-$4.897B (~60% margin)
+  - Adjusted free cash flow $4.5-$4.7B
+Q3 2026 guidance: revenue $2.160-$2.164B (~+83% YoY).
+
+Valuation context: at ~$185 and ~2.57B diluted shares, market cap is
+~$476B — roughly 55x FY2026E revenue and >100x FY2026E adjusted EPS, among
+the richest large-cap software multiples in the market.
+
+
+================================================================================
+SECTION 2 — HISTORICAL FINANCIALS
+================================================================================
+
+All figures in $M unless noted. Fiscal year = calendar year.
+
+                            FY2025    FY2024    FY2023   Q2'26    Q1'26
+                            ------    ------    ------   -----    -----
+Revenue                      4,475     2,866     2,225   1,935    1,633
+  YoY growth                  +56%      +29%      +17%    +93%     +85%
+Gross margin                 82.4%     80.3%     80.6%     85%       --
+Operating income (GAAP)      1,414       310       120     912       --
+  Operating margin           31.6%     10.8%      5.4%     47%       --
+Net income (GAAP)            1,625       462       210   1,066      871
+Diluted EPS (GAAP)           $0.63     $0.19     $0.09   $0.41    $0.34
+Adj. operating income        2,254        --        --   1,194      984
+  Adj. operating margin        50%        --        --     62%      60%
+Adj. diluted EPS             $0.75        --        --   $0.41    $0.33
+
+CASH FLOW / BALANCE SHEET
+                                       FY2025      Q2 2026 / 6-30-26
+Cash from operations                    2,134        2,115 (H1 2026)
+Adjusted free cash flow                 2,270        1,220 (Q2 2026)
+Stock-based compensation                  684        265 (Q2); ~13-15% of revenue
+Cash + marketable securities           7,177        9,409
+Total debt                                 0            0
+Weighted-avg diluted shares           ~2,565        2,568.7 (Q2 2026)
+
+Note: GAAP net income runs ABOVE GAAP operating income (interest income on
+the cash pile plus favorable tax items), so GAAP EPS somewhat overstates
+core operating earnings power. Company-reported "adjusted free cash flow"
+adds back SBC; this model does not (see Section 3).
+
+
+================================================================================
+SECTION 3 — DCF ASSUMPTIONS
+================================================================================
+
+METHODOLOGY
+- 10-year explicit forecast FY2027E-FY2035E, off an FY2026E anchor built
+  from company guidance (two actual quarters + one guided quarter + one
+  estimated quarter tying to the full-year guide).
+- Unlevered FCF. To avoid double-counting SBC (which is ~13% of revenue),
+  the model forecasts a PRE-SBC (adjusted) operating margin, then subtracts
+  SBC once, as its own line:
+      Adjusted operating income = Revenue x (adjusted operating margin)
+      NOPAT = Adjusted operating income x (1 - 15% tax)
+      FCF (SBC-adjusted) = NOPAT + D&A - CapEx - SBC
+  Company-reported adjusted operating margin (62% in Q2 2026, ~60% guided
+  FY2026) anchors the pre-SBC margin line.
+- Net cash of +$9,409M (cash + marketable securities, zero debt, 6/30/2026)
+  added to enterprise value.
+- Shares held flat at 2,569M diluted (SBC is charged in full as a cost
+  above; a second penalty via rising share count would double-count
+  dilution). Historical share growth of ~3-5%/yr is an unmodeled downside —
+  see Section 7.
+
+REVENUE GROWTH — THE ONLY ASSUMPTION THAT VARIES BY SCENARIO
+FY2026E anchor revenue: $8,154M (+82% YoY), common to all scenarios.
+
+Growth rate, % YoY:
+             FY27  FY28  FY29  FY30  FY31  FY32  FY33  FY34  FY35
+BULL          58%   46%   37%   30%   25%   21%   18%   15%   13%
+BASE          50%   38%   30%   25%   21%   18%   15%   13%   11%
+BEAR          38%   30%   24%   19%   16%   13%   11%    9%    8%
+
+Resulting revenue ($M):
+             FY27    FY28    FY29    FY30    FY31    FY32    FY33    FY34    FY35
+BULL       12,883  18,809  25,768  33,498  41,873  50,666  59,786  68,754  77,692
+BASE       12,231  16,879  21,943  27,429  33,189  39,163  45,037  50,892  56,490
+BEAR       11,253  14,629  18,140  21,587  25,041  28,296  31,409  34,236  36,975
+
+Revenue CAGR FY2026E -> FY2035E:  BULL ~28%,  BASE ~24%,  BEAR ~18%.
+
+Rationale:
+  - Base: the 2026 acceleration gives way to a slow, shallow deceleration
+    rather than the sharp step-down that usually follows a hyper-growth
+    peak; AIP commercial adoption and government modernization keep growth
+    well above the "law of large numbers" line for years. FY2035E revenue
+    ~$56B (~4.5x FY2026E). This is the model's central expectation.
+  - Bull: deceleration is even gentler; commercial AIP keeps compounding
+    near its recent pace and international finally inflects. FY2035E revenue
+    ~$78B (~9.5x FY2026E).
+  - Bear: the 2026 spike proves to be a pull-forward / AI-cycle peak;
+    growth halves quickly toward a normal post-hypergrowth software curve
+    as hyperscaler tooling, Databricks/Snowflake, and in-house builds
+    capture much of the operational-AI budget. FY2035E revenue ~$37B
+    (~4.5x FY2026E), still more than double today.
+
+ASSUMPTIONS HELD CONSTANT ACROSS ALL THREE SCENARIOS
+  Adjusted (pre-SBC) operating margin (%):  60, 60, 61, 61, 62, 62, 62, 62, 62
+    (FY2026E anchor 60%; company adj. operating margin is ~62% today)
+  SBC (% of revenue):                       11, 10,  9, 8.5, 8,  8, 7.5, 7,  7
+    (FY2026E anchor 12%; ~13-14% today, declining as revenue scales)
+  D&A (% of revenue):                      0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.8
+  Capex (% of revenue):                    0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.6
+  Tax rate:                                 15% flat
+  WACC:                                     11.0%
+  Terminal growth rate:                     3.0%
+  Exit multiple:                            25x SBC-adjusted FCF
+  Diluted shares:                           2,569M, held flat
+
+DISCOUNT RATE (11.0%): a high-quality, high-margin software business, but
+smaller than the mega-cap software compounders, with lumpier revenue, heavy
+government exposure, a shorter track record of durable cash generation,
+elevated SBC, and realized stock volatility well above the large-cap norm.
+(A fuller bear case would also carry a higher discount rate and a lower
+exit multiple; per the design of this file, those are held constant so the
+scenarios isolate revenue-growth risk.)
+
+TERMINAL VALUE: perpetuity-growth and exit-multiple methods, averaged.
+25x is a premium terminal multiple for a business growing 8-13% in the
+terminal year — chosen to be generous, not neutral.
+
+PROBABILITY WEIGHTS: bull 25% / base 50% / bear 25%.
+
+
+================================================================================
+SECTION 4 — DCF MODEL (BASE CASE)
+================================================================================
+
+All figures in $M. WACC 11.0%, TGR 3.0%, exit 25x SBC-adj FCF.
+FCF (SBC-adj) = [AdjOpInc x (1 - 15%)] + D&A - CapEx - SBC.
+
+           Rev      YoY   AdjOpMgn  AdjOpInc   NOPAT    D&A   CapEx    SBC   SBC-Adj FCF
+FY26E     8,154     82%     60.0%     4,892     4,159     33     16    978      3,198
+FY27E    12,231     50%     60.0%     7,339     6,238     55     31  1,345      4,917
+FY28E    16,879     38%     60.0%    10,127     8,608     84     51  1,688      6,953
+FY29E    21,943     30%     61.0%    13,385    11,377    121     77  1,975      9,446
+FY30E    27,429     25%     61.0%    16,732    14,222    165    110  2,332     11,945
+FY31E    33,189     21%     62.0%    20,577    17,490    216    149  2,655     14,902
+FY32E    39,163     18%     62.0%    24,281    20,639    274    196  3,133     17,584
+FY33E    45,037     15%     62.0%    27,923    23,735    338    248  3,378     20,447
+FY34E    50,892     13%     62.0%    31,553    26,820    407    305  3,562     23,360
+FY35E    56,490     11%     62.0%    35,024    29,770    452    339  3,954     25,929
+
+PRESENT VALUE OF EXPLICIT SBC-ADJUSTED FCFs (11.0% WACC; FY27E = year 1)
+
+Year      SBC-Adj FCF   Discount Factor      PV
+FY27E         4,917          0.9009        4,430
+FY28E         6,953          0.8116        5,643
+FY29E         9,446          0.7312        6,907
+FY30E        11,945          0.6587        7,869
+FY31E        14,902          0.5935        8,844
+FY32E        17,584          0.5346        9,401
+FY33E        20,447          0.4817        9,848
+FY34E        23,360          0.4339       10,136
+FY35E        25,929          0.3909       10,136
+                                        ---------
+Sum of PV of explicit FCFs:               73,214
+
+TERMINAL VALUE — PERPETUITY GROWTH (g = 3.0%)
+Terminal-year (FY35E) SBC-adj FCF:                    $25,929M
+TV = 25,929 x 1.03 / (11.0% - 3.0%):                 $333,836M
+PV of TV (x 0.3909):                                 $130,504M
+
+TERMINAL VALUE — EXIT MULTIPLE (25x SBC-adj FCF)
+TV = 25,929 x 25:                                    $648,225M
+PV of TV (x 0.3909):                                 $253,404M
+
+Average PV of terminal value:                        $191,954M
+
+EQUITY BRIDGE
+Sum of PV of explicit FCFs:                            $73,214M
++ PV of terminal value (avg):                         $191,954M
+= Enterprise value:                                   $265,168M
++ Net cash (Jun 30, 2026):                              $9,409M
+= Equity value:                                       $274,577M
+/ Diluted shares:                                        2,569M
+= Intrinsic value per share:                           $106.88
+
+Implied equity value ~$275B vs. current market cap ~$476B — the price is
+~73% above this equity value.
+
+
+================================================================================
+SECTION 5 — BULL & BEAR CASES
+================================================================================
+
+BULL CASE — WACC 11.0%, TGR 3.0%, exit 25x  ->  IV ~$142.52/share
+
+           Rev      YoY   AdjOpInc   NOPAT    D&A   CapEx    SBC   SBC-Adj FCF
+FY26E     8,154     82%     4,892     4,159     33     16    978      3,198
+FY27E    12,883     58%     7,730     6,571     58     32  1,417      5,180
+FY28E    18,809     46%    11,285     9,593     94     56  1,881      7,750
+FY29E    25,768     37%    15,718    13,360    142     90  2,319     11,093
+FY30E    33,498     30%    20,434    17,369    201    134  2,847     14,589
+FY31E    41,873     25%    25,961    22,067    272    188  3,350     18,801
+FY32E    50,666     21%    31,413    26,701    355    253  4,053     22,750
+FY33E    59,786     18%    37,067    31,507    448    329  4,484     27,142
+FY34E    68,754     15%    42,627    36,233    550    413  4,813     31,557
+FY35E    77,692     13%    48,169    40,944    622    466  5,438     35,662
+
+  Sum of PV of explicit FCFs (11.0% WACC):              $92,706M
+  TV perpetuity (g=3%): 35,662 x 1.03 / 0.08 =         $459,148M ; PV $179,499M
+  TV exit (25x): 35,662 x 25 =                         $891,550M ; PV $348,516M
+  Average PV of terminal value:                        $264,008M
+  Enterprise value:                                    $356,714M
+  + Net cash:                                            $9,409M
+  = Equity value:                                       $366,123M
+  / 2,569M shares  =  IV per share:                        $142.52
+
+
+BEAR CASE — WACC 11.0%, TGR 3.0%, exit 25x  ->  IV ~$73.85/share
+
+           Rev      YoY   AdjOpInc   NOPAT    D&A   CapEx    SBC   SBC-Adj FCF
+FY26E     8,154     82%     4,892     4,159     33     16    978      3,198
+FY27E    11,253     38%     6,752     5,739     51     28  1,238      4,524
+FY28E    14,629     30%     8,777     7,461     73     44  1,463      6,027
+FY29E    18,140     24%    11,065     9,406    100     63  1,633      7,810
+FY30E    21,587     19%    13,168    11,193    130     86  1,835      9,402
+FY31E    25,041     16%    15,525    13,196    163    113  2,003     11,243
+FY32E    28,296     13%    17,544    14,912    198    141  2,264     12,705
+FY33E    31,409     11%    19,474    16,553    236    173  2,356     14,260
+FY34E    34,236      9%    21,226    18,042    274    205  2,397     15,714
+FY35E    36,975      8%    22,925    19,486    296    222  2,588     16,972
+
+  Sum of PV of explicit FCFs (11.0% WACC):              $54,661M
+  TV perpetuity (g=3%): 16,972 x 1.03 / 0.08 =         $218,513M ; PV  $85,417M
+  TV exit (25x): 16,972 x 25 =                         $424,300M ; PV $165,859M
+  Average PV of terminal value:                        $125,638M
+  Enterprise value:                                    $180,299M
+  + Net cash:                                            $9,409M
+  = Equity value:                                       $189,708M
+  / 2,569M shares  =  IV per share:                         $73.85
+
+
+================================================================================
+SECTION 6 — SENSITIVITY (BASE CASE)
+================================================================================
+
+TABLE A: BASE-CASE IV PER SHARE — WACC x TERMINAL GROWTH RATE
+(25x exit multiple held constant)
+
+WACC \ TGR    2.0%      2.5%      3.0%      3.5%      4.0%
+9.0%       $127.19   $129.98   $133.22   $137.06   $141.67
+10.0%      $114.44   $116.40   $118.65   $121.23   $124.25
+11.0%      $103.84   $105.27   $106.88   $108.71   $110.79   <- base case
+12.0%       $94.83    $95.90    $97.09    $98.43    $99.93
+13.0%       $87.05    $87.87    $88.78    $89.78    $90.89
+
+Every cell is $87-$142 — 23%-53% below the current $185.42 price.
+
+TABLE B: BASE-CASE IV PER SHARE — EXIT MULTIPLE (11.0% WACC / 3.0% TGR)
+  15x     $87.15
+  20x     $97.02
+  25x    $106.88   <- base case
+  30x    $116.75
+  35x    $126.61
+
+TABLE C: SCENARIO SUMMARY
+
+Scenario   FY35E Revenue   FY35E SBC-FCF   Revenue CAGR   IV/Share
+BULL          $77,692M       $35,662M         ~28%        $142.52
+BASE          $56,490M       $25,929M         ~24%        $106.88
+BEAR          $36,975M       $16,972M         ~18%         $73.85
+
+Probability-weighted (25/50/25):                          $107.53
+Simple average of the three:                              $107.75
+Current price (Aug 28, 2026 close):                       $185.42
+
+
+================================================================================
+SECTION 7 — KEY RISKS
+================================================================================
+
+1. VALUATION / MULTIPLE COMPRESSION (VERY HIGH). ~55x forward revenue and
+   >100x forward adjusted EPS. Even flawless execution has historically not
+   protected multiples this high over a multi-year horizon. All three
+   scenarios here sit below the current price; the risk is that the market
+   re-rates the multiple toward software norms.
+
+2. GROWTH DECELERATION FASTER THAN THE BASE CASE (HIGH). The base case
+   assumes an unusually slow, shallow deceleration from an 82% peak. The
+   empirical norm after a hyper-growth peak is a sharper step-down; the
+   bear case captures that outcome (~$74/share).
+
+3. COMPETITION IN OPERATIONAL AI (HIGH, longer-duration). Microsoft/Azure,
+   Google, AWS, Snowflake, Databricks, and systems integrators are all
+   building agent/operational-AI frameworks; many enterprises will build
+   in-house. Palantir's Ontology lead is real today but not permanent.
+
+4. SBC AND DILUTION (MEDIUM-HIGH). SBC is ~13-15% of revenue and share
+   count has historically risen ~3-5% a year. This model charges SBC as a
+   cost and holds shares flat; if shares keep rising ~4%/yr, per-share IV
+   in every scenario is ~25-30% lower over the forecast.
+
+5. GOVERNMENT / BUDGET-CYCLE AND HEADLINE RISK (MEDIUM). ~50%+ of revenue
+   is government — durable and high-barrier, but procurement-paced,
+   politically sensitive, and periodically the subject of negative press.
+
+6. REVENUE / DEAL CONCENTRATION AND LUMPINESS (MEDIUM). A meaningful share
+   of revenue and signed TCV comes from a limited number of very large
+   contracts; the market reacts sharply to a single weak signings quarter.
+
+7. TAX-RATE NORMALIZATION (LOW-MEDIUM, two-way). The 15% modeled rate is
+   above Palantir's current cash rate (NOLs) but its GAAP rate is volatile.
+   Single-digit cash rates for most of the forecast would make every IV
+   here ~8-10% conservative; normalization to ~21%+ would make them ~7%
+   high.
+
+
+================================================================================
+SECTION 8 — ASSESSMENT
+================================================================================
+
+Palantir is one of the highest-quality growth stories in software, and
+this model treats a slow, shallow growth deceleration — revenue compounding
+at ~24% for nine years off an $8B base to ~$56B — as the central case, not
+the optimistic one. Even so, valued at an 11% discount rate with a premium
+25x terminal multiple, intrinsic value is ~$107/share, roughly 42% below
+the market. The bull case (revenue ~$78B by FY2035E) reaches ~$143 —
+still ~23% under the current price.
+
+For the stock to be worth ~$185 today on a cash-flow basis, you need
+revenue growth beyond even this model's bull path, OR the bull revenue path
+combined with margins expanding past ~65%, SBC falling toward ~5% of
+revenue, a discount rate below ~10%, and a terminal multiple well above
+25x — several optimistic assumptions stacked together.
+
+Bottom line: strong business, and a durable-hyper-growth view is a
+reasonable premise, but at ~$185 there is no margin of safety on a
+cash-flow basis under any scenario in this model. A ~15% cushion to the
+base case would be an entry around $90; a ~15% cushion to the bull case
+would be around $120.
+
+Conviction: the output is only as good as the premise that Palantir
+compounds revenue at ~24%/yr for nine years off an $8B base — a rate with
+very little precedent at this scale. This model shows what the valuation
+looks like if that holds with otherwise-conservative inputs; it is not
+evidence that it will.
+
+
+================================================================================
+DISCLOSURES & LIMITATIONS
+================================================================================
+
+- Built from structured extracts in this folder (PLTR-EARNINGS-2026-Q2.md,
+  PLTR-EARNINGS-2026-Q1.md, PLTR-10K-FY2025.md), themselves created for a
+  personal request from live web searches — NOT user-supplied filings.
+  Direct SEC.gov fetches returned HTTP 403; figures were corroborated via
+  mirrored press releases, a third-party 10-Q transcription (StockTitan),
+  and reputable secondary coverage (CNBC, Yahoo Finance, stockanalysis.com).
+- DERIVED FIGURES: Q1 2026 revenue and GAAP EPS are computed as (H1 2026
+  total from the Q2 10-Q) minus (Q2 2026 standalone). Some prior-year
+  comparatives and segment splits are derived by subtraction and are
+  approximate.
+- FY2026E revenue is a bottom-up build from two actual quarters + one
+  guided quarter + one estimated quarter tying to the company's full-year
+  guide — not a consensus figure.
+- METHODOLOGY: pre-SBC (adjusted) operating margin is forecast and SBC is
+  subtracted once as a cash cost; shares held flat at 2,569M diluted
+  (historical ~3-5%/yr share growth is an unmodeled downside); 15%
+  normalized tax rate. WACC and terminal-multiple selections are judgment
+  calls and were chosen to be generous, not neutral.
+- Market cap is ~$476B on a ~2.569B diluted share count at $185.42; some
+  data providers show ~$447B using a lower basic share count. This model
+  uses the diluted figure throughout.
+- A separate, more conservative DCF for PLTR (base-case revenue growth
+  decelerating from 82% to ~38% in the first year) exists in this folder as
+  DCF-PLTR-2026-08-29.txt. This file is the higher-growth alternative;
+  the two are independent and use different central revenue assumptions.
+- Personal investment research only. Not investment advice. Does NOT
+  qualify PLTR for purchase in the tech-buffett portfolio.
+================================================================================
