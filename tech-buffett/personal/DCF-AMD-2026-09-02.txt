@@ -133,20 +133,25 @@ SECTION 2 — HISTORICAL FINANCIALS
 All figures $M unless noted. AMD's fiscal year ends the last Saturday of
 December (FY2025 ended Dec 27, 2025). FY2023-2025 are from the user-supplied
 FY2025 10-K; Q1 2026 from the Q1 2026 10-Q; Q2 2026 from AMD-EARNINGS-2026-
-Q2.md (IR press release / 8-K slides, pulled live Sept 2, 2026).
+Q2.md (IR press release / 8-K slides, pulled live Sept 2, 2026). FY2021-2022
+were added from AMD's Q4/FY2022 earnings press release (Jan 31, 2023) and
+FY2023 balance-sheet/segment lines from the Q4/FY2023 press release (Jan 30,
+2024); all years are shown on the same GAAP basis as the 10-K (gross profit
+is AFTER acquisition-related intangible amortization booked in cost of
+sales; FY2021-2022 figures pulled live via web for this personal request).
 
 INCOME STATEMENT SUMMARY (GAAP, continuing operations)
-                          FY2023   FY2024   FY2025   Q1 2026   Q2 2026
-                          ------   ------   ------   -------   -------
-Revenue                   22,680   25,785   34,639   10,253    11,536
-  YoY growth                 --    +13.7%   +34.3%   +37.8%    +50.0%
-Gross profit              10,460   12,725   17,152    5,416    ~6,229
-  Gross margin              46.1%    49.3%    49.5%    52.8%     54.0%
-Operating income             401    1,900    3,694    1,476     1,990
-  Operating margin           1.8%     7.4%    10.7%    14.4%     17.3%
-Net income                   854    1,641    4,335    1,383     2,297
-Diluted EPS                 $0.53    $1.00    $2.65    $0.84     $1.38
-Diluted shares (wtd avg)   1,625    1,637    1,636    1,650     1,659
+                          FY2021   FY2022   FY2023   FY2024   FY2025   Q1 2026  Q2 2026
+                          ------   ------   ------   ------   ------   -------  -------
+Revenue                   16,434   23,601   22,680   25,785   34,639   10,253   11,536
+  YoY growth               +68%    +43.6%    -3.9%   +13.7%   +34.3%   +37.8%   +50.0%
+Gross profit               7,929   10,603   10,460   12,725   17,152    5,416   ~6,229
+  Gross margin             48.2%    44.9%    46.1%    49.3%    49.5%    52.8%    54.0%
+Operating income           3,648    1,264      401    1,900    3,694    1,476    1,990
+  Operating margin         22.2%     5.4%     1.8%     7.4%    10.7%    14.4%    17.3%
+Net income                 3,162    1,320      854    1,641    4,335    1,383    2,297
+Diluted EPS                $2.57    $0.84    $0.53    $1.00    $2.65    $0.84    $1.38
+Diluted shares (wtd avg)   1,229    1,571    1,625    1,637    1,636    1,650    1,659
 
 Memo — Q2 2026 non-GAAP (management basis): gross margin 56%, operating
 income $3,094M (26.8%), net income $2,760M, diluted EPS $1.66. The GAAP /
@@ -156,12 +161,28 @@ based comp (~$1.6B in FY2025). This model works from GAAP and adds those
 items back explicitly (Section 5).
 
 Notes:
-  - FY2025 GAAP net income ($4,335M) ran AHEAD of operating income ($3,694M):
-    it includes a $103M income-tax BENEFIT (valuation-allowance release) and
-    $577M of "other income, net" (investment gains). Pre-tax income from
-    continuing operations was $4,140M; effective tax rate ~ -2.5%. Do not
-    annualize FY2025's ~12.5% net margin — the model forecasts operating
-    income, not reported net income.
+  - THE 5-YEAR SHAPE IS NOT A STRAIGHT LINE. FY2021 is peak-of-cycle,
+    PRE-Xilinx AMD: 22.2% GAAP operating margin, only 1,229M shares, zero
+    acquisition-amortization drag. The Xilinx close (Feb 2022) added ~400M
+    shares (diluted wtd-avg count 1,229M in FY21 -> 1,637M by FY24) and
+    ~$3.5B/yr of intangible amortization; stacked on the 2022-23
+    PC/console downcycle and inventory write-downs, GAAP operating margin
+    fell to 5.4% (FY22) and 1.8% (FY23). So the 2024-26 "inflection" is
+    partly a recovery toward AMD's own prior form and partly genuinely new,
+    Data-Center-driven earnings power — the model assumes the latter
+    dominates from here (Base-case terminal margin 25%, Bull 31%, i.e.
+    structurally ABOVE the 2021 peak, not just back to it).
+  - FY2022 revenue +43.6% was mostly the Xilinx consolidation (~10.5 months)
+    plus a semi-custom console peak (Gaming revenue $6,805M that year) — not
+    organic AI growth. FY2023 revenue actually FELL 3.9%.
+  - Reported net income is a noisy series: FY2021 carried a normal $513M tax
+    provision (~14% rate; net income < operating income); FY2022 net income
+    ($1,320M) slightly EXCEEDED operating income ($1,264M) on other income;
+    FY2025 net income ($4,335M) ran well AHEAD of operating income ($3,694M)
+    on a $103M income-tax BENEFIT (valuation-allowance release) plus $577M of
+    investment gains (pre-tax income from continuing ops $4,140M; ETR ~
+    -2.5%). Do not annualize FY2025's ~12.5% net margin — the model forecasts
+    operating income.
   - FY2025 also had $66M of income from discontinued operations (the ZT
     Systems manufacturing business, acquired with ZT in 2025 and divested).
     The table is continuing operations; FY2025 total net income incl. disc.
@@ -169,99 +190,141 @@ Notes:
   - Q1 2026 diluted EPS $0.84 = $0.83 continuing + $0.01 discontinued.
   - Q2 2026 gross profit ~$6,229M is derived (54.0% x $11,536M); the extract
     reports the margin, not the dollar figure.
+  - FY2021 YoY is off FY2020 revenue of $9,763M (macrotrends / AMD FY2021
+    10-K; not otherwise used in this model).
 
 FREE CASH FLOW RECONCILIATION
-                                 FY2023  FY2024  FY2025  Q1 2026  Q2 2026
-Operating cash flow (cont. ops)   1,667   3,041   6,493    2,955    2,366
-Capital expenditures               (546)   (636)   (974)    (389)    (808)
-Free cash flow                    1,121   2,405   5,519    2,566    1,558
-  FCF margin                       4.9%    9.3%   15.9%    25.0%    13.5%
-Stock-based compensation          1,384   1,407   1,638      487      n/d
-  SBC % of revenue                 6.1%    5.5%    4.7%     4.7%      --
-Depreciation & amortization         642     671     750      206      n/d
-Acq.-related intangible amort.    2,811   2,393   2,254      551      n/d
+                                 FY2021  FY2022  FY2023  FY2024  FY2025  Q1 2026  Q2 2026
+Operating cash flow (cont. ops)   3,521   3,565   1,667   3,041   6,493    2,955    2,366
+Capital expenditures               (301)   (450)   (546)   (636)   (974)    (389)    (808)
+Free cash flow                    3,220   3,115   1,121   2,405   5,519    2,566    1,558
+  FCF margin                      19.6%   13.2%    4.9%    9.3%   15.9%    25.0%    13.5%
+Stock-based compensation            379   1,012   1,384   1,407   1,638      487      n/d
+  SBC % of revenue                 2.3%    4.3%    6.1%    5.5%    4.7%     4.7%      --
+Depreciation & amortization         407     626     642     671     750      206      n/d
+Acq.-related intangible amort.        0   3,548   2,811   2,393   2,254      551      n/d
 
+  - FY2021-2022 SBC and D&A are from the FY2022 press-release cash-flow
+    statement / reconciliations; definitions may differ slightly from the
+    10-K cash-flow basis used for FY2023-2025. FY2022 acquisition
+    amortization ($3,548M) = $1,448M COGS + $2,100M opex, the same
+    (COGS+opex) basis as the later years.
+  - FCF is NOT a clean up-and-to-the-right series: ~$3.2B (FY21) -> bottomed
+    at $1.1B (FY23, the margin trough) -> $5.5B (FY25), a new high. FY2026
+    H1 alone is $4.1B. The fabless model keeps capex at ~2-4% of revenue
+    across the entire window; H1 2026 capex ($1,197M) already tracks toward
+    the ~$1,900M FY2026E assumption used in Section 5.
   - FY2025 operating cash flow ALSO received $1,216M from discontinued
     operations (ZT), for $7,709M total reported OCF. The $6,493M continuing-
     ops figure is the right basis for the DCF and what the FY2026E anchor is
     calibrated against.
-  - AMD is fabless: "capex" is packaging/test/lab/facilities, not fabs. It
-    has run ~2-4% of revenue; H1 2026 capex ($1,197M) already tracks toward
-    the ~$1,900M FY2026E assumption used in Section 5.
-  - Acquisition amortization runs OFF over the forecast ($2,811M FY23 ->
+  - Acquisition amortization runs OFF over the forecast ($3,548M FY22 ->
     $2,254M FY25 and declining as Xilinx/Pensando intangibles amortize out),
     mechanically lifting GAAP margin ahead of any real operating leverage.
-    The Section 5 D&A schedule reflects this.
+    Strip it out and FY2023 operating income was ~$3.2B, not $0.4B. The
+    Section 5 D&A schedule reflects the run-off.
   - n/d = not broken out in the Q2 2026 earnings extract.
 
-BALANCE SHEET HIGHLIGHTS
-                              Dec 28 2024  Dec 27 2025  Mar 28 2026  Jun 27 2026
-Cash + short-term investments      5,132       10,552       12,347       13,111
-Total debt (incl. current)        1,721        3,222        3,224        3,226
-Net cash                          3,411        7,330        9,123        9,885
-Goodwill                         24,839       25,126          n/d          n/d
-Acq.-related intangibles, net    18,930       16,705          n/d          n/d
-Total assets                     69,226       76,926          n/d          n/d
-Stockholders' equity             57,568       62,999          n/d          n/d
+BALANCE SHEET HIGHLIGHTS (fiscal year-ends; Q1'26 = Mar 28 2026, Q2'26 = Jun 27 2026)
+                             FY2021   FY2022   FY2023   FY2024   FY2025    Q1'26    Q2'26
+Cash + short-term investments  3,608    5,855    5,773    5,132   10,552   12,347   13,111
+Total debt (incl. current)       313    2,467    2,468    1,721    3,222    3,224    3,226
+Net cash                       3,295    3,388    3,305    3,411    7,330    9,123    9,885
+Goodwill                         289   24,177   24,262   24,839   25,126      n/d      n/d
+Acq.-related intangibles, net      0   24,118   21,363   18,930   16,705      n/d      n/d
+Total assets                  12,419   67,580   67,885   69,226   76,926      n/d      n/d
+Stockholders' equity           7,497   54,750   55,892   57,568   62,999      n/d      n/d
 
-  - Net-cash position every period — zero balance-sheet risk. The DCF equity
-    bridge adds the Jun 27, 2026 net cash of $9,885M (Section 6).
-  - AMD issued ~$2.44B of new debt in FY2025 and repaid ~$0.95B (net ~+$1.5B)
-    — still trivially levered (~0.3x one year of FCF).
-  - Goodwill + acquisition intangibles were ~$41.8B of the $76.9B FY2025
-    balance sheet (Xilinx-deal legacy); ~$16.7B of intangibles still to
-    amortize — the source of the D&A run-off above.
+  - THE XILINX BALANCE-SHEET STEP: goodwill $289M (FY21) -> $24,177M (FY22),
+    plus $24.1B of acquisition intangibles created, total assets $12.4B ->
+    $67.6B — a ~$50B stock-funded acquisition, essentially all of AMD's
+    balance-sheet mass today. ~$16.7B of those intangibles remain to
+    amortize (the D&A run-off above).
+  - Net cash sat at ~$3.3-3.4B for FOUR straight years (FY21-FY24), then
+    stepped up to $9.9B by Q2'26 as Data Center free cash flow arrived — the
+    balance-sheet signature of the earnings inflection.
+  - Still trivially levered: total debt ~$3.2B is ~0.4x one year of FCF. AMD
+    issued ~$2.44B of new debt in FY2025 and repaid ~$0.95B.
+  - The DCF equity bridge adds the Jun 27, 2026 net cash of $9,885M
+    (Section 6).
   - NOT on the balance sheet: the Meta (Feb 2026, up to ~160M sh) and OpenAI
     (Oct 2025, up to ~160M sh) warrants, each ~$0.01 strike. Combined ~320M
     shares / ~16% potential dilution — see Section 5 share-count note and
     Section 9 Risk #5.
 
-SEGMENT DETAIL (GAAP)
-                        FY2024            FY2025            Q2 2026
-                     Rev    Op inc     Rev    Op inc     Rev    Op inc
-Data Center          12,579   3,482    16,635   3,603     6,718   2,103
-Client               7,054     --      10,640     --      3,062     --
-Gaming               2,595     --       3,910     --        779     --
-  Client + Gaming    9,649   1,187     14,550   2,855      3,841    582
-Embedded             3,557   1,421      3,454   1,243        977    386
-Unallocated / other    --   (4,190)      --    (4,007)       --  ~(1,081)
-  ----------------------------------------------------------------------
-Total               25,785   1,900     34,639   3,694     11,536   1,990
+SEGMENT NET REVENUE (GAAP)
+                     FY2022   FY2023   FY2024   FY2025   Q2 2026
+Data Center           6,043    6,496   12,579   16,635    6,718
+Client                6,201    4,651    7,054   10,640    3,062
+Gaming                6,805    6,212    2,595    3,910      779
+Embedded              4,552    5,321    3,557    3,454      977
+  ---------------------------------------------------------------
+Total                23,601   22,680   25,785   34,639   11,536
 
-  ("Unallocated / other" = SBC, acquisition amortization, and other costs
-  not pushed to segments. Q2 2026 figure is derived: 1,990 - 2,103 - 582 -
-  386 = ~(1,081); the extract lists segment op income but not this line.)
+SEGMENT OPERATING INCOME (LOSS) (GAAP)
+                     FY2022   FY2023   FY2024   FY2025   Q2 2026
+Data Center           1,848    1,267    3,482    3,603    2,103
+Client + Gaming       2,143      925    1,187    2,855      582
+Embedded              2,252    2,628    1,421    1,243      386
+Unallocated / other  (4,979)  (4,419)  (4,190)  (4,007) ~(1,081)
+  ---------------------------------------------------------------
+Total                 1,264      401    1,900    3,694    1,990
 
-  - Data Center is the whole thesis. FY2024 -> FY2025 segment revenue +32%,
-    but segment operating income was roughly FLAT ($3,482M -> $3,603M) —
-    MI300-series ramp, pricing, and ~$440M of net inventory/reserve charges
-    tied to MI308 export-control restrictions (per the 10-K) held margins
-    down. Then Q2 2026: $2,103M operating income on $6,718M revenue (31.3%
-    margin), up from a $(155)M LOSS in Q2 2025. That swing is the operating
-    inflection this model is built around — and it is already reported.
-  - Client + Gaming swung from $1,187M (FY24) to $2,855M (FY25) segment
-    operating income on Ryzen share gains and console/Radeon strength;
-    Gaming has since turned down (-31% YoY in Q2 2026, console cycle).
-  - Embedded (Xilinx FPGA / adaptive SoC) is the counter-cyclical laggard:
-    revenue -3% in FY2025 and operating income down on a customer inventory
-    correction; Q2 2026 +19% YoY suggests the trough is passing.
+  - FY2021 predates the current four-segment structure (adopted Q3 2022) and
+    is omitted from the segment tables. It was reported as Computing &
+    Graphics ~$10.4B and Enterprise, Embedded & Semi-Custom ~$6.0B.
+  - FY2022-23 reported Client and Gaming as SEPARATE segments; combined here
+    for continuity (FY22 op inc = $1,190M Client + $953M Gaming; FY23 =
+    $(46)M Client + $971M Gaming). The FY24-25 10-K reports them merged.
+    "Unallocated / other" = SBC, acquisition amortization and other costs not
+    pushed to segments; the Q2 2026 figure is derived (1,990 - 2,103 - 582 -
+    386 = ~(1,081)).
+  - DATA CENTER is the whole thesis, and its history is lumpier than the
+    headline suggests: full-year segment operating income $1,848M (FY22) ->
+    $1,267M (FY23, MI300 pre-ramp + PC bust) -> $3,482M (FY24) -> $3,603M
+    (FY25), then a ~$8.4B annualized run-rate in Q2'26 ($2,103M, 31.3%
+    segment margin). The segment was profitable every full year; the widely
+    cited "swung from a loss" refers specifically to Q2 2025, when MI308
+    China write-downs and the MI300 ramp pushed that one quarter to a
+    $(155)M loss. Segment margin has ranged ~20-31% since 2022 — the model's
+    Base case assumes it settles in the high-20s at much larger scale.
+  - EMBEDDED (Xilinx FPGA) was AMD's profit engine right after the deal:
+    operating income $2,252M (FY22) and $2,628M (FY23) — MORE than Data
+    Center in FY2023. Then an FPGA inventory correction cut revenue $5,321M
+    (FY23) -> $3,454M (FY25) and roughly halved operating income; Q2'26
+    +19% YoY says the trough is passing.
+  - GAMING peaked with the console cycle: $6,805M revenue in FY2022 vs
+    ~$3.1B annualized now (-31% YoY in Q2'26) — a structural decline the
+    forecast treats as a shrinking, low-priority segment.
+  - CLIENT swung from a $(46)M segment loss in FY2023 (PC bust) to solid
+    profit on Ryzen share gains.
   - AMD does NOT disclose Instinct-vs-EPYC within Data Center; the
     accelerator/CPU split in Section 4 is an analyst allocation.
 
 WHAT THE HISTORY TELLS YOU GOING INTO THE FORECAST
-  1. The revenue acceleration is real and recent: +13.7% (FY24) -> +34.3%
-     (FY25) -> +37.8% (Q1'26) -> +50.0% (Q2'26). The FY2026E anchor of
-     ~$49.5B (+42.9%) sits inside that trajectory, not above it.
-  2. The margin inflection is reported, not projected: GAAP operating margin
-     1.8% -> 7.4% -> 10.7% -> 14.4% -> 17.3%. Section 5 carries this to ~19%
-     (2027E) and a 25% terminal in the Base case.
-  3. GAAP net income overstates underlying earnings power in FY2025 (tax
-     benefit + investment gains); GAAP operating income is the cleaner series
-     and is what the model forecasts.
-  4. FCF is real and scaling ($1.1B -> $2.4B -> $5.5B) and the fabless model
-     keeps capex light — the structural FCF advantage the DCF leans on.
-  5. Every per-share output still carries the ~16% Meta+OpenAI warrant
-     dilution outside the share count (Section 5 / Section 9).
+  1. Revenue roughly doubled across five years ($16.4B FY21 -> $34.6B FY25,
+     tracking ~$49.5B FY26E), but the path was flat-to-down through 2022-23
+     (PC/console downcycle, and FY22's growth was mostly the Xilinx
+     consolidation) before the Data-Center-led reacceleration to +34% (FY25)
+     and +50% (Q2'26). The FY2026E anchor (+42.9%) sits inside the recent
+     trajectory, not above it.
+  2. AMD has been at high margins before. GAAP operating margin ran 22.2%
+     (FY21) -> 5.4% -> 1.8% -> 7.4% -> 10.7% -> 17.3% (Q2'26). The DCF's
+     real question is not "can margin recover" but "does Data Center push it
+     structurally past the 2021 peak" — Base case says yes (25% terminal),
+     Bull 31%.
+  3. Most of the 2022-23 collapse was non-recurring or amortizing-off:
+     ~$3.5B/yr of Xilinx intangible amortization plus cyclical write-downs.
+     Ex-acquisition-amortization, FY2023 operating income was ~$3.2B.
+  4. Net cash was stuck near ~$3.3-3.4B for four years, then jumped to $9.9B
+     (Q2'26) as Data Center FCF turned on — corroborating the inflection.
+  5. FCF history is recovery-plus-new-highs ($3.2B FY21 -> $1.1B FY23 ->
+     $5.5B FY25), not linear compounding — and the fabless model keeps capex
+     light throughout (~2-4% of revenue).
+  6. Reported net income is noisy (tax items in FY21/FY22/FY25); the model
+     forecasts GAAP OPERATING income. And every per-share output still
+     carries the ~16% Meta+OpenAI warrant dilution outside the share count
+     (Section 5 / Section 9).
 
 
 ================================================================================
@@ -819,6 +882,12 @@ DISCLOSURES & LIMITATIONS
   via web (AMD IR press release, AMD newsroom, secondary financial news) for
   this personal request. FY2026E full-year revenue is a bottom-up estimate
   (H1 actual + Q3 guide + Q4 estimate), NOT a company figure or consensus.
+- The Section 2 historicals were extended to five fiscal years after the
+  initial build: FY2021-2022 income-statement, cash-flow and balance-sheet
+  lines and FY2023 balance-sheet/segment lines were pulled live via web from
+  AMD's Q4/FY2022 (Jan 31, 2023) and Q4/FY2023 (Jan 30, 2024) earnings press
+  releases; not independently re-tied to the 10-Ks. FY2021 predates AMD's
+  current four-segment reporting and is excluded from the segment tables.
 - The Meta warrant (Feb 2026) and OpenAI warrant (Oct 2025) — each up to
   ~160M shares per public reporting — are NOT in the 1,659M share count.
   Exact strike/vesting terms were not verified against primary filings for
