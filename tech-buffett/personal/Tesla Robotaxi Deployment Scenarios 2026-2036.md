@@ -1,6 +1,32 @@
 # Tesla Robotaxi Deployment Scenarios, 2026–2036
 
-_Analysis date: 2026-09-06_
+_Analysis date: 2026-09-06. Revised 2026-09-06 after city-by-city + Cybercab-sighting research
+(see companion files: "Tesla Robotaxi Cities - Operating Status" and
+"Tesla Robotaxi - Next Cities (Spotted and Testing)")._
+
+## Revision note (2026-09-06)
+
+City-by-city and Cybercab-sighting research did **not** materially change the framework or the
+long-run curves. Three things got clearer and largely cancel:
+
+- **Manufacturing is confirmed as not the near-term constraint.** Hundreds of Cybercabs staged at
+  Giga Texas since April 2026, but only ~45 registered/deployed. The built-vs-deployed gap shows
+  deployment is gated by the safety case, operations, and regulatory comfort — as the tables assume.
+- **Metro permits are coming faster than modeled** — 2 metros in Jan 2026, 7 by Sept, with
+  Phoenix / Las Vegas / New Orleans next and Nevada pre-clearing 5,000 vehicles.
+- **…but per-metro fleets are thinner than modeled** — Florida geofences are 4–20 sq mi and the
+  no-monitor fleet is still "low tens" after 15 months. Fast metro count × thin fleet-per-metro
+  nets close to the prior totals.
+
+**Changes applied:** bull 2026 trimmed (we are in September and nowhere near 1,000 no-monitor
+vehicles); base 2027–2028 nudged up ~10–15% for the faster metro cadence. Bear values unchanged,
+but the **unresolved NHTSA probe** into Cybercab self-certification makes the bear scenario more
+*probable* even though its point values don't move. 2029+ figures unchanged — those are governed by
+the regulatory regime and ops scaling, which this research does not resolve.
+
+Would move the numbers materially (none has happened yet): the NHTSA probe resolving either way;
+evidence a single metro's no-monitor fleet breaks from "low tens" into the thousands; a real
+federal AV framework replacing the state-by-state patchwork.
 
 **Metric:** vehicles in paid driverless service (no in-car safety monitor), at least part of the time.
 If you instead count every safety-monitored pilot car, roughly double every number below.
@@ -17,12 +43,17 @@ friction.
 
 ## Current state (Sept 2026), for grounding
 
-- ~420 *authorized* vehicles in Texas across 7 metros (Austin, Dallas, Houston, Miami, Orlando,
-  Tampa, SF Bay Area). Genuinely *unsupervised* fleet still only low tens; most of the fleet is
-  safety-monitored retrofitted Model Y.
-- Cybercab: continuous production began April 2026; ~45 in fleet by early Sept; paid Cybercab rides
-  started Sept 3 in Austin. Tesla removed Cybercab from its "volume production in 2026" list in July,
-  citing battery-pack capacity.
+- **7 operating metros:** Austin, Dallas, Houston (TX), Miami, Orlando, Tampa (FL), SF Bay Area (CA).
+  Six run driverless; the Florida cities and Dallas/Houston skipped the supervised phase entirely.
+  Bay Area still uses a safety driver (CA limo permit).
+- ~420 *authorized* vehicles in Texas. Genuinely *unsupervised* fleet still only low tens; most of
+  the fleet is safety-monitored retrofitted Model Y. Service areas are small (4–20 sq mi in Florida).
+- **Next up:** Phoenix (~60 Model Ys staged), Las Vegas (Nevada cleared up to 5,000 vehicles, 120-day
+  launch clock), New Orleans (fleet logging miles). Cybercab test units also seen in Philadelphia —
+  no geofence anywhere in PA.
+- Cybercab: continuous production began April 2026; hundreds staged at Giga Texas but only ~45
+  registered/deployed; paid Cybercab rides started Sept 3 in Austin. Tesla removed Cybercab from its
+  "volume production in 2026" list in July, citing battery-pack capacity.
 - Tesla self-certified the Cybercab to FMVSS (for ~1,000 units) rather than take an NHTSA exemption;
   NHTSA opened a probe into that self-certification in Sept 2026. Biggest near-term swing factor.
 - Morgan Stanley published model: ~1,000 operational by end-2026, ~30,000 by 2030, ~1M by 2035.
@@ -47,60 +78,68 @@ friction.
 | 2036 | 70,000 | 320,000 |
 
 Adds level off near 60–70k/year as Tesla stays boxed into permissive states (TX, FL, AZ, NV) and
-loses the big coastal ride-hail markets to slow regulation or competitors.
+loses the big coastal ride-hail markets to slow regulation or competitors. Values unchanged in the
+2026-09-06 revision, but the unresolved NHTSA self-certification probe raises the probability weight
+on this scenario.
 
 ---
 
 ## Base — safety case proven gradually, methodical state-by-state rollout
 
-| Year | Added that year | Cumulative active |
-|------|----------------:|------------------:|
-| 2026 | 300 | 300 |
-| 2027 | 3,700 | 4,000 |
-| 2028 | 18,000 | 22,000 |
-| 2029 | 43,000 | 65,000 |
-| 2030 | 75,000 | 140,000 |
-| 2031 | 130,000 | 270,000 |
-| 2032 | 170,000 | 440,000 |
-| 2033 | 210,000 | 650,000 |
-| 2034 | 240,000 | 890,000 |
-| 2035 | 260,000 | 1,150,000 |
-| 2036 | 280,000 | 1,430,000 |
+| Year | Added that year | Cumulative active | Prior (pre-revision) |
+|------|----------------:|------------------:|---------------------:|
+| 2026 | 300 | 300 | 300 |
+| 2027 | 4,200 | 4,500 | 4,000 |
+| 2028 | 20,500 | 25,000 | 22,000 |
+| 2029 | 40,000 | 65,000 | 65,000 |
+| 2030 | 75,000 | 140,000 | 140,000 |
+| 2031 | 130,000 | 270,000 | 270,000 |
+| 2032 | 170,000 | 440,000 | 440,000 |
+| 2033 | 210,000 | 650,000 | 650,000 |
+| 2034 | 240,000 | 890,000 | 890,000 |
+| 2035 | 260,000 | 1,150,000 | 1,150,000 |
+| 2036 | 280,000 | 1,430,000 | 1,430,000 |
 
-Adds keep climbing to ~280k/year, then would plateau there as premium metros saturate. Base
-~1.15M by 2035 lands on Morgan Stanley's long-term number — treated here as a base rather than a
-bull outcome specifically because the NHTSA-block risk is assumed away.
+2027–2028 nudged up ~10–15% (faster metro cadence: 7 metros by Sept 2026, Phoenix/Vegas/New Orleans
+next); the extra ~3k is reabsorbed by 2029 so the 2030+ curve is unchanged. Adds keep climbing to
+~280k/year, then plateau as premium metros saturate. Base ~1.15M by 2035 lands on Morgan Stanley's
+long-term number — treated as a base rather than a bull outcome specifically because the NHTSA-block
+risk is assumed away.
 
 ---
 
 ## Bull — national framework, Tesla out-executes on ops, owner cars join the network
 
-| Year | Added that year | Cumulative active |
-|------|----------------:|------------------:|
-| 2026 | 1,000 | 1,000 |
-| 2027 | 15,000 | 16,000 |
-| 2028 | 64,000 | 80,000 |
-| 2029 | 140,000 | 220,000 |
-| 2030 | 260,000 | 480,000 |
-| 2031 | 370,000 | 850,000 |
-| 2032 | 500,000 | 1,350,000 |
-| 2033 | 650,000 | 2,000,000 |
-| 2034 | 800,000 | 2,800,000 |
-| 2035 | 900,000 | 3,700,000 |
-| 2036 | 900,000 | 4,600,000 |
+| Year | Added that year | Cumulative active | Prior (pre-revision) |
+|------|----------------:|------------------:|---------------------:|
+| 2026 | 700 | 700 | 1,000 |
+| 2027 | 15,300 | 16,000 | 16,000 |
+| 2028 | 64,000 | 80,000 | 80,000 |
+| 2029 | 140,000 | 220,000 | 220,000 |
+| 2030 | 260,000 | 480,000 | 480,000 |
+| 2031 | 370,000 | 850,000 | 850,000 |
+| 2032 | 500,000 | 1,350,000 | 1,350,000 |
+| 2033 | 650,000 | 2,000,000 | 2,000,000 |
+| 2034 | 800,000 | 2,800,000 | 2,800,000 |
+| 2035 | 900,000 | 3,700,000 | 3,700,000 |
+| 2036 | 900,000 | 4,600,000 | 4,600,000 |
 
-Adds peak around 900k/year in the mid-2030s — near the practical ceiling of a single high-volume
-Cybercab production system — before replacement demand takes over from growth. ARK-flavored, but
-stops well short of the 10M+ figures Musk has floated.
+2026 trimmed from 1,000 to 700 — we are in September with the no-monitor fleet still in the low
+tens, so 1,000 by year-end is no longer credible; 2027 reabsorbs the gap and the rest of the curve
+is unchanged. Adds peak around 900k/year in the mid-2030s — near the practical ceiling of a single
+high-volume Cybercab production system — before replacement demand takes over from growth.
+ARK-flavored, but stops well short of the 10M+ figures Musk has floated.
 
 ---
 
 ## What's binding, by phase
 
 **2026–2028 — the unsupervised safety case and federal certification.**
-Manufacturing is irrelevant here. The fleet is small because regulators and Tesla's own risk
-tolerance keep it small. As of Sept 2026 the no-monitor fleet is ~25 vehicles after 15 months —
-that data point is why the near-term numbers are low across all three cases.
+Manufacturing is irrelevant here — confirmed by the Cybercab built-vs-deployed gap (hundreds
+staged at Giga Texas, ~45 deployed). The fleet is small because regulators and Tesla's own risk
+tolerance keep it small. As of Sept 2026 the no-monitor fleet is still "low tens" after 15 months —
+that data point is why the near-term numbers are low across all three cases, even as the operating-
+metro count climbs quickly.
 
 **2029–2032 — legalization pace, operations, and capital.**
 Where base and bull diverge hard. The Cybercab line is designed for up to ~2M/yr across factories,
@@ -138,3 +177,12 @@ of being off by 3x in either direction.
 - Motley Fool: Cybercab removed from 2026 volume-production plan — https://www.fool.com/investing/2026/09/04/tesla-launched-the-cybercab-thursday-6-weeks-after-removing-volume-production-of-it-from-this-year-s-plan/
 - Stocktwits: Morgan Stanley sees 30,000-vehicle fleet by 2030 — https://stocktwits.com/news-articles/markets/equity/tsla-miami-robotaxi-morgan-stanley-vehicle-fleet/cZmld5QR7mE
 - NHTSA probe into Cybercab certification — https://www.notateslaapp.com/news/4652/nhtsa-launches-probe-into-tesla-cybercab-as-public-rides-begin
+
+Added for the 2026-09-06 revision:
+
+- Over 100 Tesla Cybercabs spotted staging at Giga Texas — https://www.notateslaapp.com/news/4299/over-100-tesla-cybercabs-spotted-staging-at-giga-texas
+- Tesla Cybercab sightings broaden well outside of Austin — https://www.teslarati.com/tesla-cybercab-sightings-broaden-well-outside-austin-autonomy-in-focus/
+- Tesla, Uber, Waymo get OK for thousands of robotaxis in Nevada — https://techcrunch.com/2026/08/20/tesla-uber-and-waymo-all-get-the-ok-to-operate-thousands-of-robotaxis-in-nevada/
+- 60 Model Ys spotted staged in Phoenix — https://www.basenor.com/blogs/news/tesla-robotaxi-expansion-60-model-ys-spotted-in-phoenix
+- Companion file: Tesla Robotaxi Cities - Operating Status.md
+- Companion file: Tesla Robotaxi - Next Cities (Spotted and Testing).md
