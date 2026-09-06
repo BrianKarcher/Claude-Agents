@@ -1,7 +1,8 @@
-# Tesla Cybercab — Operating Cost per Mile at Scale
+# Tesla Cybercab — Cost per Mile at Scale (operating, + depreciation layer)
 
-_Analysis date: 2026-09-06. Cybercab only (not retrofitted Model Y). Cash fleet operating
-costs only — **excludes** all D&A and capex._
+_Analysis date: 2026-09-06. Cybercab only (not retrofitted Model Y). Primary build is **cash fleet
+operating cost, ex-D&A**; a **vehicle depreciation layer** and a **fully-loaded total** are added
+in the "Depreciation" section below (added 2026-09-06 revision)._
 
 ## Scope
 
@@ -10,10 +11,14 @@ depot/parking real estate, insurance/liability/claims, teleoperation, fleet ops 
 field response, connectivity & data, customer support, licensing/permits, local ops management,
 and (shown separately) payment processing.
 
-**Excluded (per instruction):** vehicle depreciation, battery-degradation reserve, sensor/compute
-hardware amortization, charger hardware, depot construction, wireless-charging pads — all capex or
-D&A. Also excluded: R&D / software development, corporate G&A, sales & marketing, financing/interest,
-income tax. No driver or safety-monitor cost (there is none in a scaled Cybercab).
+**Added as a separate layer (see "Depreciation" below):** vehicle depreciation (glider + battery +
+onboard autonomy hardware), plus an optional mid-life battery reserve.
+
+**Still excluded:** charger hardware, depot construction, wireless-charging pads, and other
+infrastructure capex; R&D / software development; corporate G&A; sales & marketing;
+financing / interest; income tax. No driver or safety-monitor cost (there is none in a scaled
+Cybercab). Depreciation is an economic (non-cash) charge — the ex-D&A subtotal is still the right
+number for a pure cash-cost view.
 
 ## Key assumptions
 
@@ -21,8 +26,8 @@ income tax. No driver or safety-monitor cost (there is none in a scaled Cybercab
 |---|---|---|
 | Vehicle | 2-seat purpose-built Cybercab, ~50 kWh pack | Light, simple, low frontal area |
 | Efficiency (grid-side) | ~4.5 mi/kWh | Tesla claims 5.5+; discounted for city stop-go, year-round HVAC, ~0.5 kW compute/sensor parasitic load, ~10% charging losses |
-| Utilization | 50,000 mi/vehicle/yr | ~150 mi/day, ~330 service days. Base case; sensitivity below |
-| Duty cycle | ~17 mph avg incl. stops → ~3,000 operating hr/yr | Urban ride-hail |
+| Utilization | ramps ~40k → ~75k mi/vehicle/yr (see "Annual mileage & utilization" below) | Line-item table below is built at ~50k mi/yr; mature base is ~75k |
+| Duty cycle | ~17 mph avg incl. stops; ~350 service days/yr | Urban ride-hail; downtime is for maintenance, not days off |
 | "At scale" | Mature ops, >100k-vehicle fleet, software past its steep improvement curve | Not early-deployment economics |
 | Metro mix | Blend of Sun Belt (cheap) and some coastal (expensive) | Depot + insurance + wages are metro-driven |
 
@@ -38,39 +43,126 @@ income tax. No driver or safety-monitor cost (there is none in a scaled Cybercab
 | Maintenance & service (ex-tire) | 0.070 | 0.045–0.095 | Brakes, suspension/steering wear (potholes, curbs), 12V/LV, HVAC, wipers/washer system, glass + sensor recalibration, alignments, cosmetic/body repair to keep fleet presentable, preventive-inspection labor. EV drivetrain holds this well below ICE |
 | Cleaning & detailing | 0.045 | 0.030–0.070 | Daily quick interior clean, weekly deep clean, ~2×/wk exterior wash, biohazard/vandalism remediation reserve. Per-*day* cost — dilutes at higher daily mileage |
 | Depot / parking / staging (lease) | 0.040 | 0.020–0.065 | Leased land for charging/cleaning/staging + curb, airport and pickup-zone access fees. Owned depots would move to capex/D&A (excluded); treated as lease-equivalent. Very metro-dependent |
-| Insurance / liability / claims | 0.060 | 0.040–0.120 | Expected 3rd-party bodily-injury + property-damage claims, litigation, excess/reinsurance premium, reserves, admin. Assumes a materially better-than-human crash rate. **Highest-variance line**; 2–3× higher in early years and in litigious states |
+| Insurance / liability / claims | 0.050 | 0.035–0.120 | **Loss-cost basis** — Tesla self-insures via its captive (Tesla Insurance, 13 states incl. TX/FL/AZ/NV/CA — i.e. essentially all near-term robotaxi markets), so this is expected bodily-injury + property-damage losses + in-house claims handling + tail reinsurance above a retention, *without* the ~25–35% expense-and-profit load a third-party commercial insurer adds. Assumes a materially better-than-human crash rate. **Highest-variance line.** High end ($0.10–0.12) = early years / immature loss data / third-party-covered or litigious states; a bad-verdict year hits Tesla's own P&L directly |
 | Teleoperation / remote assist | 0.050 | 0.025–0.100 | Real-time remote intervention/confirmation staff. ~1 operator : 100 vehicles at maturity, 24/7, ~$30/hr loaded. 1:40 early → ~$0.13/mi; long-run 1:200 → ~$0.025/mi |
 | Fleet ops / dispatch / field response | 0.045 | 0.035–0.060 | Depot techs (staging, plug-in), field rescue/tow contracts, network operations center, routing/dispatch ops |
 | Connectivity / data / maps | 0.030 | 0.020–0.045 | Multi-carrier cellular (teleop video bandwidth), map upkeep, OTA + fleet-ops cloud. Excludes R&D compute |
 | Customer support / trust & safety | 0.015 | 0.010–0.025 | In-app/phone rider support, in-ride help-button staffing, lost & found, incident hotline |
 | Licensing / permits / compliance | 0.010 | 0.005–0.020 | AV permits, registration, city fees, safety-case reporting & audit staff |
 | Local / regional ops management | 0.015 | 0.010–0.025 | Regional managers, facilities, HR for ops headcount. Excludes corporate G&A / R&D / marketing |
-| **Subtotal — vehicle operating** | **≈ 0.44** | **≈ 0.31–0.72** | |
+| **Subtotal — vehicle operating** | **≈ 0.43** | **≈ 0.30–0.72** | *built at ~50k mi/yr; see mileage adjustment below* |
 | Payment processing | 0.050 | 0.030–0.070 | ~2.75% of gross fare at a ~$1.80/mi fare. Revenue-linked, not mileage-linked — kept separate |
-| **Total incl. payment processing** | **≈ 0.49** | **≈ 0.34–0.79** | |
+| **Total incl. payment processing** | **≈ 0.48** | **≈ 0.33–0.79** | *at ~50k mi/yr* |
 
 ---
 
-## Scenario summary
+## Annual mileage & utilization estimate
 
-| Scenario | Conditions | $/mi (ex-payment) | $/mi (incl. payment) |
-|---|---|--:|--:|
-| **Lean / mature (2030+)** | 65–75k mi/yr, teleop 1:150+, clean safety record trims insurance to ~$0.04, cheap Sun Belt metros, cleaning diluted | ~0.28–0.33 | ~0.32–0.38 |
-| **Base (realistic mature mix)** | assumptions above | ~0.44 | ~0.49 |
-| **Early-scale / high-cost (2027–29)** | 35–45k mi/yr, teleop 1:40–60, insurance $0.10–0.12, expensive coastal metros, immature ops | ~0.68–0.80 | ~0.72–0.86 |
+Cost per mile is dominated by annual miles per car, so this is estimated explicitly rather than
+assumed flat.
 
-### Utilization sensitivity
+**Benchmark — Waymo (only mature operator, 2026):** ~18–20 paid trips/vehicle/day
+(~125 trips/week across a ~4,000-car fleet, 500k paid rides/week), roughly ~90–110 mi/day,
+**~30–35k mi/yr**. Waymo is held back by small geofences and premium pricing. Tesla's thesis —
+larger service areas, lower fares stimulating demand, more aggressive 24/7 running — should lift
+trips/day above Waymo's current level over time. That is an assumption, not a demonstrated fact.
 
-Fixed-ish buckets (depot, insurance base, teleop, fleet-ops core, connectivity, support, licensing,
-local mgmt) ≈ **$12,000 / vehicle / year**. Variable buckets ≈ **$0.20/mi**.
+### Base-case ramp (per vehicle)
 
-| Miles/yr | Fixed $/mi | Total $/mi (ex-payment) |
-|--:|--:|--:|
-| 35,000 | 0.34 | ~0.54–0.60 |
-| 50,000 | 0.24 | ~0.44 |
-| 70,000 | 0.17 | ~0.37 |
+| Phase | Paid trips/day | Deadhead share of miles | Time utilization¹ | Effective in-service hr/day | **Annual miles** |
+|---|--:|--:|--:|--:|--:|
+| Early (2027–28) | 16–20 | ~42% | ~32% | ~13 | **~40–48k** |
+| Mid (2029–31) | 25–33 | ~38% | ~42% | ~17 | **~55–70k** |
+| Mature (2032+) | 35–45 | ~34% | ~50% | ~19 | **~74–90k** |
 
-Utilization is the single biggest lever Tesla actually controls.
+¹ share of in-service time with a rider aboard. ~350 service days/yr. Avg trip ≈ 3.5 mi paid + ~2 mi deadhead.
+
+### Scenario mileage (mature, 2032+)
+
+| | Annual miles | Basis |
+|---|--:|---|
+| Bear | ~55k | Geofences stay small, demand thin, Waymo-like |
+| Base | ~75k | Larger areas + dynamic pricing filling off-peak |
+| Bull | ~95k | Dense network, ~20 hr/day effective, low fares pull heavy demand (≈ ARK's 100k assumption) |
+
+---
+
+## Cost impact of the mileage ramp
+
+Decomposition of the base build: **$0.192/mi** purely variable (energy, charging O&M, tires,
+maintenance, self-insured loss cost, field response) + **~$9 / service-day** (cleaning, depot
+staging; ≈ $3,150/yr) + **~$9,000 / vehicle-yr** fixed (depot lease, teleoperation, network-ops
+core, connectivity, support, licensing, local mgmt). Payment processing (~$0.045–0.05/mi) on top.
+
+| Annual miles | $/mi ex-payment | $/mi incl. payment | Corresponds to |
+|--:|--:|--:|---|
+| 40,000 | ~0.50 | ~0.54 | early scale — mileage effect only |
+| 50,000 | ~0.43 | ~0.48 | prior flat base assumption |
+| 60,000 | ~0.39 | ~0.44 | mid scale |
+| 70,000 | ~0.36 | ~0.41 | early-mature |
+| 75,000 | ~0.35 | ~0.40 | **revised mature base** |
+| 95,000 | ~0.32 | ~0.37 | bull / lean mature |
+
+**Effect on the headline:** the mature base moves from the earlier flat-50k figure of ~$0.44
+ex-payment down to **~$0.35/mi ex-payment (~$0.40 incl. payment)** — driven mostly by higher
+mature utilization (~70–80k mi/yr, not 50k) and helped ~$0.01 by the self-insured loss-cost basis
+for insurance. This *replaces* the "$0.44 base" used elsewhere in this file.
+
+### Revised scenario summary
+
+| Scenario | Annual miles | Key conditions | $/mi ex-payment | $/mi incl. payment |
+|---|--:|---|--:|--:|
+| **Early-scale (2027–29)** | ~40–48k | teleop 1:40–60, insurance $0.10–0.12 (immature loss data, some third-party cover), costly metros | ~0.66–0.83 | ~0.71–0.88 |
+| **Mid-scale (2029–31)** | ~55–70k | teleop ~1:80, self-insured loss cost ~$0.06, mixed metros | ~0.40–0.46 | ~0.45–0.51 |
+| **Mature base (2032+)** | ~75k | teleop ~1:100, self-insured loss cost ~$0.05, blended metros | **~0.35–0.38** | **~0.40–0.43** |
+| **Lean / mature (2033+)** | ~90–95k | teleop 1:150+, self-insured loss cost ~$0.035, cheap Sun Belt metros | ~0.27–0.31 | ~0.31–0.36 |
+
+Utilization / annual miles is the single biggest lever in the whole model: ~$0.50/mi at 40k mi/yr
+vs ~$0.32/mi at 95k, before any other change.
+
+---
+
+## Depreciation (added layer)
+
+Economic depreciation of the vehicle itself — glider + battery + onboard vision/compute hardware.
+Formula: **capitalized cost × (1 − residual) ÷ lifetime miles.**
+
+**Inputs:**
+- **Capitalized cost:** ~$28–34k. Tesla's *internal build cost* at scale is ~$25–28k (consumer
+  price is <$30k); a fleet unit also carries the network fit-out and the vision/compute stack.
+  Vision-only keeps this far below Waymo Gen 6 (~$30–50k of sensors alone).
+- **Residual:** ~10% (range 0–20%). A purpose-built, no-steering-wheel Cybercab has a thin
+  secondary market — mostly parts/scrap plus possible non-US resale.
+- **Lifetime:** the binding limit is ~**4.5 years of economic life** (autonomy-hardware generation
+  obsolescence and brand/safety standards), or a ~**350k-mile** cap, whichever comes first. At low
+  early-phase utilization the *time* limit binds, so depreciation per mile is much higher when the
+  car is underused — same dynamic as the fixed opex buckets.
+
+| Phase | Annual miles | Lifetime miles (≈4.5 yr or 350k cap) | **Depreciation $/mi** |
+|---|--:|--:|--:|
+| Early (2027–28) | ~44k | ~200k | **~0.13** |
+| Mid (2029–31) | ~62k | ~280k | **~0.10** |
+| Mature base (2032+) | ~75k | ~340k | **~0.08** |
+| Lean / bull mature | ~95k | 350k cap (hit in ~3.7 yr) | **~0.065** |
+
+**Optional mid-life battery reserve:** if packs are swapped (~$6–9k, falling) rather than the car
+retired, add **~$0.02–0.03/mi** in the mature/lean cases where the car would otherwise outlast its
+first pack. Not added to the totals below — noted as a swing factor.
+
+---
+
+## Fully-loaded summary (opex + depreciation)
+
+| Scenario | Opex ex-payment | + Depreciation | **Fully loaded, ex-payment** | **+ payment processing** |
+|---|--:|--:|--:|--:|
+| Early-scale (2027–29) | ~0.66–0.83 | ~0.13 | **~0.79–0.96** | ~0.84–1.01 |
+| Mid-scale (2029–31) | ~0.40–0.46 | ~0.10 | **~0.50–0.56** | ~0.55–0.61 |
+| **Mature base (2032+)** | ~0.35–0.38 | ~0.08 | **~0.43–0.46** | **~0.48–0.51** |
+| Lean / mature (2033+) | ~0.27–0.31 | ~0.065 | **~0.34–0.38** | ~0.39–0.43 |
+
+**Headline, fully loaded:** mature base **~$0.44/mi ex-payment (~$0.49 incl. payment)**;
+lean ~$0.36; early-scale ~$0.88. Depreciation adds ~$0.08–0.13/mi depending on utilization and is
+the second-largest single line after the opex fixed block.
 
 ---
 
@@ -78,19 +170,23 @@ Utilization is the single biggest lever Tesla actually controls.
 
 | Source | Figure | Notes |
 |---|--:|---|
-| **This estimate (ex-D&A)** | base **~$0.44–0.49/mi**; lean ~$0.30; early ~$0.75 | |
-| Musk ("We, Robot", Oct 2024; reaffirmed Sept 2026) | "~$0.20/mi" operating cost; fare "30–40¢/mi"; Robovan "5–10¢/mi per passenger" | Stage claim, no published line-item model — see "Provenance" below |
-| ARK *Big Ideas 2026* | $0.20/mi fully-loaded at scale by 2030 (Waymo Gen 6: $0.40) | Effectively energy + maintenance + thin ops/insurance slice |
-| Morgan Stanley | Tesla **~$0.74/mi** incl. depreciation, cleaning, maintenance, charging, mobile operators, insurance, parking (Waymo $1.36) | Strip ~$0.08–0.12 depreciation → **~$0.62–0.66/mi ex-D&A** |
-| Analyst est. of Tesla's *current* (2026) cost | ~$0.81/mi | Sub-scale, immature |
+| **This estimate — ex-D&A** | mature base **~$0.35/mi** ex-payment (~$0.40 incl.); lean ~$0.29; early-scale ~$0.73 | Cash opex only |
+| **This estimate — fully loaded** | mature base **~$0.44/mi** ex-payment (~$0.49 incl.); lean ~$0.36; early-scale ~$0.88 | Opex + ~$0.08–0.13 vehicle depreciation. Like-for-like with ARK / MS below |
+| Musk ("We, Robot", Oct 2024; reaffirmed Sept 2026) | "~$0.20/mi" operating cost; fare "30–40¢/mi"; Robovan "5–10¢/mi per passenger" | Stage claim, no published line-item model — see "Provenance" below. "Operating cost" framing likely excludes depreciation |
+| ARK *Big Ideas 2026* | $0.20/mi **fully loaded** at scale by 2030 (Waymo Gen 6: $0.40) | ~2.2–2.5× below this file's like-for-like fully-loaded mature ~$0.44–0.49. Gap is scope (teleop, support, field response, payment, realistic insurance), not miles or depreciation |
+| Morgan Stanley | Tesla **~$0.74/mi** incl. depreciation, cleaning, maintenance, charging, mobile operators, insurance, parking (Waymo $1.36) | ≈ this file's **mid-scale** fully-loaded (~$0.55–0.61 incl. payment) to early-mature — i.e. MS assumes lower utilization / earlier stage than the mature base here |
+| Analyst est. of Tesla's *current* (2026) cost | ~$0.81/mi | Sub-scale, immature — ≈ this file's early-scale fully-loaded |
 
-**Why the base here ($0.44) sits above Musk/ARK's $0.20:** those figures under-weight cleaning,
-leased depot real estate, teleoperation and field response at realistic staffing ratios, customer
-support, payment processing, and a realistic insurance load. They are achievable only post-2030,
-at large scale, with a clean safety record — and even then $0.20 looks optimistic once payment
-processing and a full insurance/claims load are included. Morgan Stanley's ~$0.62–0.66/mi ex-D&A
-is the more defensible near-term number; this estimate is somewhat leaner because it assumes higher
-utilization and a more mature teleop ratio.
+**Why the fully-loaded mature base (~$0.44) still sits ~2× above ARK's $0.20:** the comparison is
+now like-for-like (both fully loaded). It is *not* utilization — ARK's 100k mi/yr ≈ this file's
+bull-mature 95k — and it is *not* depreciation, where the two are close (~$0.05–0.08/mi). The gap
+is scope: ARK carries almost nothing for teleoperation, customer support, field response, or
+payment processing (~$0.045/mi on its own). Self-insurance narrows it a little — this file's
+insurance line is already a loss-cost basis, not a marked-up premium — but a clean-record
+self-insured loss cost is still ~$0.035–0.05/mi, not the ~$0.02 ARK implies; a fleet carrying
+paying passengers still pays the claims. Morgan Stanley's ~$0.74/mi (incl. depreciation) lines up
+with this file's **mid-scale** fully-loaded figure, i.e. MS is modelling an earlier / less-utilized
+fleet than the 2032+ mature base here.
 
 ### Provenance of Musk's $0.20/mi target
 
@@ -106,18 +202,28 @@ utilization and a more mature teleop ratio.
   low EV maintenance, low-downtime robotic cleaning, and — the biggest lever — amortizing a
   ~$25–30k vehicle over **100,000+ miles/year** of utilization so per-mile depreciation stays small.
 - **Caveats for using it against this file:** (a) it began as an unmodeled stage assertion;
-  (b) ARK's version *includes* D&A, so it is not scope-comparable to the ex-D&A numbers here;
-  (c) ARK assumes ~2× this file's base utilization (100k vs 50k mi/yr); (d) both Musk's and ARK's
-  figures carry only a thin insurance/teleop/support allocation. Treat $0.20/mi as a
-  best-case 2030+ marketing target, not a planning number.
+  (b) ARK's version *includes* D&A — compare it to this file's **fully-loaded** ~$0.44–0.49/mi, not
+  the ex-D&A figure; (c) ARK assumes ~100k mi/yr, matching only this file's bull-mature case;
+  (d) both Musk's and ARK's figures carry only a thin insurance/teleop/support allocation and no
+  real payment-processing line. Treat $0.20/mi as a best-case 2030+ marketing target, not a
+  planning number.
 
 ## Biggest uncertainties
 
-1. **Insurance / claims** — swings $0.04 to $0.12+/mi on the realized crash rate and the tort
-   environment. Could be the largest single line or a minor one.
+1. **Insurance / claims** — swings ~$0.035 to $0.12+/mi on the realized crash rate and the tort
+   environment. Tesla self-insures via its captive in 13 states (including every near-term robotaxi
+   market — TX, FL, AZ, NV, CA), so the cost is loss cost + handling + tail reinsurance, not a
+   marked-up third-party premium — but self-insurance also means a nuclear-verdict year lands
+   straight on Tesla's P&L rather than an insurer's. Could be the largest single line or a minor one.
 2. **Teleoperation ratio** — $0.025 to $0.13/mi across plausible operator:vehicle ratios.
-3. **Utilization** — see table; ±$0.10/mi.
-4. **Metro mix** — depot lease, insurance and wages roughly double from Phoenix to San Francisco.
+3. **Utilization / annual miles — the dominant driver.** ~$0.50/mi at 40k mi/yr vs ~$0.32/mi at
+   95k on opex alone, and it swings depreciation another ~$0.065 (95k) to ~$0.13 (40k) on top.
+   Whether a mature Cybercab does 55k or 95k mi/yr turns on demand density and service-area size,
+   neither demonstrated yet (Waymo is at ~30–35k today).
+4. **Vehicle life / capitalized cost** — depreciation ranges ~$0.05/mi (a $26k unit, 15% residual,
+   450k-mile life) to ~$0.13/mi (a $34k unit, ~5% residual, retired at ~4.5 yr / ~200k mi). Turns on
+   autonomy-hardware obsolescence cadence and whether packs are swapped or cars retired.
+5. **Metro mix** — depot lease, insurance and wages roughly double from Phoenix to San Francisco.
 
 This is a cost estimate only — it is not a margin or profitability statement; fares and revenue
 are not modeled here beyond the payment-processing line.
@@ -133,3 +239,6 @@ are not modeled here beyond the payment-processing line.
 - "We, Robot" event (Oct 2024): Cybercab 20¢/mi, bus ~$1/mi analogy, Robovan 5–10¢/mi — https://techcrunch.com/2024/10/10/tesla-reveals-20-cybercabs-at-we-robot-event/
 - Musk says it's "probably true" Cybercab could cost less than $0.20/mi (Sept 2026) — https://eletric-vehicles.com/tesla/musk-says-its-probably-true-cybercab-could-cost-less-than-0-20-per-mile/
 - ARK-derived $0.20/mi (energy, maintenance, cleaning, depreciation via 100k+ mi/yr) — https://ilovetesla.com/tesla-cybercab-elon-musk-confirms-0-20-per-mile-operating-cost-the-future-of-affordable-robotaxis-is-here/
+- Waymo ~500k paid rides/week, ~18–20 trips/vehicle/day benchmark — https://www.thedriverlessdigest.com/p/waymo-hits-500000-weekly-rides-and
+- Waymo coverage vs. ridership / per-vehicle utilization — https://businessmodelanalyst.com/waymo-coverage-vs-ridership-utilization/
+- Tesla Insurance state list (13 states, incl. FL late 2025) & CA self-underwriting shift — https://www.notateslaapp.com/tesla-reference/913/tesla-insurance-a-look-at-its-cost-and-which-states-it-s-available-in/1000
