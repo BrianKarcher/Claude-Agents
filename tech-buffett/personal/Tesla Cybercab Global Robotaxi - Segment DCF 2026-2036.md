@@ -1,9 +1,11 @@
 ================================================================================
 TESLA CYBERCAB — GLOBAL ROBOTAXI SEGMENT DCF
 Standalone segment valuation, NOT a Tesla per-share price target
-Date: September 7, 2026 (revised twice same day: (1) vehicle capex $30k -> $20k,
-(2) depreciation schedule in the cost-per-mile file rebuilt off the same $20k
-basis, fixing the D&A/capex mismatch flagged in revision 1)
+Date: September 7, 2026 (revised three times same day: (1) vehicle capex
+$30k -> $20k, (2) depreciation schedule in the cost-per-mile file rebuilt
+off the same $20k basis, fixing the D&A/capex mismatch flagged in revision
+1, (3) discount rates lowered — Base 13.0%->10.0%, Bull 11.0%->9.0%,
+Bear 15.5%->13.0%)
 Sources: "Tesla Cybercab Global Robotaxi Fleet 2026-2036" (fleet/production),
          "Tesla Cybercab Global Robotaxi Fleet - Financials 2026-2036"
          (fleet operating profit, now on the $20k depreciation basis), "Tesla
@@ -94,10 +96,10 @@ SG&A ALLOCATION (unchanged):
 TAX RATE: 15% flat (unchanged), applied only to positive segment pre-tax
 income.
 
-DISCOUNT RATES / TERMINAL ASSUMPTIONS (unchanged):
-  BASE: 13.0% WACC, 3.0% TGR, 16x exit multiple
-  BULL: 11.0% WACC, 3.5% TGR, 20x exit multiple
-  BEAR: 15.5% WACC, terminal value = $0
+DISCOUNT RATES / TERMINAL ASSUMPTIONS (revised 2026-09-07, third revision):
+  BASE: 10.0% WACC (was 13.0%), 3.0% TGR, 16x exit multiple
+  BULL: 9.0% WACC (was 11.0%), 3.5% TGR, 20x exit multiple
+  BEAR: 13.0% WACC (was 15.5%), terminal value = $0
 
 
 ================================================================================
@@ -162,34 +164,38 @@ SECTION 3 — DCF & TERMINAL VALUE
 ================================================================================
 
 Explicit period 2027-2036 (10 years, discounted); 2026 is the anchor year.
+**Discount rates lowered this revision** (Base 13.0%->10.0%, Bull
+11.0%->9.0%, Bear 15.5%->13.0%) — TGR and exit multiples unchanged.
 
-BASE (13.0% WACC, 3.0% TGR, 16x exit multiple)
-  Sum of PV of explicit FCFs (2027-2036):                       $33.9B  (rev. 1: $34.6B)
-  Terminal-year (2036) FCF:                                     $50.2B  (rev. 1: $50.7B)
-  TV (perpetuity, g=3.0%): 50.25 x 1.03 / (0.13-0.03) =        $517.5B  -> PV $152.5B
-  TV (exit multiple, 16x): 50.25 x 16 =                        $804.0B  -> PV $236.8B
-  Average PV of TV:                                                     $194.7B
-  ENTERPRISE VALUE (Base):                                       ~$228.5B  (rev. 1: ~$231.1B)
+BASE (10.0% WACC, 3.0% TGR, 16x exit multiple)
+  Sum of PV of explicit FCFs (2027-2036):                       $44.5B  (was $33.9B at 13.0% WACC)
+  Terminal-year (2036) FCF:                                     $50.2B  (unchanged — WACC doesn't affect the FCF build)
+  TV (perpetuity, g=3.0%): 50.25 x 1.03 / (0.10-0.03) =        $739.3B  -> PV $285.0B
+  TV (exit multiple, 16x): 50.25 x 16 =                        $804.0B  -> PV $309.9B
+  Average PV of TV:                                                     $297.5B
+  ENTERPRISE VALUE (Base):                                       ~$342.0B  (was ~$228.5B)
 
-BULL (11.0% WACC, 3.5% TGR, 20x exit multiple)
-  Sum of PV of explicit FCFs (2027-2036):                       $232.7B  (rev. 1: $239.3B)
-  Terminal-year (2036) FCF:                                     $208.5B  (rev. 1: $213.6B)
-  TV (perpetuity, g=3.5%): 208.53 x 1.035 / (0.11-0.035) =    $2,877.7B  -> PV $1,013.5B
-  TV (exit multiple, 20x): 208.53 x 20 =                      $4,170.6B  -> PV $1,468.9B
-  Average PV of TV:                                                    $1,241.2B
-  ENTERPRISE VALUE (Bull):                                       ~$1,473.9B  (rev. 1: ~$1,510.6B)
+BULL (9.0% WACC, 3.5% TGR, 20x exit multiple)
+  Sum of PV of explicit FCFs (2027-2036):                       $272.6B  (was $232.7B at 11.0% WACC)
+  Terminal-year (2036) FCF:                                     $208.5B  (unchanged)
+  TV (perpetuity, g=3.5%): 208.53 x 1.035 / (0.09-0.035) =    $3,924.2B  -> PV $1,657.6B
+  TV (exit multiple, 20x): 208.53 x 20 =                      $4,170.6B  -> PV $1,761.6B
+  Average PV of TV:                                                    $1,709.6B
+  ENTERPRISE VALUE (Bull):                                       ~$1,982.2B  (was ~$1,473.9B)
 
-BEAR (15.5% WACC, terminal value = $0)
-  Sum of PV of explicit FCFs (2027-2036):                       -$22.3B  (rev. 1: -$22.1B)
+BEAR (13.0% WACC, terminal value = $0)
+  Sum of PV of explicit FCFs (2027-2036):                       -$25.4B  (was -$22.3B at 15.5% WACC)
   Terminal value:                                                    $0
-  ENTERPRISE VALUE (Bear):                                        ~-$22.3B  (rev. 1: ~-$22.1B)
+  ENTERPRISE VALUE (Bear):                                        ~-$25.4B  (was ~-$22.3B)
 
-All three scenarios land within ~2% of revision 1's enterprise values,
-confirming the depreciation fix is close to FCF-neutral. **The important
-change from this revision isn't the DCF output — it's that Fleet Operating
-Profit, Segment EBIT, and NOPAT are now all correctly stated** (materially
-higher than before), and the mismatch flagged in revision 1 no longer
-exists.
+Base and Bull rise substantially (+50% and +34% respectively) on the lower
+discount rate — the DCF's outer-year FCFs are enormous, so shaving 2-3
+points off WACC has an outsized effect on their present value. **Bear gets
+MORE negative, not less**, despite also having a lower WACC — with a $0
+terminal value and no positive FCF ever, discounting less heavily just means
+the (persistently negative) explicit-period cash flows count for more, not
+less. This is a useful reminder that "lower discount rate = higher value"
+only holds when the underlying cash flows are eventually positive.
 
 
 ================================================================================
@@ -200,35 +206,50 @@ TABLE A: ENTERPRISE VALUE ($B) — WACC x TERMINAL GROWTH RATE (perpetuity
 method only, for comparability across cells)
 
 WACC \ TGR    2.0%      3.0%      4.0%
+8.5%         $399.9    $467.3    $564.8
+10.0%        $291.5    $329.6    $380.3   <- base case (perpetuity-only)
 11.5%        $220.5    $243.9    $273.5
-13.0%        $171.1    $186.3    $204.9
-14.5%        $135.4    $145.8    $158.0
 
-TABLE B: ENTERPRISE VALUE ($B) — EXIT MULTIPLE (13.0% WACC)
-  10x  $181.9
-  12x  $211.5
-  14x  $241.1
-  16x  $270.7   <- exit-multiple-only version of the base case
-  18x  $300.3
-  20x  $329.9
+TABLE B: ENTERPRISE VALUE ($B) — EXIT MULTIPLE (10.0% WACC)
+  10x  $238.2
+  12x  $277.0
+  14x  $315.7
+  16x  $354.5   <- exit-multiple-only version of the base case
+  18x  $393.2
+  20x  $431.9
 
-Essentially the same grid as revision 1 (within ~1%), for the reasons in
-Section 3.
+Every cell is meaningfully higher than the prior (13.0% WACC) version — as
+expected, since this grid is the most WACC-sensitive part of the whole file
+by construction.
 
 
 ================================================================================
 SECTION 5 — SCENARIO SUMMARY
 ================================================================================
 
-Scenario   WACC    TGR    Exit   Cum. FCF 2026-36   2036 FCF   Enterprise Value
-BULL      11.0%   3.5%    20x         +$577.0B       $208.5B     ~$1,473.9B
-BASE      13.0%   3.0%    16x         +$111.2B        $50.2B       ~$228.5B
-BEAR      15.5%    n/a    n/a          -$57.9B       -$10.6B        ~-$22.3B
+Scenario   WACC    TGR    Exit   Cum. FCF 2026-36   2036 FCF   Enterprise Value   Per TSLA Share*
+BULL       9.0%   3.5%    20x         +$577.0B       $208.5B     ~$1,982.2B        ~$559.94
+BASE      10.0%   3.0%    16x         +$111.2B        $50.2B       ~$342.0B         ~$96.61
+BEAR      13.0%    n/a    n/a          -$57.9B       -$10.6B        ~-$25.4B         ~-$7.18
 
 Probability-weighted (20% Bull / 45% Base / 35% Bear, unchanged weights):
-  0.20 x 1,473.9 + 0.45 x 228.5 + 0.35 x (-22.3) = ~$391.8B  (rev. 1: ~$402.5B)
+  0.20 x 1,982.2 + 0.45 x 342.0 + 0.35 x (-25.4) = ~$541.5B  -> **~$152.97/share**
 
-Simple average of the three scenarios: ~$560.0B (rev. 1: ~$573.2B)
+Simple average of the three scenarios: ~$766.3B -> **~$216.47/share**
+
+*Per-share figures divide the segment's enterprise value by Tesla's Q2 2026
+diluted weighted-average share count of ~3.54B shares (source: Tesla 10-Q,
+via GuruFocus/AlphaQuery). **This is the robotaxi segment's value ADDED to a
+TSLA share, not a TSLA price target** — it excludes Tesla's auto, energy,
+and services businesses entirely, and doesn't net any corporate cash or debt
+(this is a segment EV, not a consolidated equity bridge). To get anywhere
+near an actual TSLA fair value you'd add this to an independent valuation of
+the rest of Tesla. For calibration only: TSLA closed around **$352.89** on
+Sept 6, 2026 — so Base alone (~$96.61) would be roughly 27% of the current
+share price, and Bull alone (~$559.94) exceeds the entire current share
+price by itself. Share count is held flat at 3.54B (no SBC dilution modeled
+over the decade) — a real simplification given Tesla's history of ongoing
+equity compensation issuance.
 
 
 ================================================================================

@@ -147,18 +147,24 @@ distinction (Section 1) — a red flag would be if these came out BELOW 2.7x,
 which would suggest the EBITDA multiple was too rich for the margin implied.
 They don't, so the two views are at least internally consistent.
 
-PRESENT VALUE (discounted back to 2026 at the DCF file's own WACC — 13.0%
-base, 11.0% bull — purely so these numbers are comparable to the DCF's
-enterprise values; this is NOT part of a "pure" multiples method, which by
-design doesn't discount anything):
+PRESENT VALUE (discounted back to 2026 at the DCF file's own WACC — revised
+2026-09-07 to 10.0% base, 9.0% bull — purely so these numbers are comparable
+to the DCF's enterprise values; this is NOT part of a "pure" multiples
+method, which by design doesn't discount anything):
 
-           Reference year   Future EV    PV to 2026
-  BASE          2030          $46.6B        $28.6B
-  BASE          2033         $465.0B       $197.7B
-  BASE          2036       $1,088.4B       $320.7B
-  BULL          2030         $278.5B       $183.4B
-  BULL          2033       $1,953.8B       $941.1B
-  BULL          2036       $4,476.3B     $1,576.6B
+           Reference year   Future EV    PV to 2026    Per TSLA Share*
+  BASE          2030          $46.6B        $31.8B          $8.98
+  BASE          2033         $465.0B       $238.6B         $67.40
+  BASE          2036       $1,088.4B       $419.6B        $118.53
+  BULL          2030         $278.5B       $197.3B         $55.73
+  BULL          2033       $1,953.8B     $1,068.6B        $301.86
+  BULL          2036       $4,476.3B     $1,890.6B        $534.07
+
+*Per-share = PV ÷ Tesla's Q2 2026 diluted weighted-average share count
+(~3.54B shares, per Tesla's 10-Q). Same caveat as the DCF file: this is the
+robotaxi segment's value added to a TSLA share, not a price target — it
+excludes the rest of Tesla and doesn't net corporate cash/debt. For
+calibration, TSLA closed around $352.89 on Sept 6, 2026.
 
 
 ================================================================================
@@ -181,7 +187,11 @@ The honest options are:
      2030: $3.9B x 0.4 = $1.6B
      2033: $19.4B x 0.4 = $7.8B
      2036: $40.5B x 0.4 = $16.2B
-   PV to 2026 at 15.5%: ~$0.9B / $2.8B / $3.8B respectively.
+   PV to 2026 at 13.0% (revised 2026-09-07, was 15.5%): ~$1.0B / $3.3B /
+   $4.8B respectively — **per TSLA share (÷3.54B): ~$0.28 / $0.93 / $1.36.**
+   Trivial next to base/bull, which is the point: bear isn't a smaller
+   version of the other scenarios, it's a scenario where this segment barely
+   registers on a TSLA share at all.
 
 Treat option 2 as a rough floor on liquidation-ish value, not a real
 valuation — it exists so bear has SOME number in the summary table, not
@@ -193,18 +203,24 @@ EV) is the more honest read of what bear actually means.
 SECTION 5 — WHY THIS DIVERGES SO MUCH FROM THE DCF, AND WHAT TO DO ABOUT IT
 ================================================================================
 
-           DCF Enterprise Value    Multiples EV (PV, 2036 reference)
-  BEAR          ~-$22.3B                 ~$3.8B (distressed floor only)
-  BASE          ~$228.5B                 ~$320.7B  (1.4x the DCF)
-  BULL        ~$1,473.9B               ~$1,576.6B  (1.1x the DCF, using 2036)
-                                        ~$941.1B    (0.6x the DCF, using 2033)
-                                        ~$183.4B    (0.1x the DCF, using 2030)
+(Both files' discount rates were lowered 2026-09-07: DCF Base 13.0%->10.0%,
+Bull 11.0%->9.0%, Bear 15.5%->13.0%; the multiples file's PV figures below
+use the same revised rates.)
+
+           DCF Enterprise Value    Multiples EV (PV, 2036 reference)   DCF $/sh   Multiples $/sh (2036)
+  BEAR          ~-$25.4B                 ~$4.8B (distressed floor only)   -$7.18          $1.36
+  BASE          ~$342.0B                 ~$419.6B  (1.2x the DCF)         $96.61        $118.53
+  BULL        ~$1,982.2B               ~$1,890.6B  (1.0x the DCF, 2036)  $559.94        $534.07
+                                       ~$1,068.6B   (0.5x the DCF, 2033)                 $301.86
+                                         ~$197.3B   (0.1x the DCF, 2030)                  $55.73
+
+(Per-share = EV ÷ 3.54B diluted TSLA shares, same basis as the DCF file.)
 
 Two things stand out:
 
-**1. The reference-year choice swings the multiples answer by 8-11x on its
-own** (base: $28.6B at 2030 vs. $320.7B at 2036; bull: $183.4B vs.
-$1,576.6B). This is the multiples method's version of the DCF's WACC/TGR
+**1. The reference-year choice swings the multiples answer by 9-13x on its
+own** (base: $31.8B at 2030 vs. $419.6B at 2036; bull: $197.3B vs.
+$1,890.6B). This is the multiples method's version of the DCF's WACC/TGR
 sensitivity — and arguably a BIGGER lever, because it's not a continuous
 dial, it's "which year do you believe the market would actually be looking
 at." There's no principled way to pick one reference year over another
@@ -212,7 +228,7 @@ without also taking a view on when (or whether) the market starts pricing
 this business as a mature, de-risked platform vs. a still-scaling growth
 story.
 
-**2. At the 2036 reference year, multiples and DCF land within ~1.1-1.4x of
+**2. At the 2036 reference year, multiples and DCF land within ~1.0-1.2x of
 each other for base and bull** — closer agreement than the reference-year
 sensitivity above might suggest, and a reasonable cross-check that neither
 method is wildly miscalibrated against the other once you anchor both to
