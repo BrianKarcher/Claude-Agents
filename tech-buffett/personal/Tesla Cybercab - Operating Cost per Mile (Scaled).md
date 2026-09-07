@@ -128,22 +128,31 @@ Economic depreciation of the vehicle itself — glider + battery + onboard visio
 Formula: **capitalized cost × (1 − residual) ÷ lifetime miles.**
 
 **Inputs:**
-- **Capitalized cost:** ~$28–34k. Tesla's *internal build cost* at scale is ~$25–28k (consumer
-  price is <$30k); a fleet unit also carries the network fit-out and the vision/compute stack.
-  Vision-only keeps this far below Waymo Gen 6 (~$30–50k of sensors alone).
-- **Residual:** ~10% (range 0–20%). A purpose-built, no-steering-wheel Cybercab has a thin
+- **Capitalized cost: revised to $20,000** (2026-09-07, per updated instruction — down from the
+  original ~$28–34k estimate). Tesla's *internal build cost* at scale was estimated at ~$25–28k
+  (consumer price <$30k) with a fleet unit carrying extra network fit-out and vision/compute stack
+  on top — so $20k sits *below* that original build-cost estimate, not just below the fleet-unit
+  price. Treat this as a "vehicle gets meaningfully cheaper than originally estimated" case (BOM
+  simplification, battery-cost decline, yield improvement) rather than a refinement of the original
+  $28–34k figure, unless there's a specific reason to believe $20k is now the better number. The
+  original ~$28–34k figures are kept in "How this compares" below for reference.
+- **Residual:** ~10% (range 0–20%), unchanged. A purpose-built, no-steering-wheel Cybercab has a thin
   secondary market — mostly parts/scrap plus possible non-US resale.
 - **Lifetime:** the binding limit is ~**4.5 years of economic life** (autonomy-hardware generation
-  obsolescence and brand/safety standards), or a ~**350k-mile** cap, whichever comes first. At low
-  early-phase utilization the *time* limit binds, so depreciation per mile is much higher when the
-  car is underused — same dynamic as the fixed opex buckets.
+  obsolescence and brand/safety standards), or a ~**350k-mile** cap, whichever comes first, unchanged.
+  At low early-phase utilization the *time* limit binds, so depreciation per mile is much higher when
+  the car is underused — same dynamic as the fixed opex buckets.
 
-| Phase | Annual miles | Lifetime miles (≈4.5 yr or 350k cap) | **Depreciation $/mi** |
-|---|--:|--:|--:|
-| Early (2027–28) | ~44k | ~200k | **~0.13** |
-| Mid (2029–31) | ~62k | ~280k | **~0.10** |
-| Mature base (2032+) | ~75k | ~340k | **~0.08** |
-| Lean / bull mature | ~95k | 350k cap (hit in ~3.7 yr) | **~0.065** |
+| Phase | Annual miles | Lifetime miles (≈4.5 yr or 350k cap) | **Depreciation $/mi** | (at prior $28-34k basis) |
+|---|--:|--:|--:|--:|
+| Early (2027–28) | ~44k | ~200k | **~0.09** | ~0.13 |
+| Mid (2029–31) | ~62k | ~280k | **~0.07** | ~0.10 |
+| Mature base (2032+) | ~75k | ~340k | **~0.05** | ~0.08 |
+| Lean / bull mature | ~95k | 350k cap (hit in ~3.7 yr) | **~0.04** | ~0.065 |
+
+(New figures = old figures x (20,000/30,000) — capitalized cost scales linearly through the
+depreciation formula holding residual % and lifetime miles fixed; $30k is the representative
+midpoint the original table's phase values were built from.)
 
 **Optional mid-life battery reserve:** if packs are swapped (~$6–9k, falling) rather than the car
 retired, add **~$0.02–0.03/mi** in the mature/lean cases where the car would otherwise outlast its
@@ -155,14 +164,15 @@ first pack. Not added to the totals below — noted as a swing factor.
 
 | Scenario | Opex ex-payment | + Depreciation | **Fully loaded, ex-payment** | **+ payment processing** |
 |---|--:|--:|--:|--:|
-| Early-scale (2027–29) | ~0.66–0.83 | ~0.13 | **~0.79–0.96** | ~0.84–1.01 |
-| Mid-scale (2029–31) | ~0.40–0.46 | ~0.10 | **~0.50–0.56** | ~0.55–0.61 |
-| **Mature base (2032+)** | ~0.35–0.38 | ~0.08 | **~0.43–0.46** | **~0.48–0.51** |
-| Lean / mature (2033+) | ~0.27–0.31 | ~0.065 | **~0.34–0.38** | ~0.39–0.43 |
+| Early-scale (2027–29) | ~0.66–0.83 | ~0.09 | **~0.75–0.92** | ~0.80–0.97 |
+| Mid-scale (2029–31) | ~0.40–0.46 | ~0.07 | **~0.47–0.53** | ~0.52–0.58 |
+| **Mature base (2032+)** | ~0.35–0.38 | ~0.05 | **~0.40–0.43** | **~0.45–0.48** |
+| Lean / mature (2033+) | ~0.27–0.31 | ~0.04 | **~0.31–0.35** | ~0.36–0.40 |
 
-**Headline, fully loaded:** mature base **~$0.44/mi ex-payment (~$0.49 incl. payment)**;
-lean ~$0.36; early-scale ~$0.88. Depreciation adds ~$0.08–0.13/mi depending on utilization and is
-the second-largest single line after the opex fixed block.
+**Headline, fully loaded (at $20k capitalized cost):** mature base **~$0.42/mi ex-payment
+(~$0.47 incl. payment)**; lean ~$0.33; early-scale ~$0.84. Depreciation now adds only
+~$0.04–0.09/mi (was ~$0.08–0.13 at the original $28-34k basis) and is a smaller line relative to
+opex than before — still material, no longer the clear second-largest single line at every phase.
 
 ---
 
@@ -171,16 +181,18 @@ the second-largest single line after the opex fixed block.
 | Source | Figure | Notes |
 |---|--:|---|
 | **This estimate — ex-D&A** | mature base **~$0.35/mi** ex-payment (~$0.40 incl.); lean ~$0.29; early-scale ~$0.73 | Cash opex only |
-| **This estimate — fully loaded** | mature base **~$0.44/mi** ex-payment (~$0.49 incl.); lean ~$0.36; early-scale ~$0.88 | Opex + ~$0.08–0.13 vehicle depreciation. Like-for-like with ARK / MS below |
+| **This estimate — fully loaded** | mature base **~$0.42/mi** ex-payment (~$0.47 incl.); lean ~$0.33; early-scale ~$0.84 | Opex + ~$0.04–0.09 vehicle depreciation (at $20k capitalized cost). Like-for-like with ARK / MS below |
 | Musk ("We, Robot", Oct 2024; reaffirmed Sept 2026) | "~$0.20/mi" operating cost; fare "30–40¢/mi"; Robovan "5–10¢/mi per passenger" | Stage claim, no published line-item model — see "Provenance" below. "Operating cost" framing likely excludes depreciation |
 | ARK *Big Ideas 2026* | $0.20/mi **fully loaded** at scale by 2030 (Waymo Gen 6: $0.40) | ~2.2–2.5× below this file's like-for-like fully-loaded mature ~$0.44–0.49. Gap is scope (teleop, support, field response, payment, realistic insurance), not miles or depreciation |
 | Morgan Stanley | Tesla **~$0.74/mi** incl. depreciation, cleaning, maintenance, charging, mobile operators, insurance, parking (Waymo $1.36) | ≈ this file's **mid-scale** fully-loaded (~$0.55–0.61 incl. payment) to early-mature — i.e. MS assumes lower utilization / earlier stage than the mature base here |
 | Analyst est. of Tesla's *current* (2026) cost | ~$0.81/mi | Sub-scale, immature — ≈ this file's early-scale fully-loaded |
 
-**Why the fully-loaded mature base (~$0.44) still sits ~2× above ARK's $0.20:** the comparison is
-now like-for-like (both fully loaded). It is *not* utilization — ARK's 100k mi/yr ≈ this file's
-bull-mature 95k — and it is *not* depreciation, where the two are close (~$0.05–0.08/mi). The gap
-is scope: ARK carries almost nothing for teleoperation, customer support, field response, or
+**Why the fully-loaded mature base (~$0.42, at the revised $20k capitalized cost) still sits ~2×
+above ARK's $0.20:** the comparison is like-for-like (both fully loaded). It is *not* utilization —
+ARK's 100k mi/yr ≈ this file's bull-mature 95k — and now it's not depreciation at all: this file's
+mature depreciation (~$0.05/mi, ~$0.04 lean) sits at or below ARK's own implied ~$0.05–0.08/mi on a
+$25-30k vehicle, since $20k is now cheaper than the vehicle ARK itself assumes. The entire remaining
+gap is scope: ARK carries almost nothing for teleoperation, customer support, field response, or
 payment processing (~$0.045/mi on its own). Self-insurance narrows it a little — this file's
 insurance line is already a loss-cost basis, not a marked-up premium — but a clean-record
 self-insured loss cost is still ~$0.035–0.05/mi, not the ~$0.02 ARK implies; a fleet carrying
@@ -202,8 +214,9 @@ fleet than the 2032+ mature base here.
   low EV maintenance, low-downtime robotic cleaning, and — the biggest lever — amortizing a
   ~$25–30k vehicle over **100,000+ miles/year** of utilization so per-mile depreciation stays small.
 - **Caveats for using it against this file:** (a) it began as an unmodeled stage assertion;
-  (b) ARK's version *includes* D&A — compare it to this file's **fully-loaded** ~$0.44–0.49/mi, not
-  the ex-D&A figure; (c) ARK assumes ~100k mi/yr, matching only this file's bull-mature case;
+  (b) ARK's version *includes* D&A — compare it to this file's **fully-loaded** ~$0.42–0.47/mi
+  (at the revised $20k capitalized cost), not the ex-D&A figure; (c) ARK assumes ~100k mi/yr,
+  matching only this file's bull-mature case;
   (d) both Musk's and ARK's figures carry only a thin insurance/teleop/support allocation and no
   real payment-processing line. Treat $0.20/mi as a best-case 2030+ marketing target, not a
   planning number.
@@ -217,11 +230,14 @@ fleet than the 2032+ mature base here.
    straight on Tesla's P&L rather than an insurer's. Could be the largest single line or a minor one.
 2. **Teleoperation ratio** — $0.025 to $0.13/mi across plausible operator:vehicle ratios.
 3. **Utilization / annual miles — the dominant driver.** ~$0.50/mi at 40k mi/yr vs ~$0.32/mi at
-   95k on opex alone, and it swings depreciation another ~$0.065 (95k) to ~$0.13 (40k) on top.
-   Whether a mature Cybercab does 55k or 95k mi/yr turns on demand density and service-area size,
-   neither demonstrated yet (Waymo is at ~30–35k today).
-4. **Vehicle life / capitalized cost** — depreciation ranges ~$0.05/mi (a $26k unit, 15% residual,
-   450k-mile life) to ~$0.13/mi (a $34k unit, ~5% residual, retired at ~4.5 yr / ~200k mi). Turns on
+   95k on opex alone, and it swings depreciation another ~$0.04 (95k) to ~$0.09 (40k) on top at the
+   revised $20k capitalized cost (was ~$0.065 to ~$0.13 at $28-34k). Whether a mature Cybercab does
+   55k or 95k mi/yr turns on demand density and service-area size, neither demonstrated yet (Waymo
+   is at ~30–35k today).
+4. **Vehicle life / capitalized cost** — at the revised $20k figure, depreciation ranges ~$0.03/mi
+   (15% residual, 450k-mile life) to ~$0.09/mi (~5% residual, retired at ~4.5 yr / ~200k mi); the
+   original $28-34k basis ranged ~$0.05-0.13/mi over the same life/residual spread — keep that
+   wider range in mind if $20k turns out to be too aggressive a build-cost assumption. Turns on
    autonomy-hardware obsolescence cadence and whether packs are swapped or cars retired.
 5. **Metro mix** — depot lease, insurance and wages roughly double from Phoenix to San Francisco.
 
