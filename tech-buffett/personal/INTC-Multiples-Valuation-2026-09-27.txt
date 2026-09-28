@@ -1,0 +1,466 @@
+================================================================================
+INTEL CORPORATION (INTC) — SUM-OF-THE-PARTS MULTIPLES VALUATION
+A comps-based alternative to the DCF, not a replacement for its findings
+Date: September 27, 2026
+Sources: DCF-INTC-2026-09-27.txt (this file reuses that model's Section 4
+         segment-revenue build for Intel Products, Intel Foundry-external,
+         and All Other at FY2026E/2030E/2036E, and its Section 5 WACC
+         assumptions for present-valuing this file's results back to today
+         — see that file for how those revenue figures were built). Public-
+         company comp multiples (AMD, TSMC, GlobalFoundries, Mobileye)
+         pulled live via web search Sept 27-28, 2026 — see Sources section.
+================================================================================
+
+WHY THIS FILE EXISTS
+----------------------
+The DCF file found Intel worth $8.34/share (base case) against a $123.00
+price — a ~93% gap. That result leans heavily on this model's own judgment
+calls about margin trajectory, capex intensity, and (especially) whether
+Intel Foundry's tiny external-revenue base ever scales. A pure multiples
+approach asks a genuinely different question: it doesn't need a single
+dollar of the DCF's 2027-2036 cash-flow forecast. It just asks "if the
+market values comparable semiconductor product and foundry businesses at
+N times revenue, what would INTEL'S SEGMENTS be worth once they look like
+[2026E / 2030E / 2036E's projected financials]?" Because Intel is not one
+business but two very different ones bolted together — a profitable,
+mature chip-design franchise (CCG+DCAI) and an unproven, currently-mostly-
+internal foundry — this file values it SUM-OF-THE-PARTS: Intel Products
+against AMD-style comps, Intel Foundry's external revenue against TSMC/
+GlobalFoundries-style comps, plus the small remaining Mobileye stake at its
+own direct public market value.
+
+THE HEADLINE FINDING, BEFORE THE NUMBERS
+-------------------------------------------
+Like the robotaxi multiples file in this folder, this method produces
+LARGER values than the DCF for every scenario — often 2-5x larger — because
+applying a market multiple implicitly assumes the business keeps growing
+roughly the way the comp companies do, rather than decelerating to the
+DCF's ~2.5% terminal growth rate. But UNLIKE the DCF, this method's Bear
+case does NOT collapse toward zero: Intel Products alone stays a real,
+profitable ~28-29%-EBITDA-margin business even under bearish assumptions,
+so a sum-of-the-parts view puts a floor under Intel that the consolidated
+DCF's net-debt arithmetic (Section 6 of that file) does not show as
+clearly. And a separate cross-check — literally applying AMD's and TSMC's
+OWN CURRENT market multiples to Intel's FY2026E segments — produces
+$173-175/share, ABOVE today's $123 price. That result doesn't mean INTC is
+cheap; it means the gap between the DCF's verdict and the market price is
+best read as "the market is pricing Intel's turnaround close to as
+generously as it already prices AMD's," which is a claim about relative
+comp richness, not a claim that either company is fundamentally cheap (see
+Section 5).
+
+
+================================================================================
+SECTION 1 — COMPARABLE COMPANY MULTIPLES (pulled live, Sept 27-28, 2026)
+================================================================================
+
+| Company | EV/Revenue | EV/EBITDA | Notes |
+|---|--:|--:|---|
+| **AMD** (fabless CPU/GPU designer — Intel Products comp) | 24.71x (TTM) / **15.28x (fwd)** | 106.74x (TTM, distorted — see below) | Market cap ~$1.03T, EV ~$1.02T. TTM EV/EBITDA is not usable — AMD's TTM EBITDA base is depressed relative to its current run-rate (same "noisy LTM" issue the robotaxi file flagged for Lyft), so the forward EV/Sales multiple is the more representative figure. Forward P/E 56.99x, PEG 0.86. This is itself a very rich multiple — see the AMD DCF file in this folder, which found AMD's own base-case DCF intrinsic value well below its market price at the time. |
+| **TSMC** (pure-play leading-edge foundry — Foundry ceiling comp) | **13.90x (TTM)** | 19.49x (TTM) | Market cap ~$2.02T, EV ~$1.94T. EBITDA margin 71.3% — the gold standard of foundry economics, reflecting dominant scale and near-monopoly leading-edge positioning Intel Foundry does not have. Forward P/E 19.81x (much more reasonably priced than AMD on a forward-earnings basis, despite the enormous market cap). |
+| **GlobalFoundries** (mature-node, established external-customer foundry — Foundry floor/realistic comp) | **~3.5x** (range 2.67x-4.1x across sources) | ~13x (range 12.3x-19.4x across sources, noisy) | Market cap ~$26-30B, EV ~$24-29B. The more realistic near-term comp for what Intel Foundry's external business might look like even after real (but not TSMC-scale) success — GFS has a genuine, diversified external-customer base but trades at a fraction of TSMC's multiple because it doesn't compete at the leading edge. |
+| **Mobileye (MBLY)** (Intel's remaining non-core stake — All Other comp) | n/a — used at direct stake value | n/a | $7.61/share close (Sept 23, 2026), market cap ~€5.74B (~$6.2B). Intel's remaining stake has been sold down aggressively through 2026 — from ~88% as recently as 2025 to roughly 50M shares (~$380-480M depending on exact pull date), i.e. Intel now holds a small minority position, not a controlling one. This file uses that DIRECT stake value (~$400M) rather than applying a multiple, since the actual public market value is known and the stake is immaterial to the total (well under 1% of any scenario's enterprise value below). |
+
+**The key adjustment before using any of this:** AMD and TSMC are both
+priced today for CONTINUED rapid AI-driven growth (AMD's forward EV/Sales
+of 15.28x assumes real revenue growth; TSMC's 13.9x sits on top of a
+71%-EBITDA-margin, monopoly-adjacent leading-edge franchise). Intel
+Products is a slower-growing, lower-margin, share-losing-in-parts business
+(Section 2 of the DCF file), and Intel Foundry's external business is
+currently near-zero and completely unproven at scale. Applying AMD's or
+TSMC's multiples directly, undiscounted, would import those companies'
+own growth and quality premia onto a business that has not earned them yet.
+This file's PRIMARY method (Section 3) therefore applies HEAVILY DISCOUNTED
+versions of these multiples, scaled up only as each scenario's own
+fundamentals actually justify it — and Section 5 shows, as an explicit
+cross-check, what happens if you don't discount them at all.
+
+
+================================================================================
+SECTION 2 — SEGMENT REVENUE (reused from DCF-INTC-2026-09-27.txt, Section 4)
+================================================================================
+
+Figures are identical to the DCF file's own segment build — see that file
+for the reasoning (in particular Section 3 of the DCF, on why Intel
+Foundry's ~$17-18B/yr of REPORTED segment revenue is overwhelmingly
+internal/intercompany, and why this model instead works from Foundry's much
+smaller EXTERNAL revenue line).
+
+                              BEAR         BASE         BULL
+  FY2026E (same all scenarios — anchor year)
+    Intel Products                          $58.3B
+    All Other                                $3.1B
+    Intel Foundry (external)                 $1.0B
+    TOTAL                                   $62.4B
+
+  2030E
+    Intel Products             $67.1B       $73.3B       $77.5B
+    All Other                   $3.0B        $3.5B        $4.0B
+    Intel Foundry (external)    $1.5B        $6.5B       $22.0B
+    TOTAL                      $71.6B       $83.3B      $103.5B
+
+  2036E
+    Intel Products              $74.1B       $90.4B      $106.7B
+    All Other                    $3.2B        $4.0B        $5.0B
+    Intel Foundry (external)     $2.5B       $13.0B       $48.0B
+    TOTAL                       $79.8B      $107.4B      $159.7B
+
+
+================================================================================
+SECTION 3 — CHOSEN MULTIPLES & VALUATION, BY SEGMENT
+================================================================================
+
+PRIMARY METHOD: EV/Revenue, applied per segment. Unlike the robotaxi file
+in this folder (which preferred EV/EBITDA because Cybercab's projected
+"Revenue" was fare-equivalent, not commission-equivalent, and so wasn't
+comparable to Uber's reported revenue), Intel Products revenue and Intel
+Foundry EXTERNAL revenue are both already true, like-for-like external
+revenue — there's no gross-bookings-vs-take-rate mismatch to correct for.
+EV/Revenue is used as the primary method here instead because it stays
+well-defined even where segment EBITDA is negative (Intel Foundry in the
+Bear case, and in the very early FY2026E year across all scenarios), which
+would otherwise force the same "defer to the DCF" workaround the robotaxi
+file needed for its Bear case. EV/EBITDA is shown as a secondary cross-check
+wherever segment EBITDA is positive.
+
+INTEL PRODUCTS — EV/Revenue multiples chosen (AMD's fwd 15.28x is the
+market's actual current multiple for a comparable but faster-growing,
+higher-margin, more AI-levered chip designer — used here only as a ceiling
+reference, never applied directly):
+
+           2026E   2030E   2036E    Rationale
+  BULL      4.0x    6.0x    6.5x    Expands over time as the turnaround is
+                                     proven and DCAI's AI-server growth
+                                     durably outpaces CCG's maturity — still
+                                     under half of AMD's actual fwd multiple
+                                     throughout, reflecting Intel Products'
+                                     lower margin ceiling and CCG's drag.
+  BASE      3.5x    4.0x    4.0x    Roughly flat — modest re-rating as
+                                     stability (not renewed growth
+                                     leadership) is proven; a "boring,
+                                     profitable, ex-growth" multiple.
+  BEAR      3.0x    2.5x    2.0x    De-rates over time as CCG/DCAI share
+                                     loss resumes (Section 2 of the DCF
+                                     file) — approaching legacy-hardware-
+                                     style multiples by 2036.
+
+INTEL FOUNDRY (EXTERNAL) — EV/Revenue multiples chosen (TSMC's 13.9x is the
+ceiling reference; GlobalFoundries' ~3.5x is the realistic "real but
+sub-scale" reference):
+
+           2026E   2030E   2036E    Rationale
+  BULL      6.0x    9.0x   11.0x    A genuine early-proof-of-concept premium
+                                     even at tiny scale (2026E), scaling up
+                                     toward — but always meaningfully below
+                                     — TSMC's 13.9x as 14A lands real,
+                                     at-scale external customers.
+  BASE      4.0x    5.0x    5.5x    Roughly GlobalFoundries' multiple or a
+                                     modest premium to it — real, credible
+                                     progress against management's own
+                                     modest breakeven bar, but never a scale
+                                     TSMC competitor.
+  BEAR      2.0x    1.5x    1.0x    Below GlobalFoundries throughout —
+                                     Intel Foundry's OWN persistent internal-
+                                     only losses (DCF Section 1/9) undermine
+                                     credibility as a real external
+                                     competitor; approaching a distressed-
+                                     asset multiple by 2036, in the spirit
+                                     of the robotaxi file's Hertz/Avis
+                                     framing for a structurally-challenged,
+                                     capital-intensive Bear case.
+
+ALL OTHER (Mobileye stake): held at its known, small direct public value
+(~$400M) across every scenario and year — see Section 1. Immaterial to
+every total below (well under 1% of enterprise value in every case), shown
+for completeness/SOTP discipline rather than because it moves any answer.
+
+--------------------------------------------------------------------------------
+VALUATION TABLE — UNDISCOUNTED (i.e., "what would this be worth in that
+future year, at that year's projected financials and chosen multiple")
+--------------------------------------------------------------------------------
+
+FY2026E (same revenue anchor; multiple set varies by which scenario's
+multiples you apply — shown for all three even though 2026E revenue itself
+doesn't vary by scenario):
+
+  BULL multiples: Products EV $233.2B + Foundry EV $6.0B + Other $0.4B
+                  = EV $239.6B - net debt $20.8B = Equity $218.8B / 5,043M
+                  sh = $43.38/share
+  BASE multiples: Products EV $204.1B + Foundry EV $4.0B + Other $0.4B
+                  = EV $208.5B - net debt $20.8B = Equity $187.6B / 5,043M
+                  sh = $37.21/share
+  BEAR multiples: Products EV $174.9B + Foundry EV $2.0B + Other $0.4B
+                  = EV $177.3B - net debt $20.8B = Equity $156.5B / 5,043M
+                  sh = $31.03/share
+
+2030E:
+  BULL: Products $77.5B x 6.0x = $465.0B EBITDA-implied 16.7x (EBITDA
+        margin 36%, $27.9B) + Foundry $22.0B x 9.0x = $198.0B (EBITDA
+        margin 20%, $4.4B, implied 45.0x EV/EBITDA) + Other $0.4B = EV
+        $663.4B - net debt $20.8B = Equity $642.6B / 5,043M sh = $127.42/sh
+  BASE: Products $73.3B x 4.0x = $293.2B (EBITDA margin 34%, implied 11.8x)
+        + Foundry $6.5B x 5.0x = $32.5B (EBITDA margin 5%, implied 100.0x —
+        i.e. the EV/Revenue multiple chosen is generous relative to the
+        thin EBITDA this scenario's margin assumption implies; flagged, not
+        smoothed over) + Other $0.4B = EV $326.1B - net debt $20.8B =
+        Equity $305.3B / 5,043M sh = $60.54/share
+  BEAR: Products $67.1B x 2.5x = $167.8B (EBITDA margin 29%, implied 8.6x)
+        + Foundry $1.5B x 1.5x = $2.3B (EBITDA NEGATIVE at -40% margin —
+        EV/Revenue used precisely because EV/EBITDA is undefined here) +
+        Other $0.4B = EV $170.4B - net debt $20.8B = Equity $149.6B /
+        5,043M sh = $29.66/share
+
+2036E:
+  BULL: Products $106.7B x 6.5x = $693.6B (EBITDA margin 40%, implied
+        16.2x) + Foundry $48.0B x 11.0x = $528.0B (EBITDA margin 32%,
+        implied 34.4x) + Other $0.4B = EV $1,222.0B - net debt $20.8B =
+        Equity $1,201.1B / 5,043M sh = $238.18/share
+  BASE: Products $90.4B x 4.0x = $361.6B (EBITDA margin 36%, implied 11.1x)
+        + Foundry $13.0B x 5.5x = $71.5B (EBITDA margin 20%, implied 27.5x)
+        + Other $0.4B = EV $433.5B - net debt $20.8B = Equity $412.7B /
+        5,043M sh = $81.83/share
+  BEAR: Products $74.1B x 2.0x = $148.2B (EBITDA margin 28%, implied 7.1x)
+        + Foundry $2.5B x 1.0x = $2.5B (EBITDA NEGATIVE at -20% margin) +
+        Other $0.4B = EV $151.1B - net debt $20.8B = Equity $130.3B /
+        5,043M sh = $25.84/share
+
+NOTE ON THE BASE/BULL FOUNDRY EV/EBITDA CROSS-CHECK NUMBERS (45x, 27.5x,
+34.4x, 100x): these implied multiples look rich next to TSMC's own 19.5x
+EV/EBITDA — that is a real tension, not an error. It reflects that this
+file's chosen EV/REVENUE multiples for Foundry (Section 3 above) were set
+by triangulating between TSMC and GlobalFoundries' REVENUE multiples, while
+this file's Foundry EBITDA MARGIN assumptions (5-32%, well below TSMC's
+71%) were set independently and conservatively, from Intel's own stated
+"~40% gross margin target" and the yield/scale gap implied by DCF Section
+1/9. The combination is internally consistent (both reflect "real revenue,
+thin-to-modest margin, still building credibility") but it does mean the
+EV/Revenue-implied value is somewhat MORE GENEROUS than a pure EV/EBITDA
+method would produce at the same margin assumptions — a real methodological
+tension this file resolves in favor of EV/Revenue (Section 3's opening
+rationale) but flags rather than hides.
+
+
+================================================================================
+SECTION 4 — PRESENT VALUE TO TODAY
+================================================================================
+
+Discounted back to today at the DCF file's own scenario WACCs (Bull 10.5%,
+Base 12.0%, Bear 14.5% — reused purely for comparability to that file's
+enterprise values; this is NOT part of a "pure" multiples method, which by
+design doesn't discount anything):
+
+  Scenario   Ref. year   Future value    PV to today (per share)
+  BULL         2026E        $43.38             $43.38  (no discounting — it's the anchor year)
+  BULL         2030E       $127.42             $85.47   (4 yrs @ 10.5%)
+  BULL         2036E       $238.18             $87.76   (10 yrs @ 10.5%)
+  BASE         2026E        $37.21             $37.21
+  BASE         2030E        $60.54             $38.47   (4 yrs @ 12.0%)
+  BASE         2036E        $81.83             $26.35   (10 yrs @ 12.0%)
+  BEAR         2026E        $31.03             $31.03
+  BEAR         2030E        $29.66             $17.26   (4 yrs @ 14.5%)
+  BEAR         2036E        $25.84              $6.67   (10 yrs @ 14.5%)
+
+Current price (Sept 25, 2026 close):                    $123.00
+
+Every cell in this table is BELOW the current price — this method still
+does not support $123, in any scenario, at any reference year. But the gap
+is much narrower than the DCF's: the richest cell (Bull, 2036E PV, $87.76)
+is ~29% below the price, versus the DCF Bull case's ~68% below. And unlike
+the DCF, where Bull-2030-PV ($6,828M... see DCF Table C) sits below
+Bull-2036-PV in a smoothly compounding way, here BULL peaks essentially
+FLAT between 2030 PV ($85.47) and 2036 PV ($87.76) — the additional six
+years of compounding growth is almost exactly offset by six more years of
+discounting at 10.5%, an interesting artifact of how front-loaded this
+Bull scenario's Foundry-external ramp is (Section 2: Foundry-external goes
+from $1.0B to $22.0B in just the first four years, then "only" to $48.0B
+over the next six).
+
+
+================================================================================
+SECTION 5 — CROSS-CHECK: WHAT IF INTEL TRADED AT TODAY'S ACTUAL AMD/TSMC
+MULTIPLES, UNDISCOUNTED, RIGHT NOW?
+================================================================================
+
+Section 3's chosen multiples are all explicitly discounted well below
+AMD's and TSMC's actual current multiples (Section 1), on the judgment
+that Intel Products and Intel Foundry haven't earned those peers' growth/
+quality premium yet. It's worth showing what happens if you DON'T apply
+that discount — i.e., if the market decided Intel Products deserves to
+trade exactly like AMD trades today, and Intel Foundry's tiny external
+business deserves to trade exactly like TSMC (or, in a second version,
+like GlobalFoundries) trades today, applied to Intel's FY2026E segment
+revenue (no future growth assumed — this is a right-now, static
+cross-check):
+
+  Intel Products  @ AMD's actual fwd EV/Sales (15.28x): EV = $890.8B
+  Foundry-external @ TSMC's actual EV/Sales (13.90x):   EV =  $13.9B
+  Foundry-external @ GlobalFoundries' EV/Sales (3.5x):  EV =   $3.5B
+  Mobileye stake (direct value):                        EV =   $0.4B
+
+  Products=AMD, Foundry=TSMC:   EV $905.1B - net debt $20.8B = Equity
+                                 $884.3B / 5,043M sh = $175.35/share
+  Products=AMD, Foundry=GFS:    EV $894.7B - net debt $20.8B = Equity
+                                 $873.9B / 5,043M sh = $173.29/share
+
+BOTH FIGURES ($173-175/SHARE) ARE ABOVE TODAY'S $123 PRICE.
+
+This is an important, honest tension with this file's own headline finding
+and with the DCF file's conclusion, and it needs to be read carefully
+rather than either dismissed or over-interpreted:
+
+  1. IT DOES NOT MEAN INTC IS CHEAP. It means Intel Products, if the
+     market decided to value it exactly as richly as it currently values
+     AMD, would alone be worth more than Intel's entire current enterprise
+     value. That is a statement about how expensive AMD's OWN multiple is
+     right now (see the AMD DCF file in this folder, which found AMD's
+     base-case intrinsic value of ~$306/share well below its then-price of
+     $459 — AMD itself was flagged as priced for a "great outcome," not a
+     cheap stock) more than it is a statement that Intel deserves that
+     multiple. Anchoring to an expensive comp and finding your target
+     "isn't as expensive as the comp" is a classic relative-valuation trap,
+     not evidence of absolute cheapness.
+  2. IT DOES HELP EXPLAIN WHY THE MARKET IS PAYING $123. If enough
+     market participants believe Intel Products, post-turnaround, deserves
+     something approaching an AMD-style multiple — a defensible if
+     aggressive view, given DCAI's 2026 AI-driven reacceleration — then
+     $123 stops looking like an obviously irrational price and starts
+     looking like "AMD's multiple, at a real discount, plus a free call
+     option on Foundry." That is a genuinely different (and less
+     dismissive) read than the DCF file's "priced for an outcome beyond
+     even an optimistic turnaround" framing.
+  3. IT DOES NOT MOVE THIS FILE'S OWN CENTRAL ESTIMATE. Section 3's Base
+     case still uses a 3.5-4.0x multiple for Products, not AMD's 15.28x,
+     because this file's own judgment is that Intel Products has not yet
+     earned that multiple — lower organic growth, lower margins, a
+     multi-year history of share loss (DCF Section 2), and a segment
+     (CCG) that is structurally maturing rather than AI-accelerating. A
+     reader who instead believes Intel Products deserves to close most of
+     the gap to AMD's multiple should treat this Section 5 cross-check,
+     not Section 3's Base case, as their central estimate.
+
+
+================================================================================
+SECTION 6 — WHY THIS DIVERGES FROM THE DCF, AND WHAT TO DO ABOUT IT
+================================================================================
+
+           DCF IV/share      Multiples PV/share (2036 ref.)   Ratio
+  BULL        $38.71                  $87.76                  2.27x
+  BASE         $8.34                  $26.35                  3.16x
+  BEAR        ~$0.00                   $6.67                  n/m (DCF ~0)
+
+Three things stand out:
+
+**1. The Bear-case gap is the most economically meaningful one.** The DCF's
+Bear case shows Intel's enterprise value falling below its net debt — a
+"the equity could be wiped out" result driven by discounting a shrinking,
+barely-profitable consolidated free-cash-flow stream. This multiples file's
+Bear case instead shows Intel Products staying a real, ~28-29%-EBITDA-
+margin business worth something even if Foundry never works — a genuine
+sum-of-the-parts floor the consolidated DCF doesn't surface as clearly,
+because the DCF blends Products' profits and Foundry's losses (plus
+corporate costs) into one consolidated FCF line before ever getting to
+net debt. Reality is probably closer to the multiples file's Bear here: a
+company doesn't typically let its whole equity value go to zero while one
+of its two segments keeps generating billions of profitable EBITDA — the
+more likely Bear outcome is a Foundry write-down/restructuring/spin-off
+that STOPS the bleeding and preserves most of Products' standalone value,
+which a sum-of-the-parts framing captures more naturally than a blended
+consolidated DCF.
+
+**2. The reference-year choice matters here too, though less dramatically
+than in the robotaxi file.** Bull PV is nearly flat from 2030 ($85.47) to
+2036 ($87.76) because Foundry's ramp is front-loaded in this model's own
+assumptions (Section 2) — most of the Bull case's value is already visible
+by 2030. Base and Bear, by contrast, show DECLINING PV from 2030 to 2036
+($38.47->$26.35 Base; $17.26->$6.67 Bear) — the opposite of the robotaxi
+file's pattern, where later reference years were always worth more. That
+happens because Base/Bear growth decelerates enough by the early 2030s that
+six more years of discounting outweighs six more years of (slowing) growth
+— i.e., for the less-optimistic scenarios, THIS METHOD AGREES WITH THE
+DCF'S OWN LOGIC that value gets pulled forward, not pushed out, once growth
+genuinely decelerates.
+
+**3. At every reference year and scenario, multiples > DCF, sometimes by a
+lot (up to 4.6x for Base at the 2030 reference year) — but the size of
+that gap is itself informative.** It's largest for Base (where the DCF's
+low terminal exit multiple, 12x, is the most obviously conservative input
+relative to even GlobalFoundries' ~13x actual EV/EBITDA), and relatively
+smaller for Bull (where the DCF already uses a more generous 16x exit
+multiple). This is consistent with the DCF file's own sensitivity tables
+(that file's Section 7) showing Base-case IV is fairly insensitive to exit
+multiple within a reasonable range — the multiples file's much larger gap
+mainly comes from applying a GROWING multiple (Section 3's multiples expand
+over time in Base/Bull) rather than the DCF's single fixed exit multiple,
+plus this file crediting Foundry's revenue growth directly rather than
+running it through the DCF's margin/capex/D&A machinery.
+
+**Bottom line for using this file:** don't average this file's numbers with
+the DCF's and call it a synthesized target — as the robotaxi file's own
+Section 5 puts it, that would hide a real disagreement about growth
+persistence and segment structure behind false precision. Use the DCF
+(DCF-INTC-2026-09-27.txt) for the "can Intel actually fund this and keep
+the lights on" question — its explicit FCF path and net-debt bridge are the
+right tool for that, especially given Intel's real leverage (unlike the
+net-cash AMD/NVDA/PLTR names in this folder). Use THIS file for "what would
+a market willing to pay growth-company multiples value the pieces at once
+they get there" — and use Section 5's cross-check, specifically, to
+understand that today's $123 price is better explained as "the market is
+pricing Intel's turnaround close to AMD's own (rich) multiple" than as
+outright detached from any comp-based logic. Both files agree the price
+is NOT supported by a conservative-to-moderate reading of Intel's own
+projected fundamentals; they disagree on how large and how explicable the
+gap is.
+
+
+================================================================================
+DISCLOSURES & LIMITATIONS
+================================================================================
+- Comp multiples (AMD, TSMC, GlobalFoundries, Mobileye) were pulled live via
+  web search on Sept 27-28, 2026 from secondary aggregators (stockanalysis.
+  com, GuruFocus, multiples.vc, valueinvesting.io, various financial news),
+  not directly from primary filings for this file — treat as directionally
+  right, not decimal-precise. AMD's TTM EV/EBITDA (106.74x) and some
+  GlobalFoundries figures were flagged as noisy/inconsistent across sources
+  and were either excluded (AMD) or averaged/rounded (GlobalFoundries).
+- Segment EV/Revenue and EV/EBITDA-margin assumptions (Section 3) are this
+  file's own judgment calls, informed by but not mechanically derived from
+  the comps — there is no formula that converts "AMD trades at 15.28x" into
+  "Intel Products base case should trade at 3.5-4.0x"; that gap is a
+  reasoned discount for lower growth, lower margin, and a multi-year share-
+  loss history, not a derived number. A reader with a different view on how
+  much of that gap should close (see Section 5) will get a different answer
+  using the same underlying revenue figures.
+- Segment EBITDA margins (used only for the EV/EBITDA cross-check figures
+  shown alongside each EV/Revenue valuation) are this file's own estimates,
+  not derived from Intel's actual segment-level D&A disclosures (which
+  aren't broken out at the granularity this file would need) — treat the
+  implied EV/EBITDA multiples as a rough sanity check, not a precise
+  secondary valuation.
+- Mobileye's exact current ownership percentage and share count held by
+  Intel were not precisely pulled for this file (sources conflicted between
+  an ~88% figure as of 2025 and a much smaller ~50M-share/~$400M position
+  by mid-to-late 2026) — the direct stake value used is approximate and, in
+  any case, immaterial to every total in this file.
+- Reference years (2026E/2030E/2036E) match the DCF file's own Section 4
+  structure for comparability, not because they're the "correct" points at
+  which a market would actually re-rate Intel's segments — Section 6 shows
+  this choice matters less here than in the robotaxi file, but still
+  matters.
+- Personal, standalone research file, outside the tech-buffett Init -> Deep
+  Dive -> DCF pipeline. Does NOT qualify INTC for portfolio purchase under
+  CLAUDE.md / the agent ruleset. Not investment advice.
+
+## Sources
+- [AMD (Advanced Micro Devices) Statistics & Valuation — stockanalysis.com](https://stockanalysis.com/stocks/amd/statistics/)
+- [AMD (Advanced Micro Devices) EV-to-EBITDA — GuruFocus](https://www.gurufocus.com/term/enterprise-value-to-ebitda/AMD)
+- [AMD — Public Comps and Valuation Multiples — multiples.vc](https://multiples.vc/public-comps/amd-valuation-multiples)
+- [Taiwan Semiconductor Manufacturing (TSM) Statistics & Valuation — stockanalysis.com](https://stockanalysis.com/stocks/tsm/statistics/)
+- [TAIWAN SEMICONDUCTOR MANUFACTURING CO EV-to-EBITDA — GuruFocus](https://www.gurufocus.com/term/enterprise-value-to-ebitda/TSM)
+- [TSMC — Multiples.vc — Public Comps and Valuation Multiples](https://multiples.vc/public-comps/tsmc-valuation-multiples)
+- [GLOBALFOUNDRIES (GFS) Statistics & Valuation — stockanalysis.com](https://stockanalysis.com/stocks/gfs/statistics/)
+- [GFS EV/EBITDA — valueinvesting.io](https://valueinvesting.io/GFS/valuation/ev_ebitda-multiples)
+- [GlobalFoundries — Multiples.vc — Public Comps and Valuation Multiples](https://multiples.vc/public-comps/globalfoundries-valuation-multiples)
+- [Mobileye Global (MBLY) Stock Price & Overview — stockanalysis.com](https://stockanalysis.com/stocks/mbly/)
+- [Mobileye (MBLY) — Market capitalization — companiesmarketcap.com](https://companiesmarketcap.com/eur/mobileye/marketcap/)
+- [Intel Corp sells Mobileye (MBLY) shares worth $1.02 billion — Investing.com](https://www.investing.com/news/insider-trading-news/intel-corp-sells-mobileye-mbly-shares-worth-102-billion-93CH-4134591)
+================================================================================
