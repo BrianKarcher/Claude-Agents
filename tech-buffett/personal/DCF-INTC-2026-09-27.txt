@@ -1,0 +1,1029 @@
+================================================================================
+INTEL CORPORATION (INTC) — DISCOUNTED CASH FLOW ANALYSIS
+THE TURNAROUND-VS-PRICE MODEL — what has to be true for $123 to be fair value
+Date: September 27, 2026
+Sources: Intel Q4/FY2025, Q1 2026 and Q2 2026 earnings press releases (official,
+         pulled live via web and structured into extracts in this folder before
+         the DCF was built):
+           - INTC-EARNINGS-FY2025-Q4.md
+           - INTC-EARNINGS-2026-Q1.md
+           - INTC-EARNINGS-2026-Q2.md
+           - INTC-HISTORICALS-2021-2025.md  (FY2021-2025 income statement,
+             cash flow, balance sheet, share-count history)
+           - INTC-STRATEGIC-CONTEXT-2026.md (government/SoftBank/Nvidia
+             stakes, Foundry external-customer status, 14A risk, capex
+             guidance, Lip-Bu Tan turnaround narrative, current price /
+             market cap / analyst targets)
+         Current price pulled live (Sept 27, 2026, referencing the Sept 25,
+         2026 close since markets are closed on the pull date). See
+         Disclosures.
+================================================================================
+
+WHAT THIS FILE IS (READ FIRST)
+-----------------------------
+Intel is not a TAM-driven growth story like the AMD/NVDA/PLTR models in this
+folder — it is a LEVERAGED TURNAROUND. The stock is up ~220% year-to-date in
+2026 on: (1) a real, reported operating inflection (Q2 2026 GAAP operating
+income positive for the first time in years, DCAI +59% YoY, 18A yields
+improving), (2) balance-sheet rescue capital from the US government (9.9%
+stake), SoftBank ($2B) and Nvidia ($5B), and (3) optimism that Intel Foundry
+finally becomes a real external competitor to TSMC on 14A. This model builds
+a bottom-up consolidated DCF around three scenarios that differ primarily on
+ONE question: does Intel Foundry ever become a real EXTERNAL business, or
+does it stay what it mostly is today — an internal, loss-making cost center
+that happens to also manufacture Intel's own chips? Section 3 explains why
+that distinction, not a TAM assumption, is the central lever in this model.
+
+This analysis does NOT independently endorse or reject the turnaround. It
+builds a standard, conservative-to-optimistic three-scenario DCF off Intel's
+own reported numbers and government/company guidance, and compares the
+result to where the stock actually trades. Not investment advice.
+
+
+EXECUTIVE SUMMARY
+-----------------
+Intrinsic value (bull case, 10.5% WACC / 3.0% TGR, 16x exit):    ~$38.71/share
+Intrinsic value (base case, 12.0% WACC / 2.5% TGR, 12x exit):     ~$8.34/share
+Intrinsic value (bear case, 14.5% WACC / 1.5% TGR, 8x exit):    ~($0.54)/share
+                                                                  (net debt
+                                                                   wipes out
+                                                                   the equity
+                                                                   value —
+                                                                   treat as
+                                                                   ~$0, not a
+                                                                   literal
+                                                                   negative)
+Probability-weighted IV (25% bull / 40% base / 35% bear):        ~$12.82/share
+Simple average of the three scenarios:                           ~$15.50/share
+
+Current stock price (Sept 25, 2026 close, last trading session):   $123.00
+  (52-wk range $32.89 - $142.35; market cap ~$620B at 5,043M diluted
+   shares; up ~220% YTD 2026)
+Implied downside (bull case):            -68.5%  (price is 3.18x bull IV)
+Implied downside (base case):            -93.2%  (price is 14.74x base IV)
+Implied downside (bear case):            ~-100%  (equity value near zero)
+Implied downside (probability-weighted): -89.6%
+
+HEADLINE FINDING: This is the starkest gap between DCF and market price of
+any model in this folder. Even the BULL case here — Intel Foundry landing
+real external customers, revenue reaching ~$160B by 2036, consolidated GAAP
+operating margin recovering to 22% (still below Intel's own 2021 peak of
+28%, let alone NVIDIA-level margins) — produces an intrinsic value of only
+~$39/share, less than a third of the current $123 price. A REVERSE DCF
+(Section 7) shows that to justify $123 even using the Bull case's own
+(relatively generous) 10.5% discount rate, Intel's 2036 free cash flow would
+need to be roughly FOUR TIMES what this Bull case projects — i.e. the market
+is pricing something closer to "Intel becomes a $150B+-revenue, 25%+-margin
+mega-cap foundry-and-products company" than "Intel executes its stated,
+already-ambitious turnaround plan." At $123, INTC is being priced for an
+outcome well beyond what a disciplined bottom-up build can support, funded
+in part by ~$20B/yr+ of capex and ~$20.8B of net debt that this model's
+Bear case shows can wipe out the entire equity value if the turnaround
+stalls. This is a valuation built on optionality, government/strategic
+backstops, and story momentum, not on discounted fundamentals.
+
+NOTE ON SCOPE: Personal, standalone analysis, outside the tech-buffett
+agent's Init -> Deep Dive -> DCF pipeline. No Initiation or Deep Dive exists
+for INTC in research/. This file lives in personal/ and does NOT qualify
+INTC for purchase in the portfolio under CLAUDE.md / the agent ruleset
+(and, independent of that rule, this model would not support a purchase
+at the current price regardless). Not investment advice.
+
+
+================================================================================
+SECTION 1 — BUSINESS SNAPSHOT
+================================================================================
+
+Intel is an integrated device manufacturer (IDM) — it designs AND
+manufactures semiconductors, unlike fabless peers (AMD, NVIDIA). It reports
+three segments since the Altera deconsolidation (Sept 12, 2025) and the Q1
+2025 folding of the old "Network and Edge" segment into CCG/DCAI:
+
+  Client Computing Group (CCG) ....... PC/laptop CPUs (Core, Core Ultra)
+  Data Center & AI (DCAI) ............ Server CPUs (Xeon) + AI accelerators
+  Intel Foundry ....................... Wafer fabrication — for Intel's own
+                                         chips (overwhelmingly) and, in
+                                         theory, for external customers
+  All Other ........................... Mobileye (majority-owned, being sold
+                                         down), Intel Capital, other
+
+FY2025 (GAAP): revenue $52.9B (flat YoY), gross margin 34.8%, operating LOSS
+$(2.2)B (vs $(11.7)B FY2024 — that year's loss driven by a $15.9B Q3 2024
+impairment/DTA charge), net loss $(267)M, EPS $(0.06). Non-GAAP: gross margin
+36.7%, operating income +$2.9B, net income +$1.9B, EPS $0.42 — i.e. Intel was
+solidly profitable on a non-GAAP basis in 2025 even as GAAP showed a loss.
+
+Q2 2026 (quarter ended Jun 27, 2026), GAAP: revenue $16.1B (+25% YoY, fastest
+growth in 15+ years), gross margin 40.4%, operating income +$1.8B (vs a
+$(3.2)B loss a year earlier — the real inflection), net LOSS $(11.0)B (large
+GAAP-only tax/valuation-allowance item; non-GAAP net income was +$2.2B, EPS
+$0.42). DCAI revenue +59% YoY to $6.3B; CCG +13% to $8.9B. Q3 2026 guide:
+revenue $15.8-16.8B (+~20% YoY at midpoint).
+
+Balance sheet (Q2 2026): cash + ST investments $29.7B; total debt $50.5B;
+NET DEBT ~$20.8B. Unlike AMD/NVDA-style fabless peers, Intel carries real net
+leverage, not a net-cash cushion — a structural difference that matters a
+great deal to the equity bridge in this model (Section 6).
+
+THE TURNAROUND IN THREE SENTENCES:
+  1. Intel Products (CCG+DCAI) is a real, profitable, competitively pressured
+     business: $49.1B revenue and $12.7B operating income in FY2025 (26%
+     segment margin), with DCAI now growing fast again on AI-server demand.
+  2. Intel Foundry lost $(10.3)B in FY2025 (improving from $(13.3)B in
+     FY2024) and is overwhelmingly an INTERNAL manufacturing arm today —
+     genuine third-party (external) foundry revenue was ~$293M in a recent
+     quarter versus ~$5.4-5.8B of total segment revenue. Management targets
+     foundry operating BREAKEVEN in 2027, but has zero committed external
+     customers for its next node (14A) as of mid-2026, and has explicitly
+     disclosed the risk that it may pause or cancel 14A investment if it
+     can't land committed external demand.
+  3. The balance sheet has been rescued, not organically repaired: the US
+     government (9.9%), SoftBank (~2%) and Nvidia ($5B) together supplied
+     ~$15B+ of capital and absorbed ~15% share-count dilution in 2025 alone.
+     That buys time and credibility but does not, by itself, make Intel
+     Foundry a profitable business — it funds the bet that 14A lands real
+     customers before the capital runs out.
+
+
+================================================================================
+SECTION 2 — HISTORICAL FINANCIALS
+================================================================================
+
+All figures $M unless noted. Intel's fiscal year ends the last Saturday of
+December. FY2024-FY2025 GAAP operating income figures are from Intel's own
+official press releases (authoritative, given the size of FY2024's
+impairment/restructuring charges); FY2021-FY2023 are from search results
+directly citing Intel's Q4/FY2022 and Q4/FY2023 press releases and 10-Ks.
+See INTC-HISTORICALS-2021-2025.md for a data-discrepancy note: several
+financial-data aggregators show a different "core" operating income series
+for FY2024-2025 that excludes restructuring/impairment charges — this model
+uses Intel's own reported GAAP figures throughout, since those are what flow
+through to net income and the official filings.
+
+INCOME STATEMENT SUMMARY (GAAP)
+                          FY2021   FY2022   FY2023   FY2024   FY2025
+                          ------   ------   ------   ------   ------
+Revenue                   79,024   63,054   54,228   53,101   52,853
+  YoY growth                 --    -20.2%   -14.0%    -2.1%    -0.5%
+Gross profit               43,815   28,446   21,711   17,300*  18,400*
+  Gross margin              55.4%    45.1%    40.0%    32.7%    34.8%
+Operating income (loss)    22,082    2,334       93  (11,700)  (2,200)
+  Operating margin          27.9%     3.7%     0.2%   -22.0%    -4.2%
+Net income (loss)          19,868    8,014    1,689  (18,756)    (267)
+Diluted EPS                 $4.86    $1.94    $0.40   $(4.38)  $(0.06)
+Diluted wtd-avg shares      4,090    4,123    4,212    4,280     n/a**
+
+*Rounded press-release figures. **FY2025 diluted weighted-average share
+count was not precisely pulled; major dilution (govt stake, SoftBank,
+Nvidia) was concentrated in H2 2025, so the full-year weighted average is
+well below the Dec 2025 point-in-time count of 4,994M shares.
+
+Notes:
+  - THE 2021->2023 COLLAPSE IS THE FIRST HALF OF THE STORY: GAAP operating
+    margin fell from 27.9% (FY21, near-peak) to 3.7% (FY22, PC downcycle +
+    early IDM 2.0 capex ramp) to 0.2% (FY23, trough) — three straight years
+    of margin destruction BEFORE the 2024 impairment crater. This was a
+    genuine, multi-year competitive and execution decline (process-node
+    delays, share loss to AMD in both CCG and DCAI, PC market downturn), not
+    a one-quarter accounting event.
+  - FY2024's $(11.7)B operating loss and $(18.8)B net loss were driven by a
+    single Q3 2024 quarter carrying $15.9B of impairment charges (~$3.1B
+    manufacturing-asset impairment, ~$10.0B deferred-tax-asset valuation
+    allowance, $2.6B Mobileye goodwill impairment) plus $2.8B of
+    restructuring charges tied to a ~15% headcount reduction. These are
+    real economic costs (the DTA write-off reflects genuinely impaired
+    future tax-shield value from years of losses) but are non-recurring in
+    form; the model's forward tax treatment (Section 5) does not assume
+    they repeat.
+  - FY2025's improvement to $(2.2)B operating loss and the Q2 2026 swing to
+    POSITIVE $1.8B GAAP operating income is the real, reported inflection
+    this model is trying to value — not a promise, an actual trend across
+    five consecutive quarters (Q2'25 loss $(3.2)B -> Q3'25 -> Q4'25 +$0.6B
+    -> Q1'26 loss $(3.1)B [seasonally weak, supply-constrained per
+    management] -> Q2'26 +$1.8B).
+  - Reported net income is extremely noisy and, unusually, often WORSE than
+    operating income even when operating income is positive: Q2 2026 GAAP
+    operating income was +$1.8B but GAAP net LOSS was $(11.0)B, driven by
+    tax items (valuation-allowance effects tied to the FY2024 DTA
+    impairment) that have little to do with the operating business. The
+    model forecasts operating income, not net income, for exactly this
+    reason.
+
+FREE CASH FLOW RECONCILIATION
+                                 FY2021  FY2022  FY2023  FY2024   FY2025
+Operating cash flow               29,456  15,433  11,471    8,288   9,697
+Capital expenditures (gross)     (20,329)(24,844)(25,750) (23,944-  (17,700)
+                                                            25,100)
+Government incentives                 --      --      --    1,900   1,600
+Partner (SCIP) contributions          --      --      --   12,700   4,900
+Net capital expenditures         (20,329)(24,844)(25,750) (10,500) (11,200)
+Adjusted free cash flow            ~9,127  ~(9,411)~(14,279) (2,200) (1,600)
+D&A                                11,792  13,035   9,602   11,379  11,706
+Stock-based compensation            2,036   3,128   3,229    3,410   2,434
+
+  - THE FABLESS-VS-IDM CONTRAST WITH THE AMD MODEL IN THIS FOLDER IS THE
+    WHOLE STORY: AMD's FY2026E capex is ~$1.9B on ~$49.5B of revenue (~4%).
+    Intel's FY2025 GROSS capex was $17.7B on $52.9B of revenue (~33%), net
+    of incentives/partner funding down to ~$11.2B (~21%) — still 5x AMD's
+    capex intensity even after the subsidies. This is the direct, mechanical
+    reason Intel's free cash flow has been negative for four of the last
+    five years despite $8-30B/yr of operating cash flow: an IDM has to fund
+    its own fabs, a fabless designer does not.
+  - "Adjusted free cash flow" (Intel's own metric, net of government
+    incentives and SCIP partner contributions) was still NEGATIVE in both
+    FY2024 ($(2.2)B) and FY2025 ($(1.6)B) — i.e. even with ~$1.6-1.9B/yr of
+    government incentives and ~$4.9-12.7B/yr of partner co-investment
+    inflows, Intel has not yet generated positive free cash flow. H1 2026
+    adjusted FCF was $(8.4)B, worse than H1 2025's $(1.1)B, because gross
+    capex is reaccelerating (FY2026 guidance raised to >$20B) ahead of any
+    confirmed step-up in partner contributions.
+  - Partner (SCIP) contributions fell from $12.7B (FY2024) to $4.9B (FY2025)
+    as early joint-venture commitments (Brookfield/Apollo-style
+    co-investment in specific fabs) matured — whether that funding source
+    continues at scale into 2026-2027, even as gross capex re-accelerates,
+    is a real open question this model treats as a risk (Section 9).
+
+BALANCE SHEET HIGHLIGHTS ($M; fiscal year-ends; Q1'26 = Mar 28 2026, Q2'26 = Jun 27 2026)
+                             FY2024    FY2025    Q1'26     Q2'26
+Cash + ST investments         22,000    37,500    32,700    29,727
+Total debt                    50,000    46,600    45,000    50,537
+Net debt                      28,000     9,100    12,300    20,810
+Stockholders' equity         105,000   126,400       n/d    87,542
+Common shares outstanding      4,330     4,994     5,023     5,043
+
+  - Net debt swung from $28.0B (Dec'24) to just $9.1B (Dec'25) as the
+    government/SoftBank/Nvidia capital landed, then WIDENED BACK OUT to
+    $20.8B by Jun'26 as gross capex reaccelerated (>$20B FY2026E guide)
+    faster than operating cash flow and partner contributions could keep
+    pace. This is the balance-sheet signature of a company still spending
+    ahead of its own cash generation, even after the rescue capital.
+  - Stockholders' equity fell sharply from $126.4B (Dec'25) to $87.5B
+    (Jun'26) DESPITE continued share issuance, driven by GAAP net losses
+    (including the unusual $(11.0)B Q2'26 net loss, mostly a tax-accounting
+    item) flowing through retained earnings — a paper/GAAP effect distinct
+    from the improving operating trend, but a reminder that reported book
+    value has been genuinely volatile.
+  - Share count: 4,330M (Dec'24) -> 4,994M (Dec'25) -> 5,043M (Jun'26), a
+    +16.5% increase in 18 months, almost entirely the government (433.3M
+    shares, 9.9%), SoftBank (~2%) and Nvidia ($5B) transactions. This
+    model's per-share values already reflect this dilution (current share
+    count is the basis for the DCF, Section 6) but FURTHER dilution is a
+    real risk given continued heavy capex — see Section 9.
+
+SEGMENT REVENUE & OPERATING INCOME (GAAP, FY2025 vs FY2024)
+                          FY2025 Rev  FY2024 Rev   FY2025 OpInc  FY2024 OpInc
+CCG                          32,200      33,300        9,300        11,600
+DCAI                         16,900      16,100        3,400         1,400
+  Total Intel Products       49,100      49,500       12,700        13,000
+Intel Foundry                17,800      17,300      (10,300)      (13,300)
+All Other                     3,600       3,600           264           (57)
+  Sum of segments            70,500      70,400         2,664          (357)
+  Consolidated (actual)      52,853      53,101       (2,200)      (11,700)
+
+  - THE SUM OF SEGMENT REVENUE ($70.5B FY2025) FAR EXCEEDS CONSOLIDATED
+    REVENUE ($52.9B) — an ~$17.6B gap that is almost entirely Intel Foundry
+    selling wafers to Intel Products at internal transfer prices, which
+    nets out on consolidation. See Section 3 — this is the single most
+    important modeling fact in this file.
+  - The sum of segment operating income/loss ($2.7B FY2025) does NOT match
+    consolidated operating income/loss ($(2.2)B) either — the gap is
+    unallocated corporate costs, eliminations, and stock-based comp not
+    pushed to segments (Intel's segment reporting, like AMD's, has an
+    "all other reconciling items" bucket not separately disclosed in the
+    press-release-level detail used here).
+  - CCG revenue actually FELL 3% in FY2025 even as PC demand was reasonably
+    healthy — a share/mix story, not a demand story, and consistent with
+    AMD's Ryzen continuing to take PC CPU share over the period (see the
+    AMD DCF files in this folder).
+  - DCAI +5% in FY2025 was modest; the real DCAI inflection is a 2026
+    story (+22% Q1, +59% Q2) as AI-server Xeon demand (and possibly some
+    AI-accelerator-adjacent CPU attach) accelerated sharply.
+
+
+================================================================================
+SECTION 3 — THE FOUNDRY REVENUE ACCOUNTING ISSUE (THE INPUT THIS MODEL IS BUILT ON)
+================================================================================
+
+Every DCF in this folder has one input that does the most work: for AMD it
+was the 2030 AI-accelerator TAM; for Intel it is a plainer but easy-to-miss
+accounting fact.
+
+INTEL FOUNDRY'S REPORTED SEGMENT REVENUE (~$17-18B/YR) IS OVERWHELMINGLY
+INTERNAL. Intel Products (CCG+DCAI) buys its own wafers from Intel Foundry
+at an internal transfer price; both segments book that transaction as
+revenue on their own P&L, and it is eliminated when Intel consolidates.
+Genuine third-party (external) Foundry revenue — actual TSMC-style customers
+paying Intel to fabricate their chips — was reported at just ~$293M in a
+recent quarter, up from ~$22M a year earlier, against ~$5.4-5.8B of total
+quarterly Foundry segment revenue. Most of even that small increase reflects
+Altera becoming a (former-subsidiary-turned-independent) customer after its
+September 2025 deconsolidation, not new competitive wins against TSMC/
+Samsung. As of mid-2026, Intel has ZERO committed external customers for its
+next-generation 14A node, and has told investors it will not build out 14A
+external capacity until a customer commits — with two prospects, and
+decisions expected "in the second half of 2026 and extending into the first
+half of 2027." Intel has also explicitly disclosed the risk that it may
+pause or discontinue 14A investment if it cannot secure that demand.
+
+WHY THIS MATTERS FOR THE DCF: A model that took "Intel Foundry revenue" at
+its reported ~$17-18B segment-level face value and grew it as if that were
+a real, monetizable external business would be double-counting — that
+revenue mostly already shows up inside Intel Products' own reported
+revenue (as the products those wafers become). This model instead builds
+CONSOLIDATED revenue as approximately:
+
+  Consolidated revenue ~= Intel Products (CCG+DCAI) revenue
+                          + All Other (Mobileye etc.) revenue
+                          + Intel Foundry EXTERNAL (third-party) revenue
+
+— and the entire Bull/Base/Bear spread in this model is driven by (a) how
+Intel Products' CCG/DCAI competitive position evolves, and (b) whether that
+Foundry EXTERNAL line ever becomes a real, multi-billion-dollar business
+(the actual "Intel becomes a second TSMC" bull case) or stays a rounding
+error (the "Foundry only ever serves itself" bear/base case). Management's
+own stated breakeven bar is modest — "low- to mid-single-digit billions" of
+annual EXTERNAL revenue — which this model treats as achievable even in the
+Base case; the Bull case requires 14A to land marquee customers (Nvidia,
+Apple, Microsoft, etc. have all been reported as evaluating 18A/14A) at a
+scale that makes Intel Foundry a genuine second source to TSMC, which is a
+much higher bar than merely "breakeven."
+
+This analysis does not independently handicap whether 14A lands external
+customers — it is the central uncertainty the three scenarios are built
+around, and every intrinsic value in this file inherits that uncertainty.
+
+
+================================================================================
+SECTION 4 — SEGMENT REVENUE BREAKDOWN (2026E -> 2030E -> 2036E)
+================================================================================
+
+Note: Intel does not disclose a clean "Products vs. Foundry-external vs. All
+Other" consolidated-revenue split — the allocation below is an ANALYST
+ESTIMATE built to reconcile with the Section 6 consolidated DCF revenue
+figures, not a company figure.
+
+--------------------------------------------------------------------------------
+4A. FY2026E CONSOLIDATED BUILD (bottom-up from H1 actuals + Q3 guide + Q4 est.)
+--------------------------------------------------------------------------------
+                          H1'26A   H2'26E   FY2026E   % total   YoY
+  Intel Products (CCG+DCAI) 27,939  30,361   58,300     93.4%    +18.8%
+    - CCG                   16,577  ~16,900  ~33,500    (57.5% of Products)
+    - DCAI                  11,362  ~13,400  ~24,800    (42.5% of Products)
+  All Other                  1,301   ~1,800    3,100      5.0%    -13.9%
+  Intel Foundry (external)    ~470    ~530     1,000      1.6%      n/m
+  ----------------------------------------------------------------------
+  Total (consolidated)      29,708  32,692*   62,400    100.0%    +18.1%
+
+  *H2'26E built from Q3 2026 guidance midpoint ($16.3B) + a Q4 2026E
+  estimate (~$16.4B, assuming continued growth roughly in line with the
+  Q3 guide's implied ~+20% YoY pace against Q4 2025's $13.7B).
+
+--------------------------------------------------------------------------------
+4B. 2030E CONSOLIDATED PICTURE — ALL THREE SCENARIOS
+--------------------------------------------------------------------------------
+                              BEAR         BASE         BULL
+  Intel Products             $67.1B       $73.3B       $77.5B
+  All Other                   $3.0B        $3.5B        $4.0B
+  Intel Foundry (external)    $1.5B        $6.5B       $22.0B
+  ----------------------------------------------------------------------
+  TOTAL REVENUE 2030E         $71.6B       $83.3B      $103.5B
+  (4-yr CAGR from FY2026E)     +3.5%        +7.5%        +13.5%
+
+  Foundry-external as % of total:  2.1%         7.8%        21.2%
+
+--------------------------------------------------------------------------------
+4C. 2036E CONSOLIDATED PICTURE — ALL THREE SCENARIOS (terminal-year detail)
+--------------------------------------------------------------------------------
+                              BEAR         BASE         BULL
+  Intel Products              $74.1B       $90.4B      $106.7B
+  All Other                    $3.2B        $4.0B        $5.0B
+  Intel Foundry (external)     $2.5B       $13.0B       $48.0B
+  ----------------------------------------------------------------------
+  TOTAL REVENUE 2036E          $79.8B      $107.4B      $159.7B
+  (10-yr CAGR from FY2026E)     +2.5%        +5.6%        +9.8%
+
+  Foundry-external as % of total:  3.1%        12.1%        30.1%
+
+TAKEAWAYS FROM THE SEGMENT VIEW
+  - In the BEAR case, Intel Foundry essentially never becomes a real
+    external business (14A investment paused or produces no meaningful
+    external wins) — consolidated growth is driven entirely by Intel
+    Products holding roughly flat share in a maturing PC/server market.
+  - In the BASE case, Foundry clears management's own modest "low-to-mid
+    single-digit billions" external-revenue breakeven bar and grows
+    modestly beyond it, but never becomes a scale competitor to TSMC —
+    Products still does ~84% of the work.
+  - Only in the BULL case does Foundry become a meaningfully large external
+    business (~$22B by 2030, ~$48B by 2036) — still well short of TSMC's
+    scale (>$100B), but transformative for Intel and the scenario that
+    would justify calling Intel "the second real leading-edge foundry."
+  - Even in the Bull case, Intel Products (not Foundry) remains the
+    majority of consolidated revenue throughout the forecast window — this
+    is an important contrast with how the market narrative (dominated by
+    Foundry/18A/14A headlines) is often framed.
+
+
+================================================================================
+SECTION 5 — DCF ASSUMPTIONS
+================================================================================
+
+MODELING APPROACH
+- 10-year explicit forecast 2027E-2036E, off an FY2026E anchor built
+  bottom-up from H1 2026 actuals + Q3 2026 guidance + a Q4 2026 estimate
+  (Section 4A).
+- Consolidated revenue and operating margin are forecast directly (not
+  built up from the segment tables, for the reasons in Section 3) — the
+  Section 4 segment split is presented for context/attribution, not as the
+  forecast mechanism.
+- Unlevered FCF: FCF = NOPAT + D&A - Net CapEx. A second metric, "SBC-
+  adjusted FCF," further subtracts stock-based compensation as a real
+  economic cost; SBC-adjusted FCF is what is discounted and used for
+  terminal value (same convention as the AMD/other models in this folder).
+- CAPEX IS NET of government incentives and SCIP/partner contributions,
+  consistent with how Intel itself now reports "adjusted free cash flow" —
+  i.e. the capex figures in Section 6 are NOT the >$20B gross number Intel
+  guides to, they are the lower net-cash-cost figure after subsidies.
+- NOPAT = GAAP operating income x (1 - 15% tax rate) IN YEARS WITH POSITIVE
+  OPERATING INCOME; in years with a GAAP operating LOSS, NOPAT = operating
+  income unchanged (no tax benefit assumed to be realized in a loss year —
+  conservative, and consistent with Intel's own recent history of NOT
+  realizing cash tax benefits from losses, per the FY2024 DTA valuation-
+  allowance writedown).
+- NET DEBT (not net cash) is SUBTRACTED from enterprise value to reach
+  equity value: $20,810M (Q2 2026) — the opposite direction from the
+  AMD/NVDA/PLTR models in this folder, which added net cash.
+- Each scenario uses its own WACC, terminal growth rate, and exit multiple.
+
+REVENUE — anchored to the Section 4 segment build, then decelerated to
+terminal. % YoY:
+                 2027  2028  2029  2030  2031  2032  2033  2034  2035  2036
+  BULL            15%   14%   13%   12%   10%    9%    8%    7%    6%    5%
+  BASE             9%    8%    7%    6%    6%    5%    5%    4%    3%    3%
+  BEAR             4%    4%    3%    3%    3%    2%    2%    2%    1%    1%
+
+Revenue levels ($M):
+                 2027    2028    2029    2030    2031    2032    2033    2034    2035    2036
+  BULL          71,760  81,806  92,441 103,534 113,888 124,137 134,068 143,453 152,060 159,663
+  BASE          68,016  73,457  78,599  83,315  88,314  92,730  97,366 101,261 104,299 107,428
+  BEAR          64,896  67,492  69,517  71,602  73,750  75,225  76,730  78,264  79,047  79,837
+  FY2026E anchor: $62,400M (+18.1% YoY)
+
+Rationale:
+  - BULL: 14A lands real marquee external customers (per reported
+    engagement from Nvidia, Apple, Microsoft, Google, Marvell, Micron,
+    OpenAI), Foundry external revenue reaches ~$22B (2030) / ~$48B (2036);
+    Intel Products also holds/regains share as the AI-PC refresh cycle and
+    Xeon 6 / "Clearwater Forest" generation win back server share from AMD.
+    2036 revenue ~$160B — roughly 3x today's run-rate, a genuine "Intel
+    becomes a credible #2 foundry AND a share-gaining products company"
+    outcome.
+  - BASE: 14A clears management's modest external-revenue breakeven bar
+    (~$6.5B by 2030) but doesn't become a scale TSMC competitor; Intel
+    Products grows at a GDP-plus pace as AI-PC and AI-server tailwinds
+    roughly offset continued competitive share pressure from AMD/Arm/
+    custom silicon. 2036 revenue ~$107B.
+  - BEAR: 14A investment is paused or fails to land committed external
+    demand (the risk Intel itself has disclosed); Foundry remains
+    internal-only and a persistent drag; Intel Products loses further
+    share in both CCG (Arm-based PCs, AMD) and DCAI (AMD EPYC, custom
+    hyperscaler silicon reducing merchant-CPU demand). 2036 revenue ~$80B —
+    barely above today's run-rate after a decade.
+
+OPERATING MARGIN (GAAP, % of revenue):
+                 2027  2028  2029  2030  2031  2032  2033  2034  2035  2036
+  BULL             8%   12%   15%   17%   19%   20%   21%   22%   22%   22%
+  BASE             5%    7%    9%   11%   12%   13%   14%   15%   15%   15%
+  BEAR             0%    1%    2%    3%    4%    4%    5%    5%    6%    6%
+  FY2026E: ~+2.5% estimated (H1'26 actual -4.4% blended with an assumed H2
+  continuation of the Q2'26 positive swing; full-year non-GAAP guide
+  implies a materially higher non-GAAP figure — this model works from GAAP).
+
+Rationale: Intel Products already runs high-20s% segment operating margins
+(CCG 29%, DCAI ~20-30% and rising in FY2025); the binding constraint on
+CONSOLIDATED margin is Foundry's loss and heavy corporate/unallocated
+costs. Management's own 2027 Foundry-breakeven target, if hit, is the
+single biggest lever in the Base case's 2027-2029 margin recovery. The
+Bull case's 22% terminal margin is still well below Intel's own FY2021 peak
+of 27.9% and far below AMD's Bull-case 31% or NVIDIA-style margins — a
+genuinely successful Intel remains a lower-margin business than a
+fabless/AI-native peer because it carries the fixed cost of leading-edge
+fab ownership, even when that ownership pays off strategically.
+
+NET CAPEX (government incentives + SCIP/partner contributions ALREADY
+netted out, $M — see Section 2 for why gross capex is a materially larger,
+less-relevant number):
+                 2027   2028   2029   2030   2031   2032   2033   2034   2035   2036
+  BULL          18,000 21,000 23,000 24,000 23,000 22,000 21,000 20,000 19,500 19,000
+  BASE          15,000 16,000 16,500 16,500 16,000 15,500 15,000 14,500 14,000 13,500
+  BEAR          13,000 12,000 11,000 10,000  9,500  9,000  8,500  8,000  7,800  7,600
+FY2026E: net capex estimated at ~$14,000M (gross guided >$20B, less an
+assumed continuation of incentive/partner-funding support, though FY2025's
+SCIP contributions already fell sharply from FY2024's level — see Section 9
+risk on funding continuity).
+
+Rationale: even the BEAR case keeps meaningful capex (Intel cannot walk away
+from leading-edge fabs already under construction without stranding tens of
+billions of committed spend) but on a declining trajectory consistent with
+14A being scaled back. The BULL case capex stays structurally elevated
+throughout — a successful external-foundry business requires MORE capacity,
+not less; unlike AMD's fabless model, Intel's upside case does not get
+materially more capital-light with scale.
+
+D&A ($M — driven by the existing ~$105B+ PP&E base and the capex schedule
+above, with a multi-year lag typical of fab construction/ramp cycles):
+                 2027   2028   2029   2030   2031   2032   2033   2034   2035   2036
+  BULL          14,000 15,500 17,000 18,500 19,500 20,200 20,800 21,200 21,500 21,800
+  BASE          13,000 13,500 13,800 14,000 14,200 14,300 14,400 14,500 14,600 14,700
+  BEAR          12,800 13,000 13,000 12,800 12,600 12,400 12,200 12,000 11,800 11,600
+FY2026E: ~$12,500M (continuing FY2025's $11.7B run-rate plus growth from
+the capex base coming online).
+
+SBC (% of revenue): FY2026E ~4.0%, declining with scale (folder convention).
+  BULL/BASE: 4.0 / 3.8 / 3.6 / 3.4-3.5 / 3.2-3.4 / 3.1-3.3 / 3.0-3.2 /
+             2.9-3.1 / 2.8-3.0 / 2.7-3.0
+  BEAR:      4.0 / 4.0 / 3.9 / 3.8 / 3.7 / 3.6 / 3.6 / 3.5 / 3.5 / 3.4
+  (Bear SBC % stays relatively higher because the revenue denominator grows
+  much less, even as dollar SBC is flat-to-down.)
+
+TAX RATE: 15% flat on positive operating income (folder convention); see
+the NOPAT convention above for loss-year treatment. Intel's actual recent
+GAAP tax rates have been highly distorted by the FY2024 DTA valuation
+allowance (guided GAAP tax rate of (79)% for Q1 2026, ~1% for Q3 2026) —
+this model does not attempt to forecast that noise and instead normalizes
+to the folder's standard 15% once operating income turns durably positive.
+
+SHARES OUTSTANDING: 5,043M (Jun 27, 2026 common shares outstanding), held
+flat for DCF purposes. THIS IS OPTIMISTIC: share count grew +16.5% in the
+18 months to Jun 2026 (government/SoftBank/Nvidia transactions), and with
+FY2026E net capex still meaningfully negative-to-breakeven on a free-cash-
+flow basis and gross capex guided to reaccelerate further in 2027, further
+equity issuance to fund the fab buildout is a realistic risk, not a tail
+risk — see Section 9. Every per-share value in this model should be read as
+a BEST case on share count, not a conservative one.
+
+TERMINAL VALUE: perpetuity-growth and exit-multiple methods, averaged. Exit
+multiples are set well below the AMD model's (20x Base / 26x Bull) given
+Intel's structurally heavier capex burden and lower FCF quality/margin
+ceiling even in the Bull case:
+  BULL: TGR 3.0%, exit 16x SBC-adj FCF
+  BASE: TGR 2.5%, exit 12x SBC-adj FCF
+  BEAR: TGR 1.5%, exit  8x SBC-adj FCF
+
+DISCOUNT RATES:
+  BASE: 12.0%  (turnaround-execution risk + dilution risk + capex-funding
+               risk, above AMD's 11.5% semiconductor-cyclical rate, but not
+               maximally punitive given the government/strategic-investor
+               backstop reduces near-term bankruptcy-tail risk)
+  BULL: 10.5%  (a world where 14A lands real external customers and the
+               turnaround is genuinely de-risked, converging toward a
+               higher-quality industrial-tech profile)
+  BEAR: 14.5%  (Foundry failure, further dilution, and a balance sheet that
+               — per Section 6 — has essentially zero cushion for
+               disappointment given current net debt)
+
+PROBABILITY WEIGHTS: Bull 25% / Base 40% / Bear 35%. Weighted slightly more
+toward Bear than the AMD model's 25/45/30, reflecting: (a) Intel has ZERO
+committed external 14A customers today (vs AMD's already-signed multi-GW
+accelerator commitments), (b) management has itself disclosed a real risk
+of pausing/cancelling the next node, and (c) the balance sheet has far less
+margin for error (net debt vs AMD's net cash).
+
+
+================================================================================
+SECTION 6 — DCF MODEL (BASE CASE)
+================================================================================
+
+All figures $M. WACC 12.0%, TGR 2.5%, exit 12x SBC-adj FCF.
+
+           Rev      YoY   OpMgn   OpInc    Tax    NOPAT   Capex   D&A     FCF      SBC   SBC-Adj
+                                                                                            FCF
+2026E    62,400     --     2.5%    1,560     234   1,326  14,000 12,500   -174   2,496   -2,670
+2027E    68,016    9.0%    5.0%    3,401     510   2,891  15,000 13,000    891   2,721   -1,830
+2028E    73,457    8.0%    7.0%    5,142     771   4,371  16,000 13,500  1,871   2,791     -921
+2029E    78,599    7.0%    9.0%    7,074   1,061   6,013  16,500 13,800  3,313   2,830      483
+2030E    83,315    6.0%   11.0%    9,165   1,375   7,790  16,500 14,000  5,290   2,916    2,374
+2031E    88,314    6.0%   12.0%   10,598   1,590   9,008  16,000 14,200  7,208   3,003    4,205
+2032E    92,730    5.0%   13.0%   12,055   1,808  10,247  15,500 14,300  9,047   3,060    5,987
+2033E    97,366    5.0%   14.0%   13,631   2,045  11,587  15,000 14,400 10,987   3,116    7,871
+2034E   101,261    4.0%   15.0%   15,189   2,278  12,911  14,500 14,500 12,911   3,139    9,772
+2035E   104,299    3.0%   15.0%   15,645   2,347  13,298  14,000 14,600 13,898   3,129   10,769
+2036E   107,428    3.0%   15.0%   16,114   2,417  13,697  13,500 14,700 14,897   3,223   11,674
+
+(2026E row shown for reference/continuity; the DCF discounts 2027E-2036E
+only, consistent with the AMD/other models in this folder — 2026E is the
+anchor year, not part of the explicit discounted forecast.)
+
+PRESENT VALUE OF EXPLICIT SBC-ADJUSTED FCFs (12.0% WACC)
+
+Year      SBC-Adj FCF   Discount Factor   PV
+2027E         (1,830)        0.8929      (1,634)
+2028E           (921)        0.7972        (734)
+2029E            483         0.7118         344
+2030E          2,374         0.6355       1,509
+2031E          4,205         0.5674       2,386
+2032E          5,987         0.5066       3,033
+2033E          7,871         0.4523       3,560
+2034E          9,772         0.4039       3,947
+2035E         10,769         0.3606       3,883
+2036E         11,674         0.3220       3,759
+                                        -------
+Sum of PV of explicit FCFs:             20,053
+
+TERMINAL VALUE — PERPETUITY GROWTH (g = 2.5%)
+Terminal (2036E) SBC-adj FCF:                             $11,674M
+TV = 11,674 x 1.025 / (12.0% - 2.5%):                    $125,959M
+PV of TV (x 0.3220):                                      $40,555M
+
+TERMINAL VALUE — EXIT MULTIPLE (12x SBC-adj FCF)
+TV = 11,674 x 12:                                        $140,091M
+PV of TV (x 0.3220):                                      $45,105M
+
+Average PV of terminal value:                              $42,830M
+
+EQUITY BRIDGE
+Sum of PV of explicit FCFs:                                $20,053M
++ PV of terminal value (avg):                               $42,830M
+= Enterprise value:                                          $62,884M
+- Net debt (Q2 2026):                                        $20,810M
+= Equity value:                                               $42,074M
+/ Diluted shares:                                                5,043M
+= Intrinsic value per share:                                    $8.34
+
+For scale: this implied equity value (~$42B) is ~93% BELOW Intel's current
+~$620B market cap ($123.00 x 5,043M).
+
+
+================================================================================
+SECTION 7 — SENSITIVITY ANALYSIS
+================================================================================
+
+TABLE A: BASE-CASE IV/SHARE — WACC x TERMINAL GROWTH RATE (12x exit held)
+
+WACC \ TGR    1.5%      2.0%      2.5%      3.0%      3.5%
+10.0%        $11.16    $11.52    $11.93    $12.40    $12.94
+11.0%         $9.40     $9.66     $9.96    $10.29    $10.67
+12.0%         $7.92     $8.12     $8.34     $8.59     $8.86   <- base case
+13.0%         $6.67     $6.83     $6.99     $7.18     $7.38
+14.0%         $5.60     $5.72     $5.85     $5.99     $6.14
+
+The current $123.00 price is not just above this grid — it is roughly TEN
+TO TWENTY TIMES every cell in it. No combination of WACC and terminal
+growth rate this model considers plausible for a company this size gets
+remotely close to the current price on the Base case's operating
+assumptions. This is a qualitatively different result from the AMD model in
+this folder, where the price sat "only" ~30-50% above the base-case grid.
+
+TABLE B: BASE-CASE IV/SHARE — EXIT MULTIPLE (12.0% WACC / 2.5% TGR)
+   6x    $6.11
+   8x    $6.85
+  10x    $7.60
+  12x    $8.34   <- base case
+  14x    $9.09
+  16x    $9.83
+  18x   $10.58
+
+Even an aggressive 18x exit multiple on Base-case terminal FCF — well above
+what this model uses even in the Bull case (16x) — only lifts Base-case IV
+to $10.58, still ~91% below the current price. The gap cannot be closed by
+multiple assumptions alone; it requires a fundamentally larger and more
+profitable business than the Base case's own growth/margin assumptions
+produce.
+
+TABLE C: SCENARIO SUMMARY
+
+Scenario   WACC    TGR    Exit   2030E Rev    2036E Rev   2036E SBC-FCF   IV/Share
+BULL      10.5%   3.0%   16x     $103,534M    $159,663M     $28,346M       $38.71
+BASE      12.0%   2.5%   12x      $83,315M    $107,428M     $11,674M        $8.34
+BEAR      14.5%   1.5%    8x      $71,602M     $79,837M      $5,357M       ~$0.00*
+
+Probability-weighted (25/40/35):                                          $12.82
+Simple average of the three:                                              $15.50
+Current price (Sept 25, 2026 close):                                     $123.00
+
+*Bear-case enterprise value ($18.1B) is smaller than current net debt
+($20.8B) — the model's Bear case implies the equity is worth approximately
+nothing at today's net-debt level, not a literal negative number (equity
+cannot trade below zero; this instead signals that a Bear outcome would
+almost certainly come with restructuring, further dilutive capital raises,
+or both, well before the modeled cash flows played out).
+
+TABLE D: REVERSE DCF — WHAT WOULD 2036 FREE CASH FLOW NEED TO BE TO JUSTIFY
+$123.00 TODAY, EVEN USING THE BULL CASE'S OWN (RELATIVELY GENEROUS)
+DISCOUNT RATE AND TERMINAL GROWTH RATE?
+
+Target equity value ($123.00 x 5,043M shares):            $620,289M
++ Net debt:                                                 $20,810M
+= Target enterprise value:                                 $641,099M
+- Bull case's own explicit-period PV of FCF (2027-2036,
+  unchanged from Section 6/Table C):                        $60,743M
+= Required PV of terminal value:                            $580,356M
+Required nominal terminal value (grown at Bull's 10.5% WACC): $1,575,134M
+Required 2036 SBC-adjusted FCF (at Bull's 3.0% TGR,
+  10.5% WACC perpetuity formula):                           $114,694M
+
+Actual BULL-case 2036 SBC-adjusted FCF (Section 6/Table C):   $28,346M
+RATIO — required vs. this model's own Bull case:                 4.05x
+
+In words: even granting the Bull case's own assumptions about risk (10.5%
+WACC) and long-run growth (3.0% terminal growth), Intel would need to be
+generating roughly FOUR TIMES the free cash flow this Bull case projects
+for 2036 — which itself already assumes Foundry becomes a genuine ~$48B
+external-revenue business and Intel Products holds/gains share — for
+today's $123 price to be a fair discounted-cash-flow value. That is a
+"become one of the 10-15 largest companies on earth by free cash flow"
+outcome, not "execute the stated 2027 Foundry-breakeven turnaround plan."
+
+
+================================================================================
+SECTION 8 — SCENARIO ANALYSIS
+================================================================================
+
+BULL CASE (~$39/share; 10.5% WACC, 3.0% TGR, 16x exit)
+  - 14A lands real external customers at meaningful scale — some
+    combination of Nvidia, Apple, Microsoft, or another hyperscaler
+    converts from "evaluating" to a committed, disclosed design win in the
+    2026-2027 window management itself has flagged as the decision point.
+    Foundry external revenue reaches ~$22B by 2030 and ~$48B by 2036 —
+    genuinely transformative for Intel, though still well short of TSMC
+    scale.
+  - Intel Products holds/regains competitive footing: DCAI's 2026
+    acceleration (+59% YoY in Q2) proves durable as Xeon 6 generations win
+    back server share, and an AI-PC refresh cycle supports CCG ASPs even as
+    unit volumes stay roughly flat.
+  - GAAP operating margin recovers to 22% by the early 2030s — a real
+    turnaround, but still below Intel's own FY2021 peak (27.9%) and well
+    below AMD's Bull-case 31% or a pure AI/fabless peer, because Intel
+    continues to carry the capital intensity of leading-edge fab ownership.
+  - Even here, the resulting intrinsic value (~$39) is less than a third
+    of today's price — this is the scenario that makes Intel a genuinely
+    good business again, not one that makes $123 look cheap.
+
+BASE CASE (~$8/share; 12.0% WACC, 2.5% TGR, 12x exit)
+  - Foundry clears management's own modest "low-to-mid single-digit
+    billions" external-revenue breakeven bar (~$6.5B by 2030) and grows
+    modestly from there, but 14A never becomes a scale TSMC competitor.
+  - Intel Products grows at a GDP-plus pace as AI-PC/AI-server tailwinds
+    roughly offset continued share pressure from AMD (CCG, DCAI) and
+    hyperscaler custom silicon (DCAI).
+  - GAAP operating margin reaches a 15% terminal plateau — real progress
+    from FY2025's -4.2%, but still below Intel's own historical peak.
+  - 2036 revenue ~$107B (~1.7x FY2026E) — a genuinely successful decade by
+    Intel's recent standards, and still ~93% below today's price on a
+    discounted-cash-flow basis.
+
+BEAR CASE (~$0/share, i.e. net debt approximately consumes the enterprise
+value; 14.5% WACC, 1.5% TGR, 8x exit)
+  - 14A investment is paused or scaled back per the risk Intel has itself
+    disclosed — no committed external customers materialize at scale, and
+    Foundry remains a persistent internal-only cost center.
+  - Intel Products continues to lose share in both CCG (Arm-based PCs,
+    AMD Ryzen) and DCAI (AMD EPYC, hyperscaler custom silicon reducing
+    merchant Xeon demand) — the same multi-year erosion visible in the
+    FY2021-2023 historical margin collapse (Section 2) resumes rather than
+    reverses.
+  - GAAP operating margin never exceeds a 6% terminal plateau; free cash
+    flow stays structurally thin given continued (if reduced) capex needs.
+  - Given ~$20.8B of current net debt against an enterprise value this
+    scenario puts at only ~$18B, a Bear outcome would very plausibly
+    involve further dilutive capital raises, asset sales beyond the
+    Mobileye/Altera monetization already underway, or a renegotiation of
+    the fab buildout — well before ten years of these modeled cash flows
+    actually played out.
+
+
+================================================================================
+SECTION 9 — KEY RISKS
+================================================================================
+
+1. FOUNDRY EXTERNAL-CUSTOMER RISK (VERY HIGH — this model's foundational
+   risk, analogous to AMD's TAM premise)
+   Zero committed external 14A customers as of mid-2026. Management's own
+   framing ("a signed name unlocks the next stage of the build-out," a
+   disclosed risk of pausing/cancelling 14A) puts real, company-acknowledged
+   odds on the Bear case. The Bull case requires converting "evaluating"
+   customers (Nvidia, Apple, Microsoft, etc., per public reporting) into
+   disclosed, committed, at-scale design wins within roughly the next
+   18 months.
+
+2. NET DEBT AND CONTINUED DILUTION (VERY HIGH)
+   Unlike AMD/NVDA/PLTR in this folder, Intel carries real net leverage
+   ($20.8B) that widened, not narrowed, over H1 2026 as gross capex
+   reaccelerated. Adjusted free cash flow has been negative every year
+   since at least FY2024. Absent a durable FCF inflection, further equity
+   issuance (beyond the government/SoftBank/Nvidia transactions already
+   completed) is a realistic funding path, and every per-share value in
+   this model already reflects a HELD-FLAT share count that may prove
+   optimistic.
+
+3. PARTNER (SCIP) CONTRIBUTION CONTINUITY (HIGH)
+   SCIP-style partner co-investment fell from $12.7B (FY2024) to $4.9B
+   (FY2025) as early commitments matured. This model's "net capex" figures
+   assume incentive/partner funding continues at a meaningful scale as
+   gross capex reaccelerates toward and past $20B/yr — if that support
+   fades faster than gross capex grows, real net capex (and cash burn)
+   could be materially worse than modeled.
+
+4. VALUATION / MULTIPLE COMPRESSION (VERY HIGH)
+   At $123 (~$620B market cap, ~10x FY2026E revenue on a business with a
+   single-digit-percent GAAP operating margin), the stock is priced far
+   above every scenario this model can construct, including sensitivity
+   ranges more generous than the Bull case itself (Table B). A stock priced
+   this far ahead of fundamentals is exceptionally exposed to any
+   disappointment in the 14A customer-commitment timeline management has
+   itself flagged for 2H26/1H27.
+
+5. COMPETITIVE SHARE LOSS RESUMING IN CORE PRODUCTS (HIGH)
+   The FY2021-2023 historical collapse (Section 2) was a genuine, multi-
+   year share-loss story to AMD in both CCG and DCAI, not a one-time event.
+   2026's DCAI reacceleration (+59% YoY) is encouraging but early; a
+   reversion to share loss in either segment would undermine even the Base
+   case, which already assumes Products merely holds serve.
+
+6. GOVERNMENT/STRATEGIC-INVESTOR ALIGNMENT RISK (MEDIUM-HIGH)
+   The US government's 9.9% stake, while structured as passive, ties
+   Intel's fortunes to shifting US industrial and trade policy in ways
+   ordinary shareholders don't control; Nvidia's $5B investment gives one
+   of Intel's most important potential customers/competitors a stake in
+   Intel's outcome, which cuts both ways (alignment on foundry demand,
+   but also potential conflicts given Nvidia's own TSMC relationship).
+
+7. GAAP TAX-RATE / DTA VOLATILITY (MEDIUM)
+   The FY2024 deferred-tax-asset valuation-allowance writedown has made
+   Intel's reported GAAP tax rate and net income extremely noisy and
+   sometimes counter-intuitive (Q2 2026: positive operating income, large
+   GAAP net LOSS). This model works from operating income for exactly this
+   reason, but investors reading only headline EPS could be repeatedly
+   whipsawed by items unrelated to the operating turnaround.
+
+8. EXECUTION ON A GENUINELY HARD TECHNICAL TRANSITION (MEDIUM)
+   18A is in early high-volume ramp; 14A is Intel's actual bid to be
+   competitive with TSMC's leading edge. Yield, power, and cost
+   competitiveness at that node are not proven at scale, and Intel's own
+   multi-year history (Section 2) includes real precedent for leading-edge
+   node delays and cost overruns.
+
+9. CCG/PC MARKET CYCLICALITY (MEDIUM)
+   CCG (still the largest single revenue segment even in the Bull case) is
+   a mature, cyclical PC market; an AI-PC refresh supercycle failing to
+   materialize at the pace bulls expect would remove one of the Bull case's
+   supporting legs even if Foundry executes well.
+
+10. HEADCOUNT/RESTRUCTURING EXECUTION AND MORALE (LOW-MEDIUM)
+    A ~25% core-workforce reduction through 2025, office-return mandates,
+    and continued cost discipline under CEO Lip-Bu Tan carry real execution
+    and retention risk for a company simultaneously trying to win back
+    leading-edge process credibility with skeptical external customers.
+
+
+================================================================================
+SECTION 10 — INVESTMENT ASSESSMENT
+================================================================================
+
+POSITIVES (WHY THE BULL COULD BE RIGHT)
+  + The operating inflection is real and reported, not purely promised:
+    GAAP operating income swung from a $(3.2)B loss (Q2'25) to +$1.8B
+    (Q2'26); DCAI revenue +59% YoY; 18A yields visibly improving.
+  + The balance sheet has genuine, large, strategically-motivated backers
+    (US government, SoftBank, Nvidia) who have already put ~$15B+ of real
+    capital in and have incentives to see the turnaround succeed, reducing
+    near-term bankruptcy-tail risk even in a difficult scenario.
+  + Foundry's own stated breakeven bar (modest external revenue, ~2027) is
+    achievable even in this model's Base case, and multiple credible
+    potential customers (Nvidia, Apple, Microsoft, others per public
+    reporting) are at least evaluating 18A/14A.
+  + Management (under Lip-Bu Tan since March 2025) has shown real capital
+    discipline — cancelling European fab projects, monetizing Mobileye and
+    Altera stakes, cutting ~25% of core headcount — that is directionally
+    the right playbook for an overextended IDM, whatever one thinks of the
+    stock price.
+
+NEGATIVES (WHY THIS IS NOT REMOTELY A MARGIN-OF-SAFETY BUY AT $123)
+  - Every scenario this model can construct — including a Bull case with
+    Foundry becoming a genuine ~$48B external-revenue business by 2036 —
+    values Intel well below its current price. The gap in the Base case is
+    not a modest 20-30% "priced for perfection" premium like some of the
+    other names in this folder; it is roughly an order of magnitude.
+  - The reverse DCF (Section 7, Table D) shows the market's implied
+    assumptions require ~4x this model's own Bull-case terminal free cash
+    flow — i.e. an outcome beyond even an optimistic read of Intel's
+    stated turnaround plan.
+  - Unlike AMD/NVDA/PLTR in this folder, Intel's balance sheet is a real
+    liability, not an asset: $20.8B of net debt against a business that
+    has not generated positive adjusted free cash flow in any of the last
+    two full fiscal years.
+  - The Bear case is not merely "the stock falls" — it implies the
+    business's enterprise value could fall below its net debt, which in
+    practice means further dilution, asset sales, or restructuring, not a
+    graceful multiple contraction.
+  - Sell-side consensus (average target ~$116-117, median ~$110) already
+    sits BELOW today's price — this is not a case where a skeptical DCF
+    disagrees with an otherwise-aligned market; even Wall Street's own
+    (typically less conservative) price targets don't support $123.
+
+BOTTOM LINE
+Intel's operating turnaround under Lip-Bu Tan is real, and this model's Bull
+case — a genuine external-foundry business alongside a share-holding
+Products franchise — would represent a legitimate, admirable corporate
+recovery from the 2021-2024 collapse. But that Bull case is worth roughly
+$39/share in this build, less than a third of the current $123, and the
+reverse DCF shows the market is pricing something considerably more
+aggressive than even that. At $123, INTC is a story stock riding
+government/strategic-investor backing, real but early operating
+improvement, and a supply-constrained AI-hardware moment — not a
+discounted-cash-flow value. This is a SELL/AVOID on valuation for anyone
+using intrinsic value as the anchor, independent of how the underlying
+turnaround actually plays out. A price in the $15-25 range (roughly the
+probability-weighted-to-simple-average band) would be the first zone where
+this model's framework would call the stock merely fairly priced rather
+than dramatically overpriced; the Bull-case ceiling of ~$39 would need
+Foundry's external-customer bet to pay off in full AND a re-rating of the
+discount rate toward mega-cap-quality levels to be reached on fundamentals
+alone.
+
+Conviction: MODERATE on business-quality trajectory (real, credible,
+early-stage turnaround) / VERY LOW on valuation at $123. Would need: a
+decline toward the low-$20s to high-$30s (this model's Bull-case ceiling)
+to even begin to be supportable on a DCF basis, OR a committed, at-scale
+external 14A customer disclosure that would justify materially raising the
+Bull case's own Foundry assumptions.
+
+
+================================================================================
+SECTION 11 — SUMMARY VALUATION TABLE
+================================================================================
+
+METHOD                                    VALUE/SHARE   NOTES
+----------------------------------------  -----------   -----
+Bull (10.5% WACC, 3.0% TGR, 16x exit)        $38.71     Foundry external
+                                                          rev ~$48B by 2036;
+                                                          22% terminal margin
+Base (12.0% WACC, 2.5% TGR, 12x exit)         $8.34     Foundry hits modest
+                                                          breakeven bar only;
+                                                          central estimate
+Bear (14.5% WACC, 1.5% TGR, 8x exit)         ~$0.00     14A paused/fails;
+                                                          net debt ~consumes
+                                                          enterprise value
+Probability-weighted (25/40/35)              $12.82
+Simple average of three scenarios            $15.50
+Market price (Sept 25, 2026 close)          $123.00     ~10-20x every cell
+                                                          of the Base-case
+                                                          sensitivity grid
+
+Central estimate (base case):                 $8.34/share
+Current price:                              $123.00/share
+Margin of safety at current price:          -93.2% (overvalued vs Base by
+                                             ~14.7x / price is 14.74x Base IV)
+
+REVERSE DCF: to justify $123 at the BULL case's own 10.5% WACC / 3.0% TGR,
+2036 free cash flow would need to be ~$114.7B, ~4.05x this model's own
+Bull-case projection of $28.3B.
+
+
+================================================================================
+DISCLOSURES & LIMITATIONS
+================================================================================
+
+- This is a standard bottom-up scenario DCF, not a prediction. It does not
+  independently verify management's 2027 Foundry-breakeven target or the
+  reported customer-evaluation pipeline (Nvidia, Apple, Microsoft, etc.) —
+  those are treated as the scenario inputs the three cases vary around.
+- CONSOLIDATED REVENUE, NOT SEGMENT-SUM REVENUE, IS THE FORECAST BASIS
+  (Section 3) — a reader who instead grows the reported ~$17-18B/yr
+  "Intel Foundry" segment-revenue line as if it were mostly external,
+  addressable revenue would be double-counting against Intel Products'
+  own reported revenue, and would arrive at a much higher (and, this
+  analysis believes, incorrect) valuation.
+- FY2024/FY2025 GAAP operating income figures are Intel's own officially
+  reported numbers; some third-party financial-data aggregators show
+  different ("core," ex-impairment/restructuring) operating income figures
+  for these years that this model does NOT use — see INTC-HISTORICALS-
+  2021-2025.md for the specific discrepancy and reasoning.
+  FY2021-FY2023 figures were corroborated via direct citations to Intel's
+  own press releases/10-Ks found via web search, not independently
+  re-tied to the primary filings for this personal file.
+- Net capex figures (Section 5/6) rely on Intel's own "government
+  incentives" and "SCIP/partner contributions" disclosures for FY2024-
+  FY2025 only; earlier years and the full forecast period assume a
+  continuation of similar-scale support that is NOT contractually
+  guaranteed at the levels assumed — see Section 9, Risk #3.
+- Diluted share count (5,043M) is a single point-in-time count (Jun 27,
+  2026 common shares outstanding), held flat across the ten-year forecast.
+  Given the pace of dilution over the prior 18 months and continued heavy
+  capex needs, this is very likely an optimistic (too-low) share count for
+  the out-years — see Section 9, Risk #2.
+- WACC/TGR/exit-multiple selection is a judgment call; a reader more
+  optimistic about Intel's competitive position and funding durability
+  could reasonably use lower discount rates, which (per Table A) would
+  still leave the Base case far below the current price — closing that gap
+  requires materially more aggressive REVENUE/MARGIN assumptions than
+  discount-rate assumptions, per the reverse-DCF exercise in Section 7.
+- All modeling works from GAAP figures with an explicit, simplified NOPAT/
+  tax convention (Section 5), not management's non-GAAP framing (which
+  already shows Intel solidly profitable on FY2025/Q2 2026 non-GAAP
+  operating income — see Section 1/2 for the GAAP-vs-non-GAAP contrast).
+- Personal, standalone research file, outside the tech-buffett Init ->
+  Deep Dive -> DCF pipeline. Does NOT qualify INTC for portfolio purchase
+  under CLAUDE.md / the agent ruleset, and independent of that rule, this
+  analysis would not support a purchase at the current price. Not
+  investment advice.
+================================================================================
