@@ -10,11 +10,13 @@ Compiled live via web for the Sept 27, 2026 personal DCF (see DCF-INTC-2026-09-2
 | YoY growth | — | -20.2% | -14.0% | -2.1% | -0.5% |
 | Gross profit | 43,815 | 28,446 | 21,711 | 17,300* | 18,400* |
 | Gross margin | 55.4% | 45.1% | 40.0% | 32.7% | 34.8% |
-| Operating income (loss) | 22,082 | 2,334 | 93 | (11,700) | (2,200) |
-| Operating margin | 27.9% | 3.7% | 0.2% | -22.0% | -4.2% |
+| Operating income (loss) | 19,456‡ | 2,334 | 93 | (11,678) | (2,214) |
+| Operating margin | 24.6% | 3.7% | 0.2% | -22.0% | -4.2% |
 | Net income (loss), attrib. Intel | 19,868 | 8,014 | 1,689 | (18,756) | (267) |
 | EPS (diluted) | $4.86 | $1.94 | $0.40 | $(4.38) | $(0.06) |
 | Diluted wtd-avg shares | 4,090 | 4,123 | 4,212 | 4,280 | n/a** |
+
+‡CORRECTED Sept 28, 2026: FY2021 GAAP operating income is **$19,456M** (Q4/FY2021 press release and Apr 2024 segment-recast 8-K), not the $22,082M originally shown here. $22,082M is gross margin ($43,815M) less R&D ($15,190M) and MG&A ($6,543M), BEFORE $2,626M of "restructuring and other charges," so it is not GAAP operating income. FY2024/FY2025 operating income are now shown at the exact 10-K values ($(11,678)M / $(2,214)M), replacing the rounded press-release figures. See INTC-SEGMENTS-2021-2026.md for full segment-level history, which reconciles to these consolidated figures exactly.
 
 *FY2024/FY2025 gross profit are rounded figures from the official press release (billions); precise 10-K figures may differ by low tens of millions.
 **FY2025 diluted weighted-average share count not pulled precisely; major dilution events (US govt 433.3M-share stake announced Aug 2025, SoftBank $2B, Nvidia $5B private placement completed Dec 2025) were concentrated in H2 2025, so the full-year weighted average sits well below the Dec 27, 2025 point-in-time count of 4,994M — likely ~4,700–4,800M. Point-in-time common shares outstanding: 4,330M (Dec 2024) → 4,994M (Dec 2025) → 5,023M (Mar 2026) → 5,043M (Jun 2026).

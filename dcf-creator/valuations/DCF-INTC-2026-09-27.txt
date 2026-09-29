@@ -14,10 +14,80 @@ Sources: Intel Q4/FY2025, Q1 2026 and Q2 2026 earnings press releases (official,
              Nvidia stakes, Foundry external-customer status, 14A risk, capex
              guidance, Lip-Bu Tan turnaround narrative, current price /
              market cap / analyst targets)
+           - ../extracts/INTC-SEGMENTS-2021-2026.md (ADDED Sept 28, 2026:
+             FY2021-FY2025 + Q1'25-Q2'26 segment revenue / operating income,
+             pulled from the FY2025 10-K, the Apr 2024 segment-recast 8-K,
+             the Q1/Q2 2026 10-Qs and the Q3/Q4 2025 releases; reconciles to
+             consolidated to the $1M)
          Current price pulled live (Sept 27, 2026, referencing the Sept 25,
          2026 close since markets are closed on the pull date). See
          Disclosures.
 ================================================================================
+
+REVISION NOTE — September 28, 2026 (segment-history revision)
+-------------------------------------------------------------
+Why: the original Section 2 showed consolidated history plus only a
+two-year (FY2024-25) segment table. Section 2A now adds full multi-year
+segment history. Building it surfaced one forecast inconsistency and two
+factual errors.
+
+CHANGED:
+  1. BASE-CASE OPERATING MARGIN PATH RAISED (Section 5 / 6). The segment
+     data shows the old Base margins were inconsistent with the Base case's
+     own narrative. Consider the old path of 5% (2027) rising to a 15%
+     terminal margin, with Intel Products held at a conservative 25%
+     segment margin and corporate costs at their reported run-rate. That
+     path mechanically implies Intel Foundry still loses ~$8.4B in 2027
+     (no progress from H1'26's ~$9.1B annualized loss), ~$5.1B in 2030,
+     and ~$2.2B/yr forever, even with $6.5-13B of external revenue. That is
+     a "Foundry never breaks even" outcome, not the "Foundry clears
+     management's breakeven bar" outcome the Base case says it models.
+     The revised Base is rebuilt bottom-up from segments (Section 2A,
+     "Forecast consistency check"). It deliberately stays conservative:
+       - Products margin 25%, below FY24 (26.3%), FY25 (25.9%) and
+         H1'26 (31.8%).
+       - Foundry breakeven in 2031, four years later than management's
+         2027 target.
+       - Corporate unallocated cost = SBC + $1.5B/yr.
+     The result is 6% / 9% / 12% / 14% / 17% / 17% / 18% (2033-36) margins
+     vs the old 5% / 7% / 9% / 11% / 12% / 13% / 14% / 15%.
+       BASE IV:                $8.34  -> $12.79/share
+       Probability-weighted:  $12.82  -> $14.60/share
+       Simple average:        $15.50  -> $16.99/share
+     Bull ($38.71) and Bear (~$0 / -$0.54) are UNCHANGED (see Section 2A for
+     why each still holds). The headline conclusion is also unchanged:
+     price is still ~9.6x Base IV and ~3.2x Bull IV.
+     Less-conservative alternatives, for auditability:
+       - Management's own 2027 Foundry-breakeven timeline: Base IV ~$16.17.
+       - Products at H1'26's actual 31.8% margin: Base IV ~$21.66.
+  2. FY2021 GAAP OPERATING INCOME CORRECTED from $22,082M (27.9% margin)
+     to $19,456M (24.6%). Intel's Q4/FY2021 release and the Apr 2024 recast
+     both show $19,456M. $22,082M was the subtotal BEFORE $2,626M of
+     restructuring and other charges. The "FY2021 peak" references
+     throughout are updated to 24.6%. This has no effect on valuation
+     outputs.
+  3. Q1 2026 GAAP OPERATING LOSS RE-ATTRIBUTED. The $(3.1)B loss was driven
+     by a $3.9B non-cash Mobileye goodwill impairment booked in corporate
+     unallocated. It was NOT "seasonal weakness / supply constraints":
+     segments earned +$1.7B that quarter. Section 2 is updated.
+  4. Section 4A H1'26 actuals replaced with exact reported figures (the
+     previous version used rounded Q1 numbers). This moves nothing by more
+     than $50M. FY2026E totals are unchanged.
+
+FLAGGED, NOT CHANGED (outside this revision's scope; for the user to decide):
+  a. NON-CONTROLLING INTERESTS. The equity bridge subtracts net debt only.
+     Intel's Jun 27, 2026 balance sheet carries $15.6B of non-controlling
+     interests (Arizona SCIP partner 49% = $13.4B book; Mobileye minority
+     $2.1B; IMS $0.1B). Those holders have claims on cash flows that the
+     consolidated forecast includes. Deducting them at book value would
+     lower EVERY scenario by ~$3.09/share (Base $12.79 -> ~$9.70).
+  b. SBC TREATMENT. NOPAT here starts from GAAP operating income, which is
+     already after SBC expense. Subtracting SBC again for "SBC-adjusted
+     FCF" is therefore a second SBC deduction. This follows the folder-wide
+     convention and is conservative. It is not changed here, but flagged.
+  c. Mobileye stake: see Section 2A. Intel owns ~77%, not a small minority.
+     That matters to the companion multiples file, not to this DCF (Mobileye
+     is consolidated here via "All Other").
 
 WHAT THIS FILE IS (READ FIRST)
 -----------------------------
@@ -43,7 +113,9 @@ result to where the stock actually trades. Not investment advice.
 EXECUTIVE SUMMARY
 -----------------
 Intrinsic value (bull case, 10.5% WACC / 3.0% TGR, 16x exit):    ~$38.71/share
-Intrinsic value (base case, 12.0% WACC / 2.5% TGR, 12x exit):     ~$8.34/share
+Intrinsic value (base case, 12.0% WACC / 2.5% TGR, 12x exit):    ~$12.79/share
+                                                                  (rev. Sept 28;
+                                                                   was $8.34)
 Intrinsic value (bear case, 14.5% WACC / 1.5% TGR, 8x exit):    ~($0.54)/share
                                                                   (net debt
                                                                    wipes out
@@ -53,23 +125,25 @@ Intrinsic value (bear case, 14.5% WACC / 1.5% TGR, 8x exit):    ~($0.54)/share
                                                                    ~$0, not a
                                                                    literal
                                                                    negative)
-Probability-weighted IV (25% bull / 40% base / 35% bear):        ~$12.82/share
-Simple average of the three scenarios:                           ~$15.50/share
+Probability-weighted IV (25% bull / 40% base / 35% bear):        ~$14.60/share
+                                                                  (was $12.82)
+Simple average of the three scenarios:                           ~$16.99/share
+                                                                  (was $15.50)
 
 Current stock price (Sept 25, 2026 close, last trading session):   $123.00
   (52-wk range $32.89 - $142.35; market cap ~$620B at 5,043M diluted
    shares; up ~220% YTD 2026)
 Implied downside (bull case):            -68.5%  (price is 3.18x bull IV)
-Implied downside (base case):            -93.2%  (price is 14.74x base IV)
+Implied downside (base case):            -89.6%  (price is 9.62x base IV)
 Implied downside (bear case):            ~-100%  (equity value near zero)
-Implied downside (probability-weighted): -89.6%
+Implied downside (probability-weighted): -88.1%
 
 HEADLINE FINDING: This is the starkest gap between DCF and market price of
 any model in this folder. Even the BULL case here — Intel Foundry landing
 real external customers, revenue reaching ~$160B by 2036, consolidated GAAP
-operating margin recovering to 22% (still below Intel's own 2021 peak of
-28%, let alone NVIDIA-level margins) — produces an intrinsic value of only
-~$39/share, less than a third of the current $123 price. A REVERSE DCF
+operating margin recovering to 22% (still below Intel's own FY2021 GAAP
+level of 24.6%, let alone NVIDIA-level margins) — produces an intrinsic
+value of only ~$39/share, less than a third of the current $123 price. A REVERSE DCF
 (Section 7) shows that to justify $123 even using the Bull case's own
 (relatively generous) 10.5% discount rate, Intel's 2036 free cash flow would
 need to be roughly FOUR TIMES what this Bull case projects — i.e. the market
@@ -99,7 +173,10 @@ manufactures semiconductors, unlike fabless peers (AMD, NVIDIA). It reports
 three segments since the Altera deconsolidation (Sept 12, 2025) and the Q1
 2025 folding of the old "Network and Edge" segment into CCG/DCAI:
 
-  Client Computing Group (CCG) ....... PC/laptop CPUs (Core, Core Ultra)
+  Client Computing Group (CCG) ....... PC/laptop CPUs (Core, Core Ultra);
+                                         renamed CCPG ("Client Computing
+                                         and Physical AI Group") in Q2 2026
+                                         (name only; figures continuous)
   Data Center & AI (DCAI) ............ Server CPUs (Xeon) + AI accelerators
   Intel Foundry ....................... Wafer fabrication — for Intel's own
                                          chips (overwhelmingly) and, in
@@ -167,8 +244,8 @@ Revenue                   79,024   63,054   54,228   53,101   52,853
   YoY growth                 --    -20.2%   -14.0%    -2.1%    -0.5%
 Gross profit               43,815   28,446   21,711   17,300*  18,400*
   Gross margin              55.4%    45.1%    40.0%    32.7%    34.8%
-Operating income (loss)    22,082    2,334       93  (11,700)  (2,200)
-  Operating margin          27.9%     3.7%     0.2%   -22.0%    -4.2%
+Operating income (loss)    19,456    2,334       93  (11,700)  (2,200)
+  Operating margin          24.6%     3.7%     0.2%   -22.0%    -4.2%
 Net income (loss)          19,868    8,014    1,689  (18,756)    (267)
 Diluted EPS                 $4.86    $1.94    $0.40   $(4.38)  $(0.06)
 Diluted wtd-avg shares      4,090    4,123    4,212    4,280     n/a**
@@ -177,10 +254,14 @@ Diluted wtd-avg shares      4,090    4,123    4,212    4,280     n/a**
 count was not precisely pulled; major dilution (govt stake, SoftBank,
 Nvidia) was concentrated in H2 2025, so the full-year weighted average is
 well below the Dec 2025 point-in-time count of 4,994M shares.
+(Rev. Sept 28: FY2021 operating income corrected from $22,082M to the
+reported GAAP $19,456M. The earlier figure was before $2,626M of
+restructuring and other charges. FY2024/FY2025 remain rounded press-release
+figures; the exact 10-K values are $(11,678)M / $(2,214)M, see Section 2A.)
 
 Notes:
   - THE 2021->2023 COLLAPSE IS THE FIRST HALF OF THE STORY: GAAP operating
-    margin fell from 27.9% (FY21, near-peak) to 3.7% (FY22, PC downcycle +
+    margin fell from 24.6% (FY21, near-peak) to 3.7% (FY22, PC downcycle +
     early IDM 2.0 capex ramp) to 0.2% (FY23, trough) — three straight years
     of margin destruction BEFORE the 2024 impairment crater. This was a
     genuine, multi-year competitive and execution decline (process-node
@@ -198,9 +279,12 @@ Notes:
   - FY2025's improvement to $(2.2)B operating loss and the Q2 2026 swing to
     POSITIVE $1.8B GAAP operating income is the real, reported inflection
     this model is trying to value — not a promise, an actual trend across
-    five consecutive quarters (Q2'25 loss $(3.2)B -> Q3'25 -> Q4'25 +$0.6B
-    -> Q1'26 loss $(3.1)B [seasonally weak, supply-constrained per
-    management] -> Q2'26 +$1.8B).
+    five consecutive quarters (Q2'25 loss $(3.2)B -> Q3'25 +$0.7B -> Q4'25
+    +$0.6B -> Q1'26 loss $(3.1)B -> Q2'26 +$1.8B). [Rev. Sept 28: the Q1'26
+    loss was driven by a $3.9B non-cash Mobileye goodwill impairment in
+    corporate unallocated. Segment operating income summed to +$1.7B that
+    quarter; excluding restructuring/impairment, Q1'26 was ~+$0.9B. See
+    Section 2A.]
   - Reported net income is extremely noisy and, unusually, often WORSE than
     operating income even when operating income is positive: Q2 2026 GAAP
     operating income was +$1.8B but GAAP net LOSS was $(11.0)B, driven by
@@ -270,34 +354,276 @@ Common shares outstanding      4,330     4,994     5,023     5,043
     count is the basis for the DCF, Section 6) but FURTHER dilution is a
     real risk given continued heavy capex — see Section 9.
 
-SEGMENT REVENUE & OPERATING INCOME (GAAP, FY2025 vs FY2024)
-                          FY2025 Rev  FY2024 Rev   FY2025 OpInc  FY2024 OpInc
-CCG                          32,200      33,300        9,300        11,600
-DCAI                         16,900      16,100        3,400         1,400
-  Total Intel Products       49,100      49,500       12,700        13,000
-Intel Foundry                17,800      17,300      (10,300)      (13,300)
-All Other                     3,600       3,600           264           (57)
-  Sum of segments            70,500      70,400         2,664          (357)
-  Consolidated (actual)      52,853      53,101       (2,200)      (11,700)
+--------------------------------------------------------------------------------
+SECTION 2A — SEGMENT HISTORY, FY2021 -> Q2 2026 (added Sept 28, 2026)
+--------------------------------------------------------------------------------
+Source: ../extracts/INTC-SEGMENTS-2021-2026.md. The underlying documents
+are the FY2025 10-K Note 3, the Apr 2, 2024 segment-recast 8-K, the Q3/Q4
+2025 releases and the Q1/Q2 2026 10-Qs. All $M. Every period below
+reconciles to consolidated revenue and consolidated GAAP operating income
+to the $1M via eliminations and corporate unallocated. Segment operating
+income EXCLUDES SBC, restructuring, impairments of goodwill and
+acquisition-related costs; those sit in "corporate unallocated" (table
+2A-6). Segment profit is therefore structurally higher than consolidated
+GAAP profit.
 
-  - THE SUM OF SEGMENT REVENUE ($70.5B FY2025) FAR EXCEEDS CONSOLIDATED
-    REVENUE ($52.9B) — an ~$17.6B gap that is almost entirely Intel Foundry
-    selling wafers to Intel Products at internal transfer prices, which
-    nets out on consolidation. See Section 3 — this is the single most
-    important modeling fact in this file.
-  - The sum of segment operating income/loss ($2.7B FY2025) does NOT match
-    consolidated operating income/loss ($(2.2)B) either — the gap is
-    unallocated corporate costs, eliminations, and stock-based comp not
-    pushed to segments (Intel's segment reporting, like AMD's, has an
-    "all other reconciling items" bucket not separately disclosed in the
-    press-release-level detail used here).
-  - CCG revenue actually FELL 3% in FY2025 even as PC demand was reasonably
-    healthy — a share/mix story, not a demand story, and consistent with
-    AMD's Ryzen continuing to take PC CPU share over the period (see the
-    AMD DCF files in this folder).
-  - DCAI +5% in FY2025 was modest; the real DCAI inflection is a 2026
-    story (+22% Q1, +59% Q2) as AI-server Xeon demand (and possibly some
-    AI-accelerator-adjacent CPU attach) accelerated sharply.
+SEGMENT-DEFINITION CHANGES — THE SERIES IS ON TWO BASES
+  Basis B (Apr 2024 recast; FY2021-FY2023): Intel Products = CCG + DCAI +
+    NEX; Intel Foundry; All Other = Altera + Mobileye + Other. This recast
+    CREATED the internal-foundry P&L, in which Foundry "sells" wafers to
+    Products at transfer prices.
+  Basis A (FY2025 10-K; FY2023 onward): NEX folded into CCG and DCAI (Q1
+    2025). Segment expenses recast to the CODM's view (Q2 2025). Altera sits
+    in All Other only through Sept 11, 2025; after deconsolidation it
+    becomes an EXTERNAL Foundry customer.
+  Q2 2026: CCG renamed CCPG ("Client Computing and Physical AI Group").
+    This is a name change only; the 10-Q restates prior periods with
+    identical figures, so the CCG/CCPG series below is continuous.
+  => Products-total, Foundry and All Other are comparable across both
+     bases, with ~1-2% basis noise (FY2023 bridge below). CCG and DCAI
+     INDIVIDUALLY ARE NOT COMPARABLE between FY2021-22 (Basis B, ex-NEX)
+     and FY2023+ (Basis A, incl. NEX). No Basis-A split of FY2021-22 is
+     published, and none is estimated here.
+
+TABLE 2A-1: BASIS B — FY2021-FY2023 (Apr 2024 recast, NEX separate)
+                               FY2021     FY2022     FY2023
+  Revenue
+    CCG                        41,081     31,773     29,258
+    DCAI                       20,786     16,856     12,635
+    NEX                         7,665      8,409      5,774
+    Intel Products             69,532     57,038     47,667
+      YoY                          --     -18.0%     -16.4%
+    Intel Foundry              22,849     27,491     18,910
+    All Other*                  9,137      5,530      5,608
+    Intersegment elims        (22,494)   (27,005)   (17,957)
+    Consolidated               79,024     63,054     54,228
+  Operating income (loss)
+    CCG                        19,243      8,207      9,513
+    DCAI                        9,071      4,198      1,620
+    NEX                         2,165      1,532        204
+    Intel Products             30,479     13,937     11,337
+    Intel Foundry              (5,067)    (5,169)    (6,955)
+    All Other                   1,825      1,174      1,079
+    Intersegment elims           (665)    (1,975)      (203)
+    Corporate unallocated      (7,116)    (5,633)    (5,165)
+    Consolidated GAAP          19,456      2,334         93
+  Operating margin
+    CCG                         46.8%      25.8%      32.5%
+    DCAI                        43.6%      24.9%      12.8%
+    NEX                         28.2%      18.2%       3.5%
+    Intel Products              43.8%      24.4%      23.8%
+    Intel Foundry              -22.2%     -18.8%     -36.8%
+  *All Other = Altera + Mobileye + Other. FY2021 "Other" ($5,779M)
+   includes the since-divested NAND business ($4,306M of FY2021 revenue,
+   sold to SK hynix).
+
+TABLE 2A-2: FY2023 BRIDGE — SAME YEAR, BOTH BASES
+                             Basis B    Basis A    Diff
+  Intel Products rev          47,667     48,285    +618
+  Intel Products op inc       11,337     11,073    -264
+  Intel Foundry rev           18,910     18,504    -406
+  Intel Foundry op inc        (6,955)    (7,083)   -128
+  All Other rev / op inc  5,608/1,079 5,463/1,507  -145/+428
+  Consolidated rev / op inc  54,228/93  54,228/93     0
+
+TABLE 2A-3: BASIS A — FY2023-FY2025 AND H1 2025 / H1 2026 (current structure)
+                               FY2023     FY2024     FY2025     H1'25      H1'26
+  Revenue
+    CCG (CCPG)                 32,305     33,346     32,228     15,500     16,604
+      YoY                          --      +3.2%      -3.4%        --       +7.1%
+    DCAI                       15,980     16,125     16,919      8,065     11,314
+      YoY                          --      +0.9%      +4.9%        --      +40.3%
+    Intel Products             48,285     49,471     49,147     23,565     27,918
+      YoY                          --      +2.5%      -0.7%        --      +18.5%
+    Intel Foundry              18,504     17,317     17,826      9,084     11,186
+      of which EXTERNAL           547        159        307         53        467
+    All Other                   5,463      3,601      3,563      1,996      1,329
+    Intersegment elims        (18,024)   (17,288)   (17,683)    (9,119)   (10,728)
+    Consolidated               54,228     53,101     52,853     25,526     29,705
+  Operating income (loss)
+    CCG (CCPG)                 10,128     11,594      9,317      4,414      4,859
+    DCAI                          945      1,414      3,422      1,208      4,016
+    Intel Products             11,073     13,008     12,739      5,622      8,875
+    Intel Foundry              (7,083)   (13,291)   (10,318)    (5,488)    (4,526)
+    All Other                   1,507        (57)       264        172        332
+    Corporate unallocated      (5,199)   (11,177)    (5,518)    (4,015)    (6,496)
+    Intersegment elims           (205)      (161)       619        232        475
+    Consolidated GAAP              93    (11,678)    (2,214)    (3,477)    (1,340)
+  Operating margin
+    CCG (CCPG)                  31.4%      34.8%      28.9%      28.5%      29.3%
+    DCAI                         5.9%       8.8%      20.2%      15.0%      35.5%
+    Intel Products              22.9%      26.3%      25.9%      23.9%      31.8%
+    Intel Foundry              -38.3%     -76.8%     -57.9%     -60.4%     -40.5%
+    All Other                   27.6%      -1.6%       7.4%       8.6%      25.0%
+
+TABLE 2A-4: QUARTERLY, Q1 2025 -> Q2 2026 (Basis A)
+                          Q1'25    Q2'25    Q3'25    Q4'25    Q1'26    Q2'26
+  Revenue
+    CCG (CCPG)            7,629    7,871    8,535    8,193    7,727    8,877
+    DCAI                  4,126    3,939    4,117    4,737    5,052    6,262
+    Intel Products       11,755   11,810   12,652   12,930   12,779   15,139
+    Intel Foundry         4,667    4,417    4,235    4,507    5,421    5,765
+    All Other               943    1,053      993      574      628      701
+    Consolidated         12,667   12,859   13,653   13,674   13,577   16,128
+  YoY revenue growth
+    CCG (CCPG)               --       --     +4.6%    -6.6%    +1.3%   +12.8%
+    DCAI                     --       --     -0.6%    +8.9%   +22.4%   +59.0%
+  Operating income (loss)
+    CCG (CCPG)            2,361    2,053    2,694    2,209    2,516    2,343
+    DCAI                    575      633      964    1,250    1,542    2,474
+    Intel Products        2,936    2,686    3,658    3,459    4,058    4,817
+    Intel Foundry        (2,320)  (3,168)  (2,321)  (2,509)  (2,437)  (2,089)
+    All Other               103       69      100       (8)     102      230
+    Corporate unalloc.   (1,260)  (2,755)    (782)    (721)  (5,080)  (1,416)
+    Intersegment elims      240       (8)      28      359      221*     254
+    Consolidated GAAP      (301)  (3,176)     683      580   (3,136)   1,796
+  Operating margin
+    CCG (CCPG)            30.9%    26.1%    31.6%    27.0%    32.6%    26.4%
+    DCAI                  13.9%    16.1%    23.4%    26.4%    30.5%    39.5%
+    Intel Products        25.0%    22.7%    28.9%    26.8%    31.8%    31.8%
+    Intel Foundry        -49.7%   -71.7%   -54.8%   -55.7%   -45.0%   -36.2%
+  *Derived as the reconciling item; not separately listed in the release.
+   Q3'24/Q4'24 comparisons: CCG 8,161/8,769, DCAI 4,141/4,351.
+
+TABLE 2A-5: MIX — % OF CONSOLIDATED REVENUE
+  (CCG + DCAI + All Other + Foundry-EXTERNAL. Sums to ~100%; the residual
+  is small elimination items.)
+                       FY2023   FY2024   FY2025   H1'25   H1'26
+  CCG (CCPG)            59.6%    62.8%    61.0%   60.7%   55.9%
+  DCAI                  29.5%    30.4%    32.0%   31.6%   38.1%
+  All Other             10.1%     6.8%     6.7%    7.8%    4.5%
+  Foundry EXTERNAL       1.0%     0.3%     0.6%    0.2%    1.6%
+  DCAI share of Products OPERATING INCOME:
+                         8.5%    10.9%    26.9%     --     45.3%
+  Basis B, for reference: Intel Products 88.0% / 90.5% / 87.9% of
+  consolidated revenue in FY2021 / FY2022 / FY2023; All Other 11.6% /
+  8.8% / 10.3%.
+
+TABLE 2A-6: WHAT SITS BETWEEN SEGMENT PROFIT AND GAAP (corporate unallocated)
+                               FY2023   FY2024   FY2025   Q1'26    Q2'26
+  Share-based compensation      3,229    3,410    2,434      621      687
+  Restructuring & other           (62)   6,970    2,191    4,070*     170
+  Acquisition-related costs     1,407    1,044      505      113      117
+  Other                           625     (247)     388      276      442
+  Total                         5,199   11,177    5,518    5,080    1,416
+    Ex-restructuring            5,261    4,207    3,327    1,010    1,246
+  *Includes a $3.9B non-cash goodwill impairment, substantially all
+   Mobileye.
+
+TABLE 2A-7: INTEL FOUNDRY — INTERNAL vs EXTERNAL REVENUE
+                               FY2023   FY2024   FY2025   H1'26
+  Intersegment (internal)     ~17,957  ~17,158  ~17,519  ~10,719
+  External                        547      159      307      467
+    of which Altera (post-deconsol.) --      --    n/d      320
+  External % of segment          3.0%     0.9%     1.7%     4.2%
+  Foundry op loss ex-impairment/
+    accelerated depreciation   n/d     ~(10.0)B  ~(9.4)B  (4.5)B
+  Non-Altera external revenue in H1'26 was only ~$147M (~$112M in Q2'26).
+  Basis-B FY2023 external revenue was $953M; it is lower on Basis A
+  because of definitional differences (legacy packaging services).
+
+SEGMENT TRENDS — WHAT THE HISTORY SAYS
+  - THE 2021-2023 COLLAPSE WAS AN INTEL PRODUCTS COLLAPSE, NOT A FOUNDRY
+    ONE. Products operating income fell from $30.5B (43.8% margin) in
+    FY2021 to $11.3B (23.8%) in FY2023. Every Products sub-segment's margin
+    fell sharply: CCG 46.8% -> 32.5%, DCAI 43.6% -> 12.8%, NEX 28.2% ->
+    3.5%. Foundry's loss only widened modestly over the same span, $(5.1)B
+    -> $(7.0)B. That was the share-loss years to AMD: ~$22B of Products
+    revenue gone in two years, with DCAI alone down ~39%.
+  - PRODUCTS HAS STABILIZED AT A MID-20s MARGIN, AND 2026'S STEP-UP IS
+    ALL DCAI. Products margin was 22.9% / 26.3% / 25.9% in FY2023-25, then
+    31.8% in H1'26. CCG has been flat-to-down: 29.3% H1'26 and 26.4% in
+    Q2'26, vs 34.8% in FY2024. The 10-Q points to higher-cost 18A (Panther
+    Lake) wafers flowing through. DCAI went from 5.9% (FY2023) to 20.2%
+    (FY2025) to 39.5% (Q2'26). DCAI was 11% of Products operating income
+    in FY2024 and is 45% in H1'26. The inflection is real, but it is one
+    segment, and part of it is a supply-constrained pricing environment
+    (Intel 7 / Intel 3 capacity-limited per the 10-K).
+  - DCAI'S 2026 SURGE IS A RECOVERY, NOT A NEW HIGH. On Basis B (ex-NEX),
+    DCAI was $20.8B in FY2021 and $12.6B in FY2023. The FY2026E Basis-A
+    DCAI of ~$24.8B (Section 4A) includes former NEX data-center
+    networking, so the like-for-like gain over the 2021 peak is modest.
+    This supports the model's choice NOT to extrapolate 2026's +40-59%
+    DCAI growth.
+  - FOUNDRY LOSSES ARE IMPROVING, BUT SLOWLY. Excluding impairments,
+    Foundry lost ~$10.0B (FY2024), ~$9.4B (FY2025) and ~$9.1B annualized
+    (H1'26). Reported margin improved from -76.8% (FY2024) to -36.2%
+    (Q2'26), but most of that is higher INTERNAL wafer revenue (18A/Intel
+    3 transfer pricing), not external demand. External revenue is 1-4% of
+    the segment and mostly Altera. Against management's 2027 breakeven
+    target, H1'26 is still a ~$9B/yr hole.
+  - SEGMENT REVENUE SUMS TO FAR MORE THAN CONSOLIDATED: $70.5B vs $52.9B
+    in FY2025. The ~$17.7B elimination is Foundry's internal wafer sales,
+    as Section 3 explains. The segment table confirms Section 3's premise
+    directly: external Foundry revenue was $307M in FY2025.
+  - ALL OTHER SHRANK WITH DIVESTITURES: NAND out after 2021, Altera out
+    after Sept 2025. It is now essentially Mobileye plus IMS plus startups,
+    ~$0.6-0.7B/quarter at a ~$0-0.2B/quarter profit.
+  - CORPORATE UNALLOCATED EXCLUDING RESTRUCTURING RUNS ~SBC + $1-2B/YEAR
+    (FY2023-25 and H1'26). This is the permanent drag between segment
+    profit and consolidated GAAP profit, and the forecast check below uses
+    it.
+
+FORECAST CONSISTENCY CHECK — DOES THE SEGMENT DATA SUPPORT SECTION 5?
+  Method: decompose each scenario's consolidated GAAP operating income as
+  Products margin x Products revenue + Foundry OI + All Other (~$0.4B) -
+  corporate unallocated. Corporate unallocated is taken as each scenario's
+  SBC + $1.5B, per table 2A-6. Products revenue comes from Section 4.
+  Then solve for the Foundry P&L each scenario IMPLIES.
+
+  BASE (Products at 25% margin; conservative vs 25.9-31.8% FY25-H1'26), $B:
+                        2027  2028  2029  2030  2031  2032  2033  2034  2035  2036
+  OLD Base op margin      5%    7%    9%   11%   12%   13%   14%   15%   15%   15%
+   => implied Foundry   -8.4  -7.6  -6.5  -5.1  -4.6  -3.9  -3.1  -2.2  -2.2  -2.2
+  REVISED Foundry path  -7.5  -6.0  -4.0  -2.0   0.0  +0.5  +1.0  +1.5 +1.75  +2.0
+  Products OI (25%)     15.6  16.6  17.5  18.3  19.3  20.1  21.0  21.6  22.1  22.6
+  Corporate unalloc.    -4.2  -4.3  -4.3  -4.4  -4.5  -4.6  -4.6  -4.6  -4.6  -4.7
+   => segment-built     6.3%  9.1% 12.2% 14.8% 17.2% 17.7% 18.2% 18.7% 18.8% 18.9%
+  REVISED Base margin     6%    9%   12%   14%   17%   17%   18%   18%   18%   18%
+                          (rounded DOWN from the segment build)
+
+  FINDING: the OLD Base margin path implied a Foundry that makes almost no
+  progress from today's ~$9B/yr loss in 2027. It is still losing ~$5B in
+  2030 despite $6.5B of external revenue, which is above management's own
+  stated "low-to-mid single-digit billions" breakeven bar. And it is
+  still losing ~$2.2B/yr in perpetuity. That contradicts the Base case's
+  own narrative (Sections 3, 4 and 8: "Foundry clears management's
+  breakeven bar"). The old path was also less than half the reported
+  Q2'26 GAAP margin (11.1%) as early as 2027. The Base margin path is
+  therefore REVISED (see the Revision Note at the top). It remains
+  deliberately conservative:
+    - Foundry breaks even in 2031, four years after management's 2027
+      target and one year after Base external revenue clears the
+      breakeven bar.
+    - Terminal Foundry profit is ~5% of segment revenue, vs GlobalFoundries'
+      ~10-15% and TSMC's ~45%.
+    - Products is held at 25%, below every year since FY2024.
+    - 2027 is 6%, still well below the Q2'26 actual 11.1% and the Q3'26
+      guide. That allows for 18A cost ramp, rising D&A as >$20B/yr of
+      capex comes online, and normalization of supply-shortage pricing.
+  Less-conservative alternatives: management's 2027 breakeven timeline
+  gives Base IV ~$16.17. Products at its H1'26 31.8% margin gives ~$21.66.
+
+  BULL (Products at 29%): the unchanged 8%->22% path implies Foundry
+    -8.3 (2027), -0.3 (2030), +9.6 (2036), i.e. breakeven ~2030 with $22B
+    of external revenue. The terminal year is plausible: ~12% on ~$80B of
+    Foundry revenue, well under TSMC. The near term is conservative for a
+    Bull. A Bull with breakeven in 2028 would lift 2027-31 margins but
+    leave the 22% terminal unchanged: IV ~$41.33 vs $38.71. Given that
+    small effect and Bull >= revised Base in every year, Bull is LEFT
+    UNCHANGED.
+  BEAR (Products at 22%, below the FY2023 trough of 22.9%): the unchanged
+    0%->6% path implies Foundry losses of ~$8-10B/yr persisting all
+    decade. That is harsh: with 14A paused and capex cut ~40%, a real
+    management would likely restructure or close capacity and shrink the
+    loss, which is the companion multiples file's point. But that is what
+    a Bear case is for, and it matches the Bear narrative ("persistent
+    internal-only cost center"). LEFT UNCHANGED.
+  DCAI GROWTH: the model does not forecast DCAI separately. Section 4A's
+    FY2026E DCAI (~$24.8B, +47%) needs H2'26 of ~$13.5B vs H1's $11.3B.
+    That is consistent with Q2'26's $6.3B run-rate plus the Q3 guide. The
+    2027+ deceleration is supported by the "recovery, not new high"
+    history above. No change.
 
 
 ================================================================================
@@ -366,13 +692,17 @@ figures, not a company figure.
 4A. FY2026E CONSOLIDATED BUILD (bottom-up from H1 actuals + Q3 guide + Q4 est.)
 --------------------------------------------------------------------------------
                           H1'26A   H2'26E   FY2026E   % total   YoY
-  Intel Products (CCG+DCAI) 27,939  30,361   58,300     93.4%    +18.8%
-    - CCG                   16,577  ~16,900  ~33,500    (57.5% of Products)
-    - DCAI                  11,362  ~13,400  ~24,800    (42.5% of Products)
-  All Other                  1,301   ~1,800    3,100      5.0%    -13.9%
-  Intel Foundry (external)    ~470    ~530     1,000      1.6%      n/m
+  Intel Products (CCG+DCAI) 27,918  30,382   58,300     93.4%    +18.6%
+    - CCG (CCPG)            16,604  ~16,900  ~33,500    (57.5% of Products)
+    - DCAI                  11,314  ~13,500  ~24,800    (42.5% of Products)
+  All Other                  1,329   ~1,771    3,100      5.0%    -13.0%
+  Intel Foundry (external)     467     ~533    1,000      1.6%      n/m
+  Reconciling (elims)           (9)       9       --
   ----------------------------------------------------------------------
-  Total (consolidated)      29,708  32,692*   62,400    100.0%    +18.1%
+  Total (consolidated)      29,705  32,695*   62,400    100.0%    +18.1%
+  (Rev. Sept 28: H1'26 column now uses exact reported figures from the
+  Q2'26 10-Q, replacing rounded Q1 numbers. FY2026E totals are unchanged.
+  Of the $467M H1 external Foundry revenue, $320M was Altera.)
 
   *H2'26E built from Q3 2026 guidance midpoint ($16.3B) + a Q4 2026E
   estimate (~$16.4B, assuming continued growth roughly in line with the
@@ -412,7 +742,9 @@ TAKEAWAYS FROM THE SEGMENT VIEW
   - In the BASE case, Foundry clears management's own modest "low-to-mid
     single-digit billions" external-revenue breakeven bar and grows
     modestly beyond it, but never becomes a scale competitor to TSMC —
-    Products still does ~84% of the work.
+    Products still does ~84% of the work. (Rev. Sept 28: Foundry SEGMENT
+    breakeven is assumed in 2031, four years after management's 2027
+    target. See Section 2A's forecast consistency check.)
   - Only in the BULL case does Foundry become a meaningfully large external
     business (~$22B by 2030, ~$48B by 2036) — still well short of TSMC's
     scale (>$100B), but transformative for Intel and the scenario that
@@ -492,19 +824,29 @@ Rationale:
 OPERATING MARGIN (GAAP, % of revenue):
                  2027  2028  2029  2030  2031  2032  2033  2034  2035  2036
   BULL             8%   12%   15%   17%   19%   20%   21%   22%   22%   22%
-  BASE             5%    7%    9%   11%   12%   13%   14%   15%   15%   15%
+  BASE             6%    9%   12%   14%   17%   17%   18%   18%   18%   18%
+    (was:          5%    7%    9%   11%   12%   13%   14%   15%   15%   15%
+     revised Sept 28 — see Revision Note and Section 2A)
   BEAR             0%    1%    2%    3%    4%    4%    5%    5%    6%    6%
   FY2026E: ~+2.5% estimated (H1'26 actual -4.4% blended with an assumed H2
   continuation of the Q2'26 positive swing; full-year non-GAAP guide
   implies a materially higher non-GAAP figure — this model works from GAAP).
 
-Rationale: Intel Products already runs high-20s% segment operating margins
-(CCG 29%, DCAI ~20-30% and rising in FY2025); the binding constraint on
-CONSOLIDATED margin is Foundry's loss and heavy corporate/unallocated
-costs. Management's own 2027 Foundry-breakeven target, if hit, is the
-single biggest lever in the Base case's 2027-2029 margin recovery. The
-Bull case's 22% terminal margin is still well below Intel's own FY2021 peak
-of 27.9% and far below AMD's Bull-case 31% or NVIDIA-style margins — a
+Rationale: Intel Products runs mid-20s-to-low-30s segment operating
+margins: 22.9% / 26.3% / 25.9% in FY2023-25 and 31.8% in H1'26, with CCG
+~29% and DCAI 20% (FY2025) -> 35.5% (H1'26). The binding constraint on
+CONSOLIDATED margin is Foundry's ~$9B/yr loss (ex-impairments) plus
+~SBC + $1-2B/yr of corporate unallocated costs (Section 2A). Foundry's
+path to breakeven is therefore the single biggest lever in the Base
+case's margin recovery. The REVISED Base (Sept 28) is built bottom-up
+from those segments: Products held at 25%, Foundry loss narrowing from
+$(7.5)B in 2027 to breakeven in 2031 (management targets 2027) and ~+$2B
+by 2036, and corporate unallocated at SBC + $1.5B. That build gives
+6.3% -> 18.9%, rounded DOWN to 6% -> 18%. The old 5% -> 15% path implied
+Foundry never breaks even, which contradicted the Base narrative (Section
+2A). The Bull case's 22% terminal margin is still below Intel's own FY2021
+GAAP level of 24.6% and far below AMD's Bull-case 31% or NVIDIA-style
+margins — a
 genuinely successful Intel remains a lower-margin business than a
 fabless/AI-native peer because it carries the fixed cost of leading-edge
 fab ownership, even when that ownership pays off strategically.
@@ -598,16 +940,18 @@ All figures $M. WACC 12.0%, TGR 2.5%, exit 12x SBC-adj FCF.
            Rev      YoY   OpMgn   OpInc    Tax    NOPAT   Capex   D&A     FCF      SBC   SBC-Adj
                                                                                             FCF
 2026E    62,400     --     2.5%    1,560     234   1,326  14,000 12,500   -174   2,496   -2,670
-2027E    68,016    9.0%    5.0%    3,401     510   2,891  15,000 13,000    891   2,721   -1,830
-2028E    73,457    8.0%    7.0%    5,142     771   4,371  16,000 13,500  1,871   2,791     -921
-2029E    78,599    7.0%    9.0%    7,074   1,061   6,013  16,500 13,800  3,313   2,830      483
-2030E    83,315    6.0%   11.0%    9,165   1,375   7,790  16,500 14,000  5,290   2,916    2,374
-2031E    88,314    6.0%   12.0%   10,598   1,590   9,008  16,000 14,200  7,208   3,003    4,205
-2032E    92,730    5.0%   13.0%   12,055   1,808  10,247  15,500 14,300  9,047   3,060    5,987
-2033E    97,366    5.0%   14.0%   13,631   2,045  11,587  15,000 14,400 10,987   3,116    7,871
-2034E   101,261    4.0%   15.0%   15,189   2,278  12,911  14,500 14,500 12,911   3,139    9,772
-2035E   104,299    3.0%   15.0%   15,645   2,347  13,298  14,000 14,600 13,898   3,129   10,769
-2036E   107,428    3.0%   15.0%   16,114   2,417  13,697  13,500 14,700 14,897   3,223   11,674
+2027E    68,016    9.0%    6.0%    4,081     612   3,469  15,000 13,000  1,469   2,721   -1,252
+2028E    73,457    8.0%    9.0%    6,611     992   5,619  16,000 13,500  3,119   2,791      328
+2029E    78,599    7.0%   12.0%    9,432   1,415   8,017  16,500 13,800  5,317   2,830    2,488
+2030E    83,315    6.0%   14.0%   11,664   1,750   9,914  16,500 14,000  7,414   2,916    4,498
+2031E    88,314    6.0%   17.0%   15,013   2,252  12,761  16,000 14,200 10,961   3,003    7,959
+2032E    92,730    5.0%   17.0%   15,764   2,365  13,399  15,500 14,300 12,199   3,060    9,139
+2033E    97,366    5.0%   18.0%   17,526   2,629  14,897  15,000 14,400 14,297   3,116   11,181
+2034E   101,261    4.0%   18.0%   18,227   2,734  15,493  14,500 14,500 15,493   3,139   12,354
+2035E   104,299    3.0%   18.0%   18,774   2,816  15,958  14,000 14,600 16,558   3,129   13,429
+2036E   107,428    3.0%   18.0%   19,337   2,901  16,436  13,500 14,700 17,636   3,223   14,414
+(Rev. Sept 28: 2027E-2036E operating margins revised per Section 2A;
+revenue, capex, D&A, SBC, WACC, TGR and exit multiple are all unchanged.)
 
 (2026E row shown for reference/continuity; the DCF discounts 2027E-2036E
 only, consistent with the AMD/other models in this folder — 2026E is the
@@ -616,40 +960,41 @@ anchor year, not part of the explicit discounted forecast.)
 PRESENT VALUE OF EXPLICIT SBC-ADJUSTED FCFs (12.0% WACC)
 
 Year      SBC-Adj FCF   Discount Factor   PV
-2027E         (1,830)        0.8929      (1,634)
-2028E           (921)        0.7972        (734)
-2029E            483         0.7118         344
-2030E          2,374         0.6355       1,509
-2031E          4,205         0.5674       2,386
-2032E          5,987         0.5066       3,033
-2033E          7,871         0.4523       3,560
-2034E          9,772         0.4039       3,947
-2035E         10,769         0.3606       3,883
-2036E         11,674         0.3220       3,759
+2027E         (1,252)        0.8929      (1,118)
+2028E            328         0.7972         262
+2029E          2,488         0.7118       1,771
+2030E          4,498         0.6355       2,859
+2031E          7,959         0.5674       4,516
+2032E          9,139         0.5066       4,630
+2033E         11,181         0.4523       5,058
+2034E         12,354         0.4039       4,990
+2035E         13,429         0.3606       4,843
+2036E         14,414         0.3220       4,641
                                         -------
-Sum of PV of explicit FCFs:             20,053
+Sum of PV of explicit FCFs:             32,450
 
 TERMINAL VALUE — PERPETUITY GROWTH (g = 2.5%)
-Terminal (2036E) SBC-adj FCF:                             $11,674M
-TV = 11,674 x 1.025 / (12.0% - 2.5%):                    $125,959M
-PV of TV (x 0.3220):                                      $40,555M
+Terminal (2036E) SBC-adj FCF:                             $14,414M
+TV = 14,414 x 1.025 / (12.0% - 2.5%):                    $155,516M
+PV of TV (x 0.3220):                                      $50,072M
 
 TERMINAL VALUE — EXIT MULTIPLE (12x SBC-adj FCF)
-TV = 11,674 x 12:                                        $140,091M
-PV of TV (x 0.3220):                                      $45,105M
+TV = 14,414 x 12:                                        $172,964M
+PV of TV (x 0.3220):                                      $55,690M
 
-Average PV of terminal value:                              $42,830M
+Average PV of terminal value:                              $52,881M
 
 EQUITY BRIDGE
-Sum of PV of explicit FCFs:                                $20,053M
-+ PV of terminal value (avg):                               $42,830M
-= Enterprise value:                                          $62,884M
+Sum of PV of explicit FCFs:                                $32,450M
++ PV of terminal value (avg):                               $52,881M
+= Enterprise value:                                          $85,331M
 - Net debt (Q2 2026):                                        $20,810M
-= Equity value:                                               $42,074M
+= Equity value:                                               $64,521M
 / Diluted shares:                                                5,043M
-= Intrinsic value per share:                                    $8.34
+= Intrinsic value per share:                                   $12.79
+  (was $8.34 before the Sept 28 segment-consistency revision)
 
-For scale: this implied equity value (~$42B) is ~93% BELOW Intel's current
+For scale: this implied equity value (~$65B) is ~90% BELOW Intel's current
 ~$620B market cap ($123.00 x 5,043M).
 
 
@@ -660,31 +1005,33 @@ SECTION 7 — SENSITIVITY ANALYSIS
 TABLE A: BASE-CASE IV/SHARE — WACC x TERMINAL GROWTH RATE (12x exit held)
 
 WACC \ TGR    1.5%      2.0%      2.5%      3.0%      3.5%
-10.0%        $11.16    $11.52    $11.93    $12.40    $12.94
-11.0%         $9.40     $9.66     $9.96    $10.29    $10.67
-12.0%         $7.92     $8.12     $8.34     $8.59     $8.86   <- base case
-13.0%         $6.67     $6.83     $6.99     $7.18     $7.38
-14.0%         $5.60     $5.72     $5.85     $5.99     $6.14
+10.0%        $16.39    $16.83    $17.34    $17.91    $18.58
+11.0%        $14.15    $14.48    $14.84    $15.25    $15.72
+12.0%        $12.28    $12.52    $12.79    $13.10    $13.43   <- base case
+13.0%        $10.68    $10.87    $11.07    $11.30    $11.55
+14.0%         $9.30     $9.45     $9.61     $9.78     $9.97
+(Rev. Sept 28 on the revised Base margin path; the prior grid ran
+$5.60-$12.94.)
 
-The current $123.00 price is not just above this grid — it is roughly TEN
-TO TWENTY TIMES every cell in it. No combination of WACC and terminal
+The current $123.00 price is not just above this grid — it is roughly
+SEVEN TO THIRTEEN TIMES every cell in it. No combination of WACC and terminal
 growth rate this model considers plausible for a company this size gets
 remotely close to the current price on the Base case's operating
 assumptions. This is a qualitatively different result from the AMD model in
 this folder, where the price sat "only" ~30-50% above the base-case grid.
 
 TABLE B: BASE-CASE IV/SHARE — EXIT MULTIPLE (12.0% WACC / 2.5% TGR)
-   6x    $6.11
-   8x    $6.85
-  10x    $7.60
-  12x    $8.34   <- base case
-  14x    $9.09
-  16x    $9.83
-  18x   $10.58
+   6x   $10.03
+   8x   $10.95
+  10x   $11.87
+  12x   $12.79   <- base case
+  14x   $13.71
+  16x   $14.63
+  18x   $15.55
 
 Even an aggressive 18x exit multiple on Base-case terminal FCF — well above
 what this model uses even in the Bull case (16x) — only lifts Base-case IV
-to $10.58, still ~91% below the current price. The gap cannot be closed by
+to $15.55, still ~87% below the current price. The gap cannot be closed by
 multiple assumptions alone; it requires a fundamentally larger and more
 profitable business than the Base case's own growth/margin assumptions
 produce.
@@ -693,11 +1040,14 @@ TABLE C: SCENARIO SUMMARY
 
 Scenario   WACC    TGR    Exit   2030E Rev    2036E Rev   2036E SBC-FCF   IV/Share
 BULL      10.5%   3.0%   16x     $103,534M    $159,663M     $28,346M       $38.71
-BASE      12.0%   2.5%   12x      $83,315M    $107,428M     $11,674M        $8.34
+BASE      12.0%   2.5%   12x      $83,315M    $107,428M     $14,414M       $12.79
 BEAR      14.5%   1.5%    8x      $71,602M     $79,837M      $5,357M       ~$0.00*
 
-Probability-weighted (25/40/35):                                          $12.82
-Simple average of the three:                                              $15.50
+Probability-weighted (25/40/35):                                          $14.60
+Simple average of the three:                                              $16.99
+(Rev. Sept 28: Base revised from $8.34 / $11,674M 2036 SBC-FCF. The
+weighted and simple averages use the Bear's literal -$0.54, as the
+original did.)
 Current price (Sept 25, 2026 close):                                     $123.00
 
 *Bear-case enterprise value ($18.1B) is smaller than current net debt
@@ -751,24 +1101,30 @@ BULL CASE (~$39/share; 10.5% WACC, 3.0% TGR, 16x exit)
     back server share, and an AI-PC refresh cycle supports CCG ASPs even as
     unit volumes stay roughly flat.
   - GAAP operating margin recovers to 22% by the early 2030s — a real
-    turnaround, but still below Intel's own FY2021 peak (27.9%) and well
+    turnaround, but still below Intel's own FY2021 GAAP level (24.6%) and well
     below AMD's Bull-case 31% or a pure AI/fabless peer, because Intel
     continues to carry the capital intensity of leading-edge fab ownership.
   - Even here, the resulting intrinsic value (~$39) is less than a third
     of today's price — this is the scenario that makes Intel a genuinely
     good business again, not one that makes $123 look cheap.
 
-BASE CASE (~$8/share; 12.0% WACC, 2.5% TGR, 12x exit)
+BASE CASE (~$13/share; 12.0% WACC, 2.5% TGR, 12x exit; was ~$8 before the
+Sept 28 segment revision)
   - Foundry clears management's own modest "low-to-mid single-digit
     billions" external-revenue breakeven bar (~$6.5B by 2030) and grows
     modestly from there, but 14A never becomes a scale TSMC competitor.
+    Foundry SEGMENT breakeven arrives in 2031, four years after
+    management's 2027 target, with ~5% segment margin by 2036.
   - Intel Products grows at a GDP-plus pace as AI-PC/AI-server tailwinds
     roughly offset continued share pressure from AMD (CCG, DCAI) and
     hyperscaler custom silicon (DCAI).
-  - GAAP operating margin reaches a 15% terminal plateau — real progress
-    from FY2025's -4.2%, but still below Intel's own historical peak.
+  - GAAP operating margin reaches an 18% terminal plateau (was 15%). That
+    is real progress from FY2025's -4.2%, but still below Intel's own
+    FY2021 level (24.6%). It is built from Products at 25% (below its
+    FY2024-H1'26 actuals), Foundry at ~breakeven-plus, and ~$4.7B of
+    corporate costs (Section 2A).
   - 2036 revenue ~$107B (~1.7x FY2026E) — a genuinely successful decade by
-    Intel's recent standards, and still ~93% below today's price on a
+    Intel's recent standards, and still ~90% below today's price on a
     discounted-cash-flow basis.
 
 BEAR CASE (~$0/share, i.e. net debt approximately consumes the enterprise
@@ -932,8 +1288,10 @@ government/strategic-investor backing, real but early operating
 improvement, and a supply-constrained AI-hardware moment — not a
 discounted-cash-flow value. This is a SELL/AVOID on valuation for anyone
 using intrinsic value as the anchor, independent of how the underlying
-turnaround actually plays out. A price in the $15-25 range (roughly the
-probability-weighted-to-simple-average band) would be the first zone where
+turnaround actually plays out. A price in the ~$15-17 range (the
+probability-weighted-to-simple-average band after the Sept 28 revision;
+~$16-22 using the less-conservative Base alternatives in Section 2A)
+would be the first zone where
 this model's framework would call the stock merely fairly priced rather
 than dramatically overpriced; the Bull-case ceiling of ~$39 would need
 Foundry's external-customer bet to pay off in full AND a re-rating of the
@@ -957,22 +1315,23 @@ METHOD                                    VALUE/SHARE   NOTES
 Bull (10.5% WACC, 3.0% TGR, 16x exit)        $38.71     Foundry external
                                                           rev ~$48B by 2036;
                                                           22% terminal margin
-Base (12.0% WACC, 2.5% TGR, 12x exit)         $8.34     Foundry hits modest
-                                                          breakeven bar only;
+Base (12.0% WACC, 2.5% TGR, 12x exit)        $12.79     Foundry hits modest
+                                                          breakeven bar only
+                                                          (segment b/e 2031);
                                                           central estimate
+                                                          (was $8.34)
 Bear (14.5% WACC, 1.5% TGR, 8x exit)         ~$0.00     14A paused/fails;
                                                           net debt ~consumes
                                                           enterprise value
-Probability-weighted (25/40/35)              $12.82
-Simple average of three scenarios            $15.50
-Market price (Sept 25, 2026 close)          $123.00     ~10-20x every cell
+Probability-weighted (25/40/35)              $14.60     (was $12.82)
+Simple average of three scenarios            $16.99     (was $15.50)
+Market price (Sept 25, 2026 close)          $123.00     ~7-13x every cell
                                                           of the Base-case
                                                           sensitivity grid
 
-Central estimate (base case):                 $8.34/share
+Central estimate (base case):                $12.79/share
 Current price:                              $123.00/share
-Margin of safety at current price:          -93.2% (overvalued vs Base by
-                                             ~14.7x / price is 14.74x Base IV)
+Margin of safety at current price:          -89.6% (price is 9.62x Base IV)
 
 REVERSE DCF: to justify $123 at the BULL case's own 10.5% WACC / 3.0% TGR,
 2036 free cash flow would need to be ~$114.7B, ~4.05x this model's own
@@ -999,9 +1358,11 @@ DISCLOSURES & LIMITATIONS
   for these years that this model does NOT use — see
   ../extracts/INTC-HISTORICALS-2021-2025.md for the specific discrepancy
   and reasoning.
-  FY2021-FY2023 figures were corroborated via direct citations to Intel's
-  own press releases/10-Ks found via web search, not independently
-  re-tied to the primary filings for this personal file.
+  FY2021-FY2023 figures were originally corroborated via web-search
+  citations. On Sept 28, 2026 they were re-tied to the primary filings
+  (FY2021 release, Apr 2024 recast 8-K). That re-tie CORRECTED FY2021
+  GAAP operating income from $22,082M to $19,456M; FY2022-23 were
+  confirmed.
 - Net capex figures (Section 5/6) rely on Intel's own "government
   incentives" and "SCIP/partner contributions" disclosures for FY2024-
   FY2025 only; earlier years and the full forecast period assume a
@@ -1022,6 +1383,25 @@ DISCLOSURES & LIMITATIONS
   tax convention (Section 5), not management's non-GAAP framing (which
   already shows Intel solidly profitable on FY2025/Q2 2026 non-GAAP
   operating income — see Section 1/2 for the GAAP-vs-non-GAAP contrast).
+- SEGMENT DATA (Section 2A, added Sept 28, 2026) comes directly from SEC
+  filings (FY2025 10-K, Apr 2024 recast 8-K, Q1/Q2 2026 10-Qs, Q3/Q4 2025
+  releases) and reconciles to consolidated figures to the $1M. The series
+  spans two segment bases; FY2021-22 CCG and DCAI are NOT comparable to
+  FY2023+ (NEX). The Section 2A forecast consistency check uses judgment
+  inputs, each a judgment call: Products margin by scenario, corporate
+  unallocated = SBC + $1.5B, All Other = $0.4B, eliminations = 0. The
+  revised Base Foundry path (breakeven 2031) is also a judgment call.
+  Management targets 2027; using that timeline gives Base IV ~$16.17.
+- Discovered during the Sept 28 revision: an earlier version of
+  ../extracts/INTC-STRATEGIC-CONTEXT-2026.md (and the companion multiples
+  file) described Intel's Mobileye stake as ~50M shares / ~$0.4-0.5B.
+  Per Mobileye's Q2 2026 10-Q, Intel holds all 597.8M Class B shares plus
+  50M Class A, which is ~77.1% of the equity (~$4.9B at $7.61). This does
+  not affect this DCF: Mobileye is consolidated in All Other.
+- EQUITY BRIDGE OMITS NON-CONTROLLING INTERESTS ($15.6B book value at Jun
+  27, 2026: Arizona SCIP partner $13.4B, Mobileye minority $2.1B, IMS
+  $0.1B). This is flagged, not changed. Deducting it would lower every
+  scenario by ~$3.09/share. See the Revision Note.
 - Personal, standalone research file, outside the tech-buffett Init ->
   Deep Dive -> DCF pipeline. Does NOT qualify INTC for portfolio purchase
   under CLAUDE.md / the agent ruleset, and independent of that rule, this

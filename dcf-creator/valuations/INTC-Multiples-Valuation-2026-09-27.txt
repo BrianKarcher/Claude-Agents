@@ -11,6 +11,38 @@ Sources: DCF-INTC-2026-09-27.txt (this file reuses that model's Section 4
          pulled live via web search Sept 27-28, 2026 — see Sources section.
 ================================================================================
 
+ERRATUM — September 28, 2026 (found during the DCF segment-history revision)
+-----------------------------------------------------------------------------
+1. MOBILEYE STAKE UNDERSTATED (factual error, corrected in text below).
+   This file valued Intel's Mobileye stake at ~$0.4B on the belief that
+   Intel had sold down to ~50M shares. Per Mobileye's Q2 2026 10-Q, Intel
+   holds ALL 597.8M Class B shares PLUS 50M Class A shares. That is ~647.8M
+   of 840.0M outstanding, ~77.1% of the equity and 96.9% of the vote as of
+   Jun 27, 2026; Intel's own 10-Qs show Mobileye NCI of 23%. At $7.61 the
+   stake is worth ~$4.93B, not ~$0.4B.
+   IMPACT (tables below NOT recomputed; add these amounts):
+     - Undiscounted per-share values (Section 3, every scenario/year) and
+       the Section 5 cross-check: +$0.90/share. Section 5 becomes
+       ~$176.25 (AMD/TSMC) and ~$174.19 (AMD/GFS).
+     - Section 4 PVs:
+         Bull 2030 +$0.60, Bull 2036 +$0.33
+         Base 2030 +$0.57, Base 2036 +$0.29
+         Bear 2030 +$0.52, Bear 2036 +$0.23
+         2026E rows +$0.90
+   No conclusion changes: every Section 4 cell stays below $123. Minor
+   caveat: Mobileye's own cash is already inside Intel's consolidated net
+   debt, so using the stake's market value slightly double-counts Intel's
+   share of that cash.
+2. DCF BASE CASE REVISED. DCF-INTC-2026-09-27.txt's Base IV moved from
+   $8.34 to $12.79/share. Its margin path was rebuilt to be consistent
+   with segment history; see that file's Revision Note. Section 6 below
+   still shows the old $8.34, so the Base DCF-vs-multiples ratio is now
+   ~2.06x (2036 reference), not 3.16x. Bull ($38.71) and Bear (~$0) are
+   unchanged.
+3. The segment REVENUE figures this file reuses (DCF Section 4) are
+   UNCHANGED by that revision and remain consistent with the new segment
+   history.
+
 WHY THIS FILE EXISTS
 ----------------------
 The DCF file found Intel worth $8.34/share (base case) against a $123.00
@@ -59,7 +91,7 @@ SECTION 1 — COMPARABLE COMPANY MULTIPLES (pulled live, Sept 27-28, 2026)
 | **AMD** (fabless CPU/GPU designer — Intel Products comp) | 24.71x (TTM) / **15.28x (fwd)** | 106.74x (TTM, distorted — see below) | Market cap ~$1.03T, EV ~$1.02T. TTM EV/EBITDA is not usable — AMD's TTM EBITDA base is depressed relative to its current run-rate (same "noisy LTM" issue the robotaxi file flagged for Lyft), so the forward EV/Sales multiple is the more representative figure. Forward P/E 56.99x, PEG 0.86. This is itself a very rich multiple — see the AMD DCF file in this folder, which found AMD's own base-case DCF intrinsic value well below its market price at the time. |
 | **TSMC** (pure-play leading-edge foundry — Foundry ceiling comp) | **13.90x (TTM)** | 19.49x (TTM) | Market cap ~$2.02T, EV ~$1.94T. EBITDA margin 71.3% — the gold standard of foundry economics, reflecting dominant scale and near-monopoly leading-edge positioning Intel Foundry does not have. Forward P/E 19.81x (much more reasonably priced than AMD on a forward-earnings basis, despite the enormous market cap). |
 | **GlobalFoundries** (mature-node, established external-customer foundry — Foundry floor/realistic comp) | **~3.5x** (range 2.67x-4.1x across sources) | ~13x (range 12.3x-19.4x across sources, noisy) | Market cap ~$26-30B, EV ~$24-29B. The more realistic near-term comp for what Intel Foundry's external business might look like even after real (but not TSMC-scale) success — GFS has a genuine, diversified external-customer base but trades at a fraction of TSMC's multiple because it doesn't compete at the leading edge. |
-| **Mobileye (MBLY)** (Intel's remaining non-core stake — All Other comp) | n/a — used at direct stake value | n/a | $7.61/share close (Sept 23, 2026), market cap ~€5.74B (~$6.2B). Intel's remaining stake has been sold down aggressively through 2026 — from ~88% as recently as 2025 to roughly 50M shares (~$380-480M depending on exact pull date), i.e. Intel now holds a small minority position, not a controlling one. This file uses that DIRECT stake value (~$400M) rather than applying a multiple, since the actual public market value is known and the stake is immaterial to the total (well under 1% of any scenario's enterprise value below). |
+| **Mobileye (MBLY)** (Intel's remaining non-core stake — All Other comp) | n/a — used at direct stake value | n/a | $7.61/share close (Sept 23, 2026), market cap ~€5.74B (~$6.2B). [CORRECTED Sept 28, 2026 — see Erratum] Intel has sold down from ~88% (2025), but it still holds ~77.1% (all 597.8M Class B + 50M Class A shares, per Mobileye's Q2 2026 10-Q). That is ~$4.93B at $7.61, not the ~$400M originally used here, which counted only the 50M Class A shares. The tables below still carry the original $0.4B; see the Erratum for the per-share adjustment (+$0.90 undiscounted). This file uses DIRECT stake value rather than a multiple, since the public market value is known. |
 
 **The key adjustment before using any of this:** AMD and TSMC are both
 priced today for CONTINUED rapid AI-driven growth (AMD's forward EV/Sales
@@ -436,11 +468,17 @@ DISCLOSURES & LIMITATIONS
   aren't broken out at the granularity this file would need) — treat the
   implied EV/EBITDA multiples as a rough sanity check, not a precise
   secondary valuation.
-- Mobileye's exact current ownership percentage and share count held by
-  Intel were not precisely pulled for this file (sources conflicted between
-  an ~88% figure as of 2025 and a much smaller ~50M-share/~$400M position
-  by mid-to-late 2026) — the direct stake value used is approximate and, in
-  any case, immaterial to every total in this file.
+- [CORRECTED Sept 28, 2026] Mobileye ownership was originally unresolved
+  here (~88% vs ~50M shares). It is now resolved from Mobileye's Q2 2026
+  10-Q: Intel holds ~77.1% (~647.8M shares, ~$4.93B at $7.61). The
+  original ~$400M figure was a factual error, and the tables were not
+  recomputed. The ~$4.5B difference is ~$0.90/share undiscounted: still
+  small relative to the totals, but not "well under 1%" in the Bear
+  cases. See the Erratum at top.
+- Not deducted in this SOTP (nor in the DCF): $15.6B of non-controlling
+  interests on Intel's Jun 2026 balance sheet, mainly the Arizona SCIP
+  partner's 49% ($13.4B book). A partner claim on fab cash flows arguably
+  belongs in the EV-to-equity bridge (~$3.09/share). Flagged, not changed.
 - Reference years (2026E/2030E/2036E) match the DCF file's own Section 4
   structure for comparability, not because they're the "correct" points at
   which a market would actually re-rate Intel's segments — Section 6 shows
