@@ -3,7 +3,7 @@ ADVANCED MICRO DEVICES (AMD) — DISCOUNTED CASH FLOW ANALYSIS
 "TAM-REACHED" SCENARIO — Data Center AI hits Lisa Su's 2030 numbers
 Date: September 2, 2026
 Sources: AMD FY2025 10-K, Q1 2026 10-Q, Q1 2026 transcript (user-supplied,
-         personal/ folder); Q2 2026 results and "Advancing AI 2026" TAM
+         dcf-creator/ folder); Q2 2026 results and "Advancing AI 2026" TAM
          figures pulled live via web and structured into extracts in this
          folder before the DCF was built:
            - AMD-EARNINGS-2026-Q2.md
@@ -73,7 +73,7 @@ great-plus outcome" price.
 
 NOTE ON SCOPE: Personal, standalone analysis, outside the tech-buffett
 agent's Init -> Deep Dive -> DCF pipeline. No Initiation or Deep Dive exists
-for AMD in research/. This file lives in personal/ and does NOT qualify AMD
+for AMD in research/. This file lives in dcf-creator/ and does NOT qualify AMD
 for purchase in the portfolio under CLAUDE.md / the agent ruleset. Not
 investment advice.
 

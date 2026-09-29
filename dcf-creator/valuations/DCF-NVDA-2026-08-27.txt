@@ -59,7 +59,7 @@ green light.
 NOTE ON SCOPE: This is a personal, standalone analysis requested outside the
 tech-buffett agent's normal pipeline. No Initiation of Coverage or Deep Dive
 exists for NVDA in research/, and this file intentionally lives in
-personal/ rather than research/dcf/ — it does not qualify NVDA for purchase
+dcf-creator/ rather than research/dcf/ — it does not qualify NVDA for purchase
 under the agent's rules (Action 4 requires a prior Deep Dive; Action 5
 requires a DCF from research/dcf/ within six months). If NVDA is ever to be
 considered for the actual portfolio, it needs to go through

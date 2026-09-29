@@ -3,15 +3,15 @@ INTEL CORPORATION (INTC) — DISCOUNTED CASH FLOW ANALYSIS
 THE TURNAROUND-VS-PRICE MODEL — what has to be true for $123 to be fair value
 Date: September 27, 2026
 Sources: Intel Q4/FY2025, Q1 2026 and Q2 2026 earnings press releases (official,
-         pulled live via web and structured into extracts in this folder before
-         the DCF was built):
-           - INTC-EARNINGS-FY2025-Q4.md
-           - INTC-EARNINGS-2026-Q1.md
-           - INTC-EARNINGS-2026-Q2.md
-           - INTC-HISTORICALS-2021-2025.md  (FY2021-2025 income statement,
-             cash flow, balance sheet, share-count history)
-           - INTC-STRATEGIC-CONTEXT-2026.md (government/SoftBank/Nvidia
-             stakes, Foundry external-customer status, 14A risk, capex
+         pulled live via web and structured into extracts in ../extracts/
+         before the DCF was built):
+           - ../extracts/INTC-EARNINGS-FY2025-Q4.md
+           - ../extracts/INTC-EARNINGS-2026-Q1.md
+           - ../extracts/INTC-EARNINGS-2026-Q2.md
+           - ../extracts/INTC-HISTORICALS-2021-2025.md  (FY2021-2025 income
+             statement, cash flow, balance sheet, share-count history)
+           - ../extracts/INTC-STRATEGIC-CONTEXT-2026.md (government/SoftBank/
+             Nvidia stakes, Foundry external-customer status, 14A risk, capex
              guidance, Lip-Bu Tan turnaround narrative, current price /
              market cap / analyst targets)
          Current price pulled live (Sept 27, 2026, referencing the Sept 25,
@@ -84,7 +84,7 @@ backstops, and story momentum, not on discounted fundamentals.
 
 NOTE ON SCOPE: Personal, standalone analysis, outside the tech-buffett
 agent's Init -> Deep Dive -> DCF pipeline. No Initiation or Deep Dive exists
-for INTC in research/. This file lives in personal/ and does NOT qualify
+for INTC in research/. This file lives in dcf-creator/ and does NOT qualify
 INTC for purchase in the portfolio under CLAUDE.md / the agent ruleset
 (and, independent of that rule, this model would not support a purchase
 at the current price regardless). Not investment advice.
@@ -154,7 +154,7 @@ December. FY2024-FY2025 GAAP operating income figures are from Intel's own
 official press releases (authoritative, given the size of FY2024's
 impairment/restructuring charges); FY2021-FY2023 are from search results
 directly citing Intel's Q4/FY2022 and Q4/FY2023 press releases and 10-Ks.
-See INTC-HISTORICALS-2021-2025.md for a data-discrepancy note: several
+See ../extracts/INTC-HISTORICALS-2021-2025.md for a data-discrepancy note: several
 financial-data aggregators show a different "core" operating income series
 for FY2024-2025 that excludes restructuring/impairment charges — this model
 uses Intel's own reported GAAP figures throughout, since those are what flow
@@ -996,8 +996,9 @@ DISCLOSURES & LIMITATIONS
 - FY2024/FY2025 GAAP operating income figures are Intel's own officially
   reported numbers; some third-party financial-data aggregators show
   different ("core," ex-impairment/restructuring) operating income figures
-  for these years that this model does NOT use — see INTC-HISTORICALS-
-  2021-2025.md for the specific discrepancy and reasoning.
+  for these years that this model does NOT use — see
+  ../extracts/INTC-HISTORICALS-2021-2025.md for the specific discrepancy
+  and reasoning.
   FY2021-FY2023 figures were corroborated via direct citations to Intel's
   own press releases/10-Ks found via web search, not independently
   re-tied to the primary filings for this personal file.

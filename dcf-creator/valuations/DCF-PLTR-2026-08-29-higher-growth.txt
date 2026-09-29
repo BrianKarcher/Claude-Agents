@@ -43,7 +43,7 @@ model's bull path AND the market keeps paying a premium multiple on the
 result.
 
 SCOPE: personal, standalone analysis, prepared outside the tech-buffett
-agent's Init -> Deep Dive -> DCF pipeline. Lives in personal/, not
+agent's Init -> Deep Dive -> DCF pipeline. Lives in dcf-creator/, not
 research/dcf/. Does NOT qualify PLTR for portfolio purchase. Not investment
 advice.
 

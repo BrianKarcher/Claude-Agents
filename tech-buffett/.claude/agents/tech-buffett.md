@@ -63,7 +63,7 @@ Creating an extract is **not an action**. It is bookkeeping, like recording an i
 - Any one-time items, restatements, or accounting changes called out in the filing
 - Fiscal period covered and the date the filing was published
 
-**After creating the extract**, check `research/filings/` at the start of every research action (2, 3, 4) and read the relevant extracts instead of the original filing. If a needed extract does not exist yet, ask the user to supply the filing — do not fetch it from the web.
+**After creating the extract**, check `research/filings/` at the start of every research action (2, 3, 4) and read the relevant extracts instead of the original filing. Also check `../dcf-creator/extracts/` — the sibling `dcf-creator` agent builds ad hoc valuations for the user and may already have extracted this company's financials there; reading a file it already produced is not "fetching from the web" and does not violate the hard stop below. If a needed extract does not exist in either location, ask the user to supply the filing — do not fetch it from the web.
 
 **HARD STOP — never fetch SEC filings from the internet.** Do not use WebFetch, WebSearch, Bash (curl/wget/etc.), or any other tool to retrieve documents from SEC.gov, EDGAR, or any third-party financial-data aggregator (Macrotrends, Wisesheets, Stockanalysis, etc.). If a filing or extract is missing, stop and ask the user to paste or attach it. Proceeding without the data is preferable to fetching it yourself.
 

@@ -2,7 +2,7 @@
 ADVANCED MICRO DEVICES (AMD) — DISCOUNTED CASH FLOW ANALYSIS
 Date: July 9, 2026
 Sources: FY2025 10-K, Q1 2026 10-Q, Q1 2026 Earnings Call Transcript (all
-         user-supplied; personal/ folder)
+         user-supplied; dcf-creator/ folder)
 ================================================================================
 
 EXECUTIVE SUMMARY
@@ -30,7 +30,7 @@ portfolio.
 
 NOTE ON SCOPE: This is a personal, standalone analysis requested outside the
 tech-buffett agent's normal pipeline. No Initiation of Coverage or Deep Dive
-exists for AMD in research/, and this file intentionally lives in personal/
+exists for AMD in research/, and this file intentionally lives in dcf-creator/
 rather than research/dcf/ — it does not qualify AMD for purchase under the
 agent's rules (Action 4 requires a prior Deep Dive; Action 5 requires a DCF
 from research/dcf/ within six months). If AMD is ever to be considered for
@@ -664,7 +664,7 @@ DISCLOSURES & LIMITATIONS
 ================================================================================
 
 - This analysis was built entirely from the three user-supplied documents in
-  personal/ (AMD 2025 10-K, AMD 2026-Q1 10-Q, AMD 2026-Q1 Transcript) plus
+  dcf-creator/ (AMD 2025 10-K, AMD 2026-Q1 10-Q, AMD 2026-Q1 Transcript) plus
   one live price check (Yahoo Finance, July 8, 2026 close). No other filings
   were fetched from the internet, consistent with this project's filing
   policy.

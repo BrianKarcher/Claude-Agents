@@ -2,7 +2,7 @@
 PAYPAL HOLDINGS (PYPL) — DISCOUNTED CASH FLOW ANALYSIS
 Date: July 14, 2026
 Sources: FY2025 10-K, Q1 2026 10-Q, Q1 2026 Earnings Call Transcript (all
-         user-supplied; personal/ folder) + one live price/news check
+         user-supplied; dcf-creator/ folder) + one live price/news check
 ================================================================================
 
 *** TIME-SENSITIVE: SEE THE M&A SITUATION BEFORE READING FURTHER ***
@@ -711,7 +711,7 @@ DISCLOSURES & LIMITATIONS
 ================================================================================
 
 - This analysis was built from the three user-supplied documents in
-  personal/ (PYPL 2025 10-K, PYPL 2026-Q1 10-Q, PYPL 2026-Q1 Earnings Call
+  dcf-creator/ (PYPL 2025 10-K, PYPL 2026-Q1 10-Q, PYPL 2026-Q1 Earnings Call
   Transcript) plus live price/news checks (Yahoo Finance and Reuters via
   web search, July 14, 2026). No other filings were fetched, consistent
   with this project's filing policy.

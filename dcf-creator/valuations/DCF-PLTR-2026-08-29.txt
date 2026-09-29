@@ -47,7 +47,7 @@ the bull case.
 NOTE ON SCOPE: This is a personal, standalone analysis requested outside
 the tech-buffett agent's normal pipeline. No Initiation of Coverage or Deep
 Dive exists for PLTR in research/, and this file intentionally lives in
-personal/ rather than research/dcf/ — it does NOT qualify PLTR for purchase
+dcf-creator/ rather than research/dcf/ — it does NOT qualify PLTR for purchase
 under the agent's rules (Action 4 requires a prior Deep Dive; Action 5
 requires a DCF from research/dcf/ within six months). Prepared for personal
 research only; not investment advice.
