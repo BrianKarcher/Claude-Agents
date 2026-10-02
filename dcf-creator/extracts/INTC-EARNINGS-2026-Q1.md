@@ -38,6 +38,7 @@ Source: Intel Q1 2026 earnings press release, https://www.intc.com/news-events/p
 - Operating cash flow: $1.1B
 - Capital expenditures (gross): $(5.0)B
 - Adjusted free cash flow: $(2.0)B
+- Exact reconciliation (added Oct 1, 2026, from the release's non-GAAP table, $M): operating cash flow 1,096 − gross capex 4,963 + government incentives 107 + partner contributions, net 1,959 − finance lease payments 215 = **adjusted FCF (2,016)**. Q1'25: 813 − 6,203 + 819 + 897 − 6 = (3,680). Gross capex includes capex paid on extended payment terms, which the 10-Q reports in financing activities. See INTC-EARNINGS-2026-Q2.md for the reconciled H1 view.
 
 ## Q2 2026 guidance (given at this release)
 

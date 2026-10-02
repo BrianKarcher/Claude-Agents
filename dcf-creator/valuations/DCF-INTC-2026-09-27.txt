@@ -24,6 +24,33 @@ Sources: Intel Q4/FY2025, Q1 2026 and Q2 2026 earnings press releases (official,
          Disclosures.
 ================================================================================
 
+REVISION NOTE — October 1, 2026 (H1'26 cash-flow and net-loss corrections)
+--------------------------------------------------------------------------
+Re-tied H1'26 cash flow to the Q2'26 10-Q and the Q1/Q2'26 releases (see
+../extracts/INTC-EARNINGS-2026-Q2.md). Text-only corrections. NO MODEL
+INPUT OR VALUATION OUTPUT CHANGED.
+  1. H1'26 ADJUSTED FCF is $(10.4)B vs H1'25 $(4.7)B. It previously read
+     $(8.4)B vs $(1.1)B, which were Q2-only figures. The H1'26 figure
+     includes the $14.2B cash repurchase of Apollo's 49% stake in Ireland
+     SCIP (Apr 8, 2026). Excluding it, H1'26 adjusted FCF was ~+$3.8B.
+     H1'26 gross capex FELL to $7.6B (H1'25: $10.7B). The old text said
+     capex was reaccelerating (Section 2).
+  2. NET DEBT WIDENING ($9.1B -> $20.8B, Dec'25 -> Jun'26) is mostly the
+     Apollo buyback, not capex (Section 2, Risk #2).
+  3. Q2'26 $(11.0)B GAAP NET LOSS: driven by a $12.5B non-cash
+     mark-to-market loss on the Escrowed Shares derivative (CHIPS Act share
+     escrow), not by tax / valuation-allowance items (Sections 1, 2;
+     Risk #7).
+  4. EQUITY DECLINE explanation now includes the $13.5B Apollo buyback
+     charge to capital in excess of par (Section 2).
+  5. ADDED an FY2026E capex build to Section 5: gross guide, implied
+     offsets, net capex vs FY2024-25 actuals, and Q1/Q2/H1'26 actuals.
+     The $14,000M FY2026E net capex input is unchanged.
+  Net debt ($20.8B, Q2'26) already reflected the buyback, so the equity
+  bridge is unaffected. The buyback also removed the Ireland SCIP
+  non-controlling interest. The flagged NCI item (a) below already uses
+  Jun 27, 2026 balances, so it is unaffected.
+
 REVISION NOTE — September 30, 2026 (segment revenue projections)
 -----------------------------------------------------------------
 ADDED Section 4D: year-by-year 2027E-2036E revenue by segment (CCG, DCAI,
@@ -220,10 +247,12 @@ solidly profitable on a non-GAAP basis in 2025 even as GAAP showed a loss.
 
 Q2 2026 (quarter ended Jun 27, 2026), GAAP: revenue $16.1B (+25% YoY, fastest
 growth in 15+ years), gross margin 40.4%, operating income +$1.8B (vs a
-$(3.2)B loss a year earlier — the real inflection), net LOSS $(11.0)B (large
-GAAP-only tax/valuation-allowance item; non-GAAP net income was +$2.2B, EPS
-$0.42). DCAI revenue +59% YoY to $6.3B; CCG +13% to $8.9B. Q3 2026 guide:
-revenue $15.8-16.8B (+~20% YoY at midpoint).
+$(3.2)B loss a year earlier — the real inflection), net LOSS $(11.0)B (driven
+by a $12.5B non-cash mark-to-market loss on the Escrowed Shares derivative,
+which tracks Intel's share price; rev. Oct 1, previously misattributed to
+tax items. Non-GAAP net income was +$2.2B, EPS $0.42). DCAI revenue +59%
+YoY to $6.3B; CCG +13% to $8.9B. Q3 2026 guide: revenue $15.8-16.8B (+~20%
+YoY at midpoint).
 
 Balance sheet (Q2 2026): cash + ST investments $29.7B; total debt $50.5B;
 NET DEBT ~$20.8B. Unlike AMD/NVDA-style fabless peers, Intel carries real net
@@ -316,10 +345,14 @@ Notes:
   - Reported net income is extremely noisy and, unusually, often WORSE than
     operating income even when operating income is positive: Q2 2026 GAAP
     operating income was +$1.8B but GAAP net LOSS was $(11.0)B, driven by
-    tax items (valuation-allowance effects tied to the FY2024 DTA
-    impairment) that have little to do with the operating business. The
-    model forecasts operating income, not net income, for exactly this
-    reason.
+    a $12.5B non-cash mark-to-market loss on the Escrowed Shares
+    derivative (H1'26: $13.6B). That liability covers Intel shares held in
+    escrow for the U.S. Department of Commerce under the CHIPS Act Secure
+    Enclave agreement, and it rises with Intel's share price. It has
+    nothing to do with the operating business. (Rev. Oct 1: previously
+    attributed to tax / valuation-allowance items, which was wrong per the
+    Q2'26 10-Q.) The model forecasts operating income, not net income, for
+    exactly this reason.
 
 FREE CASH FLOW RECONCILIATION
                                  FY2021  FY2022  FY2023  FY2024   FY2025
@@ -346,9 +379,16 @@ Stock-based compensation            2,036   3,128   3,229    3,410   2,434
     FY2024 ($(2.2)B) and FY2025 ($(1.6)B) — i.e. even with ~$1.6-1.9B/yr of
     government incentives and ~$4.9-12.7B/yr of partner co-investment
     inflows, Intel has not yet generated positive free cash flow. H1 2026
-    adjusted FCF was $(8.4)B, worse than H1 2025's $(1.1)B, because gross
-    capex is reaccelerating (FY2026 guidance raised to >$20B) ahead of any
-    confirmed step-up in partner contributions.
+    adjusted FCF was $(10.4)B vs H1 2025's $(4.7)B. (Rev. Oct 1: this
+    previously read "$(8.4)B vs $(1.1)B" — those are Q2-only figures —
+    and blamed reaccelerating capex.) The H1'26 figure is NOT a capex
+    deterioration. It includes the $14.2B cash repurchase of Apollo's 49%
+    stake in Ireland SCIP (Apr 8, 2026), which Intel's metric counts in
+    "partner contributions, net." Excluding it, H1'26 adjusted FCF was
+    roughly +$3.8B. Gross capex actually FELL: $7.6B in H1'26 vs $10.7B
+    in H1'25. The >$20B FY2026 guide (Jul 23 call) therefore implies a
+    steep H2 ramp to more than ~$12.4B. Detail:
+    ../extracts/INTC-EARNINGS-2026-Q2.md.
   - Partner (SCIP) contributions fell from $12.7B (FY2024) to $4.9B (FY2025)
     as early joint-venture commitments (Brookfield/Apollo-style
     co-investment in specific fabs) matured — whether that funding source
@@ -365,16 +405,23 @@ Common shares outstanding      4,330     4,994     5,023     5,043
 
   - Net debt swung from $28.0B (Dec'24) to just $9.1B (Dec'25) as the
     government/SoftBank/Nvidia capital landed, then WIDENED BACK OUT to
-    $20.8B by Jun'26 as gross capex reaccelerated (>$20B FY2026E guide)
-    faster than operating cash flow and partner contributions could keep
-    pace. This is the balance-sheet signature of a company still spending
-    ahead of its own cash generation, even after the rescue capital.
-  - Stockholders' equity fell sharply from $126.4B (Dec'25) to $87.5B
-    (Jun'26) DESPITE continued share issuance, driven by GAAP net losses
-    (including the unusual $(11.0)B Q2'26 net loss, mostly a tax-accounting
-    item) flowing through retained earnings — a paper/GAAP effect distinct
-    from the improving operating trend, but a reminder that reported book
-    value has been genuinely volatile.
+    $20.8B by Jun'26. (Rev. Oct 1: this previously blamed reaccelerating
+    capex.) The widening is essentially the $14.2B Ireland SCIP buyback
+    from Apollo (Apr 8, 2026), funded from cash, short-term investments
+    and new debt. Excluding it, H1'26 adjusted FCF was roughly +$3.8B and
+    net debt would have fallen. The buyback swapped a 49% partner claim on
+    Fab 34 for debt: it raised net debt but removed a non-controlling
+    interest. The capex-funding risk remains, but it sits in H2'26-2027
+    (>$20B 2026 guide, 2027 "significantly above"), not in H1'26.
+  - Stockholders' equity fell sharply to $87.5B (Jun'26) DESPITE continued
+    share issuance. (Rev. Oct 1: corrected explanation.) Two drivers:
+    (1) a $13.5B charge to capital in excess of par from the Apollo
+    buyback, and (2) GAAP net losses, including the $(11.0)B Q2'26 loss,
+    which was mostly the $12.5B non-cash Escrowed Shares mark-to-market.
+    Neither reflects the operating trend. Note: the $126.4B Dec'25 figure
+    appears to include non-controlling interests; Intel stockholders'
+    equity was $114.3B at Dec 27, 2025 (Q2'26 10-Q comparative), so the
+    like-for-like decline is ~$26.7B.
   - Share count: 4,330M (Dec'24) -> 4,994M (Dec'25) -> 5,043M (Jun'26), a
     +16.5% increase in 18 months, almost entirely the government (433.3M
     shares, 9.9%), SoftBank (~2%) and Nvidia ($5B) transactions. This
@@ -1282,6 +1329,52 @@ assumed continuation of incentive/partner-funding support, though FY2025's
 SCIP contributions already fell sharply from FY2024's level — see Section 9
 risk on funding continuity).
 
+FY2026E CAPEX BUILD (added Oct 1, 2026; same in all three scenarios), $M,
+in Intel's adjusted-FCF presentation:
+                                  FY2024A        FY2025A        FY2026E
+  Gross capex                  (23,944)-       (17,700)       >(20,000)
+                                (25,100)                      (guided)
+  Government incentives           1,900          1,600    } >=6,000 implied
+  Partner (SCIP) contributions   12,700          4,900    } (not split)
+  Net capex                     (10,500)       (11,200)       (14,000)
+  Gross capex % of revenue    45.1-47.3%          33.5%           >32%
+  Net capex % of revenue          19.8%          21.2%          22.4%
+  D&A                            11,379         11,706         12,500
+  Net capex less D&A               (879)          (506)          1,500
+
+  H1'26 ACTUALS (Q1/Q2'26 releases, Q2'26 10-Q; see
+  ../extracts/INTC-EARNINGS-2026-Q2.md):
+                                   Q1'26    Q2'26    H1'26
+    Gross capex                  (4,963)  (2,652)  (7,615)
+    Government incentives            107       60      167
+    Partner contributions, net     1,959  (12,216) (10,257)
+      of which Apollo buyback         --  ~(14,200) ~(14,200)
+    Net capex, this model's basis
+      (ex-buyback)                ~(2.9)B  ~(0.6)B ~(3.4-3.6)B
+  Gross capex includes capex paid on extended payment terms ($1,423M in
+  H1'26, reported in financing), so it exceeds the 10-Q's $6,192M
+  investing-section line. The $14.2B Ireland SCIP buyback is a financing
+  transaction, not capex. It is excluded from net capex and is already
+  in the Q2'26 net debt used in Section 6.
+
+  - GROSS: on the Jul 23, 2026 Q2 call, CFO Zinsner raised the 2026
+    outlook by ~$3B to "more than $20 billion," mostly tooling for Intel
+    3, 18A and 18A-P, and flagged 2027 as "significantly above" 2026.
+    With $7.6B spent in H1, the guide implies more than ~$12.4B in H2.
+  - NET: $14.0B implies incentives plus partner contributions of (gross
+    - $14.0B): ~$6.0B at exactly $20B gross, slightly below FY2025's
+    $6.5B, and more than FY2025's support at any gross figure above
+    $20.5B. It needs ~$10.5B of net capex in H2 vs ~$3.5B in H1, when
+    SCIP partner contributions ($4.1B) covered over half of gross capex.
+    The projection is back-half-loaded but not contradicted: Intel raised
+    the guide after H1 spending was known.
+  - SENSITIVITY: every $1B of gross capex above $20B that is not matched
+    by extra outside funding adds $1B to net capex. An H2 shortfall
+    would lower FY2026E net capex.
+  - VALUATION EFFECT: none. FY2026E is the anchor year and is not
+    discounted (Section 6). Base FY2026E FCF is -$174M (NOPAT 1,326 + D&A
+    12,500 - net capex 14,000), or -$2,670M after SBC.
+
 Rationale: even the BEAR case keeps meaningful capex (Intel cannot walk away
 from leading-edge fabs already under construction without stranding tens of
 billions of committed spend) but on a declining trajectory consistent with
@@ -1582,9 +1675,13 @@ SECTION 9 — KEY RISKS
 
 2. NET DEBT AND CONTINUED DILUTION (VERY HIGH)
    Unlike AMD/NVDA/PLTR in this folder, Intel carries real net leverage
-   ($20.8B) that widened, not narrowed, over H1 2026 as gross capex
-   reaccelerated. Adjusted free cash flow has been negative every year
-   since at least FY2024. Absent a durable FCF inflection, further equity
+   ($20.8B) that widened, not narrowed, over H1 2026, mostly because of
+   the $14.2B Ireland SCIP buyback from Apollo rather than capex (rev.
+   Oct 1). The capex ramp is still ahead: the >$20B 2026 guide implies
+   more than ~$12.4B of gross capex in H2'26, and 2027 is guided
+   "significantly above" 2026. Adjusted free cash flow has been negative
+   every year since at least FY2024. Absent a durable FCF inflection,
+   further equity
    issuance (beyond the government/SoftBank/Nvidia transactions already
    completed) is a realistic funding path, and every per-share value in
    this model already reflects a HELD-FLAT share count that may prove
@@ -1622,11 +1719,18 @@ SECTION 9 — KEY RISKS
    Intel's outcome, which cuts both ways (alignment on foundry demand,
    but also potential conflicts given Nvidia's own TSMC relationship).
 
-7. GAAP TAX-RATE / DTA VOLATILITY (MEDIUM)
-   The FY2024 deferred-tax-asset valuation-allowance writedown has made
-   Intel's reported GAAP tax rate and net income extremely noisy and
-   sometimes counter-intuitive (Q2 2026: positive operating income, large
-   GAAP net LOSS). This model works from operating income for exactly this
+7. GAAP NET-INCOME VOLATILITY: TAX RATE AND ESCROWED SHARES (MEDIUM)
+   Two non-operating items make Intel's GAAP net income extremely noisy.
+   (a) The FY2024 deferred-tax-asset valuation-allowance writedown
+   distorts the GAAP tax rate (guided (79)% for Q1'26, ~1% for Q3'26).
+   (b) The Escrowed Shares derivative (CHIPS Act share escrow) is marked
+   to Intel's share price through "interest and other, net." It cost
+   $12.5B in Q2'26 and $13.6B in H1'26, which is why Q2'26 showed +$1.8B
+   operating income and a $(11.0)B net loss. The liability was $15.6B at
+   Jun 27, 2026. Further share-price gains will produce further GAAP
+   losses, and declines will produce gains. (Rev. Oct 1: the Q2'26 loss
+   was previously attributed to the DTA item.) This model works from
+   operating income for exactly this
    reason, but investors reading only headline EPS could be repeatedly
    whipsawed by items unrelated to the operating turnaround.
 

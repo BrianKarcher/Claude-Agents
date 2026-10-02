@@ -32,6 +32,8 @@ WHAT IS IDENTICAL TO THE MAIN FILE (checked to the $1M, Section F):
   - Consolidated GAAP operating income, every scenario, every year.
   - CCG, DCAI, Intel Products, All Other and Foundry EXTERNAL revenue.
   - Every segment operating-income line (Section 4E of the main file).
+  - Net capex, D&A and SBC, including the FY2026E capex projection
+    (Section G1).
   - Therefore NOPAT, FCF, terminal values and every intrinsic value:
     Bull $38.71 / Base $12.79 / Bear ~$0 (-$0.54) / probability-weighted
     $14.60 / simple average $16.99.
@@ -562,6 +564,62 @@ The DCF's cash flows use consolidated revenue, consolidated operating
 margin, net capex, D&A and SBC. None of these change in this presentation.
 Every valuation section of the main file (Sections 5-11: assumptions, Base
 DCF, sensitivity, scenarios, risks, assessment) applies unchanged.
+
+G1. CAPEX — FY2024A -> FY2026E PROJECTED (Intel's adjusted-FCF presentation)
+All $M. FY2024A-FY2025A are Intel's reported figures (Q4/FY2025 release).
+FY2026E is the main file's anchor-year projection (Section 5), the same in
+all three scenarios.
+                                  FY2024A        FY2025A        FY2026E
+  Gross capex                  (23,944)-       (17,700)       >(20,000)
+                                (25,100)                      (guided)
+  Government incentives           1,900          1,600    } >=6,000 implied
+  Partner (SCIP) contributions   12,700          4,900    } (not split)
+  Net capex                     (10,500)       (11,200)       (14,000)
+  Gross capex % of revenue    45.1-47.3%          33.5%           >32%
+  Net capex % of revenue          19.8%          21.2%          22.4%
+  D&A                            11,379         11,706         12,500
+  Net capex less D&A               (879)          (506)          1,500
+
+  - GROSS FY2026E: on the Jul 23, 2026 Q2 call (the release itself has no
+    capex guide), CFO Zinsner raised the outlook by ~$3B to "more than $20
+    billion," citing customer demand signals, mostly tooling for Intel 3,
+    18A and 18A-P. He flagged 2027 capex as "significantly above" 2026.
+  - NET FY2026E ($14,000M) implies incentives plus partner contributions
+    of (gross - $14.0B): ~$6.0B at exactly $20B gross, slightly below
+    FY2025's $6.5B, and more than FY2025's support at any gross figure
+    above $20.5B. Equivalently, every $1B of gross capex above $20B that
+    is not matched by extra outside funding adds $1B to net capex. Partner
+    (SCIP) contributions already fell from $12.7B to $4.9B in FY2025. This
+    is main-file Section 9, Risk #3.
+  - VALUATION EFFECT: none. FY2026E is the anchor year and is not
+    discounted (main-file Section 6). Base FY2026E FCF is -$174M (NOPAT
+    1,326 + D&A 12,500 - net capex 14,000), or -$2,670M after SBC.
+  - FORWARD PATH (net capex, main-file Section 5): 2027E $18,000M Bull /
+    $15,000M Base / $13,000M Bear, peaking at $24,000M (Bull 2030E) and
+    $16,500M (Base 2029-30E). Bear declines every year.
+  - H1'26 ACTUALS (re-tied to the Q2'26 10-Q on Oct 1, 2026; see
+    ../extracts/INTC-EARNINGS-2026-Q2.md):
+                                   Q1'26    Q2'26    H1'26
+      Gross capex                (4,963)  (2,652)  (7,615)
+      Government incentives          107       60      167
+      Partner contributions, net   1,959  (12,216) (10,257)
+        of which Apollo buyback       --  ~(14,200) ~(14,200)
+      Net capex, DCF basis
+        (ex-buyback)              ~(2.9)B  ~(0.6)B ~(3.4-3.6)B
+    Gross capex counts capex paid on extended payment terms ($1,423M in
+    H1'26, reported in financing), which is why it exceeds the $6,192M
+    investing-section line.
+  - WHAT H1 MEANS FOR THE FY2026E PROJECTION: gross capex of >$20B needs
+    more than ~$12.4B in H2, vs $7.6B in H1. Net capex of $14.0B needs
+    ~$10.5B in H2, vs ~$3.5B in H1. H1 net capex was low partly because
+    SCIP partner contributions ($4.1B) covered over half of gross
+    capex. The $14.0B projection is therefore back-half-loaded but not
+    contradicted: Intel raised the guide in July, after H1 spending was
+    known. A shortfall in H2 spending would lower FY2026E net capex, not
+    raise it. No valuation effect either way (anchor year).
+  - The $14.2B Apollo buyback (Ireland SCIP, Apr 8, 2026) is a financing
+    transaction, not capex. The DCF's net capex excludes it. It is already
+    reflected in the Q2'26 net debt ($20.8B) used in the equity bridge.
 
 Scenario   WACC    TGR    Exit   2030E Rev    2036E Rev   2036E SBC-FCF   IV/Share
 BULL      10.5%   3.0%   16x     $103,534M    $159,663M     $28,346M       $38.71

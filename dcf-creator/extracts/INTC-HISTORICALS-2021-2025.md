@@ -58,6 +58,7 @@ Total FY2024 restructuring-plan charges guided at ~$3.0B, with $2.8B cumulative 
 | Common shares outstanding | 4,330 | 4,994 | 5,023 | 5,043 |
 
 Note: Intel's equity dropped sharply from Dec'25 ($126.4B) to Jun'26 ($87.5B) despite continued share issuance — driven by the large FY2025/Q1'26 GAAP net losses (including the $11.0B Q2'26 GAAP net loss driven by tax items) flowing through retained earnings; this is a paper/GAAP-accounting effect distinct from the cash and operating trends, which have been improving.
+**Corrected Oct 1, 2026 (per the Q2 2026 10-Q):** the Q2'26 GAAP net loss was driven by a $12.5B non-cash mark-to-market loss on the Escrowed Shares derivative (CHIPS Act / U.S. Department of Commerce share escrow), NOT by tax items. Also, $13.5B of the equity decline is NOT a P&L effect: it is the charge to capital in excess of par from Intel's April 8, 2026 $14.2B repurchase of Apollo's 49% Ireland SCIP stake. See INTC-EARNINGS-2026-Q2.md.
 
 ## Diluted share count context (dilution events, 2025–2026)
 
