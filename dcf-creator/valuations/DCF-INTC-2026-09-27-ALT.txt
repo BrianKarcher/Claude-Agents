@@ -1,0 +1,596 @@
+================================================================================
+INTEL CORPORATION (INTC) — DCF, ALT PRESENTATION (INTEL SEGMENT-NOTE BASIS)
+Companion to DCF-INTC-2026-09-27.txt — same forecast, same valuation,
+presented the way Intel reports its segments
+Date: October 1, 2026
+Sources: DCF-INTC-2026-09-27.txt (Sections 2A, 4A, 4D, 4E, 6, 7), and
+         ../extracts/INTC-SEGMENTS-2021-2026.md (FY2021-FY2025 and
+         Q1'25-Q2'26 segment revenue / operating income from the FY2025
+         10-K, the Apr 2024 segment-recast 8-K, the Q3/Q4 2025 releases and
+         the Q1/Q2 2026 10-Qs). No new data was pulled for this file.
+================================================================================
+
+WHAT THIS FILE IS (READ FIRST)
+------------------------------
+The main DCF builds consolidated revenue from EXTERNAL pieces only:
+
+  Consolidated = Intel Products + All Other + Intel Foundry EXTERNAL
+
+Intel's own segment note (ASC 280) presents the same total differently.
+Each segment reports its revenue GROSS, including sales to other segments.
+A separate "intersegment eliminations" line then removes those sales:
+
+  Consolidated = Intel Products + Intel Foundry (internal + external)
+                 + All Other + intersegment eliminations
+
+This file restates the history AND all three forecast scenarios on Intel's
+basis, so FY2021-H1'26 actuals and FY2026E-2036E projections can be read
+row for row in the same layout.
+
+WHAT IS IDENTICAL TO THE MAIN FILE (checked to the $1M, Section F):
+  - Consolidated revenue, every scenario, every year.
+  - Consolidated GAAP operating income, every scenario, every year.
+  - CCG, DCAI, Intel Products, All Other and Foundry EXTERNAL revenue.
+  - Every segment operating-income line (Section 4E of the main file).
+  - Therefore NOPAT, FCF, terminal values and every intrinsic value:
+    Bull $38.71 / Base $12.79 / Bear ~$0 (-$0.54) / probability-weighted
+    $14.60 / simple average $16.99.
+
+WHAT IS NEW: the Foundry INTERNAL revenue line, the gross Foundry segment
+revenue it produces, and the revenue elimination line that removes it.
+Internal and elimination cancel exactly, so they change no total.
+
+
+================================================================================
+SECTION A — PRESENTATION RULES
+================================================================================
+
+THE BRIDGE BETWEEN THE TWO BASES
+  Intel basis:
+    Products + (Foundry internal + Foundry external) + All Other
+      + elims, where elims = -(Foundry internal) + other intersegment
+  = Products + Foundry external + All Other + other intersegment
+  = main-file basis + other intersegment
+
+  So the two presentations agree exactly whenever "other intersegment"
+  is zero. That is the forecast assumption (rule 4 below), and it is the
+  assumption the main file already makes implicitly.
+
+FORECAST RULES (FY2026E-2036E)
+  1. CCG, DCAI, Intel Products, All Other and Foundry EXTERNAL revenue are
+     copied unchanged from main-file Section 4D.
+  2. FOUNDRY INTERNAL REVENUE (sales to Intel Products) = 36.0% of Intel
+     Products revenue in 2027E-2036E. This is the same ratio as the main
+     file's Section 4D memo row. History on the current basis: 37.2%
+     (FY2023), 34.7% (FY2024), 35.6% (FY2025), 38.4% (H1'26).
+     FY2026E = H1'26 actual ($10,719M) + H2'26E at 38.0% of H2 Products
+     ($30,382M x 38.0% = $11,545M) = $22,264M, matching main-file
+     Section 4E's FY2026E Foundry build. This file carries internal revenue
+     unrounded, to the $1M. The main file's memo row rounds Foundry segment
+     revenue to $100M, so the two differ by at most $50M in any year. The
+     Foundry margins below match main-file Section 4E exactly.
+  3. INTEL FOUNDRY SEGMENT REVENUE = internal + external.
+  4. INTERSEGMENT ELIMINATIONS (REVENUE) = -(Foundry internal) + other
+     intersegment. "Other intersegment" is the small remainder Intel also
+     eliminates, chiefly sales between Products / All Other and other
+     segments: (67), (130), (164) in FY2023-25, (9) in H1'26. It is set to
+     ZERO in every forecast year, as in the main file. Equivalently, the
+     forecast Products and All Other lines are treated as net of their own
+     intersegment sales. FY2026E follows main-file Section 4A: H1'26 actual
+     (9), reversed in H2 (+9), so FY2026E is 0.
+  5. OPERATING INCOME is copied unchanged from main-file Section 4E. That
+     table is already on Intel's basis: segment OI, corporate unallocated
+     and an intersegment-elimination line. The OI elimination is +$975M in
+     FY2026E and 0 from 2027E. That judgment is unchanged here; see
+     Section E.
+
+WHY THE 36% RATIO DOES NOT AFFECT VALUE
+  The internal ratio is a transfer-pricing assumption. Raising it moves
+  revenue (and, at a given Foundry OI, margin) into the Foundry segment
+  and the same amount into the elimination line. Consolidated revenue,
+  consolidated OI and FCF do not move. It matters only for reading
+  Foundry's segment revenue and segment margin against history.
+
+
+================================================================================
+SECTION B — HISTORY ON INTEL'S BASIS, FY2021 -> H1 2026
+================================================================================
+All $M. Every column reconciles to consolidated revenue and consolidated
+GAAP operating income to the $1M. The series is on two segment bases (see
+main-file Section 2A). Products-total, Foundry and All Other are comparable
+across both bases with ~1-2% basis noise. CCG and DCAI are shown only on
+the current basis (Basis A, FY2023 onward).
+
+TABLE B-1: BASIS B — FY2021-FY2023 (Apr 2024 recast; Products incl. NEX)
+  Revenue                    FY2021   FY2022   FY2023
+  Intel Products             69,532   57,038   47,667
+  Intel Foundry (segment)    22,849   27,491   18,910
+    internal (to Products)      n/d   27,017   17,957
+    external (3rd party)        n/d      474      953
+  All Other                   9,137    5,530    5,608
+  ---------------------------------------------------
+  Segment revenue total     101,518   90,059   72,185
+  Intersegment elims       (22,494) (27,005) (17,957)
+    Foundry internal sales      n/d (27,017) (17,957)
+    other intersegment          n/d       12        0
+  Consolidated revenue       79,024   63,054   54,228
+  Operating income (loss)    FY2021   FY2022   FY2023
+  Intel Products             30,479   13,937   11,337
+  Intel Foundry             (5,067)  (5,169)  (6,955)
+  All Other                   1,825    1,174    1,079
+  Corporate unallocated     (7,116)  (5,633)  (5,165)
+  Intersegment elims          (665)  (1,975)    (203)
+  Consolidated GAAP          19,456    2,334       93
+  Ratios
+    Foundry int. % of Prod.       --    47.4%    37.7%
+    External % of Foundry        --     1.7%     5.0%
+    Elims % of segment tot.    22.2%    30.0%    24.9%
+    Foundry op margin        -22.2%   -18.8%   -36.8%
+    Consolidated op margin    24.6%     3.7%     0.2%
+  Notes:
+  - FY2021: Intel did not disclose Foundry's internal / external split
+    on the recast basis.
+  - FY2022: external ($474M) is derived from FY2023's $953M less the
+    reported $479M YoY increase. Internal and "other intersegment" are
+    therefore approximate (the +12 is rounding in that derivation).
+  - FY2023 on Basis B: eliminations equal Foundry internal sales exactly.
+  - FY2021 All Other includes $4,306M of since-divested NAND revenue.
+
+TABLE B-2: BASIS A — FY2023-FY2025, H1'25, H1'26 (current structure)
+  Revenue                    FY2023   FY2024   FY2025    H1'25    H1'26
+    CCG (CCPG)               32,305   33,346   32,228   15,500   16,604
+    DCAI                     15,980   16,125   16,919    8,065   11,314
+  Intel Products             48,285   49,471   49,147   23,565   27,918
+  Intel Foundry (segment)    18,504   17,317   17,826    9,084   11,186
+    internal (to Products)   17,957   17,158   17,519    9,031   10,719
+    external (3rd party)        547      159      307       53      467
+  All Other                   5,463    3,601    3,563    1,996    1,329
+  ---------------------------------------------------------------------
+  Segment revenue total      72,252   70,389   70,536   34,645   40,433
+  Intersegment elims       (18,024) (17,288) (17,683)  (9,119) (10,728)
+    Foundry internal sales (17,957) (17,158) (17,519)  (9,031) (10,719)
+    other intersegment         (67)    (130)    (164)     (88)      (9)
+  Consolidated revenue       54,228   53,101   52,853   25,526   29,705
+  Operating income (loss)    FY2023   FY2024   FY2025    H1'25    H1'26
+    CCG (CCPG)               10,128   11,594    9,317    4,414    4,859
+    DCAI                        945    1,414    3,422    1,208    4,016
+  Intel Products             11,073   13,008   12,739    5,622    8,875
+  Intel Foundry             (7,083) (13,291) (10,318)  (5,488)  (4,526)
+  All Other                   1,507     (57)      264      172      332
+  Corporate unallocated     (5,199) (11,177)  (5,518)  (4,015)  (6,496)
+  Intersegment elims          (205)    (161)      619      232      475
+  Consolidated GAAP              93 (11,678)  (2,214)  (3,477)  (1,340)
+  Ratios
+    Foundry int. % of Prod.    37.2%    34.7%    35.6%    38.3%    38.4%
+    External % of Foundry      3.0%     0.9%     1.7%     0.6%     4.2%
+    Elims % of segment tot.    24.9%    24.6%    25.1%    26.3%    26.5%
+    Foundry op margin        -38.3%   -76.8%   -57.9%   -60.4%   -40.5%
+    Consolidated op margin     0.2%   -22.0%    -4.2%   -13.6%    -4.5%
+  Notes:
+  - Foundry internal = segment revenue less reported external revenue
+    (10-K / 10-Q MD&A). "Other intersegment" is the remaining reported
+    elimination.
+  - H1'26 external includes $320M from Altera, an external customer since
+    its Sept 2025 deconsolidation.
+
+
+================================================================================
+SECTION C — FY2026E BUILD ON INTEL'S BASIS (H1 actual + H2 estimate)
+================================================================================
+All $M. Products, All Other, external Foundry and consolidated revenue are
+main-file Section 4A. H2 internal Foundry revenue is 38.0% of H2 Products
+(H1'26 actual: 38.4%).
+                             H1'26A   H2'26E  FY2026E
+    CCG (CCPG)               16,604   16,896   33,500
+    DCAI                     11,314   13,486   24,800
+  Intel Products             27,918   30,382   58,300
+  Intel Foundry (segment)    11,186   12,078   23,264
+    internal (to Products)   10,719   11,545   22,264
+    external (3rd party)        467      533    1,000
+  All Other                   1,329    1,771    3,100
+  ---------------------------------------------------
+  Segment revenue total      40,433   44,231   84,664
+  Intersegment elims       (10,728) (11,536) (22,264)
+    Foundry internal sales (10,719) (11,545) (22,264)
+    other intersegment          (9)        9        0
+  Consolidated revenue       29,705   32,695   62,400
+    Foundry int. % of Prod.    38.4%    38.0%    38.2%
+  FY2026E Foundry segment revenue of $23,264M with main-file Section 4E's
+  $(8,526)M Foundry OI gives the same -36.6% margin as the main file.
+
+
+================================================================================
+SECTION D — HISTORY + PROJECTIONS, SAME LAYOUT, ALL THREE SCENARIOS
+================================================================================
+All $M. FY2024A and FY2025A are reported actuals (Basis A). FY2026E-2036E
+are the main file's forecasts on Intel's basis (rules in Section A).
+Revenue lines, OI lines and margins are directly comparable across the
+actual/forecast boundary. Operating margins are on segment revenue, which
+is how Intel reports them. Foundry's margin is therefore on GROSS revenue,
+internal included.
+
+FY2026E All Other margin (26.8%) reflects main-file Section 4E's $832M of
+All Other OI (H1'26 actual $332M + H2 $500M) on $3,100M of revenue.
+
+--------------------------------------------------------------------------------
+D1. BULL
+--------------------------------------------------------------------------------
+  BULL ($M)                 FY2024A  FY2025A  FY2026E    2027E    2028E    2029E    2030E
+  Revenue
+    CCG (CCPG)               33,346   32,228   33,500   36,330   38,236   39,561   40,314
+    DCAI                     16,125   16,919   24,800   29,130   32,570   35,080   37,220
+  Intel Products             49,471   49,147   58,300   65,460   70,806   74,641   77,534
+  Intel Foundry (segment)    17,317   17,826   23,264   26,566   32,990   40,871   49,912
+    internal (to Products)   17,158   17,519   22,264   23,566   25,490   26,871   27,912
+    external (3rd party)        159      307    1,000    3,000    7,500   14,000   22,000
+  All Other                   3,601    3,563    3,100    3,300    3,500    3,800    4,000
+  ---------------------------------------------------------------------------------------
+  Segment revenue total      70,389   70,536   84,664   95,326  107,296  119,312  131,446
+  Intersegment elims       (17,288) (17,683) (22,264) (23,566) (25,490) (26,871) (27,912)
+    Foundry internal sales (17,158) (17,519) (22,264) (23,566) (25,490) (26,871) (27,912)
+    other intersegment        (130)    (164)        0        0        0        0        0
+  Consolidated revenue       53,101   52,853   62,400   71,760   81,806   92,441  103,534
+    YoY                       -2.1%    -0.5%   +18.1%   +15.0%   +14.0%   +13.0%   +12.0%
+  Operating income (loss)
+    CCG (CCPG)               11,594    9,317    9,336    9,809   10,324   10,681   10,885
+    DCAI                      1,414    3,422    9,006    9,174   10,210   10,965   11,600
+  Intel Products             13,008   12,739   18,342   18,983   20,534   21,646   22,485
+  Intel Foundry            (13,291) (10,318)  (8,526)  (9,272)  (6,508)  (3,352)    (212)
+  All Other                    (57)      264      832      400      400      400      400
+  Corporate unallocated    (11,177)  (5,518)  (9,196)  (4,370)  (4,609)  (4,828)  (5,072)
+  Intersegment elims          (161)      619      975        0        0        0        0
+  Margin round-down              --       --    (867)       --       --       --       --
+  Consolidated GAAP        (11,678)  (2,214)    1,560    5,741    9,817   13,866   17,601
+  Operating margin
+    CCG (CCPG)                34.8%    28.9%    27.9%    27.0%    27.0%    27.0%    27.0%
+    DCAI                       8.8%    20.2%    36.3%    31.5%    31.3%    31.3%    31.2%
+    Intel Products            26.3%    25.9%    31.5%    29.0%    29.0%    29.0%    29.0%
+    Intel Foundry            -76.8%   -57.9%   -36.6%   -34.9%   -19.7%    -8.2%    -0.4%
+    All Other                 -1.6%     7.4%    26.8%    12.1%    11.4%    10.5%    10.0%
+    Consolidated             -22.0%    -4.2%     2.5%     8.0%    12.0%    15.0%    17.0%
+  Ratios
+    Foundry segment YoY       -6.4%    +2.9%   +30.5%   +14.2%   +24.2%   +23.9%   +22.1%
+    Foundry int. % of Prod.    34.7%    35.6%    38.2%    36.0%    36.0%    36.0%    36.0%
+    External % of Foundry      0.9%     1.7%     4.3%    11.3%    22.7%    34.3%    44.1%
+    Elims % of segment tot.    24.6%    25.1%    26.3%    24.7%    23.8%    22.5%    21.2%
+
+  BULL ($M)                   2031E    2032E    2033E    2034E    2035E    2036E
+  Revenue
+    CCG (CCPG)               41,658   43,117   45,028   47,143   49,310   51,203
+    DCAI                     40,030   43,120   45,940   49,060   52,350   55,460
+  Intel Products             81,688   86,237   90,968   96,203  101,660  106,663
+  Intel Foundry (segment)    57,408   64,545   71,248   77,133   82,098   86,399
+    internal (to Products)   29,408   31,045   32,748   34,633   36,598   38,399
+    external (3rd party)     28,000   33,500   38,500   42,500   45,500   48,000
+  All Other                   4,200    4,400    4,600    4,750    4,900    5,000
+  ------------------------------------------------------------------------------
+  Segment revenue total     143,296  155,182  166,816  178,086  188,658  198,062
+  Intersegment elims       (29,408) (31,045) (32,748) (34,633) (36,598) (38,399)
+    Foundry internal sales (29,408) (31,045) (32,748) (34,633) (36,598) (38,399)
+    other intersegment            0        0        0        0        0        0
+  Consolidated revenue      113,888  124,137  134,068  143,453  152,060  159,663
+    YoY                      +10.0%    +9.0%    +8.0%    +7.0%    +6.0%    +5.0%
+  Operating income (loss)
+    CCG (CCPG)               11,248   11,642   12,158   12,729   13,314   13,825
+    DCAI                     12,442   13,367   14,223   15,170   16,167   17,107
+  Intel Products             23,690   25,009   26,381   27,899   29,481   30,932
+  Intel Foundry               2,807    4,890    7,029    9,065    9,482    9,844
+  All Other                     400      400      400      400      400      400
+  Corporate unallocated     (5,258)  (5,472)  (5,656)  (5,804)  (5,910)  (6,050)
+  Intersegment elims              0        0        0        0        0        0
+  Margin round-down              --       --       --       --       --       --
+  Consolidated GAAP          21,639   24,827   28,154   31,560   33,453   35,126
+  Operating margin
+    CCG (CCPG)                27.0%    27.0%    27.0%    27.0%    27.0%    27.0%
+    DCAI                      31.1%    31.0%    31.0%    30.9%    30.9%    30.8%
+    Intel Products            29.0%    29.0%    29.0%    29.0%    29.0%    29.0%
+    Intel Foundry              4.9%     7.6%     9.9%    11.8%    11.5%    11.4%
+    All Other                  9.5%     9.1%     8.7%     8.4%     8.2%     8.0%
+    Consolidated              19.0%    20.0%    21.0%    22.0%    22.0%    22.0%
+  Ratios
+    Foundry segment YoY      +15.0%   +12.4%   +10.4%    +8.3%    +6.4%    +5.2%
+    Foundry int. % of Prod.    36.0%    36.0%    36.0%    36.0%    36.0%    36.0%
+    External % of Foundry     48.8%    51.9%    54.0%    55.1%    55.4%    55.6%
+    Elims % of segment tot.    20.5%    20.0%    19.6%    19.4%    19.4%    19.4%
+
+--------------------------------------------------------------------------------
+D2. BASE
+--------------------------------------------------------------------------------
+  BASE ($M)                 FY2024A  FY2025A  FY2026E    2027E    2028E    2029E    2030E
+  Revenue
+    CCG (CCPG)               33,346   32,228   33,500   34,966   36,527   37,799   39,225
+    DCAI                     16,125   16,919   24,800   27,480   29,890   32,200   34,090
+  Intel Products             49,471   49,147   58,300   62,446   66,417   69,999   73,315
+  Intel Foundry (segment)    17,317   17,826   23,264   24,851   27,650   30,400   32,893
+    internal (to Products)   17,158   17,519   22,264   22,481   23,910   25,200   26,393
+    external (3rd party)        159      307    1,000    2,370    3,740    5,200    6,500
+  All Other                   3,601    3,563    3,100    3,200    3,300    3,400    3,500
+  ---------------------------------------------------------------------------------------
+  Segment revenue total      70,389   70,536   84,664   90,497   97,367  103,799  109,708
+  Intersegment elims       (17,288) (17,683) (22,264) (22,481) (23,910) (25,200) (26,393)
+    Foundry internal sales (17,158) (17,519) (22,264) (22,481) (23,910) (25,200) (26,393)
+    other intersegment        (130)    (164)        0        0        0        0        0
+  Consolidated revenue       53,101   52,853   62,400   68,016   73,457   78,599   83,315
+    YoY                       -2.1%    -0.5%   +18.1%    +9.0%    +8.0%    +7.0%    +6.0%
+  Operating income (loss)
+    CCG (CCPG)               11,594    9,317    9,336    8,392    8,766    9,072    9,414
+    DCAI                      1,414    3,422    9,006    7,220    7,838    8,428    8,915
+  Intel Products             13,008   12,739   18,342   15,612   16,604   17,500   18,329
+  Intel Foundry            (13,291) (10,318)  (8,526)  (7,500)  (6,000)  (4,000)  (2,000)
+  All Other                    (57)      264      832      400      400      400      400
+  Corporate unallocated    (11,177)  (5,518)  (9,196)  (4,221)  (4,291)  (4,330)  (4,416)
+  Intersegment elims          (161)      619      975        0        0        0        0
+  Margin round-down              --       --    (867)    (210)    (102)    (138)    (649)
+  Consolidated GAAP        (11,678)  (2,214)    1,560    4,081    6,611    9,432   11,664
+  Operating margin
+    CCG (CCPG)                34.8%    28.9%    27.9%    24.0%    24.0%    24.0%    24.0%
+    DCAI                       8.8%    20.2%    36.3%    26.3%    26.2%    26.2%    26.2%
+    Intel Products            26.3%    25.9%    31.5%    25.0%    25.0%    25.0%    25.0%
+    Intel Foundry            -76.8%   -57.9%   -36.6%   -30.2%   -21.7%   -13.2%    -6.1%
+    All Other                 -1.6%     7.4%    26.8%    12.5%    12.1%    11.8%    11.4%
+    Consolidated             -22.0%    -4.2%     2.5%     6.0%     9.0%    12.0%    14.0%
+  Ratios
+    Foundry segment YoY       -6.4%    +2.9%   +30.5%    +6.8%   +11.3%    +9.9%    +8.2%
+    Foundry int. % of Prod.    34.7%    35.6%    38.2%    36.0%    36.0%    36.0%    36.0%
+    External % of Foundry      0.9%     1.7%     4.3%     9.5%    13.5%    17.1%    19.8%
+    Elims % of segment tot.    24.6%    25.1%    26.3%    24.8%    24.6%    24.3%    24.1%
+
+  BASE ($M)                   2031E    2032E    2033E    2034E    2035E    2036E
+  Revenue
+    CCG (CCPG)               40,914   42,210   43,676   44,551   45,029   45,668
+    DCAI                     36,290   38,190   40,320   41,950   43,270   44,760
+  Intel Products             77,204   80,400   83,996   86,501   88,299   90,428
+  Intel Foundry (segment)    35,303   37,574   39,809   42,050   43,888   45,554
+    internal (to Products)   27,793   28,944   30,239   31,140   31,788   32,554
+    external (3rd party)      7,510    8,630    9,570   10,910   12,100   13,000
+  All Other                   3,600    3,700    3,800    3,850    3,900    4,000
+  ------------------------------------------------------------------------------
+  Segment revenue total     116,107  121,674  127,605  132,401  136,087  139,982
+  Intersegment elims       (27,793) (28,944) (30,239) (31,140) (31,788) (32,554)
+    Foundry internal sales (27,793) (28,944) (30,239) (31,140) (31,788) (32,554)
+    other intersegment            0        0        0        0        0        0
+  Consolidated revenue       88,314   92,730   97,366  101,261  104,299  107,428
+    YoY                       +6.0%    +5.0%    +5.0%    +4.0%    +3.0%    +3.0%
+  Operating income (loss)
+    CCG (CCPG)                9,819   10,130   10,482   10,692   10,807   10,960
+    DCAI                      9,482    9,970   10,517   10,933   11,268   11,647
+  Intel Products             19,301   20,100   20,999   21,625   22,075   22,607
+  Intel Foundry                   0      500    1,000    1,500    1,750    2,000
+  All Other                     400      400      400      400      400      400
+  Corporate unallocated     (4,503)  (4,560)  (4,616)  (4,639)  (4,629)  (4,723)
+  Intersegment elims              0        0        0        0        0        0
+  Margin round-down           (185)    (676)    (257)    (659)    (822)    (947)
+  Consolidated GAAP          15,013   15,764   17,526   18,227   18,774   19,337
+  Operating margin
+    CCG (CCPG)                24.0%    24.0%    24.0%    24.0%    24.0%    24.0%
+    DCAI                      26.1%    26.1%    26.1%    26.1%    26.0%    26.0%
+    Intel Products            25.0%    25.0%    25.0%    25.0%    25.0%    25.0%
+    Intel Foundry              0.0%     1.3%     2.5%     3.6%     4.0%     4.4%
+    All Other                 11.1%    10.8%    10.5%    10.4%    10.3%    10.0%
+    Consolidated              17.0%    17.0%    18.0%    18.0%    18.0%    18.0%
+  Ratios
+    Foundry segment YoY       +7.3%    +6.4%    +5.9%    +5.6%    +4.4%    +3.8%
+    Foundry int. % of Prod.    36.0%    36.0%    36.0%    36.0%    36.0%    36.0%
+    External % of Foundry     21.3%    23.0%    24.0%    25.9%    27.6%    28.5%
+    Elims % of segment tot.    23.9%    23.8%    23.7%    23.5%    23.4%    23.3%
+
+--------------------------------------------------------------------------------
+D3. BEAR
+--------------------------------------------------------------------------------
+  BEAR ($M)                 FY2024A  FY2025A  FY2026E    2027E    2028E    2029E    2030E
+  Revenue
+    CCG (CCPG)               33,346   32,228   33,500   34,340   35,200   35,900   36,620
+    DCAI                     16,125   16,919   24,800   26,456   28,092   29,267   30,482
+  Intel Products             49,471   49,147   58,300   60,796   63,292   65,167   67,102
+  Intel Foundry (segment)    17,317   17,826   23,264   22,987   23,985   24,810   25,657
+    internal (to Products)   17,158   17,519   22,264   21,887   22,785   23,460   24,157
+    external (3rd party)        159      307    1,000    1,100    1,200    1,350    1,500
+  All Other                   3,601    3,563    3,100    3,000    3,000    3,000    3,000
+  ---------------------------------------------------------------------------------------
+  Segment revenue total      70,389   70,536   84,664   86,783   90,277   92,977   95,759
+  Intersegment elims       (17,288) (17,683) (22,264) (21,887) (22,785) (23,460) (24,157)
+    Foundry internal sales (17,158) (17,519) (22,264) (21,887) (22,785) (23,460) (24,157)
+    other intersegment        (130)    (164)        0        0        0        0        0
+  Consolidated revenue       53,101   52,853   62,400   64,896   67,492   69,517   71,602
+    YoY                       -2.1%    -0.5%   +18.1%    +4.0%    +4.0%    +3.0%    +3.0%
+  Operating income (loss)
+    CCG (CCPG)               11,594    9,317    9,336    7,898    8,096    8,257    8,423
+    DCAI                      1,414    3,422    9,006    5,477    5,828    6,080    6,339
+  Intel Products             13,008   12,739   18,342   13,375   13,924   14,337   14,762
+  Intel Foundry            (13,291) (10,318)  (8,526)  (9,679)  (9,449)  (9,136)  (8,793)
+  All Other                    (57)      264      832      400      400      400      400
+  Corporate unallocated    (11,177)  (5,518)  (9,196)  (4,096)  (4,200)  (4,211)  (4,221)
+  Intersegment elims          (161)      619      975        0        0        0        0
+  Margin round-down              --       --    (867)       --       --       --       --
+  Consolidated GAAP        (11,678)  (2,214)    1,560        0      675    1,390    2,148
+  Operating margin
+    CCG (CCPG)                34.8%    28.9%    27.9%    23.0%    23.0%    23.0%    23.0%
+    DCAI                       8.8%    20.2%    36.3%    20.7%    20.7%    20.8%    20.8%
+    Intel Products            26.3%    25.9%    31.5%    22.0%    22.0%    22.0%    22.0%
+    Intel Foundry            -76.8%   -57.9%   -36.6%   -42.1%   -39.4%   -36.8%   -34.3%
+    All Other                 -1.6%     7.4%    26.8%    13.3%    13.3%    13.3%    13.3%
+    Consolidated             -22.0%    -4.2%     2.5%     0.0%     1.0%     2.0%     3.0%
+  Ratios
+    Foundry segment YoY       -6.4%    +2.9%   +30.5%    -1.2%    +4.3%    +3.4%    +3.4%
+    Foundry int. % of Prod.    34.7%    35.6%    38.2%    36.0%    36.0%    36.0%    36.0%
+    External % of Foundry      0.9%     1.7%     4.3%     4.8%     5.0%     5.4%     5.8%
+    Elims % of segment tot.    24.6%    25.1%    26.3%    25.2%    25.2%    25.2%    25.2%
+
+  BEAR ($M)                   2031E    2032E    2033E    2034E    2035E    2036E
+  Revenue
+    CCG (CCPG)               37,350   37,720   38,100   38,480   38,480   38,480
+    DCAI                     31,650   32,505   33,430   34,384   34,967   35,657
+  Intel Products             69,000   70,225   71,530   72,864   73,447   74,137
+  Intel Foundry (segment)    26,540   27,181   27,851   28,481   28,841   29,189
+    internal (to Products)   24,840   25,281   25,751   26,231   26,441   26,689
+    external (3rd party)      1,700    1,900    2,100    2,250    2,400    2,500
+  All Other                   3,050    3,100    3,100    3,150    3,200    3,200
+  ------------------------------------------------------------------------------
+  Segment revenue total      98,590  100,506  102,481  104,495  105,488  106,526
+  Intersegment elims       (24,840) (25,281) (25,751) (26,231) (26,441) (26,689)
+    Foundry internal sales (24,840) (25,281) (25,751) (26,231) (26,441) (26,689)
+    other intersegment            0        0        0        0        0        0
+  Consolidated revenue       73,750   75,225   76,730   78,264   79,047   79,837
+    YoY                       +3.0%    +2.0%    +2.0%    +2.0%    +1.0%    +1.0%
+  Operating income (loss)
+    CCG (CCPG)                8,590    8,676    8,763    8,850    8,850    8,850
+    DCAI                      6,590    6,774    6,974    7,180    7,308    7,460
+  Intel Products             15,180   15,450   15,737   16,030   16,158   16,310
+  Intel Foundry             (8,401)  (8,633)  (8,039)  (8,278)  (7,548)  (7,706)
+  All Other                     400      400      400      400      400      400
+  Corporate unallocated     (4,229)  (4,208)  (4,262)  (4,239)  (4,267)  (4,214)
+  Intersegment elims              0        0        0        0        0        0
+  Margin round-down              --       --       --       --       --       --
+  Consolidated GAAP           2,950    3,009    3,836    3,913    4,743    4,790
+  Operating margin
+    CCG (CCPG)                23.0%    23.0%    23.0%    23.0%    23.0%    23.0%
+    DCAI                      20.8%    20.8%    20.9%    20.9%    20.9%    20.9%
+    Intel Products            22.0%    22.0%    22.0%    22.0%    22.0%    22.0%
+    Intel Foundry            -31.7%   -31.8%   -28.9%   -29.1%   -26.2%   -26.4%
+    All Other                 13.1%    12.9%    12.9%    12.7%    12.5%    12.5%
+    Consolidated               4.0%     4.0%     5.0%     5.0%     6.0%     6.0%
+  Ratios
+    Foundry segment YoY       +3.4%    +2.4%    +2.5%    +2.3%    +1.3%    +1.2%
+    Foundry int. % of Prod.    36.0%    36.0%    36.0%    36.0%    36.0%    36.0%
+    External % of Foundry      6.4%     7.0%     7.5%     7.9%     8.3%     8.6%
+    Elims % of segment tot.    25.2%    25.2%    25.1%    25.1%    25.1%    25.1%
+
+
+================================================================================
+SECTION E — WHAT THE INTEL-BASIS VIEW SHOWS
+================================================================================
+  - ELIMINATIONS ARE A QUARTER OF SEGMENT REVENUE, AND STAY THAT WAY
+    EXCEPT IN BULL. Historically 24.6-26.5% of segment revenue total
+    (FY2023-H1'26). The forecast holds 23-25% in Base and Bear. Only in
+    Bull does it fall, to 19.4% by 2034-36, because external Foundry
+    revenue grows into the segment. In Bull, external exceeds internal
+    from 2032 (51.9% of the segment), the crossover main-file Section 4D
+    describes.
+  - FY2026E FOUNDRY SEGMENT REVENUE +30.5% IS ALMOST ALL INTERNAL. Of the
+    +$5.4B, +$4.7B is internal (higher-ASP 18A / Intel 3 wafers sold to
+    Products) and +$0.7B is external. None of the internal increase reaches
+    consolidated revenue. This is the double-count main-file Section 3
+    warns about, visible in one row.
+  - THE 2027E STEP IN FOUNDRY SEGMENT REVENUE IS A RATIO ARTIFACT. The
+    internal ratio goes from 38.2% (FY2026E, H2 at 38.0%) to the flat 36.0%
+    forecast. So Foundry segment revenue grows only +6.8% in Base 2027E and
+    falls 1.2% in Bear, even though Products grows 7.1% / 4.3%. Holding
+    38.2% instead would add ~$1.4B of internal revenue in Base 2027E. Base
+    2027E Foundry margin would then read -28.6% instead of -30.2%, with
+    consolidated revenue and OI unchanged (Section A).
+  - FOUNDRY MARGINS ARE NOW READABLE AGAINST HISTORY. Base runs -30.2%
+    (2027E) to +4.4% (2036E), against -57.9% (FY2025) and -40.5% (H1'26)
+    on the same gross-revenue definition. Bull reaches +11.4%; Bear
+    improves only to -26.4%.
+  - OPERATING-INCOME ELIMINATIONS STEP FROM +$975M (FY2026E) TO 0 (2027E).
+    The actuals were (205) / (161) / +619 in FY2023-25 and +475 in H1'26.
+    The zero is the main file's judgment and is kept here so consolidated
+    OI ties. In all three scenarios consolidated OI is an INPUT (scenario
+    margin x revenue). A non-zero elimination would therefore not change
+    consolidated OI or value. It would shift the plug instead: Foundry OI
+    in Bull and Bear, the margin round-down line in Base.
+  - ALL OTHER MARGIN RUNS 8-13% IN THE FORECAST (flat $0.4B OI), against
+    27.6% / -1.6% / 7.4% in FY2023-25 and 25.0% in H1'26.
+
+
+================================================================================
+SECTION F — RECONCILIATION TO THE MAIN FILE
+================================================================================
+All $M. "Orig" = main-file Section 4D / 4E / 6. "ALT" = Section D above:
+segment revenue total + intersegment eliminations, and the sum of the
+segment OI lines. Every difference is zero.
+
+  BULL            FY2026E    2027E    2028E    2029E    2030E    2031E
+    Orig rev       62,400   71,760   81,806   92,441  103,534  113,888
+    ALT rev        62,400   71,760   81,806   92,441  103,534  113,888
+      diff              0        0        0        0        0        0
+    Orig op inc     1,560    5,741    9,817   13,866   17,601   21,639
+    ALT op inc      1,560    5,741    9,817   13,866   17,601   21,639
+      diff              0        0        0        0        0        0
+                    2032E    2033E    2034E    2035E    2036E
+    Orig rev      124,137  134,068  143,453  152,060  159,663
+    ALT rev       124,137  134,068  143,453  152,060  159,663
+      diff              0        0        0        0        0
+    Orig op inc    24,827   28,154   31,560   33,453   35,126
+    ALT op inc     24,827   28,154   31,560   33,453   35,126
+      diff              0        0        0        0        0
+
+  BASE            FY2026E    2027E    2028E    2029E    2030E    2031E
+    Orig rev       62,400   68,016   73,457   78,599   83,315   88,314
+    ALT rev        62,400   68,016   73,457   78,599   83,315   88,314
+      diff              0        0        0        0        0        0
+    Orig op inc     1,560    4,081    6,611    9,432   11,664   15,013
+    ALT op inc      1,560    4,081    6,611    9,432   11,664   15,013
+      diff              0        0        0        0        0        0
+                    2032E    2033E    2034E    2035E    2036E
+    Orig rev       92,730   97,366  101,261  104,299  107,428
+    ALT rev        92,730   97,366  101,261  104,299  107,428
+      diff              0        0        0        0        0
+    Orig op inc    15,764   17,526   18,227   18,774   19,337
+    ALT op inc     15,764   17,526   18,227   18,774   19,337
+      diff              0        0        0        0        0
+
+  BEAR            FY2026E    2027E    2028E    2029E    2030E    2031E
+    Orig rev       62,400   64,896   67,492   69,517   71,602   73,750
+    ALT rev        62,400   64,896   67,492   69,517   71,602   73,750
+      diff              0        0        0        0        0        0
+    Orig op inc     1,560        0      675    1,390    2,148    2,950
+    ALT op inc      1,560        0      675    1,390    2,148    2,950
+      diff              0        0        0        0        0        0
+                    2032E    2033E    2034E    2035E    2036E
+    Orig rev       75,225   76,730   78,264   79,047   79,837
+    ALT rev        75,225   76,730   78,264   79,047   79,837
+      diff              0        0        0        0        0
+    Orig op inc     3,009    3,836    3,913    4,743    4,790
+    ALT op inc      3,009    3,836    3,913    4,743    4,790
+      diff              0        0        0        0        0
+
+Also checked (all pass):
+  - CCG + DCAI = Intel Products, revenue and OI, every column.
+  - Foundry internal + external = Foundry segment, every column.
+  - Foundry segment margins equal main-file Section 4E to 0.1pp.
+  - Foundry segment revenue is within $50M of the main file's rounded
+    Section 4D memo row in every year.
+  - Every historical column reconciles to reported consolidated revenue
+    and GAAP OI.
+
+
+================================================================================
+SECTION G — VALUATION (UNCHANGED FROM THE MAIN FILE)
+================================================================================
+The DCF's cash flows use consolidated revenue, consolidated operating
+margin, net capex, D&A and SBC. None of these change in this presentation.
+Every valuation section of the main file (Sections 5-11: assumptions, Base
+DCF, sensitivity, scenarios, risks, assessment) applies unchanged.
+
+Scenario   WACC    TGR    Exit   2030E Rev    2036E Rev   2036E SBC-FCF   IV/Share
+BULL      10.5%   3.0%   16x     $103,534M    $159,663M     $28,346M       $38.71
+BASE      12.0%   2.5%   12x      $83,315M    $107,428M     $14,414M       $12.79
+BEAR      14.5%   1.5%    8x      $71,602M     $79,837M      $5,357M       ~$0.00*
+
+Probability-weighted (25/40/35):                                          $14.60
+Simple average of the three:                                              $16.99
+Current price (Sept 25, 2026 close):                                     $123.00
+*Literal -$0.54: Bear enterprise value ($18.1B) is below net debt ($20.8B).
+
+
+================================================================================
+DISCLOSURES & LIMITATIONS
+================================================================================
+- Presentation-only companion. It adds no new forecast and no new data.
+  All forecast inputs, judgment calls and limitations in
+  DCF-INTC-2026-09-27.txt apply here, including the flagged
+  non-controlling-interest and SBC items in its Revision Note.
+- The Foundry internal ratio (36.0% of Products from 2027E; 38.0% for
+  H2'26) is a transfer-pricing assumption, not company guidance. Intel
+  sets internal wafer prices itself and has changed them as the internal
+  foundry model evolved. It changes no consolidated figure.
+- "Other intersegment" revenue eliminations are assumed zero from FY2026E
+  (historically $(9)M to $(164)M a year on the current basis).
+- Historical figures are from SEC filings via
+  ../extracts/INTC-SEGMENTS-2021-2026.md. FY2021 Foundry internal/external
+  is not disclosed on the recast basis, and FY2022 is derived (Section B).
+- Personal, standalone research file, outside the tech-buffett Init ->
+  Deep Dive -> DCF pipeline. Does NOT qualify INTC for portfolio purchase.
+  Not investment advice.
+================================================================================

@@ -42,6 +42,11 @@ is the one Section 2A's consistency check already implied.
   because FY2026E is not discounted. It sums exactly to the existing
   consolidated OI. The Base margin round-down haircut is shown as its
   own line.
+  BEAR CCG/DCAI SPLIT REVISED (same day): Bear CCG is now set directly
+  (+2.5% falling to 0%) with DCAI as the residual. Previously, a falling
+  Bear DCAI share made Bear CCG revenue exceed Base's in 2027-30. Bear is
+  now below Base in every segment, every year. Bear Products, Foundry and
+  consolidated figures are unchanged.
   Knock-on text updates: the Section 2A Bull Foundry check was re-derived
   from the explicit Products path. It is now -9.3 / -0.2 / +9.8 ($B,
   2027/30/36), was -8.3 / -0.3 / +9.6. The Base terminal Foundry margin
@@ -790,12 +795,21 @@ How each line was built:
   - All Other follows the 4B/4C anchors. It assumes Mobileye stays
     consolidated (a full sell-down would move ~$2-3B/yr out of this line
     and out of consolidated revenue).
-  - CCG vs DCAI: split of Products by an assumed DCAI share, from 42.5% in
-    FY2026E to 52.0% (Bull), 49.5% (Base) or 40.0% (Bear) by 2036E. DCAI
-    gains share of Products in Bull/Base because server-CPU demand
-    (AI-server head nodes, agentic inference) grows faster than the mature
-    PC market. In Bear it loses share to AMD EPYC and hyperscaler custom
-    silicon. None of these extrapolates 2026's +40-59% DCAI growth
+  - CCG vs DCAI, BULL / BASE: split of Products by an assumed DCAI share,
+    from 42.5% in FY2026E to 52.0% (Bull) or 49.5% (Base) by 2036E. DCAI
+    gains share of Products because server-CPU demand (AI-server head
+    nodes, agentic inference) grows faster than the mature PC market.
+  - CCG vs DCAI, BEAR: CCG is set directly at +2.5% / +2.5% / +2.0% x3 /
+    +1.0% x3 / 0% x2 (2027-36), below PC-market growth, for share loss
+    to Arm PCs and AMD Ryzen. DCAI is the residual. That keeps Bear
+    BELOW Base in BOTH lines every year: CCG by $0.6B (2027) widening to
+    $7.2B (2036), and DCAI by $1.0B widening to $9.1B. DCAI's server
+    share loss (AMD EPYC, custom silicon) shows up in that gap. Its share
+    of Intel Products still edges up (42.5% -> 48.1%) because the server
+    market outgrows PCs. (Rev. Sept 30: Bear originally used a falling
+    DCAI share with CCG as the residual. That made Bear CCG revenue
+    exceed Base's through 2030, which contradicted the Bear narrative.)
+  - None of the scenarios extrapolates 2026's +40-59% DCAI growth
     (Section 2A, "recovery, not a new high").
   - Memo rows. "Foundry segment" = EXTERNAL + INTERNAL wafer revenue, with
     internal taken as ~36% of Products revenue (FY2025 35.6%, H1'26 38.4%;
@@ -873,10 +887,10 @@ How each line was built:
    implied Foundry OI       500    1,000    1,500    1,800    2,000
 
   BEAR ($M)             FY2026E    2027E    2028E    2029E    2030E    2031E
-    CCG (CCPG)           33,500   35,106   36,712   37,957   39,252   40,540
-      YoY                          +4.8%    +4.6%    +3.4%    +3.4%    +3.3%
-    DCAI                 24,800   25,690   26,580   27,210   27,850   28,460
-      YoY                          +3.6%    +3.5%    +2.4%    +2.4%    +2.2%
+    CCG (CCPG)           33,500   34,340   35,200   35,900   36,620   37,350
+      YoY                          +2.5%    +2.5%    +2.0%    +2.0%    +2.0%
+    DCAI                 24,800   26,456   28,092   29,267   30,482   31,650
+      YoY                          +6.7%    +6.2%    +4.2%    +4.2%    +3.8%
   Intel Products         58,300   60,796   63,292   65,167   67,102   69,000
       YoY                          +4.3%    +4.1%    +3.0%    +3.0%    +2.8%
   All Other               3,100    3,000    3,000    3,000    3,000    3,050
@@ -884,16 +898,16 @@ How each line was built:
       YoY                         +10.0%    +9.1%   +12.5%   +11.1%   +13.3%
   Consolidated           62,400   64,896   67,492   69,517   71,602   73,750
       YoY                          +4.0%    +4.0%    +3.0%    +3.0%    +3.0%
-    DCAI % of Products    42.5%    42.3%    42.0%    41.8%    41.5%    41.2%
+    DCAI % of Products    42.5%    43.5%    44.4%    44.9%    45.4%    45.9%
     Foundry EXT % total     1.6%     1.7%     1.8%     1.9%     2.1%     2.3%
   Memo: Foundry segment   23,300   23,000   24,000   24,800   25,700   26,500
    implied Foundry OI    -8,500   -9,700   -9,400   -9,100   -8,800   -8,400
 
   BEAR ($M)               2032E    2033E    2034E    2035E    2036E     CAGR
-    CCG (CCPG)           41,435   42,380   43,354   43,887   44,487    +2.9%
-      YoY                 +2.2%    +2.3%    +2.3%    +1.2%    +1.4%
-    DCAI                 28,790   29,150   29,510   29,560   29,650    +1.8%
-      YoY                 +1.2%    +1.3%    +1.2%    +0.2%    +0.3%
+    CCG (CCPG)           37,720   38,100   38,480   38,480   38,480    +1.4%
+      YoY                 +1.0%    +1.0%    +1.0%    +0.0%    +0.0%
+    DCAI                 32,505   33,430   34,384   34,967   35,657    +3.7%
+      YoY                 +2.7%    +2.8%    +2.9%    +1.7%    +2.0%
   Intel Products         70,225   71,530   72,864   73,447   74,137    +2.4%
       YoY                 +1.8%    +1.9%    +1.9%    +0.8%    +0.9%
   All Other               3,100    3,100    3,150    3,200    3,200    +0.3%
@@ -901,7 +915,7 @@ How each line was built:
       YoY                +11.8%   +10.5%    +7.1%    +6.7%    +4.2%
   Consolidated           75,225   76,730   78,264   79,047   79,837    +2.5%
       YoY                 +2.0%    +2.0%    +2.0%    +1.0%    +1.0%
-    DCAI % of Products    41.0%    40.8%    40.5%    40.2%    40.0%
+    DCAI % of Products    46.3%    46.7%    47.2%    47.6%    48.1%
     Foundry EXT % total     2.5%     2.7%     2.9%     3.0%     3.1%
   Memo: Foundry segment   27,200   27,900   28,500   28,800   29,200
    implied Foundry OI    -8,600   -8,000   -8,300   -7,500   -7,700
@@ -928,7 +942,7 @@ What the year-by-year split shows:
     The effect on IV is small (explicit-period 2027 FCF is already
     negative).
   - BEAR IS A PRODUCTS STORY: Foundry EXTERNAL never exceeds 3.1% of
-    revenue, and Products grows 2.4%/yr with DCAI slowest (1.8%/yr).
+    revenue, and Products grows 2.4%/yr (CCG 1.4%/yr, DCAI 3.7%/yr).
     The implied Foundry loss stays $7.5-9.7B/yr throughout, which is the
     "persistent internal-only cost center" Section 2A describes.
   - FOUNDRY SEGMENT SCALE BY 2036E: ~$86B (Bull), ~$46B (Base), ~$29B
@@ -951,7 +965,7 @@ How each line was built (same method as the Section 2A consistency check):
     Bear (FY2023-25 actuals 22.9% / 26.3% / 25.9%; H1'26 31.8%).
   - CCG vs DCAI: CCG is held at 27% (Bull) / 24% (Base) / 23% (Bear).
     DCAI is the residual that makes Products hit its scenario margin
-    (~31% / ~26% / ~20.5%). History: CCG 28.9% FY2025 and 29.3% H1'26, but
+    (~31% / ~26% / ~21%). History: CCG 28.9% FY2025 and 29.3% H1'26, but
     26.4% in Q2'26 as higher-cost 18A (Panther Lake) wafers flow through.
     DCAI 20.2% FY2025 and 35.5% H1'26, flattered by supply-constrained
     pricing (Section 2A). Every scenario holds CCG BELOW its FY2025
@@ -1066,8 +1080,8 @@ FY2026E BUILD (H1'26 actual + H2'26 estimate), $M:
     Consolidated            17.0%    17.0%    18.0%    18.0%    18.0%    18.0%
 
   BEAR OI ($M)            FY2025A  FY2026E    2027E    2028E    2029E    2030E
-    CCG (CCPG)              9,317    9,336    8,074    8,444    8,730    9,028
-    DCAI                    3,422    9,006    5,301    5,480    5,607    5,734
+    CCG (CCPG)              9,317    9,336    7,898    8,096    8,257    8,423
+    DCAI                    3,422    9,006    5,477    5,828    6,080    6,339
   Intel Products           12,739   18,342   13,375   13,924   14,337   14,762
   Intel Foundry          (10,318)  (8,526)  (9,679)  (9,449)  (9,136)  (8,793)
   All Other                   264      832      400      400      400      400
@@ -1077,14 +1091,14 @@ FY2026E BUILD (H1'26 actual + H2'26 estimate), $M:
   Consolidated GAAP       (2,214)    1,560        0      675    1,390    2,148
   Operating margin
     CCG                     28.9%    27.9%    23.0%    23.0%    23.0%    23.0%
-    DCAI                    20.2%    36.3%    20.6%    20.6%    20.6%    20.6%
+    DCAI                    20.2%    36.3%    20.7%    20.7%    20.8%    20.8%
     Intel Products          25.9%    31.5%    22.0%    22.0%    22.0%    22.0%
     Intel Foundry          -57.9%   -36.6%   -42.1%   -39.4%   -36.8%   -34.3%
     Consolidated            -4.2%     2.5%     0.0%     1.0%     2.0%     3.0%
 
   BEAR OI ($M)              2031E    2032E    2033E    2034E    2035E    2036E
-    CCG (CCPG)              9,324    9,530    9,747    9,971   10,094   10,232
-    DCAI                    5,856    5,920    5,990    6,059    6,064    6,078
+    CCG (CCPG)              8,590    8,676    8,763    8,850    8,850    8,850
+    DCAI                    6,590    6,774    6,974    7,180    7,308    7,460
   Intel Products           15,180   15,450   15,737   16,030   16,158   16,310
   Intel Foundry           (8,401)  (8,633)  (8,039)  (8,278)  (7,548)  (7,706)
   All Other                   400      400      400      400      400      400
@@ -1094,7 +1108,7 @@ FY2026E BUILD (H1'26 actual + H2'26 estimate), $M:
   Consolidated GAAP         2,950    3,009    3,836    3,913    4,743    4,790
   Operating margin
     CCG                     23.0%    23.0%    23.0%    23.0%    23.0%    23.0%
-    DCAI                    20.6%    20.6%    20.5%    20.5%    20.5%    20.5%
+    DCAI                    20.8%    20.8%    20.9%    20.9%    20.9%    20.9%
     Intel Products          22.0%    22.0%    22.0%    22.0%    22.0%    22.0%
     Intel Foundry          -31.7%   -31.8%   -28.9%   -29.1%   -26.2%   -26.4%
     Consolidated             4.0%     4.0%     5.0%     5.0%     6.0%     6.0%
