@@ -42,7 +42,7 @@ affiliated launch provider. Two modeling instructions drive everything below:
      competitive intensity, and HOW FAST/HOW CHEAP that success translates into
      lower cost per unit of deployed capacity, not on whether Starship works at
      all. If that assumption is wrong, treat even this file's Bear case as
-     optimistic (see Section 8, Risk #1).
+     optimistic (see Section 9, Risk #1).
 
 Because there is no standalone Starlink balance sheet, share count, or market
 price, this file's headline outputs are ENTERPRISE VALUE and EQUITY VALUE in
@@ -53,23 +53,28 @@ analyst sum-of-the-parts commentary.
 HEADLINE RESULT
 ---------------
                           Enterprise Value      Equity Value
-  BEAR  (35% wt)             $88.7B              $82.7B
-  BASE  (45% wt)             $219.5B             $213.5B
-  BULL  (20% wt)             $540.4B             $534.4B
-  Probability-weighted        $237.9B            $231.9B
-  Simple average              $282.9B            $276.9B
+  BEAR  (35% wt)             $123.2B             $117.2B
+  BASE  (45% wt)             $282.6B             $276.6B
+  BULL  (20% wt)             $670.9B             $664.9B
+  Probability-weighted        $304.5B            $298.5B
+  Simple average              $358.9B            $352.9B
+
+(REVISED 2026-10-10 — see "Revision note" in Disclosures. The first committed
+version of this file showed Base EV $219.5B / probability-weighted $237.9B; a
+depreciation double-count in the model understated every scenario — corrected
+EVs are ~24-39% higher.)
 
 For reference: Morgan Stanley has publicly said "Starlink alone would justify a
 $500 billion valuation as a standalone business," and separate 25x-35x EBITDA
-commentary implies $180-250B. This model's Base case ($219.5B) sits inside that
-range; its probability-weighted figure ($237.9B) sits just above the low end.
-BUT those analyst figures are built on Starlink's REPORTED, vertically-integrated
-economics (effectively-free launches) — Section 7B shows that repricing launches
-at market rate costs Base-case value roughly $33B (15%) relative to the
-as-part-of-SpaceX status quo, and the reverse-DCF in Section 8 shows that
-reaching $500B at all requires implausible terminal assumptions once that
-repricing is applied. Read Section 7B and 8 before taking the headline number
-as a verdict on whether the market/analysts are "right."
+commentary implies $180-250B. This model's Base case ($282.6B) sits ABOVE that
+25-35x range even after pricing launches at market rate; Morgan Stanley's $500B
+sits between this file's Base and Bull cases. Section 7B shows that repricing
+launches at market rate costs Base-case value roughly $33B (12%) relative to the
+as-part-of-SpaceX status quo — real, but not large enough to explain away the
+analyst range. The reverse-DCF in Section 8 shows $500B is reachable only via a
+rich exit multiple (~24-25x EBITDA at Base WACC) or a perpetuity growth rate
+near 8% — i.e., it requires something close to this file's Bull case. Read
+Sections 7B and 8 before taking the headline number as a verdict.
 
 
 ================================================================================
@@ -190,8 +195,8 @@ pricing, would face something closer to the $74M figure (or a competitor's
 equivalent), not the $15M figure, to secure the same launch cadence.
 
 For FY2025 alone: 122 Starlink-dedicated launches at the $74M market rate would
-cost ~$9.0B — which is MORE than Connectivity's entire $11.4B revenue for the
-year, and nearly double its reported total capex of $4.2B. This is the starkest
+cost ~$9.0B — equal to ~79% of Connectivity's entire $11.4B revenue for the
+year, and more than double its reported total capex of $4.2B. This is the starkest
 single number in this file: Starlink's reported 38.8% FY2025 operating margin
 is, in significant part, a byproduct of being inside SpaceX, not a standalone
 economic reality.
@@ -238,7 +243,9 @@ MODELING APPROACH
   consistent with this folder's convention.
 - NOPAT = Operating income x (1 - 15%) when operating income is positive;
   = operating income unchanged in loss years (no assumed tax benefit) —
-  this folder's standard convention, and it binds in FY2026E-2027E below.
+  this folder's standard convention. (It does not actually bind here:
+  operating income stays positive in every year of every scenario; the
+  early-year FCF deficits come from capex, not operating losses.)
 - CapEx and D&A are modeled from a GROUND-UP satellite/launch build (not a
   generic %-of-revenue plug) because that build is the entire point of this
   exercise — see "THE LAUNCH-COST REPRICING MECHANIC" below.
@@ -296,7 +303,8 @@ certainty that triple-digit growth cannot persist for a full decade off an
 already-multibillion-dollar base. The deceleration speed (not the existence of
 deceleration) is the real scenario-differentiating judgment call here, and is
 inherently more uncertain than the consumer line given Enterprise & Government
-has only been independently disclosed for two quarters.
+has only been independently disclosed for one quarter (Q2 2026; Q1 is an
+estimate — see Section 2).
 
 OPERATING MARGIN (BEFORE the launch-cost repricing adjustment below) — i.e.,
 the margin the segment would show AS CURRENTLY RUN, inside SpaceX:
@@ -347,16 +355,36 @@ blended mfg cost), PLUS other Connectivity capex (ground infrastructure, user
 terminals) held at 4.5% of revenue. All of it is capitalized and depreciated
 straight-line over a 5-year satellite design life (consistent with the ~20%/
 year fleet-replacement rate implied by that life), matching how the satellite
-industry (Iridium, Viasat, Eutelsat) actually accounts for launch costs.
+industry (Iridium, Viasat, Eutelsat) actually accounts for launch costs. New
+capex takes a half-year of depreciation in its first and last years. The
+existing fleet ($13,788M net satellite PP&E at 6/30/2026) is depreciated
+straight-line over an assumed 2.5-year blended remaining life ($5,515M in
+2026 and 2027, $2,757M in 2028, fully written off thereafter).
 
-CONSERVATIVE SIMPLIFICATION, FLAGGED: this file does NOT strip out the smaller
-internal/insider launch-depreciation already embedded in the "before" operating
-margin baseline before layering in the new, fully-repriced D&A schedule — i.e.
-there is a modest double-count of a few hundred million dollars a year. This
-biases EVERY scenario conservative (understates standalone FCF slightly); the
-alternative (netting it out) would raise every scenario's value modestly. Not
-corrected here because precisely isolating that legacy embedded figure from
-disclosed data is not possible with confidence — see Disclosures.
+Step 6 — STRIPPING THE LEGACY D&A OUT OF THE "AS RUN" MARGIN. The "before"
+operating margin above already has Connectivity's CURRENT depreciation (on
+insider-cost satellites/launches, ground stations, terminals) deducted. Since
+Step 5 rebuilds ALL Connectivity D&A from scratch at market-rate launch
+pricing, that embedded legacy D&A must be added back first or it is counted
+twice. Its size is derived from disclosed figures:
+                                     FY2024    FY2025    H1 2026
+  Adjusted EBITDA - Operating income  1,843     2,745     1,840
+  as % of segment revenue             24.3%     24.1%     24.4%
+That ~24% gap includes not just D&A but also the add-backs inside "Adjusted"
+EBITDA — principally stock-based compensation, which this model allocates at
+~6% of revenue (see below). Netting that out: legacy D&A embedded in the
+"as run" margin = 18% of revenue, applied in every year and every scenario.
+  Standalone operating income = "as run" OpInc + 18% x revenue - new D&A
+JUDGMENT CALL, FLAGGED: 18% is a derived, not a disclosed, figure (SpaceX
+does not break out Connectivity D&A). Using 15% instead (a deliberate haircut)
+would lower Base EV by ~$20B; using the full 24% gap would raise it further.
+CONSEQUENCE WORTH NOTING: because market-rate capex plateaus at ~$12-14B/yr
+while revenue keeps compounding, new D&A falls from ~40% of revenue (2026) to
+~15% (2035) — below the 18% legacy intensity. Standalone 2035 operating
+margins therefore END UP ABOVE the 42% "as run" ceiling in Base (45.0%) and
+Bull (50.6%). That is the mechanical result of "Starship succeeds and capacity
+per satellite does the work"; it is the most aggressive output of this model
+and the first thing a skeptic should push on (Section 9, Risk #10).
 
 STOCK-BASED COMPENSATION: consolidated SBC was $1,470M for 6M 2026 (not
 disclosed by segment). Allocated to Connectivity via a revenue-share proxy:
@@ -387,9 +415,11 @@ so this whole section is a judgment call, flagged as such):
 
 TERMINAL VALUE: perpetuity growth and exit-multiple (EV/EBITDA) methods,
 averaged, per this folder's standard convention.
-  BULL: WACC 9.5%,  TGR 3.5%, exit 21x SBC-adj FCF... EV/EBITDA basis, see Sec.5
-  BASE: WACC 10.5%, TGR 3.0%, exit 17x
-  BEAR: WACC 11.5%, TGR 2.5%, exit 14x
+  BULL: WACC 9.5%,  TGR 3.5%, exit 21x terminal-year EBITDA
+  BASE: WACC 10.5%, TGR 3.0%, exit 17x terminal-year EBITDA
+  BEAR: WACC 11.5%, TGR 2.5%, exit 14x terminal-year EBITDA
+  (Perpetuity method grows the terminal-year SBC-adjusted FCF; exit method
+  applies the multiple to terminal-year EBITDA = standalone OpInc + D&A.)
 
 DISCOUNT RATE DERIVATION: there is no clean public comp for "standalone LEO
 satellite broadband carved out of a larger launch company." The closest
@@ -419,65 +449,70 @@ convinced Starship's cost curve will collapse quickly could reasonably shift
 SECTION 5 — DCF MODEL (BASE CASE)
 ================================================================================
 
-All figures in $M. WACC 10.5%, TGR 3.0%, exit 17x SBC-adj FCF.
+All figures in $M. WACC 10.5%, TGR 3.0%, exit 17x terminal-year EBITDA.
+OpInc = BaseOpInc + 18% x Total (legacy D&A add-back, Section 4 Step 6) - D&A.
 
        Consumer  Ent&Gov   Total  BaseOpInc   D&A   OpInc   NOPAT  SatMfg  Launch  OthCpx  CapEx   SBC  SBC-FCF
-2026E     9,843    6,926  16,769      5,953  6,770     608     517   2,288   9,510     755 12,553  1,040  -6,305
-2027E    15,701   10,735  26,436      9,702  9,391   2,558   2,174   3,105   9,360   1,190 13,655  1,560  -3,649
-2028E    19,305   14,492  33,797     12,809 12,043   3,638   3,093   3,969   7,379   1,521 12,868  1,893     375
-2029E    23,359   17,971  41,330     16,160  9,065  10,608   9,017   4,634   6,006   1,860 12,500  2,190   3,391
-2030E    27,564   21,205  48,769     19,654 11,538  12,262  10,422   5,064   4,966   2,195 12,225  2,438   7,297
-2031E    32,227   24,174  56,400     23,406 12,721  15,479  13,158   5,232   4,390   2,538 12,160  2,651  11,068
-2032E    36,416   26,833  63,249     26,565 12,537  19,404  16,493   5,352   4,011   2,846 12,210  2,783  14,038
-2033E    41,084   29,248  70,332     29,540 12,342  23,175  19,699   5,436   3,768   3,165 12,369  2,884  16,789
-2034E    44,782   31,588  76,370     32,075 12,285  26,281  22,339   5,496   3,496   3,437 12,429  2,902  19,294
-2035E    48,365   33,799  82,164     34,509 12,312  29,180  24,803   5,538   3,328   3,697 12,564  2,876  21,676
+2026E     9,843    6,926  16,769      5,953  6,770   2,201   1,871   2,288   9,510     755 12,553  1,040  -4,951
+2027E    15,701   10,735  26,436      9,702  9,391   5,070   4,309   3,105   9,360   1,190 13,655  1,560  -1,514
+2028E    19,305   14,492  33,797     12,809  9,286   9,607   8,166   3,969   7,379   1,521 12,868  1,893   2,691
+2029E    23,359   17,971  41,330     16,160  9,065  14,534  12,354   4,634   6,006   1,860 12,500  2,190   6,729
+2030E    27,564   21,205  48,769     19,654 11,538  16,895  14,360   5,064   4,966   2,195 12,225  2,438  11,235
+2031E    32,227   24,174  56,400     23,406 12,721  20,838  17,712   5,232   4,390   2,538 12,160  2,651  15,622
+2032E    36,416   26,833  63,249     26,565 12,537  25,412  21,601   5,352   4,011   2,846 12,210  2,783  19,145
+2033E    41,084   29,248  70,332     29,540 12,342  29,857  25,378   5,436   3,768   3,165 12,369  2,884  22,469
+2034E    44,782   31,588  76,370     32,075 12,285  33,537  28,506   5,496   3,496   3,437 12,429  2,902  25,460
+2035E    48,365   33,799  82,164     34,509 12,312  36,986  31,438   5,538   3,328   3,697 12,564  2,876  28,311
 
-Note the trajectory: NEGATIVE SBC-adjusted FCF in 2026-2027, barely positive in
-2028, turning solidly positive from 2029 onward as (a) Starship/V3 share rises
+Note the trajectory: NEGATIVE SBC-adjusted FCF in 2026-2027, turning positive
+in 2028 and solidly positive from 2029 onward as (a) Starship/V3 share rises
 and per-satellite-bundle cost falls, and (b) revenue growth outpaces the now-
 plateauing satellite/launch capex. This U-shape is the direct, intended
 consequence of pricing launches at market rate against a satellite fleet that
 has to keep being replenished regardless — it is not a modeling artifact. An
-independent Starlink spun off TODAY would likely be FCF-negative for 2-3 years
-even in the Base case, before Starship's economics catch up.
+independent Starlink spun off TODAY would likely be FCF-negative for ~2 years
+in Base and Bear (Bear only barely positive in 2028), ~1 year in Bull, before
+Starship's economics catch up. Operating income stays positive throughout — the deficit is pure capex.
 
 PRESENT VALUE OF EXPLICIT SBC-ADJUSTED FCFs (10.5% WACC)
 
 Year      SBC-Adj FCF   Discount Factor      PV      Cumulative PV
-2026E         -6,305         0.9050        -5,706        -5,706
-2027E         -3,649         0.8190        -2,988        -8,694
-2028E            375         0.7412           278        -8,416
-2029E          3,391         0.6707         2,275        -6,142
-2030E          7,297         0.6070         4,429        -1,712
-2031E         11,068         0.5493         6,080         4,367
-2032E         14,038         0.4971         6,978        11,346
-2033E         16,789         0.4499         7,553        18,899
-2034E         19,294         0.4071         7,855        26,754
-2035E         21,676         0.3684         7,987        34,741
+2026E         -4,951         0.9050        -4,481        -4,481
+2027E         -1,514         0.8190        -1,240        -5,721
+2028E          2,691         0.7412         1,994        -3,726
+2029E          6,729         0.6707         4,513           787
+2030E         11,235         0.6070         6,820         7,606
+2031E         15,622         0.5493         8,582        16,188
+2032E         19,145         0.4971         9,517        25,705
+2033E         22,469         0.4499        10,108        35,814
+2034E         25,460         0.4071        10,366        46,180
+2035E         28,311         0.3684        10,431        56,611
                                                         --------
-Sum of PV of explicit FCFs:                              34,741
+Sum of PV of explicit FCFs:                              56,611
 
 TERMINAL VALUE — PERPETUITY GROWTH (g = 3.0%)
-Terminal year (2035E) SBC-adj FCF:                       $21,676M
-TV = 21,676 x 1.03 / (10.5% - 3.0%):                     $297,685M
-PV of TV (x 0.3684):                                     $109,682M
+Terminal year (2035E) SBC-adj FCF:                       $28,311M
+TV = 28,311 x 1.03 / (10.5% - 3.0%):                     $388,801M
+PV of TV (x 0.3684):                                     $143,253M
 
 TERMINAL VALUE — EXIT MULTIPLE (17x terminal EBITDA)
-Terminal year (2035E) EBITDA (OpInc + D&A):              $41,493M
-TV = 41,493 x 17:                                        $705,375M
-PV of TV (x 0.3684):                                      $259,894M
+Terminal year (2035E) EBITDA (OpInc + D&A):              $49,298M
+TV = 49,298 x 17:                                        $838,069M
+PV of TV (x 0.3684):                                      $308,786M
 
-Average PV of terminal value:                             $184,788M
+Average PV of terminal value:                             $226,019M
 
 EQUITY BRIDGE
-Sum of PV of explicit FCFs:                                $34,741M
-+ PV of terminal value (avg):                              $184,788M
-= Enterprise value:                                        $219,529M
+Sum of PV of explicit FCFs:                                $56,611M
++ PV of terminal value (avg):                              $226,019M
+= Enterprise value:                                        $282,630M
 - Net debt allocated (see Section 4):                         $6,000M
-= EQUITY VALUE:                                             $213,529M
+= EQUITY VALUE:                                             $276,630M
 
-For scale: $219.5B EV is roughly 10% of SPCX's current ~$2.1-2.2T consolidated
+Terminal value is 80% of Base EV — typical for a business that is FCF-
+negative today, and a reason to weight the sensitivity tables below heavily.
+
+For scale: $282.6B EV is roughly 13% of SPCX's current ~$2.1-2.2T consolidated
 market cap — notably LOW given Connectivity generates essentially all of
 SpaceX's current consolidated operating profit. The gap is explained by (a)
 the launch-cost repricing imposed here that the consolidated market price does
@@ -494,13 +529,13 @@ TABLE A: BASE-CASE EV ($ BILLIONS) — WACC x TERMINAL GROWTH RATE
 (perpetuity-growth method only, isolated from the exit-multiple method)
 
 WACC \ TGR    1.5%     2.0%     2.5%     3.0%     3.5%
- 8.5%        180.0    191.4    204.8    220.5    239.4
- 9.5%        148.7    156.7    165.8    176.3    188.6
-10.5%        124.8    130.6    137.1    144.4    152.8   <- base case (perp-only)
-11.5%        106.1    110.4    115.1    120.4    126.4
-12.5%         91.1     94.3     97.9    101.8    106.2
+ 8.5%        247.0    261.9    279.3    299.9    324.6
+ 9.5%        205.8    216.2    228.1    241.9    257.9
+10.5%        174.2    181.8    190.3    199.9    210.8   <- base case (perp-only)
+11.5%        149.5    155.1    161.3    168.2    176.0
+12.5%        129.6    133.8    138.5    143.6    149.4
 
-(The blended Base-case headline of $219.5B averages this perpetuity-only figure
+(The blended Base-case headline of $282.6B averages this perpetuity-only figure
 with the exit-multiple figure below — it is higher than every cell in this
 table because the exit-multiple method produces a materially higher terminal
 value at the chosen 17x multiple.)
@@ -509,21 +544,27 @@ TABLE B: BASE-CASE EV ($ BILLIONS) — WACC x EXIT MULTIPLE
 (exit-multiple method only, isolated from the perpetuity-growth method)
 
 WACC \ Mult    11x      14x      17x      20x      23x
- 8.5%        242.9    297.9    353.0    408.0    463.1
- 9.5%        221.9    272.1    322.4    372.6    422.8
-10.5%        202.9    248.8    294.6    340.5    386.4   <- base case (exit-only)
-11.5%        185.7    227.6    269.5    311.4    353.3
-12.5%        170.0    208.3    246.7    285.0    323.3
+ 8.5%        305.3    370.7    436.1    501.5    566.9
+ 9.5%        279.6    339.3    399.0    458.7    518.4
+10.5%        256.4    310.9    365.4    419.9    474.4   <- base case (exit-only)
+11.5%        235.3    285.1    334.9    384.7    434.5
+12.5%        216.1    261.7    307.2    352.7    398.3
+
+Note the gap between the two methods at Base inputs ($199.9B perpetuity vs
+$365.4B exit): 17x terminal EBITDA implies ~30x terminal SBC-adjusted FCF,
+i.e. the exit multiple is pricing in more post-2035 growth than a 3.0%
+perpetuity does. Averaging the two, per this folder's convention, splits that
+difference; a reader who distrusts exit multiples should anchor nearer $200B.
 
 TABLE C: SCENARIO SUMMARY
 
 Scenario   WACC    TGR    Exit    2035E Rev     2035E SBC-FCF    EV          Equity
-BULL       9.5%    3.5%   21x     $139,372M      $43,301M      $540,355M   $534,355M
-BASE      10.5%    3.0%   17x      $82,164M      $21,676M      $219,529M   $213,529M
-BEAR      11.5%    2.5%   14x      $51,692M      $10,310M       $88,696M    $82,696M
+BULL       9.5%    3.5%   21x     $139,372M      $54,555M      $670,905M   $664,905M
+BASE      10.5%    3.0%   17x      $82,164M      $28,311M      $282,630M   $276,630M
+BEAR      11.5%    2.5%   14x      $51,692M      $14,484M      $123,242M   $117,242M
 
-Probability-weighted (35/45/20, Bear/Base/Bull):     EV $237,903M  Equity $231,903M
-Simple average of the three:                          EV $282,860M  Equity $276,860M
+Probability-weighted (35/45/20, Bear/Base/Bull):     EV $304,499M  Equity $298,499M
+Simple average of the three:                          EV $358,926M  Equity $352,926M
 
 
 ================================================================================
@@ -532,39 +573,40 @@ SECTION 7 — SCENARIO ANALYSIS (BEAR / BULL DETAIL)
 
 BEAR CASE ($M) — WACC 11.5%, TGR 2.5%, exit 14x
        Total Rev   OpInc   OpInc%    NOPAT    D&A    CapEx   SBC-FCF   Sats  Launch$
-2026E     16,400      486    3.0%      413   6,730   12,149    -6,023  2,950    9,199
-2027E     22,746    1,041    4.6%      885   9,240   12,953    -4,170  3,250    9,167
-2028E     27,191      843    3.1%      716  11,774   12,384    -1,417  3,480    7,855
-2029E     31,443    6,256   19.9%    5,318   8,711   12,135       227  3,650    6,887
-2030E     35,501    6,207   17.5%    5,276  11,118   11,934     2,684  3,770    6,190
-2031E     39,210    7,311   18.6%    6,214  12,295   11,984     4,682  3,850    5,792
-2032E     42,986    9,528   22.2%    8,099  12,180   11,968     6,419  3,900    5,549
-2033E     45,963   11,169   24.3%    9,493  12,043   11,999     7,653  3,930    5,411
-2034E     48,973   12,742   26.0%   10,830  11,990   11,991     8,969  3,945    5,250
-2035E     51,692   14,136   27.3%   12,016  11,968   11,865    10,310  3,955    4,990
+2026E     16,400    2,044   12.5%    1,737   6,730   12,149    -4,699  2,950    9,199
+2027E     22,746    3,202   14.1%    2,722   9,240   12,953    -2,333  3,250    9,167
+2028E     27,191    6,183   22.7%    5,256   9,016   12,384       365  3,480    7,855
+2029E     31,443    9,243   29.4%    7,857   8,711   12,135     2,766  3,650    6,887
+2030E     35,501    9,580   27.0%    8,143  11,118   11,934     5,551  3,770    6,190
+2031E     39,210   11,036   28.1%    9,380  12,295   11,984     7,848  3,850    5,792
+2032E     42,986   13,612   31.7%   11,570  12,180   11,968     9,890  3,900    5,549
+2033E     45,963   15,535   33.8%   13,205  12,043   11,999    11,364  3,930    5,411
+2034E     48,973   17,394   35.5%   14,785  11,990   11,991    12,923  3,945    5,250
+2035E     51,692   19,047   36.8%   16,190  11,968   11,865    14,484  3,955    4,990
 
-Even in the Bear case, the segment turns SBC-FCF-positive by 2029 and reaches a
-27.3% operating margin by 2035 — a reminder that "Bear" here still assumes
+Even in the Bear case, the segment turns SBC-FCF-positive by 2028 and reaches a
+36.8% operating margin by 2035 (still below FY2025's reported 38.8%) — a reminder that "Bear" here still assumes
 Starship/V3 succeed; a true failure scenario would look considerably worse
 (see Section 9, Risk #1).
 
 BULL CASE ($M) — WACC 9.5%, TGR 3.5%, exit 21x
        Total Rev    OpInc   OpInc%     NOPAT     D&A    CapEx   SBC-FCF    Sats  Launch$
-2026E     17,537       922    5.3%       784   6,794   12,786    -6,296   3,150    9,635
-2027E     33,163     5,503   16.6%     4,678   9,487   14,144    -1,936   3,680    9,156
-2028E     45,726     8,997   19.7%     7,647  12,220   13,184     4,122   4,150    6,562
-2029E     59,470    19,009   32.0%    16,157   9,299   12,763     9,542   4,550    4,626
-2030E     73,676    24,116   32.7%    20,498  11,838   12,630    16,023   4,880    3,459
-2031E     88,205    31,008   35.2%    26,357  13,095   12,718    22,588   5,150    2,826
-2032E    102,601    38,841   37.9%    33,015  12,972   12,991    28,482   5,370    2,467
-2033E    115,568    45,492   39.4%    38,668  12,870   13,312    33,487   5,540    2,295
-2034E    127,864    51,613   40.4%    43,871  12,958   13,514    38,456   5,670    2,091
-2035E    139,372    57,251   41.1%    48,663  13,132   13,616    43,301   5,770    1,863
+2026E     17,537    2,588   14.8%     2,200   6,794   12,786    -4,880   3,150    9,635
+2027E     33,163    8,654   26.1%     7,355   9,487   14,144       742   3,680    9,156
+2028E     45,726   16,098   35.2%    13,684   9,462   13,184     7,401   4,150    6,562
+2029E     59,470   24,658   41.5%    20,960   9,299   12,763    14,344   4,550    4,626
+2030E     73,676   31,115   42.2%    26,448  11,838   12,630    21,972   4,880    3,459
+2031E     88,205   39,387   44.7%    33,479  13,095   12,718    29,711   5,150    2,826
+2032E    102,601   48,588   47.4%    41,300  12,972   12,991    36,767   5,370    2,467
+2033E    115,568   56,471   48.9%    48,000  12,870   13,312    42,819   5,540    2,295
+2034E    127,864   63,761   49.9%    54,196  12,958   13,514    48,781   5,670    2,091
+2035E    139,372   70,491   50.6%    59,918  13,132   13,616    54,555   5,770    1,863
 
 The Bull case shows the Starship payoff most clearly: launch dollar-cost
 (the "Launch$" column) falls every single year from 2027 onward even as
 satellite count keeps growing, because cost-per-Starship-launch falls faster
-than the launch count needs to rise.
+than the launch count needs to rise. Its 50.6% terminal operating margin is
+the most aggressive number in this file — see Section 9, Risk #10.
 
 
 ================================================================================
@@ -580,16 +622,20 @@ exactly as it is run today, inside SpaceX, forever":
 
                                        Base (standalone)   Base (vertically-integrated)
 2026E Revenue                              $16,769M              $16,769M      (identical)
-2026E Operating margin                        3.6%                  8.1%
+2026E Operating margin                       13.1%                 17.6%
 2035E Revenue                              $82,164M              $82,164M      (identical)
-2035E Operating margin                       35.5%                 39.4%
-PV of explicit FCFs (2026-2035)             $34,741M              $61,460M
-PV of terminal value (avg)                 $184,788M             $190,864M
-ENTERPRISE VALUE                           $219,529M             $252,324M
-Equity value                               $213,529M             $246,324M
+2035E Operating margin                       45.0%                 48.9%
+PV of explicit FCFs (2026-2035)             $56,611M              $83,330M
+PV of terminal value (avg)                 $226,019M             $232,095M
+ENTERPRISE VALUE                           $282,630M             $315,425M
+Equity value                               $276,630M             $309,425M
 
-INDEPENDENCE DISCOUNT: $32.8 BILLION (~15%) of Base-case enterprise value is
-attributable purely to no longer getting launches at SpaceX's internal cost.
+INDEPENDENCE DISCOUNT: $32.8 BILLION of Base-case enterprise value (the
+vertically-integrated EV is ~12% higher than standalone; equivalently,
+independence removes ~10% of the as-part-of-SpaceX value) is attributable purely to no longer getting
+launches at SpaceX's internal cost. (The dollar figure is unchanged by the
+depreciation correction described in Disclosures — that correction applied
+identically to both runs — but the percentage is smaller on the larger base.)
 
 Two things are worth being precise about here:
   1. The discount is LARGEST in percentage terms in the near term (2026-2028,
@@ -604,11 +650,11 @@ Two things are worth being precise about here:
      construction of this model — flagged here for transparency, not buried;
      see Disclosures.
 
-This 15% figure is also the most direct, auditable answer to "what would the
-less-conservative alternative have been": had this file simply valued
+This $32.8B figure is also the most direct, auditable answer to "what would
+the less-conservative alternative have been": had this file simply valued
 Connectivity's REPORTED economics with no repricing at all (i.e., exactly how
 tech-buffett or a generic sell-side analyst would value the disclosed segment),
-Base-case EV would be $252.3B instead of $219.5B.
+Base-case EV would be $315.4B instead of $282.6B.
 
 
 ================================================================================
@@ -620,27 +666,33 @@ Base-case WACC of 10.5% and explicit 2026-2035 FCF path fixed) that would be
 required to reach various externally-cited "standalone Starlink" values:
 
   Target EV        Implied perpetuity growth rate     vs. this file's Base TGR (3.0%)
-  $180,000M (25x EBITDA commentary)       4.74%              +174bps
-  $250,000M (35x EBITDA commentary)       6.55%              +355bps
-  $350,000M                               7.77%              +477bps
-  $500,000M (Morgan Stanley's figure)     8.64%              +564bps
+  $180,000M (25x EBITDA commentary)       1.89%              -111bps
+  $250,000M (35x EBITDA commentary)       4.84%              +184bps
+  $350,000M                               6.71%              +371bps
+  $500,000M (Morgan Stanley's figure)     7.96%              +496bps
+
+(Perpetuity-growth method only. At Base inputs that method alone gives
+$199.9B — Table A — so these growth rates are measured against that figure,
+not against the $282.6B blended headline.)
 
 A perpetual growth rate above ~4-5% is difficult to defend for a mature
 business discounted at 10.5% (it implies the segment outgrows global nominal
-GDP forever) — so $180B is roughly at the edge of what a perpetuity-growth
-story can support here, while $250B+ cannot be reached through that method
-without an implausible terminal assumption. All of these ARE reachable through
-the EXIT-MULTIPLE method instead (Table B, Section 6 shows $250B+ is available
-at a 20-23x exit multiple even at 10.5% WACC) — so the conclusion is not that
-these figures are impossible, but that they most likely reflect either (a)
-materially higher near-term FCF than this file's market-rate-repriced build
-produces, (b) an aggressive exit multiple, or (c) — most likely, per Section
-7B — analysts implicitly valuing Starlink AS PART OF SpaceX (effectively-free
-launches), not as a true arm's-length standalone entity. This is the single
-starkest, most "say it plainly" finding in this file: the market/analyst
-commentary on standalone Starlink value appears to be building on the
-vertically-integrated P&L, not the one an actual independent spinoff would
-report.
+GDP forever). So on a pure perpetuity basis, the low end of the analyst range
+($180B) is comfortably supported — it needs LESS growth than this file
+assumes — while $250B is at the edge and $350B+ is not reachable without an
+implausible terminal assumption.
+
+Through the EXIT-MULTIPLE method (Table B), $250-350B is available at ~11-16x
+terminal EBITDA at Base WACC, and $500B needs roughly 24-25x at 10.5% WACC or
+~20x at 8.5%. Via the blended method this file actually uses, $500B sits
+between Base ($282.6B) and Bull ($670.9B).
+
+Plain conclusion: even after pricing every launch at arm's-length market
+rates, the 25-35x EBITDA commentary ($180-250B) looks REASONABLE-TO-
+CONSERVATIVE, not stretched. Morgan Stanley's $500B is not unreasonable, but it
+requires something close to Bull-case execution (faster Starship cost
+decline, 20M subscribers by YE2026, ~50% terminal operating margins) or a
+rich terminal multiple — it is not a central-case number on this model.
 
 
 ================================================================================
@@ -694,6 +746,16 @@ SECTION 9 — KEY RISKS (SPECIFIC TO THIS ANALYSIS)
 9. REGULATORY/SPECTRUM RISK FOR CONTINUED INTERNATIONAL EXPANSION (LOW-MEDIUM,
    a standard risk for any global satcom operator, not unique to the
    independence framing).
+10. TERMINAL MARGINS AND CAPEX PLATEAU (HIGH). Base and Bull reach 45.0% and
+   50.6% operating margins by 2035 because market-rate capex levels off at
+   ~$12-14B/yr while revenue roughly 5-8x's — D&A falls to ~10-15% of revenue
+   versus ~18% today. If V3/Starship capacity gains do NOT let satellite
+   count plateau as modeled (e.g., demand per subscriber grows faster, or
+   spectrum limits force more satellites), capex would keep scaling with
+   revenue and these margins would not materialize. Combined with terminal
+   value being ~80% of Base EV, this is the assumption a skeptic should test
+   first. Separately, the 18% legacy-D&A add-back (Section 4, Step 6) is
+   derived, not disclosed: 15% would lower Base EV by ~$20B.
 
 
 ================================================================================
@@ -705,7 +767,7 @@ Starlink actually worth on its own, and what does that say about how SpaceX is
 structured." Three conclusions:
 
 1. VERTICAL INTEGRATION IS A REAL, QUANTIFIABLE SUBSIDY, NOT JUST A NARRATIVE.
-   Being inside SpaceX is worth ~$33B (15%) of Base-case value to Starlink
+   Being inside SpaceX is worth ~$33B (~12%) of Base-case value to Starlink
    purely through transfer pricing on launches — before counting any synergy
    from shared manufacturing, talent, or balance-sheet access. This explains,
    in concrete dollar terms, why Musk has never seriously entertained spinning
@@ -713,15 +775,18 @@ structured." Three conclusions:
    entity could not.
 2. THE STARSHIP BET IS DOING MORE WORK THAN THE SUBSCRIBER GROWTH STORY. Every
    scenario here — even Bear — assumes Starship/V3 succeed, and even so, the
-   segment is FCF-negative for 2-3 years as an independent entity before the
-   capacity-per-launch payoff arrives. The headline "Starlink is worth
-   $180-500B" commentary from sell-side analysts is almost certainly not
-   pricing in this near-term capital intensity at all, because it's invisible
-   inside the consolidated SpaceX P&L.
-3. THIS FILE'S PROBABILITY-WEIGHTED VALUE ($237.9B) SITS JUST ABOVE THE LOW END
-   of the externally-cited analyst range ($180-500B), not because this model
-   is unusually bearish on Starlink's business, but because it is the only
-   analysis in that range that actually prices the launches.
+   segment is FCF-negative for ~2 years as an independent entity before the
+   capacity-per-launch payoff arrives. That near-term capital intensity is
+   invisible inside the consolidated SpaceX P&L, and ~80% of Base EV sits in
+   the terminal value — i.e., in the post-Starship steady state.
+3. THE ANALYST RANGE SURVIVES LAUNCH REPRICING. This file's probability-
+   weighted value ($304.5B) sits ABOVE the 25-35x EBITDA commentary
+   ($180-250B) and below Morgan Stanley's $500B, even though it is the only
+   analysis in that range that explicitly prices launches at arm's length.
+   The independence discount is real (~$33B) but modest next to the value
+   of the business itself — the bigger swing factors are the terminal
+   method (Table A vs. Table B: $200B vs. $365B at Base inputs) and whether
+   capex really plateaus once Starship is flying (Section 9, Risk #10).
 
 
 ================================================================================
@@ -733,21 +798,21 @@ WACC                                     11.5%        10.5%         9.5%
 Terminal growth rate                      2.5%         3.0%         3.5%
 Exit multiple (EV/EBITDA)                  14x          17x          21x
 2035E Revenue                          $51,692M     $82,164M    $139,372M
-2035E Operating margin                   27.3%        35.5%        41.1%
-Sum PV explicit FCF (2026-2035)         $7,401M     $34,741M     $91,450M
-PV of terminal value (avg)             $81,295M    $184,788M    $448,906M
-ENTERPRISE VALUE                       $88,696M    $219,529M    $540,355M
+2035E Operating margin                   36.8%        45.0%        50.6%
+Sum PV explicit FCF (2026-2035)        $22,370M     $56,611M    $126,733M
+PV of terminal value (avg)            $100,872M    $226,019M    $544,172M
+ENTERPRISE VALUE                      $123,242M    $282,630M    $670,905M
 Net debt allocated                      $6,000M      $6,000M      $6,000M
-EQUITY VALUE                           $82,696M    $213,529M    $534,355M
+EQUITY VALUE                          $117,242M    $276,630M    $664,905M
 
-Probability-weighted (35/45/20):   EV $237,903M     Equity $231,903M
-Simple average:                     EV $282,860M     Equity $276,860M
+Probability-weighted (35/45/20):   EV $304,499M     Equity $298,499M
+Simple average:                     EV $358,926M     Equity $352,926M
 
 Memo: "as part of SpaceX" (insider launch cost, Base assumptions otherwise):
-  EV $252,324M / Equity $246,324M — the independence discount is $32.8B (15%).
+  EV $315,425M / Equity $309,425M — the independence discount is $32.8B (~12%).
 
 Memo: implied share of SPCX's current ~$2.15T consolidated market cap:
-  Base EV $219.5B = ~10.2%   |   Bull EV $540.4B = ~25.1%   |   Prob-wtd $237.9B = ~11.1%
+  Base EV $282.6B = ~13.1%   |   Bull EV $670.9B = ~31.2%   |   Prob-wtd $304.5B = ~14.2%
 
 
 ================================================================================
@@ -775,9 +840,9 @@ DISCLOSURES & LIMITATIONS
   JUDGMENT CALL OF THIS ENTIRE FILE. $74M (SpaceX's own published commercial
   list price) was chosen over the ~$15M insider marginal cost specifically
   because an independent entity has no claim to insider pricing. Section 7B
-  quantifies this choice's impact directly ($32.8B / 15% of Base EV) — a
+  quantifies this choice's impact directly ($32.8B / ~12% of Base EV) — a
   reader who believes a real independent Starlink could negotiate meaningfully
-  below list price should adjust toward that $252.3B "vertically integrated"
+  below list price should adjust toward that $315.4B "vertically integrated"
   reference figure.
 - MODELING CORRECTION MADE DURING CONSTRUCTION (disclosed per this agent's
   "never fabricate, never hide a real finding" rule): an early draft of this
@@ -786,8 +851,27 @@ DISCLOSURES & LIMITATIONS
   compounding off the prior year), which understated Enterprise & Government
   revenue by roughly half by 2035 and inflated the apparent "independence
   discount" to over 150% before the fix. The version in this file reflects
-  the corrected, properly-compounding model; the $32.8B (15%) independence
+  the corrected, properly-compounding model; the $32.8B independence
   discount above is the corrected figure.
+- REVISION NOTE (2026-10-10, post-commit review of 9dd2338): two depreciation
+  errors were found in the originally committed model and fixed in this
+  version. (1) DOUBLE-COUNTED LEGACY D&A: the "as run" operating margin
+  already deducts Connectivity's existing depreciation (~24% of revenue
+  gap between adjusted EBITDA and operating income, ~18% net of SBC), but the
+  original model added back only 8.5% of revenue before layering on the fully
+  rebuilt market-rate D&A schedule — so ~9.5% of revenue was charged twice
+  every year. The original text described this as "a modest double-count of a
+  few hundred million dollars a year"; it was actually ~$1.6B in 2026 rising
+  to ~$7.8B by 2035 (Base). Now corrected to an 18% add-back (Section 4,
+  Step 6). (2) The opening $13,788M satellite PP&E was depreciated for three
+  full years over a stated 2.5-year life ($16.5B written off on a $13.8B
+  asset), creating an artificial 2028 margin dip; now a half year in 2028.
+  Combined effect: Base EV $219.5B -> $282.6B; probability-weighted
+  $237.9B -> $304.5B; Bear $88.7B -> $123.2B; Bull $540.4B -> $670.9B. This
+  reversed the original Section 8/10 conclusion that analyst estimates were
+  only reachable by ignoring launch costs. Several text errors were fixed at
+  the same time (Section 3A launch-cost-vs-revenue comparison, a wrong
+  section cross-reference, exit-multiple labeling, NOPAT loss-year note).
 - STARSHIP NEAR-TERM MARKET-RATE COST IS NOT A DISCLOSED FIGURE (Starship is
   not yet commercially operating) — the declining cost curves in Section 4 are
   this model's own estimate, anchored to the $74M Falcon-9-equivalent starting
