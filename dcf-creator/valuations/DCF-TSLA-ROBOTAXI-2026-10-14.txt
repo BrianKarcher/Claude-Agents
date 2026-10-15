@@ -1,0 +1,725 @@
+================================================================================
+TESLA ROBOTAXI — STANDALONE DCF ANALYSIS
+"WHAT IF ROBOTAXI HAD TO BUY ITS OWN CARS?" — an independent-entity carve-out
+of Tesla's ride-hail network, buying vehicles from Tesla Auto at market prices
+Date: October 14, 2026
+Sources: pulled live via web and structured into:
+           - ../extracts/TSLA-ROBOTAXI-SEGMENTS-2023-2026.md (Tesla segment
+             history FY2023-FY2025 + Q1-Q2 2026, Q2 2026 balance sheet and share
+             count, Q3 2026 deliveries, Robotaxi operating data through
+             2026-10-12, fares, Cybercab price target, FSD pricing, TSLA price)
+         Fleet, utilization, fare and unit-cost scenarios REUSED (checked
+         first, per this agent's "existing work before new pulls" rule) from
+         ../../tech-buffett/personal/:
+           - "Tesla Cybercab Global Robotaxi Fleet 2026-2036.md"
+           - "Tesla Cybercab Global Robotaxi Fleet - Financials 2026-2036.md"
+           - "Tesla Cybercab - Operating Cost per Mile (Scaled).md"
+           - "Tesla Cybercab Global Robotaxi - Segment DCF 2026-2036.md"
+             (the Sept 7 "inside Tesla" segment DCF this file is reconciled
+             against in Section 7B)
+         Model computed by script (not by hand) so every table is internally
+         consistent; all figures $B unless noted.
+================================================================================
+
+WHAT THIS FILE IS (READ FIRST)
+-------------------------------
+This values ONLY Tesla's Robotaxi ride-hailing business, treated as if it were a
+separate company ("RobotaxiCo") rather than a Tesla division. The request's
+modeling instruction is: "it would have to buy vehicles from the auto division
+at market rates." That one instruction changes four things relative to the
+September "inside Tesla" segment DCF in tech-buffett/personal/:
+
+  1. VEHICLES AT MARKET PRICE, NOT TESLA'S BUILD COST. The September file
+     capitalized each Cybercab at $20,000, a deliberately aggressive internal
+     cost. An arm's-length buyer pays Tesla Auto's price, which includes Auto's
+     gross margin. Anchor: Musk's own "$30,000 or less" Cybercab price
+     target. Base path is $35k (2026 early-production mix) to $30k (2027-28) to
+     $27k (2032+); see Section 4.
+  2. THE AUTONOMY SOFTWARE HAS TO BE LICENSED. The instruction says "buy
+     vehicles at market rates"; it does not say RobotaxiCo owns Tesla's
+     FSD/AI stack. A ride-hail operator that buys its cars from Tesla Auto is
+     in the position Uber or Lyft would be in, so it has to license the
+     driverless software from whoever owns it. This file's judgment call is
+     that Tesla (Auto/AI) keeps the stack, because the same software ships in
+     every consumer Tesla as FSD, and RobotaxiCo pays a market-rate license.
+     This turns out to be the BIGGEST single lever in the model (Section 7B).
+     The alternative, where RobotaxiCo owns the stack and bears all of
+     Tesla's AI R&D and training compute, is discussed in Section 3. It is not
+     obviously more favorable, because RobotaxiCo would then carry billions a
+     year of AI capex and R&D that Tesla currently spreads across its whole
+     FSD-capable consumer fleet.
+  3. NO CAPTIVE INSURANCE PRICING. The cost-per-mile file prices insurance at
+     Tesla's captive loss cost. A standalone fleet operator either buys
+     commercial cover (with a ~25-35% expense/profit load) or self-insures
+     without Tesla's balance sheet behind it. A load is added.
+  4. ITS OWN COST OF CAPITAL. RobotaxiCo is a pre-scale, cash-burning
+     business with no Auto/Energy cash flows to fund the ramp. It needs
+     ~$14-28B of external funding in Base/Bull (Section 5) and is discounted
+     at a standalone rate (Base 12.0%), not Tesla's blended rate.
+
+There is no RobotaxiCo balance sheet, share count, or market price. Headline
+outputs are ENTERPRISE VALUE in dollars, translated into "$ per TSLA share" only
+as a scale reference. This is NOT a TSLA price target: it excludes Auto,
+Energy, Optimus, FSD consumer subscriptions, AND the license income Tesla would
+EARN from RobotaxiCo under this structure (see Section 7B: under independence
+most of the value moves into Tesla's other segments rather than disappearing).
+
+HEADLINE RESULT
+---------------
+                                 Enterprise Value     Per TSLA share*    % of TSLA mkt cap
+  BEAR  (35% wt)                      -$33.5B             -$8.47              n/m
+  BASE  (45% wt)                      $171.3B             $43.38             11.6%
+  BULL  (20% wt)                    $1,414.7B            $358.19             95.5%
+  Probability-weighted                $348.3B             $88.19             23.5%
+  Simple average                      $517.5B            $131.03             34.9%
+
+  * EV / 3.9495B TSLA shares outstanding (2026-07-16 cover page). TSLA closed
+    $375.23 on 2026-10-13, so market cap is ~$1.48T.
+
+Three findings, stated plainly:
+  (a) As a standalone company, Robotaxi in the Base case is worth roughly HALF
+      the ~$342B the September "inside Tesla" segment DCF found. About two-
+      thirds of the gap is the autonomy license, i.e. value that moves to Tesla's
+      AI/Auto side rather than disappearing. The other third is the
+      higher standalone WACC, the vehicle markup, and the insurance load.
+  (b) The probability-weighted value is ~81% driven by the Bull case. The Base
+      case alone covers only ~12% of TSLA's market cap. To justify even HALF
+      of TSLA's market cap from robotaxi alone (Section 8), the Base fleet would
+      need to be ~4x larger (~21M cars by 2036) or fares ~$0.40/mi higher every
+      year. Both are well outside the Base case.
+  (c) The standalone Bear case is not "small"; it is value-DESTROYING
+      (-$33.5B). Once the vehicle is priced at market and software is licensed,
+      a sub-scale Cybertruck-like outcome never reaches positive EBITDA. A
+      real standalone RobotaxiCo would shut down long before 2036, so the
+      "abandon at $0" floor is shown alongside (Section 7).
+
+
+================================================================================
+SECTION 1 — BUSINESS SNAPSHOT: WHAT'S BEING VALUED
+================================================================================
+
+RobotaxiCo = Tesla's driverless ride-hail network. It owns and operates the
+fleet, runs the Robotaxi app, dispatch, depots, charging, cleaning, teleop,
+field response, rider support, permits and insurance, and collects fares.
+It BUYS from affiliated or unaffiliated parties:
+  - vehicles (Cybercab, plus the small legacy robotaxi-spec Model Y fleet)
+    from Tesla Auto, at market price
+  - the unsupervised driving software, as a license from Tesla
+  - insurance cover, at commercial or standalone self-insured cost
+
+Current state (as of 2026-10-12, see extract Section 4):
+  - Driverless public service in 6 metros (Austin, Dallas, Houston, Miami,
+    Orlando, Tampa); SF Bay Area runs with safety drivers; Phoenix staged;
+    Nevada approval for up to 5,000 AVs (Aug 2026).
+  - Texas fleet: 739 vehicles = 420 Model Y (held flat) + 319 Cybercabs
+    registered. Tesla's Oct 10 claim: "300+ Cybercabs serving Austin, an 8x
+    increase in 30 days." Cybercab line capacity at Giga Texas: >125k/yr.
+  - ~2.4M cumulative PAID miles through 2026-06-30 (~0.9M in Q2 alone).
+  - Austin fare: $3.00 base + $1.40/mi (raised from $1.00/mi in March 2026).
+
+Revenue today is immaterial: ~0.9M paid miles in Q2 at roughly $1.80-2.00 per
+paid mile (base fee spread over a ~4-5 mile trip) comes to ~$2M per quarter.
+Everything in this valuation is the ramp.
+
+
+================================================================================
+SECTION 2 — HISTORICAL FINANCIALS
+================================================================================
+
+SEGMENT HISTORY REQUIREMENT: Tesla reports TWO segments (Automotive; Energy
+Generation & Storage), evaluated by the CODM on GROSS PROFIT ONLY. No segment
+operating income is disclosed. ROBOTAXI IS NOT A REPORTED SEGMENT and has no
+separately disclosed revenue or profit in any filing. Its fares fall inside
+"Services and other," which is inside the Automotive segment. This table shows
+Tesla's reported segments so the reader can see where Robotaxi currently
+sits. It is NOT Robotaxi's own history, which does not exist in disclosed form.
+
+TESLA SEGMENTS ($M)              FY2023    FY2024    FY2025   Q2'25   Q1'26*   Q2'26
+Automotive revenues              82,419    77,070    69,520  16,661   16,234   20,516
+Services & other (incl Robotaxi)  8,319    10,534    12,530   3,046    3,745    4,581
+AUTOMOTIVE SEGMENT REVENUE       90,738    87,604    82,050  19,707   19,979   25,097
+Automotive segment gross profit  16,519    14,810   ~13,276†    n/a      n/a      n/a
+  Auto-revenue-line GP (ex svcs)     --        --        --   2,866    3,422    3,463
+ENERGY REVENUE                    6,035    10,086    12,800   2,789    2,408    3,139
+Energy gross profit               1,141     2,640    ~3,814†    846      952      640
+TOTAL REVENUE                    96,773    97,690   ~94,820  22,496   22,387   28,236
+Consolidated GAAP op. income         --        --     4,350      --       --      398
+
+* Q1 2026 = six months 2026 minus Q2 2026 (both from the Q2 2026 10-Q).
+† Derived: energy at the reported 29.8% FY2025 margin; automotive = $17.09B
+  total GP (single secondary source) minus energy. FY2025 segment revenues sum
+  to $94.85B vs ~$94.82B reported total (rounding in secondary sources).
+No segment definition changes over the window.
+
+What the segment history says that matters for this file:
+  - "Services & other" is Tesla's fastest-growing line: +50% YoY in Q2 2026 to
+    $4.58B, and +19% in FY2025. It holds Robotaxi, but also FSD
+    subscriptions, Supercharging, insurance, used cars and parts, so Robotaxi's
+    share is unknowable and, at ~$2M/quarter, rounding error.
+  - Automotive gross margin is ~16-17% (16.3% ex-credits in Q2 2026). That
+    is the anchor for the "market price vs Tesla cost" transfer-pricing gap
+    used in Section 7B (internal cost ≈ 83% of market price).
+  - Consolidated operating income has collapsed: $398M in Q2 2026, a 1.4%
+    margin, as R&D (+49% YoY to $2.37B) and SG&A ramp for AI. That spend is
+    the "autonomy R&D" a standalone RobotaxiCo would either license or have
+    to fund itself.
+
+2026 BOTTOM-UP ANCHOR (Robotaxi only, model year 1)
+  Reported: ~2.4M cumulative paid miles to 6/30; Texas fleet 739 at 10/12.
+  Base model 2026: avg 750 Cybercabs x 30k mi x $0.90/vehicle-mile = $0.02B
+  revenue. The real 2026 fleet is mostly Model Y, which the fleet model does
+  not count separately. Order-of-magnitude check: H1 actual paid-mile revenue
+  is ~$4-5M and H2 is ramping fast, so ~$15-25M for FY2026 is consistent. The
+  ~800 legacy Model Ys (~$34M at ~$42k market price) are left out of capex
+  as immaterial.
+
+
+================================================================================
+SECTION 3 — STRATEGIC CONTEXT: WHAT "MARKET RATE" MEANS HERE
+================================================================================
+
+3A. THE VEHICLE
+Tesla has never sold a Cybercab to a third party, so there is no observed
+market price. The anchors:
+  - Musk: Cybercab at "$30,000 or less," before 2027 (stated as a consumer
+    price target, not a fleet price).
+  - The cost-per-mile file estimated Tesla's internal build cost at ~$25-28k at
+    scale. The September segment DCF used $20k, explicitly labeled as a
+    "meaningfully cheaper than estimated" case.
+  - Tesla's automotive gross margin is ~16-17%, so a price that covers
+    Auto's cost plus its normal margin is cost / 0.83.
+  - A ~$27k long-run Base price therefore implies a ~$22.4k Tesla cost, which is
+    already BELOW the file's own $25-28k build-cost estimate. A higher price
+    would be the more conservative call, but $27k is held because volume
+    discounts to the largest fleet buyer are realistic. Bull goes to $25k; Bear
+    holds ~$31k (a sub-scale line never gets cheaper, the Cybertruck pattern).
+  - Early units carry low-volume pricing: Base $35k in 2026, falling to $30k
+    by 2027 in line with Musk's target date.
+
+3B. THE AUTONOMY LICENSE: THE CENTRAL JUDGMENT CALL
+There is no market price for unsupervised robotaxi software either. The
+reference points are:
+  - Consumer FSD (Supervised): $99/month, subscription-only since Feb 2026.
+    This does NOT remove the driver, so it is a floor, not a comparable.
+    There are unconfirmed reports of a $199/mo unsupervised tier.
+  - Ride-hail networks keep ~25-30% of gross bookings for demand plus
+    network. Tesla's own floated "owners add their cars to the network" model
+    reportedly keeps a cut in that range for software, network and demand
+    together.
+  - A software-only license to an operator that brings its OWN network,
+    demand and fleet ops is worth well under that bundle, but the licensor has
+    pricing power: the software is the only reason the car needs no driver.
+    The driver it replaces is the single largest cost in human ride-hail,
+    typically more than half of the fare.
+  - BASE: 10% of gross fare revenue. BULL: 8%. BEAR: 12% (a licensor
+    facing a weak operator prices for value, not volume).
+  - CONSERVATIVE-CALL DISCLOSURE: a flat $200/vehicle/month license
+    ($2,400/yr, the reported unsupervised consumer tier) would cost about
+    half as much at scale ($12.5B vs $25.9B in 2036) and RAISES Base EV by
+    +$55.8B, to ~$227B. 10% was chosen because a licensor of a
+    driver-replacing product would not price it like a consumer
+    subscription. A reader who thinks Tesla would license cheaply to grow
+    volume should use the ~$227B figure.
+  - The ALTERNATIVE STRUCTURE (RobotaxiCo owns the stack) was not used: the
+    software is inseparable from consumer FSD, and a stack owner would carry
+    Tesla's full AI training-compute capex and autonomy R&D. Tesla's total R&D
+    is now ~$9.5B/yr annualized and its capex ~$23B/yr annualized. That would
+    swamp the ride-hail P&L for years.
+
+3C. WHAT INDEPENDENCE DOES NOT CHANGE
+Fleet size, production ramp, utilization, fares and the operating cost per
+mile (energy, maintenance, cleaning, depots, teleop, field ops, support,
+payment processing) are carried over unchanged from the tech-buffett/personal
+scenario files. Those costs belong to the operator whether or not it is inside
+Tesla. They were NOT re-derived here, and their caveats carry over, including
+that the fare path is BELOW today's observed Austin pricing (see 4D).
+
+
+================================================================================
+SECTION 4 — DCF ASSUMPTIONS
+================================================================================
+
+4A. FLEET (unchanged from "Global Robotaxi Fleet 2026-2036")
+                 2026   2027   2028   2029   2030   2031   2032   2033   2034   2035   2036
+Produced (k)
+  Bear            0.5      4     15     40     80    130    190    250    310    370    430
+  Base            1.5     12     45    110    220    400    650    950  1,300  1,650  2,000
+  Bull            3.0     28    100    240    480    850  1,350  1,950  2,600  3,300  4,000
+Avg active fleet (k)
+  Bear           0.25    2.5     12     40     99    202    353    545    765  1,000  1,240
+  Base           0.75    7.5     36    114    278    581  1,078  1,800  2,760  3,925  5,225
+  Bull            1.5     17     81    251    610  1,259  2,295  3,775  5,690  7,975 10,525
+Retirement: 4 years after production (Removed(Y) = Produced(Y-4)).
+
+4B. UTILIZATION AND FARE (unchanged, $ per total vehicle-mile incl. deadhead)
+Miles/vehicle/yr  Base 30k → 75k (2033+); Bull 35k → 95k; Bear 25k → 55k
+Fare $/vehicle-mi Base & Bull 0.90, 1.05, 1.10, 1.00, 0.90, 0.82, 0.76, 0.72,
+                  0.70, 0.68, 0.66 (2026-36); Bear ~10% lower.
+
+4C. OPERATING COST (from the cost-per-mile/financials files, DEPRECIATION
+STRIPPED OUT and rebuilt on market-price vehicles in 4F)
+Fleet cash opex = total miles x (prior fully-loaded $/mi) − prior $20k-basis
+depreciation. Base cash opex ≈ $1.30/mi in 2027, falling to ≈ $0.37/mi by 2036
+(includes ~2.75% payment processing).
+
+4D. INDEPENDENCE ADJUSTMENTS (new in this file)
+                               Bear      Base      Bull     Basis
+Vehicle price 2026 ($k)          38        35        32     early-production mix
+Vehicle price 2027 ($k)          33        30        30     Musk "$30k or less"
+Vehicle price long-run ($k)      31        27        25     ≈ cost/0.83, Sec 3A
+Autonomy license (% revenue)    12%       10%        8%     Sec 3B
+Insurance load ($/mi)         0.020     0.015     0.010     ~30% on $0.05 loss cost
+Standalone G&A ($B/yr)          0.1       0.1       0.1     public-co overhead
+Own R&D ($B, 2026→2036)  0.16→0.96  0.20→1.20  0.25→1.50   app/dispatch/teleop
+                                                             tooling only (core
+                                                             autonomy is licensed)
+SG&A ($B, 2026→2036)     0.3→1.3   0.4→2.3   0.5→3.4     unchanged from Sept file
+SBC                          $0.1B + 1.5% of revenue (all scenarios)
+
+FARE CONSERVATISM NOTE: today's Austin pricing ($3 + $1.40/mi, roughly $1.10-
+1.20 per total vehicle-mile after ~40% deadhead) is ABOVE the model's 2026-27
+fares. The model assumes fares fall as Tesla scales and competes with Waymo
+and Zoox. Table E shows every +$0.05/mi of sustained fare is worth ~+$71B of
+Base EV.
+
+4E. TAX: 15% flat on positive EBIT only. No benefit in loss years and no NOL
+carryforward (house convention). An NOL shield would modestly raise Base,
+since cumulative pre-2030 losses are ~$3.4B.
+
+4F. VEHICLE D&A AND CAPEX (rebuilt on market price)
+  Vehicle capex = Produced x market price (same year).
+  D&A = straight-line over 4 years to 10% residual, half-year convention
+        (half in the production year, full years 1-3, half in year 4 when
+        retired), matching the fleet file's 4-year retirement.
+  Salvage = 10% x original price on retired units (cash inflow).
+  Infrastructure capex = $4,000 per net-add vehicle (unchanged).
+  This fixes a minor inconsistency in the Sept file, which depreciated over
+  ~4.5 years while retiring at 4.
+
+4G. FREE CASH FLOW
+  UFCF = NOPAT + D&A − vehicle capex − infra capex + salvage
+  SBC-adj FCF = UFCF − SBC   ← THIS is what is discounted (house convention).
+  The R&D, SG&A and opex lines above are cash costs EXCLUDING SBC; SBC is
+  subtracted once, separately.
+
+4H. DISCOUNTING / TERMINAL
+                           Bear      Base      Bull
+WACC                      14.0%     12.0%     10.5%
+Terminal growth (g)        2.0%      3.0%      3.5%
+Exit EV/EBITDA              6x       10x       16x
+Valuation date 2026-10-14. Only the Q4 2026 stub (25% of 2026 FCF) is
+counted. Cash flows are end-of-year: 2027 at t = 1.21 years, 2036 at
+t = 10.21.
+
+WACC rationale: Tesla's own WACC is roughly 9-10% (high beta, no net debt).
+A standalone pre-scale RobotaxiCo has no Auto/Energy cash flow behind it, a
+~$28B Base funding hole, and binary regulatory and safety-case risk. That
+earns a venture-to-growth-equity-like premium. The Sept file used 10% Base;
+using 10% here would add +$56.1B to Base EV (conservative call, disclosed).
+
+Exit multiple rationale: by 2036 RobotaxiCo is an asset-heavy fleet operator
+that replaces ~25% of its fleet every year. Base maintenance D&A is ~40% of
+EBITDA, and normalized FCF is ~40% of EBITDA. At 12% WACC and 3% growth the
+PERPETUITY method implies only ~4.6x EBITDA, while a still-growing (~29% revenue
+growth in 2036) network deserves more. 10x splits the difference toward the
+conservative side. 12x (the first draft's figure) would add +$25.0B; it was
+cut because it implied ~30x normalized FCF for a 3%-perpetual-growth business.
+
+TERMINAL FCF NORMALIZATION (methodology call, disclosed): 2036 FCF is still
+depressed by GROWTH capex (Base produces 2.0M cars to retire 0.65M). Applying
+3% perpetual growth to that figure would assume the growth capex continues
+forever while growth stops. The perpetuity method therefore uses a
+NORMALIZED terminal FCF: 2036 EBITDA, less steady-state D&A (avg fleet x price
+x 90% / 4), less tax, less SBC, less capex = replacement + 3% fleet growth.
+Base: $31.8B normalized vs $10.8B as-reported. Using the un-normalized figure
+would cut Base EV to $133.5B. That version is internally inconsistent, so it
+is shown only as the bound.
+
+PROBABILITY WEIGHTS: 35% Bear / 45% Base / 20% Bull. These are the same
+weights as the Sept file. Bear gets 35% because Cybercab is ~4 weeks into
+public service in one city, the vehicle has no steering wheel (regulatory
+exposure), and every Tesla volume target to date has slipped 2-5 years.
+
+
+================================================================================
+SECTION 5 — DCF MODEL (BASE CASE)
+================================================================================
+
+BASE — WACC 12.0%, g 3.0%, exit 10x EBITDA ($B)
+                         2026    2027    2028    2029    2030    2031    2032    2033    2034    2035    2036
+Veh price ($k)           35.0    30.0    30.0    29.0    28.0    27.5    27.0    27.0    27.0    27.0    27.0
+Revenue                  0.02    0.33    1.82    6.24   15.50   32.40   59.78   97.20  144.90  200.18  258.64
+Fleet cash opex          0.05    0.41    1.37    3.66    8.67   17.78   32.49   53.55   80.05  110.89  143.70
+Insurance load           0.00    0.00    0.02    0.09    0.26    0.59    1.18    2.02    3.10    4.42    5.88
+Autonomy license (10%)   0.00    0.03    0.18    0.62    1.55    3.24    5.98    9.72   14.49   20.02   25.86
+R&D (own)                0.20    0.30    0.40    0.50    0.60    0.70    0.80    0.90    1.00    1.10    1.20
+SG&A (incl standalone)   0.50    0.60    0.80    1.00    1.20    1.40    1.60    1.80    2.00    2.20    2.40
+EBITDA                  -0.73   -1.02   -0.95    0.36    3.22    8.69   17.73   29.21   44.25   61.55   79.60
+D&A (market basis)       0.01    0.05    0.24    0.76    1.80    3.69    6.71   11.05   16.84   23.87   31.74
+EBIT                    -0.74   -1.07   -1.20   -0.39    1.42    5.00   11.03   18.15   27.42   37.68   47.86
+Tax (15%, floor 0)       0.00    0.00    0.00    0.00    0.21    0.75    1.65    2.72    4.11    5.65    7.18
+NOPAT                   -0.74   -1.07   -1.20   -0.39    1.21    4.25    9.37   15.43   23.31   32.03   40.68
++ D&A                    0.01    0.05    0.24    0.76    1.80    3.69    6.71   11.05   16.84   23.87   31.74
+− Vehicle capex          0.05    0.36    1.35    3.19    6.16   11.00   17.55   25.65   35.10   44.55   54.00
+− Infra capex            0.01    0.05    0.18    0.44    0.87    1.55    2.42    3.36    4.32    5.00    5.40
++ Salvage                0.00    0.00    0.00    0.00    0.01    0.04    0.14    0.32    0.62    1.10    1.75
+Unlevered FCF           -0.79   -1.43   -2.48   -3.27   -4.02   -4.58   -3.76   -2.21    1.34    7.45   14.77
+− SBC                    0.10    0.10    0.13    0.19    0.33    0.59    1.00    1.56    2.27    3.10    3.98
+SBC-ADJ FCF             -0.89   -1.53   -2.61   -3.46   -4.35   -5.17   -4.75   -3.77   -0.94    4.35   10.80
+
+EBITDA margin: 2030 20.8% → 2036 30.8%. EBIT margin 2036: 18.5%.
+EBIT positive from 2030. SBC-adjusted FCF positive only from 2035.
+PEAK CUMULATIVE FUNDING NEED: -$27.5B (reached in 2034). Cumulative 2026-36
+SBC-adj FCF: -$12.3B.
+
+Note the shape: a business that is EBIT-profitable from 2030 still burns
+cash for five more years, because at market prices every car added costs
+$27-30k up front. This is the clearest effect of independence. Inside Tesla
+the same cars cost ~17% less and the funding comes from Auto's balance sheet.
+Standalone, RobotaxiCo has to raise ~$28B before it pays back, which is what
+justifies the 12% discount rate.
+
+PRESENT VALUE OF EXPLICIT SBC-ADJ FCF (12.0%)
+Year     CF (SBC-adj)    t (yrs)   Disc. factor      PV
+2026Q4       -0.22         0.21       0.9760       -0.22
+2027         -1.53         1.21       0.8715       -1.33
+2028         -2.61         2.21       0.7781       -2.03
+2029         -3.46         3.21       0.6947       -2.40
+2030         -4.35         4.21       0.6203       -2.70
+2031         -5.17         5.21       0.5538       -2.86
+2032         -4.75         6.21       0.4945       -2.35
+2033         -3.77         7.21       0.4415       -1.66
+2034         -0.94         8.21       0.3942       -0.37
+2035          4.35         9.21       0.3520        1.53
+2036         10.80        10.21       0.3143        3.39
+                                               --------
+Sum of PV of explicit FCFs:                      -11.00
+
+TERMINAL VALUE — PERPETUITY GROWTH (g = 3.0%), normalized FCF
+  2036 EBITDA                                     79.60
+  − steady-state D&A (5.225M x $27k x 90% / 4)    31.74
+  = steady-state EBIT                             47.86
+  − tax 15%                                        7.18
+  + D&A                                           31.74
+  − capex (replacement 31.74 + 3% growth 4.86)    36.60
+  − SBC                                            3.98
+  = Normalized terminal FCF                       31.84
+  TV = 31.84 x 1.03 / (12.0% − 3.0%)             364.4   → PV (x0.3143) 114.5
+
+TERMINAL VALUE — EXIT MULTIPLE (10x 2036 EBITDA)
+  TV = 79.60 x 10                                796.0   → PV (x0.3143) 250.1
+
+Average PV of terminal value:                                  182.3
+
+ENTERPRISE VALUE (BASE)                                        $171.3B
+  (perpetuity-only $103.5B; exit-only $239.1B)
+Net cash / debt: NONE allocated. RobotaxiCo is modeled as spun out with zero
+net cash, with its funding needs met by equity raised at fair value (already
+captured as negative FCF in the DCF). EQUITY VALUE = EV = $171.3B.
+Per TSLA share (3.9495B): $43.38. That is 11.6% of TSLA's $375.23 close.
+
+Terminal value is 106% of EV, because the explicit period is net-negative in
+PV. That is typical for a business that only becomes cash-generative at the
+very end of the forecast window, and it is why Section 6 matters more than
+the point estimate.
+
+The gap between the two TV methods is a finding in itself. The exit multiple
+(10x) values continued post-2036 growth that the 3% perpetuity does not. If
+growth really does stop in 2036, the perpetuity figure (~4.6x EBITDA) is the
+honest one, and Base falls toward ~$104B.
+
+
+================================================================================
+SECTION 6 — SENSITIVITY ANALYSIS (BASE)
+================================================================================
+
+TABLE A: EV ($B) — WACC x TERMINAL GROWTH (perpetuity method only)
+WACC \ g     2.0%     2.5%     3.0%     3.5%     4.0%
+10.0%       149.8    157.2    165.6    175.3    186.5
+11.0%       119.4    124.4    130.0    136.3    143.4
+12.0%        96.2     99.7    103.5    107.7    112.5   <- Base
+13.0%        78.2     80.7     83.3     86.2     89.4
+14.0%        64.0     65.7     67.6     69.6     71.8
+
+TABLE B: EV ($B) — EXIT MULTIPLE x WACC (exit method only)
+Multiple    10.0%    12.0%    14.0%
+ 6x         169.1    139.1    114.6
+ 8x         229.2    189.1    156.4
+10x         289.3    239.1    198.2   <- Base (12%)
+12x         349.5    289.2    239.9
+14x         409.6    339.2    281.7
+16x         469.7    389.2    323.4
+
+TABLE C: BLENDED EV ($B) — WACC (Base g and multiple)
+  9%  $266.8 | 10%  $227.5 | 11%  $196.5 | 12%  $171.3 | 13%  $150.5 | 14%  $132.9
+
+TABLE D: BLENDED EV ($B) — VEHICLE PRICE SHIFT (all years) x LICENSE RATE
+Price shift \ license    0%       5%      10%      15%      20%
+  −$5,000             302.2    248.7    195.2    141.7     88.1
+  −$2,500             290.2    236.8    183.2    129.7     76.2
+   +$0  (Base)        278.3    224.8    171.3    117.8     64.3
+  +$2,500             266.4    212.9    159.4    105.9     52.3
+  +$5,000             254.5    201.0    147.5     94.0     40.4
+
+Read across, not down: EVERY 5 POINTS OF LICENSE RATE ≈ $53.5B of EV;
+every $2,500 of vehicle price ≈ $12B. The software terms matter ~4x more than
+the car's price. A RobotaxiCo negotiating with Tesla should fight over the
+license, not the sticker.
+
+TABLE E: BLENDED EV ($B) — FARE SHIFT ($/vehicle-mile, every year)
+  −$0.10: $29.6 | −$0.05: $100.4 | Base: $171.3 | +$0.05: $242.2 |
+  +$0.10: $313.1 | +$0.20: $454.7
+A permanent $0.10/mi fare error moves Base EV by ~$140B, almost its entire
+value. Fare is the most powerful single input. Today's Austin pricing is
+above the model, but Waymo/Zoox competition and Tesla's own "cheaper than
+Uber" positioning point down.
+
+
+================================================================================
+SECTION 7 — SCENARIO DETAIL (BULL / BEAR)
+================================================================================
+
+BULL — WACC 10.5%, g 3.5%, exit 16x EBITDA ($B)
+                         2026    2027    2028    2029    2030    2031    2032    2033    2034    2035    2036
+Veh price ($k)           32.0    30.0    28.0    27.0    26.0    25.0    25.0    25.0    25.0    25.0    25.0
+Revenue                  0.05    0.86    4.90   16.32   41.14   85.69  156.98  258.21  378.38  515.19  659.92
+Fleet cash opex          0.11    1.03    3.44    8.70   20.57   41.07   73.33  120.86  176.76  240.17  306.96
+Insurance load           0.00    0.01    0.04    0.16    0.46    1.04    2.07    3.59    5.41    7.58   10.00
+Autonomy license (8%)    0.00    0.07    0.39    1.31    3.29    6.86   12.56   20.66   30.27   41.21   52.79
+R&D + SG&A               0.85    1.18    1.60    2.02    2.45    2.88    3.30    3.72    4.15    4.58    5.00
+EBITDA                  -0.92   -1.42   -0.58    4.13   14.38   33.84   65.72  109.38  161.80  221.65  285.17
+D&A                      0.01    0.12    0.53    1.57    3.69    7.38   13.16   21.40   32.06   44.86   59.20
+EBIT                    -0.93   -1.54   -1.10    2.56   10.68   26.46   52.57   87.99  129.73  176.79  225.97
+NOPAT                   -0.93   -1.54   -1.10    2.17    9.08   22.49   44.68   74.79  110.27  150.28  192.07
+Vehicle + infra capex    0.11    0.95    3.20    7.44   14.39   24.54   38.75   55.59   73.48   92.30  110.60
+Salvage                  0.00    0.00    0.00    0.00    0.01    0.08    0.28    0.65    1.25    2.12    3.38
+SBC                      0.10    0.11    0.17    0.34    0.72    1.39    2.45    3.97    5.78    7.83   10.00
+SBC-ADJ FCF             -1.12   -2.49   -3.95   -4.04   -2.32    4.04   16.91   37.27   64.33   97.13  134.05
+
+  Peak funding need -$13.9B (2030); FCF-positive from 2031; 2036 EBITDA margin 43.2%.
+  Sum PV explicit $134.9B. Normalized terminal FCF $171.4B.
+  TV perpetuity $2,534B → PV $914.0B; TV exit (16x) $4,563B → PV $1,645.6B.
+  ENTERPRISE VALUE (BULL): $1,414.7B  (perp-only $1,048.9B; exit-only $1,780.5B)
+  = $358.19 per TSLA share = 95.5% of TSLA's market cap, from robotaxi alone.
+
+BEAR — WACC 14.0%, g 2.0%, exit 6x EBITDA ($B)
+                         2026    2027    2028    2029    2030    2031    2032    2033    2034    2035    2036
+Veh price ($k)           38.0    33.0    32.0    32.0    31.0    31.0    31.0    31.0    31.0    31.0    31.0
+Revenue                  0.01    0.08    0.45    1.56    3.86    7.62   12.70   19.48   26.51   33.55   40.24
+Fleet cash opex          0.01    0.13    0.46    1.35    3.25    6.47   11.23   17.47   24.11   30.96   37.71
+Insurance + license      0.00    0.01    0.06    0.22    0.56    1.12    1.89    2.94    4.02    5.13    6.19
+R&D + SG&A               0.56    0.74    0.92    1.10    1.28    1.46    1.64    1.82    2.00    2.18    2.36
+EBITDA                  -0.57   -0.80   -0.99   -1.11   -1.23   -1.43   -2.06   -2.75   -3.62   -4.72   -6.03
+EBIT                    -0.57   -0.82   -1.08   -1.40   -1.94   -2.85   -4.53   -6.55   -8.96  -11.69  -14.68
+Vehicle + infra capex    0.02    0.15    0.54    1.44    2.80    4.53    6.59    8.59   10.53   12.43   14.29
+SBC-ADJ FCF             -0.69   -1.05   -1.64   -2.68   -4.18   -6.16   -8.89  -11.60  -14.40  -17.35  -20.43
+
+  Never EBITDA-positive. Cumulative burn 2026-36: -$89.1B.
+  Terminal value: $0 under both methods (negative EBITDA and normalized FCF,
+  so both are floored at zero: a negative-cash business is abandoned, not
+  capitalized in perpetuity).
+  ENTERPRISE VALUE (BEAR): -$33.5B = PV of ten years of burn.
+
+  Why Bear is so much worse here than in the Sept file: there, Bear's FLEET
+  economics were roughly breakeven (±$0.4B/yr) with a $20k car and no license.
+  Standalone, the 12% license plus the insurance load alone (~$6B/yr by 2036)
+  exceed that thin margin, and a $31k car adds ~$4B/yr more D&A. A sub-scale
+  robotaxi operator that does not own its software cannot make money at
+  Bear-case fares.
+  ABANDONMENT NOTE: no rational standalone board would burn $89B over a
+  decade. If RobotaxiCo shuts down once Bear is evident (~2029), its EV is
+  roughly -$5B, and its EQUITY is floored at $0. With Bear floored at $0, the
+  probability-weighted EV becomes $360.0B ($91.16/TSLA share) vs $348.3B.
+  The headline keeps the unfloored -$33.5B (conservative call).
+
+
+================================================================================
+SECTION 7B — THE "INDEPENDENCE DISCOUNT": STANDALONE VS. INSIDE TESLA
+================================================================================
+
+Same model, same fleet, fares, opex and WACC, re-run "as run inside Tesla":
+vehicles at Tesla's cost (83% of market price, i.e. Auto's ~17% gross margin
+removed), no license, no insurance load, no standalone G&A, but Robotaxi
+carries its share of in-house autonomy R&D (the Sept file's $1.2B → $3.8B
+Base allocation) instead.
+
+                               Standalone      Inside Tesla      Difference
+BASE EV                          $171.3B          $307.6B          +$136.3B
+BULL EV                        $1,414.7B        $1,831.9B          +$417.2B
+BEAR EV                          -$33.5B          -$28.6B            +$4.9B
+Base 2036 EBITDA                  $79.6B          $108.8B
+Base cum. SBC-adj FCF 2026-36    -$12.3B          +$85.3B
+
+BASE INDEPENDENCE DISCOUNT: $136.3B (44% of inside-Tesla value).
+One lever at a time, from the standalone Base ($171.3B):
+  Remove autonomy license (10% of revenue)         +$107.0B   ← dominant
+  Vehicles at Tesla cost instead of market          +$22.0B
+  Remove insurance load                             +$23.9B
+  (Partly offset by charging in-house R&D instead   ~ −$17B, the residual)
+Other conservative calls, for reference:
+  Flat $200/veh-month license instead of 10%        +$55.8B
+  WACC 10% (Sept file's rate) instead of 12%        +$56.1B
+  Exit 12x instead of 10x                           +$25.0B
+
+THE CRUCIAL POINT: MOST OF THIS DISCOUNT IS NOT DESTROYED VALUE. The license
+fee (~$26B/yr by 2036) and the vehicle margin (~$9B/yr) are REVENUE to Tesla's
+AI/Auto side. Independence reallocates value between Tesla's divisions; it
+mostly does not shrink the consolidated pie. Only the insurance load (a real
+third-party cost or capital charge) and the higher standalone cost of capital
+are true leakage. So:
+  - "What is the Robotaxi BUSINESS worth on its own?"   ~$171B (this file)
+  - "What does robotaxi add to TSLA, consolidated?"   ~$308B at 12% WACC;
+     ~$409B if discounted at a Tesla-like 10% (above the Sept file's $342B,
+     because that file's 16x-FCF exit on un-normalized FCF was lower)
+The difference is how much of robotaxi's value Tesla captures as the SUPPLIER
+(car plus software) rather than as the OPERATOR. In this model the license
+alone is worth ~$107B, about 62% as much as the entire standalone operator
+($171B). Add the vehicle margin (~$22B) and the supplier side captures ~$129B
+against the operator's $171B, i.e. ~43% of the combined value.
+
+RECONCILIATION TO THE SEPT 7 SEGMENT DCF ($342.0B Base): the inside-Tesla
+re-run lands at $307.6B rather than $342B because this file uses a 12% vs 10%
+WACC, a 10x EBITDA exit vs a 16x FCF exit, normalized terminal FCF,
+subtraction of SBC, and $22.4k (cost/0.83) vehicles vs $20k.
+
+
+================================================================================
+SECTION 8 — REVERSE DCF: WHAT WOULD ROBOTAXI HAVE TO BE TO CARRY TSLA?
+================================================================================
+
+The bull narrative for TSLA is that robotaxi is most of the company's value.
+TSLA market cap is ~$1.48T at $375.23. Holding all Base inputs fixed (12%
+WACC, 10% license, market-price cars), this section solves for the single
+change needed to reach each target EV:
+
+Target EV         Fare uplift needed (all yrs)    OR    Fleet scale needed (2036 avg)
+  $250B           +$0.06/mi (2036 fare $0.72)             1.4x Base  (7.4M cars)
+  $500B           +$0.23/mi (2036 fare $0.89)             2.7x Base (14.1M cars)
+  $741B (½ mkt cap) +$0.40/mi (2036 fare $1.06)           4.0x Base (20.6M cars)
+  $1,482B (=mkt cap) +$0.93/mi (2036 fare $1.58)          7.8x Base (40.7M cars)
+
+(The fleet-scale solve holds R&D/SG&A fixed, so it is slightly generous.)
+
+Plain conclusion: if robotaxi is to justify the whole of TSLA's current
+market cap as a STANDALONE operator, it needs either ~41M cars on the road by
+2036, about 3.5x the Bull case (which already assumes Musk's 4M/yr stretch
+target is fully met), or 2036 fares of ~$1.58 per vehicle-mile, ~35-45%
+ABOVE Tesla's own current Austin pricing (~$1.10-1.20 per vehicle-mile)
+after ten years of competition. Neither is plausible.
+The bull thesis for TSLA only works if Tesla ALSO captures the supplier
+economics (the vehicle margin and especially the software license) at scale.
+That would include licensing to OTHER operators and to consumer FSD, which
+is a different and larger valuation than this file's.
+
+
+================================================================================
+SECTION 9 — KEY RISKS (SPECIFIC TO THIS ANALYSIS)
+================================================================================
+
+1. LICENSE TERMS ARE INVENTED. No market exists for unsupervised robotaxi
+   software. 10% of revenue is a reasoned judgment (Sec 3B), and Table D
+   shows the range. This is the largest single uncertainty specific to the
+   standalone framing.
+2. FARE PATH. Table E: ±$0.10/mi ≈ ±$140B. The model already sits below
+   today's Austin pricing, but competition (Waymo ~4,000 cars, Zoox, and
+   Uber/Lyft AV partnerships) could push fares lower faster.
+3. REGULATORY / SAFETY-CASE RISK for a vehicle without controls. One serious
+   incident can freeze deployment nationally (cf. Cruise, Oct 2023). This
+   risk is inherited from the fleet file and drives the 35% Bear weight.
+4. FLEET RAMP DEPENDS ON MUSK TARGETS. Base reaches 2M/yr production by 2036
+   and Bull 4M. Every prior Tesla volume target has slipped (Model 3,
+   Cybertruck, Semi). The Q1 2026 "mass production in 2026" language was
+   dropped from the Q2 deck.
+5. UTILIZATION. Base assumes 75k mi/vehicle/yr at maturity, roughly 2x Waymo's
+   current ~30-35k. This was not re-derived here.
+6. FUNDING. A standalone RobotaxiCo needs ~$28B (Base) to ~$89B (Bear) of
+   external capital before it self-funds. Access and dilution risk are only
+   implicit in the WACC.
+7. INSURANCE TAIL. A nuclear-verdict year lands on a standalone balance sheet
+   with no Tesla backstop.
+8. TERMINAL DEPENDENCE. TV is 106% of Base EV, and the two TV methods differ
+   by 2.3x. The headline is a midpoint of two very different worldviews.
+
+
+================================================================================
+SECTION 10 — ASSESSMENT / WHAT THIS MEANS
+================================================================================
+
+- As an independent company paying market prices for its cars and its brain,
+  Tesla's robotaxi network is worth ~$171B in the Base case: a real, large
+  business (~$259B revenue and ~$80B EBITDA by 2036) whose economics look like
+  a capital-intensive fleet operator, not a software company. It burns ~$28B
+  before turning cash-positive in 2035.
+- The probability-weighted $348B is mostly the Bull case (81% of the
+  weighted value). Read it as "Base, plus a 20% chance of something
+  enormous," not as a central estimate.
+- The most important insight from the carve-out: IN DRIVERLESS RIDE-HAIL,
+  THE SUPPLIER SIDE (SOFTWARE PLUS CAR) CAPTURES NEARLY AS MUCH VALUE AS THE
+  OPERATOR. At a 10% license, ~$107B of Base value goes to the software
+  owner and ~$22B to the vehicle maker, against $171B for the operator. At a
+  15-20% license (Table D) the software owner would capture MORE than the
+  operator. Investors valuing TSLA on "robotaxi" are valuing Tesla as an
+  autonomy supplier as much as a network operator.
+- Relative to TSLA's ~$1.48T market cap, robotaxi as a standalone operator
+  covers 12% (Base) to 24% (prob-weighted). The rest of the market cap has
+  to come from Auto, Energy, FSD software, Optimus, and Tesla's supplier
+  economics on robotaxi itself.
+
+
+================================================================================
+SECTION 11 — SUMMARY VALUATION TABLE
+================================================================================
+
+Scenario  WACC   g    Exit   2036 Rev  2036 EBITDA  Peak funding  EV ($B)   /TSLA sh  % mkt cap
+BEAR     14.0%  2.0%   6x     $40.2B     -$6.0B       -$89.1B      -33.5     -$8.47      n/m
+BASE     12.0%  3.0%  10x    $258.6B     $79.6B       -$27.5B      171.3     $43.38    11.6%
+BULL     10.5%  3.5%  16x    $659.9B    $285.2B       -$13.9B    1,414.7    $358.19    95.5%
+Prob-weighted (35/45/20)                                          348.3     $88.19    23.5%
+  (Bear floored at $0)                                            360.0     $91.16    24.3%
+Simple average                                                    517.5    $131.03    34.9%
+Base, inside-Tesla economics (Sec 7B)                             307.6     $77.88    20.8%
+
+TSLA reference: $375.23 close 2026-10-13; 3.9495B shares; ~$1.48T market cap.
+
+
+================================================================================
+DISCLOSURES & LIMITATIONS
+================================================================================
+- Data pulled live via WebSearch/WebFetch on 2026-10-14 for this personal, ad
+  hoc request and saved to ../extracts/TSLA-ROBOTAXI-SEGMENTS-2023-2026.md.
+  Primary sources: Tesla Q2 2026 10-Q and FY2024 10-K (SEC EDGAR). Secondary:
+  electrive, mercomindia, electrek, teslanorth, evwire, Tesla Oracle,
+  Benzinga, thedriven.io, notateslaapp, basenor, techrepublic, Google Finance.
+  Full URLs are in the extract.
+- DISCREPANCIES FOUND: (1) TSLA share price: Google Finance $375.23 close
+  10/13 vs ~$365-367 intraday 10/14 reports; the close is used. (2) Share
+  count: 3,540M diluted weighted-average (Q2) vs 3,949.5M outstanding
+  (cover page). The higher count is used (conservative per share); at
+  3.54B, per-share figures rise ~11.6% (Base $48.39). (3) FY2025 segment
+  gross profit is derived from a single secondary total-GP figure.
+  (4) Q1 2026 cumulative Robotaxi miles (~1.7M) is from a secondary source and
+  not verified against the deck. (5) One secondary source claimed $31.4B Q2
+  2026 revenue; rejected in favor of the 10-Q's $28.2B.
+- FLEET, UTILIZATION, FARE AND OPERATING-COST ASSUMPTIONS ARE INHERITED from
+  the tech-buffett/personal scenario files (dated 2026-09-06/07), which are
+  scenario plans, not forecasts. Their caveats apply in full: U.S. cost per
+  mile applied globally, China excluded, uniform 4-year retirement.
+- JUDGMENT CALLS, flagged: market vehicle price path (Sec 3A); 10% autonomy
+  license (Sec 3B; the flat $200/mo alternative gives +$55.8B); insurance load;
+  standalone WACC 12% (10% gives +$56.1B); exit 10x (12x gives +$25.0B);
+  normalized terminal FCF (un-normalized gives Base $133.5B); SBC at $0.1B +
+  1.5% of revenue; no NOL shield; Bear not floored at $0 in the headline.
+- MODEL CHANGE MADE DURING CONSTRUCTION (disclosed): the first run used a 12x
+  Base exit multiple (Base EV $196.3B). It was cut to 10x after checking it
+  against the perpetuity math: 12x EBITDA implied ~30x normalized FCF for a
+  business assumed to grow 3% forever. Bear's exit multiple moved 8x→6x
+  (no effect; Bear EBITDA is negative).
+- Robotaxi has NO disclosed standalone financials. Every Robotaxi P&L figure
+  here is modeled, not reported.
+- This is a personal, standalone research file prepared outside the
+  tech-buffett agent's Init -> Deep Dive -> DCF pipeline. It does NOT qualify
+  TSLA (or any notional Robotaxi spinoff) for purchase in the official
+  tech-buffett portfolio under the rules in CLAUDE.md and
+  .claude/agents/tech-buffett.md.
+- Prepared for personal research purposes only. Not investment advice.
+================================================================================
