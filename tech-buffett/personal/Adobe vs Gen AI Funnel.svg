@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <style>
+    text { font-family: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', cursive; fill: #2B2D42; }
+    .ink { stroke: #2B2D42; stroke-width: 6; stroke-linejoin: round; stroke-linecap: round; }
+    .thin { stroke: #2B2D42; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+    .shadow { fill: #2B2D42; }
+    .tierTitle { font-size: 58px; font-weight: bold; text-anchor: middle; }
+    .tierSub { font-size: 27px; text-anchor: middle; }
+    .pill { font-size: 21px; font-weight: bold; text-anchor: middle; fill: #FFFFFF; }
+    .row { font-size: 28px; }
+    .note { font-size: 22px; font-style: italic; fill: #5A5A6E; }
+    .sticker { font-size: 24px; font-weight: bold; text-anchor: middle; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#FFF8E7"/>
+  <g fill="none" stroke="#F2C94C" stroke-width="4" stroke-linecap="round">
+    <path d="M60 50 v30 M45 65 h30"/>
+    <path d="M1850 40 v26 M1837 53 h26"/>
+    <path d="M1100 870 v22 M1089 881 h22"/>
+    <path d="M40 420 v20 M30 430 h20"/>
+  </g>
+  <g fill="#F2C94C">
+    <circle cx="1700" cy="60" r="6"/>
+    <circle cx="250" cy="70" r="5"/>
+    <circle cx="1140" cy="1050" r="5"/>
+  </g>
+
+  <!-- Title -->
+  <rect x="560" y="78" width="800" height="26" rx="10" fill="#FFD93D" transform="rotate(-1 960 91)"/>
+  <text x="960" y="95" font-size="60" font-weight="bold" text-anchor="middle">THE PRO CREATIVE FUNNEL</text>
+  <text x="960" y="148" font-size="30" text-anchor="middle" style="fill:#5A5A6E">Where does Gen AI actually threaten Adobe?</text>
+
+  <!-- ===== FUNNEL ===== -->
+  <!-- Tier 1: Create -->
+  <polygon class="shadow" points="280,190 1120,190 1055,400 345,400" transform="translate(9 9)"/>
+  <polygon class="ink" fill="#B794F6" points="280,190 1120,190 1055,400 345,400"/>
+  <text class="tierTitle" x="700" y="290">1. CREATE</text>
+  <text class="tierSub" x="700" y="338">AI generates the concept</text>
+
+  <!-- Tier 2: Refine -->
+  <polygon class="shadow" points="355,420 1045,420 980,630 420,630" transform="translate(9 9)"/>
+  <polygon class="ink" fill="#74C0FC" points="355,420 1045,420 980,630 420,630"/>
+  <text class="tierTitle" x="700" y="520">2. REFINE</text>
+  <text class="tierSub" x="700" y="568">Retouch &amp; fix what AI got wrong</text>
+
+  <!-- Tier 3: Ship -->
+  <polygon class="shadow" points="427,650 973,650 908,860 492,860" transform="translate(9 9)"/>
+  <polygon class="ink" fill="#69DB7C" points="427,650 973,650 908,860 492,860"/>
+  <text class="tierTitle" x="700" y="750">3. SHIP</text>
+  <text class="tierSub" x="700" y="798">Sign-off, brand assets, delivery</text>
+
+  <!-- Neck -->
+  <polygon class="ink" fill="#868E96" points="625,880 775,880 755,945 645,945"/>
+
+  <!-- Coins falling out -->
+  <g class="thin">
+    <path d="M610 985 l-25 10 M790 985 l25 10 M600 1030 l-30 0 M800 1030 l30 0" fill="none"/>
+  </g>
+  <g>
+    <circle class="thin" cx="672" cy="990" r="24" fill="#FFD43B"/>
+    <text x="672" y="999" font-size="26" font-weight="bold" text-anchor="middle">$</text>
+    <circle class="thin" cx="732" cy="1012" r="24" fill="#FFD43B"/>
+    <text x="732" y="1021" font-size="26" font-weight="bold" text-anchor="middle">$</text>
+    <circle class="thin" cx="690" cy="1048" r="24" fill="#FFD43B"/>
+    <text x="690" y="1057" font-size="26" font-weight="bold" text-anchor="middle">$</text>
+  </g>
+
+  <!-- ===== LEFT ICONS ===== -->
+  <!-- Robot (Create) -->
+  <g>
+    <line class="ink" x1="150" y1="215" x2="150" y2="238"/>
+    <circle class="thin" cx="150" cy="208" r="10" fill="#FF6B6B"/>
+    <rect class="ink" x="80" y="262" width="16" height="34" rx="6" fill="#ADB5BD"/>
+    <rect class="ink" x="204" y="262" width="16" height="34" rx="6" fill="#ADB5BD"/>
+    <rect class="ink" x="95" y="238" width="110" height="85" rx="20" fill="#DEE2E6"/>
+    <circle class="thin" cx="128" cy="272" r="14" fill="#FFFFFF"/>
+    <circle cx="131" cy="273" r="6" fill="#2B2D42"/>
+    <circle class="thin" cx="172" cy="272" r="14" fill="#FFFFFF"/>
+    <circle cx="175" cy="273" r="6" fill="#2B2D42"/>
+    <rect class="thin" x="120" y="297" width="60" height="14" rx="5" fill="#FFFFFF"/>
+    <path class="thin" d="M135 297 v14 M150 297 v14 M165 297 v14" fill="none"/>
+    <rect class="ink" x="112" y="328" width="76" height="42" rx="12" fill="#B794F6"/>
+    <circle cx="150" cy="349" r="7" fill="#FFD43B" class="thin"/>
+    <path d="M62 230 l6 -16 l6 16 l16 6 l-16 6 l-6 16 l-6 -16 l-16 -6 z" fill="#FFD93D" class="thin"/>
+    <path d="M232 330 l4 -11 l4 11 l11 4 l-11 4 l-4 11 l-4 -11 l-11 -4 z" fill="#FFD93D" class="thin"/>
+  </g>
+
+  <!-- Paintbrush (Refine) -->
+  <g transform="rotate(35 150 525)">
+    <rect class="ink" x="139" y="430" width="22" height="105" rx="11" fill="#C68B59"/>
+    <rect class="ink" x="133" y="532" width="34" height="26" rx="4" fill="#ADB5BD"/>
+    <path class="ink" d="M133 558 C130 590 140 605 150 625 C160 605 170 590 167 558 Z" fill="#4DABF7"/>
+  </g>
+  <path class="thin" d="M70 600 c-10 -20 15 -30 25 -15 c15 -15 35 0 22 15 c18 5 10 28 -8 22 c-5 18 -30 15 -30 0 c-18 2 -22 -18 -9 -22 z" fill="#4DABF7"/>
+  <path d="M225 450 l5 -14 l5 14 l14 5 l-14 5 l-5 14 l-5 -14 l-14 -5 z" fill="#FFD93D" class="thin"/>
+
+  <!-- Rocket (Ship) -->
+  <g transform="rotate(30 150 760)">
+    <path class="ink" d="M120 802 L96 838 L124 826 Z" fill="#FF6B6B"/>
+    <path class="ink" d="M180 802 L204 838 L176 826 Z" fill="#FF6B6B"/>
+    <path class="ink" d="M150 680 C188 712 188 790 176 828 L124 828 C112 790 112 712 150 680 Z" fill="#FFFFFF"/>
+    <circle class="thin" cx="150" cy="745" r="16" fill="#74C0FC"/>
+    <path class="thin" d="M130 832 L150 878 L170 832 Z" fill="#FFD43B"/>
+    <path d="M140 834 L150 858 L160 834 Z" fill="#FF922B"/>
+  </g>
+  <path class="thin" d="M58 860 l-20 14 M80 878 l-16 16" fill="none"/>
+
+  <!-- ===== CONNECTORS ===== -->
+  <g class="ink" fill="none" stroke-dasharray="4 14">
+    <path d="M1100 295 H1158"/>
+    <path d="M1027 525 H1158"/>
+    <path d="M955 755 H1158"/>
+  </g>
+  <g fill="#2B2D42">
+    <polygon points="1158,283 1176,295 1158,307"/>
+    <polygon points="1158,513 1176,525 1158,537"/>
+    <polygon points="1158,743 1176,755 1158,767"/>
+  </g>
+
+  <!-- ===== SCORE CARDS ===== -->
+  <!-- Card 1 -->
+  <rect class="shadow" x="1188" y="213" width="700" height="180" rx="22"/>
+  <rect class="ink" x="1180" y="205" width="700" height="180" rx="22" fill="#FFFFFF"/>
+  <rect class="thin" x="1210" y="240" width="150" height="44" rx="22" fill="#E03131"/>
+  <text class="pill" x="1285" y="270">ADOBE</text>
+  <text class="row" x="1380" y="272">Firefly (IP-safe AI)</text>
+  <rect class="thin" x="1210" y="297" width="150" height="44" rx="22" fill="#7048E8"/>
+  <text class="pill" x="1285" y="327">GEN AI</text>
+  <text class="row" x="1380" y="329">Midjourney · ChatGPT · Gemini</text>
+  <text class="note" x="1212" y="370">Fast, cheap &amp; good enough for most</text>
+  <g transform="translate(1755 205) rotate(5)">
+    <rect class="thin" x="-130" y="-26" width="260" height="52" rx="10" fill="#FFD93D"/>
+    <text class="sticker" x="0" y="9">GEN AI LEADS</text>
+  </g>
+
+  <!-- Card 2 -->
+  <rect class="shadow" x="1188" y="443" width="700" height="180" rx="22"/>
+  <rect class="ink" x="1180" y="435" width="700" height="180" rx="22" fill="#FFFFFF"/>
+  <rect class="thin" x="1210" y="470" width="150" height="44" rx="22" fill="#E03131"/>
+  <text class="pill" x="1285" y="500">ADOBE</text>
+  <text class="row" x="1380" y="502">Photoshop + Generative Fill</text>
+  <rect class="thin" x="1210" y="527" width="150" height="44" rx="22" fill="#7048E8"/>
+  <text class="pill" x="1285" y="557">GEN AI</text>
+  <text class="row" x="1380" y="559">Prompt-based edits</text>
+  <text class="note" x="1212" y="600">Pros still need pixel-level control</text>
+  <g transform="translate(1755 435) rotate(-4)">
+    <rect class="thin" x="-145" y="-26" width="290" height="52" rx="10" fill="#74C0FC"/>
+    <text class="sticker" x="0" y="9">ADOBE, FOR NOW</text>
+  </g>
+
+  <!-- Card 3 -->
+  <rect class="shadow" x="1188" y="673" width="700" height="180" rx="22"/>
+  <rect class="ink" x="1180" y="665" width="700" height="180" rx="22" fill="#FFFFFF"/>
+  <rect class="thin" x="1210" y="700" width="150" height="44" rx="22" fill="#E03131"/>
+  <text class="pill" x="1285" y="730">ADOBE</text>
+  <text class="row" x="1380" y="732">Frame.io · Acrobat · Libraries</text>
+  <rect class="thin" x="1210" y="757" width="150" height="44" rx="22" fill="#7048E8"/>
+  <text class="pill" x="1285" y="787">GEN AI</text>
+  <text class="row" x="1380" y="789">Download a PNG</text>
+  <text class="note" x="1212" y="830">Agencies &amp; enterprises live here: $$$</text>
+  <g transform="translate(1745 665) rotate(5)">
+    <rect class="thin" x="-140" y="-26" width="280" height="52" rx="10" fill="#FF8787"/>
+    <text class="sticker" x="0" y="9">ADOBE BY A MILE</text>
+  </g>
+
+  <!-- ===== BOTTOM CALLOUTS ===== -->
+  <!-- Freelancer bubble -->
+  <path class="ink" d="M60 895 H500 Q530 895 530 925 V1015 Q530 1045 500 1045 H60 Q30 1045 30 1015 V925 Q30 895 60 895 Z" fill="#FFFFFF"/>
+  <text x="55" y="938" font-size="26" font-weight="bold" style="fill:#E8590C">SOLO CREATOR SHORTCUT</text>
+  <text x="55" y="978" font-size="23">Prompt → tweak → post</text>
+  <text x="55" y="1018" font-size="22" font-weight="bold">Adobe gets skipped entirely!</text>
+
+  <!-- Takeaway banner -->
+  <rect class="shadow" x="1188" y="888" width="700" height="160" rx="22"/>
+  <rect class="ink" x="1180" y="880" width="700" height="160" rx="22" fill="#FFD93D"/>
+  <text x="1530" y="948" font-size="36" font-weight="bold" text-anchor="middle">Gen AI owns the <tspan fill="#7048E8">TOP</tspan>.</text>
+  <text x="1530" y="1005" font-size="36" font-weight="bold" text-anchor="middle">Adobe's moat is the <tspan fill="#E03131">END</tspan>.</text>
+</svg>
