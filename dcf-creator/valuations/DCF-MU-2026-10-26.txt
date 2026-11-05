@@ -1,0 +1,1149 @@
+================================================================================
+MICRON TECHNOLOGY (MU) — DISCOUNTED CASH FLOW ANALYSIS
+Cycle-normalized, three-scenario DCF (DCF only; no multiples/SOTP companion)
+Date: October 26, 2026
+Sources: Everything was pulled live from SEC EDGAR and Micron IR on Oct 26,
+         2026 and structured into extracts in dcf-creator/extracts/ before
+         this model was built:
+           - MU-HISTORICALS-SEGMENTS-FY2016-FY2026.md  (10-Ks FY2018-FY2026;
+             old CNBU/MBU/SBU/EBU and new CMBU/CDBU/MCBU/AEBU segment
+             history, plus the bridge between them)
+           - MU-EARNINGS-FY2026-Q4.md  (FQ4 FY26 release, prepared remarks,
+             FY27 guidance, capex, CHIPS/48D, SCAs, equity bridge, price)
+           - MU 2026 10-K.txt, MU FY2026-Q4 Prepared Remarks.txt (raw text)
+         Price: $913.75, intraday Oct 26, 2026 2:15 PM EDT (stockanalysis.com;
+         prior close Oct 23 $877.55). See Disclosures.
+================================================================================
+
+WHAT THIS FILE IS (READ FIRST)
+------------------------------
+This values Micron at what is very likely the most extreme peak in the
+history of the memory industry. FY2026 (ended Sep 3, 2026) produced:
+  - revenue of $133.2B, 3.6x FY2025;
+  - a GAAP gross margin of 80.7%, and 86.8% in FQ4 alone. The prior record
+    was 58.9% for full-year FY2018;
+  - GAAP operating income of $99.3B, more than the $52.7B of CUMULATIVE
+    operating income for FY2016-FY2025;
+  - FCF of $62.3B, 3.3x the cumulative FCF of the previous ten years.
+FQ1 FY27 is guided higher again: $61.5B revenue at ~86% gross margin.
+
+The question is therefore not "what is the current run-rate worth." It is
+"how long does this last, where do margins settle when it ends, and what do
+the intervening years of enormous cash generation add up to?" The model:
+  (a) takes the FY2027 anchor from management's guidance;
+  (b) models the downcycle explicitly instead of extrapolating the peak.
+      Revenue is driven by bits x cost-per-bit x a price premium over
+      mid-cycle pricing;
+  (c) puts the terminal year at a NORMALIZED, mid-cycle margin anchored to
+      Micron's own FY2016-FY2025 through-cycle history, plus an explicit,
+      separately flagged allowance for structural change (HBM, Strategic
+      Customer Agreements, three-player oligopoly).
+
+Every judgment call that drives the answer is listed in Section 13, with
+the dollar effect of making the less conservative choice.
+
+
+EXECUTIVE SUMMARY
+-----------------
+Intrinsic value (base case, 11.5% WACC / 2.5% TGR, 12x exit):   ~$324.90/share
+Intrinsic value (bull case, 10.0% WACC / 3.0% TGR, 16x exit):   ~$832.50/share
+Intrinsic value (bear case, 13.0% WACC / 2.0% TGR, 9x exit):    ~$218.24/share
+Probability-weighted IV (35% bear / 45% base / 20% bull):       ~$389.09/share
+Simple average of the three scenarios:                           ~$458.55/share
+
+Current stock price (Oct 26, 2026, intraday):                     $913.75
+  (prior close $877.55; 52-wk range ~$193-$1,255; ~$1.05T market cap
+   on 1,150M diluted shares)
+Implied downside (base case):            -64.4%  (price is 2.81x base IV)
+Implied downside (bull case):             -8.9%  (price is 1.10x bull IV)
+Implied downside (bear case):            -76.1%
+Implied downside (probability-weighted): -57.4%
+
+HEADLINE FINDING: $913.75 sits above all three scenarios, including a Bull
+case built as a genuine "memory is structurally different now" outcome. In
+that Bull case:
+  - the shortage runs through FY2029 (FY2028 revenue ~$312B);
+  - the downcycle is a soft landing in FY2030-31;
+  - margins then settle permanently at ~44% GAAP operating margin, close to
+    the FY2018 all-time-peak margin (49.3%), as the new NORMAL.
+Even that is worth ~$833.
+
+Per the reverse DCF (Section 11), the price requires one of two things:
+  (1) post-cycle pricing settles at ~3.1x mid-cycle levels forever, which
+      means a ~66% operating margin in perpetuity; or
+  (2) a terminal SBC-adjusted FCF of ~$184B/yr, about 3x what Micron
+      generated in FY2026, its best year ever.
+In plain terms, the market price only works if the memory cycle has been
+abolished and today's shortage economics are the permanent state.
+
+That may be what the market believes, and there are real arguments for it:
+  - take-or-pay SCAs covering ~35% of revenue through 2030, with floor
+    pricing;
+  - $12.9B of customer cash deposits;
+  - ~$134B of RPO at minimum prices;
+  - HBM's wafer intensity;
+  - management saying it has "no line of sight" to supply-demand balance.
+But every prior memory upcycle in which Micron raised capex this hard ended
+in a downturn within 2-3 years, and the new capacity here has dates on it:
+  - Tongluo and ID1: mid-CY2027
+  - Hiroshima, ID2 and Singapore NAND: late CY2028
+  - New York: CY2030
+  - Samsung, SK hynix and CXMT expansions on top of that.
+
+WHERE WE ARE IN THE CYCLE: AT THE PEAK, OR ON THE PEAK PLATEAU.
+  - FQ4 FY26 gross margin (86.8%) is ~28 points above any prior annual
+    peak.
+  - Management calls FQ1 FY27's ~86% the "floor" for FY27, but also
+    guides a "more moderate rate of price increases."
+  - Capex is roughly doubling again (net $13.8B in FY25, $27.4B in FY26,
+    ~$58B FY27E), and construction-weighted.
+  - Customer prepayments and long-term agreements are proliferating.
+  - DIO rose to 129 days.
+Those are classic late-upcycle signatures. The model treats FY2027-FY2028
+as the peak plateau and FY2029-FY2030 as the downcycle in the Base case.
+
+The single most important number in this file: ~69% of Base-case
+enterprise value comes from FY2027-FY2028 cash flow alone. Micron's value
+over the next 24 months is overwhelmingly about how much cash it banks
+before the cycle turns, and whether it can return that cash. The CHIPS
+buyback restrictions loosen on Dec 9, 2026, and the authorization rises to
+$35.16B. The terminal value is small in every scenario except Bull.
+
+NOTE ON SCOPE: Personal, standalone analysis, outside the tech-buffett
+agent's Init -> Deep Dive -> DCF pipeline. This file does NOT qualify MU for
+purchase in the tech-buffett portfolio. Not investment advice.
+
+
+================================================================================
+SECTION 1 — BUSINESS SNAPSHOT
+================================================================================
+
+Micron is one of three global DRAM producers (with Samsung and SK hynix;
+China's CXMT is a rising fourth) and a top-five NAND producer. It owns its
+fabs, unlike AMD or NVIDIA. That makes it a capital-intensive, cyclical
+commodity-plus business, and capex and depreciation dominate the economics.
+
+FY2026 revenue by technology:
+  DRAM  $100,679M  (76%)   includes HBM (not separately disclosed)
+  NAND   $31,785M  (24%)   data center SSD ~ $10B in FQ4 alone
+  Other     $724M  (NOR)
+
+FY2026 revenue by business unit (new structure; Section 3):
+  CMBU  Cloud Memory (hyperscale DRAM + ALL HBM)   $43,085M  32.3%
+  CDBU  Core Data Center (DC SSD + OEM/ent DRAM)   $37,592M  28.2%
+  MCBU  Mobile and Client                          $36,601M  27.5%
+  AEBU  Automotive and Embedded                    $15,886M  11.9%
+  Data center (CMBU + CDBU)                        $80,677M  60.6%
+
+FQ4 FY26 (14 weeks ended Sep 3, 2026), GAAP:
+  - Revenue $54,229M: +31% QoQ, +379% YoY.
+  - Gross margin 86.8%; operating income $43,751M (80.7%).
+  - Net income $37,701M; diluted EPS $32.87 on 1,147M shares.
+  - Non-GAAP EPS $33.42.
+  - OCF $43,973M; net capex $10,774M; adjusted FCF $33,199M.
+
+FQ1 FY27 guide:
+  - Revenue $61.5B +/- $1.5B.
+  - GAAP gross margin ~85.95%; GAAP opex ~$2.31B.
+  - GAAP EPS $37.84 +/- $1.00.
+  - "Sequential revenue growth each quarter" in FY27.
+  - FY27 opex up ~$2.5B; FY27 tax ~15.5%.
+  - Net capex ~$25B in H1 FY27, "higher in the second half."
+
+Balance sheet (Sep 3, 2026):
+  - Cash + investments $73,453M; debt $5,179M; reported net cash $68,274M.
+  - Debt-like items, deducted in the bridge (Section 8):
+      SCA customer deposits     $12,895M
+      Noncurrent taxes payable   $9,820M
+  - Adjusted net cash used in this model: $45,559M.
+
+The thesis in three sentences, both directions:
+  BULL: AI made memory the bottleneck. HBM consumes roughly 3x the wafer area
+        per bit of standard DRAM (Micron's earlier-call figure, not
+        re-verified here), cleanroom space can't be added fast enough,
+        and multi-year take-or-pay contracts with floor prices have changed
+        the industry's pricing structure for good.
+  BEAR: This is the 2017-18 and 2021-22 cycle with the amplitude turned up.
+        Every producer is building, the new fabs have dates, AI capex
+        digestion will arrive, and an 87% gross margin in a commodity
+        manufacturing business is not a steady state.
+  THIS MODEL: weights the bear view of the cycle's SHAPE, but gives
+        Micron a structural uplift over its history on the post-cycle
+        margin (Base) and a large one (Bull).
+
+
+================================================================================
+SECTION 2 — HISTORICAL FINANCIALS (CONSOLIDATED)
+================================================================================
+
+All figures $M. Fiscal years end on the Thursday nearest Aug 31. FY2026 had
+53 weeks; FY2024-25 had 52. Sources are the FY2018/2020/2022/2024/2025/2026
+10-Ks (extract: MU-HISTORICALS-SEGMENTS-FY2016-FY2026.md).
+
+INCOME STATEMENT (GAAP)
+            FY16    FY17    FY18    FY19    FY20    FY21    FY22     FY23    FY24    FY25     FY26
+Revenue    12,399  20,322  30,391  23,406  21,435  27,705  30,758   15,540  25,111  37,378  133,188
+  YoY        -23%    +64%    +50%    -23%     -8%    +29%    +11%     -49%    +62%    +49%    +256%
+Gross prof  2,505   8,436  17,891  10,702   6,552  10,423  13,898   (1,416)  5,613  14,873  107,504
+  GM %      20.2%   41.5%   58.9%   45.7%   30.6%   37.6%   45.2%    -9.1%   22.4%   39.8%    80.7%
+Op income     168   5,868  14,994   7,376   3,003   6,283   9,702   (5,745)  1,304   9,770   99,340
+  Op mgn     1.4%   28.9%   49.3%   31.5%   14.0%   22.7%   31.5%   -37.0%    5.2%   26.1%    74.6%
+Net income   (276)  5,089  14,135   6,313   2,687   5,861   8,687   (5,833)    778   8,539   84,969
+Dil. EPS   $(0.27)  $4.41  $11.51   $5.51   $2.37   $5.14   $7.75   $(5.34)  $0.70   $7.59   $74.33
+Dil. sh      n/c     n/c   1,229   1,143   1,131   1,141   1,122    1,093   1,118   1,125    1,143
+
+REVENUE BY TECHNOLOGY
+            FY18    FY19    FY20    FY21    FY22    FY23    FY24    FY25     FY26
+DRAM       22,625  16,841  14,510  20,039  22,386  10,978  17,603  28,578  100,679
+NAND        6,510   5,355   6,131   7,007   7,811   4,206   7,227   8,503   31,785
+
+FREE CASH FLOW
+                    FY16    FY17    FY18    FY19    FY20    FY21    FY22    FY23    FY24    FY25    FY26
+OCF                3,168   8,153  17,400  13,189   8,306  12,468  15,181   1,559   8,507  17,525  89,675
+Capex (gross)     (5,817) (4,734) (8,879) (9,780) (8,223)(10,030)(12,067) (7,676) (8,386)(15,857)(30,712)
+Govt incentives      n/c     n/c     355     748     262     495     115     710     315   2,005   3,316
+FCF               (2,649)  3,419   8,876   4,157     345   2,933   3,229  (5,407)    436   3,673  62,279
+  FCF margin       -21.4%   16.8%   29.2%   17.8%    1.6%   10.6%   10.5%  -34.8%    1.7%    9.8%   46.8%
+D&A                2,980   3,861   4,759   5,424   5,650   6,214   7,116   7,756   7,780   8,352   9,503
+  D&A % rev        24.0%   19.0%   15.7%   23.2%   26.4%   22.4%   23.1%   49.9%   31.0%   22.3%    7.1%
+SBC                  n/c     n/c    198*    243*     328     378     514     596     833     972   1,333
+
+  * FY18/FY19 SBC is the segment-note "unallocated SBC" line.
+  - FY2026 OCF excludes $12,747M of SCA customer deposits, which Micron
+    reports in FINANCING cash flow. That is correct: they are repayable,
+    not earned.
+  - FY2026 OCF was also flattered by working capital in the "liability"
+    direction:
+      income taxes accrued but not paid (current provision $15.2B vs
+        $1.25B cash taxes paid);
+      AP and accrued expenses +$8.7B;
+      other noncurrent liabilities +$9.6B.
+    Receivables went the other way, absorbing $25.2B. The model ignores
+    working-capital swings (Section 7) and deducts the noncurrent tax
+    payable in the bridge.
+
+BALANCE SHEET (fiscal year-ends)
+                         FY21     FY22     FY23     FY24     FY25      FY26
+Cash + investments      10,398   10,979   10,438    9,152   11,936    73,453
+Total debt               6,776    6,906   13,330   13,397   14,577     5,179
+Net cash (debt)          3,622    4,073   (2,892)  (4,245)  (2,641)   68,274
+Inventories              4,487    6,663    8,387    8,875    8,355    10,372
+PP&E, net               33,213   38,549   37,928   39,749   46,590    63,310
+
+  - Micron went from net DEBT of $2.6B to net cash of $68.3B in one year.
+    It repaid ~$10.0B of debt in FY26.
+  - It was in net debt for three straight years (FY23-FY25) after the
+    FY23 bust. That is the downcycle signature this model expects to
+    recur, though from a far stronger starting position.
+
+
+================================================================================
+SECTION 3 — SEGMENT HISTORY (OLD AND NEW STRUCTURES, BRIDGED)
+================================================================================
+
+SEGMENT REORGANIZATION:
+  - FY2018-FY2024 as originally reported used four BUs organized loosely by
+    product and market:
+      CNBU  Compute & Networking: data center, PC, graphics, networking DRAM
+      MBU   Mobile: phone DRAM and NAND
+      SBU   Storage: ALL SSDs, data center and client, plus component NAND
+      EBU   Embedded: auto, industrial, consumer
+  - In FY2025 Micron reorganized into four market-facing BUs and recast
+    FY2023 and FY2024:
+      CMBU  Cloud Memory: hyperscaler DRAM, plus ALL HBM for every data
+            center customer
+      CDBU  Core Data Center: ALL data center SSD and NAND, plus DRAM for
+            OEM/enterprise and, from FY26, NeoCloud customers
+      MCBU  Mobile & Client: phones and PCs, DRAM and NAND
+      AEBU  Automotive & Embedded
+  - The CDBU wording changed again in the FY2026 10-K (NeoCloud added,
+    "mid-tier cloud" dropped). The FY24 and FY25 CDBU figures are identical
+    in both 10-Ks, so nothing was restated.
+
+3A. OLD STRUCTURE (as reported)
+REVENUE         FY18     FY19     FY20     FY21     FY22     FY23     FY24
+CNBU          15,252    9,968    9,184   12,280   13,693    5,710    9,513
+MBU            6,579    6,403    5,702    7,203    7,260    3,630    6,354
+SBU            5,022    3,826    3,765    3,973    4,553    2,553    4,592
+EBU            3,479    3,137    2,759    4,209    5,235    3,637    4,614
+All Other         59       72       25       40       17       10       38
+Total         30,391   23,406   21,435   27,705   30,758   15,540   25,111
+
+OPERATING INCOME (segment basis)
+CNBU           9,773    4,645    2,010    4,295    5,844     (585)     980
+MBU            3,033    2,606    1,074    2,173    2,160   (1,750)     114
+SBU              964     (386)      36      173      513   (1,887)    (362)
+EBU            1,473      923      301    1,006    1,752      382      199
+All Other         --       13       (2)      20       12        8       17
+Segment total 15,243    7,801    3,419    7,667   10,281   (3,832)     948
+Unallocated     (249)    (425)    (416)  (1,384)    (579)  (1,913)     356
+Consolidated  14,994    7,376    3,003    6,283    9,702   (5,745)   1,304
+
+SEGMENT OP MARGIN
+CNBU           64.1%    46.6%    21.9%    35.0%    42.7%   -10.2%    10.3%
+MBU            46.1%    40.7%    18.8%    30.2%    29.8%   -48.2%     1.8%
+SBU            19.2%   -10.1%     1.0%     4.4%    11.3%   -73.9%    -7.9%
+EBU            42.3%    29.4%    10.9%    23.9%    33.5%    10.5%     4.3%
+
+  (Unallocated is derived as consolidated minus segment total. It is mostly
+   SBC, restructuring and inventory write-down effects. FY24's +356
+   includes +$987M from selling inventory written down in FY23 and a
+   +$200M patent gain.)
+
+3B. NEW STRUCTURE (FY2025/FY2026 10-Ks; FY23-24 recast)
+REVENUE              FY23      FY24      FY25      FY26
+CMBU                1,872     3,792    13,524    43,085
+CDBU                2,124     4,984     7,229    37,592
+MCBU                7,394    11,667    11,859    36,601
+AEBU                4,139     4,631     4,753    15,886
+All Other              11        37        13        24
+Total              15,540    25,111    37,378   133,188
+
+OPERATING INCOME (GAAP-basis segment table, 10-K Note 20)
+CMBU                 (768)      244     6,129    31,225
+CDBU                 (563)      255     2,180    29,539
+MCBU               (3,189)       (1)    1,981    29,208
+AEBU                  680       432       557    11,217
+All Other               8        18        (1)        2
+Unallocated        (1,913)      356    (1,076)   (1,851)
+Consolidated       (5,745)    1,304     9,770    99,340
+
+SEGMENT OP MARGIN
+CMBU               -41.0%      6.4%     45.3%     72.5%
+CDBU               -26.5%      5.1%     30.2%     78.6%
+MCBU               -43.1%      0.0%     16.7%     79.8%
+AEBU                16.4%      9.3%     11.7%     70.6%
+
+3C. BRIDGE: FY2023 AND FY2024 ON BOTH BASES (consolidated ties exactly)
+FY2024 revenue:   OLD  CNBU 9,513 + MBU 6,354 + SBU 4,592 + EBU 4,614 = 25,111
+                  NEW  CMBU 3,792 + CDBU 4,984 + MCBU 11,667 + AEBU 4,631 = 25,111
+Approximate mapping (Micron publishes no line-by-line bridge):
+  AEBU          ~= EBU.  FY24 4,631 vs 4,614, nearly identical. FY23 4,139
+                   vs 3,637; consumer products moved in.
+  MCBU          ~= MBU + client-PC DRAM (ex-CNBU) + client SSD (ex-SBU).
+                   FY24: 11,667 - 6,354 = ~5.3B of client revenue moved from
+                   CNBU/SBU.
+  CMBU + CDBU   ~= data-center DRAM (ex-CNBU) + data-center SSD (ex-SBU).
+                   FY24: 8,776 ~= (9,513 + 4,592) - ~5.3B client.
+A continuous "data center" proxy therefore exists only from FY23:
+                   FY23      FY24      FY25      FY26     FQ4 FY26
+DC share (CMBU+CDBU)  25.7%     35.0%     55.5%     60.6%     63.2%
+Before FY23, CNBU (FY18 peak margin 64.1%) is the closest analog to today's
+CMBU, though CNBU also carried PC and graphics DRAM.
+
+3D. QUARTERLY BU TRAJECTORY (press releases; BU margins are non-GAAP)
+                  FQ2 FY25  FQ4 FY25  FQ1 FY26  FQ2 FY26  FQ3 FY26  FQ4 FY26
+CMBU revenue         2,947     4,543     5,284     7,749    13,769    16,283
+  op margin            45%       48%       55%       66%       78%       76%
+CDBU revenue         1,830     1,577     2,379     5,687    11,524    18,002
+  op margin            33%       25%       37%       67%       83%       85%
+MCBU revenue         2,236     3,760     4,255     7,711    11,521    13,114
+  op margin             1%       29%       47%       76%       86%       88%
+AEBU revenue         1,034     1,434     1,720     2,708     4,634     6,824
+  op margin             6%       20%       36%       62%       75%       79%
+Total revenue        8,053    11,315    13,643    23,860    41,456    54,229
+GAAP GM %            36.8%     44.7%     56.0%     74.4%     84.6%     86.8%
+
+3E. HBM / DATA-CENTER MIX (as disclosed)
+  - Micron does NOT disclose HBM revenue in its FY2026 filings or the FQ4
+    FY26 materials. The last widely reported figure is "nearly $2B" in
+    FQ4 FY25, about an $8B run-rate (secondary coverage of that call).
+  - HBM4 revenue passed $1B by FQ3 FY26 (secondary).
+  - FQ4 FY26 commentary (primary):
+      HBM revenue "grew faster than total company revenue";
+      "vast majority" of CY2027 HBM bit supply is contracted "with
+        significant price increases year over year, narrowing the gross
+        margin gap with conventional DRAM";
+      custom HBM4E (NVHBM) with NVIDIA.
+  - Industry HBM TAM: ~$100B by CY2028 (Micron, Dec 2025).
+  - Data center SSD: ~$10B in FQ4 FY26 alone, more than 10x YoY and over
+    two-thirds of NAND revenue.
+
+WHAT THE SEGMENT HISTORY TELLS YOU GOING INTO THE FORECAST
+  1. THE BOOM IS NOT JUST HBM. This is the most important segment finding.
+     CMBU (where all HBM sits) earned a 76% operating margin in FQ4 FY26.
+     MCBU, phones and PCs, the most commoditized end market Micron serves,
+     earned 88%, and AEBU earned 79%. As recently as FQ2 FY25, MCBU's
+     margin was 1%.
+     When the lowest-differentiation BU posts the highest margin, that is
+     scarcity pricing across the whole bit supply, not product
+     differentiation. The structural-change argument (HBM, SCAs) covers
+     part of the business, and the margin is being earned everywhere.
+     This is why the model normalizes margins at the consolidated level
+     instead of building a high-margin HBM segment forecast. HBM's
+     structural premium is the part of the Base case's normalized
+     premium over history; the rest of the bit supply is assumed to
+     revert.
+  2. THE OLD SEGMENTS SHOW THE AMPLITUDE OF REVERSAL.
+       CNBU (closest analog to CMBU):  64% (FY18) -> 22% (FY20)
+                                       43% (FY22) -> -10% (FY23)
+       MBU:                            46% -> 19%; 30% -> -48%
+       SBU (closest analog to CDBU's   lost money in 3 of 7 years
+            storage half)
+     The model assumes nothing like an -48% segment margin, but a 60-80
+     point compression in BU margins from peak has happened in this
+     company twice in seven years.
+  3. AEBU/EBU is the steadiest BU: it held positive margins through FY23.
+     It is also the smallest, at about 12% of revenue.
+  4. The data-center share went from 26% to 61% in three years. That is a
+     real mix shift toward the customers that sign SCAs and buy HBM.
+     The Base case's structural premium (Section 7) is effectively a bet
+     that this mix shift partially persists through the downcycle.
+
+
+================================================================================
+SECTION 4 — WHERE WE ARE IN THE CYCLE, AND HOW MARGINS ARE NORMALIZED
+================================================================================
+
+4A. MICRON'S CYCLES, FY2016-FY2026
+                  Trough    Peak      Trough    Peak       Trough    PEAK
+                  FY2016    FY2018    FY2020    FY2022     FY2023    FY2026->FY27E
+Revenue ($B)       12.4      30.4      21.4      30.8       15.5      133.2 -> ~256
+GAAP GM %          20.2%     58.9%     30.6%     45.2%      -9.1%     80.7% -> ~86%
+GAAP op margin      1.4%     49.3%     14.0%     31.5%     -37.0%     74.6% -> ~82%
+FCF ($B)           -2.6       8.9       0.3       3.2       -5.4       62.3
+
+THROUGH-CYCLE AVERAGES (FY2016-FY2025: two complete cycles)
+  Revenue-weighted GM:                36.6%
+  Revenue-weighted op margin:         21.6%   (simple average: 17.4%)
+  Revenue-weighted EBITDA margin:     46.1%
+  D&A % of revenue:                   24.5%
+  Net capex % of revenue:             35.4%
+  FCF % of revenue (pre-SBC):          7.8%
+
+Historical peak-to-trough revenue declines: -30% (FY18 -> FY20) and -49%
+(FY22 -> FY23, in ONE year). Both followed peaks with gross margins of
+45-59%. The current peak is at 80-87%.
+
+4B. CYCLE POSITION — EXPLICIT CALL: PEAK PLATEAU (late upcycle)
+Evidence that this is the top or near it:
+  - The gross margin level itself: 86.8% in FQ4, ~28 points above any
+    prior annual record. FQ1 FY27 is guided at ~86%, which management
+    calls the FY27 "floor."
+  - Price increases are DECELERATING by management's own words: "more
+    moderate rate of price increases" after FQ1.
+  - Capex is ramping hard and is construction-weighted: net $13.8B (FY25),
+    $27.4B (FY26), ~$58B FY27E. History's clearest late-cycle indicator.
+  - Capacity with dates:
+      Tongluo, ID1:                          mid-CY2027
+      Singapore HBM packaging:               early CY2027
+      Hiroshima, ID2, Singapore NAND:        late CY2028
+      New York:                              CY2030
+    Plus Samsung, SK hynix and CXMT expansions not modeled individually.
+  - Customers prepaying for supply ($12.9B of deposits, 26 SCAs). In 2018
+    and 2021-22, long-term agreements also proliferated near the peak.
+  - DIO is rising (129 days, +9), though management attributes this to
+    build-ahead and incentive comp capitalized into inventory.
+Evidence it may last longer than the model's Base case:
+  - Management: supply-demand "much tighter in calendar 2027 and 2028 than
+    2026," and "we do not have line of sight to when supply and demand
+    will return to balance."
+  - SCAs: ~35% of revenue through 2030, take-or-pay, mostly with price
+    floors at which "margins [are] meaningfully above any prior cycle
+    peak margins." RPO is ~$134B (10-K) at MINIMUM prices.
+  - HBM's wafer intensity and cleanroom lead times (2-3 years) are a real
+    physical constraint on supply response.
+Model treatment:
+  - Base: FY2027 is the peak (guided). FY2028 is a plateau with prices
+    easing. FY2029-30 is the downcycle and FY2030 the trough. FY2032+ is
+    mid-cycle.
+  - Bull: tight through FY2029, a soft landing in FY2030-32, and a much
+    higher normalized level.
+  - Bear: the downturn begins in FY2028.
+
+4C. NORMALIZATION METHOD
+Revenue in every forecast year (except the guided FY2027 anchor) is
+    Revenue = FY2025 revenue x bit index x cost-per-bit index x P
+where P is the price premium over MID-CYCLE pricing.
+  - FY2025 is the mid-cycle reference year. Its gross margin of 39.8% was
+    close to the 36.6% through-cycle average, and its operating margin of
+    26.1% slightly above the 21.6% average.
+  - P = 1.00 means a FY2025-like gross margin on that year's cost
+    structure.
+  - Cash cost of goods = FY2025 cash cost ($14.15B: revenue less operating
+    income, D&A and opex) x bit index x cost index.
+  - D&A is modeled separately from the capex schedule (Section 6).
+  - Opex is modeled in dollars.
+The FY2026 actual sits at P ~ 3.1x mid-cycle, and the FY2027 guide implies
+P ~ 4.3x (absolute price per bit ~4.8x the FY2025 level). The NORMALIZED
+P used in the terminal years is the key judgment call (Section 7, Table C).
+
+
+================================================================================
+SECTION 5 — FY2027E ANCHOR (bottom-up from guidance)
+================================================================================
+
+                   Revenue    Basis
+FQ1 FY27E          $61.5B     Guided midpoint ($60.0-63.0B range)
+FQ2 FY27E          $63.5B     Estimate: +3.3% QoQ ("sequential growth each
+                              quarter"; "more moderate" price increases)
+FQ3 FY27E          $65.0B     Estimate: +2.4% QoQ
+FQ4 FY27E          $66.0B     Estimate: +1.5% QoQ
+FY2027E           $256.0B     +92% YoY (FY26 had 53 weeks; FY27 has 52)
+
+Gross margin: 86.3% GAAP. FQ1 is guided at 85.95%, management's stated
+  floor, with "higher gross margins beyond fiscal Q1." 86.3% is a
+  conservative average just above the floor.
+Opex: ~$10.5B GAAP. FY26 was $8.16B; management guides ~+$2.5B, mostly R&D
+  and incentive comp. FQ1 GAAP opex is guided at $2.31B.
+GAAP operating income: $256.0B x 86.3% - $10.5B = $210.4B (82.2% margin).
+Implied GAAP EPS ~ $156 including interest income at 15% tax.
+
+CONSERVATIVE CALL: Micron has beaten the high end of guidance for several
+straight quarters, and FQ4 FY26 beat on revenue, gross margin and EPS. The
+quarterly path above assumes small sequential growth. The Bull case uses
+$266B.
+
+
+================================================================================
+SECTION 6 — CAPEX, D&A, CHIPS ACT GRANTS AND TAX CREDITS
+================================================================================
+
+6A. CAPEX IN THIS MODEL IS NET OF GOVERNMENT INCENTIVES
+Micron reports and guides capex "net of anticipated government incentives."
+FY26: gross PP&E spend $30,712M, less $3,316M of incentive proceeds, gives
+net cash capex of $27,396M. The DCF discounts NET capex.
+
+Incentives recognized against FY26 spend were larger than the cash
+received: $6.43B reduced PP&E, versus $3.32B of cash. The difference sits
+in receivables ($3.3B) and other noncurrent assets ($2.1B). These are NOT
+added to the bridge (conservative). They will convert to cash, worth about
+$4-5/share.
+
+6B. WHAT IS STILL COMING (10-K Note 15, Sep 3, 2026)
+  CHIPS direct grants (Idaho ID1/ID2, NY, Manassas)
+    up to $6.4B total; $4.9B remaining, milestone-based
+  Section 48D investment tax credit
+    35% of qualified U.S. fab investment (raised from 25% by the One Big
+    Beautiful Bill Act), refundable via direct pay.
+    ** ONLY for property whose construction BEGINS BEFORE JAN 1, 2027 **
+    Should cover ID1, ID2 and NY fab 1. NY fabs 2-4 likely will not qualify
+    unless construction formally starts by Dec 31, 2026. That is this
+    analysis's inference from the statute, not a Micron statement.
+  New York State (non-binding term sheet)
+    up to $5.5B over 20+ years
+  Japan METI (Hiroshima EUV / modernization)
+    ~JPY 536B (~$3.4B) remaining
+  India (Gujarat assembly/test)
+    ~INR 102B (~$1.1B) remaining
+  Singapore
+    confidential; capex and labor support
+  Strings attached:
+    - clawback for missed completion dates or foreign-entity violations;
+    - an upside-sharing payment if a project's cumulative cash flow beats
+      baseline "at a significant premium" (capped at 75% of
+      disbursements; a real but modest Bull-case drag);
+    - buyback limits through Dec 2029, FCF-based from Dec 9, 2026.
+
+6C. NET CAPEX SCHEDULE ($B) AND IMPLIED INCENTIVE OFFSET
+               FY26A   FY27E  FY28E  FY29E  FY30E  FY31E  FY32E   FY33E+
+BASE  net      27.4    58.0   55.0   38.0   24.0   22.0   24.0   32% of rev
+BULL  net      27.4    60.0   66.0   62.0   52.0   42.0   40.0   30% of rev
+BEAR  net      27.4    56.0   42.0   24.0   17.0   17.0   19.0   33% of rev
+  - FY27E Base: H1 guided ~$25B, plus an estimated $33B for H2 ("higher in
+    the second half").
+  - Estimated incentive offset embedded in net capex (analyst estimate;
+    Micron does not guide it):
+      ~$7B/yr in FY27-28, from 48D at 35% on roughly $15-18B/yr of
+        qualifying U.S. fab spend plus CHIPS milestone grants and Japan;
+      ~$5B in FY29;
+      ~$2-3B/yr thereafter as the 48D-eligible projects complete.
+    So gross capex is ~$65B in FY27E and ~$62B in FY28E (Base).
+  - After FY2030 the 48D credit effectively expires for new U.S. projects
+    (construction-start deadline). Normalized net capex is set at 32% of
+    revenue (Base). That is BELOW the 35.4% FY16-25 historical average,
+    because the FY27-29 build-out pre-funds cleanroom shells (Base) and
+    the revenue denominator includes a modest structural premium. Using
+    the historical 35% would lower Base IV by ~$13/share. Using 28% would
+    raise it by ~$18/share.
+
+6D. D&A METHOD
+D&A is built from the capex history rather than assumed as a % of revenue,
+because the FY27-29 capex binge drives the FY30-33 margin squeeze:
+  - Equipment share (80% historically; 55% in FY27-28 because those years
+    are construction-heavy) is depreciated straight-line over 5 years,
+    starting the year after spend.
+  - Construction share is depreciated over 25 years, starting 2 years
+    after spend.
+  - Legacy building depreciation is $1.35B/yr.
+  - Calibration: reproduces FY25 ($8.35B) and FY26 ($9.5B) D&A within ~2%.
+Base D&A peaks at ~$30B in FY2031, about 41% of that year's revenue.
+This is the mechanism that turns a price normalization into near-zero
+operating income in FY2030-31, exactly what happened in FY2023, when D&A
+was 49.9% of revenue.
+
+
+================================================================================
+SECTION 7 — DCF ASSUMPTIONS
+================================================================================
+
+MODELING CONVENTIONS (same as the rest of this folder)
+  - 10-year explicit forecast, FY2027E-FY2036E. The FY2027E anchor comes
+    from guidance (Section 5).
+  - Unlevered FCF = NOPAT + D&A - net capex. SBC-adjusted FCF = FCF - SBC.
+    SBC-adjusted FCF is what gets discounted.
+  - NOPAT = operating income x (1 - 15%) on POSITIVE operating income only.
+    Loss years get no tax benefit; NOPAT equals operating income. Micron
+    guides 15.5% for FY27 (Pillar Two now applies in Singapore), so 15% is
+    0.5pt generous (~$1.6/share).
+  - Working capital changes are ignored. This omits a receivables release
+    of perhaps $25B in the downcycle (~+$14/share) and a build in FY27
+    (~-$5-6/share); net, mildly conservative.
+  - End-of-year discounting; no mid-year convention. Mid-year would add
+    ~+$14/share to the Base case.
+  - Terminal value: perpetuity growth and exit multiple (on SBC-adjusted
+    FCF), averaged. FY2036 is constructed as a MID-CYCLE year in every
+    scenario, never a peak or trough, so both terminal methods sit on
+    normalized cash flow.
+  - Shares: 1,150M diluted, Micron's FQ1 FY27 guidance basis (1,147M GAAP
+    diluted in FQ4; 1,131.4M basic as of Oct 2, 2026). Held flat; SBC is
+    charged as a cost. The $35.16B buyback authorization is not modeled.
+    Buybacks at intrinsic value are value-neutral; above it, they destroy
+    value.
+
+SCENARIO DRIVERS
+                       FY28E  FY29E  FY30E  FY31E  FY32E  FY33E  FY34E  FY35E  FY36E
+BIT GROWTH (YoY; FY27E +20% in Base/Bull, +18% Bear)
+  BULL                   22%    22%    20%    18%    16%    16%    16%    16%    16%
+  BASE                   20%    20%    18%    16%    15%    15%    15%    15%    15%
+  BEAR                   18%    18%    16%    15%    14%    14%    13%    13%    13%
+COST-PER-BIT INDEX (FY25 = 1.00; FY26A = 0.953)
+  BULL                  0.95   0.88   0.80   0.73   0.67   0.62   0.57   0.525  0.485
+  BASE                  0.95   0.86   0.78   0.72   0.66   0.61   0.56   0.515  0.475
+  BEAR                  0.96   0.88   0.80   0.74   0.68   0.63   0.58   0.535  0.495
+PRICE PREMIUM OVER MID-CYCLE, P (FY25 = 1.00x; FY26A ~3.1x; FY27E guide ~4.3x)
+  BULL                  5.00   4.20   3.00   2.00   1.60   1.60   1.60   1.60   1.60
+  BASE                  4.15   1.90   0.85   0.95   1.00   1.00   1.00   1.00   1.00
+  BEAR                  3.00   1.10   0.65   0.80   0.90   0.90   0.90   0.90   0.90
+OPEX ($B; FY26A 8.2, FY27E 10.4-10.6)
+  BULL                  12.4   13.4   14.0   14.3   14.9   15.6   16.4   17.2   18.0
+  BASE                  11.5   11.0   10.0   10.3   10.8   11.4   12.0   12.6   13.2
+  BEAR                  11.0    9.8    9.0    9.2    9.6   10.0   10.4   10.8   11.2
+SBC ($B; FY26A 1.3) = the dollar path below, floored at 2.0% of revenue
+from FY2031
+  BULL   1.7 / 1.9 / 2.1 / 2.2 / 2.3 / 2.4 / 2.5 / 2.6 / 2.7 / 2.8  (FY27-36)
+  BASE   1.6 / 1.7 / 1.6 / 1.5 / 1.6 / 1.7 / 1.8 / 1.9 / 2.0 / 2.1
+  BEAR   1.6 / 1.6 / 1.4 / 1.3 / 1.4 / 1.5 / 1.6 / 1.7 / 1.8 / 1.9
+
+Rationale:
+  - BITS: management sees industry DRAM bits up in the low-20s % in
+    CY27-28 and NAND up in the mid-20s %, with Micron DRAM roughly in line.
+    Base uses 20% then fades to 15%, roughly Micron's long-run blended
+    rate. Bull leans on new fabs (ID1, ID2, Tongluo, Hiroshima) adding
+    share. Bear assumes Micron cuts wafer starts in the downturn, as it
+    did in FY23.
+  - COST: cost per bit was nearly flat in FY26 (-5%), because of HBM mix,
+    which uses more wafer per bit, and incentive comp. The model assumes
+    -8%/yr from FY29, slower than the historical DRAM ~-10-15%. That
+    matters little to value: price is set as a premium to cost, so a
+    slower cost decline lifts revenue and cost together.
+  - PRICE PREMIUM P, the crux:
+      BASE: FY28 stays elevated (P 4.15; average price per bit -17% vs
+        FY27 as Tongluo/ID1 and competitor capacity arrive in mid-2027).
+        FY29 breaks (P 1.9). FY30 troughs at P 0.85. That trough is held
+        UP by SCA floor pricing on roughly a third of volume, while spot
+        and contract pricing on the rest falls below mid-cycle, as in
+        every prior trough. Normalized P = 1.00x, i.e. FY2025-like
+        economics.
+      BULL: shortage through FY2029, soft landing, normalized P = 1.60x.
+        That is roughly the FY2018-peak gross margin made permanent,
+        consistent with management's claim that SCA floor prices yield
+        margins above prior peaks.
+      BEAR: AI capex digestion in CY2027-28 meets new supply. FY28 P drops
+        to 3.0, the FY30 trough is 0.65x (comparable to FY23 relative to
+        cost), and normalized P is 0.90x, i.e. history's through-cycle
+        average.
+  - RESULTING NORMALIZED (FY2036) GAAP OPERATING MARGIN:
+      Bull 44.0% / Base 23.7% / Bear 18.0%
+      versus the FY16-25 through-cycle average of 21.6% (revenue-weighted)
+      and 17.4% (simple).
+    The Base case is a modest structural uplift on history, not a
+    reversion to it.
+
+DISCOUNT RATES, TERMINAL GROWTH, EXIT MULTIPLES
+               WACC    TGR    Exit (x SBC-adj FCF)
+  BULL         10.0%   3.0%   16x
+  BASE         11.5%   2.5%   12x
+  BEAR         13.0%   2.0%    9x
+  - Micron has no net debt, so WACC is roughly the cost of equity.
+  - Memory equity betas run ~1.3-1.6. At a ~4.2% risk-free rate and ~5%
+    ERP, that gives ~10.7-12.2%. Base uses 11.5%, the same as the AMD Base
+    case in this folder.
+  - Bull at 10.0% reflects a world where SCAs genuinely de-cyclicalize
+    earnings.
+  - Bear at 13.0% reflects re-rating as a commodity cyclical.
+  - Exit multiples apply to NORMALIZED mid-cycle SBC-adjusted FCF: 12x
+    Base, i.e. ~8% FCF yield on mid-cycle cash flow for a capital-intensive
+    cyclical.
+
+PROBABILITY WEIGHTS: Bear 35% / Base 45% / Bull 20%. Reasons:
+  - Every prior Micron upcycle with capex acceleration of this magnitude
+    ended in a downturn within ~2-3 years.
+  - Dated new capacity from Micron and all competitors lands from mid-2027
+    through 2030.
+  - An 87% gross margin in a manufacturing business has no precedent as a
+    steady state.
+  - The Bull case needs both the cycle's shape AND the normalized level to
+    break from history.
+I am less sure the Bear WON'T happen than that the Bull WON'T, so weight
+shifts toward Bear. The less conservative 30/45/25 weighting gives $419.80;
+25/45/30 gives $450.52.
+
+
+================================================================================
+SECTION 8 — DCF MODEL (BASE CASE)
+================================================================================
+
+All figures $M. WACC 11.5%, TGR 2.5%, exit 12x SBC-adjusted FCF.
+
+           Rev      YoY   OpMgn     OpInc      Tax     NOPAT    Capex      D&A       FCF     SBC   SBC-Adj
+                                                                                                       FCF
+2026A   133,188    256%   74.6%    99,340   (actual)            27,396    9,503    62,279   1,333   60,946
+2027E   256,000     92%   82.2%   210,428   31,564   178,864   58,000   12,735   133,598   1,600   131,998
+2028E   254,643     -1%   79.5%   202,488   30,373   172,115   55,000   17,421   134,536   1,700   132,836
+2029E   126,646    -50%   52.9%    67,007   10,051    56,956   38,000   23,401    42,356   1,600    40,756
+2030E    60,637    -52%   -7.3%    -4,414        0    -4,414   24,000   28,040      -375   1,500    -1,875
+2031E    72,567     20%    4.7%     3,388      508     2,880   22,000   29,955    10,835   1,600     9,235
+2032E    80,524     11%   12.6%    10,122    1,518     8,604   24,000   29,112    13,715   1,700    12,015
+2033E    85,587      6%   17.8%    15,228    2,284    12,944   27,388   26,552    12,108   1,800    10,308
+2034E    90,357      6%   21.4%    19,294    2,894    16,400   28,914   24,850    12,335   1,900    10,435
+2035E    95,561      6%   23.3%    22,256    3,338    18,918   30,579   24,521    12,859   2,000    10,859
+2036E   101,359      6%   23.7%    23,983    3,597    20,386   32,435   25,797    13,748   2,100    11,648
+
+  (FY2026A row: actual reported figures, shown for reference and not
+   discounted. Its FCF is OCF-based, $62,279M, not NOPAT-based.)
+  - Peak-to-trough revenue is -76% (FY27 -> FY30). That sounds extreme
+    until you note that FY27 pricing is ~4.3x mid-cycle. Reverting to
+    0.85x is mechanically a ~75-80% price decline, partly offset by bit
+    growth. FY2023's single-year decline was -49% from a far lower peak.
+  - FY2030 operating loss: D&A of ~$28B lands on a trough revenue base,
+    the same mechanism as FY2023. SCA floors keep it shallow (-7%) rather
+    than FY23-like (-37%).
+  - FY2036 revenue of $101B is 2.7x FY2025 (9.5% CAGR over 11 years,
+    versus the 7.8% FY14-FY25 CAGR). That embeds AI-driven bit demand
+    growth above history.
+
+PRESENT VALUE OF EXPLICIT SBC-ADJUSTED FCFs (11.5% WACC)
+Year      SBC-Adj FCF   Discount Factor   PV
+2027E        131,998        0.8969       118,384
+2028E        132,836        0.8044       106,848
+2029E         40,756        0.7214        29,402
+2030E         -1,875        0.6470        -1,213
+2031E          9,235        0.5803         5,359
+2032E         12,015        0.5204         6,253
+2033E         10,308        0.4667         4,811
+2034E         10,435        0.4186         4,368
+2035E         10,859        0.3754         4,077
+2036E         11,648        0.3367         3,922
+                                         -------
+Sum of PV of explicit FCFs:              282,211
+
+TERMINAL VALUE — PERPETUITY GROWTH (g = 2.5%)
+Terminal (2036E) SBC-adj FCF:                               $11,648M
+TV = 11,648 x 1.025 / (11.5% - 2.5%):                      $132,654M
+PV of TV (x 0.3367):                                        $44,665M
+
+TERMINAL VALUE — EXIT MULTIPLE (12x SBC-adj FCF)
+TV = 11,648 x 12:                                          $139,772M
+PV of TV (x 0.3367):                                        $47,062M
+
+Average PV of terminal value:                               $45,864M
+
+EQUITY BRIDGE
+Sum of PV of explicit FCFs:                                $282,211M
++ PV of terminal value (avg):                               $45,864M
+= Enterprise value:                                        $328,075M
++ Cash + ST + LT investments (Sep 3, 2026):                 $73,453M
+- Total debt (Sep 3, 2026):                                 -$5,179M
+  = Reported net cash:                                      $68,274M
+- SCA customer deposits (repayable 2029-31):               -$12,895M
+- Noncurrent income taxes payable:                          -$9,820M
+  = Adjusted net cash:                                      $45,559M
+= Equity value:                                            $373,634M
+/ Diluted shares:                                             1,150M
+= Intrinsic value per share:                                 $324.90
+
+VALUE COMPOSITION (Base):
+  - FY2027-28 PV:      $225.2B (69% of EV, ~$196/share)
+  - FY2029-36 PV:       $57.0B (~$50/share)
+  - Terminal value PV:  $45.9B (14% of EV, ~$40/share)
+  - Adjusted net cash:  $45.6B (~$40/share)
+The terminal value, which drives most DCFs, is a minor input here. Micron's
+Base-case value is "two peak years of cash, plus a mid-cycle business
+worth ~$140B in 2036 dollars." For scale, the Base equity value (~$374B)
+is 36% of the current ~$1,051B market cap.
+
+
+================================================================================
+SECTION 9 — BULL AND BEAR DCF TABLES
+================================================================================
+
+BULL — WACC 10.0%, TGR 3.0%, exit 16x. Shortage through FY2029; soft
+landing; normalized P 1.60x (~44% op margin as the new normal).
+           Rev      YoY   OpMgn     OpInc      Tax     NOPAT    Capex      D&A       FCF     SBC   SBC-Adj
+2027E   266,000    100%   83.0%   220,820   33,123   187,697   60,000   12,735   140,432   1,700   138,732
+2028E   311,912     17%   82.8%   258,250   38,737   219,512   66,000   17,641   171,154   1,900   169,254
+2029E   296,094     -5%   78.1%   231,134   34,670   196,463   62,000   24,867   159,330   2,100   157,230
+2030E   230,723    -22%   67.4%   155,399   23,310   132,089   52,000   32,204   112,292   2,200   110,092
+2031E   165,621    -28%   49.3%    81,706   12,256    69,450   42,000   38,259    65,709   3,312    62,397
+2032E   141,063    -15%   36.8%    51,980    7,797    44,183   40,000   40,800    44,983   2,821    42,162
+2033E   151,422      7%   39.2%    59,368    8,905    50,463   45,427   40,620    45,656   3,028    42,627
+2034E   161,484      7%   41.1%    66,295    9,944    56,350   48,445   40,574    48,479   3,230    45,249
+2035E   172,533      7%   42.7%    73,648   11,047    62,601   51,760   40,855    51,696   3,451    48,245
+2036E   184,890      7%   44.0%    81,312   12,197    69,115   55,467   41,823    55,471   3,698    51,774
+  Sum PV explicit $605,271M | PV TV: perpetuity $293,711M, exit $319,375M,
+  avg $306,543M | EV $911,814M | + adj. net cash $45,559M | Equity
+  $957,373M | /1,150M = $832.50/share
+  (FY2031 SBC jumps because of the 2%-of-revenue floor; it's a modeling
+   artifact worth <$1/share.)
+
+BEAR — WACC 13.0%, TGR 2.0%, exit 9x. AI-capex digestion plus new supply;
+downturn from FY2028; normalized P 0.90x (history's average).
+           Rev      YoY   OpMgn     OpInc      Tax     NOPAT    Capex      D&A       FCF     SBC   SBC-Adj
+2027E   248,000     86%   81.6%   202,384   30,358   172,026   56,000   12,735   128,761   1,600   127,161
+2028E   179,868    -27%   71.7%   128,964   19,345   109,620   42,000   17,201    84,821   1,600    83,221
+2029E    71,338    -60%   20.8%    14,847    2,227    12,620   24,000   22,135    10,755   1,400     9,355
+2030E    44,453    -38%  -34.5%   -15,318        0   -15,318   17,000   24,876    -7,442   1,300    -8,742
+2031E    58,200     31%   -6.9%    -4,044        0    -4,044   17,000   25,497     4,453   1,400     3,053
+2032E    68,589     18%    9.2%     6,299      945     5,354   19,000   23,834    10,188   1,500     8,688
+2033E    72,442      6%   15.6%    11,271    1,691     9,580   23,906   20,694     6,368   1,600     4,768
+2034E    75,363      4%   18.3%    13,827    2,074    11,753   24,870   19,430     6,313   1,700     4,613
+2035E    78,553      4%   18.7%    14,665    2,200    12,465   25,922   20,039     6,582   1,800     4,782
+2036E    82,128      5%   18.0%    14,749    2,212    12,537   27,102   21,626     7,061   1,900     5,161
+  Sum PV explicit $191,532M | PV TV: perpetuity $14,097M, exit $13,683M,
+  avg $13,890M | EV $205,422M | + adj. net cash $45,559M | Equity
+  $250,981M | /1,150M = $218.24/share
+  - The Bear is NOT a disaster case for the company. It still banks ~$210B
+    of SBC-adjusted FCF in FY27-28, and FY2030's -34.5% margin is milder
+    than FY2023's -37%. The bear's low value comes from the short duration
+    of the peak and a history-like normalized margin, not from distress.
+
+
+================================================================================
+SECTION 10 — SENSITIVITY ANALYSIS (BASE CASE)
+================================================================================
+
+TABLE A: BASE IV/SHARE — WACC x TERMINAL GROWTH (12x exit held)
+WACC \ TGR    1.5%      2.0%      2.5%      3.0%      3.5%
+ 9.5%       $345.64   $347.51   $349.64   $352.10   $354.97
+10.5%       $333.43   $334.78   $336.29   $338.01   $339.97
+11.5%       $322.79   $323.79   $324.90   $326.14   $327.54   <- base
+12.5%       $313.36   $314.12   $314.95   $315.87   $316.90
+13.5%       $304.89   $305.47   $306.11   $306.81   $307.59
+The discount rate barely matters: a 4-point WACC swing moves value by
+~$45, because ~70% of value arrives in the next two years. Arguing about
+WACC will not close the gap to $914.
+
+TABLE B: BASE IV/SHARE — EXIT MULTIPLE (11.5% WACC / 2.5% TGR)
+   8x  $318.08 |  10x  $321.49 |  12x  $324.90 (base) |  14x  $328.31
+  16x  $331.72 |  18x  $335.13 |  20x  $338.54
+Same message: the exit multiple sits on a small normalized FCF.
+
+TABLE C: BASE IV/SHARE — NORMALIZED PRICE PREMIUM P (FY2032-36)
+(This is the table that matters. Base trough path unchanged.)
+  P       FY36 op margin   FY36 revenue   FY36 SBC-adj FCF   IV/share
+  0.80x        7.9%           $81.1B           $0.5B          $266.13
+  0.90x       16.7%           $91.2B           $6.1B          $295.77   (~history)
+  1.00x       23.7%          $101.4B          $11.6B          $324.90   <- base
+  1.15x       31.9%          $116.6B          $19.8B          $367.46
+  1.30x       38.2%          $131.8B          $27.8B          $409.61
+  1.50x       44.6%          $152.0B          $38.6B          $465.81
+  1.75x       50.6%          $177.4B          $52.0B          $536.06
+  2.00x       55.1%          $202.7B          $65.5B          $606.32
+Even if post-cycle Micron earns a 55% operating margin forever, above the
+FY2018 all-time peak, the Base-timing value is ~$606.
+
+TABLE D: BASE IV/SHARE — WHEN THE DOWNTURN STARTS (Base normalized P,
+capex path unchanged)
+  Downturn begins          Revenue path FY27-FY36 ($B)                       IV/share
+  FY2029 (base)            256, 255, 127,  61,  73,  81,  86,  90,  96, 101  $324.90
+  FY2030 (+1 yr)           256, 270, 240, 114,  65,  76,  86,  90,  96, 101  $415.25
+  FY2031 (+2 yrs)          256, 270, 267, 228, 122,  68,  81,  90,  96, 101  $504.22
+  FY2032, then P = 1.6x    256, 270, 267, 257, 229, 129, 137, 145, 153, 162  $737.51
+  forever
+Each extra year of peak conditions is worth roughly +$90/share. Taking
+management literally ("no line of sight" to balance) with a two-year delay
+gives ~$504. Even shortage conditions through FY2031 plus a permanent 1.6x
+premium gives ~$738, still ~19% below the current price.
+
+
+================================================================================
+SECTION 11 — REVERSE DCF: WHAT IS $913.75 PRICING?
+================================================================================
+
+At $913.75 x 1,150M shares = $1,050.8B market cap. Less $45.6B of adjusted
+net cash, implied EV = $1,005.3B.
+
+(1) Holding the Base-case path through FY2031 (peak FY27-28, downturn
+    FY29-30), what normalized price premium P from FY2032 justifies the
+    price?
+      -> P = ~3.09x mid-cycle, permanently
+         That implies:
+           FY2036 revenue ~$314B
+           GAAP operating margin ~66% in perpetuity
+           SBC-adjusted FCF ~$124B/yr in FY2036
+      i.e. the post-downturn steady state looks like FY2026, a year with
+      a 74.6% margin.
+
+(2) Holding Base FY2027-FY2036 cash flows, what terminal-year SBC-adjusted
+    FCF justifies the price (at 11.5%, 2.5% and 12x)?
+      -> Required PV of terminal value: $723.0B (vs $45.9B in Base)
+      -> Required terminal SBC-adj FCF: ~$184B/yr (vs $11.6B in Base;
+         FY2026 actual was ~$61B)
+
+(3) Timing lens (Table D): even four years of shortage (FY27-FY30), a soft
+    landing, and a permanent 1.6x premium only reach ~$738.
+
+INTERPRETATION: the market is NOT pricing a cycle. At ~5.9x FY27E GAAP EPS
+(~$156), the stock looks cheap on the traditional "buy memory at a low P/E
+near the peak" heuristic. But that heuristic historically meant buying at
+4-6x PEAK earnings that were 2-3x mid-cycle earnings. Here peak earnings
+are ~9x the Base mid-cycle level: FY27E operating income of $210B vs
+~$24B normalized. A 5.9x P/E on earnings that are 9x normal is not a
+cyclical discount. It is a bet that FY2026-27 economics are the new
+normal.
+
+The bet is not crazy. SCAs, deposits, take-or-pay and HBM are new. But it
+is a bet on the end of the memory cycle, and this model's Bull case, which
+already grants most of that, does not get there.
+
+
+================================================================================
+SECTION 12 — SCENARIO SUMMARY AND WEIGHTING
+================================================================================
+
+Scenario  WACC   TGR   Exit  Norm P   FY28E Rev   FY30E Rev   FY36E Rev   FY36 OpM  FY36 SBC-FCF  IV/Share
+BULL      10.0%  3.0%  16x   1.60x    $311.9B     $230.7B     $184.9B      44.0%     $51.8B       $832.50
+BASE      11.5%  2.5%  12x   1.00x    $254.6B      $60.6B     $101.4B      23.7%     $11.6B       $324.90
+BEAR      13.0%  2.0%   9x   0.90x    $179.9B      $44.5B      $82.1B      18.0%      $5.2B       $218.24
+
+Probability-weighted (35% bear / 45% base / 20% bull):                                   $389.09
+  Alternative 30 / 45 / 25:                                                               $419.80
+  Alternative 25 / 45 / 30:                                                               $450.52
+Simple average of the three:                                                              $458.55
+Current price (Oct 26, 2026, intraday):                                                   $913.75
+
+Cumulative SBC-adjusted FCF over FY2027-FY2029:
+  Bull $465B / Base $306B / Bear $220B
+  (vs today's ~$1,005B implied EV)
+
+
+================================================================================
+SECTION 13 — CONSERVATIVE-CALL REGISTER (what each choice costs)
+================================================================================
+
+Every place this model chose the conservative side of a genuinely
+uncertain input, with the Base-case IV effect of the less conservative
+choice. These are computed one at a time, not cumulatively.
+
+ #  Conservative choice (Base)                Less conservative alternative             dIV/share
+ 1  Normalized P = 1.00x (FY25-like)          1.15x (more HBM/SCA premium)                +$42.56
+                                              1.60x (mgmt's "floors > prior peak")       ~+$170
+ 2  Downturn starts FY2029                    FY2030 (honor "no line of sight")           +$90.35
+ 3  FY28 avg price -17% vs FY27               Flat price (mgmt: CY28 tighter than CY26)   +$31.23
+ 4  Weights 35/45/20                          30/45/25                                    +$30.71 (to blended)
+ 5  Deduct SCA deposits + taxes payable       Use reported $68.3B net cash                +$19.75
+ 6  Normalized capex 32% of revenue           28% of revenue                              +$17.99
+ 7  WACC 11.5%                                10.0%                                       +$17.78
+ 8  End-of-year discounting                   Mid-year convention                         ~+$14
+ 9  Ignore downcycle working-capital release  Model ~$25B receivables release             ~+$14
+10  FY27 revenue $256B (small QoQ growth)     $266B (beat pattern continues)              +$5.72
+11  Incentive receivables not in bridge       Add $5.4B govt-incentive receivables        ~+$4.70
+Items going the OTHER way (generous to the stock):
+  - 15% tax vs 15.5% guided (~-$1.6).
+  - ~$4.8B of FY26 current taxes apparently accrued but unpaid, not
+    deducted (~-$4.2).
+  - Buyback restrictions and CHIPS upside-sharing not modeled.
+  - No explicit China/CXMT price-war scenario in Base.
+Stacking ALL of items 1 (at 1.15x), 2, 3, 5, 6 and 7 together lifts Base to
+roughly the low-to-mid $500s (interactions are not additive). Still ~40%
+below the price.
+
+
+================================================================================
+SECTION 14 — KEY RISKS (TWO-SIDED)
+================================================================================
+
+RISKS TO THIS VALUATION BEING TOO LOW (upside risks)
+1. STRUCTURAL BREAK IS REAL (HIGH). Take-or-pay SCAs with floors on ~35%
+   of revenue through 2030-31, $32B of customer financial commitments,
+   HBM wafer intensity, and cleanroom scarcity could make this cycle's
+   trough far shallower and its normal far higher than history. This is
+   the Bull case, and Table C/D quantify it.
+2. DURATION (HIGH). Each additional year of peak conditions is worth ~$90/
+   share. Management sees CY2027-28 as tighter than CY2026.
+3. CAPITAL RETURN (MEDIUM). From Dec 9, 2026, Micron intends to return
+   "100% of excess cash." Retiring shares while the price is below what
+   the cash flows are actually worth would be accretive. This model holds
+   shares flat.
+
+RISKS TO THIS VALUATION BEING TOO HIGH (downside risks)
+4. AI CAPEX DIGESTION (HIGH). Hyperscaler capex is the demand source for
+   ~61% of revenue, so a pause hits memory first and hardest. That is the
+   Bear case.
+5. INDUSTRY SUPPLY RESPONSE (HIGH). Micron alone is spending ~$58B net in
+   FY27, and Samsung, SK hynix and CXMT are all expanding. Memory pricing
+   has never survived a coordinated capacity wave.
+6. SCA FLOORS ARE LESS PROTECTIVE THAN THEY LOOK (MEDIUM). In prior
+   cycles, LTAs were renegotiated when spot fell below contract. Deposits
+   are returnable, and RPO is only ~25% recognized in the next 12 months.
+   Customers with deposits at stake have leverage, too.
+7. CHINA / CXMT (MEDIUM). Chinese DRAM capacity at commodity nodes caps
+   mid-cycle pricing in mobile, client and auto, the BUs earning
+   88%/79% margins today with the least structural protection.
+8. CHIPS STRINGS (LOW-MEDIUM). Milestone-based grants carry clawback
+   risk, and the 48D construction-start deadline (Dec 31, 2026) limits
+   credits on later NY fabs.
+9. EXECUTION (MEDIUM). HBM4/HBM4E qualification at NVIDIA (Micron has the
+   thinnest HBM4 allocation of the three, per secondary reporting) and
+   ramping 5+ new sites at once.
+
+
+================================================================================
+SECTION 15 — INVESTMENT ASSESSMENT
+================================================================================
+
+POSITIVES
+  + The best balance sheet in Micron's history: $68.3B net cash (~$45.6B
+    after deducting deposits and taxes payable), BBB+ across all three
+    agencies, debt cut to $5.2B.
+  + FY2027 is near-certain to be another record year (~$256B revenue,
+    ~$132B of SBC-adjusted FCF in Base). That cash is close to "in the
+    bank."
+  + Genuine structural changes: SCAs, take-or-pay, deposits, HBM
+    customization (NVHBM), and a data-center mix that went from 26% to 61%
+    in three years.
+  + Technology position is strong (1-gamma DRAM, G9 NAND,
+    record data-center SSD share).
+
+NEGATIVES
+  - The price ($913.75) exceeds every scenario in this model, including a
+    Bull case that grants a shortage through FY2029 and a permanent
+    near-record margin.
+  - The current margin is being earned across ALL business units,
+    including phones and PCs (MCBU 88%). That is the signature of scarcity
+    pricing, which reverses, not of differentiation, which persists.
+  - Capex is doubling into the peak, and the capacity has dates.
+  - Historical through-cycle FCF margin was ~8% of revenue. Even the Base
+    case's normalized ~11.5% is an upgrade on that.
+
+BOTTOM LINE
+Micron is a far better business than it was three years ago, and FY2026-27
+will likely produce more cash than the company earned in its prior 20
+years combined. But at $913.75, the market is capitalizing that peak
+cash as if it were permanent. Base value is ~$325, probability-weighted
+~$389, and Bull ~$833. On a cycle-aware DCF, the stock is priced for the
+end of the memory cycle.
+
+The stock becomes interesting on this framework in the ~$400-450 range,
+where you would be paying for the weighted outcome plus some credit for
+the SCA structure. It would be a high-conviction buy near ~$325 (Base),
+which would essentially be paying for FY27-28 cash plus net cash and
+getting the post-cycle business for free.
+
+What would change the view:
+  - Evidence that SCA floor prices actually hold through the first real
+    supply additions in H2 CY2027-CY2028, i.e. Tongluo and ID1 ramp with
+    no price break.
+  - Two consecutive quarters of rising prices after new capacity starts.
+  - Disclosure that RPO (min-price) revenue covers a much larger share of
+    FY29-31 than the ~$33B/yr it implies now.
+
+Conviction: HIGH on business quality and near-term cash. LOW on valuation
+at $913.75. The answer is most sensitive to Table C (normalized premium)
+and Table D (downturn timing). Those are the two dials a reader should
+challenge.
+
+
+================================================================================
+SECTION 16 — SUMMARY VALUATION TABLE
+================================================================================
+
+METHOD                                    VALUE/SHARE   NOTES
+----------------------------------------  -----------   -----
+Bull (10.0% WACC, 3.0% TGR, 16x exit)        $832.50    Shortage thru FY29;
+                                                          44% normal op mgn
+Base (11.5% WACC, 2.5% TGR, 12x exit)        $324.90    Peak FY27-28; trough
+                                                          FY30; 23.7% normal
+Bear (13.0% WACC, 2.0% TGR, 9x exit)         $218.24    Downturn from FY28;
+                                                          18% normal op mgn
+Probability-weighted (35/45/20)              $389.09
+Simple average of three scenarios            $458.55
+Market price (Oct 26, 2026, intraday)        $913.75    Above all three
+                                                          scenarios
+Reverse DCF                                  --         Needs ~3.1x mid-cycle
+                                                          pricing forever
+                                                          (~66% op mgn)
+
+Central estimate (base case):               $324.90/share
+Current price:                              $913.75/share
+Margin of safety at current price:          -64.4% (price is 2.81x Base IV)
+Probability-weighted margin of safety:      -57.4%
+
+
+================================================================================
+DISCLOSURES & LIMITATIONS
+================================================================================
+
+- DATA SOURCES AND DATES (all pulled live Oct 26, 2026):
+    * FY2026 10-K (filed Oct 9, 2026)
+    * FY2025, FY2024, FY2022, FY2020 and FY2018 10-Ks (SEC EDGAR)
+    * FQ4 FY26 and FQ2 FY26 earnings press releases (8-K Ex. 99.1)
+    * FQ4 FY26 prepared remarks (Micron IR PDF, Sep 30, 2026)
+    * Price $913.75: stockanalysis.com intraday quote, Oct 26, 2026
+      2:15 PM EDT. The prior close of $877.55 (Oct 23) was confirmed
+      across Yahoo, Google Finance and heygotrade. At the prior close,
+      the downside figures shrink by ~1.5 points (Base -63.0%,
+      probability-weighted -55.7%, Bull -5.1%).
+    * Section 48D construction-start deadline: BDO, PwC and the Cornell
+      LII statute text.
+- DISCREPANCIES FOUND ACROSS SOURCES:
+    * RPO: ~$150B in the prepared remarks vs ~$134B in the 10-K. The 10-K
+      excludes SCAs without a determined pricing framework and states $13B
+      is already in contract liabilities. This model uses neither
+      directly.
+    * Net cash: management's $68.3B uses $73.48B of cash including
+      restricted cash; the balance sheet gives $73,453M - $5,179M =
+      $68,274M.
+    * FQ4 operating income: secondary sources cited both $44.6B (non-GAAP)
+      and $43.8B. The primary release shows GAAP $43,751M and non-GAAP
+      $44,636M.
+    * FY2018 DRAM/NAND split differs between the FY2018 and FY2020 10-Ks
+      (a reclassification); the later basis is used.
+    * SBC: $1,333M (cash-flow statement) vs $1,282M (non-GAAP
+      reconciliation) for FY26.
+- DATA NOT AVAILABLE / ESTIMATED:
+    * HBM revenue is not disclosed for FY2026. The last figure (~$2B in
+      FQ4 FY25) is from secondary coverage, not re-verified against the
+      primary transcript. HBM4 "> $1B" and Micron's HBM4 allocation
+      position are also secondary.
+    * FQ2-FQ4 FY27 revenue, the FY27 gross-margin average and H2 FY27
+      capex are estimates (Section 5 and 6C). Only FQ1 FY27 and H1 capex
+      are guided.
+    * The government-incentive offset by year is an analyst estimate.
+      Micron guides only net capex.
+    * Old-to-new segment mapping is approximate. Micron publishes both
+      bases for FY23-24, but no line-item bridge.
+    * BU operating margins in quarterly releases are non-GAAP (inferred
+      from the FQ4 reconciliation). No dollar BU operating income is
+      disclosed quarterly.
+    * ~$4.8B of FY26 current tax apparently accrued but unpaid is not
+      separately disclosed and is not deducted.
+- JUDGMENT CALLS (flagged as such): the price-premium path P, the
+  normalized P, downturn timing, bit growth, the cost-per-bit path, the
+  normalized capex intensity, the D&A method, WACC, TGR, exit multiples
+  and probability weights. Section 13 prices each conservative choice.
+- METHOD LIMITS:
+    * A single-company revenue = bits x cost x premium construct
+      simplifies a market with distinct DRAM, HBM and NAND price curves.
+    * HBM's contractual pricing is folded into the consolidated P rather
+      than modeled separately.
+    * Working capital is ignored.
+    * End-of-year discounting.
+- SCOPE: Personal, standalone research file built by the dcf-creator agent,
+  outside the tech-buffett Init -> Deep Dive -> DCF pipeline. It does NOT
+  qualify MU for purchase in the tech-buffett portfolio. That requires
+  tech-buffett's own pipeline, run by tech-buffett, with a DCF completed
+  within the last six months.
+- Not investment advice.
+================================================================================
