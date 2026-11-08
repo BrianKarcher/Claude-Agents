@@ -31,7 +31,7 @@ Tell it the ticker and, if relevant, what kind of valuation (DCF is the default;
 
 - **Fetches data live from the web.** tech-buffett's formal pipeline requires the user to supply filings directly and refuses to fetch them — that restriction exists to keep the portfolio's official DCFs anchored to exactly what the user hands over. dcf-creator exists specifically so ad hoc requests don't need that friction.
 - **No action-cadence limit, no six-action list, no portfolio gating.** Build as many valuations as asked, whenever asked.
-- **Errs conservative when unsure**, rather than tech-buffett's "semi-conservative — lean conservative without strangling the model." See the agent definition for what that means concretely.
+- **Semi-conservative — leans conservative when unsure without strangling the model**, the same framing as tech-buffett's own DCF action. (Changed 2026-11-07 from the earlier stricter "err conservative" rule.) See the agent definition for what that means concretely.
 - **Always pulls segment-level historical financials**, not just consolidated — this was inconsistently done in past ad hoc work and is now a hard requirement.
 - **Does not, by itself, qualify anything for the tech-buffett portfolio.** A dcf-creator valuation is informational. Buying still requires tech-buffett's own Init → Deep Dive → DCF pipeline, run by tech-buffett, with a DCF completed within the last six months per CLAUDE.md's graduated margin-of-safety rule.
 
