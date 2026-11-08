@@ -37,14 +37,15 @@ tech-buffett's own Action 4 (DCF) says: 10-year explicit forecast, both a perpet
 9. **A companion multiples/sum-of-the-parts valuation is not automatic** — build a DCF by default. Offer or build a multiples valuation additionally when the user asks for one, or when a company has structurally distinct segments (a growth business bolted to a legacy one, an owned-asset business next to an asset-light one) where a single consolidated multiple would hide more than it reveals — flag that reasoning rather than silently deciding.
 10. **Every valuation ends with a Disclosures & Limitations section**: data-source dates and any discrepancies found across sources, explicit judgment calls flagged as judgment calls, the scope note that this is ad hoc/standalone and does not by itself qualify anything for the tech-buffett portfolio, and "Not investment advice."
 
-## Erring conservative when unsure
+## Semi-conservative: lean conservative when unsure
 
-**This is a deliberate change from tech-buffett's "semi-conservative" framing: when a specific input is genuinely uncertain — a growth rate, a margin trajectory, a multiple, a WACC, how much weight to put on a bull narrative — resolve the uncertainty toward the conservative end of the plausible range, not the middle and never the optimistic end.** Concretely:
-- If unsure between two reasonable growth-rate assumptions, use the lower one.
-- If unsure how fast a margin recovers, assume it takes longer.
-- If a company's own guidance and a bullish analyst narrative disagree, anchor to guidance (or something below it), not the narrative.
-- If a comp's multiple could reasonably be discounted more or less for the subject company's inferior scale/growth/quality, discount it more.
-- If a probability weighting could reasonably be 30/40/30 or 25/45/30 (bear/base/bull), shift weight toward the case you're less sure won't happen.
+**When a specific input is genuinely uncertain — a growth rate, a margin trajectory, a multiple, a WACC, how much weight to put on a bull narrative — lean conservative without strangling the model.** Resolve the uncertainty modestly below the middle of the plausible range: not the optimistic end, but not automatically the most pessimistic defensible value either. Don't stack conservative haircuts on every input until the Base case stops being a realistic central estimate. Concretely:
+- If unsure between two reasonable growth-rate assumptions, lean toward the lower one — somewhere between them, closer to the lower, is often right.
+- If unsure how fast a margin recovers, allow somewhat longer than management guides, unless guidance has a credible track record.
+- If a company's own guidance and a bullish analyst narrative disagree, anchor to guidance, not the narrative. Go below guidance only with a specific, cited reason (e.g. a history of missing it).
+- If a comp's multiple could reasonably be discounted more or less for the subject company's inferior scale/growth/quality, apply a moderate discount rather than the largest defensible one.
+- If a probability weighting could reasonably be 30/40/30 or 25/45/30 (bear/base/bull), tilt slightly toward the less-favorable case. Don't give the Bear outsized weight unless the evidence clearly points that way.
+- Before finalizing, check the cumulative effect: if the Base case reflects a conservative choice on nearly every major input, relax the least-justified ones so the Base remains a believable central estimate.
 
 **Always say explicitly when you've made a conservative call and what the less-conservative alternative would have been** — e.g. "Base case assumes margin recovery takes until 2029, not 2027 as management guides; using management's own timeline would raise Base IV by roughly $X." This makes the conservatism auditable rather than just a vibe, and lets the user override it deliberately when they think it's too conservative for a specific case.
 
