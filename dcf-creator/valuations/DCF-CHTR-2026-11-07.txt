@@ -1,0 +1,1270 @@
+================================================================================
+CHARTER COMMUNICATIONS (CHTR) - DISCOUNTED CASH FLOW ANALYSIS
+Post-Cox, three-scenario DCF (DCF only; no multiples/SOTP companion)
+Date: November 7, 2026 (Saturday; market data as of the Friday Nov 6 close)
+Framing: semi-conservative - lean conservative when unsure, without
+         strangling the model (see Section 14 for the full register)
+Sources: Reported figures, guidance and sourced facts come from two data
+         extracts pulled from primary sources on Nov 6, 2026:
+           - extracts/CHTR-EARNINGS-2026-Q3-2026-11-06.md
+           - extracts/CHTR-HISTORICALS-SEGMENTS-FY2021-2026Q3-2026-11-06.md
+         Re-verified live on Nov 7, 2026:
+           - Q3'26 8-K Ex. 99.1 release (SEC EDGAR): revenue, Adj. EBITDA,
+             PF figures, capex, FCF, debt principal, SBC, D&A, FY26 capex
+             guide, $1B+ synergies, $2B program
+           - Q3'26 call transcript (Motley Fool): 2027 capex, $2B program
+             wording, synergy timing, cash taxes, leverage, cash interest
+           - Price history and statistics (stockanalysis.com)
+         Price: $118.07, close Fri Nov 6, 2026 (verified Nov 7).
+         No assumptions, conclusions or valuation framing were taken from
+         any prior Charter valuation; this is an independent build.
+================================================================================
+
+WHAT THIS FILE IS (READ FIRST)
+------------------------------
+Charter closed the Cox Communications transaction on Aug 19/20, 2026 and the
+Liberty Broadband merger the same day. Q3 2026 (reported Nov 6) is the first
+quarter that includes Cox. In the same release Charter:
+  - took a $6.3B non-cash impairment of legacy Charter franchises, citing
+    "lower estimates for future customer and revenue growth" - management's
+    own long-range plan was cut;
+  - launched a "new operating model" with an incremental $2B run-rate opex
+    savings program over 18 months, on top of >$1B of Cox synergies;
+  - guided 2027 capex "at or below $11 billion" and declined to give any
+    EBITDA outlook or any date for a return to growth.
+
+The stock fell 6.2% on the day to $118.07, after having rallied 23% off the
+Oct 26 low of $102.18.
+
+The defining feature of this valuation is LEVERAGE. At $118.07:
+  equity market value (164.6M economic diluted shares) ...  ~$19.4B
+  senior claims (debt, SCF, Cox preferred, CHTRP)  ........ ~$115.4B
+  equity as a share of enterprise value  .................. ~14%
+Every $1B of enterprise value is worth $6.08 per share. A 10% change in EV
+moves the equity value by roughly 80%. The DCF output is therefore a wide
+range, and the most useful section of this file is the reverse DCF
+(Section 13): it shows how small a change in the operating outlook
+separates the market price from the Base case.
+
+
+EXECUTIVE SUMMARY
+-----------------
+                                   WACC   TGR    Exit    EV ($B)  IV/share
+  Bear  (perp/exit averaged)       9.0%  -1.0%   4.5x     91.9     $0 (*)
+  Base  (perp/exit averaged)       8.0%   0.0%   6.0x    154.8    $239.68
+  Bull  (perp/exit averaged)       7.5%  +1.0%   7.0x    218.8    $617.59 (**)
+
+  (*)  Bear-case EV is $23.5B BELOW senior claims. Computed equity value is
+       -$142.72/share. Equity cannot be worth less than zero, so the Bear is
+       carried at $0 in the weighting (see Section 11).
+  (**) Bull equity value exceeds the $477.41 conversion price of the Cox
+       convertible preferred, so the Bull assumes conversion (+12.6M units,
+       $6.0B claim removed). Before conversion it would be $628.28.
+
+  Probability-weighted IV (30% bear / 45% base / 25% bull):  $262.25/share
+  Simple average of the three (Bear at $0):                   $285.76/share
+  Simple average with Bear unfloored (-$142.72):               $238.18/share
+
+  Current price (Nov 6, 2026 close):                            $118.07
+  Base IV vs price:              +103.0%  (price is 0.49x Base IV)
+  Probability-weighted vs price: +122.1%
+  Bull IV vs price:              +423.1%
+  Bear:                          equity wiped out on DCF value
+
+HEADLINE FINDING: the Base case is about double the price. But that is a
+statement about leverage more than about a big disagreement with the market:
+  - The market price is reproduced by cutting every Base-case cash flow
+    (and the terminal value) by just 13.2%.
+  - It is also reproduced if EBITDA declines ~2.2% a year forever from the
+    FY2026E level (to ~$21.9B by 2036, against $25.6B in Base and $19.4B in
+    Bear), or if the Base cash flows are discounted at 9.65% instead of
+    8.0%.
+  - At $118 the market is pricing an outcome between Base and Bear, nearer
+    Bear on EBITDA.
+  - A 25.9% cut to Base cash flows sets the equity to zero.
+This is a high-variance, levered bet on whether Charter can stop the
+broadband share loss and actually bank the cost program. It is not a
+"cheap, safe" stock even though the Base case is far above the price.
+
+Simple cross-check, Base 2027:
+  pre-SBC unlevered FCF  ...................................  ~$12.2B
+  less cash interest ($5.8B annualized run-rate per the call) ..  ($5.8B)
+  less Cox preferred dividend  .............................  ($0.4B)
+  plus the interest tax shield the unlevered build ignores ... ~+$0.9B
+  = levered FCF  ...........................................  ~$6.9B (~$42/share)
+That is a ~36% levered FCF yield on $118. The market is not pricing
+2027-2028. It is pricing what happens to that cash stream after 2028, and the
+risk that it shrinks while $108.6B of debt does not.
+
+NOTE ON SCOPE: Personal, standalone analysis, outside the tech-buffett
+agent's Init -> Deep Dive -> DCF pipeline. This file does NOT qualify CHTR
+for purchase in the tech-buffett portfolio. Not investment advice.
+
+
+================================================================================
+SECTION 1 - BUSINESS SNAPSHOT (POST-COX)
+================================================================================
+
+Charter (Spectrum) is the largest US cable operator by passings after the
+Cox acquisition. Pro forma (PF) 9/30/26:
+  - ~70.7M passings, 36.7M customer relationships (51.9% penetration)
+  - 34.3M Internet customers, 13.5M mobile lines, 13.8M video, 6.1M voice
+  - PF LTM revenue ~$66.5B; PF LTM Adj. EBITDA $27.3B ($27.5B ex-transition)
+
+Capital structure: Charter Communications Inc. (Class A, ticker CHTR) owns
+~70% of Charter Holdings. A/N (~15.5M units, ~9%) and Cox Enterprises
+(33.6M units, ~21%) hold the rest as units exchangeable into Class A. Cox
+also holds $6.0B of 6.875% convertible preferred units.
+
+Q3 2026 at a glance ($M):
+                               Actual    PF       PF YoY
+  Revenue                      14,922   16,505    -1.5%
+  Adj. EBITDA                   5,943    6,587    -4.0%  (-3.0% ex-transition)
+  Capex                         3,027    3,235   -11.2%
+  Free cash flow (actual)         674
+  GAAP op. income (loss)       (3,526)           (incl. $6,326M impairment)
+  Net loss attrib. Charter     (2,397)           EPS $(20.50)
+
+Operating trend (PF):
+  - Internet net adds -233K vs -171K PY. Legacy Charter -156K vs -109K.
+    Legacy Charter Internet losses were worse YoY in each of Q1-Q3 2026
+    (-120 vs -59, -172 vs -117, -156 vs -109).
+  - Mobile +508K lines. Legacy Charter +440K vs +482K, decelerating.
+  - Video -77K vs -121K, improving.
+  - Residential ARPU -1.6% ("essentially flat" ex the streaming-app
+    allocation).
+  - Cox churn is "about 10% higher" than legacy Charter's. Spectrum pricing
+    went live in Cox markets Sep 16 and roughly halved Cox's Internet-loss
+    run-rate (call).
+  - Competition: AT&T +769K, Verizon +314K and T-Mobile (undisclosed, likely
+    ~400-500K) are adding ~1.4-1.6M broadband subs a quarter between them.
+    Charter plus Comcast lost ~377K.
+
+THE THESIS IN THREE SENTENCES, BOTH DIRECTIONS
+  BULL: Cable's HFC network is fully depreciated and being upgraded on a
+        budget; capex falls ~$2B+ from 2026 to 2028. More than $3B of
+        identified cost removal (synergies plus the program) and a mobile
+        bundle (13.5M lines, growing ~15%) can hold EBITDA flat-to-up even
+        as broadband subs erode, and every dollar of FCF accrues to an equity
+        that is only 14% of EV.
+  BEAR: Fiber overbuild and fixed wireless are structural, not cyclical.
+        Charter's own impairment says management believes it. Losses
+        accelerated through 2026, and ~14% equity on $108.6B of debt turns a
+        slow decline into a zero for shareholders.
+  THIS MODEL: The Base assumes the decline slows, but Internet revenue does
+        not return to growth until 2034, and only +0.5%. Cost savings mostly
+        stick and capex falls as guided. The result is roughly flat EBITDA
+        through 2029, eroding slowly afterward.
+
+
+================================================================================
+SECTION 2 - HISTORICAL FINANCIALS (CONSOLIDATED)
+================================================================================
+
+Charter standalone FY2021-FY2025. 9M'26 actual includes Cox from Aug 20 only.
+All $M.
+
+  +---------------------------+--------+--------+--------+--------+--------+-----------+
+  |                           | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 | 9M'26 act |
+  +---------------------------+--------+--------+--------+--------+--------+-----------+
+  | Revenue                   | 51,682 | 54,022 | 54,607 | 55,085 | 54,774 |   42,045  |
+  |   YoY                     |   --   |  +4.5% |  +1.1% |  +0.9% |  -0.6% | +2.1% (*) |
+  | Adjusted EBITDA           | 20,630 | 21,616 | 21,894 | 22,569 | 22,708 |   17,029  |
+  |   margin                  |  39.9% |  40.0% |  40.1% |  41.0% |  41.5% |   40.5%   |
+  | D&A                       |  9,345 |  8,903 |  8,696 |  8,673 |  8,711 |    7,029  |
+  | Stock compensation        |    430 |    470 |    692 |    651 |    673 |      518  |
+  | Income from operations    | 10,526 | 11,962 | 12,559 | 13,118 | 12,908 |  2,745(**)|
+  | Net income attrib. CHTR   |  4,654 |  5,055 |  4,557 |  5,083 |  4,987 |     58(**)|
+  | Diluted EPS ($)           |  24.47 |  30.74 |  29.99 |  34.97 |  36.21 |    0.48   |
+  | Operating cash flow       | 16,239 | 14,925 | 14,433 | 14,430 | 16,077 |   12,256  |
+  | Capex                     |  7,635 |  9,376 | 11,115 | 11,269 | 11,659 |    8,753  |
+  | Free cash flow            |  8,684 |  6,102 |  3,490 |  4,257 |  5,004 |    3,015  |
+  | Cash interest paid        |  4,043 |  4,509 |  5,020 |  5,334 |  4,983 |    3,800  |
+  | Share buybacks (CF)       | 15,431 | 10,277 |  3,215 |  1,213 |  5,132 |    1,899  |
+  +---------------------------+--------+--------+--------+--------+--------+-----------+
+  (*)  Inflated by the Cox stub. PF 9M'26 revenue is -1.8% YoY.
+  (**) Includes the $6,326M Q3 franchise impairment.
+
+Pro forma combined (Cox from Jan 1, 2024), the only continuous post-deal
+series ($M):
+
+  +-------------------+---------+--------+--------+---------+--------+---------+--------+--------+-----------+
+  |                   | FY2025  | 9M'25  | Q3'25  | Q4'25 d | Q1'26  | Q2'26 d | Q3'26  | 9M'26  | LTM Q3'26 |
+  +-------------------+---------+--------+--------+---------+--------+---------+--------+--------+-----------+
+  | Revenue           | 67,359  | 50,615 | 16,764 | 16,744  | 16,669 | 16,546  | 16,505 | 49,720 |  66,464   |
+  | Adj. EBITDA       | 27,972d | 20,983 |  6,862 |  6,989  |  n/c   |  n/c    |  6,587 | 20,310 |  27,299   |
+  |   ex-transition   |         | 20,987 |  6,866 |         |        |         |  6,663 | 20,475 |  27,479   |
+  | Capex             |         | 10,052 |  3,642 |         |        |         |  3,235 |  9,924 |           |
+  +-------------------+---------+--------+--------+---------+--------+---------+--------+--------+-----------+
+  d = derived by subtraction (approximate; the PF exercises differ slightly).
+
+Observations:
+  - Standalone Charter revenue has been flat for four years ($54-55B), and
+    margin expansion (39.9% -> 41.5%) did all the work on EBITDA. That
+    margin lever is now being pulled again, harder (synergies plus the $2B
+    program).
+  - FCF fell from $8.7B (2021) to $3.5-5.0B (2023-25) as capex rose from
+    14.8% to 21.3% of revenue (rural subsidized build, network evolution).
+    The 2027-28 capex decline is the single most important positive FCF
+    driver in the model.
+  - OCF has run $1-2.8B below (Adj. EBITDA - cash interest) every year
+    since 2022: cash taxes, mobile device receivables (EIP) and other
+    working capital. The model carries an explicit NWC/other line for this
+    (Section 5.7).
+
+
+================================================================================
+SECTION 3 - SEGMENT HISTORY
+================================================================================
+
+3.1 Disclosure status
+---------------------
+Charter reports ONE reportable segment. There is no segment operating
+income, and EBITDA is not allocated to product lines. This is a genuine
+absence of disclosure, not an omission here. The segment-equivalent
+disclosures used below are:
+  (a) revenue by product line;
+  (b) customer and line counts;
+  (c) capex by NCTA category;
+  (d) from Q3'26, a "legacy Cox business" commercial line and legacy
+      Charter vs legacy Cox net adds.
+Profitability by line is therefore modeled with ESTIMATED contribution
+margins (Section 5.2). That is a judgment call, labeled as such.
+
+3.2 Revenue by product line - Charter standalone ($M)
+-----------------------------------------------------
+  +----------------------+--------+--------+--------+--------+--------+--------+--------+--------+
+  |                      | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 | H1'25  | H1'26  | Q3'25  |
+  +----------------------+--------+--------+--------+--------+--------+--------+--------+--------+
+  | Residential Internet | 21,094 | 22,222 | 23,032 | 23,360 | 23,765 | 11,899 | 11,628 |  5,971 |
+  | Residential Video    | 17,630 | 17,460 | 16,351 | 15,129 | 13,703 |  7,068 |  6,401 |  3,389 |
+  | Residential Voice    |  1,598 |  1,559 |  1,510 |  1,437 |  1,350 |    702 |    669 |    332 |
+  | Mobile service       | 2,178* | 3,042* |  2,243 |  3,083 |  3,762 |  1,835 |  2,147 |    954 |
+  | SMB                  |  4,170 |  4,301 |  4,353 |  4,376 |  4,346 |  2,184 |  2,194 |  1,088 |
+  | Mid-market & large   |  2,573 |  2,677 |  2,770 |  2,878 |  2,969 |  1,474 |  1,510 |    747 |
+  | Advertising          |  1,594 |  1,882 |  1,551 |  1,780 |  1,468 |    711 |    774 |    356 |
+  | Other (incl devices) |   845* |   879* |  2,797 |  3,042 |  3,411 |  1,628 |  1,800 |    835 |
+  | TOTAL                | 51,682 | 54,022 | 54,607 | 55,085 | 54,774 | 27,501 | 27,123 | 13,672 |
+  +----------------------+--------+--------+--------+--------+--------+--------+--------+--------+
+  * DEFINITION BREAK 2022 -> 2023: through FY2022, "Mobile" was a separate
+    line that included device revenue. From FY2023, mobile service sits in
+    residential and device sales sit in Other. FY2021-22 mobile and Other
+    are not comparable to FY2023+.
+
+3.3 Q3 2026 by product line - actual vs pro forma ($M)
+------------------------------------------------------
+  +-----------------------+-----------+-----------+--------+----------+----------+--------+
+  |                       | Q3'26 act | Q3'25 act | YoY    | Q3'26 PF | Q3'25 PF | PF YoY |
+  +-----------------------+-----------+-----------+--------+----------+----------+--------+
+  | Residential Internet  |   6,395   |   5,971   |  +7.1% |   7,097  |   7,366  |  -3.7% |
+  | Mobile service        |   1,134   |     954   | +18.9% |   1,158  |     987  | +17.3% |
+  | Video                 |   3,292   |   3,389   |  -2.9% |   3,609  |   4,003  |  -9.8% |
+  | Voice                 |     340   |     332   |  +2.6% |     366  |     393  |  -6.8% |
+  | Legacy Charter SMB    |   1,090   |   1,088   |  +0.1% |   1,090  |   1,088  |  +0.1% |
+  | Legacy Charter mid/lg |     762   |     747   |  +2.1% |     762  |     747  |  +2.1% |
+  | Legacy Cox business   |     397   |     --    |        |     839  |     848  |  -1.1% |
+  | Advertising           |     460   |     356   | +29.2% |     487  |     403  | +21.0% |
+  | Other                 |   1,052   |     835   | +26.0% |   1,097  |     929  | +18.1% |
+  | TOTAL                 |  14,922   |  13,672   |  +9.1% |  16,505  |  16,764  |  -1.5% |
+  +-----------------------+-----------+-----------+--------+----------+----------+--------+
+  - PF advertising ex-political: -5.2%.
+  - $286M of programming cost allocated to programmers' streaming apps is
+    netted within video revenue (vs $106M in Q3'25). This depresses video
+    revenue and ARPU optically.
+
+3.4 Growth by line (standalone through Q2'26; PF for Q3'26)
+-----------------------------------------------------------
+  +----------------------+--------+--------+--------+--------+--------+----------+
+  | Line                 | FY23   | FY24   | FY25   | H1'26  | Q2'26  | Q3'26 PF |
+  +----------------------+--------+--------+--------+--------+--------+----------+
+  | Residential Internet |  +3.6% |  +1.4% |  +1.7% |  -2.3% |  -3.2% |   -3.7%  |
+  | Video                |  -6.4% |  -7.5% |  -9.4% |  -9.4% |  -9.7% |   -9.8%  |
+  | Voice                |  -3.1% |  -4.8% |  -6.1% |  -4.7% |  -4.3% |   -6.8%  |
+  | Mobile service       |   n/m  | +37.4% | +22.0% | +17.0% | +18.9% |  +17.3%  |
+  | SMB                  |  +1.2% |  +0.5% |  -0.7% |  +0.5% |  +0.7% |   +0.1%  |
+  | Mid-market & large   |  +3.5% |  +3.9% |  +3.2% |  +2.4% |  +2.8% |   +2.1%  |
+  | Advertising          | -17.6% | +14.8% | -17.5% |  +8.9% | +12.1% |  +21.0%  |
+  | TOTAL                |  +1.1% |  +0.9% |  -0.6% |  -1.4% |  -1.7% |   -1.5%  |
+  +----------------------+--------+--------+--------+--------+--------+----------+
+  KEY: Residential Internet, by far the largest profit pool, went from
+  +1.7% (FY25) to -3.7% (Q3'26 PF) in four quarters. Its trajectory is the
+  single biggest determinant of value in every scenario.
+
+3.5 Capex by category ($M)
+--------------------------
+  +-------------------------+--------+--------+--------+--------+--------+-------+-----------+----------+
+  |                         | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 | H1'26 | Q3'26 act | Q3'26 PF |
+  +-------------------------+--------+--------+--------+--------+--------+-------+-----------+----------+
+  | CPE                     |  1,967 |  2,209 |  2,286 |  2,172 |  2,260 | 1,322 |     670   |    705   |
+  | Scalable infrastructure |  1,677 |  1,791 |  1,368 |  1,422 |  1,536 |   646 |     341   |    385   |
+  | Upgrade/rebuild         |    706 |    845 |  1,719 |  1,771 |  1,937 | 1,332 |     741   |    757   |
+  | Support capital         |  1,643 |  1,541 |  1,727 |  1,688 |  1,986 |   884 |     549   |    581   |
+  | Line extensions         |  1,642 |  2,990 |  4,015 |  4,216 |  3,940 | 1,542 |     726   |    807   |
+  |  of which subsid. rural |   n/c  |   n/c  |  1,822 |  2,144 |  2,202 |   816 |     292   |    292   |
+  | TOTAL                   |  7,635 |  9,376 | 11,115 | 11,269 | 11,659 | 5,726 |   3,027   |  3,235   |
+  | % of revenue            |  14.8% |  17.4% |  20.4% |  20.5% |  21.3% | 21.1% |   20.3%   |  19.6%   |
+  +-------------------------+--------+--------+--------+--------+--------+-------+-----------+----------+
+  Upgrade/rebuild (network evolution) and line extensions, ~$5.9B in
+  FY2025, are the categories guided to fall after 2027.
+
+3.6 Customers (PF, thousands)
+-----------------------------
+  +-------------------------+---------+---------+--------+---------------+---------------+
+  | Metric                  | 9/30/26 | 9/30/25 |  YoY   | Q3'26 net add | Q3'25 net add |
+  +-------------------------+---------+---------+--------+---------------+---------------+
+  | Total Internet          |  34,314 |  35,212 |  -2.5% |     (233)     |     (171)     |
+  | Total mobile lines      |  13,452 |  11,656 | +15.4% |     +508      |     +514      |
+  | Total video             |  13,801 |  14,057 |  -1.8% |      (77)     |     (121)     |
+  | Total voice             |   6,143 |   6,949 | -11.6% |      n/c      |      n/c      |
+  | Customer relationships  |  36,691 |  37,658 |  -2.6% |     (238)     |     (154)     |
+  +-------------------------+---------+---------+--------+---------------+---------------+
+  Q3'26 net adds by legacy company:
+                     Legacy Charter        Legacy Cox
+    Internet         (156), vs (109) PY    (77)
+    Mobile lines     +440, vs +482 PY      ~+70
+    Video            (38), vs (70) PY      (39)
+
+3.7 Cox component (Cox standalone, $M)
+--------------------------------------
+  +----------------+--------+--------+-------+-------------------------------+
+  |                | FY2024 | FY2025 | Q1'26 | Q3'26 (derived)               |
+  +----------------+--------+--------+-------+-------------------------------+
+  | Revenue        | 13,073 | 12,531 | 3,059 | ~2,983 (-4.5% YoY per call)   |
+  | EBITDA (deriv) | ~4,733 |  4,988 | 1,319 | not determinable (10-Q)       |
+  | Op income      |  2,550 | (2,966)|   735 | (FY25 includes $5.6B impair.) |
+  +----------------+--------+--------+-------+-------------------------------+
+
+3.8 Reconciliation notes
+------------------------
+  - No segment revenue exceeds consolidated revenue here; product lines sum
+    exactly to the consolidated total in every period shown.
+  - The ACTUAL series has a structural break at Q3'26 (Cox from Aug 20).
+    Every growth rate in this model is anchored to the PF series.
+  - Customer relationships were redefined in Q4'25 to include mobile-only
+    customers. FY2024 was restated.
+  - The Q3'25 legacy Charter mobile comparative is +482K in the Q3'26
+    release vs +493K in the Q3'25 release. This is a SOURCE DISCREPANCY
+    and does not affect the model.
+  - How the segment data shapes the model: there is no structurally
+    separate profit pool (no "growth segment bolted to a legacy one" with
+    separate margins), so a single consolidated DCF with a LINE-LEVEL
+    revenue build and line-level contribution margins is the right lens.
+    A sum-of-the-parts companion would mostly re-cut the same cable
+    economics and is not built. Separating Cox from legacy Charter is
+    possible only on revenue and subs, not on profit.
+
+
+================================================================================
+SECTION 4 - FY2026E PRO FORMA ANCHOR (BOTTOM-UP)
+================================================================================
+
+All PF $M. Q1 is reported (8-K Ex. 99.4 pro forma); Q2 is derived
+(9M - Q1 - Q3); Q3 is reported; Q4 is my estimate.
+
+  +-----------------------------+--------+--------+--------+---------+---------+
+  |                             | Q1'26  | Q2'26d | Q3'26  | Q4'26E  | FY2026E |
+  +-----------------------------+--------+--------+--------+---------+---------+
+  | Revenue                     | 16,669 | 16,546 | 16,505 |  16,490 |  66,210 |
+  | Adj. EBITDA ex-transition   |    (9M total 20,475)     |   6,775 |  27,250 |
+  | Capex (excl. transition)    |    (9M total 9,924)      |   3,080 |  13,004 |
+  +-----------------------------+--------+--------+--------+---------+---------+
+
+Q4'26E basis:
+  - Revenue: Q4'25 PF 16,744 x (1 - 1.5%), i.e. the Q3 PF growth rate
+    carried forward. Midterm political advertising supports Q4, and video
+    and Internet keep eroding.
+  - EBITDA ex-transition 6,775 = Q4'25 PF 6,989 x (1 - 3.1%). That matches
+    Q3's -3.0% ex-transition trend, with early synergies ("beginning to ramp
+    in Q4") offsetting a slightly worse subscriber base.
+  - Capex: management's FY26 PF guide of ~$13.0B ex-transition, less 9M PF
+    of $9,924M, gives ~$3,076M (rounded to $3,080M). The model adds ~$50M of
+    transition capex.
+
+FY2026E by product line (estimates; the sum ties to 66,210):
+  +----------------------+---------+---------------------------------------------------+
+  | Line                 | FY2026E | Basis                                             |
+  +----------------------+---------+---------------------------------------------------+
+  | Residential Internet |  28,600 | Q3 x4 = 28,388; earlier quarters were higher      |
+  | Mobile service       |   4,450 | Q3 x4 = 4,632; earlier quarters were lower        |
+  | Video                |  14,700 | Q3 x4 = 14,436; declining through the year        |
+  | Voice                |   1,500 | Q3 x4 = 1,464                                     |
+  | Commercial (all)     |  10,760 | Q3 x4 = 10,764; flat                              |
+  | Advertising          |   2,000 | Q3 x4 = 1,948, plus a Q4 midterm political bump   |
+  | Other (incl devices) |   4,200 | Q3 x4 = 4,388; earlier quarters were lower        |
+  | TOTAL                |  66,210 |                                                   |
+  +----------------------+---------+---------------------------------------------------+
+  The line split is MY ESTIMATE. Charter has not published FY-to-date PF
+  revenue by line for Q1/Q2.
+
+Q4'26 stub, valued as of the 9/30/26 balance-sheet date ($M):
+  Adj. EBITDA                       6,775
+  less D&A                         (3,050)  PF D&A was $3,044M in Q3
+  less SBC                           (180)
+  less restructuring/other           (150)
+  = EBIT                            3,395
+  less 15% tax                       (509)
+  = NOPAT                           2,886
+  plus D&A                          3,050
+  less capex incl. transition      (3,130)
+  less NWC/other                     (150)
+  = SBC-adjusted UFCF               2,656   discounted 0.125 years
+
+
+================================================================================
+SECTION 5 - KEY ASSUMPTIONS
+================================================================================
+
+5.1 Revenue by product line - growth rates (%)
+----------------------------------------------
+  +---------------+------+------+------+------+------+------+------+------+------+------+
+  | BASE          | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 | 2036 |
+  +---------------+------+------+------+------+------+------+------+------+------+------+
+  | Res. Internet | -3.5 | -2.5 |-1.75 | -1.0 | -0.5 |  0.0 |  0.0 | +0.5 | +0.5 | +0.5 |
+  | Mobile svc    |  +13 |  +10 |   +8 |   +6 |   +5 |   +4 |   +3 |   +3 | +2.5 | +2.5 |
+  | Video         |   -9 |   -8 |   -7 |   -6 |   -6 |   -5 |   -5 |   -5 |   -5 |   -5 |
+  | Voice         |   -7 |   -7 |   -7 |   -7 |   -7 |   -7 |   -7 |   -7 |   -7 |   -7 |
+  | Commercial    | +0.5 | +1.0 | +1.0 | +1.0 | +1.0 | +1.0 | +1.0 | +1.0 | +1.0 | +1.0 |
+  | Other         |   +8 |   +5 |   +4 |   +3 |   +3 |   +2 |   +2 |   +2 |   +2 |   +2 |
+  +---------------+------+------+------+------+------+------+------+------+------+------+
+  +---------------+------+------+------+------+------+------+------+------+------+------+
+  | BEAR          | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 | 2036 |
+  +---------------+------+------+------+------+------+------+------+------+------+------+
+  | Res. Internet | -4.0 | -3.5 | -3.0 | -2.5 | -2.0 | -1.5 | -1.0 | -1.0 | -1.0 | -1.0 |
+  | Mobile svc    |  +10 |   +7 |   +5 |   +4 |   +3 |   +2 |   +2 |   +1 |   +1 |   +1 |
+  | Video         |  -10 |  -10 |   -9 |   -8 |   -8 |   -7 |   -7 |   -7 |   -7 |   -7 |
+  | Voice         |   -8 |   -8 |   -8 |   -8 |   -8 |   -8 |   -8 |   -8 |   -8 |   -8 |
+  | Commercial    | -0.5 |  0.0 |  0.0 |  0.0 |  0.0 |  0.0 |  0.0 |  0.0 |  0.0 |  0.0 |
+  | Other         |   +5 |   +3 |   +2 |   +2 |   +1 |   +1 |   +1 |   +1 |   +1 |   +1 |
+  +---------------+------+------+------+------+------+------+------+------+------+------+
+  +---------------+------+------+------+------+------+------+------+------+------+------+
+  | BULL          | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 | 2036 |
+  +---------------+------+------+------+------+------+------+------+------+------+------+
+  | Res. Internet | -2.5 | -1.0 |  0.0 | +0.5 | +1.0 | +1.0 | +1.0 | +1.0 | +1.0 | +1.0 |
+  | Mobile svc    |  +15 |  +12 |  +10 |   +8 |   +6 |   +5 |   +4 |   +4 |   +3 |   +3 |
+  | Video         |   -8 |   -7 |   -6 |   -5 |   -5 |   -4 |   -4 |   -4 |   -4 |   -4 |
+  | Voice         |   -6 |   -6 |   -6 |   -6 |   -6 |   -6 |   -6 |   -6 |   -6 |   -6 |
+  | Commercial    | +1.0 | +2.0 | +2.0 | +2.0 | +2.0 | +2.0 | +2.0 | +2.0 | +2.0 | +2.0 |
+  | Other         |  +10 |   +6 |   +5 |   +4 |   +3 |   +3 |   +3 |   +3 |   +3 |   +3 |
+  +---------------+------+------+------+------+------+------+------+------+------+------+
+
+Advertising is modeled as a core trend (Base -3%/yr, Bear -5%, Bull -1%)
+with a +12% political uplift in even years (midterm/presidential), so
+odd-numbered years step down.
+
+Rationale for the Base Internet path:
+  - 2027 at -3.5% is roughly the current run-rate (-3.7% PF in Q3). It gives
+    credit for Cox's halved loss rate after Spectrum pricing went live, but
+    none for the new go-to-market model, which is unproven.
+  - Losses narrow as competitors' fiber and FWA builds mature (T-Mobile
+    targets 15M FWA by 2030, so pressure persists through about 2030), and
+    as the bundle (mobile) lowers churn.
+  - Flat 2032-33; +0.5% thereafter.
+  - Management says "we will return Charter to Internet customer growth"
+    but gives NO timeline, and cut its own long-range plan in the Q3
+    impairment test. The Base therefore anchors to that cut plan rather than
+    to the aspiration.
+
+5.2 EBITDA build
+----------------
+EBITDA_t = EBITDA_(t-1)
+           + SUM over lines (change in line revenue x contribution margin)
+           - fixed-cost drag
+           + Cox synergies realized
+           + $2B program savings realized x retention share.
+
+Contribution margins (ESTIMATES; Charter does not disclose line
+profitability):
+  +------------------------+------+--------------------------------------------------+
+  | Line                   |  CM  | Reasoning                                        |
+  +------------------------+------+--------------------------------------------------+
+  | Residential Internet   | 75%  | Lost subs save little cost; the network is fixed |
+  | Mobile service         | 30%  | MVNO (Verizon) cost per line                     |
+  | Video                  | 25%  | Programming is ~65% of video revenue             |
+  | Voice                  | 80%  |                                                  |
+  | Commercial             | 60%  |                                                  |
+  | Advertising            | 70%  |                                                  |
+  | Other (device sales)   |  5%  | Devices are sold near cost                       |
+  +------------------------+------+--------------------------------------------------+
+
+Fixed-cost drag:
+  - Applies to the non-programming, non-COGS cost base (field & technology,
+    customer operations, marketing & sales, other): ~$20.9B annualized from
+    Q3'26 PF.
+  - Drag rate: Base 0.75%/yr (~$157M), Bear 1.25%, Bull 0.5%. This is wage
+    and other inflation net of business-as-usual productivity.
+  - Evidence: those four lines were -1.5% YoY in Q3'26 PF, before the
+    program and before synergies. So a positive drag is itself a modestly
+    conservative assumption.
+
+Synergies and the $2B program ($M realized in-year):
+  +-----------------------------+-------+-------+-------+-----------------------------+
+  |                             | 2027  | 2028  | 2029+ | Source / judgment           |
+  +-----------------------------+-------+-------+-------+-----------------------------+
+  | Cox opex synergies   BASE   |  450  |  850  | 1,000 | ">$1B" run-rate; ~half by   |
+  |                      BEAR   |  350  |  650  |   800 | 1H27; 90% within 24 months  |
+  |                      BULL   |  500  | 1,000 | 1,200 | (call)                      |
+  | $2B program gross (all)     |  800  | 1,700 | 2,000 | 18-month ramp to ~mid-2028  |
+  | Retention share      BASE   |  75%  |  75%  |  75%  | JUDGMENT (see 5.3)          |
+  |                      BEAR   |  35%  |  35%  |  35%  |                             |
+  |                      BULL   |  90%  |  90%  |  90%  |                             |
+  | Program kept in EBITDA BASE |  600  | 1,275 | 1,500 |                             |
+  +-----------------------------+-------+-------+-------+-----------------------------+
+  Capex synergies are excluded (management excludes them from the >$1B
+  figure too). They are implicitly captured in the 2027 capex guide.
+
+5.3 Why 75% retention on the $2B program (Base)
+------------------------------------------------
+  - On the call, Winfrey said: "The goal is for that to fall to EBITDA line
+    and ultimately drive free cash flow." That points to 100%.
+  - But the reinvestment share and the cost to achieve are NOT quantified.
+    The program is 18 months old in plan terms and zero quarters old in
+    execution, and the company is simultaneously "reconfiguring offers ...
+    adding value into the relationship" in a market where competitors are
+    promoting aggressively.
+  - Some of the savings will be competed away through price and promotion.
+    75% is a moderate haircut. The first-pass Base used 60%; it was relaxed
+    under the cumulative-conservatism check (Section 14).
+
+5.4 Capex ($M)
+--------------
+  +------+---------+---------+---------+--------------------------------------------------+
+  | Year |  BASE   |  BEAR   |  BULL   | Basis                                            |
+  +------+---------+---------+---------+--------------------------------------------------+
+  | 2026 | ~13,050 | ~13,050 | ~13,050 | Guide ~$13.0B PF excl. transition (+~$50M)       |
+  | 2027 |  11,300 |  11,500 |  11,000 | Guide "at or below $11B" + ~$300M transition     |
+  | 2028 |   9,900 |  10,400 |   9,500 | Charter post-build "<$8B" + Cox ~$1.8-2.0B       |
+  | 2029 |   9,800 |  10,300 |   9,400 |                                                  |
+  | 2030+| +1.5%/yr| +1.0%/yr| +1.5%/yr| Inflation and the next upgrade cycle             |
+  +------+---------+---------+---------+--------------------------------------------------+
+  - Base 2036 capex is $10.9B, or 17.6% of revenue. FY2021 (pre-rural
+    build) was 14.8%.
+  - Charter's standalone post-build run-rate is "below $8 billion" (Q2'26
+    call). The Base takes $8.0B, i.e. it does not assume "below". Legacy
+    Cox ran ~$2.5B in 2024; the Base takes ~$1.9B for Cox after capex
+    synergies.
+  - The combined post-build run-rate has NOT been guided. This is a key
+    data gap.
+
+5.5 D&A, SBC, costs to achieve, tax
+-----------------------------------
+D&A ($M): 12,000 / 11,600 / 11,200 / 10,900 / 10,700 / 10,600 / 10,600 /
+10,700 / 10,800, then D&A = capex in the terminal year.
+  - PF D&A was $3,044M in Q3, ~$12.2B annualized, inflated by Cox
+    customer-relationship amortization (a $6.1B intangible).
+  - D&A matters here only through the 15% tax shield.
+
+SBC: $750M in 2027, +2%/yr. Charter FY25 was $673M; Q3'26 actual was $177M.
+
+Costs to achieve plus recurring "other operating expense" ($M):
+  +------+------+------+------+------------+
+  |      | 2027 | 2028 | 2029 | Thereafter |
+  +------+------+------+------+------------+
+  | Base |  900 |  500 |  200 |    150     |
+  | Bear | 1,100|  700 |  300 |    200     |
+  | Bull |  800 |  400 |  150 |    150     |
+  +------+------+------+------+------------+
+  - Not guided. For scale, Q3'26 alone had $345M of other operating
+    expense: restructuring $149M, M&A $158M, special charges $31M,
+    asset losses $7M.
+  - These costs sit BELOW Adj. EBITDA, which is the convention Charter's
+    "Adj. EBITDA ex-transition" metric follows.
+
+Tax: flat 15% on positive EBIT (ruleset convention). No year shows an EBIT
+loss.
+  - THIS CONVENTION IS FAVORABLE HERE. Charter's long-run statutory
+    federal-plus-state rate is ~24%.
+  - Near-term cash taxes ARE low: $500-800M in 2026 including Cox, thanks
+    to 100% bonus depreciation, which is now permanent.
+  - At a flat 22%, Base IV falls by $57.92 to $181.76 (Section 14).
+
+5.6 SBC treatment
+-----------------
+EBIT is computed AFTER SBC (Adj. EBITDA - D&A - SBC - CTA/other). So:
+  - SBC-adjusted UFCF = NOPAT + D&A - capex - NWC/other. SBC is a real
+    cost, and this is the stream that is discounted.
+  - Raw UFCF = SBC-adjusted UFCF + SBC. It is shown for reference only.
+SBC is not double-counted.
+
+5.7 NWC / other cash items
+--------------------------
+Base: 600 / 500 / 500 / 400 / 400 / 300 / 300 / 300 / 200 / 200.
+  - Mobile device installment receivables grow with line adds. The EIP
+    facility that funds them ($1,696M) is EXCLUDED from debt in the bridge,
+    so the receivable build must be a cash use here, to stay consistent.
+  - Supporting history: OCF has trailed (EBITDA - cash interest) by
+    $1-2.8B a year since 2022. Part of that gap is cash taxes, which the
+    model already charges at 15%.
+  - JUDGMENT CALL. Zeroing this line adds +$19.96/share.
+
+
+================================================================================
+SECTION 6 - DISCOUNT RATES
+================================================================================
+
+  +-----------------------------------------+--------------------------------------------+
+  | Input                                   | Value / source                             |
+  +-----------------------------------------+--------------------------------------------+
+  | Risk-free (US 10-yr, Nov 6, 2026)       | 4.87% (tradingeconomics, via 11-06 extract)|
+  | Equity risk premium                     | 5.0% (judgment)                            |
+  | CHTR 5-yr raw beta                      | 0.73 (stockanalysis) - see note            |
+  | Unlevered beta, cable (judgment)        | 0.55-0.65                                  |
+  | Pre-tax marginal cost of debt           | ~6.6-7.2%. Aug '26 secured issues: 6.05%   |
+  |                                         | 2032, 6.60% 2034, 6.95% 2036, 7.85% 2056.  |
+  |                                         | Book debt is at 85.3% of par (FV).         |
+  | Embedded cost of debt                   | 5.3% weighted average; 87% fixed; WAL      |
+  |                                         | 11.1 years                                 |
+  | After-tax Kd (15% convention)           | ~5.6-6.1%                                  |
+  | Market weights                          | Equity ~$19.4B vs debt-like ~$100B at fair |
+  |                                         | value: E/V ~16%, D/V ~84%                  |
+  +-----------------------------------------+--------------------------------------------+
+  Note: the 0.73 raw beta on an equity that is ~14-16% of EV is not
+  credible as a measure of systematic risk. Relevering a 0.6 asset beta at
+  D/E ~5.2x gives an equity beta of ~3.2 and a cost of equity of ~21%.
+
+  Two triangulations:
+    (a) Market-weight WACC, relevered CAPM:
+          0.16 x 21.1% + 0.84 x 5.9%            = ~8.4%
+    (b) Unlevered cost of capital less the debt tax-shield adjustment:
+          Ku = 4.87% + 0.6 x 5.0%               = ~7.9%
+          WACC ~ 7.9% - 0.15 x 7.0% x 0.84      = ~7.0%
+  Defensible range: ~7.0% to ~8.4%.
+
+  +----------+-------+-------+-------+------------------------------------------------+
+  |          | WACC  |  TGR  | Exit  | Rationale                                      |
+  +----------+-------+-------+-------+------------------------------------------------+
+  | Bear     | 9.0%  | -1.0% | 4.5x  | Above the range: distress-like premium if      |
+  |          |       |       |       | leverage stays ~4x on declining EBITDA. Exit   |
+  |          |       |       |       | below today's ~4.9x for a still-shrinking      |
+  |          |       |       |       | asset.                                         |
+  | Base     | 8.0%  |  0.0% | 6.0x  | Upper part of the range (lean conservative).   |
+  |          |       |       |       | 0% nominal = ~-2.5% real, a slowly melting     |
+  |          |       |       |       | asset. 6.0x is near Comcast's ~4-6x (spring    |
+  |          |       |       |       | 2026 aggregators, which disagree) and matches  |
+  |          |       |       |       | with the perpetuity (perp-implied 5.6x; 6.0x   |
+  |          |       |       |       | implies g = 0.5%).                             |
+  | Bull     | 7.5%  | +1.0% | 7.0x  | Lower residual risk once leverage reaches 3.5x |
+  |          |       |       |       | and subs stabilize. 7.0x sits below Charter's  |
+  |          |       |       |       | 2019-21 range of ~8-10x.                       |
+  +----------+-------+-------+-------+------------------------------------------------+
+
+Discounting:
+  - Valuation date 9/30/26, matching the balance sheet.
+  - Q4'26 stub at t = 0.125; years 2027-2036 mid-year at t = 0.75 ... 9.75;
+    terminal value at t = 10.25.
+  - Rolling forward to Nov 7 changes per-share values by ~1%. Ignored.
+
+
+================================================================================
+SECTION 7 - BASE CASE PROJECTION
+================================================================================
+
+7.1 Revenue by product line ($M)
+--------------------------------
+  Year  | Res Inet | Mobile | Video  | Voice | Commerc. | Advert. | Other | Total  | YoY
+  --------------------------------------------------------------------------------------
+  2026E |   28,600 |  4,450 | 14,700 | 1,500 |   10,760 |   2,000 | 4,200 | 66,210 |
+  2027  |   27,599 |  5,028 | 13,377 | 1,395 |   10,814 |   1,732 | 4,536 | 64,481 | -2.6%
+  2028  |   26,909 |  5,531 | 12,307 | 1,297 |   10,922 |   1,882 | 4,763 | 63,611 | -1.3%
+  2029  |   26,438 |  5,974 | 11,445 | 1,207 |   11,031 |   1,630 | 4,953 | 62,678 | -1.5%
+  2030  |   26,174 |  6,332 | 10,759 | 1,122 |   11,141 |   1,771 | 5,102 | 62,401 | -0.4%
+  2031  |   26,043 |  6,649 | 10,113 | 1,044 |   11,253 |   1,533 | 5,255 | 61,890 | -0.8%
+  2032  |   26,043 |  6,915 |  9,607 |   970 |   11,365 |   1,666 | 5,360 | 61,927 | +0.1%
+  2033  |   26,043 |  7,122 |  9,127 |   903 |   11,479 |   1,443 | 5,467 | 61,584 | -0.6%
+  2034  |   26,173 |  7,336 |  8,671 |   839 |   11,594 |   1,567 | 5,577 | 61,757 | +0.3%
+  2035  |   26,304 |  7,519 |  8,237 |   781 |   11,710 |   1,358 | 5,688 | 61,597 | -0.3%
+  2036  |   26,435 |  7,707 |  7,825 |   726 |   11,827 |   1,475 | 5,802 | 61,798 | +0.3%
+
+7.2 EBITDA bridge ($M)
+----------------------
+  Year  | Organic EBITDA | Cox syn. | $2B prog. kept | Adj. EBITDA | Margin | YoY
+  -------------------------------------------------------------------------------
+  2026E |         27,250 |       -- |             -- |      27,250 | 41.2%  |
+  2027  |         25,963 |      450 |            600 |      27,013 | 41.9%  | -0.9%
+  2028  |         25,275 |      850 |          1,275 |      27,400 | 43.1%  | +1.4%
+  2029  |         24,508 |    1,000 |          1,500 |      27,008 | 43.1%  | -1.4%
+  2030  |         24,194 |    1,000 |          1,500 |      26,694 | 42.8%  | -1.2%
+  2031  |         23,718 |    1,000 |          1,500 |      26,218 | 42.4%  | -1.8%
+  2032  |         23,622 |    1,000 |          1,500 |      26,122 | 42.2%  | -0.4%
+  2033  |         23,270 |    1,000 |          1,500 |      25,770 | 41.8%  | -1.3%
+  2034  |         23,272 |    1,000 |          1,500 |      25,772 | 41.7%  | +0.0%
+  2035  |         23,041 |    1,000 |          1,500 |      25,541 | 41.5%  | -0.9%
+  2036  |         23,051 |    1,000 |          1,500 |      25,551 | 41.3%  | +0.0%
+  - Organic EBITDA falls -4.7% in 2027: Internet erosion, the odd-year loss
+    of political advertising, and fixed-cost drag. Q3'26 ran -3.0%
+    ex-transition with a political tailwind, so this is consistent with the
+    current trend.
+  - Cost actions (synergies plus the program) offset roughly all of the
+    organic decline through 2028, then hold EBITDA ~$2.5B above organic.
+  - 2036 EBITDA is -6.2% vs FY2026E. Peak margin is 43.1%, against a
+    standalone record of 41.5% (FY2025).
+
+7.3 Free cash flow build ($M), WACC 8.0%
+----------------------------------------
+  Year  | Adj.EBITDA |  D&A   |  SBC | CTA/oth | EBIT   | Tax15% | NOPAT  | Capex  | NWC/oth | UFCF raw | UFCF SBC-adj | t     | PV
+  --------------------------------------------------------------------------------------------------------------------------------------
+  Q4'26E|      6,775 |  3,050 |  180 |     150 |  3,395 |    509 |  2,886 |  3,130 |     150 |    2,836 |        2,656 | 0.125 |  2,630
+  2027  |     27,013 | 12,000 |  750 |     900 | 13,363 |  2,004 | 11,358 | 11,300 |     600 |   12,208 |       11,458 | 0.75  | 10,816
+  2028  |     27,400 | 11,600 |  765 |     500 | 14,535 |  2,180 | 12,355 |  9,900 |     500 |   14,320 |       13,555 | 1.75  | 11,847
+  2029  |     27,008 | 11,200 |  780 |     200 | 14,828 |  2,224 | 12,604 |  9,800 |     500 |   14,284 |       13,504 | 2.75  | 10,928
+  2030  |     26,694 | 10,900 |  796 |     150 | 14,848 |  2,227 | 12,621 |  9,947 |     400 |   13,970 |       13,174 | 3.75  |  9,871
+  2031  |     26,218 | 10,700 |  812 |     150 | 14,556 |  2,183 | 12,373 | 10,096 |     400 |   13,388 |       12,577 | 4.75  |  8,726
+  2032  |     26,122 | 10,600 |  828 |     150 | 14,544 |  2,182 | 12,362 | 10,248 |     300 |   13,243 |       12,415 | 5.75  |  7,975
+  2033  |     25,770 | 10,600 |  845 |     150 | 14,176 |  2,126 | 12,049 | 10,401 |     300 |   12,792 |       11,948 | 6.75  |  7,107
+  2034  |     25,772 | 10,700 |  862 |     150 | 14,061 |  2,109 | 11,952 | 10,557 |     300 |   12,656 |       11,794 | 7.75  |  6,496
+  2035  |     25,541 | 10,800 |  879 |     150 | 13,713 |  2,057 | 11,656 | 10,716 |     200 |   12,419 |       11,540 | 8.75  |  5,885
+  2036  |     25,551 | 10,876 |  896 |     150 | 13,628 |  2,044 | 11,584 | 10,876 |     200 |   12,280 |       11,384 | 9.75  |  5,375
+  -------------------------------------------------------------------------------------------------------------------------------------
+  Sum of PV (stub + 2027-2036): 87,656
+  Capex % revenue: 17.5% (2027) -> 15.6% (2028-29) -> 17.6% (2036)
+
+7.4 Base terminal value and per-share value
+-------------------------------------------
+                                          Perpetuity     Exit multiple
+  Terminal-year UFCF / EBITDA              11,384          25,551
+  TV (g = 0.0% / 6.0x)                    142,300         153,306
+  PV of TV (t = 10.25, 8.0%)               64,656          69,657
+  PV explicit                              87,656          87,656
+  Enterprise value                        152,312         157,313
+  less senior claims (Section 10)        (115,361)       (115,361)
+  Equity value                             36,951          41,952
+  per share (164.6M)                      $224.49         $254.87
+  Cross-checks                            perp-implied    exit-implied
+                                          5.57x EBITDA    g = 0.53%
+  ---------------------------------------------------------------
+  BASE IV (average of the two methods): EV $154,813M, equity $39,452M
+                                        = $239.68/share
+  TV share of EV: 43.4%. EV / FY2026E EBITDA = 5.68x (market: 4.95x).
+
+
+================================================================================
+SECTION 8 - BEAR CASE
+================================================================================
+
+Story: broadband share loss persists through the decade. Internet revenue
+is still -1% in 2036. Mobile matures early. Only $0.8B of Cox synergies is
+realized, and 65% of the $2B program is competed away. Capex does not fall
+as far as guided. A 9.0% WACC reflects leverage stuck near 4x on declining
+EBITDA.
+
+  Year  | Res Inet | Mobile | Video  | Voice | Commerc. | Advert. | Other | Total  | YoY
+  --------------------------------------------------------------------------------------
+  2027  |   27,456 |  4,895 | 13,230 | 1,380 |   10,706 |   1,696 | 4,410 | 63,774 | -3.7%
+  2028  |   26,495 |  5,238 | 11,907 | 1,270 |   10,706 |   1,805 | 4,542 | 61,963 | -2.8%
+  2029  |   25,700 |  5,500 | 10,835 | 1,168 |   10,706 |   1,531 | 4,633 | 60,073 | -3.0%
+  2030  |   25,058 |  5,720 |  9,969 | 1,075 |   10,706 |   1,629 | 4,726 | 58,881 | -2.0%
+  2031  |   24,557 |  5,891 |  9,171 |   989 |   10,706 |   1,382 | 4,773 | 57,468 | -2.4%
+  2032  |   24,188 |  6,009 |  8,529 |   910 |   10,706 |   1,470 | 4,821 | 56,633 | -1.5%
+  2033  |   23,946 |  6,129 |  7,932 |   837 |   10,706 |   1,247 | 4,869 | 55,666 | -1.7%
+  2034  |   23,707 |  6,190 |  7,377 |   770 |   10,706 |   1,327 | 4,918 | 54,995 | -1.2%
+  2035  |   23,470 |  6,252 |  6,860 |   708 |   10,706 |   1,125 | 4,967 | 54,089 | -1.6%
+  2036  |   23,235 |  6,315 |  6,380 |   652 |   10,706 |   1,197 | 5,017 | 53,502 | -1.1%
+
+  Year  | Organic | Syn. | Prog. | Adj.EBITDA | Mgn   | D&A    | SBC | CTA   | EBIT   | Tax   | Capex  | NWC | UFCF SBC-adj | PV
+  -------------------------------------------------------------------------------------------------------------------------------
+  Q4'26E|         |      |       |      6,775 |       |  3,050 | 180 |   150 |  3,395 |   509 |  3,130 | 150 |        2,656 | 2,627
+  2027  |  25,566 |  350 |   280 |     26,196 | 41.1% | 12,000 | 750 | 1,100 | 12,346 | 1,852 | 11,500 | 800 |       10,194 | 9,556
+  2028  |  24,351 |  650 |   595 |     25,596 | 41.3% | 11,600 | 765 |   700 | 12,531 | 1,880 | 10,400 | 700 |       11,151 | 9,590
+  2029  |  23,036 |  800 |   700 |     24,536 | 40.8% | 11,200 | 780 |   300 | 12,255 | 1,838 | 10,300 | 600 |       10,717 | 8,456
+  2030  |  22,140 |  800 |   700 |     23,640 | 40.1% | 10,900 | 796 |   200 | 11,744 | 1,762 | 10,403 | 500 |        9,980 | 7,224
+  2031  |  21,116 |  800 |   700 |     22,616 | 39.4% | 10,700 | 812 |   200 | 10,904 | 1,636 | 10,507 | 500 |        8,961 | 5,951
+  2032  |  20,454 |  800 |   700 |     21,954 | 38.8% | 10,600 | 828 |   200 | 10,326 | 1,549 | 10,612 | 400 |        8,365 | 5,096
+  2033  |  19,686 |  800 |   700 |     21,186 | 38.1% | 10,600 | 845 |   200 |  9,542 | 1,431 | 10,718 | 400 |        7,592 | 4,244
+  2034  |  19,130 |  800 |   700 |     20,630 | 37.5% | 10,700 | 862 |   200 |  8,868 | 1,330 | 10,825 | 300 |        7,113 | 3,647
+  2035  |  18,392 |  800 |   700 |     19,892 | 36.8% | 10,800 | 879 |   200 |  8,014 | 1,202 | 10,934 | 300 |        6,378 | 3,001
+  2036  |  17,861 |  800 |   700 |     19,361 | 36.2% | 11,043 | 896 |   200 |  7,222 | 1,083 | 11,043 | 300 |        5,839 | 2,520
+  Sum of PV: 61,912. 2036 EBITDA -28.9% vs FY2026E; revenue -19.2%.
+
+                                          Perpetuity     Exit multiple
+  TV (g = -1.0% / 4.5x)                    57,803          87,126
+  PV of TV (t = 10.25, 9.0%)               23,896          36,019
+  Enterprise value                         85,809          97,931
+  less senior claims                     (115,361)       (115,361)
+  Equity value                            (29,552)        (17,451)
+  per share                              $(179.54)       $(105.89)
+  ---------------------------------------------------------------
+  BEAR IV (average): EV $91,870M; equity $(23,491)M = $(142.72)/share
+  -> carried at $0 (equity cannot be negative)
+  EV / FY2026E EBITDA = 3.37x.
+
+  - The Bear perpetuity (2.99x implied EBITDA multiple) is far below the
+    4.5x exit multiple. A shrinking business with capex/EBITDA of 57% has
+    little perpetual FCF. The exit multiple is the more generous half of
+    the Bear.
+  - Even the exit-only Bear is negative. In practice, Bear-case equity
+    would retain OPTION value: debt is long-dated (WAL 11.1 years, with no
+    material maturity until the $16.6B 2030 tower), and the business
+    generates ~$4-5B a year of levered FCF early in the Bear. A $0 floor
+    likely understates Bear-case market value somewhat.
+
+
+================================================================================
+SECTION 9 - BULL CASE
+================================================================================
+
+Story: the new operating model works. Spectrum pricing plus bundled mobile
+stops Internet losses by 2029 and returns the business to +1% growth.
+Synergies reach $1.2B and 90% of the $2B program sticks. Capex comes in
+below guidance. Leverage reaches 3.5x on schedule, and a 7.5% WACC applies.
+
+  Year  | Res Inet | Mobile | Video  | Voice | Commerc. | Advert. | Other | Total  | YoY
+  --------------------------------------------------------------------------------------
+  2027  |   27,885 |  5,118 | 13,524 | 1,410 |   10,868 |   1,768 | 4,620 | 65,192 | -1.5%
+  2028  |   27,606 |  5,732 | 12,577 | 1,325 |   11,085 |   1,960 | 4,897 | 65,183 | -0.0%
+  2029  |   27,606 |  6,305 | 11,823 | 1,246 |   11,307 |   1,733 | 5,142 | 65,161 | -0.0%
+  2030  |   27,744 |  6,809 | 11,232 | 1,171 |   11,533 |   1,921 | 5,348 | 65,758 | +0.9%
+  2031  |   28,022 |  7,218 | 10,670 | 1,101 |   11,763 |   1,698 | 5,508 | 65,980 | +0.3%
+  2032  |   28,302 |  7,579 | 10,243 | 1,035 |   11,999 |   1,883 | 5,673 | 66,713 | +1.1%
+  2033  |   28,585 |  7,882 |  9,833 |   973 |   12,239 |   1,664 | 5,844 | 67,019 | +0.5%
+  2034  |   28,871 |  8,197 |  9,440 |   914 |   12,483 |   1,845 | 6,019 | 67,770 | +1.1%
+  2035  |   29,159 |  8,443 |  9,063 |   859 |   12,733 |   1,631 | 6,199 | 68,088 | +0.5%
+  2036  |   29,451 |  8,696 |  8,700 |   808 |   12,988 |   1,809 | 6,385 | 68,837 | +1.1%
+
+  Year  | Organic | Syn.  | Prog. | Adj.EBITDA | Mgn   | D&A    | SBC | CTA | EBIT   | Tax   | Capex  | NWC | UFCF SBC-adj | PV
+  ------------------------------------------------------------------------------------------------------------------------------
+  Q4'26E|         |       |       |      6,775 |       |  3,050 | 180 | 150 |  3,395 |   509 |  3,130 | 150 |        2,656 |  2,632
+  2027  |  26,367 |   500 |   720 |     27,587 | 42.3% | 12,000 | 750 | 800 | 14,037 | 2,105 | 11,000 | 500 |       12,431 | 11,775
+  2028  |  26,212 | 1,000 | 1,530 |     28,742 | 44.1% | 11,600 | 765 | 400 | 15,977 | 2,397 |  9,500 | 400 |       15,280 | 13,464
+  2029  |  26,013 | 1,200 | 1,800 |     29,013 | 44.5% | 11,200 | 780 | 150 | 16,883 | 2,532 |  9,400 | 400 |       15,750 | 12,910
+  2030  |  26,234 | 1,200 | 1,800 |     29,234 | 44.5% | 10,900 | 796 | 150 | 17,388 | 2,608 |  9,541 | 300 |       15,839 | 12,076
+  2031  |  26,253 | 1,200 | 1,800 |     29,253 | 44.3% | 10,700 | 812 | 150 | 17,592 | 2,639 |  9,684 | 300 |       15,669 | 11,113
+  2032  |  26,587 | 1,200 | 1,800 |     29,587 | 44.3% | 10,600 | 828 | 150 | 18,008 | 2,701 |  9,829 | 200 |       15,878 | 10,476
+  2033  |  26,633 | 1,200 | 1,800 |     29,633 | 44.2% | 10,600 | 845 | 150 | 18,038 | 2,706 |  9,977 | 200 |       15,756 |  9,670
+  2034  |  26,974 | 1,200 | 1,800 |     29,974 | 44.2% | 10,700 | 862 | 150 | 18,263 | 2,739 | 10,126 | 200 |       15,897 |  9,076
+  2035  |  27,031 | 1,200 | 1,800 |     30,031 | 44.1% | 10,800 | 879 | 150 | 18,202 | 2,730 | 10,278 | 200 |       15,793 |  8,388
+  2036  |  27,376 | 1,200 | 1,800 |     30,376 | 44.1% | 10,433 | 896 | 150 | 18,897 | 2,835 | 10,433 | 200 |       15,862 |  7,837
+  Sum of PV: 109,416. 2036 EBITDA +11.5% vs FY2026E; revenue +4.0%.
+
+                                          Perpetuity     Exit multiple
+  TV (g = +1.0% / 7.0x)                   246,474         212,629
+  PV of TV (t = 10.25, 7.5%)              117,445         101,318
+  Enterprise value                        226,861         210,734
+  Equity (pref converted)                 111,500 (*)      95,373 (*)
+  per share                               $663.09         $572.08
+  ---------------------------------------------------------------
+  BULL IV (average): EV $218,797M = $617.59/share
+  EV / FY2026E EBITDA = 8.03x. Perp-implied multiple 8.11x; the 7.0x exit
+  implies g = 0.04%.
+  (*) Equity per share exceeds $477.41, so the Cox preferred is assumed to
+      convert: claims fall by $6.0B and the share count rises by 12.6M to
+      177.2M. Without conversion the figure would be $628.28.
+
+  - The Bull is a genuinely bullish case: it returns Charter to roughly the
+    valuation multiple it held in 2019-2021.
+  - It is NOT a heroic operating case. Its 2036 EBITDA of $30.4B is only
+    +11.5% above today's.
+  - The huge per-share number comes from leverage, not from heroic
+    operations.
+
+
+================================================================================
+SECTION 10 - EQUITY BRIDGE (as of 9/30/26, Q3'26 10-Q)
+================================================================================
+
+  +------------------------------------------------------+-----------+
+  | Claim ($M)                                           |   Amount  |
+  +------------------------------------------------------+-----------+
+  | Debt principal (senior unsecured 26,734 + secured    |  108,574  |
+  |   68,150 + credit facilities 13,690)                 |           |
+  | less cash                                            |     (573) |
+  | NET DEBT                                             |  108,001  |
+  | Supply-chain finance program (short-term borrowings) |    1,180  |
+  | Cox convertible preferred units (liquidation pref.)  |    6,000  |
+  | CHTRP Series A preferred (liquidation pref.)         |      180  |
+  | TOTAL SENIOR CLAIMS deducted from EV                 |  115,361  |
+  +------------------------------------------------------+-----------+
+  | memo: debt carrying value                            |  107,052  |
+  | memo: debt FAIR value (85.3% of par)                 |   92,622  |
+  | memo: EIP device-receivable facility (EXCLUDED; it   |    1,696  |
+  |   is matched by receivables, and the receivable      |           |
+  |   build is charged in NWC)                           |           |
+  +------------------------------------------------------+-----------+
+
+Share count, diluted: 164.6M
+  +--------------------------------------------------+----------+
+  | Component                                        |  Shares  |
+  +--------------------------------------------------+----------+
+  | Class A outstanding, 9/30/26                     |  114.454M|
+  | A/N Charter Holdings units                       |  ~15.511M|
+  | Cox Charter Holdings units                       |   33.6M  |
+  | Economic total (matches stockanalysis 163.55M)   |  163.57M |
+  | Dilutive RSUs/options (ESTIMATE; Q3 diluted =    |   ~1.0M  |
+  |   basic because of the loss)                     |          |
+  | Total used                                       |  164.6M  |
+  +--------------------------------------------------+----------+
+  - The A/N and Cox units are exchangeable 1:1 into Class A and share
+    economically in Charter Holdings. They are counted as shares, which is
+    why the ~$18.8B book noncontrolling interest is NOT also deducted
+    (that would double-count).
+  - Cox preferred: 12.6M additional units if converted at $477.41. Only the
+    Bull case crosses that price.
+
+Debt treatment - a deliberate CONSERVATIVE CALL:
+  - Debt is deducted at PRINCIPAL ($108.6B), not fair value ($92.6B).
+  - Fair value would add +$96.91/share. But part of that ~$16B discount is
+    credit-spread widening, i.e. the market's own doubt about the equity,
+    and crediting it to equity is circular.
+  - The portion that is pure "locked-in cheap coupons" is estimated as
+    follows:
+      - Fixed coupons by maturity bucket, against a 6.6% marginal secured
+        rate.
+      - Savings taxed at 15% and discounted at 6.6%.
+      - Result: ~$7.4B of PV, or +$44.88/share.
+    That is a real economic asset the Base case does not credit. See
+    Section 14.
+  - Other items not modeled: the amended tax receivable agreement (50% of
+    tax benefits from future unit exchanges paid to Cox/A/N; no liability
+    recorded; small negative); accrued interest; NCI tax distributions.
+
+
+================================================================================
+SECTION 11 - SCENARIO SUMMARY AND PROBABILITY WEIGHTING
+================================================================================
+
+  +----------+-------+-------+------+---------+-----------+----------+--------+----------+
+  | Scenario | WACC  |  TGR  | Exit | EV ($B) | EV/26E    | IV/share | Weight | Contrib. |
+  |          |       |       |      |         | EBITDA    |          |        |          |
+  +----------+-------+-------+------+---------+-----------+----------+--------+----------+
+  | Bear     | 9.0%  | -1.0% | 4.5x |   91.9  |   3.37x   | $0 (*)   |  30%   |   $0.00  |
+  | Base     | 8.0%  |  0.0% | 6.0x |  154.8  |   5.68x   | $239.68  |  45%   | $107.86  |
+  | Bull     | 7.5%  | +1.0% | 7.0x |  218.8  |   8.03x   | $617.59  |  25%   | $154.40  |
+  +----------+-------+-------+------+---------+-----------+----------+--------+----------+
+  | PROBABILITY-WEIGHTED                                  | $262.25  |        |          |
+  | Simple average (Bear at $0)                           | $285.76  |        |          |
+  | Simple average (Bear unfloored, -$142.72)             | $238.18  |        |          |
+  | Market (Nov 6 close)                                  | $118.07  | EV $134.8B = 4.95x    |
+  +-------------------------------------------------------+----------+-----------------------+
+  (*) The computed value is -$142.72.
+
+Why 30 / 45 / 25:
+  Evidence for the Bear:
+    - Charter's own Q3 impairment test cut long-range customer and revenue
+      growth.
+    - Legacy Charter Internet losses worsened YoY in each of Q1-Q3 2026.
+    - Management refuses any EBITDA or return-to-growth guidance.
+    - Comcast's losses are also accelerating (-144K vs -91K), while the
+      three telcos add ~1.4-1.6M broadband subs a quarter.
+    - Bear is at 30%, above a symmetric 25%. That is the tilt toward the
+      less-favorable case that the ruleset asks for when weights are
+      genuinely uncertain.
+  Evidence against overweighting the Bear:
+    - Video and Cox Internet loss rates improved in Q3/October.
+    - The cost actions are specific and largely within management's
+      control: synergies have been raised three times ($500M -> $800M ->
+      >$1B), and the $2B program is bottoms-up.
+    - The capex decline is guided.
+    - Debt maturities are long.
+  Bull at 25%: it requires a return to Internet growth that no cable
+  operator has shown since 2023.
+
+Weighting sensitivity:
+  35/45/20 -> $231.37
+  30/40/30 -> $281.15
+  25/45/30 -> $293.13
+In all cases the result is ~2x the price, because of the Bull's levered
+convexity. The probability-weighted value sits ABOVE the Base for that
+reason. The Base ($239.68) is the better central estimate; the weighted
+figure is shown because the ruleset requires it.
+
+
+================================================================================
+SECTION 12 - SENSITIVITY TABLES (BASE CASE, $/share)
+================================================================================
+
+12.1 WACC x terminal growth - PERPETUITY METHOD ONLY
+  +--------+--------+--------+--------+--------+--------+
+  | WACC\g |  -1.0% |  -0.5% |   0.0% |  +0.5% |  +1.0% |
+  +--------+--------+--------+--------+--------+--------+
+  |  7.0%  |   282  |   313  |   348  |   389  |   436  |
+  |  7.5%  |   227  |   253  |   282  |   316  |   355  |
+  |  8.0%  |   177  |   200  | [224]  |   253  |   285  |
+  |  8.5%  |   133  |   152  |   174  |   198  |   225  |
+  |  9.0%  |    94  |   110  |   128  |   149  |   172  |
+  +--------+--------+--------+--------+--------+--------+
+
+12.2 WACC x terminal growth - BLENDED (perpetuity and 6.0x exit averaged)
+  +--------+--------+--------+--------+--------+--------+
+  | WACC\g |  -1.0% |  -0.5% |   0.0% |  +0.5% |  +1.0% |
+  +--------+--------+--------+--------+--------+--------+
+  |  7.0%  |   301  |   316  |   334  |   354  |   378  |
+  |  7.5%  |   257  |   270  |   284  |   301  |   321  |
+  |  8.0%  |   216  |   227  | [240]  |   254  |   270  |
+  |  8.5%  |   179  |   188  |   199  |   211  |   225  |
+  |  9.0%  |   145  |   153  |   162  |   172  |   184  |
+  +--------+--------+--------+--------+--------+--------+
+
+12.3 WACC x exit multiple - EXIT METHOD ONLY
+  +--------+------+------+------+------+------+------+------+
+  | WACC\m | 4.5x | 5.0x | 5.5x | 6.0x | 6.5x | 7.0x | 7.5x |
+  +--------+------+------+------+------+------+------+------+
+  |  7.0%  |  203 |  242 |  281 |  320 |  358 |  397 |  436 |
+  |  7.5%  |  176 |  213 |  250 |  287 |  324 |  360 |  397 |
+  |  8.0%  |  149 |  184 |  220 |[255] |  290 |  325 |  361 |
+  |  8.5%  |  124 |  157 |  191 |  225 |  258 |  292 |  326 |
+  |  9.0%  |   99 |  132 |  164 |  196 |  228 |  260 |  292 |
+  +--------+------+------+------+------+------+------+------+
+
+Reading the tables: no cell in the plausible grid reaches $118. The lowest
+corner (9.0% WACC, -1.0% g, perpetuity) is $94. The market price sits off
+the grid of DISCOUNT-RATE assumptions on Base cash flows. It is explained
+by lower CASH FLOWS (Section 13), not by a higher discount rate within the
+range.
+
+Rule of thumb: each $1B of EV = $6.08/share. Each $100M of perpetual
+after-tax FCF at 8% (~$1.25B of EV) = ~$7.60/share.
+
+
+================================================================================
+SECTION 13 - REVERSE DCF: WHAT $118.07 IMPLIES
+================================================================================
+
+Market EV at $118.07:
+  164.6M x $118.07 = $19.4B equity + $115.4B senior claims = $134.8B
+  = 4.95x FY2026E EBITDA of $27.25B
+
+Holding all other Base assumptions, the price is reproduced by any ONE of:
+  +----------------------------------------------------------+-------------------+
+  | Lever                                                    | Implied value     |
+  +----------------------------------------------------------+-------------------+
+  | Uniform haircut to ALL Base cash flows and the TV        | -13.2% (x0.868)   |
+  | Discount rate on Base cash flows (perp/exit averaged)    | 9.65% (vs 8.0%)   |
+  | Discount rate, perpetuity method only                    | 9.12%             |
+  | Terminal growth on Base explicit FCF (perpetuity only)   | -2.68%/yr forever |
+  | Exit multiple on Base 2036 EBITDA (exit method only)     | 4.06x (vs 6.0x)   |
+  | Constant annual EBITDA change from FY26E (capex scaled,  | -2.18%/yr forever |
+  |   TGR set equal to that rate)                            | (2036E: $21.9B)   |
+  | Gordon growth from 2027 Base UFCF ($11.46B) at 8%        | -0.67%/yr forever |
+  +----------------------------------------------------------+-------------------+
+
+For reference:
+  - Equity is ZERO at a uniform 25.9% haircut to Base cash flows (x0.741).
+  - To reach $118.07, Bear cash flows would have to be 48% HIGHER, and
+    Bull cash flows could be 39% LOWER.
+
+Interpretation:
+  - The market is not pricing collapse. It is pricing something like
+    EBITDA declining ~2% a year forever: ~$21.9B by 2036, between the Base
+    ($25.6B) and the Bear ($19.4B).
+  - That amounts to saying the $3B of cost actions merely slow the
+    organic decline rather than reset the level, and that Internet never
+    returns to growth.
+  - Given three straight quarters of YoY-worse broadband losses, that is not
+    an unreasonable reading. It is simply more pessimistic than this Base.
+  - The difference between "the market is right" and "the stock is worth
+    ~$240" is ~13% of cash flow. For a business that has missed its own
+    plan badly enough to impair franchises, a 13% miss is well within
+    normal forecast error.
+  - Conclusion: the gap is NOT large in operating terms. It is large in
+    equity terms only because of leverage.
+
+
+================================================================================
+SECTION 14 - CONSERVATIVE-CALL REGISTER AND CUMULATIVE CHECK
+================================================================================
+
+All per-share effects are on the Base IV ($239.68), changing one input at a
+time.
+
+14.1 Conservative calls KEPT
+----------------------------
+  +----+--------------------------------------------+----------------------------------------+-----------+
+  | #  | Base choice                                | Less-conservative alternative          | Effect/sh |
+  +----+--------------------------------------------+----------------------------------------+-----------+
+  |  1 | Debt deducted at principal $108.6B         | Debt at fair value $92.6B              |  +$96.91  |
+  |    |                                            | Credit only the PV of below-market     |  +$44.88  |
+  |    |                                            |   coupons (~$7.4B)                     |           |
+  |  2 | Internet: flat by 2032, +0.5% from 2034    | Back to +1%/yr from 2030               |  +$52.10  |
+  |  3 | WACC 8.0% (upper part of 7.0-8.4%)         | 7.5%                                   |  +$44.64  |
+  |  4 | Exit multiple 6.0x                         | 7.0x (below Charter's 2019-21 range)   |  +$35.27  |
+  |  5 | Terminal growth 0.0% (~-2.5% real)         | +1.0%                                  |  +$30.30  |
+  |  6 | Capex 2028-29 $9.9B/$9.8B; Charter at      | $9.5B/$9.4B (Charter ~$7.6B, "below")  |  +$21.23  |
+  |    |   $8.0B, not "below $8B"                   |                                        |           |
+  |  7 | NWC/other drag $200-600M/yr (judgment)     | Zero                                   |  +$19.96  |
+  |  8 | Cox synergies $1.0B (mgmt: "more than      | $1.2B                                  |  +$10.70  |
+  |    |   $1 billion")                             |                                        |           |
+  |  9 | Capex +1.5%/yr after 2029                  | +1.0%/yr                               |  +$10.12  |
+  | 10 | Costs to achieve $1.6B over 2027-29        | Halved                                 |   +$3.74  |
+  | 11 | Cox preferred at $6.0B liquidation pref.   | Fair value $5.852B                     |   +$0.90  |
+  | 12 | 164.6M diluted (est. +1.0M RSUs)           | 163.57M economic basic                 |   +$1.51  |
+  | 13 | Weights 30/45/25 (Bear-tilted)             | 25/45/30                               | +$30.88   |
+  |    |                                            |                                        | (on wtd.) |
+  +----+--------------------------------------------+----------------------------------------+-----------+
+
+14.2 Conservative calls RELAXED under the cumulative check
+----------------------------------------------------------
+The first-pass Base came in at $202.30/share and was conservative on nearly
+every major input (all of 14.1, plus the two items below). The two
+least-justified haircuts were relaxed:
+  +----+------------------------------------------+---------------------+---------------------------------+-----------+
+  | #  | First-pass choice                        | Final Base          | Why relaxed                     | Effect/sh |
+  +----+------------------------------------------+---------------------+---------------------------------+-----------+
+  | R1 | $2B program 60% retained                 | 75% retained        | Mgmt's stated goal is 100% to   |  +$16.40  |
+  |    |                                          |                     | EBITDA. Inflation is already    |           |
+  |    |                                          |                     | charged separately via the drag |           |
+  |    |                                          |                     | line, so 60% double-haircut it. |           |
+  | R2 | Fixed-cost drag 1.0%/yr                  | 0.75%/yr            | Those cost lines were -1.5% YoY |  +$20.98  |
+  |    |                                          |                     | in Q3'26 PF, before the program |           |
+  |    |                                          |                     | and before synergies.           |           |
+  +----+------------------------------------------+---------------------+---------------------------------+-----------+
+  Combined: $202.30 -> $239.68 (+$37.38).
+  Still not relaxed:
+    - The 100% retention alternative (+$27.33 from here) and a 0.5% drag
+      (+$20.98) remain available as overrides.
+    - The big structural calls (#1-#5) were kept. Each is individually
+      defensible, and relaxing them would push the Base toward the Bull.
+
+14.3 Conventions that cut the OTHER way (less conservative)
+-----------------------------------------------------------
+  +-----------------------------------------------+-----------------------------+-----------+
+  | Choice                                        | More-conservative           | Effect/sh |
+  |                                               | alternative                 |           |
+  +-----------------------------------------------+-----------------------------+-----------+
+  | 15% flat NOPAT tax (ruleset convention)       | 22% (closer to statutory)   |  -$57.92  |
+  | Bear equity floored at $0 in the weighting    | Use -$142.72 (weighted then |  -$42.82  |
+  |                                               | $219.43)                    |           |
+  | No explicit charge for the tax receivable     | A small negative; not       |   n/q     |
+  |   agreement                                   | quantified                  |           |
+  +-----------------------------------------------+-----------------------------+-----------+
+  - The 15% tax convention is the largest single favorable assumption in
+    the file. It is defensible near-term (2026 cash taxes are only
+    $0.5-0.8B on ~$27B EBITDA, thanks to permanent bonus depreciation), but
+    generous for the terminal period.
+  - With BOTH the tax at 22% AND the fair-value-coupon credit (+$44.88),
+    the two roughly offset.
+
+14.4 Is the Base still a believable central estimate?
+-----------------------------------------------------
+Yes:
+  - It assumes EBITDA roughly flat through 2029, then about -0.8%/yr.
+  - Margins peak at 43%, 1.6 points above the standalone record. That is
+    plausible with >$2.5B of cost actions on a shrinking revenue base.
+  - It assumes Internet erodes for six more years.
+  - It sits at 5.7x FY26E EBITDA, close to where Comcast trades.
+  - It is well above sell-side targets (Citi $140, MS $135, pre-print),
+    but those targets are typically near-term EV/EBITDA multiples. The
+    reverse DCF shows the difference is ~13% of cash flow.
+
+
+================================================================================
+SECTION 15 - KEY RISKS
+================================================================================
+
+1. Broadband share loss to fiber and FWA does not slow.
+   - This is the dominant risk and the Bear case.
+   - The telcos added ~1.4-1.6M broadband subs in Q3'26 alone.
+   - Every additional -1%/yr on Internet revenue for a decade costs roughly
+     $50+/share.
+2. Leverage and refinancing.
+   - $108.6B of principal at a 5.3% average coupon, against new secured
+     paper at 6.05-7.85%. Refinancing the 2030 tower ($6.55B fixed at
+     4.31% plus ~$10B already-floating) at market rates costs roughly
+     $0.15-0.3B a year in extra interest.
+   - Net leverage of 3.93x is above the 3.5x target, which is not due until
+     ~Aug 2029. EBITDA decline makes deleveraging a treadmill.
+3. Execution on the operating-model change and the Cox integration all at
+   once.
+   - A new COO (Sep 2026) and an interim CFO.
+   - Cox customer service is being onshored within 18 months.
+   - Cox churn is 10% higher than legacy Charter's.
+4. Cost savings competed away.
+   - Retention of the $2B is assumed at 75%. If competitive promotions
+     force reinvestment, every 10 points of retention is worth ~$11/share.
+5. Mobile is an MVNO.
+   - The economics depend on the Verizon agreement.
+   - Line-add deceleration (legacy Charter +440K vs +482K) suggests the
+     bundle tailwind is maturing.
+6. Video and programming.
+   - Carriage disputes and the streaming-app allocation ($286M in Q3)
+     depress reported video revenue.
+   - The low contribution margin limits the EBITDA damage.
+7. Capital allocation.
+   - Management favors buybacks "as leverage falls".
+   - The low-coupon debt is being repurchased below par, which is
+     value-accretive.
+   - Buybacks at prices below IV help per-share value; the reverse would
+     hurt it.
+8. The convertible preferred and the units.
+   - Cox (~21%) and A/N (~9%) are large holders with suspended sell-down
+     agreements. Future exchanges or sales are a supply overhang.
+   - The tax receivable agreement leaks 50% of exchange tax benefits.
+9. Regulatory and subsidy.
+   - Subsidized rural (RDOF/BEAD) build obligations.
+   - The Affordable Connectivity Program is gone, and low-income sales
+     are already called out as weak.
+
+
+================================================================================
+SECTION 16 - DISCLOSURES AND LIMITATIONS
+================================================================================
+
+Data sources and dates:
+  - Reported and guided figures come from the 11-06 extracts, which were
+    pulled from the Q3'26 8-K Ex. 99.1, the Q3'26 10-Q (filed Nov 6, 2026),
+    the call transcript, the 8-K Ex. 99.4 pro forma, and prior releases
+    and 10-Ks.
+  - Key figures were re-verified on Nov 7, 2026 against:
+      - the Q3'26 release on SEC EDGAR: revenue 14,922; Adj. EBITDA 5,943;
+        PF 16,505 / 6,587 vs 16,764 / 6,862; capex 3,027 actual / 3,235 PF;
+        FCF 674; OCF 4,027; debt $108.6B; SBC 177; D&A 2,621 actual /
+        3,044 PF; FY26 PF capex guide ~$13.0B; >$1B synergies; $2B program;
+      - the Motley Fool transcript: 2027 capex "at or below $11 billion";
+        "$2 billion in annualized run rate operating expense savings over
+        the next 18 months"; "the goal is for that to fall to EBITDA line";
+        synergy timing; 2026 cash tax $500-800M; 3.5x target; $5.8B
+        cash-interest run-rate; no return-to-growth timing.
+  - Price: $118.07, the Nov 6, 2026 close (stockanalysis.com, checked
+    Nov 7). Statistics page: beta 0.73, 163.55M shares, market cap $19.31B.
+  - Peer EV/EBITDA (Comcast ~4-6x) comes from web aggregators with
+    spring-2026 dates that disagree with one another. It is used only as a
+    rough anchor.
+
+Discrepancies noted:
+  - The Cox close date is Aug 20 in the release vs Aug 19 in the 10-Q.
+  - PF net income differs between the release and the 10-Q.
+  - The release highlights say "~$4.0B in cash and new secured notes" for
+    the exchange, while the 10-Q says $622M of cash; the 10-Q is used.
+  - The Q3'25 legacy Charter mobile comparative is +482K vs +493K
+    originally reported.
+  - The A/N unit count (~15.51M) is a derived period-end figure (9M
+    weighted average, no 2026 purchases).
+  - Dilutive securities (~1.0M) are an estimate.
+  - Q2'26 and Q4'25 PF figures are derived by subtraction.
+
+Judgment calls (the main ones; see Section 14 for the full list with
+per-share effects):
+  - FY26E revenue by product line (Charter has not disclosed the Q1/Q2 PF
+    line split).
+  - Contribution margins by product line (not disclosed).
+  - The fixed-cost drag rate.
+  - Retention of the $2B program.
+  - Costs to achieve.
+  - The NWC/other line.
+  - The Cox capex run-rate.
+  - WACC inputs (ERP, unlevered beta).
+  - All terminal assumptions.
+  - Scenario weights.
+
+Data gaps:
+  - No 2027 EBITDA guidance.
+  - No combined post-build capex run-rate.
+  - No reinvestment share or cost to achieve for the $2B program.
+  - No 2027+ cash-tax guide.
+  - No Cox earnings since close ("impracticable" per the 10-Q).
+  - No disclosure of profitability by product line.
+  - No T-Mobile Q3'26 FWA net adds.
+  - Q1/Q2'26 PF revenue by product line not available.
+
+Method notes:
+  - Values are as of the 9/30/26 balance sheet; the Nov 6 price is
+    compared directly (roll-forward effect ~1%).
+  - The model is unlevered (the WACC method). A levered/APV build that
+    explicitly credits below-market coupons would produce a higher value
+    (Section 10).
+
+Scope: This is an ad hoc, standalone valuation produced by the dcf-creator
+agent. It was built independently: no prior Charter valuation file was
+opened or referenced. It does NOT qualify CHTR for purchase in the
+tech-buffett portfolio, which requires tech-buffett's own Init -> Deep Dive
+-> DCF pipeline on user-supplied filings.
+
+NOT INVESTMENT ADVICE.
+================================================================================
